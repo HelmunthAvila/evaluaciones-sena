@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluación - Diseñar Diagramas de Casos de Uso</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .card { box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15); }
+</style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-[#1e3a8a] to-[#3b82f6] p-4 md:p-8 flex items-center justify-center">
+
+<div id="vista-inicio" class="w-full max-w-2xl bg-white rounded-2xl card p-8">
+  <h1 class="text-2xl md:text-3xl font-extrabold text-[#1e3a8a] mb-2">Evaluación Técnica</h1>
+  <p class="text-gray-600 mb-6">Diseñar Diagramas de Casos de Uso</p>
+  <div class="bg-blue-50 border-l-4 border-[#3b82f6] p-4 rounded-r-lg mb-6 text-sm text-gray-700">
+    <p><strong>Competencia:</strong> Competencia técnica SENA</p>
+    <p><strong>Nivel de dificultad:</strong> Técnico</p>
+    <p><strong>Preguntas:</strong> 15 &nbsp;|&nbsp; <strong>Porcentaje de aprobación:</strong> 70%</p>
+    <p class="mt-1"><strong>Tipos:</strong> 5 opción múltiple, 4 verdadero/falso, 3 completar, 3 emparejamiento.</p>
+  </div>
+  <form id="form-inicio" class="space-y-4">
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-1">Nombre Completo</label>
+      <input id="nombre" type="text" placeholder="Escriba su nombre completo"
+             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]">
+    </div>
+    <div>
+      <label class="block text-sm font-semibold text-gray-700 mb-1">Número de Ficha</label>
+      <input id="ficha" type="text" placeholder="Escriba el número de ficha"
+             class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]">
+    </div>
+    <p id="error-inicio" class="text-red-600 text-sm hidden">Los dos campos son obligatorios para iniciar la evaluación.</p>
+    <button type="submit" class="w-full bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-bold py-3 rounded-lg hover:opacity-90 transition">
+      Comenzar evaluación
+    </button>
+  </form>
+</div>
+
+<div id="vista-preguntas" class="w-full max-w-3xl bg-white rounded-2xl card p-8 hidden">
+  <div class="flex justify-between items-center mb-2">
+    <p class="text-sm text-gray-500">Aprendiz: <span id="nombre-mostrado" class="font-semibold text-gray-800"></span></p>
+    <p class="text-sm text-gray-500">Ficha: <span id="ficha-mostrado" class="font-semibold text-gray-800"></span></p>
+  </div>
+  <div class="w-full bg-gray-200 rounded-full h-2.5 mb-6">
+    <div id="barra-progreso" class="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] h-2.5 rounded-full transition-all duration-300" style="width:0%"></div>
+  </div>
+  <p class="text-sm text-gray-500 mb-1">Pregunta <span id="num-actual">1</span> de 15</p>
+  <div id="contenedor-pregunta" class="min-h-[16rem]"></div>
+  <div class="flex justify-between mt-8">
+    <button id="btn-anterior" class="px-6 py-2.5 border border-gray-300 rounded-lg text-gray-600 font-semibold hover:bg-gray-50 transition">Anterior</button>
+    <button id="btn-siguiente" disabled
+            class="px-6 py-2.5 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-bold rounded-lg opacity-40 cursor-not-allowed transition">Siguiente</button>
+  </div>
+</div>
+
+<div id="vista-resultados" class="w-full max-w-2xl bg-white rounded-2xl card p-8 hidden text-center">
+  <h2 class="text-2xl font-extrabold text-[#1e3a8a] mb-2">Resultado de la Evaluación</h2>
+  <p class="text-gray-600 mb-6">Aprendiz: <span id="resultado-nombre" class="font-semibold"></span></p>
+  <div class="flex justify-center mb-6">
+    <svg width="200" height="200" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="80" fill="none" stroke="#e5e7eb" stroke-width="18"/>
+      <circle id="circulo-progreso" cx="100" cy="100" r="80" fill="none"
+              stroke="#3b82f6" stroke-width="18" stroke-linecap="round"
+              stroke-dasharray="502.65" stroke-dashoffset="502.65" transform="rotate(-90 100 100)"/>
+    </svg>
+  </div>
+  <p class="text-5xl font-extrabold text-[#1e3a8a] mb-4"><span id="porcentaje">0</span>%</p>
+  <p class="text-gray-600 mb-2">Respuestas correctas: <span id="correctas" class="font-bold"></span> de 15</p>
+  <div id="badge" class="inline-block px-8 py-3 rounded-full text-white font-extrabold text-lg mb-6"></div>
+  <p class="text-amber-600 font-semibold mb-8">Tome captura de pantalla como evidencia de su desempeño</p>
+  <button onclick="location.reload()" class="px-8 py-3 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-bold rounded-lg hover:opacity-90 transition">
+    Reintentar evaluación
+  </button>
+</div>
+
+<script>
+const PREGUNTAS = [{"tipo": "seleccion", "texto": "Los elementos de un diagrama de casos de uso son:", "opciones": ["Actores, casos de uso, relaciones y sistema", "Clases, métodos y atributos", "Tablas, índices y consultas", "Nodos, enlaces y paquetes"], "correcta": 0}, {"tipo": "seleccion", "texto": "La relación extend en los casos de uso indica que:", "opciones": ["El caso extendido se ejecuta bajo ciertas condiciones", "El caso base se elimina", "El actor desaparece", "El sistema se reinicia"], "correcta": 0}, {"tipo": "seleccion", "texto": "La generalización entre actores representa:", "opciones": ["La herencia de comportamientos comunes", "La eliminación de actores", "El cambio de sistema", "La compra de licencias"], "correcta": 0}, {"tipo": "seleccion", "texto": "El rectángulo del sistema delimita:", "opciones": ["Los casos de uso del sistema", "Los actores externos", "Las bases de datos", "Los servidores"], "correcta": 0}, {"tipo": "seleccion", "texto": "La relación include se utiliza cuando:", "opciones": ["Un caso de uso base siempre requiere el caso incluido", "El caso de uso es opcional", "El actor no participa", "La interfaz cambia de color"], "correcta": 0}, {"tipo": "vf", "texto": "El diagrama de casos de uso pertenece al lenguaje UML.", "correcta": 0}, {"tipo": "vf", "texto": "En la relación extend, el caso extendido se ejecuta bajo condiciones específicas.", "correcta": 0}, {"tipo": "vf", "texto": "Los actores se representan dentro del rectángulo del sistema.", "correcta": 1}, {"tipo": "vf", "texto": "La asociación relaciona al actor con el caso de uso.", "correcta": 0}, {"tipo": "completar", "texto": "La relación ____________ extiende el caso de uso base bajo condiciones.", "opciones": ["extend", "include", "generalización", "agregación"], "correcta": 0}, {"tipo": "completar", "texto": "Los ____________ se representan fuera del rectángulo del sistema.", "opciones": ["actores", "casos", "flujos", "menús"], "correcta": 0}, {"tipo": "completar", "texto": "La ____________ entre actores indica herencia de comportamiento.", "opciones": ["generalización", "venta", "compra", "impresión"], "correcta": 0}, {"tipo": "emparejar", "texto": "Asocie el término con su definición: Include", "opciones": ["Relación obligatoria entre casos de uso", "Relación opcional bajo condiciones", "Herencia de comportamiento entre actores"], "correcta": 0}, {"tipo": "emparejar", "texto": "Asocie el término con su definición: Extend", "opciones": ["Relación obligatoria entre casos de uso", "Relación opcional bajo condiciones", "Herencia de comportamiento entre actores"], "correcta": 1}, {"tipo": "emparejar", "texto": "Asocie el término con su definición: Generalización", "opciones": ["Relación obligatoria entre casos de uso", "Relación opcional bajo condiciones", "Herencia de comportamiento entre actores"], "correcta": 2}];
+const APROBACION = 70;
+let indice = 0;
+let respuestas = new Array(PREGUNTAS.length).fill(null);
+
+function renderPregunta() {
+  const p = PREGUNTAS[indice];
+  document.getElementById('num-actual').textContent = indice + 1;
+  document.getElementById('barra-progreso').style.width = ((indice) / PREGUNTAS.length * 100) + '%';
+  document.getElementById('btn-anterior').disabled = (indice === 0);
+  document.getElementById('btn-anterior').className = indice === 0
+    ? 'px-6 py-2.5 border border-gray-300 rounded-lg text-gray-300 font-semibold cursor-not-allowed'
+    : 'px-6 py-2.5 border border-gray-300 rounded-lg text-gray-600 font-semibold hover:bg-gray-50 transition';
+  const cont = document.getElementById('contenedor-pregunta');
+  let html = '<div class="bg-blue-50 border-l-4 border-[#3b82f6] p-4 rounded-r-lg mb-6"><p class="font-semibold text-gray-800">' + p.texto + '</p></div>';
+  const sel = respuestas[indice];
+
+  if (p.tipo === 'seleccion') {
+    html += '<div class="space-y-3">';
+    p.opciones.forEach((op, i) => {
+      const checked = sel === i ? 'checked' : '';
+      html += '<label class="flex items-start gap-3 border rounded-lg p-4 cursor-pointer hover:bg-blue-50 transition ' + (sel === i ? 'border-[#3b82f6] bg-blue-50' : 'border-gray-200') + '">'
+        + '<input type="radio" name="q" value="' + i + '" ' + checked + ' class="mt-1">'
+        + '<span class="text-gray-700">' + op + '</span></label>';
+    });
+    html += '</div>';
+  } else if (p.tipo === 'vf') {
+    html += '<div class="grid grid-cols-2 gap-4">';
+    ['Verdadero', 'Falso'].forEach((op, i) => {
+      const checked = sel === i ? 'checked' : '';
+      html += '<label class="flex items-center justify-center gap-2 border rounded-lg p-6 cursor-pointer hover:bg-blue-50 transition ' + (sel === i ? 'border-[#3b82f6] bg-blue-50' : 'border-gray-200') + '">'
+        + '<input type="radio" name="q" value="' + i + '" ' + checked + '>'
+        + '<span class="font-semibold text-gray-800">' + op + '</span></label>';
+    });
+    html += '</div>';
+  } else if (p.tipo === 'completar') {
+    html += '<div class="space-y-4"><p class="text-gray-700">Seleccione la opción correcta para completar el enunciado:</p>'
+      + '<select id="select-completar" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]">'
+      + '<option value="">-- Seleccione una opción --</option>';
+    p.opciones.forEach((op, i) => {
+      const selOpt = sel === i ? ' selected' : '';
+      html += '<option value="' + i + '"' + selOpt + '>' + op + '</option>';
+    });
+    html += '</select></div>';
+  } else if (p.tipo === 'emparejar') {
+    html += '<div class="space-y-4">';
+    html += '<div class="flex items-center justify-between bg-gray-50 rounded-lg p-4">'
+      + '<span class="font-semibold text-gray-800">' + p.texto.split(': ')[1] + '</span>'
+      + '<select id="select-emparejar" class="border border-gray-300 rounded-lg px-3 py-2 w-64 focus:outline-none focus:ring-2 focus:ring-[#3b82f6]">'
+      + '<option value="">-- Seleccione la definición --</option>';
+    p.opciones.forEach((def, i) => {
+      const selOpt = sel === i ? ' selected' : '';
+      html += '<option value="' + i + '"' + selOpt + '>' + def + '</option>';
+    });
+    html += '</select></div></div>';
+  }
+  cont.innerHTML = html;
+
+  actualizarBotonSiguiente();
+  cont.querySelectorAll('input[type="radio"]').forEach(r => r.addEventListener('change', () => {
+    respuestas[indice] = parseInt(r.value);
+    actualizarBotonSiguiente();
+  }));
+  const sc = cont.querySelector('#select-completar');
+  if (sc) sc.addEventListener('change', () => {
+    respuestas[indice] = sc.value === '' ? null : parseInt(sc.value);
+    actualizarBotonSiguiente();
+  });
+  const se = cont.querySelector('#select-emparejar');
+  if (se) se.addEventListener('change', () => {
+    respuestas[indice] = se.value === '' ? null : parseInt(se.value);
+    actualizarBotonSiguiente();
+  });
+}
+
+function actualizarBotonSiguiente() {
+  const habilitado = respuestas[indice] !== null;
+  const btn = document.getElementById('btn-siguiente');
+  btn.disabled = !habilitado;
+  btn.className = habilitado
+    ? 'px-6 py-2.5 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-bold rounded-lg hover:opacity-90 transition'
+    : 'px-6 py-2.5 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white font-bold rounded-lg opacity-40 cursor-not-allowed transition';
+}
+
+document.getElementById('form-inicio').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const nombre = document.getElementById('nombre').value.trim();
+  const ficha = document.getElementById('ficha').value.trim();
+  if (!nombre || !ficha) {
+    document.getElementById('error-inicio').classList.remove('hidden');
+    return;
+  }
+  document.getElementById('nombre-mostrado').textContent = nombre;
+  document.getElementById('ficha-mostrado').textContent = ficha;
+  document.getElementById('vista-inicio').classList.add('hidden');
+  document.getElementById('vista-preguntas').classList.remove('hidden');
+  renderPregunta();
+});
+
+document.getElementById('btn-anterior').addEventListener('click', () => {
+  if (indice > 0) { indice--; renderPregunta(); }
+});
+document.getElementById('btn-siguiente').addEventListener('click', () => {
+  if (indice < PREGUNTAS.length - 1) {
+    indice++;
+    renderPregunta();
+  } else {
+    mostrarResultados();
+  }
+});
+
+function mostrarResultados() {
+  let correctas = 0;
+  PREGUNTAS.forEach((p, i) => {
+    if (respuestas[i] === p.correcta) correctas++;
+  });
+  const pct = Math.round(correctas / PREGUNTAS.length * 100);
+  document.getElementById('correctas').textContent = correctas;
+  document.getElementById('porcentaje').textContent = pct;
+  const nombre = document.getElementById('nombre').value.trim();
+  document.getElementById('resultado-nombre').textContent = nombre;
+
+  const badge = document.getElementById('badge');
+  if (pct >= APROBACION) {
+    badge.textContent = 'APROBADO';
+    badge.className = 'inline-block px-8 py-3 rounded-full bg-green-600 text-white font-extrabold text-lg mb-6';
+  } else {
+    badge.textContent = 'REPROBADO';
+    badge.className = 'inline-block px-8 py-3 rounded-full bg-red-600 text-white font-extrabold text-lg mb-6';
+  }
+
+  document.getElementById('vista-preguntas').classList.add('hidden');
+  document.getElementById('vista-resultados').classList.remove('hidden');
+
+  const circ = 502.65;
+  const objetivo = circ * (1 - pct / 100);
+  let actual = circ;
+  const paso = circ / 60;
+  const timer = setInterval(() => {
+    actual -= paso;
+    if (actual <= objetivo) {
+      actual = objetivo;
+      clearInterval(timer);
+    }
+    document.getElementById('circulo-progreso').style.strokeDashoffset = actual;
+    if (pct >= APROBACION) {
+      document.getElementById('circulo-progreso').setAttribute('stroke', '#22c55e');
+    }
+  }, 25);
+}
+</script>
+</body>
+</html>
