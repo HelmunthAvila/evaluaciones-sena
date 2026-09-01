@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Pruebas Unitarias</title>
+<title>Evaluación Práctica - Pruebas Unitarias en Python</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Pruebas Unitarias</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Pruebas Unitarias en Python</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en pruebas unitarias de software: concepto y propósito, aserciones con assert, frameworks unittest y pytest, diseño de casos de prueba, ejecución de pruebas y detección de fallas, mediante retos prácticos interactivos.
+          Aplica pruebas unitarias a funciones Python reales: escribe aserciones con assert, crea casos de prueba con unittest y pytest, ejecuta la suite y comprueba qué casos pasan o fallan. Predice el resultado de cada prueba, completa aserciones y métodos, ordena la estructura de un caso de prueba y corrige los errores que hacen que una prueba no se ejecute o falle.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Pruebas Unitarias:</strong> Comprender el concepto y el propósito de probar una función de forma aislada.</li>
-<li><strong>Validación:</strong> Diseñar casos de prueba y aserciones que verifiquen el comportamiento esperado.</li>
-<li><strong>Implementación:</strong> Escribir y ejecutar pruebas con assert, unittest y pytest.</li>
-<li><strong>Reordenamiento y Depuración:</strong> Ensamblar casos de prueba y detectar fallas en las verificaciones.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente la prueba y determina si pasa o qué reporta.</li>
+<li><strong>Completar código:</strong> Llena los huecos de assert y de los métodos de unittest.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla la estructura de un caso de prueba unitaria.</li>
+<li><strong>Corregir errores:</strong> Encuentra el error que hace fallar o ignorar la prueba.</li>
           </ul>
         </div>
 
@@ -250,282 +250,175 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Pruebas Unitarias",
-    "tipo": "Concepto",
-    "titulo": "¿Qué es una prueba unitaria?",
-    "indicacion": "Selecciona la definición correcta del concepto de prueba unitaria en el desarrollo de software.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Aserción Correcta",
+    "titulo": "¿Qué imprime la aserción que pasa?",
+    "indicacion": "La función sumar devuelve el valor esperado por la aserción. Determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def sumar(a, b):\n    return a + b\n\nassert sumar(2, 3) == 5\nprint(\"Prueba superada\")",
     "opciones": [
       {
         "id": 0,
-        "texto": "Probar el programa completo al final del desarrollo, sin separar sus partes."
+        "salida": "AssertionError"
       },
       {
         "id": 2,
-        "texto": "Verificar que una unidad aislada de código (función o método) produce el resultado esperado."
+        "salida": "Prueba superada"
       },
       {
         "id": 1,
-        "texto": "Revisar manualmente que la interfaz gráfica se vea bien en pantalla."
+        "salida": "5"
       },
       {
         "id": 3,
-        "texto": "Medir el tiempo que tarda el programa en iniciar."
+        "salida": "Nada, el programa falla"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Pruebas Unitarias",
-    "tipo": "Aserción",
-    "titulo": "¿Qué instrucción de Python permite comprobar una condición dentro de una prueba unitaria?",
-    "indicacion": "Una prueba unitaria verifica una condición y falla si esta no se cumple. Selecciona la instrucción adecuada.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Aserciones con assert",
+    "titulo": "Completa las aserciones de la función",
+    "indicacion": "Completa los huecos para que las dos aserciones comparen correctamente y pasen.",
+    "tipoComp": "codigo_completar",
+    "codigo": "def area_rectangulo(base, altura):\n    return base * altura\n\nassert area_rectangulo(4, 5) ___ 20\nassert area_rectangulo(2, 3) == ___\nprint(\"Casos correctos\")",
     "opciones": [
-      {
-        "id": 1,
-        "texto": "print(condicion)"
-      },
-      {
-        "id": 2,
-        "texto": "input(condicion)"
-      },
-      {
-        "id": 0,
-        "texto": "assert condicion, 'mensaje'"
-      },
-      {
-        "id": 3,
-        "texto": "range(condicion)"
-      }
+      [
+        "==",
+        "=",
+        "!=",
+        ">"
+      ],
+      [
+        "6",
+        "5",
+        "3",
+        "9"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "==",
+      "6"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Implementación",
-    "tipo": "Convención de Nombres",
-    "titulo": "¿Con qué convención se nombran las funciones de prueba en pytest?",
-    "indicacion": "pytest descubre automáticamente las pruebas por su nombre. Selecciona el nombre que pytest reconocerá como caso de prueba.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Resultado de unittest",
+    "titulo": "¿Qué resultado reporta unittest?",
+    "indicacion": "El caso de prueba verifica una condición verdadera. Determina el resultado de la ejecución.",
+    "tipoComp": "codigo_salida",
+    "codigo": "import unittest\n\ndef es_mayor_edad(edad):\n    return edad >= 18\n\nclass TestEdad(unittest.TestCase):\n    def test_mayor_edad(self):\n        self.assertTrue(es_mayor_edad(20))\n\nif __name__ == \"__main__\":\n    unittest.main()",
     "opciones": [
       {
         "id": 0,
-        "texto": "def prueba(): "
+        "salida": "FAILED (1 prueba fallida)"
       },
       {
         "id": 1,
-        "texto": "def check(): "
+        "salida": "AssertionError: False is not true"
       },
       {
         "id": 2,
-        "texto": "def verificar(): "
+        "salida": "0 pruebas ejecutadas"
       },
       {
         "id": 3,
-        "texto": "def test_suma(): "
+        "salida": "OK (1 prueba superada)"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Pruebas Unitarias",
-    "tipo": "Caso de Prueba que Pasa",
-    "titulo": "¿Qué imprime este caso de prueba?",
-    "indicacion": "Ejecuta mentalmente el caso de prueba: evalúa la aserción y determina qué muestra print si la prueba supera.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Prueba que No se Ejecuta",
+    "titulo": "Encuentra el error: la prueba no se ejecuta",
+    "indicacion": "El programa ejecuta unittest, pero el caso de prueba nunca corre. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "def suma(a, b):",
+        "label": "import unittest",
         "tipo": "proceso"
       },
       {
-        "label": "return a + b",
+        "label": "class TestRestar(unittest.TestCase):",
         "tipo": "proceso"
       },
       {
-        "label": "assert suma(2, 3) == 5",
+        "label": "    def verificar_resta(self):",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "        self.assertEqual(restar(10, 4), 6)",
         "tipo": "proceso"
       },
       {
-        "label": "print('Prueba superada')",
-        "tipo": "salida"
+        "label": "if __name__ == '__main__':",
+        "tipo": "proceso"
+      },
+      {
+        "label": "    unittest.main()",
+        "tipo": "proceso"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
         "id": 1,
-        "texto": "Prueba superada"
+        "texto": "El método debe llamarse test_verificar_resta: unittest solo ejecuta métodos que empiezan con test."
       },
       {
         "id": 0,
-        "texto": "5"
+        "texto": "restar debe devolver un string."
       },
       {
         "id": 2,
-        "texto": "AssertionError"
+        "texto": "unittest.main() debe ir al inicio del archivo."
       },
       {
         "id": 3,
-        "texto": "suma(2, 3)"
+        "texto": "El código está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Validación",
-    "tipo": "Caso de Prueba que Falla",
-    "titulo": "¿Qué ocurre al ejecutar esta aserción?",
-    "indicacion": "Ejecuta mentalmente el caso de prueba: calcula la división y compara con el valor esperado. Determina el resultado.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "def dividir(a, b):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return a / b",
-        "tipo": "proceso"
-      },
-      {
-        "label": "assert dividir(10, 2) == 4",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print('Prueba superada')",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Aserción que Falla",
+    "titulo": "¿Qué resultado reporta la aserción fallida?",
+    "indicacion": "La función doblar devuelve un valor diferente al esperado. Determina el resultado de unittest.",
+    "tipoComp": "codigo_salida",
+    "codigo": "import unittest\n\ndef doblar(n):\n    return n * 2\n\nclass TestDoblar(unittest.TestCase):\n    def test_doblar(self):\n        self.assertEqual(doblar(7), 15)\n\nif __name__ == \"__main__\":\n    unittest.main()",
+    "opciones": [
       {
         "id": 0,
-        "texto": "5"
-      },
-      {
-        "id": 3,
-        "texto": "AssertionError: la prueba falla porque 10 / 2 es 5 y no 4"
+        "salida": "OK (1 prueba superada)"
       },
       {
         "id": 1,
-        "texto": "La prueba pasa y no muestra nada"
+        "salida": "FAILED (failures=1)"
       },
       {
         "id": 2,
-        "texto": "ZeroDivisionError"
+        "salida": "SyntaxError"
+      },
+      {
+        "id": 3,
+        "salida": "0 pruebas ejecutadas"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Validación",
-    "tipo": "Ejecución de Pruebas",
-    "titulo": "¿Qué resultado muestra pytest al ejecutar la prueba?",
-    "indicacion": "El archivo test_calculadora.py contiene una única prueba válida. Ejecuta mentalmente el comando pytest y determina el resultado.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "def resta(a, b):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return a - b",
-        "tipo": "proceso"
-      },
-      {
-        "label": "def test_resta():",
-        "tipo": "proceso"
-      },
-      {
-        "label": "assert resta(8, 3) == 5",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Comando en la terminal: pytest",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado de pytest",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "0 passed"
-      },
-      {
-        "id": 2,
-        "texto": "2 passed"
-      },
-      {
-        "id": 0,
-        "texto": "1 passed"
-      },
-      {
-        "id": 3,
-        "texto": "1 failed"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Caso de Prueba",
-    "titulo": "Construye el caso de prueba con pytest para la función area_rectangulo",
-    "indicacion": "Ordena los bloques para construir la función y su caso de prueba con pytest, que verifica el área de un rectángulo de 4 por 5.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "def area_rectangulo(base, altura):",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "return base * altura",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "def test_area_rectangulo():",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "assert area_rectangulo(4, 5) == 20",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje con unittest",
-    "titulo": "Construye la prueba unitaria con el módulo unittest",
-    "indicacion": "Ordena los bloques para construir la prueba que verifica la función suma usando la clase TestCase del módulo unittest.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Estructura de un TestCase",
+    "titulo": "Construye el caso de prueba unitaria",
+    "indicacion": "Ordena las líneas para construir una clase de prueba con unittest que verifica la suma.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -540,26 +433,31 @@
       },
       {
         "id": "b3",
-        "texto": "class TestCalculadora(unittest.TestCase):",
+        "texto": "class TestSuma(unittest.TestCase):",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "def test_suma(self):",
+        "texto": "    def test_suma_positivos(self):",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "self.assertEqual(suma(2, 2), 4)",
+        "texto": "        self.assertEqual(sumar(2, 3), 5)",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "unittest.main()",
-        "tipo": "salida"
+        "texto": "if __name__ == '__main__':",
+        "tipo": "proceso"
       },
       {
         "id": "b7",
+        "texto": "    unittest.main()",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -571,96 +469,172 @@
       "b4",
       "b5",
       "b6",
-      "b7"
+      "b7",
+      "b8"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Prueba Sin Verificación",
-    "titulo": "Encuentra la falla: la prueba siempre pasa aunque el IVA sea incorrecto",
-    "indicacion": "El caso de prueba pretende verificar el cálculo del IVA, pero siempre resulta aprobado. Revisa el código e identifica el error.",
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Métodos de unittest",
+    "titulo": "Completa el caso de prueba con unittest",
+    "indicacion": "Completa los huecos para verificar el precio con IVA y ejecutar la suite de pruebas.",
+    "tipoComp": "codigo_completar",
+    "codigo": "import unittest\n\ndef precio_con_iva(precio):\n    return precio * 1.19\n\nclass TestPrecio(unittest.TestCase):\n    def test_iva(self):\n        self.___(precio_con_iva(100), 119)\n\nif __name__ == \"__main__\":\n    ___",
+    "opciones": [
+      [
+        "assertEqual",
+        "assert",
+        "print",
+        "raise"
+      ],
+      [
+        "unittest.main()",
+        "unittest.run()",
+        "main()",
+        "pass"
+      ]
+    ],
+    "correcta": [
+      "assertEqual",
+      "unittest.main()"
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Comparación",
+    "titulo": "Encuentra el error en la aserción",
+    "indicacion": "El programa intenta verificar si 4 es par, pero Python lanza SyntaxError. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "def calcular_iva(precio):",
+        "label": "def es_par(n):",
         "tipo": "proceso"
       },
       {
-        "label": "return precio * 0.19",
+        "label": "    return n % 2 == 0",
         "tipo": "proceso"
       },
       {
-        "label": "def test_calcular_iva():",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print('IVA calculado:', resultado)",
-        "tipo": "salida",
+        "label": "assert es_par(4) = True",
+        "tipo": "proceso",
         "error": true
       }
     ],
     "opciones": [
       {
+        "id": 3,
+        "texto": "En assert se usa == para comparar: '=' asigna y produce SyntaxError."
+      },
+      {
         "id": 0,
-        "texto": "El error es que la función usa return en lugar de print."
+        "texto": "es_par debe devolver un número."
       },
       {
         "id": 1,
-        "texto": "La prueba no tiene ninguna aserción (assert); solo imprime el resultado, por lo que siempre pasa aunque el IVA sea incorrecto. Debe incluir assert resultado == 1900."
+        "texto": "4 no es un número par."
       },
       {
         "id": 2,
-        "texto": "El impuesto del IVA en Colombia es del 16%, no del 19%."
+        "texto": "assert no existe en Python."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Ejecución con pytest",
+    "titulo": "¿Qué resultado reporta pytest?",
+    "indicacion": "El archivo se ejecuta con pytest. Determina cuántas pruebas se ejecutan y su resultado.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def dividir(a, b):\n    return a / b\n\ndef test_dividir():\n    assert dividir(10, 2) == 5\n    assert dividir(9, 3) == 3",
+    "opciones": [
+      {
+        "id": 1,
+        "salida": "2 pruebas: 1 pasa y 1 falla"
+      },
+      {
+        "id": 0,
+        "salida": "1 prueba: pasa correctamente"
+      },
+      {
+        "id": 2,
+        "salida": "2 pruebas: ambas fallan"
       },
       {
         "id": 3,
-        "texto": "La función debe llamarse calcular_iva_precio para que pytest la reconozca."
+        "salida": "Error: ZeroDivisionError"
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Valor Esperado Incorrecto",
-    "titulo": "Encuentra la falla: la aserción falla con un resultado válido",
-    "indicacion": "La función duplicar funciona correctamente, pero la prueba falla. Revisa la aserción e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Función con Aserciones",
+    "titulo": "Construye el programa: probar la función mayor",
+    "indicacion": "Ordena las líneas para definir la función mayor y verificar su comportamiento con aserciones.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "def duplicar(n):",
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "def mayor(a, b):",
         "tipo": "proceso"
       },
       {
-        "label": "return n * 2",
+        "id": "b3",
+        "texto": "    if a > b:",
         "tipo": "proceso"
       },
       {
-        "label": "assert duplicar(4) == 6",
-        "tipo": "salida",
-        "error": true
+        "id": "b4",
+        "texto": "        return a",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "    return b",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "assert mayor(3, 8) == 8",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "assert mayor(10, 2) == 10",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "print('Pruebas superadas')",
+        "tipo": "salida"
+      },
+      {
+        "id": "b9",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El error es que duplicar usa * en lugar de +."
-      },
-      {
-        "id": 1,
-        "texto": "La función duplicar no puede probarse con números enteros."
-      },
-      {
-        "id": 2,
-        "texto": "El valor esperado es incorrecto: duplicar(4) devuelve 8, por lo que la aserción debe ser assert duplicar(4) == 8."
-      },
-      {
-        "id": 3,
-        "texto": "Falta importar pytest antes de usar assert."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7",
+      "b8",
+      "b9"
+    ]
   }
 ];
 
@@ -790,6 +764,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +838,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1245,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1284,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

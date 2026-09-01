@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Buenas Prácticas</title>
+<title>Evaluación Práctica - Buenas Prácticas en Python</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Buenas Prácticas</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Buenas Prácticas en Python</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de buenas prácticas de programación en Python: nombres descriptivos, cumplimiento de PEP 8, comentarios útiles, principio DRY, eliminación de números mágicos y escritura de código legible y mantenible, mediante retos prácticos interactivos.
+          Pon en práctica las buenas prácticas de programación con código Python real: aplica PEP 8, usa nombres descriptivos, escribe comentarios útiles, evita la repetición de código (DRY) y sustituye los números mágicos por constantes. Predice la salida de programas bien escritos, completa nombres y constantes, ordena funciones legibles y corrige las malas prácticas que afectan la mantenibilidad del código.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Buenas Prácticas:</strong> Aplicar nombres descriptivos, PEP 8, comentarios útiles y evitar números mágicos.</li>
-<li><strong>Diseño Lógico:</strong> Refactorizar código duplicado aplicando el principio DRY.</li>
-<li><strong>Reordenamiento y Depuración:</strong> Ensamblar código limpio y detectar malas prácticas.</li>
-<li><strong>Prueba de Escritorio:</strong> Ejecutar mentalmente código legible y determinar su salida.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente código que sigue buenas prácticas y determina qué imprime.</li>
+<li><strong>Completar código:</strong> Llena los huecos con nombres descriptivos y constantes.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla funciones legibles que siguen PEP 8.</li>
+<li><strong>Corregir errores:</strong> Encuentra la mala práctica que afecta la mantenibilidad del código.</li>
           </ul>
         </div>
 
@@ -250,417 +250,349 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Buenas Prácticas",
-    "tipo": "Nombre Descriptivo",
-    "titulo": "¿Cuál de los siguientes nombres de variable cumple la buena práctica de ser descriptivo?",
-    "indicacion": "Un buen nombre de variable debe comunicar qué dato almacena sin necesidad de comentarios adicionales. Selecciona el nombre más descriptivo.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Nombres Descriptivos",
+    "titulo": "¿Qué imprime el programa con nombres descriptivos?",
+    "indicacion": "Ejecuta mentalmente el programa y determina qué muestra print en pantalla.",
+    "tipoComp": "codigo_salida",
+    "codigo": "base = 1500\ndescuento = 0.10\ntotal = base - (base * descuento)\nprint(total)",
     "opciones": [
       {
-        "id": 0,
-        "texto": "x"
+        "id": 1,
+        "salida": "1500.0"
       },
       {
-        "id": 1,
-        "texto": "total_ventas"
+        "id": 0,
+        "salida": "1350.0"
       },
       {
         "id": 2,
-        "texto": "t"
+        "salida": "1490.0"
       },
       {
         "id": 3,
-        "texto": "dato1"
+        "salida": "135"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Buenas Prácticas",
-    "tipo": "Números Mágicos",
-    "titulo": "¿Qué práctica reemplaza el uso de valores literales como 0.19 dentro del código?",
-    "indicacion": "Los valores que aparecen sueltos en el código y cuyo significado no es evidente se llaman números mágicos. Selecciona la buena práctica que los evita.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Constante en Lugar de Número Mágico",
+    "titulo": "Completa el código usando una constante",
+    "indicacion": "Completa los huecos para que el programa use la constante IVA en lugar de repetir el número 0.19.",
+    "tipoComp": "codigo_completar",
+    "codigo": "IVA = 0.19\nprecio = 80000\nvalor_iva = precio * ___\ntotal = precio ___ valor_iva\nprint(total)",
     "opciones": [
-      {
-        "id": 0,
-        "texto": "Duplicar el código cada vez que se necesite el valor."
-      },
-      {
-        "id": 1,
-        "texto": "Eliminar todos los comentarios del programa."
-      },
-      {
-        "id": 2,
-        "texto": "Definir el valor en una constante con nombre como IVA = 0.19."
-      },
-      {
-        "id": 3,
-        "texto": "Escribir el valor con más decimales."
-      }
+      [
+        "IVA",
+        "0.19",
+        "19",
+        "valor_iva"
+      ],
+      [
+        "+",
+        "-",
+        "*",
+        "/"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "IVA",
+      "+"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Buenas Prácticas",
-    "tipo": "Estilo PEP 8",
-    "titulo": "Según PEP 8, ¿cuántos espacios se utilizan para la indentación de un bloque en Python?",
-    "indicacion": "PEP 8 es la guía de estilo oficial de Python y define la cantidad de espacios recomendada para indentar los bloques. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Función Reutilizable (DRY)",
+    "titulo": "¿Qué imprime la función reutilizable?",
+    "indicacion": "El programa evita código duplicado con una función. Determina la salida exacta.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def calcular_total(precio, descuento):\n    return precio - (precio * descuento)\n\ntotal1 = calcular_total(1000, 0.10)\ntotal2 = calcular_total(2000, 0.05)\nprint(total1, total2)",
     "opciones": [
       {
         "id": 0,
-        "texto": "2"
+        "salida": "1000.0 2000.0"
       },
       {
         "id": 1,
-        "texto": "1"
-      },
-      {
-        "id": 2,
-        "texto": "8"
+        "salida": "900 1900"
       },
       {
         "id": 3,
-        "texto": "4"
+        "salida": "900.0 100.0"
+      },
+      {
+        "id": 2,
+        "salida": "900.0 1900.0"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Constantes con Nombre",
-    "titulo": "¿Qué valor imprime el programa que usa una constante con nombre?",
-    "indicacion": "Ejecuta mentalmente el código: la constante DESCUENTO evita un número mágico y se aplica sobre el precio. Determina el total que muestra print.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Número Mágico",
+    "titulo": "Encuentra la mala práctica del programa",
+    "indicacion": "El programa funciona, pero viola una buena práctica de mantenibilidad. ¿Cuál es?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "DESCUENTO = 0.10 (constante con nombre)",
+        "label": "valor = 250000",
         "tipo": "proceso"
       },
       {
-        "label": "precio = 50000",
-        "tipo": "proceso"
+        "label": "descuento = valor * 0.10",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "total = 50000 - (50000 * 0.10) = 45000",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(total)",
+        "label": "print(descuento)",
         "tipo": "salida"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
-        "id": 2,
-        "texto": "45000"
+        "id": 1,
+        "texto": "El 0.10 es un número mágico: debe definirse la constante DESCUENTO = 0.10 para mejorar la legibilidad."
       },
       {
         "id": 0,
-        "texto": "5000"
+        "texto": "La variable valor debe llamarse x."
       },
       {
-        "id": 1,
-        "texto": "55000"
+        "id": 2,
+        "texto": "La variable descuento debe llamarse d."
       },
       {
         "id": 3,
-        "texto": "40000"
+        "texto": "El código está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Función sin Duplicación",
-    "titulo": "¿Qué imprime el programa al llamar la función que calcula el IVA?",
-    "indicacion": "La función encapsula el cálculo del IVA para evitar duplicar código en varios puntos del programa. Determina el valor que muestra print.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "def calcular_iva(valor):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return valor * 0.19",
-        "tipo": "proceso"
-      },
-      {
-        "label": "calcular_iva(20000) → 20000 * 0.19 = 3800",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(calcular_iva(20000))",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "20000"
-      },
+    "categoria": "Predecir la Salida",
+    "tipo": "Comentario y Código Legible",
+    "titulo": "¿Qué imprime el programa comentado?",
+    "indicacion": "El programa usa comentarios y nombres claros. Determina la salida exacta.",
+    "tipoComp": "codigo_salida",
+    "codigo": "# Calcular el area de un rectangulo\nancho = 8\nalto = 5\narea = ancho * alto\nprint(\"Area:\", area)",
+    "opciones": [
       {
         "id": 0,
-        "texto": "3800"
-      },
-      {
-        "id": 2,
-        "texto": "38000"
+        "salida": "Area: 8"
       },
       {
         "id": 3,
-        "texto": "16200"
+        "salida": "Area: 40"
+      },
+      {
+        "id": 1,
+        "salida": "Area: 13"
+      },
+      {
+        "id": 2,
+        "salida": "40"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Docstring y Nombres Claros",
-    "titulo": "¿Qué valor retorna la función maximo con los argumentos 7 y 12?",
-    "indicacion": "Ejecuta mentalmente el código: la función compara los dos parámetros y retorna el mayor. Ten en cuenta el docstring que documenta su propósito.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "def maximo(a, b):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "docstring: 'Retorna el mayor de dos números.'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "¿7 > 12? → False",
-        "tipo": "decision"
-      },
-      {
-        "label": "return b → retorna 12",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(maximo(7, 12))",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "7"
-      },
-      {
-        "id": 2,
-        "texto": "19"
-      },
-      {
-        "id": 1,
-        "texto": "12"
-      },
-      {
-        "id": 3,
-        "texto": "None"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje con Constantes",
-    "titulo": "Construye el programa que calcula el promedio de tres notas",
-    "indicacion": "Ordena los bloques para construir el programa que define la constante N_NOTAS, asigna tres notas con nombres descriptivos, calcula el promedio y muestra el resultado.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Función con Nombres Claros",
+    "titulo": "Construye el programa: calcular el IMC",
+    "indicacion": "Ordena las líneas para construir el programa que calcula el índice de masa corporal con una función.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "texto": "def calcular_imc(peso, altura):",
+        "tipo": "proceso"
       },
       {
         "id": "b2",
-        "texto": "N_NOTAS = 3",
+        "texto": "    return peso / (altura ** 2)",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "nota1 = 4.5",
+        "texto": "imc = calcular_imc(70, 1.75)",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "nota2 = 3.0",
-        "tipo": "proceso"
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b5",
-        "texto": "nota3 = 5.0",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "promedio = (nota1 + nota2 + nota3) / N_NOTAS",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "print(f'Promedio: {promedio}')",
+        "texto": "print(imc)",
         "tipo": "salida"
       },
       {
-        "id": "b8",
+        "id": "b6",
         "texto": "Fin",
         "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
+      "b4",
       "b1",
       "b2",
       "b3",
-      "b4",
       "b5",
-      "b6",
-      "b7",
-      "b8"
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Nombres Descriptivos",
+    "titulo": "Completa los nombres descriptivos",
+    "indicacion": "Completa los huecos con nombres que describan claramente la función y la variable.",
+    "tipoComp": "codigo_completar",
+    "codigo": "def ___(horas, valor_hora):\n    return horas * valor_hora\n\n___ = calcular_salario(40, 12000)\nprint(salario_mensual)",
+    "opciones": [
+      [
+        "calcular_salario",
+        "def",
+        "sumar",
+        "proceso"
+      ],
+      [
+        "salario_mensual",
+        "x",
+        "total",
+        "s"
+      ]
+    ],
+    "correcta": [
+      "calcular_salario",
+      "salario_mensual"
     ]
   },
   {
     "id": 8,
-    "categoria": "Diseño Lógico",
-    "tipo": "Refactorización DRY",
-    "titulo": "Construye la función reutilizable que evita código duplicado",
-    "indicacion": "Ordena los bloques para construir el programa que aplica el principio DRY: define una única función para calcular el área del rectángulo y la reutiliza para dos rectángulos.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "def area_rectangulo(base, altura):",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "return base * altura",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "area1 = area_rectangulo(4, 6)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "area2 = area_rectangulo(3, 5)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "print(area1 + area2)",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Nombre Inválido",
-    "titulo": "Encuentra la falla: el nombre de la variable no es válido en Python",
-    "indicacion": "El programa pretende saludar al usuario por su nombre, pero al ejecutarlo Python lanza SyntaxError. Revisa el código e identifica el error.",
+    "categoria": "Corregir Errores",
+    "tipo": "Código Duplicado (DRY)",
+    "titulo": "Encuentra la violación de DRY",
+    "indicacion": "El programa calcula impuestos, pero repite la misma operación. ¿Cuál es la mala práctica?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "1er_nombre = input('Nombre: ')",
+        "label": "imp1 = 100000 * 0.19",
+        "tipo": "proceso"
+      },
+      {
+        "label": "imp2 = 50000 * 0.19",
         "tipo": "proceso",
         "error": true
       },
       {
-        "label": "print('Hola, ' + 1er_nombre)",
+        "label": "print(imp1 + imp2)",
         "tipo": "salida"
       }
     ],
     "opciones": [
       {
+        "id": 2,
+        "texto": "La operación con 0.19 se repite (viola DRY): debe crearse la función calcular_impuesto(valor)."
+      },
+      {
         "id": 0,
-        "texto": "La instrucción input debe ir al final del programa."
+        "texto": "La variable imp2 está mal escrita."
       },
       {
         "id": 1,
-        "texto": "1er_nombre no es un nombre válido: los nombres de variable no pueden comenzar con un dígito; se debe usar primer_nombre."
-      },
-      {
-        "id": 2,
-        "texto": "El error está en print porque usa comillas simples."
+        "texto": "Los valores deben imprimirse en una sola línea."
       },
       {
         "id": 3,
-        "texto": "El código está correcto y se ejecuta sin problemas."
+        "texto": "El código está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Función con Nombre Descriptivo",
+    "titulo": "¿Qué imprime la función obtener_edad_minima?",
+    "indicacion": "La función sigue las convenciones de nomenclatura de Python. Determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def obtener_edad_minima():\n    return 18\n\nprint(\"Edad minima:\", obtener_edad_minima())",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "18"
+      },
+      {
+        "id": 1,
+        "salida": "Edad minima: 18"
+      },
+      {
+        "id": 2,
+        "salida": "Edad minima: obtener_edad_minima"
+      },
+      {
+        "id": 3,
+        "salida": "Error: la función no existe"
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Mayúsculas y Minúsculas",
-    "titulo": "Encuentra la falla: la llamada a la función no coincide con su definición",
-    "indicacion": "El programa define la función calcular_iva y luego la invoca con otra escritura, por lo que Python lanza NameError. Revisa el código e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Constante y Nombres Descriptivos",
+    "titulo": "Construye el programa: calcular intereses",
+    "indicacion": "Ordena las líneas para calcular el interés de un ahorro usando una constante y nombres descriptivos.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "def calcular_iva(valor):",
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "TASA_INTERES = 0.04",
         "tipo": "proceso"
       },
       {
-        "label": "return valor * 0.19",
+        "id": "b3",
+        "texto": "ahorro_inicial = 500000",
         "tipo": "proceso"
       },
       {
-        "label": "print(Calcular_iva(20000))",
-        "tipo": "salida",
-        "error": true
+        "id": "b4",
+        "texto": "interes = ahorro_inicial * TASA_INTERES",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "print(interes)",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El programa está correcto; Python ignora las mayúsculas."
-      },
-      {
-        "id": 1,
-        "texto": "El porcentaje debe escribirse como 19 en lugar de 0.19."
-      },
-      {
-        "id": 2,
-        "texto": "La función debe invocarse con el mismo nombre y las mismas mayúsculas: calcular_iva(20000); Python distingue mayúsculas de minúsculas."
-      },
-      {
-        "id": 3,
-        "texto": "print no puede mostrar el resultado de una función."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   }
 ];
 
@@ -790,6 +722,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +796,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1203,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1242,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

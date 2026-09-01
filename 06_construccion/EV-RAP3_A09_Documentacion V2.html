@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Documentación</title>
+<title>Evaluación Práctica - Documentación de Software</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Documentación</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Documentación de Software</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la documentación de software: docstrings, comentarios, archivo README, documentación de funciones, tipos de documentación y herramientas de generación automática, mediante retos prácticos interactivos.
+          Documenta código Python de forma profesional: escribe docstrings correctos para las funciones, redacta comentarios útiles, estructura el README del proyecto y consulta la documentación generada con help() y pydoc. Predice qué muestra la documentación, completa docstrings y secciones del README, ordena la estructura documental y corrige la documentación deficiente o incorrecta.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Documentación:</strong> Aplicar docstrings y documentar correctamente las funciones del código.</li>
-<li><strong>Buenas Prácticas:</strong> Diferenciar comentarios de documentación y mantener el código legible.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar funciones documentadas y archivos README completos.</li>
-<li><strong>Depuración y Prueba de Escritorio:</strong> Detectar errores de documentación y verificar la salida de herramientas como pydoc.</li>
+            <li><strong>Predecir la salida:</strong> Determina qué muestra help(), pydoc o la documentación generada.</li>
+<li><strong>Completar código:</strong> Llena los huecos de docstrings y secciones del README.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla una función documentada y la estructura del README.</li>
+<li><strong>Corregir errores:</strong> Encuentra la documentación incorrecta o incompleta.</li>
           </ul>
         </div>
 
@@ -250,230 +250,163 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Documentación",
-    "tipo": "Concepto",
-    "titulo": "¿Qué es un docstring en Python?",
-    "indicacion": "Selecciona la definición correcta del concepto de docstring en el lenguaje Python.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Salida de help()",
+    "titulo": "¿Qué muestra help() de la función?",
+    "indicacion": "La función tiene un docstring. Determina qué imprime help() al consultarla.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def calcular_promedio(notas):\n    \"\"\"Calcula el promedio de una lista de notas.\"\"\"\n    return sum(notas) / len(notas)\n\nhelp(calcular_promedio)",
     "opciones": [
       {
         "id": 0,
-        "texto": "Un comentario que comienza con # y solo ocupa una línea."
-      },
-      {
-        "id": 1,
-        "texto": "Una cadena de texto entre comillas triples que documenta un módulo, función o clase y es accesible con __doc__."
+        "salida": "[5.0, 4.0, 3.0]"
       },
       {
         "id": 2,
-        "texto": "Una variable especial que guarda la versión del programa."
+        "salida": "Calcula el promedio de una lista de notas."
+      },
+      {
+        "id": 1,
+        "salida": "calcular_promedio"
       },
       {
         "id": 3,
-        "texto": "Una instrucción que detiene la ejecución del programa."
+        "salida": "Nada, help no existe"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Documentación",
-    "tipo": "Archivo README",
-    "titulo": "¿Cuál de estos elementos corresponde a un README bien elaborado?",
-    "indicacion": "El README es la puerta de entrada del proyecto. Selecciona el contenido que debe incluir un README completo.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Docstring de Función",
+    "titulo": "Completa el docstring de la función",
+    "indicacion": "Completa los huecos para que el docstring quede correctamente delimitado con comillas triples.",
+    "tipoComp": "codigo_completar",
+    "codigo": "def calcular_descuento(precio, porcentaje):\n    ___\n    Calcula el valor del descuento.\n\n    Args:\n        precio (float): Valor del producto.\n        porcentaje (float): Porcentaje a descontar.\n\n    Returns:\n        float: Valor del descuento.\n    ___\n    return precio * porcentaje / 100",
     "opciones": [
-      {
-        "id": 0,
-        "texto": "Únicamente el nombre del archivo principal."
-      },
-      {
-        "id": 1,
-        "texto": "Únicamente las contraseñas de las bases de datos del proyecto."
-      },
-      {
-        "id": 3,
-        "texto": "Descripción del proyecto, requisitos de instalación, ejemplos de uso y licencia."
-      },
-      {
-        "id": 2,
-        "texto": "Únicamente el historial de chat del equipo de desarrollo."
-      }
+      [
+        "\"\"\"",
+        "'''",
+        "#",
+        "//"
+      ],
+      [
+        "\"\"\"",
+        "'''",
+        "#",
+        "pass"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "\"\"\"",
+      "\"\"\""
+    ]
   },
   {
     "id": 3,
-    "categoria": "Buenas Prácticas",
-    "tipo": "Comentario vs Docstring",
-    "titulo": "¿Cuál es la diferencia correcta entre un comentario y un docstring?",
-    "indicacion": "Ambos elementos documentan el código, pero tienen propósitos distintos. Selecciona la afirmación correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Descripción Generada por pydoc",
+    "titulo": "¿Qué descripción muestra pydoc del módulo?",
+    "indicacion": "El módulo se documenta con python -m pydoc. Determina qué descripción se muestra para calculadora.",
+    "tipoComp": "codigo_salida",
+    "codigo": "# archivo: calculadora.py\n\"\"\"Módulo con operaciones básicas de calculadora.\"\"\"\n\ndef sumar(a, b):\n    \"\"\"Suma dos números y devuelve el resultado.\"\"\"\n    return a + b",
     "opciones": [
       {
-        "id": 1,
-        "texto": "El comentario se usa solo en HTML y el docstring solo en Java."
+        "id": 0,
+        "salida": "Suma dos números y devuelve el resultado."
       },
       {
         "id": 2,
-        "texto": "El comentario se ejecuta y el docstring no."
+        "salida": "calculadora.py"
       },
       {
         "id": 3,
-        "texto": "Ambos son exactamente iguales y pueden usarse de la misma forma."
+        "salida": "Error: el módulo no está documentado"
       },
       {
-        "id": 0,
-        "texto": "El comentario (#) explica una línea dentro del código y el docstring (\"\"\"...\"\"\") documenta el módulo, función o clase y puede consultarse con __doc__."
+        "id": 1,
+        "salida": "Módulo con operaciones básicas de calculadora."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Consulta de Documentación",
-    "titulo": "¿Qué imprime print(saludar.__doc__)?",
-    "indicacion": "La función saludar tiene un docstring. Ejecuta mentalmente el código y determina qué muestra print al consultar __doc__.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Docstring sin Cerrar",
+    "titulo": "Encuentra el error en la documentación",
+    "indicacion": "El programa lanza SyntaxError al ejecutarse. ¿Cuál es el error de documentación?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "def saludar(nombre):",
+        "label": "def calcular_iva(valor):",
         "tipo": "proceso"
       },
       {
-        "label": "\"\"\"Devuelve un saludo personalizado.\"\"\"",
-        "tipo": "proceso"
+        "label": "    \"\"\"Calcula el IVA del 19%.",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "return 'Hola, ' + nombre",
+        "label": "    return valor * 0.19",
         "tipo": "proceso"
-      },
-      {
-        "label": "print(saludar.__doc__)",
-        "tipo": "salida"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
-        "id": 2,
-        "texto": "Devuelve un saludo personalizado."
+        "id": 1,
+        "texto": "El docstring no se cierra: falta \"\"\" al final de la documentación."
       },
       {
         "id": 0,
-        "texto": "Hola, Ana"
+        "texto": "La función debe llamarse calcular."
       },
       {
-        "id": 1,
-        "texto": "None"
+        "id": 2,
+        "texto": "El 0.19 debe ir entre comillas."
       },
       {
         "id": 3,
-        "texto": "saludar"
+        "texto": "El código está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución de Función Documentada",
-    "titulo": "¿Qué imprime el programa con la función documentada area_triangulo?",
-    "indicacion": "Ejecuta mentalmente la función documentada con base 6 y altura 4, y determina el valor que muestra print.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "def area_triangulo(base, altura):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "\"\"\"Calcula el área de un triángulo.\"\"\"",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return (base * altura) / 2",
-        "tipo": "proceso"
-      },
-      {
-        "label": "area_triangulo(6, 4) → 24 / 2",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(area_triangulo(6, 4))",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "(6 * 4) / 2"
-      },
+    "categoria": "Predecir la Salida",
+    "tipo": "Comentario vs Docstring",
+    "titulo": "¿Qué imprime area_circulo.__doc__?",
+    "indicacion": "La función solo tiene un comentario, no un docstring. Determina la salida exacta.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def area_circulo(radio):\n    # Calcula el area usando la formula A = pi * r^2\n    return 3.1416 * radio ** 2\n\nprint(area_circulo.__doc__)",
+    "opciones": [
       {
         "id": 0,
-        "texto": "12.0"
+        "salida": "Calcula el area usando la formula A = pi * r^2"
       },
       {
         "id": 2,
-        "texto": "24.0"
+        "salida": "None"
+      },
+      {
+        "id": 1,
+        "salida": "3.1416"
       },
       {
         "id": 3,
-        "texto": "El docstring completo"
+        "salida": "Error: AttributeError"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Documentación",
-    "tipo": "Generación Automática",
-    "titulo": "¿Qué genera el comando python -m pydoc calculadora?",
-    "indicacion": "El archivo calculadora.py contiene docstrings en cada función. Ejecuta mentalmente el comando en la terminal y determina la salida.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "calculadora.py con docstring en cada función",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Comando en la terminal: python -m pydoc calculadora",
-        "tipo": "proceso"
-      },
-      {
-        "label": "pydoc lee los docstrings del archivo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Salida generada por pydoc",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Un error de sintaxis"
-      },
-      {
-        "id": 1,
-        "texto": "Una imagen con el diagrama del proyecto"
-      },
-      {
-        "id": 3,
-        "texto": "Una página de documentación generada automáticamente a partir de los docstrings"
-      },
-      {
-        "id": 2,
-        "texto": "La ejecución de la calculadora"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Función Documentada",
-    "titulo": "Construye la función documentada calcular_descuento",
-    "indicacion": "Ordena los bloques para construir la función que aplica un porcentaje de descuento a un precio, con su docstring correspondiente.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Función Documentada",
+    "titulo": "Construye la función con su docstring",
+    "indicacion": "Ordena las líneas para construir la función saludar con su docstring y su llamada.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -483,26 +416,31 @@
       },
       {
         "id": "b2",
-        "texto": "def calcular_descuento(precio, porcentaje):",
+        "texto": "def saludar(nombre):",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "\"\"\"Aplica un porcentaje de descuento a un precio y retorna el valor final.\"\"\"",
+        "texto": "    \"\"\"Saluda al usuario por su nombre.\"\"\"",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "descuento = precio * (porcentaje / 100)",
+        "texto": "    return 'Hola, ' + nombre",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "return precio - descuento",
+        "texto": "mensaje = saludar('Ana')",
         "tipo": "proceso"
       },
       {
         "id": "b6",
+        "texto": "print(mensaje)",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -513,15 +451,113 @@
       "b3",
       "b4",
       "b5",
-      "b6"
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Secciones del README",
+    "titulo": "Completa el README del proyecto",
+    "indicacion": "Completa los huecos para que el README quede con la sección y el comando correctos.",
+    "tipoComp": "codigo_completar",
+    "codigo": "# Proyecto: Sistema de Notas\n\n## ___\nInstrucciones para instalar las dependencias del proyecto.\n\n## Uso\n___",
+    "opciones": [
+      [
+        "Instalación",
+        "Autor",
+        "Licencia",
+        "Créditos"
+      ],
+      [
+        "python main.py",
+        "pip install",
+        "git commit",
+        "exit()"
+      ]
+    ],
+    "correcta": [
+      "Instalación",
+      "python main.py"
     ]
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de README",
-    "titulo": "Construye el archivo README del proyecto Sistema de Ventas",
-    "indicacion": "Ordena los bloques para construir un README completo que describa el proyecto, sus requisitos y la forma de ejecutarlo.",
+    "categoria": "Corregir Errores",
+    "tipo": "Comentario Engañoso",
+    "titulo": "Encuentra el error de documentación",
+    "indicacion": "El código funciona, pero la documentación no describe lo que hace. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "def calcular_total(precio, cantidad):",
+        "tipo": "proceso"
+      },
+      {
+        "label": "    # Suma el precio y la cantidad",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "    return precio * cantidad",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "El comentario no describe lo que hace el código: dice sumar pero el código multiplica."
+      },
+      {
+        "id": 0,
+        "texto": "La función debe llamarse sumar."
+      },
+      {
+        "id": 1,
+        "texto": "precio y cantidad deben ser strings."
+      },
+      {
+        "id": 3,
+        "texto": "El código está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Primera Línea del Docstring",
+    "titulo": "¿Qué imprime la primera línea del docstring?",
+    "indicacion": "El docstring tiene varias líneas. Determina qué imprime splitlines()[0].",
+    "tipoComp": "codigo_salida",
+    "codigo": "def registrar_venta(producto, cantidad):\n    \"\"\"Registra una venta en el inventario.\n\n    Args:\n        producto (str): Nombre del producto.\n        cantidad (int): Unidades vendidas.\n\n    Returns:\n        bool: True si la venta fue registrada.\n    \"\"\"\n    return True\n\nprint(registrar_venta.__doc__.splitlines()[0])",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "True"
+      },
+      {
+        "id": 3,
+        "salida": "Registra una venta en el inventario."
+      },
+      {
+        "id": 1,
+        "salida": "Args:"
+      },
+      {
+        "id": 2,
+        "salida": "bool: True si la venta fue registrada."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Ordenar Líneas",
+    "tipo": "Estructura del README",
+    "titulo": "Construye la estructura del README",
+    "indicacion": "Ordena las líneas para construir el README del proyecto Sistema de Notas.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -531,7 +567,7 @@
       },
       {
         "id": "b2",
-        "texto": "# Sistema de Ventas",
+        "texto": "# Sistema de Notas",
         "tipo": "proceso"
       },
       {
@@ -541,17 +577,17 @@
       },
       {
         "id": "b4",
-        "texto": "Aplicación para registrar productos y calcular el total de la venta.",
+        "texto": "Aplicación para registrar notas de aprendices.",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "## Requisitos",
+        "texto": "## Instalación",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Python 3.11 o superior.",
+        "texto": "pip install -r requirements.txt",
         "tipo": "proceso"
       },
       {
@@ -562,7 +598,7 @@
       {
         "id": "b8",
         "texto": "python main.py",
-        "tipo": "salida"
+        "tipo": "proceso"
       },
       {
         "id": "b9",
@@ -581,94 +617,6 @@
       "b8",
       "b9"
     ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Docstring Mal Ubicado",
-    "titulo": "Encuentra la falla: la función no queda documentada",
-    "indicacion": "Al consultar __doc__ de la función sumar se obtiene None. Revisa el código e identifica por qué la documentación no se registra.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "def sumar(a, b):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return a + b",
-        "tipo": "proceso"
-      },
-      {
-        "label": "\"\"\"Suma dos números y retorna el resultado.\"\"\"",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "print(sumar.__doc__)",
-        "tipo": "salida"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El programa no puede ejecutarse porque Python no permite cadenas sueltas."
-      },
-      {
-        "id": 2,
-        "texto": "El docstring quedó fuera de la función; debe ir en la primera línea del cuerpo, justo después de def sumar(a, b):, para que __doc__ lo registre."
-      },
-      {
-        "id": 1,
-        "texto": "El error es que la función debe llamarse calcular en lugar de sumar."
-      },
-      {
-        "id": 3,
-        "texto": "Falta escribir un comentario con # antes de la definición de la función."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Comentario en Lugar de Docstring",
-    "titulo": "Encuentra la falla: la documentación de area_circulo no aparece",
-    "indicacion": "Al consultar area_circulo.__doc__ el resultado es None. Revisa el código e identifica el error de documentación.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "def area_circulo(radio):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "# Calcula el área de un círculo.",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "return 3.1416 * radio ** 2",
-        "tipo": "proceso"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El error es que 3.1416 debería escribirse como 3,1416."
-      },
-      {
-        "id": 2,
-        "texto": "La función no retorna nada, por eso la documentación no se ve."
-      },
-      {
-        "id": 1,
-        "texto": "El comentario con # no es un docstring; __doc__ queda vacío (None). Debe usarse una cadena entre comillas triples como primera línea de la función."
-      },
-      {
-        "id": 3,
-        "texto": "El error es que falta importar el módulo math."
-      }
-    ],
-    "correcta": 2
   }
 ];
 
@@ -798,6 +746,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -857,6 +820,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1124,6 +1227,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1157,6 +1266,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

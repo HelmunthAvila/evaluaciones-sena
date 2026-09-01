@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en las estructuras de control de Python: condicionales if/elif/else, ciclos for y while, instrucciones break y continue, operadores de comparación y bucles anidados, mediante retos prácticos interactivos.
+          Pon en práctica las estructuras de control con código real: predice la salida exacta de programas con if, elif, else, for y while, completa los huecos de condiciones y ciclos, ordena las líneas de programas con control de flujo y corrige los errores de lógica e indentación que reporta el intérprete. Sin teoría: aquí se demuestra programando ciclos y condiciones reales.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Lógica Condicional:</strong> if/elif/else y operadores de comparación.</li>
-<li><strong>Estructuras de Ciclo:</strong> for, while, break y continue.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar programas con condicionales y ciclos.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores de lógica en condicionales y ciclos.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente condiciones y ciclos y determina qué imprime.</li>
+<li><strong>Completar código:</strong> Llena los huecos de condiciones y bucles.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla el orden correcto de un programa con control de flujo.</li>
+<li><strong>Corregir errores:</strong> Encuentra el error de lógica o sintaxis que reporta el intérprete.</li>
           </ul>
         </div>
 
@@ -250,320 +250,189 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Lógica Condicional",
-    "tipo": "Estructura Condicional",
-    "titulo": "¿Qué estructura ejecuta un bloque solo cuando una condición es verdadera?",
-    "indicacion": "Las estructuras de control permiten decidir qué instrucciones se ejecutan. Selecciona la estructura condicional que evalúa una condición antes de ejecutar un bloque.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Condicional if/elif/else",
+    "titulo": "¿Qué imprime la evaluación de la nota?",
+    "indicacion": "Ejecuta mentalmente la estructura condicional con la nota dada y determina qué mensaje se imprime.",
+    "tipoComp": "codigo_salida",
+    "codigo": "nota = 7.5\nif nota >= 9.0:\n    print(\"Sobresaliente\")\nelif nota >= 6.0:\n    print(\"Aprobado\")\nelse:\n    print(\"Reprobado\")",
     "opciones": [
       {
         "id": 0,
-        "texto": "for"
-      },
-      {
-        "id": 3,
-        "texto": "if"
+        "salida": "Sobresaliente"
       },
       {
         "id": 1,
-        "texto": "while"
+        "salida": "Aprobado"
       },
       {
         "id": 2,
-        "texto": "print"
+        "salida": "Reprobado"
+      },
+      {
+        "id": 3,
+        "salida": "Error: nota no definida"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Estructuras de Ciclo",
-    "tipo": "Instrucción break",
-    "titulo": "¿Qué efecto tiene la instrucción break dentro de un ciclo?",
-    "indicacion": "Dentro de un ciclo for o while se pueden usar instrucciones especiales. Selecciona el efecto correcto de la instrucción break.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Ciclo for con range",
+    "titulo": "Completa el ciclo que imprime los números pares",
+    "indicacion": "Completa los huecos para que el ciclo for recorra del 2 al 5 e imprima solo los números pares.",
+    "tipoComp": "codigo_completar",
+    "codigo": "for i in ___(2, 6):\n    if i ___ 2 == 0:\n        print(i, end=\" \")",
     "opciones": [
-      {
-        "id": 0,
-        "texto": "Salta a la siguiente iteración sin terminar el ciclo."
-      },
-      {
-        "id": 2,
-        "texto": "Reinicia el ciclo desde el principio."
-      },
-      {
-        "id": 1,
-        "texto": "Detiene el ciclo por completo y continúa con la siguiente línea después del ciclo."
-      },
-      {
-        "id": 3,
-        "texto": "Repite la iteración actual."
-      }
+      [
+        "range",
+        "loop",
+        "cycle",
+        "repeat"
+      ],
+      [
+        "%",
+        "/",
+        "//",
+        "=="
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "range",
+      "%"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Lógica Condicional",
-    "tipo": "Operador de Comparación",
-    "titulo": "¿Qué operador verifica si dos valores son diferentes en Python?",
-    "indicacion": "Los operadores de comparación devuelven True o False. Selecciona el operador que comprueba que dos valores son diferentes.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Ciclo while",
+    "titulo": "¿Qué imprime el ciclo while?",
+    "indicacion": "Sigue el ciclo while: suma los valores de 1 a 5 y muestra el acumulador. Determina la salida exacta.",
+    "tipoComp": "codigo_salida",
+    "codigo": "contador = 1\nsuma = 0\nwhile contador <= 5:\n    suma += contador\n    contador += 1\nprint(suma)",
     "opciones": [
       {
         "id": 0,
-        "texto": "="
+        "salida": "5"
       },
       {
         "id": 1,
-        "texto": "<>"
+        "salida": "10"
       },
       {
         "id": 3,
-        "texto": "=<"
+        "salida": "20"
       },
       {
         "id": 2,
-        "texto": "!="
+        "salida": "15"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Estructuras de Ciclo",
-    "tipo": "Ciclo for",
-    "titulo": "Prueba de escritorio: ciclo for con range",
-    "indicacion": "Ejecuta mentalmente el siguiente código y determina qué valores imprime en pantalla.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Indentación",
+    "titulo": "Encuentra el error que reporta el intérprete",
+    "indicacion": "El programa pretende imprimir los números del 0 al 2, pero Python lanza IndentationError: expected an indented block. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
         "label": "for i in range(3):",
         "tipo": "proceso"
       },
       {
-        "label": "    print(i)",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "print(i)  # IndentationError",
+        "tipo": "proceso",
+        "error": true
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
         "id": 0,
-        "texto": "0, 1, 2"
+        "texto": "La línea print(i) debe estar indentada (con sangría) dentro del for: Python exige la sangría para delimitar el bloque del ciclo."
       },
       {
         "id": 1,
-        "texto": "1, 2, 3"
+        "texto": "range no puede usarse con un solo argumento."
       },
       {
         "id": 2,
-        "texto": "0, 1, 2, 3"
+        "texto": "El ciclo for debe cerrarse con la palabra fin."
       },
       {
         "id": 3,
-        "texto": "Error: la variable i no está definida"
+        "texto": "El programa está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Lógica Condicional",
-    "tipo": "Estructura if/elif/else",
-    "titulo": "Prueba de escritorio: cadena if/elif/else",
-    "indicacion": "El aprendiz ejecuta el programa con calificacion = 8.5. Recorre las condiciones mentalmente y determina qué mensaje se muestra.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "calificacion = 8.5",
-        "tipo": "proceso"
-      },
-      {
-        "label": "if calificacion >= 9:",
-        "tipo": "decision"
-      },
-      {
-        "label": "    print('Sobresaliente')",
-        "tipo": "salida"
-      },
-      {
-        "label": "elif calificacion >= 7:",
-        "tipo": "decision"
-      },
-      {
-        "label": "    print('Aprobado')",
-        "tipo": "salida"
-      },
-      {
-        "label": "else:",
-        "tipo": "proceso"
-      },
-      {
-        "label": "    print('Reprobado')",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Sentencia break",
+    "titulo": "¿Qué imprime el ciclo con break?",
+    "indicacion": "El ciclo for recorre del 1 al 9, pero break interrumpe el ciclo cuando i es 5. Determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": "for i in range(1, 10):\n    if i == 5:\n        break\n    print(i)",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Sobresaliente"
-      },
-      {
-        "id": 2,
-        "texto": "Aprobado"
+        "salida": "1 2 3 4"
       },
       {
         "id": 1,
-        "texto": "Reprobado"
+        "salida": "1\n2\n3\n4"
+      },
+      {
+        "id": 2,
+        "salida": "1 2 3 4 5"
       },
       {
         "id": 3,
-        "texto": "Error de comparación"
+        "salida": "5"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Estructuras de Ciclo",
-    "tipo": "Ciclo while",
-    "titulo": "Prueba de escritorio: ciclo while con contador",
-    "indicacion": "Ejecuta mentalmente el siguiente código y determina qué valores imprime en pantalla.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "contador = 1",
-        "tipo": "proceso"
-      },
-      {
-        "label": "while contador <= 3:",
-        "tipo": "decision"
-      },
-      {
-        "label": "    print(contador)",
-        "tipo": "salida"
-      },
-      {
-        "label": "    contador = contador + 1",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "1, 2, 3, 4"
-      },
-      {
-        "id": 2,
-        "texto": "3, 2, 1"
-      },
-      {
-        "id": 1,
-        "texto": "1, 2, 3"
-      },
-      {
-        "id": 3,
-        "texto": "El ciclo no termina nunca"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Ciclo",
-    "titulo": "Construye el ciclo que imprime los números del 1 al 5",
-    "indicacion": "Ordena las líneas para construir el programa que imprime los números enteros del 1 al 5 usando un ciclo for.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Condicional Completo",
+    "titulo": "Construye el programa: mayor o menor de edad",
+    "indicacion": "Ordena las líneas para construir el programa que clasifica a una persona de 16 años como menor de edad.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "for i in range(1, 6):",
+        "texto": "if edad >= 18:",
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "    print(i)",
+        "id": "b2",
+        "texto": "    print(\"Mayor de edad\")",
         "tipo": "salida"
       },
       {
-        "id": "b4",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje Condicional",
-    "titulo": "Construye el programa que clasifica la nota",
-    "indicacion": "Ordena las líneas para construir el programa que solicita una nota, evalúa con if/else si es aprobatoria (mayor o igual a 3.0) y muestra el resultado.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
+        "id": "b3",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "nota = float(input('Ingresa la nota: '))",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "if nota >= 3.0:",
-        "tipo": "decision"
-      },
-      {
         "id": "b4",
-        "texto": "    print('Aprobado')",
-        "tipo": "salida"
-      },
-      {
-        "id": "b5",
         "texto": "else:",
         "tipo": "proceso"
       },
       {
+        "id": "b5",
+        "texto": "edad = 16",
+        "tipo": "proceso"
+      },
+      {
         "id": "b6",
-        "texto": "    print('Reprobado')",
+        "texto": "    print(\"Menor de edad\")",
         "tipo": "salida"
       },
       {
@@ -573,21 +442,48 @@
       }
     ],
     "ordenCorrecto": [
+      "b3",
+      "b5",
       "b1",
       "b2",
-      "b3",
       "b4",
-      "b5",
       "b6",
       "b7"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Ciclo Infinito",
-    "titulo": "Encuentra la falla: el ciclo no termina nunca",
-    "indicacion": "El programa debería contar del 1 al 3, pero al ejecutarlo no termina nunca (ciclo infinito). Revisa el código e identifica la falla.",
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Ciclo while con acumulador",
+    "titulo": "Completa el ciclo que cuenta del 1 al 5",
+    "indicacion": "Completa los huecos para que el ciclo while imprima 1 2 3 4 5 incrementando la variable en cada vuelta.",
+    "tipoComp": "codigo_completar",
+    "codigo": "n = 1\nwhile n ___ 5:\n    print(n, end=\" \")\n    n ___ 1",
+    "opciones": [
+      [
+        "<=",
+        "==",
+        ">",
+        "!="
+      ],
+      [
+        "+=",
+        "=",
+        "++",
+        "add"
+      ]
+    ],
+    "correcta": [
+      "<=",
+      "+="
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Lógica",
+    "titulo": "Encuentra el error del ciclo infinito",
+    "indicacion": "El programa pretende imprimir 1, 2 y 3, pero el ciclo nunca termina. ¿Cuál es la causa?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -596,79 +492,109 @@
       },
       {
         "label": "while contador <= 3:",
-        "tipo": "decision",
-        "error": true
+        "tipo": "proceso"
       },
       {
-        "label": "    print(contador)",
-        "tipo": "salida"
+        "label": "    print(contador)  # bucle infinito",
+        "tipo": "proceso",
+        "error": true
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La condición debe ser contador >= 3."
+        "id": 0,
+        "texto": "El ciclo nunca modifica contador, por lo que la condición siempre es verdadera: falta contador += 1 dentro del while."
       },
       {
-        "id": 0,
-        "texto": "Falta incrementar el contador dentro del ciclo (contador = contador + 1): sin ello la condición nunca se vuelve falsa y el ciclo se repite indefinidamente."
+        "id": 1,
+        "texto": "while debe escribirse con mayúscula: While."
       },
       {
         "id": 2,
-        "texto": "La función print no puede usarse dentro de un while."
+        "texto": "La condición debe ser contador < 3 en lugar de <= 3."
       },
       {
         "id": 3,
-        "texto": "El ciclo debe usar range(1, 4) obligatoriamente."
+        "texto": "El programa está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Sentencia continue",
+    "titulo": "¿Qué imprime el ciclo con continue?",
+    "indicacion": "El ciclo for recorre del 1 al 6; continue salta los números pares. Determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": "for i in range(1, 7):\n    if i % 2 == 0:\n        continue\n    print(i)",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "2\n4\n6"
+      },
+      {
+        "id": 3,
+        "salida": "1\n3\n5"
+      },
+      {
+        "id": 1,
+        "salida": "1\n2\n3\n4\n5\n6"
+      },
+      {
+        "id": 2,
+        "salida": "1 3 5"
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Uso Incorrecto de continue",
-    "titulo": "Encuentra la falla: el número 2 no se imprime",
-    "indicacion": "El programa debería imprimir los números 1, 2 y 3, pero solo imprime 1 y 3. Revisa el código e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Ciclo while completo",
+    "titulo": "Construye el programa: contar con while",
+    "indicacion": "Ordena las líneas para construir el programa que imprime 0, 1 y 2 usando un ciclo while.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "for i in range(1, 4):",
+        "id": "b1",
+        "texto": "while contador < 3:",
         "tipo": "proceso"
       },
       {
-        "label": "    if i == 2:",
-        "tipo": "decision"
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "label": "        continue",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "    print(i)",
+        "id": "b3",
+        "texto": "    print(contador)",
         "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "contador = 0",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "    contador += 1",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El ciclo for debe iniciar en 0."
-      },
-      {
-        "id": 1,
-        "texto": "La función print está mal indentada."
-      },
-      {
-        "id": 3,
-        "texto": "La instrucción continue salta a la siguiente iteración cuando i es 2, por lo que nunca se ejecuta print(2): debe eliminarse o cambiar la condición."
-      },
-      {
-        "id": 2,
-        "texto": "El rango debe ser range(1, 5)."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b2",
+      "b4",
+      "b1",
+      "b3",
+      "b5",
+      "b6"
+    ]
   }
 ];
 
@@ -798,6 +724,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -857,6 +798,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1124,6 +1205,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1157,6 +1244,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

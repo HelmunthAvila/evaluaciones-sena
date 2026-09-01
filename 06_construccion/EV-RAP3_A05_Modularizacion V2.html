@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Modularización</title>
+<title>Evaluación Práctica - Modularización en Python</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Modularización</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Modularización en Python</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la modularización de software en Python: definición de funciones con def, uso de parámetros y return, importación de módulos, reutilización de código y aprovechamiento de la biblioteca estándar, mediante retos prácticos interactivos.
+          Pon en práctica la modularización con código real: predice la salida exacta de programas con funciones def, parámetros y return, completa los huecos de definición y llamada de funciones, ordena las líneas de módulos reutilizables y corrige los errores de nombre y argumentos que reporta el intérprete. Sin teoría: aquí se demuestra modularizando código real.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Funciones y Módulos:</strong> Definir funciones con def, manejar parámetros, return e importar módulos.</li>
-<li><strong>Diseño Lógico:</strong> Dividir el problema en funciones reutilizables que eviten código duplicado.</li>
-<li><strong>Prueba de Escritorio:</strong> Ejecutar mentalmente funciones e imports y determinar su salida.</li>
-<li><strong>Reordenamiento y Depuración:</strong> Ensamblar programas modulares y detectar fallas en funciones e imports.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente la función y determina qué imprime.</li>
+<li><strong>Completar código:</strong> Llena los huecos de def, parámetros y return.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla el orden correcto de un módulo en Python.</li>
+<li><strong>Corregir errores:</strong> Encuentra el error que reporta el intérprete al llamar funciones.</li>
           </ul>
         </div>
 
@@ -243,258 +243,191 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Modularización</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Modularización en Python</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Funciones y Módulos",
-    "tipo": "Valor de Retorno",
-    "titulo": "¿Qué instrucción devuelve un valor desde una función al punto de la llamada?",
-    "indicacion": "Para que el resultado de una función quede disponible donde fue invocada, por ejemplo para asignarlo a una variable, se usa una instrucción específica dentro de la función. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Función con return",
+    "titulo": "¿Qué imprime la función duplicar?",
+    "indicacion": "La función duplicar recibe un valor y devuelve su doble. Determina la salida de print(duplicar(5)).",
+    "tipoComp": "codigo_salida",
+    "codigo": "def duplicar(x):\n    return x * 2\n\nprint(duplicar(5))",
     "opciones": [
       {
         "id": 0,
-        "texto": "print"
+        "salida": "5"
       },
       {
         "id": 1,
-        "texto": "return"
+        "salida": "10"
       },
       {
         "id": 2,
-        "texto": "break"
+        "salida": "25"
       },
       {
         "id": 3,
-        "texto": "import"
+        "salida": "x * 2"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Funciones y Módulos",
-    "tipo": "Importación Selectiva",
-    "titulo": "¿Qué instrucción importa únicamente la función randint del módulo random?",
-    "indicacion": "Cuando solo se necesita una función de un módulo, se puede importar directamente para usarla sin escribir el nombre del módulo cada vez. Selecciona la sintaxis correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Definición de Función",
+    "titulo": "Completa la función sumar",
+    "indicacion": "Completa los huecos para que la función sumar reciba dos números y devuelva su suma.",
+    "tipoComp": "codigo_completar",
+    "codigo": "___ sumar(a, b):\n    ___ a + b\n\nprint(sumar(3, 4))",
     "opciones": [
-      {
-        "id": 1,
-        "texto": "import random"
-      },
-      {
-        "id": 2,
-        "texto": "include random.randint"
-      },
-      {
-        "id": 0,
-        "texto": "from random import randint"
-      },
-      {
-        "id": 3,
-        "texto": "using random.randint"
-      }
+      [
+        "def",
+        "function",
+        "return",
+        "fun"
+      ],
+      [
+        "return",
+        "print",
+        "def",
+        "sum"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "def",
+      "return"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Funciones y Módulos",
-    "tipo": "Biblioteca Estándar",
-    "titulo": "¿Cuál de los siguientes módulos pertenece a la biblioteca estándar de Python?",
-    "indicacion": "La biblioteca estándar incluye módulos que vienen instalados con Python y no requieren instalación adicional. Selecciona el módulo que pertenece a ella.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Parámetros con Valor por Defecto",
+    "titulo": "¿Qué imprime la función con valor por defecto?",
+    "indicacion": "La función area_rectangulo tiene un parámetro con valor por defecto. Determina la salida al llamarla con un solo argumento.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def area_rectangulo(base, altura=2):\n    return base * altura\n\nprint(area_rectangulo(5))",
     "opciones": [
       {
         "id": 0,
-        "texto": "numpy"
+        "salida": "5"
       },
       {
         "id": 1,
-        "texto": "requests"
+        "salida": "7"
       },
       {
         "id": 3,
-        "texto": "flask"
+        "salida": "52"
       },
       {
         "id": 2,
-        "texto": "os"
+        "salida": "10"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución de Función",
-    "titulo": "¿Qué valor imprime el programa al llamar la función?",
-    "indicacion": "Ejecuta mentalmente el código: la función recibe la base y la altura, calcula el producto y lo divide entre dos. Determina el valor que muestra print.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Función No Definida",
+    "titulo": "Encuentra el error que reporta el intérprete",
+    "indicacion": "El programa llama a la función calcular, pero Python lanza NameError: name 'calcular' is not defined. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "def calcular(base, altura):",
+        "label": "print(\"Calculando...\")",
         "tipo": "proceso"
       },
       {
-        "label": "return base * altura // 2",
-        "tipo": "proceso"
-      },
-      {
-        "label": "calcular(8, 5) → 8 * 5 // 2 = 20",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(calcular(8, 5))",
-        "tipo": "salida"
+        "label": "print(calcular(4))  # NameError",
+        "tipo": "proceso",
+        "error": true
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
         "id": 0,
-        "texto": "20"
+        "texto": "Se llama a la función calcular sin haberla definido antes con def; Python no la reconoce."
       },
       {
         "id": 1,
-        "texto": "40"
+        "texto": "print no puede mostrar el resultado de una función."
       },
       {
         "id": 2,
-        "texto": "13"
+        "texto": "Falta importar el módulo math."
       },
       {
         "id": 3,
-        "texto": "80"
+        "texto": "El programa está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Funciones de Biblioteca Estándar",
-    "titulo": "¿Qué imprime el programa al usar el módulo math?",
-    "indicacion": "Ejecuta mentalmente el código teniendo en cuenta que math.ceil redondea hacia arriba y math.floor redondea hacia abajo. Determina la salida de print.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "import math",
-        "tipo": "proceso"
-      },
-      {
-        "label": "math.ceil(3.2) → 4 (redondeo hacia arriba)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "math.floor(2.9) → 2 (redondeo hacia abajo)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(math.ceil(3.2) + math.floor(2.9))",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Módulos de la Biblioteca Estándar",
+    "titulo": "¿Qué imprime el uso del módulo math?",
+    "indicacion": "El módulo math se importa para usar funciones matemáticas. Determina la salida de math.sqrt.",
+    "tipoComp": "codigo_salida",
+    "codigo": "import math\nprint(math.sqrt(16))",
+    "opciones": [
       {
         "id": 0,
-        "texto": "5"
-      },
-      {
-        "id": 1,
-        "texto": "6"
+        "salida": "4"
       },
       {
         "id": 2,
-        "texto": "6.1"
+        "salida": "4.0"
+      },
+      {
+        "id": 1,
+        "salida": "16"
       },
       {
         "id": 3,
-        "texto": "3"
+        "salida": "Error: math no está instalado"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Reutilización de Función",
-    "titulo": "¿Qué salida produce el programa con dos llamadas a la misma función?",
-    "indicacion": "La misma función se invoca dos veces con argumentos diferentes, lo que demuestra la reutilización de código. Determina las dos líneas que imprime el programa.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "def area_cuadrado(lado):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return lado ** 2",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(area_cuadrado(3)) → 3 ** 2 = 9",
-        "tipo": "salida"
-      },
-      {
-        "label": "print(area_cuadrado(5)) → 5 ** 2 = 25",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "6 y 10"
-      },
-      {
-        "id": 1,
-        "texto": "9 y 10"
-      },
-      {
-        "id": 3,
-        "texto": "9 y 25"
-      },
-      {
-        "id": 2,
-        "texto": "6 y 25"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje con Módulo",
-    "titulo": "Construye el programa que calcula la raíz cuadrada con el módulo math",
-    "indicacion": "Ordena los bloques para construir el programa que importa la función sqrt, solicita un número al usuario, calcula la raíz cuadrada y muestra el resultado con dos decimales.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Módulo con Función",
+    "titulo": "Construye el módulo: calcular el promedio",
+    "indicacion": "Ordena las líneas para construir el módulo que calcula y muestra el promedio de una lista de notas.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "texto": "def calcular_promedio(notas):",
+        "tipo": "proceso"
       },
       {
         "id": "b2",
-        "texto": "from math import sqrt",
+        "texto": "    total = sum(notas)",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "numero = float(input('Número: '))",
-        "tipo": "entrada"
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
-        "texto": "raiz = sqrt(numero)",
+        "texto": "    return total / len(notas)",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "print(f'La raíz es: {raiz:.2f}')",
+        "texto": "print(calcular_promedio([3.0, 5.0]))",
         "tipo": "salida"
       },
       {
@@ -504,141 +437,152 @@
       }
     ],
     "ordenCorrecto": [
+      "b3",
       "b1",
       "b2",
-      "b3",
       "b4",
       "b5",
       "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Reutilización de Funciones",
+    "titulo": "Completa la función que reutiliza otra función",
+    "indicacion": "La función cuadruple reutiliza la función doble. Completa los huecos para que cuadruple(3) devuelva 12.",
+    "tipoComp": "codigo_completar",
+    "codigo": "def doble(x):\n    ___ x * 2\n\ndef cuadruple(x):\n    return doble(___)\n\nprint(cuadruple(3))",
+    "opciones": [
+      [
+        "return",
+        "print",
+        "def",
+        "yield"
+      ],
+      [
+        "doble(x)",
+        "doble",
+        "x",
+        "2"
+      ]
+    ],
+    "correcta": [
+      "return",
+      "doble(x)"
     ]
   },
   {
     "id": 8,
-    "categoria": "Diseño Lógico",
-    "tipo": "Función Reutilizable",
-    "titulo": "Construye la función que convierte grados Celsius a Fahrenheit",
-    "indicacion": "Ordena los bloques para construir el programa modular que define la función convertir con su fórmula, la invoca con el valor 100 y muestra el resultado.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "def convertir(c):",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "return (c * 9 / 5) + 32",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "resultado = convertir(100)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "print(resultado)",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Exceso de Argumentos",
-    "titulo": "Encuentra la falla: la función recibe más argumentos de los declarados",
-    "indicacion": "El programa pretende calcular el perímetro de un rectángulo con la función perimetro(largo, ancho), pero al ejecutarlo Python lanza TypeError. Revisa el código e identifica el error.",
+    "categoria": "Corregir Errores",
+    "tipo": "Faltan Argumentos",
+    "titulo": "Encuentra el error que reporta el intérprete",
+    "indicacion": "La función saludar exige dos parámetros, pero la llamada solo envía uno. Python lanza TypeError. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "def perimetro(largo, ancho):",
+        "label": "def saludar(nombre, apellido):",
         "tipo": "proceso"
       },
       {
-        "label": "return 2 * (largo + ancho)",
+        "label": "    print(nombre + \" \" + apellido)",
         "tipo": "proceso"
       },
       {
-        "label": "print(perimetro(4, 3, 2))",
-        "tipo": "salida",
+        "label": "saludar(\"Ana\")  # TypeError",
+        "tipo": "proceso",
         "error": true
       }
     ],
     "opciones": [
       {
         "id": 0,
+        "texto": "La llamada saludar(\"Ana\") omite el argumento apellido: deben enviarse los dos: saludar(\"Ana\", \"Lopez\")."
+      },
+      {
+        "id": 1,
         "texto": "La función debe llamarse sin paréntesis."
       },
       {
         "id": 2,
-        "texto": "La llamada perimetro(4, 3, 2) envía tres argumentos pero la función solo declara dos; debe ser perimetro(4, 3)."
-      },
-      {
-        "id": 1,
-        "texto": "El return debe reemplazarse por print."
+        "texto": "print no puede mostrar dos variables."
       },
       {
         "id": 3,
-        "texto": "El código está correcto y Python ignora el argumento sobrante."
+        "texto": "El programa está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Función en un Ciclo",
+    "titulo": "¿Qué imprime el ciclo que usa la función es_par?",
+    "indicacion": "La función es_par devuelve True si el número es par. Sigue el ciclo y determina qué números se imprimen.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def es_par(n):\n    return n % 2 == 0\n\nfor n in [1, 2, 3, 4]:\n    if es_par(n):\n        print(n)",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "1 2 3 4"
+      },
+      {
+        "id": 3,
+        "salida": "2\n4"
+      },
+      {
+        "id": 1,
+        "salida": "1\n3"
+      },
+      {
+        "id": 2,
+        "salida": "4"
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Módulo sin Importar",
-    "titulo": "Encuentra la falla: el nombre random no está definido",
-    "indicacion": "El programa pretende generar un número aleatorio entre 1 y 6 con random.randint, pero al ejecutarlo Python lanza NameError. Revisa el código e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Importación de Módulo",
+    "titulo": "Construye el programa: número aleatorio",
+    "indicacion": "Ordena las líneas para construir el programa que importa el módulo random, genera un número del 1 al 6 y lo muestra.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "dado = random.randint(1, 6)",
-        "tipo": "proceso",
-        "error": true
+        "id": "b1",
+        "texto": "import random",
+        "tipo": "proceso"
       },
       {
-        "label": "print(f'Salió: {dado}')",
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "numero = random.randint(1, 6)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "print(\"Dado:\", numero)",
         "tipo": "salida"
+      },
+      {
+        "id": "b5",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "La función debe llamarse randomint sin punto."
-      },
-      {
-        "id": 2,
-        "texto": "La instrucción print debe ir antes de la asignación."
-      },
-      {
-        "id": 0,
-        "texto": "Falta importar el módulo con import random; sin esa línea el nombre random no está definido."
-      },
-      {
-        "id": 3,
-        "texto": "El código está correcto; el error es del sistema operativo."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b2",
+      "b1",
+      "b3",
+      "b4",
+      "b5"
+    ]
   }
 ];
 
@@ -768,6 +712,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -827,6 +786,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1094,6 +1193,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1127,6 +1232,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

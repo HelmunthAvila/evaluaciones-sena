@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Instalación de Entorno de Desarrollo</title>
+<title>Evaluación Práctica - Instalación del Entorno de Desarrollo</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Instalación de Entorno de Desarrollo</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Instalación del Entorno de Desarrollo</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la instalación y configuración del entorno de desarrollo para programar en Python: instalación del intérprete, uso de Visual Studio Code, manejo de la terminal, verificación de versiones, ejecución del primer programa y diferencia entre consola y editor, mediante retos prácticos interactivos.
+          Demuestra tu dominio del entorno de desarrollo con situaciones reales de terminal: predice la salida exacta de comandos como python --version, completa los comandos y el primer programa, ordena los pasos de instalación de Python y del IDE, y corrige los errores que aparecen al configurar el ambiente. Sin teoría: aquí se demuestra con la terminal.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Entorno de Desarrollo:</strong> Instalación de Python, IDE y verificación de versiones.</li>
-<li><strong>Prueba de Escritorio:</strong> Predecir la salida de comandos y programas en la terminal.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos de instalación y de ejecución.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas al instalar o ejecutar el entorno.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente el comando y determina qué muestra la terminal.</li>
+<li><strong>Completar código:</strong> Llena los huecos de los comandos y del primer programa.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla el orden correcto de instalación y ejecución.</li>
+<li><strong>Corregir errores:</strong> Encuentra el error que reporta la terminal.</li>
           </ul>
         </div>
 
@@ -243,436 +243,348 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Instalación de Entorno de Desarrollo</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Instalación del Entorno de Desarrollo</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Entorno de Desarrollo",
+    "categoria": "Predecir la Salida",
     "tipo": "Verificación de Versión",
-    "titulo": "¿Qué comando verifica la versión instalada de Python?",
-    "indicacion": "Después de instalar Python, el aprendiz debe confirmar en la terminal que el intérprete quedó disponible. Selecciona el comando correcto.",
-    "tipoComp": "seleccion_rapida",
+    "titulo": "¿Qué imprime el comando python --version?",
+    "indicacion": "Después de instalar Python, se ejecuta python --version en la terminal para verificar la instalación. Determina la salida exacta.",
+    "tipoComp": "codigo_salida",
+    "codigo": "C:\\> python --version",
     "opciones": [
       {
-        "id": 0,
-        "texto": "version python"
+        "id": 1,
+        "salida": "Versión de Python instalada correctamente"
       },
       {
-        "id": 1,
-        "texto": "python --version"
+        "id": 0,
+        "salida": "Python 3.11.4"
       },
       {
         "id": 2,
-        "texto": "python -help"
+        "salida": "3.11.4"
       },
       {
         "id": 3,
-        "texto": "python.exe"
+        "salida": "python --version"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Ejecución en Terminal",
-    "titulo": "¿Qué comando ejecuta el programa hola.py desde la terminal?",
-    "indicacion": "El aprendiz creó el archivo hola.py en Visual Studio Code y quiere ejecutarlo en la terminal integrada. Selecciona el comando correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Comandos de Terminal",
+    "titulo": "Completa los comandos para verificar y ejecutar",
+    "indicacion": "Completa los huecos con el comando correcto para verificar la versión de Python y para ejecutar el archivo saludo.py.",
+    "tipoComp": "codigo_completar",
+    "codigo": "C:\\> ___ --version\nPython 3.11.4\n\nC:\\> ___ saludo.py\nHola, mundo",
     "opciones": [
-      {
-        "id": 0,
-        "texto": "ejecutar hola.py"
-      },
-      {
-        "id": 1,
-        "texto": "run hola"
-      },
-      {
-        "id": 3,
-        "texto": "python hola.py"
-      },
-      {
-        "id": 2,
-        "texto": "hola.py"
-      }
+      [
+        "python",
+        "version",
+        "ver",
+        "py-check"
+      ],
+      [
+        "python",
+        "run",
+        "open",
+        "ejecutar"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "python",
+      "python"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Consola vs Editor",
-    "titulo": "¿Cuál es la función principal del editor de código?",
-    "indicacion": "En el flujo de trabajo con Visual Studio Code se distinguen el editor y la terminal. Selecciona la función que corresponde al editor de código.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Ejecución del Primer Programa",
+    "titulo": "¿Qué muestra la terminal al ejecutar hola.py?",
+    "indicacion": "Se creó el archivo hola.py con dos líneas de código. Determina la salida exacta al ejecutarlo con python hola.py.",
+    "tipoComp": "codigo_salida",
+    "codigo": "# Archivo: hola.py\nprint(\"Hola, mundo\")\nprint(\"Bienvenido al curso\")",
     "opciones": [
       {
         "id": 0,
-        "texto": "Ejecutar comandos del sistema operativo."
+        "salida": "Hola, mundo"
       },
       {
         "id": 1,
-        "texto": "Navegar por las carpetas del proyecto."
-      },
-      {
-        "id": 3,
-        "texto": "Instalar programas adicionales automáticamente."
+        "salida": "Hola, mundo Bienvenido al curso"
       },
       {
         "id": 2,
-        "texto": "Escribir y editar el código fuente del programa."
+        "salida": "hola.py"
+      },
+      {
+        "id": 3,
+        "salida": "Hola, mundo\nBienvenido al curso"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución del Primer Programa",
-    "titulo": "Prueba de escritorio: ejecutar el primer programa",
-    "indicacion": "El aprendiz creó su primer programa y lo ejecutó desde la terminal. Sigue los pasos mentalmente y determina qué muestra la consola.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Terminal",
+    "titulo": "Encuentra el error que reporta la terminal",
+    "indicacion": "Al escribir python --version la terminal responde que el comando no se reconoce. ¿Cuál es la causa del error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se crea el archivo hola.py con la línea: print('Hola, aprendices SENA')",
+        "label": "C:\\> python --version",
         "tipo": "proceso"
       },
       {
-        "label": "En la terminal se escribe: python hola.py",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Salida en la consola",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "'python' no se reconoce como un comando interno o externo",
+        "tipo": "salida",
+        "error": true
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
         "id": 0,
-        "texto": "Hola, aprendices SENA"
+        "texto": "Python no está instalado o su carpeta no está agregada a la variable de entorno PATH."
       },
       {
         "id": 1,
-        "texto": "python hola.py"
+        "texto": "El comando python --version está mal escrito; debe ser python version."
       },
       {
         "id": 2,
-        "texto": "hola.py"
+        "texto": "El archivo .py está dañado y no puede ejecutarse."
       },
       {
         "id": 3,
-        "texto": "Error: archivo no encontrado"
+        "texto": "La terminal solo acepta comandos en inglés."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Salida del Comando",
-    "titulo": "Prueba de escritorio: salida de python --version",
-    "indicacion": "El aprendiz instaló Python 3.12.5 en Windows y ejecutó el comando de verificación. Determina qué texto muestra la terminal.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Python 3.12.5 queda instalado en el equipo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "En la terminal se ejecuta: python --version",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Salida en la consola",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Sesión Interactiva",
+    "titulo": "¿Qué muestra la consola interactiva de Python?",
+    "indicacion": "En la consola interactiva (símbolo >>>), cada expresión muestra su resultado. Determina la salida de la última línea.",
+    "tipoComp": "codigo_salida",
+    "codigo": ">>> nombre = \"Ana\"\n>>> print(\"Hola \" + nombre)\n>>> 2 * 3",
+    "opciones": [
       {
         "id": 0,
-        "texto": "python --version"
-      },
-      {
-        "id": 3,
-        "texto": "Python 3.12.5"
+        "salida": "Hola Ana"
       },
       {
         "id": 1,
-        "texto": "Versión 3.12.5"
+        "salida": "6"
       },
       {
         "id": 2,
-        "texto": "Error: comando no reconocido"
+        "salida": "23"
+      },
+      {
+        "id": 3,
+        "salida": "Hola Ana\n6"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Consola Interactiva",
-    "titulo": "Prueba de escritorio: expresión en la consola interactiva",
-    "indicacion": "El aprendiz abrió la consola interactiva de Python y escribió una expresión. Ejecútala mentalmente y determina el resultado que muestra la consola.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se abre la consola interactiva de Python",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se escribe la expresión: 2 ** 3 + 1",
-        "tipo": "proceso"
-      },
-      {
-        "label": "La consola evalúa la expresión y muestra el resultado",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "8"
-      },
-      {
-        "id": 2,
-        "texto": "23 + 1"
-      },
-      {
-        "id": 1,
-        "texto": "9"
-      },
-      {
-        "id": 3,
-        "texto": "Error de sintaxis"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Secuencia de Ejecución",
-    "titulo": "Ordena los pasos para ejecutar el primer programa",
-    "indicacion": "Ordena los pasos que debe seguir el aprendiz para crear y ejecutar su primer programa Python en Visual Studio Code.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Instalación de Python",
+    "titulo": "Ordena los pasos para instalar Python",
+    "indicacion": "Ordena los pasos desde la descarga del instalador hasta la verificación de la instalación.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir Visual Studio Code",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Crear el archivo saludo.py",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Escribir print('Hola, SENA')",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Abrir la terminal integrada",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Ejecutar: python saludo.py",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Ver la salida en la consola",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Secuencia de Instalación",
-    "titulo": "Ordena los pasos para instalar Python en Windows",
-    "indicacion": "Ordena los pasos que debe seguir el aprendiz para instalar Python correctamente en un equipo con sistema operativo Windows.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
         "texto": "Descargar el instalador desde python.org",
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "Ejecutar el instalador descargado",
+        "id": "b2",
+        "texto": "Marcar la opción Add Python to PATH",
         "tipo": "proceso"
       },
       {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b4",
-        "texto": "Marcar la casilla 'Add Python to PATH'",
+        "texto": "Verificar con el comando python --version",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Hacer clic en Install Now",
+        "texto": "Ejecutar el instalador descargado",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Verificar en la terminal con python --version",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
-      "b1",
-      "b2",
       "b3",
-      "b4",
+      "b1",
       "b5",
-      "b6",
-      "b7"
+      "b2",
+      "b4",
+      "b6"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Variable PATH",
-    "titulo": "Encuentra la falla: python no se reconoce como comando",
-    "indicacion": "Al ejecutar python --version en la terminal, Windows muestra: 'python' no se reconoce como un comando interno o externo. Identifica la causa más probable.",
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Primer Programa",
+    "titulo": "Completa el primer programa en Python",
+    "indicacion": "Completa los huecos para que el programa lea el nombre del usuario y lo salude en pantalla.",
+    "tipoComp": "codigo_completar",
+    "codigo": "nombre = ___(\"¿Cómo te llamas? \")\n___(\"Hola, \" + nombre)",
+    "opciones": [
+      [
+        "input",
+        "print",
+        "read",
+        "scan"
+      ],
+      [
+        "print",
+        "input",
+        "echo",
+        "write"
+      ]
+    ],
+    "correcta": [
+      "input",
+      "print"
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Nombre",
+    "titulo": "Encuentra el error que reporta la consola",
+    "indicacion": "El programa lee el nombre y lo saluda, pero la consola lanza NameError: name 'nomre' is not defined. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Se ejecuta el comando: python --version",
+        "label": "nombre = \"Ana\"",
         "tipo": "proceso"
       },
       {
-        "label": "Windows no encuentra el comando python",
+        "label": "print(\"Hola, \" + nomre)  # NameError",
         "tipo": "proceso",
         "error": true
-      },
-      {
-        "label": "Mensaje de error en la consola",
-        "tipo": "salida"
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La función print está mal escrita en el programa."
+        "id": 0,
+        "texto": "La variable se llama nombre y se escribió nomre; Python no encuentra la variable nomre."
       },
       {
-        "id": 0,
-        "texto": "Python no está agregado a la variable de entorno PATH: el intérprete no se localiza desde cualquier carpeta y debe agregarse o reinstalarse marcando 'Add Python to PATH'."
+        "id": 1,
+        "texto": "print no permite concatenar texto con variables."
       },
       {
         "id": 2,
-        "texto": "Visual Studio Code no está instalado."
+        "texto": "Falta instalar un módulo para manejar cadenas."
       },
       {
         "id": 3,
-        "texto": "El archivo .py no tiene la extensión correcta."
+        "texto": "El programa está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Operaciones en Consola",
+    "titulo": "¿Qué muestra la consola interactiva?",
+    "indicacion": "En la consola interactiva, la última expresión se evalúa y muestra su resultado. Determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": ">>> a = 10\n>>> b = 4\n>>> a - b",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "10 - 4"
+      },
+      {
+        "id": 2,
+        "salida": "6"
+      },
+      {
+        "id": 1,
+        "salida": "14"
+      },
+      {
+        "id": 3,
+        "salida": "Error: a no definida"
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Ejecución Incorrecta",
-    "titulo": "Encuentra la falla: la consola se cierra al instante",
-    "indicacion": "El aprendiz ejecutó su programa haciendo doble clic sobre el archivo saludo.py; la ventana se abre y se cierra tan rápido que no alcanza a leer el mensaje. Identifica la causa.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Ejecución desde la Terminal",
+    "titulo": "Ordena los pasos para ejecutar el primer programa",
+    "indicacion": "Ordena los pasos desde abrir la terminal hasta observar la salida del programa.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Doble clic sobre el archivo saludo.py",
+        "id": "b1",
+        "texto": "Ubicarse en la carpeta donde está el archivo hola.py",
         "tipo": "proceso"
       },
       {
-        "label": "La ventana de la consola se abre y se cierra de inmediato",
-        "tipo": "proceso",
-        "error": true
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "label": "No se alcanza a leer la salida del programa",
+        "id": "b3",
+        "texto": "Observar la salida del programa en pantalla",
         "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "Abrir la terminal (símbolo del sistema)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Ejecutar el comando python hola.py",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El programa tiene un error de sintaxis y Python no lo ejecuta."
-      },
-      {
-        "id": 1,
-        "texto": "La variable PATH no incluye Visual Studio Code."
-      },
-      {
-        "id": 2,
-        "texto": "El programa termina y la ventana de la consola se cierra automáticamente: debe ejecutarse desde la terminal integrada del editor o agregar input() al final para pausar la salida."
-      },
-      {
-        "id": 3,
-        "texto": "El archivo debe llamarse hola.txt para poder ejecutarse."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b2",
+      "b4",
+      "b1",
+      "b5",
+      "b3",
+      "b6"
+    ]
   }
 ];
 
@@ -802,6 +714,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -861,6 +788,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1128,6 +1195,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1161,6 +1234,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

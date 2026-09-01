@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el desarrollo de un proyecto integrador de software: análisis del problema, diseño lógico, implementación modular en Python, validación de entradas, pruebas con casos de uso, documentación y entrega, mediante retos prácticos interactivos.
+          Pon en práctica el ciclo completo de un proyecto integrador de software: analiza el problema, diseña la solución modular, implementa un sistema real de registro de notas en Python con funciones y validación de entradas, ejecuta casos de prueba y corrige los errores que lanza el intérprete durante la integración de los módulos. Sin teoría: aquí se demuestra construyendo el proyecto.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los requisitos, entradas, procesos y salidas del proyecto.</li>
-<li><strong>Diseño Lógico e Implementación:</strong> Plantear la solución y codificarla de forma modular en Python.</li>
-<li><strong>Validación y Prueba de Escritorio:</strong> Controlar las entradas incorrectas y ejecutar casos de uso del programa.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas de importación y de lógica durante la integración del proyecto.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente los módulos del proyecto y determina qué imprime.</li>
+<li><strong>Completar código:</strong> Llena los huecos de funciones, importación y conversión de tipos.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla el orden correcto del programa principal y de los módulos.</li>
+<li><strong>Corregir errores:</strong> Encuentra el error que reporta el intérprete durante la integración.</li>
           </ul>
         </div>
 
@@ -250,230 +250,176 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Primera Fase del Proyecto",
-    "titulo": "¿Cuál es la primera actividad en el desarrollo de un proyecto de software?",
-    "indicacion": "Antes de escribir código se realiza una fase inicial. Selecciona la actividad con la que debe comenzar el proyecto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Función promedio",
+    "titulo": "¿Qué imprime el módulo calculos?",
+    "indicacion": "El proyecto integrador calcula el promedio de las notas con la función promedio del módulo calculos. Ejecuta mentalmente la función con la lista dada y determina la salida exacta.",
+    "tipoComp": "codigo_salida",
+    "codigo": "def promedio(notas):\n    return sum(notas) / len(notas)\n\nprint(promedio([4.0, 3.5, 4.5]))",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Escribir el código completo sin ningún plan previo."
+        "id": 0,
+        "salida": "12.0"
       },
       {
-        "id": 0,
-        "texto": "Analizar el problema: identificar requisitos, entradas, procesos y salidas."
+        "id": 1,
+        "salida": "4.0"
       },
       {
         "id": 2,
-        "texto": "Entregar el proyecto al cliente."
+        "salida": "3.5"
       },
       {
         "id": 3,
-        "texto": "Instalar el IDE de programación."
+        "salida": "4.5"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
-    "tipo": "Modularización",
-    "titulo": "¿Qué práctica permite dividir el proyecto en partes independientes y reutilizables?",
-    "indicacion": "Un proyecto integrador bien diseñado evita el código duplicado. Selecciona la práctica adecuada de diseño.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Integración de Módulos",
+    "titulo": "¿Qué imprime main.py al integrar el módulo calculos?",
+    "indicacion": "El archivo main.py importa la función definitiva desde el módulo calculos y muestra el resultado de una operación. Ejecuta mentalmente la llamada y determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": "# calculos.py\ndef definitiva(notas):\n    return sum(notas) / len(notas)\n\n# main.py\nfrom calculos import definitiva\nprint(definitiva([5.0, 4.0]) + 1.0)",
     "opciones": [
       {
         "id": 0,
-        "texto": "Escribir todo el código en un solo archivo sin funciones."
+        "salida": "4.5"
       },
       {
         "id": 1,
-        "texto": "Usar nombres de variables de una sola letra."
-      },
-      {
-        "id": 2,
-        "texto": "Modularizar el proyecto en funciones y módulos con responsabilidades específicas."
+        "salida": "9.0"
       },
       {
         "id": 3,
-        "texto": "Copiar el mismo código en cada parte del programa."
+        "salida": "5.5"
+      },
+      {
+        "id": 2,
+        "salida": "5.0"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Implementación",
-    "tipo": "Estructura del Proyecto",
-    "titulo": "¿Qué estructura de archivos corresponde a un proyecto Python modular bien organizado?",
-    "indicacion": "La organización de los archivos facilita la implementación y el mantenimiento. Selecciona la estructura adecuada.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Validación de Entrada",
+    "titulo": "¿Qué mensaje muestra el proyecto si el usuario digita 'ocho' como nota?",
+    "indicacion": "El proyecto protege la conversión de la nota con try/except. Ejecuta mentalmente el flujo con la entrada 'ocho' y determina el mensaje que se muestra.",
+    "tipoComp": "codigo_salida",
+    "codigo": "# main.py — validación de entrada\ntry:\n    nota = float(input(\"Nota: \"))\n    print(\"Nota registrada\")\nexcept ValueError:\n    print(\"Debe digitar un número\")\n# Entrada del usuario: ocho",
     "opciones": [
       {
-        "id": 0,
-        "texto": "index.html, estilos.css, script.js"
+        "id": 1,
+        "salida": "Nota registrada"
       },
       {
         "id": 2,
-        "texto": "datos.xlsx, informe.docx, presentacion.pptx"
+        "salida": "ocho"
       },
       {
         "id": 3,
-        "texto": "prueba1.py, prueba2.py, prueba3.py, prueba4.py"
+        "salida": "Error de sintaxis"
       },
       {
-        "id": 1,
-        "texto": "main.py, calculos.py, validaciones.py, README.md"
+        "id": 0,
+        "salida": "Debe digitar un número"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución del Proyecto",
-    "titulo": "¿Qué imprime el programa al calcular el salario neto con base 1800000 y descuento 250000?",
-    "indicacion": "Ejecuta mentalmente la función del módulo calculos: resta el descuento del salario base y determina el valor que muestra print.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Registro de Notas",
+    "titulo": "¿Qué imprime el programa al final del registro?",
+    "indicacion": "El programa principal acumula las notas en una lista y al final calcula el promedio con la función del módulo calculos. Ejecuta mentalmente el programa y determina la salida.",
+    "tipoComp": "codigo_salida",
+    "codigo": "# calculos.py\ndef promedio(notas):\n    return sum(notas) / len(notas)\n\n# main.py\nfrom calculos import promedio\nnotas = []\nnotas.append(3.0)\nnotas.append(5.0)\nprint(promedio(notas))",
+    "opciones": [
       {
-        "label": "def calcular_salario_neto(salario_base, descuento):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return salario_base - descuento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "1800000 - 250000 = 1550000",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(calcular_salario_neto(1800000, 250000))",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 3,
-        "texto": "1550000"
+        "id": 2,
+        "salida": "4.0"
       },
       {
         "id": 0,
-        "texto": "1800000"
+        "salida": "3.0"
       },
       {
         "id": 1,
-        "texto": "250000"
+        "salida": "5.0"
       },
       {
-        "id": 2,
-        "texto": "2050000"
+        "id": 3,
+        "salida": "8.0"
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Validación",
-    "tipo": "Caso con Entrada Inválida",
-    "titulo": "¿Qué mensaje muestra el programa si el usuario digita 'ocho' como nota?",
-    "indicacion": "El proyecto valida la nota con try/except y rango. Ejecuta mentalmente el flujo con la entrada 'ocho' y determina el mensaje que se muestra.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "El usuario digita 'ocho'",
-        "tipo": "entrada"
-      },
-      {
-        "label": "float('ocho') lanza ValueError",
-        "tipo": "proceso"
-      },
-      {
-        "label": "except ValueError captura la excepción",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print('Debe digitar un número.')",
-        "tipo": "salida"
-      }
+    "categoria": "Completar Código",
+    "tipo": "Función promedio",
+    "titulo": "Completa la función promedio del módulo calculos",
+    "indicacion": "Completa los huecos para que la función calcule el promedio de la lista de notas y devuelva el resultado.",
+    "tipoComp": "codigo_completar",
+    "codigo": "def promedio(notas):\n    ___ sum(notas) / ___(notas)\n\nprint(promedio([4.0, 2.0]))",
+    "opciones": [
+      [
+        "return",
+        "print",
+        "def",
+        "import"
+      ],
+      [
+        "sum",
+        "max",
+        "len",
+        "abs"
+      ]
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Nota fuera de rango."
-      },
-      {
-        "id": 1,
-        "texto": "Debe digitar un número."
-      },
-      {
-        "id": 2,
-        "texto": "8.0"
-      },
-      {
-        "id": 3,
-        "texto": "El programa se detiene con un error"
-      }
-    ],
-    "correcta": 1
+    "correcta": [
+      "return",
+      "len"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Integración de Módulos",
-    "titulo": "¿Qué imprime main.py al validar la nota 4.5?",
-    "indicacion": "El archivo main.py importa la función nota_valida desde el módulo validaciones. Ejecuta mentalmente la llamada y determina la salida.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "from validaciones import nota_valida",
-        "tipo": "proceso"
-      },
-      {
-        "label": "def nota_valida(nota):",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return 0.0 <= nota <= 5.0",
-        "tipo": "proceso"
-      },
-      {
-        "label": "nota_valida(4.5) → 0.0 <= 4.5 <= 5.0",
-        "tipo": "proceso"
-      },
-      {
-        "label": "print(nota_valida(4.5))",
-        "tipo": "salida"
-      }
+    "categoria": "Completar Código",
+    "tipo": "Importación y Validación",
+    "titulo": "Completa el programa principal del proyecto",
+    "indicacion": "Completa los huecos de main.py para importar la función de validación desde el módulo validaciones y convertir la nota digitada a número decimal. La entrada del usuario es 4.5.",
+    "tipoComp": "codigo_completar",
+    "codigo": "# validaciones.py\ndef nota_valida(nota):\n    return 0.0 <= nota <= 5.0\n\n# main.py\n___ validaciones import nota_valida\nnota = ___(input(\"Nota: \"))\nif nota_valida(nota):\n    print(\"Nota válida\")\n# Entrada del usuario: 4.5",
+    "opciones": [
+      [
+        "from",
+        "import",
+        "include",
+        "using"
+      ],
+      [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ]
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "False"
-      },
-      {
-        "id": 2,
-        "texto": "4.5"
-      },
-      {
-        "id": 0,
-        "texto": "True"
-      },
-      {
-        "id": 3,
-        "texto": "Error de importación"
-      }
-    ],
-    "correcta": 2
+    "correcta": [
+      "from",
+      "float"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Análisis del Problema",
-    "tipo": "Fases del Proyecto",
-    "titulo": "Ordena las fases del desarrollo del proyecto de software",
-    "indicacion": "El proyecto integrador sigue un orden lógico de fases. Ordena los bloques desde el inicio hasta la entrega del proyecto.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Programa Principal",
+    "titulo": "Construye el programa principal con validación de nota",
+    "indicacion": "Ordena las líneas para construir el main.py del proyecto: importa la validación, lee la nota, la valida y muestra el resultado correspondiente.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -483,31 +429,36 @@
       },
       {
         "id": "b2",
-        "texto": "Análisis del problema: requisitos, entradas y salidas",
+        "texto": "from validaciones import nota_valida",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Diseño lógico: algoritmos y funciones del proyecto",
-        "tipo": "proceso"
+        "texto": "nota = float(input(\"Nota: \"))",
+        "tipo": "entrada"
       },
       {
         "id": "b4",
-        "texto": "Implementación del proyecto en Python",
+        "texto": "if nota_valida(nota):",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Pruebas con casos de uso",
-        "tipo": "proceso"
+        "texto": "print(\"Nota válida\")",
+        "tipo": "salida"
       },
       {
         "id": "b6",
-        "texto": "Documentación y entrega",
+        "texto": "else:",
         "tipo": "proceso"
       },
       {
         "id": "b7",
+        "texto": "print(\"Nota fuera de rango\")",
+        "tipo": "salida"
+      },
+      {
+        "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -519,15 +470,16 @@
       "b4",
       "b5",
       "b6",
-      "b7"
+      "b7",
+      "b8"
     ]
   },
   {
     "id": 8,
-    "categoria": "Implementación",
-    "tipo": "Ensamblaje Modular",
-    "titulo": "Construye el programa principal que usa el módulo operaciones",
-    "indicacion": "Ordena los bloques para construir el main.py que importa el módulo operaciones, solicita un número, calcula su cuadrado y muestra el resultado.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Módulo de Cálculos",
+    "titulo": "Construye el módulo calculos con su llamada de prueba",
+    "indicacion": "Ordena las líneas para construir el módulo calculos.py: define la función promedio y ejecuta una llamada de prueba con dos notas.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -537,26 +489,21 @@
       },
       {
         "id": "b2",
-        "texto": "import operaciones",
+        "texto": "def promedio(notas):",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "numero = float(input('Digite un número: '))",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b4",
-        "texto": "resultado = operaciones.cuadrado(numero)",
+        "texto": "return sum(notas) / len(notas)",
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "print(f'El cuadrado es: {resultado}')",
+        "id": "b4",
+        "texto": "print(promedio([4.0, 2.0]))",
         "tipo": "salida"
       },
       {
-        "id": "b6",
+        "id": "b5",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -566,16 +513,61 @@
       "b2",
       "b3",
       "b4",
-      "b5",
-      "b6"
+      "b5"
     ]
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Importación",
-    "titulo": "Encuentra la falla: el proyecto no encuentra el módulo utilidades",
-    "indicacion": "Al ejecutar main.py se presenta un error al importar. Revisa el código e identifica la falla del proyecto.",
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Lógica en Función",
+    "titulo": "Encuentra la falla: el proyecto imprime None",
+    "indicacion": "Al probar el módulo calculos, la función no devuelve el promedio y la pantalla muestra None. Revisa la función e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "def promedio(notas):",
+        "tipo": "proceso"
+      },
+      {
+        "label": "    sum(notas) / len(notas)  # falta return",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "print(promedio([4.0, 2.0]))",
+        "tipo": "salida"
+      },
+      {
+        "label": "Salida en pantalla: None",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "sum no puede operar sobre listas de números."
+      },
+      {
+        "id": 0,
+        "texto": "La función calcula el promedio pero no lo devuelve: falta la sentencia return; por eso print muestra None."
+      },
+      {
+        "id": 2,
+        "texto": "print debe ir dentro de la función."
+      },
+      {
+        "id": 3,
+        "texto": "El programa está correcto."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Corregir Errores",
+    "tipo": "Error en Validación de Entrada",
+    "titulo": "Encuentra la falla: el proyecto se detiene con ValueError",
+    "indicacion": "Al digitar una nota no numérica, el programa se detiene con un error en lugar de mostrar un mensaje. Revisa el flujo e identifica la falla.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -583,73 +575,35 @@
         "tipo": "proceso"
       },
       {
-        "label": "from utilidades import calcular_total",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "print(calcular_total(3, 2500))",
-        "tipo": "salida"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El error es que print no puede mostrar el resultado de una función."
-      },
-      {
-        "id": 3,
-        "texto": "No existe el módulo utilidades; Python lanza ModuleNotFoundError. Debe crear el archivo utilidades.py con la función calcular_total o corregir el import."
-      },
-      {
-        "id": 1,
-        "texto": "El error es que calcular_total debe escribirse con mayúscula inicial."
-      },
-      {
-        "id": 2,
-        "texto": "La función necesita un tercer argumento."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Lógica",
-    "titulo": "Encuentra la falla: el programa acepta la edad 150 como válida",
-    "indicacion": "El proyecto debe rechazar las edades fuera del rango de 1 a 119, pero acepta 150. Revisa la condición e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "edad = int(input('Edad: '))",
+        "label": "nota = float(input(\"Nota: \"))  # usuario digita 'ocho'",
         "tipo": "entrada"
       },
       {
-        "label": "if edad > 0 or edad < 120:",
-        "tipo": "proceso",
+        "label": "ValueError: could not convert string to float: 'ocho'",
+        "tipo": "salida",
         "error": true
       },
       {
-        "label": "print('Edad válida')",
+        "label": "print(\"Nota registrada\")",
         "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "El error es que int no puede convertir la edad."
+        "texto": "El programa está correcto y registra la nota."
       },
       {
         "id": 1,
-        "texto": "La edad debe leerse con input sin convertirla."
+        "texto": "float debe cambiarse por int para leer notas."
       },
       {
         "id": 2,
-        "texto": "La condición usa or y siempre es verdadera; debe ser and: if edad > 0 and edad < 120, así solo se aceptan edades entre 1 y 119."
+        "texto": "Falta proteger la conversión con try/except: una entrada no numérica lanza ValueError y detiene el programa."
       },
       {
         "id": 3,
-        "texto": "El programa está correcto y rechaza todas las edades inválidas."
+        "texto": "El error es de sintaxis en la línea del print."
       }
     ],
     "correcta": 2
@@ -782,6 +736,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -841,6 +810,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1108,6 +1217,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1141,6 +1256,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

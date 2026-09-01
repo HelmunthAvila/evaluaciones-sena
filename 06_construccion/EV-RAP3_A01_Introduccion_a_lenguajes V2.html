@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Introducción a Lenguajes</title>
+<title>Evaluación Práctica - Introducción a los Lenguajes de Programación</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Introducción a Lenguajes</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Introducción a los Lenguajes de Programación</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el reconocimiento de los lenguajes de programación: lenguajes compilados e interpretados, nivel de abstracción, paradigmas de programación, ejemplos de lenguajes y elaboración de pseudocódigo, mediante retos prácticos interactivos.
+          Demuestra tu dominio de los lenguajes de programación con ejemplos reales: predice la salida exacta de programas escritos en Python, Java, C y JavaScript, completa la sintaxis de código real, ordena el proceso de compilación e interpretación y corrige los errores que reportan el compilador y el intérprete. Sin teoría: aquí se demuestra reconociendo y ejecutando código real.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Lenguajes de Programación:</strong> Clasificar lenguajes por su proceso de traducción, nivel y paradigma.</li>
-<li><strong>Análisis del Problema:</strong> Interpretar enunciados y definir la lógica de la solución.</li>
-<li><strong>Prueba de Escritorio:</strong> Ejecutar mentalmente pseudocódigo y determinar su resultado.</li>
-<li><strong>Reordenamiento y Depuración:</strong> Ensamblar algoritmos en pseudocódigo y detectar fallas.</li>
+            <li><strong>Predecir la salida:</strong> Ejecuta mentalmente el programa y determina qué muestra en pantalla.</li>
+<li><strong>Completar código:</strong> Llena los huecos de la sintaxis de lenguajes reales.</li>
+<li><strong>Ordenar líneas:</strong> Ensambla el proceso de compilación e interpretación.</li>
+<li><strong>Corregir errores:</strong> Encuentra el error que reporta el compilador o el intérprete.</li>
           </ul>
         </div>
 
@@ -243,258 +243,187 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Introducción a Lenguajes</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Introducción a los Lenguajes de Programación</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Lenguajes de Programación",
-    "tipo": "Lenguaje Interpretado",
-    "titulo": "¿Cuál de los siguientes lenguajes es interpretado?",
-    "indicacion": "Un lenguaje interpretado se ejecuta instrucción por instrucción, sin un paso previo de compilación a un archivo ejecutable. Selecciona el ejemplo correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Programa en Python",
+    "titulo": "¿Qué imprime este programa en Python?",
+    "indicacion": "Python es un lenguaje interpretado. Ejecuta mentalmente el programa y determina qué muestra print en pantalla.",
+    "tipoComp": "codigo_salida",
+    "codigo": "lenguaje = \"Python\"\nprint(\"Hola desde \" + lenguaje)",
     "opciones": [
       {
         "id": 0,
-        "texto": "C"
+        "salida": "Hola desde lenguaje"
       },
       {
         "id": 1,
-        "texto": "Python"
+        "salida": "Hola desde Python"
       },
       {
         "id": 2,
-        "texto": "Ensamblador"
+        "salida": "Python"
       },
       {
         "id": 3,
-        "texto": "Cobol"
+        "salida": "Error: no se puede concatenar"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Lenguajes de Programación",
-    "tipo": "Nivel de Abstracción",
-    "titulo": "¿Qué caracteriza a un lenguaje de alto nivel?",
-    "indicacion": "Los lenguajes de alto nivel están cerca del lenguaje humano y lejos del código máquina. Selecciona la afirmación correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Sintaxis de Java",
+    "titulo": "Completa la estructura de un programa en Java",
+    "indicacion": "Java es un lenguaje compilado. Completa los huecos para que el programa compile e imprima el mensaje.",
+    "tipoComp": "codigo_completar",
+    "codigo": "public class Saludo {\n    public static void main(String[] ___) {\n        System.out.___(\"Hola desde Java\");\n    }\n}",
     "opciones": [
-      {
-        "id": 0,
-        "texto": "Trabaja directamente con bits y direcciones de memoria."
-      },
-      {
-        "id": 1,
-        "texto": "Solo puede ejecutarse en una marca específica de computador."
-      },
-      {
-        "id": 2,
-        "texto": "Se escribe con instrucciones cercanas al lenguaje humano y son más fáciles de leer."
-      },
-      {
-        "id": 3,
-        "texto": "No requiere ningún traductor para ejecutarse."
-      }
+      [
+        "args",
+        "arg",
+        "argv",
+        "parametros"
+      ],
+      [
+        "println",
+        "print",
+        "printf",
+        "write"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "args",
+      "println"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Lenguajes de Programación",
-    "tipo": "Paradigma de Programación",
-    "titulo": "¿Qué paradigma organiza el programa en clases y objetos con atributos y métodos?",
-    "indicacion": "Este paradigma modela el mundo real mediante entidades que combinan datos y comportamiento. Selecciónalo.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Programa en C",
+    "titulo": "¿Qué imprime este programa en C?",
+    "indicacion": "C es un lenguaje de bajo nivel compilado. Determina la salida exacta de la función printf.",
+    "tipoComp": "codigo_salida",
+    "codigo": "#include <stdio.h>\nint main() {\n    printf(\"Nivel: %d\", 3);\n    return 0;\n}",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Paradigma imperativo"
-      },
-      {
         "id": 1,
-        "texto": "Paradigma funcional"
+        "salida": "3"
       },
       {
         "id": 2,
-        "texto": "Paradigma de bajo nivel"
+        "salida": "Nivel: %d"
       },
       {
         "id": 3,
-        "texto": "Paradigma orientado a objetos"
+        "salida": "Error de compilación"
+      },
+      {
+        "id": 0,
+        "salida": "Nivel: 3"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución de Pseudocódigo",
-    "titulo": "¿Qué valor muestra el pseudocódigo al finalizar?",
-    "indicacion": "Ejecuta mentalmente el pseudocódigo respetando la prioridad de los operadores: primero se multiplica y luego se resta. Determina el valor que se escribe.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Sintaxis",
+    "titulo": "Encuentra el error que reporta el intérprete",
+    "indicacion": "El programa intenta mostrar dos mensajes, pero Python lanza SyntaxError: unterminated string literal. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "a = 10",
+        "label": "print(\"Inicio del programa\")",
         "tipo": "proceso"
       },
       {
-        "label": "b = 4",
-        "tipo": "proceso"
-      },
-      {
-        "label": "c = a - b * 2 → c = 10 - 8",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Escribir c",
-        "tipo": "salida"
+        "label": "print(\"Fin del programa)  # falta comilla",
+        "tipo": "proceso",
+        "error": true
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 2,
-        "texto": "2"
-      },
+    "opciones": [
       {
         "id": 0,
-        "texto": "12"
+        "texto": "Falta la comilla de cierre en el segundo print: debe ser print(\"Fin del programa\")."
       },
       {
         "id": 1,
-        "texto": "6"
+        "texto": "print debe escribirse con mayúscula: Print."
+      },
+      {
+        "id": 2,
+        "texto": "El texto debe ir siempre entre comillas simples."
       },
       {
         "id": 3,
-        "texto": "28"
+        "texto": "El programa está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Análisis del Problema",
-    "tipo": "Lógica Condicional en Pseudocódigo",
-    "titulo": "¿Qué mensaje muestra el pseudocódigo con edad = 17?",
-    "indicacion": "Ejecuta mentalmente la decisión: compara la edad con 18 y sigue la rama correspondiente. Determina el mensaje que se escribe.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "edad = 17",
-        "tipo": "proceso"
-      },
-      {
-        "label": "¿17 >= 18?",
-        "tipo": "decision"
-      },
-      {
-        "label": "La condición es falsa → rama Sino",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Escribir 'Menor de edad'",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Programa en JavaScript",
+    "titulo": "¿Qué imprime este programa en JavaScript?",
+    "indicacion": "JavaScript es un lenguaje interpretado que se ejecuta en el navegador. Determina la salida de console.log.",
+    "tipoComp": "codigo_salida",
+    "codigo": "let total = 5 + 3;\nconsole.log(\"Total: \" + total);",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Mayor de edad"
-      },
-      {
-        "id": 1,
-        "texto": "Menor de edad"
-      },
-      {
-        "id": 2,
-        "texto": "17"
+        "salida": "Total: 53"
       },
       {
         "id": 3,
-        "texto": "No muestra ningún mensaje"
+        "salida": "Total: 8"
+      },
+      {
+        "id": 1,
+        "salida": "Total: total"
+      },
+      {
+        "id": 2,
+        "salida": "8"
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ciclo en Pseudocódigo",
-    "titulo": "¿Cuántas veces se ejecuta el bloque dentro del ciclo?",
-    "indicacion": "Ejecuta mentalmente el ciclo Mientras: la variable contador inicia en 1 y aumenta de uno en uno. Determina cuántas veces se repite el bloque hasta que la condición deje de cumplirse.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "contador = 1",
-        "tipo": "proceso"
-      },
-      {
-        "label": "¿contador <= 3?",
-        "tipo": "decision"
-      },
-      {
-        "label": "Escribir contador y sumar 1",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El ciclo termina cuando contador = 4",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "4"
-      },
-      {
-        "id": 1,
-        "texto": "2"
-      },
-      {
-        "id": 2,
-        "texto": "3"
-      },
-      {
-        "id": 3,
-        "texto": "1"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Pseudocódigo",
-    "titulo": "Construye el pseudocódigo que calcula el promedio de dos notas",
-    "indicacion": "Ordena los bloques para construir el algoritmo que lee dos notas, calcula el promedio sumándolas y dividiendo entre dos, y lo muestra.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Proceso de Compilación",
+    "titulo": "Ordena el proceso de compilación de un programa en C",
+    "indicacion": "Ordena los pasos desde que se escribe el código fuente hasta que se obtiene el programa ejecutable.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
+        "texto": "Escribir el código fuente en un archivo .c",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "El compilador traduce el código a lenguaje máquina",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Leer nota1, nota2",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "promedio = (nota1 + nota2) / 2",
-        "tipo": "proceso"
-      },
-      {
         "id": "b4",
-        "texto": "Escribir promedio",
-        "tipo": "salida"
+        "texto": "El enlazador genera el archivo ejecutable",
+        "tipo": "proceso"
       },
       {
         "id": "b5",
@@ -503,164 +432,147 @@
       }
     ],
     "ordenCorrecto": [
+      "b3",
       "b1",
       "b2",
-      "b3",
       "b4",
       "b5"
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje con Decisión",
-    "titulo": "Construye el pseudocódigo que determina si un número es par",
-    "indicacion": "Ordena los bloques para construir el algoritmo que lee un número, verifica si el residuo de dividirlo entre dos es cero y escribe 'Par' o 'Impar'.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Leer numero",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "Si numero % 2 == 0 Entonces",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Escribir 'Par'",
-        "tipo": "salida"
-      },
-      {
-        "id": "b5",
-        "texto": "Sino",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Escribir 'Impar'",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "FinSi",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Sintaxis de JavaScript",
+    "titulo": "Completa el programa en JavaScript",
+    "indicacion": "Completa los huecos para que el programa declare la variable e imprima el mensaje de bienvenida.",
+    "tipoComp": "codigo_completar",
+    "codigo": "___ nombre = \"SENA\";\nconsole.___(\"Bienvenido al \" + nombre);",
+    "opciones": [
+      [
+        "let",
+        "var",
+        "int",
+        "string"
+      ],
+      [
+        "log",
+        "print",
+        "echo",
+        "write"
+      ]
     ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
+    "correcta": [
+      "let",
+      "log"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error en Pseudocódigo",
-    "titulo": "Encuentra la falla: el promedio de 4 y 6 da 7",
-    "indicacion": "El algoritmo debe calcular el promedio de las notas 4 y 6, que es 5, pero muestra 7. Revisa el pseudocódigo e identifica el error.",
+    "id": 8,
+    "categoria": "Corregir Errores",
+    "tipo": "Error de Nombre",
+    "titulo": "Encuentra el error que reporta el intérprete",
+    "indicacion": "El programa pretende mostrar un mensaje almacenado en una variable, pero Python lanza NameError. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Leer nota1, nota2",
-        "tipo": "entrada"
+        "label": "print(\"Bienvenido al curso\")",
+        "tipo": "proceso"
       },
       {
-        "label": "promedio = nota1 + nota2 / 2",
+        "label": "print(mensaje)  # NameError: name 'mensaje' is not defined",
         "tipo": "proceso",
         "error": true
-      },
-      {
-        "label": "Escribir promedio",
-        "tipo": "salida"
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La instrucción Leer no es válida en pseudocódigo."
+        "id": 2,
+        "texto": "Falta el punto y coma al final de la línea."
       },
       {
         "id": 0,
-        "texto": "La división tiene prioridad sobre la suma; sin paréntesis calcula nota2 / 2 y luego suma nota1. Debe ser promedio = (nota1 + nota2) / 2."
+        "texto": "La variable mensaje no fue definida antes de usarse; Python lanza NameError."
       },
       {
-        "id": 2,
-        "texto": "El algoritmo está correcto; 7 es el promedio de las notas."
+        "id": 1,
+        "texto": "print no puede recibir variables, solo texto."
       },
       {
         "id": 3,
-        "texto": "Debe usarse Escribir en lugar de Leer para capturar las notas."
+        "texto": "El programa está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Programa en Java",
+    "titulo": "¿Qué imprime este programa en Java?",
+    "indicacion": "Java es de tipado fuerte: la división de dos enteros devuelve un entero. Determina la salida de System.out.println.",
+    "tipoComp": "codigo_salida",
+    "codigo": "public class Calculo {\n    public static void main(String[] args) {\n        int a = 10;\n        int b = 4;\n        System.out.println(a / b);\n    }\n}",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "2.5"
+      },
+      {
+        "id": 1,
+        "salida": "2"
+      },
+      {
+        "id": 2,
+        "salida": "10 / 4"
+      },
+      {
+        "id": 3,
+        "salida": "Error de compilación"
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Ciclo Infinito",
-    "titulo": "Encuentra la falla: el ciclo nunca termina",
-    "indicacion": "El algoritmo debe contar del 1 al 3, pero el ciclo se repite sin detenerse. Revisa el pseudocódigo e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Proceso de Interpretación",
+    "titulo": "Ordena el proceso de interpretación de un programa en Python",
+    "indicacion": "Ordena los pasos desde que se escribe el programa hasta que se muestra la salida en pantalla.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "contador = 1",
+        "id": "b1",
+        "texto": "El intérprete analiza y ejecuta cada línea",
         "tipo": "proceso"
       },
       {
-        "label": "Mientras contador <= 3 Hacer",
+        "id": "b2",
+        "texto": "Escribir el programa en un archivo .py",
         "tipo": "proceso"
       },
       {
-        "label": "Escribir contador",
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Se muestra la salida en pantalla",
         "tipo": "salida"
       },
       {
-        "label": "contador = contador - 1",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "FinMientras",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El ciclo Mientras no es válido en pseudocódigo."
-      },
-      {
-        "id": 1,
-        "texto": "El algoritmo está correcto y termina normalmente."
-      },
-      {
-        "id": 3,
-        "texto": "contador = contador - 1 disminuye el valor; la variable nunca llega a 4 y el ciclo no termina. Debe ser contador = contador + 1."
-      },
-      {
-        "id": 2,
-        "texto": "Falta declarar la variable contador como texto."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b1",
+      "b4",
+      "b5"
+    ]
   }
 ];
 
@@ -790,6 +702,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +776,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1183,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1222,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }
