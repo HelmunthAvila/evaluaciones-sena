@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la creación de documentos HTML: estructura de la página, encabezados, párrafos, enlaces, imágenes, listas, tablas y atributos como href, src y alt, mediante retos prácticos interactivos.
+          Pon en práctica la construcción de páginas HTML con código real: predice qué muestra el navegador con cada estructura, completa los huecos de etiquetas y atributos, ordena las líneas de un documento y corrige los errores que reporta el validador W3C. Sin teoría: aquí se demuestra construyendo.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Sintaxis de HTML:</strong> Identificar etiquetas y atributos correctos.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular el renderizado del HTML en el navegador.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar la estructura y el contenido de la página.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en etiquetas y atributos.</li>
+            <li><strong>Predecir la Salida:</strong> Ejecuta mentalmente el código HTML y determina qué muestra el navegador.</li>
+<li><strong>Completar Código:</strong> Llena los huecos de etiquetas y atributos.</li>
+<li><strong>Ordenar Líneas:</strong> Ensambla el orden correcto de la estructura HTML.</li>
+<li><strong>Corregir Errores:</strong> Encuentra el error que impide el renderizado correcto.</li>
           </ul>
         </div>
 
@@ -250,234 +250,163 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Sintaxis de HTML",
-    "tipo": "Atributo Correcto",
-    "titulo": "¿Qué atributo indica la ruta de la imagen en la etiqueta <img>?",
-    "indicacion": "Para que el navegador cargue una imagen, la etiqueta <img> necesita un atributo con la ubicación del archivo. Selecciónalo.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Encabezados y Párrafos",
+    "titulo": "¿Qué muestra el navegador con este documento?",
+    "indicacion": "Ejecuta mentalmente el código HTML y determina cómo se visualiza cada texto en la página.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<h1>Bienvenidos al SENA</h1>\n<h2>Curso de HTML</h2>\n<p>Primer párrafo del curso.</p>",
     "opciones": [
       {
-        "id": 1,
-        "texto": "href"
+        "id": 0,
+        "salida": "Muestra únicamente el texto 'Bienvenidos al SENA'."
       },
       {
-        "id": 0,
-        "texto": "src"
+        "id": 1,
+        "salida": "Muestra 'Bienvenidos al SENA' como título principal (h1), 'Curso de HTML' como subtítulo (h2) y 'Primer párrafo del curso.' como texto normal (p)."
       },
       {
         "id": 2,
-        "texto": "alt"
+        "salida": "Muestra los tres textos con el mismo tamaño y estilo."
       },
       {
         "id": 3,
-        "texto": "link"
+        "salida": "Muestra los textos en orden inverso: primero el párrafo y al final el título."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Sintaxis de HTML",
-    "tipo": "Etiqueta Correcta",
-    "titulo": "¿Qué etiqueta crea una lista numerada?",
-    "indicacion": "Para mostrar pasos o elementos en orden numerado, se utiliza una lista específica. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Atributos del Enlace",
+    "titulo": "Completa el enlace al portal del SENA",
+    "indicacion": "Completa los huecos para que el enlace apunte a la dirección indicada y se abra en una pestaña nueva.",
+    "tipoComp": "codigo_completar",
+    "codigo": "<a ___='https://www.sena.edu.co' ___='_blank'>Portal SENA</a>",
     "opciones": [
-      {
-        "id": 1,
-        "texto": "<ul>"
-      },
-      {
-        "id": 2,
-        "texto": "<li>"
-      },
-      {
-        "id": 0,
-        "texto": "<ol>"
-      },
-      {
-        "id": 3,
-        "texto": "<dl>"
-      }
+      [
+        "href",
+        "src",
+        "id",
+        "class"
+      ],
+      [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "href",
+      "_blank"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Sintaxis de HTML",
-    "tipo": "Estructura del Documento",
-    "titulo": "¿Dónde se ubica la etiqueta <title> en un documento HTML?",
-    "indicacion": "El título de la página debe declararse en una sección específica del documento para que aparezca en la pestaña del navegador. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Listas HTML",
+    "titulo": "¿Qué muestra esta lista desordenada?",
+    "indicacion": "Determina cómo presenta el navegador el contenido de la etiqueta ul con sus elementos li.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<ul>\n  <li>HTML</li>\n  <li>CSS</li>\n  <li>JavaScript</li>\n</ul>",
     "opciones": [
       {
         "id": 1,
-        "texto": "Dentro de <body>"
+        "salida": "Muestra una lista numerada: 1. HTML, 2. CSS, 3. JavaScript."
       },
       {
         "id": 2,
-        "texto": "Después de </html>"
+        "salida": "Muestra los tres textos en un solo párrafo separado por comas."
       },
       {
         "id": 3,
-        "texto": "Dentro de <footer>"
+        "salida": "Muestra una tabla de tres filas con una columna."
       },
       {
         "id": 0,
-        "texto": "Dentro de <head>"
+        "salida": "Muestra una lista con viñetas: HTML, CSS y JavaScript."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Renderizado de HTML",
-    "titulo": "Prueba de escritorio: encabezado de la página",
-    "indicacion": "El siguiente HTML se carga en el navegador. Ejecútalo mentalmente y determina qué texto se muestra como encabezado principal de la página.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Etiqueta Sin Cerrar",
+    "titulo": "Encuentra el error que reporta el validador W3C",
+    "indicacion": "El documento pretende crear un contenedor con dos párrafos, pero el validador W3C reporta un error. ¿Cuál es la causa?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "<h1>Bienvenidos al curso</h1>",
-        "tipo": "proceso"
+        "label": "<div class='caja'>",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "<p>En este módulo aprenderás HTML básico.</p>",
-        "tipo": "proceso"
+        "label": "<p>Contenido del bloque</p>",
+        "tipo": "salida"
       },
       {
-        "label": "El navegador renderiza el contenido",
+        "label": "<p>Texto siguiente</p>",
         "tipo": "salida"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Bienvenidos al curso"
-      },
+    "opciones": [
       {
         "id": 1,
-        "texto": "En este módulo aprenderás HTML básico."
+        "texto": "Falta la etiqueta de cierre </div>: el validador reporta el error y el navegador considera que el texto siguiente queda dentro del contenedor."
+      },
+      {
+        "id": 0,
+        "texto": "La etiqueta p debe estar fuera de la etiqueta div."
       },
       {
         "id": 2,
-        "texto": "Curso de programación"
+        "texto": "El atributo class debe llamarse id."
       },
       {
         "id": 3,
-        "texto": "No se muestra ningún texto"
+        "texto": "El código está correcto."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Renderizado de Lista",
-    "titulo": "Prueba de escritorio: lista de requisitos",
-    "indicacion": "El siguiente HTML se carga en el navegador. Determina cuántos elementos de lista ve el usuario.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "<ul>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<li>Computador</li>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<li>Conexión a internet</li>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "</ul>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El navegador muestra la lista con viñetas",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "3"
-      },
+    "categoria": "Predecir la Salida",
+    "tipo": "Tablas HTML",
+    "titulo": "¿Cómo se visualiza esta tabla?",
+    "indicacion": "Determina la estructura de filas y columnas que presenta el navegador con este código de tabla.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<table border='1'>\n  <tr>\n    <th>Nombre</th>\n    <th>Nota</th>\n  </tr>\n  <tr>\n    <td>Ana</td>\n    <td>4.5</td>\n  </tr>\n</table>",
+    "opciones": [
       {
         "id": 0,
-        "texto": "2"
+        "salida": "Muestra una tabla de una fila y dos columnas."
       },
       {
         "id": 2,
-        "texto": "1"
+        "salida": "Muestra una tabla de dos filas y dos columnas: la primera con los encabezados Nombre y Nota, la segunda con Ana y 4.5."
+      },
+      {
+        "id": 1,
+        "salida": "Muestra una lista con los textos Nombre, Nota, Ana y 4.5."
       },
       {
         "id": 3,
-        "texto": "4"
+        "salida": "Muestra una tabla de dos columnas y tres filas."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Renderizado de Tabla",
-    "titulo": "Prueba de escritorio: filas de la tabla",
-    "indicacion": "El siguiente HTML se carga en el navegador. Determina cuántas filas (<tr>) contiene la tabla.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "<table border='1'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<tr><th>Nombre</th><th>Edad</th></tr>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<tr><td>Ana</td><td>20</td></tr>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<tr><td>Luis</td><td>22</td></tr>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "</table>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El navegador renderiza la tabla",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "2"
-      },
-      {
-        "id": 2,
-        "texto": "4"
-      },
-      {
-        "id": 0,
-        "texto": "3"
-      },
-      {
-        "id": 3,
-        "texto": "1"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Documento",
-    "titulo": "Construye el documento HTML básico",
-    "indicacion": "Ordena los bloques para construir la estructura completa de un documento HTML válido que muestra el título 'Mi primera página' y el encabezado 'Hola mundo'.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Estructura del Documento",
+    "titulo": "Construye la estructura básica de una página HTML",
+    "indicacion": "Ordena los bloques para construir el esqueleto de una página HTML válida: desde la declaración del documento hasta el encabezado de nivel 1.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -492,17 +421,17 @@
       },
       {
         "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
         "texto": "<head>",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "<title>Mi primera página</title>",
-        "tipo": "proceso"
-      },
-      {
         "id": "b5",
-        "texto": "</head>",
+        "texto": "<title>Mi primera página</title>",
         "tipo": "proceso"
       },
       {
@@ -513,170 +442,173 @@
       {
         "id": "b7",
         "texto": "<h1>Hola mundo</h1>",
-        "tipo": "proceso"
+        "tipo": "salida"
       },
       {
         "id": "b8",
-        "texto": "</body>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b9",
-        "texto": "</html>",
-        "tipo": "proceso"
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
+      "b3",
       "b1",
       "b2",
-      "b3",
       "b4",
       "b5",
       "b6",
       "b7",
-      "b8",
-      "b9"
+      "b8"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Imagen y Texto Alternativo",
+    "titulo": "Completa la etiqueta de la imagen",
+    "indicacion": "Completa los huecos para que la imagen logo.png se muestre en la página y tenga un texto alternativo accesible.",
+    "tipoComp": "codigo_completar",
+    "codigo": "<img ___='logo.png' ___='Logo del SENA'>",
+    "opciones": [
+      [
+        "src",
+        "href",
+        "id",
+        "class"
+      ],
+      [
+        "alt",
+        "src",
+        "width",
+        "title"
+      ]
+    ],
+    "correcta": [
+      "src",
+      "alt"
     ]
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Lista",
-    "titulo": "Construye la lista de pasos de instalación",
-    "indicacion": "Ordena los bloques para construir la sección que muestra el procedimiento de instalación como una lista numerada.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "<h2>Pasos para la instalación</h2>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "<ol>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "<li>Descargar el instalador</li>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "<li>Ejecutar el programa</li>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "<li>Aceptar los términos</li>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "</ol>",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
+    "categoria": "Corregir Errores",
     "tipo": "Atributo Incorrecto",
-    "titulo": "Encuentra la falla: el enlace no abre la página",
-    "indicacion": "El enlace del menú debe abrir contacto.html, pero al hacer clic no sucede nada. Revisa el HTML e identifica el error.",
+    "titulo": "Encuentra el error en el enlace",
+    "indicacion": "El desarrollador intentó crear un enlace a la página de contacto, pero al hacer clic no ocurre nada. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "<nav>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<a src='contacto.html'>Contacto</a>",
-        "tipo": "proceso",
+        "label": "<a src='contacto.html'>Contáctenos</a>",
+        "tipo": "salida",
         "error": true
-      },
-      {
-        "label": "</nav>",
-        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "El texto del enlace debe escribirse entre comillas dobles."
+        "id": 2,
+        "texto": "El atributo correcto de un enlace es href; src se utiliza en img y script, por lo que el enlace no funciona."
       },
       {
         "id": 0,
-        "texto": "Los enlaces usan el atributo href, no src: <a href='contacto.html'>Contacto</a>."
+        "texto": "El texto 'Contáctenos' se muestra en negrita."
       },
       {
-        "id": 2,
-        "texto": "La etiqueta correcta para enlaces es <link>."
+        "id": 1,
+        "texto": "La etiqueta a no existe en HTML."
       },
       {
         "id": 3,
-        "texto": "El HTML está correcto; el problema es del navegador."
+        "texto": "Falta el atributo target en el enlace."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Formato de Texto",
+    "titulo": "¿Qué muestra el navegador con strong y em?",
+    "indicacion": "Determina cómo se visualiza el texto del párrafo aplicando el formato de las etiquetas strong y em.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<p>Texto en <strong>negrita</strong> y en <em>cursiva</em>.</p>",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "Muestra el texto completo en negrita."
+      },
+      {
+        "id": 3,
+        "salida": "Muestra 'Texto en negrita y en cursiva.' donde 'negrita' aparece resaltada en negrita y 'cursiva' en cursiva."
+      },
+      {
+        "id": 1,
+        "salida": "Muestra en pantalla las etiquetas strong y em como texto visible."
+      },
+      {
+        "id": 2,
+        "salida": "Muestra únicamente la palabra 'negrita'."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Etiqueta Inadecuada",
-    "titulo": "Encuentra la falla: la lista no se ve numerada",
-    "indicacion": "El desarrollador quiere mostrar los requisitos como una lista numerada (1, 2, 3), pero el navegador los muestra con viñetas. Revisa el HTML e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Lista con Encabezado",
+    "titulo": "Construye la sección: encabezado y lista",
+    "indicacion": "Ordena los bloques para construir una sección que muestre un encabezado de nivel 2 seguido de una lista desordenada con tres elementos.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "<p>Requisitos del curso:</p>",
+        "id": "b1",
+        "texto": "<h2>Lenguajes de la Web</h2>",
+        "tipo": "salida"
+      },
+      {
+        "id": "b2",
+        "texto": "<ul>",
         "tipo": "proceso"
       },
       {
-        "label": "<ul>",
-        "tipo": "proceso",
-        "error": true
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "label": "<li>Computador</li>",
+        "id": "b4",
+        "texto": "<li>HTML</li>",
         "tipo": "proceso"
       },
       {
-        "label": "<li>Internet</li>",
+        "id": "b5",
+        "texto": "<li>CSS</li>",
         "tipo": "proceso"
       },
       {
-        "label": "</ul>",
+        "id": "b6",
+        "texto": "<li>JavaScript</li>",
         "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "</ul>",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "La etiqueta <p> debe eliminarse para que la lista funcione."
-      },
-      {
-        "id": 2,
-        "texto": "Los elementos <li> deben ir dentro de una tabla."
-      },
-      {
-        "id": 0,
-        "texto": "Para una lista numerada se usa <ol>; la etiqueta <ul> genera viñetas, no números."
-      },
-      {
-        "id": 3,
-        "texto": "El HTML está correcto; el navegador decide el formato."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b1",
+      "b2",
+      "b4",
+      "b5",
+      "b6",
+      "b7",
+      "b8"
+    ]
   }
 ];
 
@@ -806,6 +738,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -865,6 +812,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1132,6 +1219,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1165,6 +1258,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

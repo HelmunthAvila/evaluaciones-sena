@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la programación con JavaScript: declaración de variables con let, const y var, tipos de datos, funciones, condicionales if/else, eventos como onclick y manipulación del DOM mediante getElementById, textContent y alert, mediante retos prácticos interactivos.
+          Pon en práctica la programación en JavaScript con código real: predice qué mensaje muestra cada script, completa los huecos de variables, funciones y manipulación del DOM, ordena las líneas de un programa y corrige los errores que impiden su ejecución. Sin teoría: aquí se demuestra programando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Sintaxis JavaScript:</strong> Identificar palabras clave, operadores y estructuras correctas del lenguaje.</li>
-<li><strong>DOM y Eventos:</strong> Reconocer cómo obtener elementos de la página y responder a sus eventos.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular la ejecución del script y determinar qué imprime o muestra.</li>
-<li><strong>Reordenamiento de Bloques y Depuración de Errores:</strong> Ensamblar funciones y scripts, y detectar fallas en el código.</li>
+            <li><strong>Predecir la Salida:</strong> Ejecuta mentalmente el script y determina qué mensaje muestra.</li>
+<li><strong>Completar Código:</strong> Llena los huecos de variables, funciones y eventos.</li>
+<li><strong>Ordenar Líneas:</strong> Ensambla el orden correcto de un script JavaScript.</li>
+<li><strong>Corregir Errores:</strong> Encuentra el error que impide la ejecución del script.</li>
           </ul>
         </div>
 
@@ -250,242 +250,186 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Sintaxis JavaScript",
-    "tipo": "Declaración de Constante",
-    "titulo": "¿Qué palabra clave declara una constante cuyo valor no puede reasignarse?",
-    "indicacion": "Para declarar un valor que no cambiará durante la ejecución del script se utiliza una palabra clave específica. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Variables y console.log",
+    "titulo": "¿Qué muestra console.log?",
+    "indicacion": "Ejecuta mentalmente el script y determina el valor que se imprime en la consola del navegador.",
+    "tipoComp": "codigo_salida",
+    "codigo": "let x = 5;\nx = x + 3;\nconsole.log(x);",
     "opciones": [
       {
         "id": 0,
-        "texto": "let"
+        "salida": "Muestra el texto 'x = x + 3'."
       },
       {
         "id": 2,
-        "texto": "const"
+        "salida": "Muestra 8."
       },
       {
         "id": 1,
-        "texto": "var"
+        "salida": "Muestra 53."
       },
       {
         "id": 3,
-        "texto": "static"
+        "salida": "Muestra 5."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "DOM y Eventos",
-    "tipo": "Acceso al DOM",
-    "titulo": "¿Qué instrucción obtiene el elemento cuyo id es 'titulo'?",
-    "indicacion": "Para modificar el contenido de un elemento de la página se necesita primero obtenerlo por su id. Selecciona la instrucción correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Constantes y Condicionales",
+    "titulo": "Completa el script de bienvenida",
+    "indicacion": "Completa los huecos para que el nombre se declare como constante, se asigne al párrafo con id saludo y la condición evalúe la edad.",
+    "tipoComp": "codigo_completar",
+    "codigo": "___ nombre = 'Ana';\nlet edad = 17;\ndocument.___('saludo').textContent = 'Hola, ' + nombre;\nif (___ >= 18) {\n  alert('Mayor de edad');\n} else {\n  alert('Menor de edad');\n}",
     "opciones": [
-      {
-        "id": 1,
-        "texto": "document.getElementByClassName('titulo')"
-      },
-      {
-        "id": 2,
-        "texto": "document.getElementById(titulo)"
-      },
-      {
-        "id": 0,
-        "texto": "document.getElementById('titulo')"
-      },
-      {
-        "id": 3,
-        "texto": "document.getElementById('Título')"
-      }
+      [
+        "const",
+        "let",
+        "var",
+        "int"
+      ],
+      [
+        "getElementById",
+        "querySelectorAll",
+        "createElement",
+        "getElement"
+      ],
+      [
+        "edad",
+        "nombre",
+        "saludo",
+        "17"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "const",
+      "getElementById",
+      "edad"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Sintaxis JavaScript",
-    "tipo": "Igualdad Estricta",
-    "titulo": "¿Qué operador compara el valor y el tipo de dato a la vez?",
-    "indicacion": "JavaScript distingue entre comparar solo el valor y comparar valor y tipo a la vez. Selecciona el operador de igualdad estricta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Condicional if/else",
+    "titulo": "¿Qué alerta muestra este script?",
+    "indicacion": "Ejecuta mentalmente la condición con el valor de la variable edad y determina qué alerta se muestra.",
+    "tipoComp": "codigo_salida",
+    "codigo": "let edad = 17;\nif (edad >= 18) {\n  alert('Mayor de edad');\n} else {\n  alert('Menor de edad');\n}",
     "opciones": [
       {
-        "id": 0,
-        "texto": "="
+        "id": 1,
+        "salida": "Muestra la alerta 'Mayor de edad'."
       },
       {
         "id": 2,
-        "texto": "=="
+        "salida": "Muestra ambas alertas."
       },
       {
         "id": 3,
-        "texto": "=>"
+        "salida": "No muestra ninguna alerta."
       },
       {
-        "id": 1,
-        "texto": "==="
+        "id": 0,
+        "salida": "Muestra la alerta 'Menor de edad'."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución de Variables",
-    "titulo": "Prueba de escritorio: ¿qué imprime el script?",
-    "indicacion": "Ejecuta mentalmente el script con los valores dados y determina el mensaje que se muestra en la consola.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Identificador Incorrecto",
+    "titulo": "Encuentra por qué el script falla",
+    "indicacion": "El script intenta modificar el texto de un párrafo, pero se detiene con un error. ¿Cuál es la causa?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "let x = 5;",
-        "tipo": "proceso"
+        "label": "let caja = document.getElementById('caja');",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "let y = x * 2;",
-        "tipo": "proceso"
-      },
-      {
-        "label": "console.log(y);",
+        "label": "<p id='Caja'>Hola</p>",
         "tipo": "salida"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
-        "id": 3,
-        "texto": "10"
+        "id": 1,
+        "texto": "Los identificadores distinguen mayúsculas: el id real es 'Caja' y el script busca 'caja', por lo que getElementById devuelve null y el script falla."
       },
       {
         "id": 0,
-        "texto": "5"
-      },
-      {
-        "id": 1,
-        "texto": "52"
+        "texto": "El script está correcto."
       },
       {
         "id": 2,
-        "texto": "25"
+        "texto": "getElementById solo funciona con clases, no con ids."
+      },
+      {
+        "id": 3,
+        "texto": "Falta importar la librería del DOM."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Condicional if/else",
-    "titulo": "Prueba de escritorio: mensaje según la nota",
-    "indicacion": "El script evalúa la nota con una condición if/else y muestra un mensaje con alert. Determina qué mensaje ve el usuario.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "let nota = 4.0;",
-        "tipo": "proceso"
-      },
-      {
-        "label": "if (nota >= 3.0)",
-        "tipo": "decision"
-      },
-      {
-        "label": "alert('Aprobó');",
-        "tipo": "salida"
-      },
-      {
-        "label": "else { alert('No aprobó'); }",
-        "tipo": "proceso"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "No aprobó"
-      },
+    "categoria": "Predecir la Salida",
+    "tipo": "Manipulación del DOM",
+    "titulo": "¿Qué texto muestra el párrafo al final?",
+    "indicacion": "Ejecuta mentalmente el script y determina qué texto queda visible en el párrafo con id saludo.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<p id='saludo'>Hola</p>\n<script>\n  document.getElementById('saludo').textContent = 'Bienvenido al SENA';\n</script>",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Aprobó"
-      },
-      {
-        "id": 2,
-        "texto": "4.0"
+        "salida": "El párrafo sigue mostrando 'Hola'."
       },
       {
         "id": 3,
-        "texto": "No se muestra ningún mensaje"
+        "salida": "El párrafo cambia su texto a 'Bienvenido al SENA'."
+      },
+      {
+        "id": 1,
+        "salida": "El navegador muestra un error y la página queda en blanco."
+      },
+      {
+        "id": 2,
+        "salida": "El párrafo se elimina de la página."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Llamada a Función",
-    "titulo": "Prueba de escritorio: salida de la función saludar",
-    "indicacion": "La función saludar recibe un nombre y devuelve un mensaje. Ejecuta mentalmente la llamada y determina qué imprime la consola.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "function saludar(nombre) {",
-        "tipo": "proceso"
-      },
-      {
-        "label": "return 'Hola, ' + nombre;",
-        "tipo": "proceso"
-      },
-      {
-        "label": "}",
-        "tipo": "proceso"
-      },
-      {
-        "label": "console.log(saludar('Ana'));",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Ana"
-      },
-      {
-        "id": 1,
-        "texto": "Hola"
-      },
-      {
-        "id": 2,
-        "texto": "Hola, Ana"
-      },
-      {
-        "id": 3,
-        "texto": "Error: nombre no definido"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Función",
-    "titulo": "Construye la función que calcula el doble",
-    "indicacion": "Ordena los bloques para construir la función calcularDoble, que recibe un número y devuelve su doble, junto con la llamada que imprime el resultado de 7.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Función y DOM",
+    "titulo": "Construye la función que cambia el texto",
+    "indicacion": "Ordena los bloques para construir una función que obtenga el párrafo con id saludo y le asigne el texto 'Hola SENA'.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
-        "texto": "// Calcula el doble de un número",
+        "texto": "function mostrar() {",
         "tipo": "proceso"
       },
       {
         "id": "b2",
-        "texto": "function calcularDoble(numero) {",
+        "texto": "let mensaje = document.getElementById('saludo');",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "let resultado = numero * 2;",
-        "tipo": "proceso"
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
-        "texto": "return resultado;",
+        "texto": "mensaje.textContent = 'Hola SENA';",
         "tipo": "proceso"
       },
       {
@@ -495,148 +439,166 @@
       },
       {
         "id": "b6",
-        "texto": "console.log(calcularDoble(7));",
-        "tipo": "proceso"
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
+      "b3",
       "b1",
       "b2",
-      "b3",
       "b4",
       "b5",
       "b6"
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Script",
-    "titulo": "Construye el script del botón de bienvenida",
-    "indicacion": "La página tiene un botón que llama a la función mostrarMensaje() al hacer clic. Ordena los bloques para construir la función y el botón que la invoca.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "function mostrarMensaje() {",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "let salida = document.getElementById('mensaje');",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "salida.textContent = 'Gracias por tu clic';",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "}",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "<button onclick='mostrarMensaje()'>Haz clic</button>",
-        "tipo": "proceso"
-      }
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Funciones y Eventos",
+    "titulo": "Completa la función sumar y su evento",
+    "indicacion": "Completa los huecos para que la función declare la variable total, la retorne y el botón con id btn ejecute la función al hacer clic.",
+    "tipoComp": "codigo_completar",
+    "codigo": "function sumar(a, b) {\n  ___ total = a + b;\n  return ___;\n}\nlet boton = document.___('btn');\nboton.onclick = function() {\n  alert(sumar(2, 3));\n};",
+    "opciones": [
+      [
+        "let",
+        "const",
+        "var",
+        "return"
+      ],
+      [
+        "total",
+        "a",
+        "b",
+        "sumar"
+      ],
+      [
+        "getElementById",
+        "querySelectorAll",
+        "createElement",
+        "getElement"
+      ]
     ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5"
+    "correcta": [
+      "let",
+      "total",
+      "getElementById"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Reasignación de Constante",
-    "titulo": "Encuentra la falla: el script no cambia el mensaje",
-    "indicacion": "El script pretende cambiar el valor del mensaje, pero la consola muestra un error de tipo TypeError. Revisa el código e identifica la causa.",
+    "id": 8,
+    "categoria": "Corregir Errores",
+    "tipo": "Evento Mal Definido",
+    "titulo": "Encuentra por qué no se muestra la alerta",
+    "indicacion": "Al hacer clic en el botón no ocurre nada, aunque la función mostrar está definida. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "const mensaje = 'Hola';",
-        "tipo": "proceso"
-      },
-      {
-        "label": "mensaje = 'Adiós';",
-        "tipo": "proceso",
+        "label": "<button onclick='mostrar'>Ver mensaje</button>",
+        "tipo": "salida",
         "error": true
       },
       {
-        "label": "console.log(mensaje);",
+        "label": "function mostrar() { alert('Hola SENA'); }",
         "tipo": "proceso"
       }
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "El error está en console.log, que no existe en el navegador."
+        "id": 1,
+        "texto": "onclick='mostrar' asigna la función pero no la ejecuta: debe escribirse onclick='mostrar()'."
       },
       {
-        "id": 1,
-        "texto": "No se puede reasignar una constante declarada con const; debe usarse let si el valor va a cambiar."
+        "id": 0,
+        "texto": "La función debe llamarse mostrarMensaje."
       },
       {
         "id": 2,
-        "texto": "La variable debe declararse con var para que el script funcione."
+        "texto": "alert no existe en JavaScript."
       },
       {
         "id": 3,
-        "texto": "El código está correcto; el error lo genera el navegador."
+        "texto": "Falta declarar la variable del botón."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Concatenación de Tipos",
+    "titulo": "¿Qué muestra console.log con el signo más?",
+    "indicacion": "Ejecuta mentalmente la operación considerando que una de las variables es texto y la otra es número.",
+    "tipoComp": "codigo_salida",
+    "codigo": "let a = '5';\nlet b = 3;\nconsole.log(a + b);",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "Muestra 8."
+      },
+      {
+        "id": 1,
+        "salida": "Muestra 53, porque el operador + concatena el texto '5' con el número 3."
+      },
+      {
+        "id": 2,
+        "salida": "Muestra un error de tipos."
+      },
+      {
+        "id": 3,
+        "salida": "Muestra 15."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Evento con Nombre Erróneo",
-    "titulo": "Encuentra la falla: el botón no muestra la alerta",
-    "indicacion": "Al hacer clic en el botón debería aparecer una alerta de bienvenida, pero no ocurre nada y la consola muestra un error de referencia. Revisa el código.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Evento onclick",
+    "titulo": "Construye el script que responde al clic",
+    "indicacion": "Ordena los bloques para que el botón con id btn muestre la alerta 'Clic recibido' al ser presionado.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "<button onclick='saludar()'>Entrar</button>",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "function saludo() {",
+        "id": "b1",
+        "texto": "let boton = document.getElementById('btn');",
         "tipo": "proceso"
       },
       {
-        "label": "alert('Bienvenido');",
+        "id": "b2",
+        "texto": "boton.onclick = function() {",
         "tipo": "proceso"
       },
       {
-        "label": "}",
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "alert('Clic recibido');",
+        "tipo": "salida"
+      },
+      {
+        "id": "b5",
+        "texto": "};",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "La alerta debe escribirse con comillas dobles para funcionar."
-      },
-      {
-        "id": 1,
-        "texto": "El evento correcto es onmouseclick, no onclick."
-      },
-      {
-        "id": 3,
-        "texto": "El botón llama a saludar(), pero la función se llama saludo(); los nombres deben coincidir."
-      },
-      {
-        "id": 2,
-        "texto": "El código está correcto; al botón le falta CSS para verse."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b1",
+      "b2",
+      "b4",
+      "b5",
+      "b6"
+    ]
   }
 ];
 
@@ -766,6 +728,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -825,6 +802,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1092,6 +1209,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1125,6 +1248,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

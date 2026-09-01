@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la construcción de prototipos de interfaces gráficas de usuario: niveles de fidelidad, herramientas de prototipado, navegabilidad entre pantallas, prueba con usuarios e iteración, mediante retos prácticos interactivos que incluyen la depuración de la estructura HTML del prototipo.
+          Pon en práctica la construcción de prototipos de interfaces gráficas con casos reales de oficina: decide el nivel de fidelidad adecuado del prototipo, ordena la estructura de las pantallas y el proceso de prototipado, corrige prototipos con fallas de navegabilidad o de etiquetas HTML y determina el resultado de las pruebas con usuarios. Sin teoría: aquí se demuestra prototipando y probando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Wireframes y Prototipos:</strong> Identificar niveles de fidelidad, navegabilidad y resultados de la prueba con usuarios.</li>
-<li><strong>Diseño Lógico:</strong> Interpretar la estructura de las pantallas y sus elementos.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar la estructura HTML del prototipo en el orden correcto.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en las etiquetas y atributos del prototipo.</li>
+            <li><strong>Interfaces de Usuario:</strong> Decide el nivel de fidelidad y el resultado de la prueba con usuarios.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la estructura de las pantallas y el proceso de prototipado.</li>
+<li><strong>Corregir el Diseño:</strong> Encuentra la falla de navegabilidad o de etiqueta en el prototipo.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre la navegación del prototipo y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,18 +250,18 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Wireframes y Prototipos",
+    "categoria": "Interfaces de Usuario",
     "tipo": "Nivel de Fidelidad",
     "titulo": "¿Qué nivel de fidelidad corresponde a un wireframe?",
     "indicacion": "En el proceso de prototipado, el wireframe es la primera representación de la pantalla. Identifica su nivel de fidelidad.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Alta fidelidad: reproducción casi idéntica al producto final."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Baja fidelidad: esquema en grises con cajas y textos, sin colores ni imágenes."
       },
       {
@@ -277,26 +277,26 @@
   },
   {
     "id": 2,
-    "categoria": "Wireframes y Prototipos",
+    "categoria": "Interfaces de Usuario",
     "tipo": "Prueba con Usuarios",
-    "titulo": "¿Qué conclusión se obtiene de la prueba con usuarios?",
-    "indicacion": "Durante la prueba del prototipo de la pantalla de facturación, varios usuarios no encuentran el botón 'Guardar'. ¿Qué acción es la correcta?",
+    "titulo": "¿Qué acción es la correcta cuando los usuarios no encuentran el botón 'Guardar' en la prueba?",
+    "indicacion": "Durante la prueba del prototipo de la pantalla de facturación, varios usuarios no encuentran el botón 'Guardar'. Selecciona la acción correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Eliminar el botón porque los usuarios no lo utilizan."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Ignorar el resultado porque los usuarios no son programadores."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Rediseñar la pantalla para hacer visible el botón y volver a probar el prototipo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Entregar el prototipo al cliente sin realizar cambios."
       }
     ],
@@ -304,208 +304,58 @@
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
-    "tipo": "Etiqueta de Estructura",
-    "titulo": "¿Qué etiqueta agrupa el menú de navegación en el prototipo HTML?",
-    "indicacion": "El prototipo HTML de la aplicación debe contener el menú principal de navegación. Selecciona la etiqueta semántica correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura del Prototipo",
+    "titulo": "Construye el proceso: elaboración del prototipo navegable",
+    "indicacion": "Ordena los bloques para construir el proceso correcto de elaboración de un prototipo navegable de la aplicación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 1,
-        "texto": "<footer>"
-      },
-      {
-        "id": 2,
-        "texto": "<aside>"
-      },
-      {
-        "id": 3,
-        "texto": "<table>"
-      },
-      {
-        "id": 0,
-        "texto": "<nav>"
-      }
-    ],
-    "correcta": 3
-  },
-  {
-    "id": 4,
-    "categoria": "Wireframes y Prototipos",
-    "tipo": "Renderizado de HTML",
-    "titulo": "Prueba de escritorio: título del prototipo en el navegador",
-    "indicacion": "El prototipo de la pantalla de inicio se construyó con el siguiente HTML. Ejecútalo mentalmente y determina qué título muestra la pestaña del navegador.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "<!DOCTYPE html>",
+        "id": "b1",
+        "texto": "Definir las pantallas que conforman la aplicación",
         "tipo": "proceso"
       },
       {
-        "label": "<html lang='es'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<head>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<title>Punto de Venta - Inicio</title>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "</head>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<body>Contenido de la pantalla</body>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El navegador muestra el título en la pestaña",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Punto de Venta - Inicio"
-      },
-      {
-        "id": 1,
-        "texto": "Punto de Venta"
-      },
-      {
-        "id": 2,
-        "texto": "Inicio"
-      },
-      {
-        "id": 3,
-        "texto": "La pestaña no muestra ningún título"
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Diseño Lógico",
-    "tipo": "Conteo de Elementos",
-    "titulo": "Prueba de escritorio: campos visibles en el formulario del prototipo",
-    "indicacion": "El prototipo de la pantalla de registro contiene el siguiente HTML. Ejecútalo mentalmente y determina cuántos campos de texto (input type='text') ve el usuario.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "<form action='registrar.php' method='post'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<label for='nombres'>Nombres</label>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='text' id='nombres' name='nombres'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<label for='apellidos'>Apellidos</label>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='text' id='apellidos' name='apellidos'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<select name='ciudad'>...</select>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<button type='submit'>Registrar</button>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El usuario cuenta los campos de texto visibles",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "3"
-      },
-      {
-        "id": 0,
-        "texto": "2"
-      },
-      {
-        "id": 2,
-        "texto": "4"
-      },
-      {
-        "id": 3,
-        "texto": "1"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Wireframes y Prototipos",
-    "tipo": "Navegabilidad",
-    "titulo": "Prueba de escritorio: navegación entre pantallas del prototipo",
-    "indicacion": "El prototipo navegable tiene dos pantallas: index.html y registro.html. La pantalla principal contiene el enlace 'Registrarse'. Si el usuario hace clic en él, ¿qué pantalla se muestra?",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "El usuario abre index.html",
+        "id": "b2",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "<a href='registro.html'>Registrarse</a>",
+        "id": "b3",
+        "texto": "Dibujar los wireframes de cada pantalla",
         "tipo": "proceso"
       },
       {
-        "label": "El usuario hace clic en 'Registrarse'",
+        "id": "b4",
+        "texto": "Conectar las pantallas con enlaces para simular la navegación",
         "tipo": "proceso"
       },
       {
-        "label": "El navegador lee el atributo href del enlace",
+        "id": "b5",
+        "texto": "Probar el prototipo con usuarios y ajustar",
         "tipo": "proceso"
       },
       {
-        "label": "El navegador carga la pantalla destino",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "index.html"
-      },
-      {
-        "id": 2,
-        "texto": "Una página en blanco"
-      },
-      {
-        "id": 0,
-        "texto": "registro.html"
-      },
-      {
-        "id": 3,
-        "texto": "registro.html dentro de index.html"
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b2",
+      "b1",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Estructura HTML",
-    "titulo": "Construye la estructura HTML del prototipo",
-    "indicacion": "Ordena los bloques para construir la estructura básica de un documento HTML válido para el prototipo de la aplicación.",
+    "id": 4,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura HTML del Prototipo",
+    "titulo": "Construye la estructura HTML del prototipo de inicio",
+    "indicacion": "Ordena los bloques para construir la estructura básica de un documento HTML válido para la pantalla de inicio del prototipo.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -525,7 +375,7 @@
       },
       {
         "id": "b4",
-        "texto": "<title>Prototipo App</title>",
+        "texto": "<title>Prototipo Punto de Venta</title>",
         "tipo": "proceso"
       },
       {
@@ -567,9 +417,9 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Pantalla",
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Pantalla de Acceso",
     "titulo": "Construye la pantalla de acceso del prototipo",
     "indicacion": "Ordena los bloques para construir el formulario de acceso (login) del prototipo: etiqueta, campo de texto y campo de contraseña.",
     "tipoComp": "ordenar_bloques",
@@ -621,8 +471,58 @@
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
+    "id": 6,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Navegación Rota",
+    "titulo": "Encuentra la falla: el enlace 'Registrarse' no lleva a ninguna parte",
+    "indicacion": "El prototipo de la tienda en línea tiene un enlace que debe abrir la pantalla de registro, pero al hacer clic el navegador muestra un error. Revisa el HTML e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "<a href='registro.html'>Registrarse</a>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El archivo del prototipo se llama registrar.html, no registro.html",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El usuario hace clic en 'Registrarse'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El enlace debe reemplazarse por un botón."
+      },
+      {
+        "id": 2,
+        "texto": "La etiqueta <a> debe ubicarse fuera del cuerpo de la página."
+      },
+      {
+        "id": 0,
+        "texto": "El atributo href apunta a un archivo que no existe: debe escribirse href='registrar.html'."
+      },
+      {
+        "id": 3,
+        "texto": "El prototipo está correcto; el error es del navegador."
+      }
+    ],
+    "correcta": 2
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Diseño",
     "tipo": "Atributo Incorrecto",
     "titulo": "Encuentra la falla: la imagen del logo no aparece",
     "indicacion": "El prototipo debe mostrar el logo de la empresa en la pantalla de inicio, pero la imagen no se carga. Revisa el HTML e identifica el error.",
@@ -644,12 +544,8 @@
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La etiqueta img debe ubicarse fuera del header."
-      },
-      {
         "id": 0,
-        "texto": "La etiqueta img usa href; la ruta de la imagen se indica con el atributo src: <img src='logo.png' alt='Logo de la empresa'>."
+        "texto": "La etiqueta img debe ubicarse fuera del header."
       },
       {
         "id": 2,
@@ -658,13 +554,17 @@
       {
         "id": 3,
         "texto": "El HTML está correcto; el problema es del navegador."
+      },
+      {
+        "id": 1,
+        "texto": "La etiqueta img usa href; la ruta de la imagen se indica con el atributo src: <img src='logo.png' alt='Logo de la empresa'>."
       }
     ],
-    "correcta": 1
+    "correcta": 3
   },
   {
-    "id": 10,
-    "categoria": "Depuración de Errores",
+    "id": 8,
+    "categoria": "Corregir el Diseño",
     "tipo": "Etiqueta Mal Ubicada",
     "titulo": "Encuentra la falla: el título no aparece en la pestaña",
     "indicacion": "El prototipo debe mostrar el nombre de la aplicación en la pestaña del navegador, pero la pestaña aparece sin título. Revisa el HTML e identifica el error.",
@@ -698,20 +598,142 @@
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "El documento debe iniciar con <!DOCTYPE html> para que el título funcione."
-      },
-      {
         "id": 2,
-        "texto": "La etiqueta <title> debe repetirse en <body> y en <head>."
+        "texto": "La etiqueta <title> debe ubicarse dentro de <head>, no dentro de <body>, para que el navegador la muestre en la pestaña."
       },
       {
         "id": 0,
-        "texto": "La etiqueta <title> debe ubicarse dentro de <head>, no dentro de <body>, para que el navegador la muestre en la pestaña."
+        "texto": "El documento debe iniciar con <!DOCTYPE html> para que el título funcione."
+      },
+      {
+        "id": 1,
+        "texto": "La etiqueta <title> debe repetirse en <body> y en <head>."
       },
       {
         "id": 3,
         "texto": "El HTML está correcto; el navegador oculta el título por diseño."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Navegación entre Pantallas",
+    "titulo": "Prueba de escritorio: pantalla que muestra el enlace 'Registrarse'",
+    "indicacion": "El prototipo navegable tiene dos pantallas: index.html y registro.html. La pantalla principal contiene el enlace 'Registrarse'. Si el usuario hace clic en él, ¿qué pantalla se muestra?",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario abre index.html",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<a href='registro.html'>Registrarse</a>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El usuario hace clic en 'Registrarse'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El navegador carga la pantalla destino",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "index.html"
+      },
+      {
+        "id": 1,
+        "texto": "registro.html"
+      },
+      {
+        "id": 2,
+        "texto": "Una página en blanco"
+      },
+      {
+        "id": 3,
+        "texto": "registro.html dentro de index.html"
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Conteo de Elementos",
+    "titulo": "Prueba de escritorio: campos de texto visibles en el formulario del prototipo",
+    "indicacion": "El prototipo de la pantalla de registro contiene el siguiente formulario. Ejecútalo mentalmente y determina cuántos campos de texto (input type='text') ve el usuario.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "<form action='registrar.php' method='post'>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<label for='nombres'>Nombres</label>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<input type='text' id='nombres' name='nombres'>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<label for='apellidos'>Apellidos</label>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<input type='text' id='apellidos' name='apellidos'>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<select name='ciudad'>...</select>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "<button type='submit'>Registrar</button>",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El usuario cuenta los campos de texto visibles",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "1"
+      },
+      {
+        "id": 2,
+        "texto": "3"
+      },
+      {
+        "id": 1,
+        "texto": "2"
+      },
+      {
+        "id": 3,
+        "texto": "4"
       }
     ],
     "correcta": 2
@@ -844,6 +866,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -903,6 +940,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1170,6 +1347,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1203,6 +1386,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

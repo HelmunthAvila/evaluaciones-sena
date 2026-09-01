@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la selección y el uso correcto de los componentes de interfaz de usuario: botones, campos de texto, listas desplegables, casillas y menús de navegación, mediante retos prácticos interactivos.
+          Pon en práctica la selección de componentes de interfaz con pantallas reales de oficina: decide qué componente (botón, campo de texto, lista desplegable, casilla, botones de opción o menú) corresponde a cada dato y a cada acción, ordena la estructura de las pantallas, corrige formularios donde se usó el componente equivocado y recorre la captura de datos para verificar los componentes empleados. Sin teoría: aquí se demuestra eligiendo el componente correcto.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Componentes UI:</strong> Elegir el componente adecuado para cada dato y cada acción.</li>
-<li><strong>Diseño Lógico:</strong> Razonar la secuencia de interacción según el propósito de la pantalla.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar la estructura de una pantalla.</li>
-<li><strong>Depuración de Errores:</strong> Detectar el uso inadecuado de los componentes.</li>
+            <li><strong>Interfaces de Usuario:</strong> Decide qué componente UI corresponde a cada dato y a cada acción de la pantalla.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la estructura y la secuencia de uso de los componentes.</li>
+<li><strong>Corregir el Diseño:</strong> Encuentra el componente inadecuado dentro del formulario.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre la captura de datos y determina los componentes empleados.</li>
           </ul>
         </div>
 
@@ -250,10 +250,10 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Componentes UI",
+    "categoria": "Interfaces de Usuario",
     "tipo": "Componente para Selección Única",
     "titulo": "Para elegir el departamento de residencia entre 32 opciones predefinidas, ¿qué componente es el más adecuado?",
-    "indicacion": "Selecciona el componente que permite elegir una opción de un conjunto extenso sin ocupar demasiado espacio en pantalla.",
+    "indicacion": "Selecciona el componente que permite elegir una opción de un conjunto extenso sin ocupar demasiado espacio en la pantalla.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -277,14 +277,14 @@
   },
   {
     "id": 2,
-    "categoria": "Componentes UI",
+    "categoria": "Interfaces de Usuario",
     "tipo": "Componente para Opción Binaria",
     "titulo": "El usuario debe aceptar o no los términos y condiciones antes de continuar. ¿Qué componente es el apropiado?",
     "indicacion": "Selecciona el componente que permite marcar una condición de aceptación sin escribir texto.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Campo de texto: para digitar la respuesta."
       },
       {
@@ -292,7 +292,7 @@
         "texto": "Lista desplegable: para elegir entre varias opciones."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Casilla de verificación: permite marcar la aceptación de la condición."
       },
       {
@@ -304,63 +304,313 @@
   },
   {
     "id": 3,
-    "categoria": "Componentes UI",
-    "tipo": "Botón según la Acción",
-    "titulo": "En un formulario de registro, ¿qué botón debe confirmar el envío de los datos al sistema?",
-    "indicacion": "Identifica el botón cuya función es ejecutar la acción principal del formulario.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura de Pantalla de Registro",
+    "titulo": "Construye la pantalla: registro de un cliente",
+    "indicacion": "Ordena los bloques para ensamblar la estructura lógica de la pantalla de registro de clientes, de arriba hacia abajo.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Mostrar el campo de texto para el nombre del cliente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Mostrar el menú de navegación con las secciones del sistema",
+        "tipo": "salida"
+      },
+      {
+        "id": "b3",
+        "texto": "Mostrar el campo de texto para el teléfono",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b5",
+        "texto": "Mostrar la lista desplegable para la ciudad",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Mostrar el botón 'Guardar cliente'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b4",
+      "b2",
+      "b1",
+      "b3",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 4,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Secuencia de Uso de Componentes",
+    "titulo": "Construye el proceso: buscar y filtrar un producto",
+    "indicacion": "Ordena los bloques para construir la secuencia en la que un usuario busca un producto y aplica un filtro de categoría en la tienda en línea.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Escribir el nombre del producto en el campo de búsqueda",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b2",
+        "texto": "Presionar el botón 'Buscar'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Seleccionar la categoría en la lista desplegable de filtros",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "El sistema muestra los resultados filtrados",
+        "tipo": "salida"
+      },
+      {
+        "id": "b5",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b5",
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura de Pantalla de Pago",
+    "titulo": "Construye la pantalla: confirmación de un pedido",
+    "indicacion": "Ordena los bloques para ensamblar la estructura de la pantalla de confirmación de pedido, incluyendo la selección de la forma de pago.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Mostrar el resumen del pedido con el total",
+        "tipo": "salida"
+      },
+      {
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "Mostrar tres botones de opción: efectivo, tarjeta y transferencia",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Mostrar el botón 'Confirmar pedido'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Mostrar la sección 'Forma de pago'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b2",
+      "b1",
+      "b5",
+      "b3",
+      "b4",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Componente Incorrecto",
+    "titulo": "Encuentra la falla: lista desplegable para el nombre de usuario",
+    "indicacion": "La pantalla de inicio de sesión debe pedir el usuario y la contraseña, pero la especificación usa un componente inadecuado para uno de los datos. Identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Mostrar el título 'Inicio de sesión'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mostrar una lista desplegable para el nombre de usuario",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Mostrar un campo de texto para la contraseña",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mostrar el botón 'Entrar'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
         "id": 1,
-        "texto": "Botón 'Cancelar': descarta los cambios realizados."
+        "texto": "La contraseña debe capturarse con una lista desplegable."
       },
       {
         "id": 2,
-        "texto": "Botón 'Limpiar': borra el contenido de los campos."
-      },
-      {
-        "id": 3,
-        "texto": "Botón 'Salir': cierra la aplicación."
+        "texto": "Falta una casilla de verificación para los términos y condiciones."
       },
       {
         "id": 0,
-        "texto": "Botón 'Registrar': ejecuta la acción principal del formulario."
+        "texto": "El usuario se digita, no se elige de una lista: debe usarse un campo de texto para el nombre de usuario."
+      },
+      {
+        "id": 3,
+        "texto": "La especificación está correcta."
+      }
+    ],
+    "correcta": 2
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Confusión entre Componentes",
+    "titulo": "Encuentra la falla: casillas de verificación donde se requiere una sola opción",
+    "indicacion": "El sistema debe permitir elegir UNA sola forma de pago (efectivo, tarjeta o transferencia), pero la especificación usa casillas de verificación. Identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Mostrar la sección 'Forma de pago'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mostrar tres casillas de verificación: efectivo, tarjeta y transferencia",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Confirmar el pedido",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "La forma de pago debe escribirse en un campo de texto."
+      },
+      {
+        "id": 1,
+        "texto": "Debe usarse una barra de desplazamiento para mostrar las opciones."
+      },
+      {
+        "id": 3,
+        "texto": "La especificación está correcta."
+      },
+      {
+        "id": 2,
+        "texto": "Las casillas permiten marcar varias formas de pago a la vez: para una sola opción deben usarse botones de opción."
       }
     ],
     "correcta": 3
   },
   {
-    "id": 4,
-    "categoria": "Diseño Lógico",
-    "tipo": "Menú de Navegación",
-    "titulo": "Una aplicación de ventas debe permitir al usuario moverse entre las secciones 'Inicio', 'Productos', 'Clientes' y 'Reportes'. ¿Qué componente organiza ese desplazamiento?",
-    "indicacion": "Selecciona el componente que agrupa los accesos a las secciones principales de la aplicación.",
-    "tipoComp": "seleccion_rapida",
+    "id": 8,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Campo Libre para Opciones Fijas",
+    "titulo": "Encuentra la falla: campo de texto para un dato con opciones predefinidas",
+    "indicacion": "El formulario de matrícula debe capturar la jornada del aprendiz, que solo puede ser 'Diurna', 'Tarde' o 'Noche', pero la especificación usa un campo de texto libre. Identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Mostrar el formulario de matrícula",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mostrar un campo de texto libre para la jornada",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Mostrar el botón 'Enviar matrícula'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
+        "id": 3,
+        "texto": "La jornada debe seleccionarse de opciones fijas: conviene una lista desplegable o botones de opción."
+      },
+      {
         "id": 0,
-        "texto": "Menú de navegación: agrupa los enlaces a las secciones principales."
+        "texto": "Debe usarse una casilla de verificación para cada jornada."
       },
       {
         "id": 1,
-        "texto": "Campo de texto: para escribir el nombre de la sección deseada."
+        "texto": "El formulario está correcto: el campo de texto permite cualquier valor."
       },
       {
         "id": 2,
-        "texto": "Casilla de verificación: para activar o desactivar secciones."
-      },
-      {
-        "id": 3,
-        "texto": "Botón de opción: para elegir una única sección."
+        "texto": "Debe eliminarse el campo de jornada del formulario."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Componentes UI",
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
     "tipo": "Recorrido de Captura de Datos",
-    "titulo": "Prueba de escritorio: formulario de matrícula",
+    "titulo": "Prueba de escritorio: componentes del formulario de matrícula",
     "indicacion": "Sigue el recorrido del formulario y determina qué componentes se utilizaron para capturar cada dato.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
@@ -414,8 +664,8 @@
     "correcta": 1
   },
   {
-    "id": 6,
-    "categoria": "Diseño Lógico",
+    "id": 10,
+    "categoria": "Prueba de Escritorio",
     "tipo": "Decisión de Componente",
     "titulo": "Prueba de escritorio: componente para la sede de estudio",
     "indicacion": "El sistema debe capturar la sede donde estudia el aprendiz: solo puede elegir UNA entre cuatro sedes. Sigue el razonamiento del diagrama y determina el componente correcto.",
@@ -448,226 +698,20 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Casillas de verificación: permiten elegir varias alternativas a la vez."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Campo de texto: permite escribir cualquier valor."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Botones de opción: permiten elegir una sola alternativa entre pocas opciones visibles."
       },
       {
         "id": 3,
         "texto": "Barra de desplazamiento: no permite seleccionar opciones."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Estructura de Pantalla de Registro",
-    "titulo": "Construye la pantalla: registro de un cliente",
-    "indicacion": "Ordena los bloques para ensamblar la estructura lógica de una pantalla de registro de clientes, de arriba hacia abajo.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Mostrar el campo de texto para el nombre del cliente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Mostrar el menú de navegación con las secciones del sistema",
-        "tipo": "salida"
-      },
-      {
-        "id": "b3",
-        "texto": "Mostrar el campo de texto para el teléfono",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b5",
-        "texto": "Mostrar la lista desplegable para la ciudad",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Mostrar el botón 'Guardar cliente'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b4",
-      "b2",
-      "b1",
-      "b3",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Depuración de Errores",
-    "tipo": "Componente Incorrecto",
-    "titulo": "Encuentra la falla: componentes en la pantalla de inicio de sesión",
-    "indicacion": "La pantalla de inicio de sesión debe pedir el usuario y la contraseña, pero la especificación usa un componente inadecuado para uno de los datos. Identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Mostrar el título 'Inicio de sesión'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Mostrar una lista desplegable para el nombre de usuario",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "Mostrar un campo de texto para la contraseña",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Mostrar el botón 'Entrar'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El usuario se digita, no se elige de una lista: debe usarse un campo de texto para el nombre de usuario."
-      },
-      {
-        "id": 1,
-        "texto": "La contraseña debe capturarse con una lista desplegable."
-      },
-      {
-        "id": 2,
-        "texto": "Falta una casilla de verificación para los términos y condiciones."
-      },
-      {
-        "id": 3,
-        "texto": "La especificación está correcta."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 9,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Secuencia de Uso de Componentes",
-    "titulo": "Construye el proceso: buscar y filtrar un producto",
-    "indicacion": "Ordena los bloques para construir la secuencia en la que un usuario busca un producto y aplica un filtro de categoría en la tienda en línea.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Escribir el nombre del producto en el campo de búsqueda",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b2",
-        "texto": "Presionar el botón 'Buscar'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Seleccionar la categoría en la lista desplegable de filtros",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "El sistema muestra los resultados filtrados",
-        "tipo": "salida"
-      },
-      {
-        "id": "b5",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b5",
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b6"
-    ]
-  },
-  {
-    "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Confusión entre Componentes",
-    "titulo": "Encuentra la falla: selección múltiple donde se requiere una sola",
-    "indicacion": "El sistema debe permitir elegir UNA sola forma de pago (efectivo, tarjeta o transferencia), pero la especificación usa casillas de verificación. Identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Mostrar la sección 'Forma de pago'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Mostrar tres casillas de verificación: efectivo, tarjeta y transferencia",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "Confirmar el pedido",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "La forma de pago debe escribirse en un campo de texto."
-      },
-      {
-        "id": 2,
-        "texto": "Debe usarse una barra de desplazamiento para mostrar las opciones."
-      },
-      {
-        "id": 0,
-        "texto": "Las casillas permiten marcar varias formas de pago a la vez; para una sola opción deben usarse botones de opción."
-      },
-      {
-        "id": 3,
-        "texto": "La especificación está correcta."
       }
     ],
     "correcta": 2
@@ -800,6 +844,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -859,6 +918,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1126,6 +1325,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1159,6 +1364,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

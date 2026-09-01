@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de hojas de estilo en cascada: selectores de etiqueta, de clase y de id, propiedades de color, tipografía, espaciado y bordes, modelo de caja, unidades de medida, especificidad y las formas de vincular estilos a un documento HTML, mediante retos prácticos interactivos.
+          Pon en práctica la aplicación de estilos CSS con código real: predice qué color, tamaño o dimensión se aplica con cada regla, completa los huecos de propiedades y valores, ordena las reglas de una hoja de estilos y corrige los errores que el navegador ignora silenciosamente. Sin teoría: aquí se demuestra estilizando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Sintaxis y Selectores CSS:</strong> Identificar propiedades, valores y el selector adecuado (etiqueta, clase o id).</li>
-<li><strong>Prueba de Escritorio:</strong> Simular qué estilo aplica el navegador ante una regla determinada.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar reglas CSS y la estructura de la hoja de estilos.</li>
-<li><strong>Depuración de Errores:</strong> Detectar propiedades mal escritas y selectores equivocados.</li>
+            <li><strong>Predecir la Salida:</strong> Ejecuta mentalmente la regla CSS y determina qué estilo se aplica.</li>
+<li><strong>Completar Código:</strong> Llena los huecos de propiedades y valores CSS.</li>
+<li><strong>Ordenar Líneas:</strong> Ensambla el orden correcto de una regla CSS.</li>
+<li><strong>Corregir Errores:</strong> Encuentra el error que el navegador ignora sin aplicar el estilo.</li>
           </ul>
         </div>
 
@@ -250,226 +250,323 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Sintaxis CSS",
-    "tipo": "Propiedad Correcta",
-    "titulo": "¿Qué propiedad CSS cambia el color del texto de un elemento?",
-    "indicacion": "Para que el texto de un párrafo se muestre en rojo se utiliza una propiedad específica del color. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Selector de Etiqueta",
+    "titulo": "¿Qué estilo aplica esta regla?",
+    "indicacion": "Determina el efecto visual que produce la regla CSS sobre los elementos de la página.",
+    "tipoComp": "codigo_salida",
+    "codigo": "p {\n  color: red;\n}",
     "opciones": [
       {
         "id": 1,
-        "texto": "text-color"
+        "salida": "Solo la primera letra de cada párrafo se muestra en rojo."
       },
       {
         "id": 0,
-        "texto": "color"
+        "salida": "Todo el texto de los párrafos se muestra en color rojo."
       },
       {
         "id": 2,
-        "texto": "font-color"
+        "salida": "El fondo de los párrafos se muestra en rojo."
       },
       {
         "id": 3,
-        "texto": "background-color"
+        "salida": "Los encabezados h1 se muestran en rojo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Selectores CSS",
-    "tipo": "Selector por Id",
-    "titulo": "¿Qué selector aplica estilos únicamente al elemento con id='menu'?",
-    "indicacion": "En CSS los estilos se pueden dirigir a un elemento específico por su atributo id. Selecciona el selector correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Propiedades de Texto",
+    "titulo": "Completa la regla de la clase titulo",
+    "indicacion": "Completa los huecos para que el texto de la clase titulo se muestre en azul, con un tamaño de 18 píxeles y un margen de 10 píxeles.",
+    "tipoComp": "codigo_completar",
+    "codigo": ".titulo {\n  ___ : #1a73e8;\n  font-___: 18px;\n  ___ : 10px;\n}",
     "opciones": [
-      {
-        "id": 0,
-        "texto": ".menu"
-      },
-      {
-        "id": 1,
-        "texto": "menu"
-      },
-      {
-        "id": 2,
-        "texto": "#menu"
-      },
-      {
-        "id": 3,
-        "texto": "*menu"
-      }
+      [
+        "color",
+        "background-color",
+        "border-color",
+        "font-size"
+      ],
+      [
+        "size",
+        "weight",
+        "family",
+        "style"
+      ],
+      [
+        "margin",
+        "padding",
+        "border",
+        "width"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "color",
+      "size",
+      "margin"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Sintaxis CSS",
-    "tipo": "Declaración Válida",
-    "titulo": "¿Cuál de las siguientes declaraciones CSS es válida?",
-    "indicacion": "Una declaración CSS se compone de una propiedad, dos puntos, un valor y punto y coma. Identifica la escritura correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Especificidad",
+    "titulo": "¿Qué color se aplica al título?",
+    "indicacion": "La página contiene el elemento <h1 class='titulo'>Bienvenido</h1> y la hoja de estilos define las dos reglas siguientes. Determina qué color prevalece.",
+    "tipoComp": "codigo_salida",
+    "codigo": ".titulo {\n  color: blue;\n}\n\nh1 {\n  color: red;\n}",
     "opciones": [
       {
         "id": 0,
-        "texto": "font-size = 16px;"
-      },
-      {
-        "id": 2,
-        "texto": "font-size: 16 px;"
-      },
-      {
-        "id": 3,
-        "texto": "font-size 16px;"
+        "salida": "Rojo, porque h1 es la etiqueta del elemento."
       },
       {
         "id": 1,
-        "texto": "font-size: 16px;"
+        "salida": "Azul y rojo a la vez."
+      },
+      {
+        "id": 2,
+        "salida": "Ninguno: el navegador ignora ambas reglas."
+      },
+      {
+        "id": 3,
+        "salida": "Azul, porque el selector de clase .titulo tiene mayor especificidad que el selector de etiqueta h1."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Especificidad",
-    "titulo": "Prueba de escritorio: ¿qué color aplica el navegador?",
-    "indicacion": "Analiza la hoja de estilos y el HTML. Determina el color con el que se muestra el texto del párrafo, aplicando las reglas de especificidad de CSS.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Propiedad Mal Escrita",
+    "titulo": "Encuentra por qué el título no cambia de color",
+    "indicacion": "El desarrollador escribió la regla con la intención de colorear el título, pero el navegador no aplica el estilo y tampoco muestra error. ¿Cuál es la causa?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "p { color: red; }",
+        "label": "h1 {",
         "tipo": "proceso"
       },
       {
-        "label": ".destacado { color: blue; }",
-        "tipo": "proceso"
+        "label": "collor: red;",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "<p class='destacado'>Bienvenido</p>",
+        "label": "}",
         "tipo": "proceso"
-      },
-      {
-        "label": "El navegador resuelve la especificidad y renderiza el párrafo",
-        "tipo": "salida"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
-        "id": 3,
-        "texto": "Azul, porque la clase tiene mayor especificidad que la etiqueta."
+        "id": 2,
+        "texto": "La propiedad se escribe color, no collor: el navegador ignora la declaración y el título no cambia de color."
       },
       {
         "id": 0,
-        "texto": "Rojo, porque la regla de etiqueta se declara primero."
+        "texto": "El selector h1 debe escribirse en mayúscula: H1."
       },
       {
         "id": 1,
-        "texto": "Negro, el color por defecto del navegador."
+        "texto": "El valor red no es un color válido en CSS."
       },
       {
-        "id": 2,
-        "texto": "Rojo y azul a la vez."
+        "id": 3,
+        "texto": "Falta un punto y coma después de la llave de cierre."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Modelo de Caja",
-    "titulo": "Prueba de escritorio: ancho total de la caja",
-    "indicacion": "Con el modelo de caja estándar (box-sizing: content-box), el ancho total de un elemento suma el width, el padding y el border. Calcula el ancho total de la caja.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": ".caja { width: 100px; }",
-        "tipo": "proceso"
-      },
-      {
-        "label": "padding: 10px; (aplica a los cuatro lados)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "border: 5px solid black; (aplica a los cuatro lados)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El navegador suma contenido, relleno y borde",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Predecir la Salida",
+    "tipo": "Unidades em",
+    "titulo": "¿Con qué tamaño se muestra el título?",
+    "indicacion": "El tamaño base de letra del navegador es 16 píxeles. Determina el tamaño resultante del encabezado con la unidad em.",
+    "tipoComp": "codigo_salida",
+    "codigo": "h1 {\n  font-size: 2em;\n}",
+    "opciones": [
       {
         "id": 0,
-        "texto": "100px"
-      },
-      {
-        "id": 2,
-        "texto": "130px"
+        "salida": "16 píxeles."
       },
       {
         "id": 1,
-        "texto": "120px"
+        "salida": "32 píxeles, porque 2em equivale a dos veces el tamaño base."
+      },
+      {
+        "id": 2,
+        "salida": "2 píxeles."
       },
       {
         "id": 3,
-        "texto": "115px"
+        "salida": "24 píxeles."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Unidades Relativas",
-    "titulo": "Prueba de escritorio: tamaño del encabezado con em",
-    "indicacion": "La unidad em es relativa al tamaño de fuente del elemento padre. Calcula el tamaño final del texto del encabezado h1.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Regla CSS Completa",
+    "titulo": "Construye la regla de la clase boton",
+    "indicacion": "Ordena los bloques para construir una regla CSS válida que dé estilo al botón: fondo azul, texto blanco, relleno y esquinas redondeadas.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "body { font-size: 16px; }",
+        "id": "b1",
+        "texto": ".boton {",
         "tipo": "proceso"
       },
       {
-        "label": "h1 { font-size: 2em; }",
+        "id": "b2",
+        "texto": "background-color: #007bff;",
         "tipo": "proceso"
       },
       {
-        "label": "El navegador calcula 2em sobre el tamaño heredado (16px)",
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "color: white;",
         "tipo": "proceso"
       },
       {
-        "label": "El encabezado h1 se renderiza",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "padding: 10px 20px;",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "border-radius: 5px;",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "}",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "16px"
-      },
-      {
-        "id": 1,
-        "texto": "8px"
-      },
-      {
-        "id": 3,
-        "texto": "32px"
-      },
-      {
-        "id": 2,
-        "texto": "2px"
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b1",
+      "b2",
+      "b4",
+      "b5",
+      "b6",
+      "b7",
+      "b8"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Regla CSS",
-    "titulo": "Construye la regla CSS del encabezado",
-    "indicacion": "Ordena los bloques para construir la regla CSS que aplica al encabezado h1: texto azul, fondo amarillo, tamaño de 18px y borde negro de 2px.",
+    "categoria": "Completar Código",
+    "tipo": "Unidades y Box Model",
+    "titulo": "Completa el relleno y el ancho del párrafo",
+    "indicacion": "Completa los valores para que el párrafo tenga 20 píxeles de relleno interno y ocupe la mitad del ancho de su contenedor.",
+    "tipoComp": "codigo_completar",
+    "codigo": "p {\n  padding: ___;\n  width: ___;\n}",
+    "opciones": [
+      [
+        "20px",
+        "20%",
+        "2em",
+        "20"
+      ],
+      [
+        "50%",
+        "50px",
+        "50em",
+        "50"
+      ]
+    ],
+    "correcta": [
+      "20px",
+      "50%"
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir Errores",
+    "tipo": "Selector Equivocado",
+    "titulo": "Encuentra por qué no se aplica el color azul",
+    "indicacion": "El desarrollador quiere colorear el elemento con class='titulo', pero el estilo no se aplica. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "#titulo { color: blue; }",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "<h1 class='titulo'>Bienvenido</h1>",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El selector #titulo busca un id, pero el elemento usa class='titulo': debe escribirse .titulo."
+      },
+      {
+        "id": 1,
+        "texto": "El color blue no existe en CSS."
+      },
+      {
+        "id": 2,
+        "texto": "El elemento debe estar dentro de una etiqueta div."
+      },
+      {
+        "id": 3,
+        "texto": "El código está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Box Model",
+    "titulo": "¿Cuál es el ancho total de la caja?",
+    "indicacion": "El elemento .caja usa el modelo de caja estándar (content-box). Determina el ancho total que ocupa en la página.",
+    "tipoComp": "codigo_salida",
+    "codigo": ".caja {\n  width: 200px;\n  padding: 20px;\n  border: 2px solid black;\n}",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "200 píxeles, porque width define el ancho total."
+      },
+      {
+        "id": 2,
+        "salida": "244 píxeles: 200 de contenido más 40 de relleno (20 por lado) más 4 de borde (2 por lado)."
+      },
+      {
+        "id": 1,
+        "salida": "220 píxeles."
+      },
+      {
+        "id": 3,
+        "salida": "222 píxeles."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Ordenar Líneas",
+    "tipo": "Regla del Encabezado",
+    "titulo": "Construye la regla del encabezado h1",
+    "indicacion": "Ordena los bloques para construir una regla CSS válida que centre el título, lo muestre en color oscuro y con un tamaño de dos veces la base.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -479,170 +576,44 @@
       },
       {
         "id": "b2",
-        "texto": "color: blue;",
+        "texto": "color: #2c3e50;",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "background-color: yellow;",
-        "tipo": "proceso"
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
-        "texto": "font-size: 18px;",
+        "texto": "text-align: center;",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "border: 2px solid black;",
+        "texto": "font-size: 2em;",
         "tipo": "proceso"
       },
       {
         "id": "b6",
         "texto": "}",
         "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
+      "b3",
       "b1",
       "b2",
-      "b3",
       "b4",
       "b5",
-      "b6"
+      "b6",
+      "b7"
     ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Vinculación de Hoja de Estilos",
-    "titulo": "Construye el enlace a la hoja de estilos",
-    "indicacion": "Ordena los bloques para construir el documento HTML que vincula la hoja de estilos styles.css dentro de la sección head y muestra el encabezado 'Hola mundo'.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "<head>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "<link rel='stylesheet' href='styles.css'>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "</head>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "<body>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "<h1>Hola mundo</h1>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "</body>",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Propiedad Mal Escrita",
-    "titulo": "Encuentra la falla: el fondo del botón no se pinta",
-    "indicacion": "El botón debe mostrar un fondo verde, pero al abrir la página conserva el fondo blanco. Revisa la regla CSS e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": ".btn-enviar {",
-        "tipo": "proceso"
-      },
-      {
-        "label": "backgroud-color: green;",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "}",
-        "tipo": "proceso"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El selector debe ser #btn-enviar para que el estilo aplique."
-      },
-      {
-        "id": 0,
-        "texto": "La propiedad está mal escrita: es background-color; 'backgroud-color' no existe y el navegador la ignora."
-      },
-      {
-        "id": 2,
-        "texto": "El valor correcto es 'verde' en español, no 'green'."
-      },
-      {
-        "id": 3,
-        "texto": "El código está correcto; el problema es del navegador."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Selector Equivocado",
-    "titulo": "Encuentra la falla: el aviso no se ve en rojo",
-    "indicacion": "El párrafo con class='aviso' debe mostrarse en rojo, pero el estilo no aplica. Revisa el selector e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "aviso {",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "color: red;",
-        "tipo": "proceso"
-      },
-      {
-        "label": "}",
-        "tipo": "proceso"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El color debe escribirse como color: rojo; en español."
-      },
-      {
-        "id": 2,
-        "texto": "La clase debe llamarse igual que la etiqueta <p>."
-      },
-      {
-        "id": 1,
-        "texto": "Falta el punto en el selector: debe ser .aviso para seleccionar la clase."
-      },
-      {
-        "id": 3,
-        "texto": "El código está correcto; el navegador no soporta CSS."
-      }
-    ],
-    "correcta": 2
   }
 ];
 
@@ -772,6 +743,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -831,6 +817,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1098,6 +1224,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1131,6 +1263,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

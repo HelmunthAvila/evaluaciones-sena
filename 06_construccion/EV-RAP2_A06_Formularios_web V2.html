@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la construcción de formularios web: elementos form, input, label, select, textarea y button, atributos action, method y name, y validación básica de campos, mediante retos prácticos interactivos.
+          Pon en práctica la construcción de formularios web con código real: predice qué control se muestra y cómo se envía la información, completa los huecos de etiquetas y atributos, ordena la estructura de un formulario y corrige los errores que impiden el envío de datos. Sin teoría: aquí se demuestra construyendo.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Formularios Web:</strong> Identificar elementos y atributos de los formularios.</li>
-<li><strong>Sintaxis de HTML:</strong> Reconocer la sintaxis correcta de campos y controles.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar formularios en el orden correcto.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el envío y la captura de datos.</li>
+            <li><strong>Predecir la Salida:</strong> Ejecuta mentalmente el código HTML y determina qué control se muestra.</li>
+<li><strong>Completar Código:</strong> Llena los huecos de etiquetas y atributos del formulario.</li>
+<li><strong>Ordenar Líneas:</strong> Ensambla el orden correcto de la estructura del formulario.</li>
+<li><strong>Corregir Errores:</strong> Encuentra el error que impide el envío de los datos.</li>
           </ul>
         </div>
 
@@ -250,433 +250,384 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Sintaxis de HTML",
-    "tipo": "Atributo Correcto",
-    "titulo": "¿Qué atributo del elemento <form> indica la dirección a la que se envían los datos?",
-    "indicacion": "El formulario debe enviar los datos capturados a un archivo del servidor. Selecciona el atributo que define esa dirección.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Estructura del Formulario",
+    "titulo": "¿Qué controles muestra este formulario?",
+    "indicacion": "Determina los controles que el navegador presenta al interpretar el formulario de registro.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<form action='registro.php' method='POST'>\n  <label for='nombre'>Nombre:</label>\n  <input type='text' id='nombre' name='nombre'>\n  <button type='submit'>Registrar</button>\n</form>",
     "opciones": [
       {
-        "id": 1,
-        "texto": "method"
-      },
-      {
         "id": 0,
-        "texto": "action"
+        "salida": "Muestra un menú desplegable y un botón Registrar."
       },
       {
         "id": 2,
-        "texto": "name"
+        "salida": "Muestra un campo de texto con la etiqueta 'Nombre:' y un botón 'Registrar'."
+      },
+      {
+        "id": 1,
+        "salida": "Muestra un área de texto grande y un botón Registrar."
       },
       {
         "id": 3,
-        "texto": "id"
+        "salida": "Muestra un campo de contraseña y un botón Registrar."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Formularios Web",
-    "tipo": "Tipo de Campo",
-    "titulo": "¿Qué campo permite escribir una contraseña sin mostrarla en pantalla?",
-    "indicacion": "Para capturar una clave de acceso, el navegador debe ocultar los caracteres escritos. Selecciona el control correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Completar Código",
+    "tipo": "Método y Atributos",
+    "titulo": "Completa el formulario de registro",
+    "indicacion": "Completa los huecos para que el formulario envíe los datos por POST, la etiqueta esté asociada al campo y el botón dispare el envío.",
+    "tipoComp": "codigo_completar",
+    "codigo": "<form action='registro.php' method='___'>\n  <label ___='nombre'>Nombre:</label>\n  <input type='text' ___='nombre' name='nombre'>\n  <button type='___'>Enviar</button>\n</form>",
     "opciones": [
-      {
-        "id": 1,
-        "texto": "<input type='text'>"
-      },
-      {
-        "id": 2,
-        "texto": "<input type='number'>"
-      },
-      {
-        "id": 0,
-        "texto": "<input type='password'>"
-      },
-      {
-        "id": 3,
-        "texto": "<textarea>"
-      }
+      [
+        "POST",
+        "GET",
+        "SEND",
+        "PUT"
+      ],
+      [
+        "for",
+        "id",
+        "name",
+        "class"
+      ],
+      [
+        "id",
+        "for",
+        "name",
+        "value"
+      ],
+      [
+        "submit",
+        "button",
+        "send",
+        "reset"
+      ]
     ],
-    "correcta": 2
+    "correcta": [
+      "POST",
+      "for",
+      "id",
+      "submit"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Formularios Web",
-    "tipo": "Elemento de Selección",
-    "titulo": "¿Qué elemento crea una lista desplegable de opciones?",
-    "indicacion": "El formulario debe ofrecer al usuario una lista desplegable para elegir su ciudad. Selecciona el elemento correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Predecir la Salida",
+    "tipo": "Tipos de Input",
+    "titulo": "¿Cómo se muestran estos dos campos?",
+    "indicacion": "Determina el comportamiento visual de los campos según su atributo type.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<input type='password' name='clave'>\n<input type='email' name='correo'>",
     "opciones": [
       {
         "id": 1,
-        "texto": "<input type='radio'>"
+        "salida": "Muestra dos campos de texto que muestran los caracteres digitados."
       },
       {
         "id": 2,
-        "texto": "<textarea>"
+        "salida": "Muestra un campo numérico y un campo de fecha."
       },
       {
         "id": 3,
-        "texto": "<button>"
+        "salida": "Muestra un campo de contraseña y un botón de envío."
       },
       {
         "id": 0,
-        "texto": "<select>"
+        "salida": "Muestra un campo de contraseña que oculta los caracteres digitados y un campo de correo electrónico."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Formularios Web",
-    "tipo": "Envío del Formulario",
-    "titulo": "Prueba de escritorio: envío del formulario de registro",
-    "indicacion": "El usuario digita 'ana@correo.com' en el campo de correo y presiona 'Enviar'. Ejecuta mentalmente el formulario y determina qué ocurre.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir Errores",
+    "tipo": "Atributo Faltante",
+    "titulo": "Encuentra por qué no se envía el dato",
+    "indicacion": "El formulario se envía, pero el servidor recibe la petición sin el valor del campo de usuario. ¿Cuál es la causa?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "<form action='registro.php' method='post'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='email' name='correo' required>",
-        "tipo": "proceso"
+        "label": "<input type='text' id='usuario'>",
+        "tipo": "entrada",
+        "error": true
       },
       {
         "label": "<button type='submit'>Enviar</button>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El usuario digita ana@correo.com y presiona Enviar",
-        "tipo": "entrada"
-      },
-      {
-        "label": "El navegador valida el formato del correo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El formulario se envía a la dirección indicada",
         "tipo": "salida"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El formulario se envía a registro.php por el método post."
-      },
+    "opciones": [
       {
         "id": 1,
-        "texto": "El formulario no se envía porque el correo debe ir sin la arroba."
+        "texto": "El campo de texto no tiene el atributo name: al enviar el formulario, el dato no se incluye en la petición."
+      },
+      {
+        "id": 0,
+        "texto": "El botón debe escribirse como <input type='submit'>."
       },
       {
         "id": 2,
-        "texto": "El navegador muestra un error porque el formato del correo es inválido."
+        "texto": "Falta cerrar el formulario con la etiqueta </form>."
       },
       {
         "id": 3,
-        "texto": "Los datos se envían a registro.php por el método get."
+        "texto": "El atributo id está mal escrito."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Formularios Web",
-    "tipo": "Envío de Valores",
-    "titulo": "Prueba de escritorio: selección de género",
-    "indicacion": "El usuario selecciona la opción 'Femenino' y envía el formulario. Determina qué valor recibe el servidor en el campo genero.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "<input type='radio' name='genero' value='f'> Femenino",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='radio' name='genero' value='m'> Masculino",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El usuario selecciona 'Femenino'",
-        "tipo": "entrada"
-      },
-      {
-        "label": "El formulario se envía al servidor",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El servidor recibe el valor del campo genero",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "Femenino"
-      },
+    "categoria": "Predecir la Salida",
+    "tipo": "Método GET",
+    "titulo": "¿Qué ocurre al enviar este formulario?",
+    "indicacion": "Ejecuta mentalmente el envío del formulario con método GET y determina qué hace el navegador con los datos.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<form action='buscar.php' method='GET'>\n  <input type='text' name='q'>\n  <button type='submit'>Buscar</button>\n</form>",
+    "opciones": [
       {
         "id": 0,
-        "texto": "f"
+        "salida": "Al enviar, los datos viajan ocultos en el cuerpo de la petición."
+      },
+      {
+        "id": 1,
+        "salida": "Al enviar, el navegador navega a buscar.php?q=valor: los datos del formulario se agregan a la URL."
       },
       {
         "id": 2,
-        "texto": "genero"
+        "salida": "Al enviar, la página se recarga sin enviar ningún dato."
       },
       {
         "id": 3,
-        "texto": "radio"
+        "salida": "Al enviar, se abre una ventana emergente con los datos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Formularios Web",
-    "tipo": "Conteo de Controles",
-    "titulo": "Prueba de escritorio: casillas de verificación",
-    "indicacion": "El formulario de preferencias se muestra en el navegador. Determina cuántas casillas de verificación (checkbox) ve el usuario.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "<form action='preferencias.php' method='post'>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='checkbox' name='noticias' value='si'> Noticias",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='checkbox' name='ofertas' value='si'> Ofertas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<input type='checkbox' name='eventos' value='si'> Eventos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "<button type='submit'>Guardar</button>",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El usuario observa los controles del formulario",
-        "tipo": "salida"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "4"
-      },
-      {
-        "id": 2,
-        "texto": "2"
-      },
-      {
-        "id": 0,
-        "texto": "3"
-      },
-      {
-        "id": 3,
-        "texto": "1"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Formulario",
-    "titulo": "Construye el formulario de contacto",
-    "indicacion": "Ordena los bloques para construir el formulario de contacto que captura el nombre y el correo del usuario y los envía a enviar.php.",
+    "categoria": "Ordenar Líneas",
+    "tipo": "Formulario de Ingreso",
+    "titulo": "Construye el formulario de inicio de sesión",
+    "indicacion": "Ordena los bloques para construir un formulario de ingreso con etiqueta, campo de usuario, campo de contraseña y botón de envío.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
-        "texto": "<form action='enviar.php' method='post'>",
+        "texto": "<form action='ingreso.php' method='POST'>",
         "tipo": "proceso"
       },
       {
         "id": "b2",
-        "texto": "<label for='nombre'>Nombre</label>",
+        "texto": "<label for='usuario'>Usuario:</label>",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "<input type='text' id='nombre' name='nombre'>",
-        "tipo": "proceso"
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
-        "texto": "<label for='correo'>Correo</label>",
-        "tipo": "proceso"
+        "texto": "<input type='text' id='usuario' name='usuario'>",
+        "tipo": "entrada"
       },
       {
         "id": "b5",
-        "texto": "<input type='email' id='correo' name='correo'>",
-        "tipo": "proceso"
+        "texto": "<input type='password' name='clave'>",
+        "tipo": "entrada"
       },
       {
         "id": "b6",
-        "texto": "<button type='submit'>Enviar</button>",
-        "tipo": "proceso"
+        "texto": "<button type='submit'>Ingresar</button>",
+        "tipo": "salida"
       },
       {
         "id": "b7",
         "texto": "</form>",
         "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
+      "b3",
       "b1",
       "b2",
-      "b3",
       "b4",
       "b5",
       "b6",
-      "b7"
+      "b7",
+      "b8"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Completar Código",
+    "tipo": "Select y Textarea",
+    "titulo": "Completa el selector y el área de texto",
+    "indicacion": "Completa los huecos para que la opción Medellín aparezca preseleccionada y el área de texto tenga 5 filas y 40 columnas.",
+    "tipoComp": "codigo_completar",
+    "codigo": "<select name='ciudad'>\n  <option value='1'>Bogotá</option>\n  <option value='2' ___>Medellín</option>\n</select>\n<textarea name='comentario' ___='5' ___='40'>Escribe aquí</textarea>",
+    "opciones": [
+      [
+        "selected",
+        "checked",
+        "disabled",
+        "multiple"
+      ],
+      [
+        "rows",
+        "cols",
+        "size",
+        "wrap"
+      ],
+      [
+        "cols",
+        "rows",
+        "maxlength",
+        "spellcheck"
+      ]
+    ],
+    "correcta": [
+      "selected",
+      "rows",
+      "cols"
     ]
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Lista Desplegable",
-    "titulo": "Construye la lista desplegable de ciudades",
-    "indicacion": "Ordena los bloques para construir el control que permite al usuario elegir su ciudad de una lista desplegable.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "<label for='ciudad'>Ciudad</label>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "<select id='ciudad' name='ciudad'>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "<option value='bog'>Bogotá</option>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "<option value='med'>Medellín</option>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "<option value='cal'>Cali</option>",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "</select>",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Botón sin Envío",
-    "titulo": "Encuentra la falla: el botón no envía el formulario",
-    "indicacion": "Al presionar el botón 'Enviar', el formulario no se envía al servidor. Revisa el HTML e identifica el error.",
+    "categoria": "Corregir Errores",
+    "tipo": "Botón de Envío",
+    "titulo": "Encuentra por qué el formulario no se envía",
+    "indicacion": "Al hacer clic en el botón Ingresar, el formulario no se envía. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "<form action='contacto.php' method='post'>",
+        "label": "<form action='ingreso.php' method='POST'>",
         "tipo": "proceso"
       },
       {
-        "label": "<input type='text' name='mensaje'>",
-        "tipo": "proceso"
+        "label": "<input type='text' name='usuario'>",
+        "tipo": "entrada"
       },
       {
-        "label": "<button type='button'>Enviar</button>",
-        "tipo": "proceso",
+        "label": "<button type='button'>Ingresar</button>",
+        "tipo": "salida",
         "error": true
-      },
-      {
-        "label": "</form>",
-        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "El formulario debe usar method='get' para enviar los datos."
+        "id": 0,
+        "texto": "El botón type='button' no envía el formulario: debe ser type='submit' para disparar el envío."
       },
       {
-        "id": 0,
-        "texto": "El botón usa type='button', que no envía el formulario; debe ser type='submit' para que se envíen los datos."
+        "id": 1,
+        "texto": "El formulario debe usar method='GET'."
       },
       {
         "id": 2,
-        "texto": "El campo input debe llevar el atributo id."
+        "texto": "La etiqueta button no existe en HTML."
       },
       {
         "id": 3,
-        "texto": "El HTML está correcto; el problema es del servidor."
+        "texto": "El código está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir la Salida",
+    "tipo": "Menú Desplegable",
+    "titulo": "¿Qué control muestra este select?",
+    "indicacion": "Determina cómo presenta el navegador la lista de opciones del selector.",
+    "tipoComp": "codigo_salida",
+    "codigo": "<select name='curso'>\n  <option value='1'>ADSO</option>\n  <option value='2'>Análisis y Desarrollo</option>\n</select>",
+    "opciones": [
+      {
+        "id": 0,
+        "salida": "Muestra dos casillas de verificación."
+      },
+      {
+        "id": 3,
+        "salida": "Muestra un menú desplegable con las opciones ADSO y Análisis y Desarrollo."
+      },
+      {
+        "id": 1,
+        "salida": "Muestra un campo de texto con el texto ADSO."
+      },
+      {
+        "id": 2,
+        "salida": "Muestra dos botones de opción (radio)."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Campo sin Nombre",
-    "titulo": "Encuentra la falla: el dato no llega al servidor",
-    "indicacion": "El formulario de acceso se envía correctamente, pero el servidor no recibe el valor del campo usuario. Revisa el HTML e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar Líneas",
+    "tipo": "Formulario de Contacto",
+    "titulo": "Construye el formulario de contacto",
+    "indicacion": "Ordena los bloques para construir un formulario de contacto con etiqueta, área de texto y botón de envío.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "<form action='validar.php' method='post'>",
+        "id": "b1",
+        "texto": "<form action='contacto.php' method='POST'>",
         "tipo": "proceso"
       },
       {
-        "label": "<input type='text' id='usuario'>",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "<button type='submit'>Ingresar</button>",
+        "id": "b2",
+        "texto": "<label for='mensaje'>Mensaje:</label>",
         "tipo": "proceso"
       },
       {
-        "label": "</form>",
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "<textarea id='mensaje' name='mensaje' rows='4'></textarea>",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b5",
+        "texto": "<button type='submit'>Enviar</button>",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "</form>",
         "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El campo debe usar type='password' para que se envíe."
-      },
-      {
-        "id": 2,
-        "texto": "El formulario debe estar dentro de un <div>."
-      },
-      {
-        "id": 0,
-        "texto": "El campo no tiene el atributo name; sin name el navegador no envía su valor al servidor. Se debe agregar name='usuario'."
-      },
-      {
-        "id": 3,
-        "texto": "El HTML está correcto; el servidor ignora el campo por diseño."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b1",
+      "b2",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   }
 ];
 
@@ -806,6 +757,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -865,6 +831,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1132,6 +1238,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1165,6 +1277,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

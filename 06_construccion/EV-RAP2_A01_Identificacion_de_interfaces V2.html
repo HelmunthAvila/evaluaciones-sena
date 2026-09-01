@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la identificación de interfaces de usuario: tipos de interfaz (línea de comandos, gráfica, web y móvil), elementos de interacción y principios de usabilidad, mediante retos prácticos interactivos.
+          Pon en práctica la identificación de interfaces de usuario con casos reales de oficina: decide qué tipo de interfaz (línea de comandos, gráfica, web o móvil) corresponde a cada situación, identifica los elementos de interacción que aparecen en un recorrido, ordena los flujos de uso del sistema y corrige especificaciones donde el tipo de interfaz o el elemento elegido son inadecuados. Sin teoría: aquí se demuestra identificando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Interfaces de Usuario:</strong> Identificar los tipos de interfaz según el contexto de uso.</li>
-<li><strong>Componentes UI:</strong> Reconocer los elementos de interacción presentes en una pantalla.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ensamblar la secuencia de interacción del usuario con el sistema.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la especificación de la interfaz.</li>
+            <li><strong>Interfaces de Usuario:</strong> Decide qué tipo de interfaz y qué elemento de interacción corresponde a cada situación.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los flujos reales de interacción del usuario con el sistema.</li>
+<li><strong>Corregir el Diseño:</strong> Encuentra el tipo de interfaz o el elemento mal elegido en la especificación.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre el proceso y determina el resultado de la interacción.</li>
           </ul>
         </div>
 
@@ -251,26 +251,26 @@
   {
     "id": 1,
     "categoria": "Interfaces de Usuario",
-    "tipo": "Clasificación de Interfaz",
-    "titulo": "¿Qué tipo de interfaz usa un sistema que se opera escribiendo comandos como 'dir' o 'cd'?",
-    "indicacion": "Selecciona el tipo de interfaz que corresponde a un programa cuyo principal medio de interacción son comandos escritos por el usuario.",
+    "tipo": "Tipo de Interfaz por Contexto",
+    "titulo": "¿Qué tipo de interfaz usa el sistema de matrícula consultado desde el navegador?",
+    "indicacion": "El aprendiz consulta el sistema de matrícula desde el navegador del computador del ambiente de formación, sin instalar ningún programa. Selecciona el tipo de interfaz que corresponde a esta forma de acceso.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 1,
-        "texto": "Interfaz gráfica de usuario (GUI): el usuario interactúa con ventanas, botones e iconos."
+        "texto": "Interfaz de línea de comandos: se opera escribiendo instrucciones de texto."
       },
       {
         "id": 0,
-        "texto": "Interfaz de línea de comandos (CLI): el usuario escribe instrucciones de texto para ejecutar acciones."
+        "texto": "Interfaz web: se accede a través de un navegador conectado al servidor del sistema."
       },
       {
         "id": 2,
-        "texto": "Interfaz web: el usuario accede mediante un navegador conectado a internet."
+        "texto": "Interfaz móvil nativa: aplicación instalada en un teléfono celular."
       },
       {
         "id": 3,
-        "texto": "Interfaz táctil: el usuario utiliza gestos sobre una pantalla sensible al tacto."
+        "texto": "Interfaz de escritorio: programa instalado localmente sin usar navegador."
       }
     ],
     "correcta": 1
@@ -278,63 +278,36 @@
   {
     "id": 2,
     "categoria": "Interfaces de Usuario",
-    "tipo": "Identificación por Contexto",
-    "titulo": "Un sistema de matrícula se consulta desde el navegador del computador del ambiente de formación. ¿Qué tipo de interfaz es?",
-    "indicacion": "Identifica el tipo de interfaz según la forma en que el usuario accede al sistema.",
+    "tipo": "Tipo de Interfaz por Contexto",
+    "titulo": "¿Qué tipo de interfaz usa el sistema de facturación que se opera con el comando FACTURA?",
+    "indicacion": "En la oficina de servicios generales se factura escribiendo el comando FACTURA seguido del número del cliente en una consola de texto. Selecciona el tipo de interfaz correspondiente.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Interfaz de línea de comandos: se opera con instrucciones de texto."
+        "id": 0,
+        "texto": "Interfaz gráfica de usuario (GUI): ventanas, botones e iconos."
       },
       {
         "id": 2,
-        "texto": "Interfaz móvil nativa: aplicación instalada en un teléfono celular."
+        "texto": "Interfaz web: se accede mediante un navegador."
       },
       {
-        "id": 0,
-        "texto": "Interfaz web: se accede a través de un navegador."
+        "id": 1,
+        "texto": "Interfaz de línea de comandos (CLI): el usuario escribe instrucciones de texto que el sistema ejecuta."
       },
       {
         "id": 3,
-        "texto": "Interfaz de escritorio: programa instalado localmente sin navegador."
+        "texto": "Interfaz táctil: gestos sobre una pantalla sensible al tacto."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Componentes UI",
-    "tipo": "Elemento de Interacción",
-    "titulo": "¿Qué elemento de interacción permite al usuario escribir su número de documento en un formulario?",
-    "indicacion": "Selecciona el componente de interfaz adecuado para capturar un dato que el usuario digita libremente.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "Botón: ejecuta una acción al hacer clic sobre él."
-      },
-      {
-        "id": 2,
-        "texto": "Lista desplegable: permite elegir una opción de un conjunto predefinido."
-      },
-      {
-        "id": 3,
-        "texto": "Casilla de verificación: marca una opción como activa o inactiva."
-      },
-      {
-        "id": 0,
-        "texto": "Campo de texto: espacio donde el usuario digita la información."
-      }
-    ],
-    "correcta": 3
-  },
-  {
-    "id": 4,
     "categoria": "Interfaces de Usuario",
     "tipo": "Principio de Usabilidad",
-    "titulo": "En todas las pantallas del sistema, el botón 'Guardar' aparece siempre en la misma posición. ¿Qué principio de usabilidad se está aplicando?",
-    "indicacion": "Relaciona la práctica descrita con el principio de usabilidad que la sustenta.",
+    "titulo": "El botón 'Guardar' está siempre en la misma posición en todas las pantallas. ¿Qué principio de usabilidad aplica?",
+    "indicacion": "En el sistema de ventas, el botón Guardar aparece en el mismo lugar y con el mismo estilo en todas las pantallas. Selecciona el principio de usabilidad que sustenta esta práctica.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -346,22 +319,272 @@
         "texto": "Recuperación de errores: el sistema informa al usuario cuando se equivoca."
       },
       {
+        "id": 3,
+        "texto": "Prevención de errores: el sistema evita que el usuario cometa fallas."
+      },
+      {
         "id": 2,
-        "texto": "Flexibilidad: el sistema se adapta tanto a usuarios expertos como novatos."
+        "texto": "Flexibilidad: el sistema se adapta a usuarios expertos y novatos."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 4,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Flujo de Autenticación",
+    "titulo": "Construye el proceso: ingreso de un usuario al sistema",
+    "indicacion": "Ordena los bloques para construir la secuencia real de interacción cuando un usuario inicia sesión en el sistema con interfaz gráfica.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Escribir el usuario en el campo correspondiente",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "El sistema muestra el menú principal",
+        "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "Hacer clic en el botón 'Ingresar'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir la contraseña en el campo correspondiente",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b2",
+      "b1",
+      "b5",
+      "b4",
+      "b3",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Flujo de Consulta en Línea",
+    "titulo": "Construye el proceso: consultar el estado de un pedido en la tienda en línea",
+    "indicacion": "Ordena los bloques para construir la secuencia en la que un cliente consulta el estado de su pedido desde la interfaz web de la tienda.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Escribir el número del pedido en el campo de búsqueda",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "El sistema muestra el estado del pedido",
+        "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "Seleccionar la opción 'Consultar pedido' del menú",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Presionar el botón 'Buscar'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b2",
+      "b4",
+      "b1",
+      "b5",
+      "b3",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Flujo de Registro",
+    "titulo": "Construye el proceso: registro de un aprendiz en el portal",
+    "indicacion": "Ordena los bloques para construir la secuencia de interacción de un aprendiz que se registra por primera vez en el portal web de la institución.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Seleccionar la opción 'Registrarse' del menú principal",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "El sistema muestra el formulario de registro",
+        "tipo": "salida"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Digitar los datos personales en los campos del formulario",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b5",
+        "texto": "Presionar el botón 'Enviar registro'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "El sistema confirma el registro con un mensaje",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b1",
+      "b2",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Elemento Inadecuado",
+    "titulo": "Encuentra la falla: lista desplegable para el nombre completo",
+    "indicacion": "El formulario de registro debe permitir al usuario escribir su nombre completo, pero la especificación de la interfaz usa un elemento inadecuado para ese dato. Identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Mostrar el formulario de registro",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mostrar una lista desplegable para el nombre completo",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Mostrar el botón 'Guardar'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "La interfaz debe ser de línea de comandos, no gráfica."
+      },
+      {
+        "id": 2,
+        "texto": "El formulario debe iniciar con una casilla de verificación."
       },
       {
         "id": 3,
-        "texto": "Prevención de errores: el sistema evita que el usuario cometa fallas."
+        "texto": "La especificación está correcta."
+      },
+      {
+        "id": 0,
+        "texto": "El nombre se digita libremente: debe usarse un campo de texto, no una lista desplegable."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Mensaje Poco Claro",
+    "titulo": "Encuentra la falla: mensaje de error que no orienta al usuario",
+    "indicacion": "Cuando la contraseña es incorrecta, la especificación indica mostrar únicamente el código 'Error 401' en pantalla. Esto viola un principio de usabilidad. Identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Recibir el usuario y la contraseña",
+        "tipo": "entrada"
+      },
+      {
+        "label": "¿La contraseña es correcta?",
+        "tipo": "decision"
+      },
+      {
+        "label": "Mostrar 'Error 401' (camino NO)",
+        "tipo": "salida",
+        "error": true
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 3,
+        "texto": "El mensaje no explica qué falló: debe indicar que la contraseña es incorrecta y cómo recuperarla."
+      },
+      {
+        "id": 0,
+        "texto": "El sistema debe cerrarse cuando la contraseña falla."
+      },
+      {
+        "id": 1,
+        "texto": "Falta una casilla de verificación para recordar la contraseña."
+      },
+      {
+        "id": 2,
+        "texto": "La especificación está correcta."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Interfaces de Usuario",
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
     "tipo": "Recorrido de Interacción",
     "titulo": "Prueba de escritorio: elementos usados al matricularse",
-    "indicacion": "Sigue el recorrido del usuario por el sistema y determina qué elementos de interacción utilizó durante el proceso de ingreso.",
+    "indicacion": "Sigue el recorrido del usuario por el sistema y determina qué elementos de interacción utilizó durante el proceso de ingreso a la plataforma.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
       {
@@ -373,11 +596,11 @@
         "tipo": "proceso"
       },
       {
-        "label": "Hacer clic en el botón 'Ingresar'",
-        "tipo": "proceso"
+        "label": "Escribir el usuario en el campo correspondiente",
+        "tipo": "entrada"
       },
       {
-        "label": "Escribir el usuario y la contraseña en los campos correspondientes",
+        "label": "Escribir la contraseña en el campo correspondiente",
         "tipo": "entrada"
       },
       {
@@ -391,11 +614,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Solo botones."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Campos de texto y botones."
       },
       {
@@ -410,11 +633,11 @@
     "correcta": 1
   },
   {
-    "id": 6,
-    "categoria": "Componentes UI",
-    "tipo": "Selección de Interfaz según el Problema",
-    "titulo": "Prueba de escritorio: ¿qué interfaz conviene al problema?",
-    "indicacion": "Analiza el problema planteado y elige la alternativa de interfaz que mejor lo resuelve, siguiendo el razonamiento del diagrama.",
+    "id": 10,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Selección de Interfaz",
+    "titulo": "Prueba de escritorio: interfaz para registrar pedidos fuera de la oficina",
+    "indicacion": "Analiza el problema planteado y sigue el razonamiento del diagrama para determinar la interfaz más adecuada para los vendedores que registran pedidos fuera de la oficina.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
       {
@@ -444,220 +667,20 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Una interfaz de línea de comandos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Un programa de escritorio instalado en un computador fijo."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Una aplicación móvil instalada en el celular del vendedor."
       },
       {
         "id": 3,
         "texto": "Un dispositivo exclusivo de la empresa sin conexión."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje del Proceso de Ingreso",
-    "titulo": "Construye el proceso: ingreso de un usuario al sistema",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta de interacción cuando un usuario inicia sesión en una aplicación con interfaz gráfica.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Hacer clic en el botón 'Ingresar'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Escribir el usuario en el campo correspondiente",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b4",
-        "texto": "El sistema muestra el menú principal",
-        "tipo": "salida"
-      },
-      {
-        "id": "b5",
-        "texto": "Escribir la contraseña en el campo correspondiente",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b3",
-      "b2",
-      "b5",
-      "b1",
-      "b4",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Depuración de Errores",
-    "tipo": "Elemento Inadecuado",
-    "titulo": "Encuentra la falla: elemento equivocado en el formulario",
-    "indicacion": "El formulario de registro debe permitir al usuario escribir su nombre completo, pero la especificación usa un elemento inadecuado para ese dato. Identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Mostrar el formulario de registro",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Mostrar un campo de texto para el nombre",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Mostrar una lista desplegable para el nombre",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "Validar y guardar los datos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El nombre se digita libremente; debe usarse un campo de texto, no una lista desplegable."
-      },
-      {
-        "id": 1,
-        "texto": "Falta un botón de guardado al final del formulario."
-      },
-      {
-        "id": 2,
-        "texto": "El formulario debe iniciar con una casilla de verificación."
-      },
-      {
-        "id": 3,
-        "texto": "La especificación está correcta."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 9,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje del Recorrido de Navegación",
-    "titulo": "Construye el proceso: consultar el estado de un pedido",
-    "indicacion": "Ordena los bloques para construir la secuencia en la que un usuario consulta el estado de su pedido en una tienda en línea.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Escribir el número del pedido en el campo de búsqueda",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b2",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b3",
-        "texto": "El sistema muestra el estado del pedido",
-        "tipo": "salida"
-      },
-      {
-        "id": "b4",
-        "texto": "Seleccionar la opción 'Consultar pedido' del menú principal",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Presionar el botón 'Buscar'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b2",
-      "b4",
-      "b1",
-      "b5",
-      "b3",
-      "b6"
-    ]
-  },
-  {
-    "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Mensaje de Error Poco Claro",
-    "titulo": "Encuentra la falla: mensaje de error poco claro",
-    "indicacion": "Cuando el usuario digita una contraseña incorrecta, la especificación indica mostrar únicamente 'Error 401'. Esto viola un principio de usabilidad. Identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Recibir el usuario y la contraseña",
-        "tipo": "entrada"
-      },
-      {
-        "label": "¿La contraseña es correcta?",
-        "tipo": "decision"
-      },
-      {
-        "label": "Mostrar 'Error 401' (camino NO)",
-        "tipo": "salida",
-        "error": true
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El sistema debe cerrarse cuando la contraseña falla."
-      },
-      {
-        "id": 2,
-        "texto": "Falta una casilla de verificación para recordar la contraseña."
-      },
-      {
-        "id": 0,
-        "texto": "El mensaje no explica al usuario qué falló; debe indicar que la contraseña es incorrecta y cómo recuperarla."
-      },
-      {
-        "id": 3,
-        "texto": "La especificación está correcta."
       }
     ],
     "correcta": 2
@@ -790,6 +813,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +887,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1294,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1333,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }
