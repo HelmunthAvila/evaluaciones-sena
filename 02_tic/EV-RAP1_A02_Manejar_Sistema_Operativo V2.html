@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el manejo del sistema operativo Windows: escritorio, ventanas, administración de archivos y carpetas, panel de control y procedimientos de apagado y reinicio, mediante retos prácticos interactivos.
+          Pon en práctica el manejo del sistema operativo Windows con casos reales de oficina: decide qué acción se usa para organizar el escritorio y las ventanas, ordena el apagado correcto del equipo, corrige fallas en procedimientos de apagado y de administración de tareas y ejecuta mentalmente la secuencia de un usuario que crea carpetas y termina su jornada. Sin teoría: aquí se demuestra operando el sistema.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Diseño Lógico:</strong> Identificar la función de los elementos del sistema operativo y los procedimientos correctos.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular secuencias de operación con ventanas, archivos y configuraciones.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos de procedimientos como apagar el equipo y crear carpetas.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en los procedimientos de manejo del sistema operativo.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué herramienta o acción del sistema operativo cumple cada función en una situación real.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real para crear carpetas, apagar el equipo y administrar ventanas.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un procedimiento de apagado o de administración de sesiones.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el procedimiento de un usuario y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,224 +250,91 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Diseño Lógico",
-    "tipo": "Función del Sistema Operativo",
-    "titulo": "¿Cuál es la función principal del sistema operativo?",
-    "indicacion": "El sistema operativo es el software base del computador. Selecciona la opción que describe su función principal.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Selección de Herramienta",
+    "titulo": "¿Dónde se muestran los accesos a los programas y carpetas principales al iniciar sesión en Windows?",
+    "indicacion": "Un usuario inicia sesión por primera vez y pregunta dónde encuentra los iconos de sus programas y la papelera. Selecciona el lugar del sistema operativo que organiza esta información.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Reemplazar los programas de oficina del usuario."
+        "id": 0,
+        "texto": "La papelera de reciclaje."
       },
       {
-        "id": 0,
-        "texto": "Administrar los recursos del computador y servir de interfaz entre el usuario y el hardware."
+        "id": 1,
+        "texto": "El escritorio de Windows."
       },
       {
         "id": 2,
-        "texto": "Conectar físicamente los periféricos al computador."
+        "texto": "El panel de control."
       },
       {
         "id": 3,
-        "texto": "Aumentar la velocidad física del procesador."
+        "texto": "La BIOS del equipo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
-    "tipo": "Elementos del Escritorio",
-    "titulo": "¿Qué elemento del escritorio de Windows permite acceder a los programas en ejecución y al botón Inicio?",
-    "indicacion": "El escritorio de Windows organiza varios elementos. Selecciona el que cumple la función descrita.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Atajo de Teclado",
+    "titulo": "¿Qué combinación de teclas permite cambiar entre las ventanas abiertas?",
+    "indicacion": "Un usuario trabaja con varias ventanas abiertas a la vez y quiere pasar de una a otra sin usar el ratón. Selecciona la combinación de teclas correcta del sistema operativo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "El protector de pantalla."
+        "id": 1,
+        "texto": "Ctrl + C"
       },
       {
         "id": 2,
-        "texto": "El fondo de escritorio."
+        "texto": "Windows + L"
       },
       {
-        "id": 1,
-        "texto": "La barra de tareas."
+        "id": 0,
+        "texto": "Alt + Tab"
       },
       {
         "id": 3,
-        "texto": "El menú contextual del clic derecho."
+        "texto": "Imprimir pantalla"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
-    "tipo": "Manejo de Ventanas",
-    "titulo": "¿Qué acción sobre una ventana permite ocultarla sin cerrar el programa?",
-    "indicacion": "Las ventanas de Windows admiten varias acciones. Selecciona la acción que oculta la ventana manteniendo el programa activo.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Procedimiento de Apagado",
+    "titulo": "¿Cuál es la forma correcta de apagar el equipo?",
+    "indicacion": "Un usuario debe terminar su jornada y apagar el computador sin perder información. Selecciona el procedimiento correcto que ofrece el sistema operativo Windows.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Maximizar."
+        "texto": "Desconectar el cable de energía directamente."
       },
       {
         "id": 1,
-        "texto": "Cerrar."
-      },
-      {
-        "id": 2,
-        "texto": "Restaurar."
+        "texto": "Mantener presionado el botón físico de encendido."
       },
       {
         "id": 3,
-        "texto": "Minimizar."
+        "texto": "Cerrar la tapa del portátil sin realizar ninguna acción."
+      },
+      {
+        "id": 2,
+        "texto": "Usar el menú Inicio y seleccionar la opción Apagar."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Diseño Lógico",
-    "tipo": "Panel de Control",
-    "titulo": "¿Para qué se utiliza el Panel de control o la aplicación Configuración de Windows?",
-    "indicacion": "El sistema operativo ofrece herramientas de configuración. Selecciona el uso correcto del Panel de control.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 2,
-        "texto": "Para configurar la apariencia, las cuentas de usuario y los dispositivos del sistema."
-      },
-      {
-        "id": 0,
-        "texto": "Para escribir documentos de texto."
-      },
-      {
-        "id": 1,
-        "texto": "Para navegar por internet."
-      },
-      {
-        "id": 3,
-        "texto": "Para ejecutar juegos y aplicaciones de entretenimiento."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Apagado del Equipo",
-    "titulo": "Prueba de escritorio: procedimiento de apagado correcto",
-    "indicacion": "Ejecuta mentalmente el procedimiento descrito y determina qué ocurre al finalizar la jornada de trabajo.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El usuario debe finalizar la jornada de trabajo en el computador",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se selecciona el botón Inicio",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se elige la opción Apagar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Windows cierra los programas y apaga el equipo",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Se desconecta el cable de energía directamente."
-      },
-      {
-        "id": 1,
-        "texto": "Windows cierra los programas y apaga el equipo de forma segura."
-      },
-      {
-        "id": 2,
-        "texto": "Se mantiene presionado el botón de encendido durante 10 segundos."
-      },
-      {
-        "id": 3,
-        "texto": "Se cierra el programa activo y se deja el equipo encendido."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Creación de Carpetas",
-    "titulo": "Prueba de escritorio: creación de una carpeta nueva",
-    "indicacion": "El usuario necesita organizar sus evidencias en una carpeta nueva. Ejecuta mentalmente el procedimiento y determina el resultado.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El usuario necesita organizar sus evidencias en una carpeta nueva",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Clic derecho en el área libre del Explorador de archivos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se selecciona Nuevo y luego Carpeta",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se asigna el nombre y se presiona Enter",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "La carpeta se crea con un nombre predeterminado y no se puede renombrar."
-      },
-      {
-        "id": 1,
-        "texto": "El sistema solicita una contraseña antes de crear la carpeta."
-      },
-      {
-        "id": 3,
-        "texto": "La carpeta se crea, se nombra y queda lista para almacenar los archivos de evidencias."
-      },
-      {
-        "id": 2,
-        "texto": "La carpeta solo puede crearse en el Escritorio."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Apagar el Equipo",
-    "titulo": "Ordena los pasos para apagar el equipo correctamente",
-    "indicacion": "Ordena los bloques para construir el procedimiento correcto de apagado del computador, desde el inicio hasta el fin.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Creación de Carpeta",
+    "titulo": "Ordena el proceso: crear una carpeta nueva en el escritorio",
+    "indicacion": "Un usuario necesita crear una carpeta en el escritorio para organizar sus trabajos. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -477,12 +344,60 @@
       },
       {
         "id": "b2",
-        "texto": "Guardar y cerrar los documentos abiertos",
+        "texto": "Hacer clic derecho sobre un espacio vacío del escritorio",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Clic en el botón Inicio",
+        "texto": "Seleccionar la opción Nuevo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Elegir la opción Carpeta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir el nombre de la carpeta y presionar Enter",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Apagado del Equipo",
+    "titulo": "Ordena el proceso: apagar el equipo correctamente",
+    "indicacion": "Un usuario finaliza su jornada y debe apagar el equipo de forma segura. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Guardar y cerrar los documentos y programas abiertos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Hacer clic en el botón Inicio de Windows",
         "tipo": "proceso"
       },
       {
@@ -492,7 +407,7 @@
       },
       {
         "id": "b5",
-        "texto": "Esperar a que el equipo se apague por completo",
+        "texto": "Esperar a que el equipo finalice el apagado por completo",
         "tipo": "salida"
       },
       {
@@ -511,11 +426,11 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Crear Archivo de Texto",
-    "titulo": "Ordena los pasos para crear un archivo de texto",
-    "indicacion": "Ordena los bloques para construir el procedimiento correcto para crear un archivo de texto en el Explorador de archivos.",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Administrador de Tareas",
+    "titulo": "Ordena el proceso: cerrar una aplicación que no responde",
+    "indicacion": "Una aplicación se congeló y el equipo no responde. Un usuario debe finalizarla con el administrador de tareas. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -525,22 +440,22 @@
       },
       {
         "id": "b2",
-        "texto": "Abrir el Explorador de archivos",
+        "texto": "Presionar las teclas Ctrl + Alt + Supr",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Ubicarse en la carpeta donde se guardará el archivo",
+        "texto": "Seleccionar la opción Administrador de tareas",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Clic derecho, seleccionar Nuevo y luego Documento de texto",
+        "texto": "Ubicar la aplicación que no responde en la lista de procesos",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Escribir el nombre del archivo y presionar Enter",
+        "texto": "Seleccionar la aplicación y hacer clic en Finalizar tarea",
         "tipo": "salida"
       },
       {
@@ -559,85 +474,207 @@
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error en Apagado",
-    "titulo": "Encuentra la falla: apagado incorrecto del equipo",
-    "indicacion": "Un usuario terminó su jornada y apagó el computador. Revisa el procedimiento e identifica la falla.",
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Error de Procedimiento",
+    "titulo": "Encuentra la falla: el equipo se apaga desconectando el cable de energía",
+    "indicacion": "Un usuario apaga su equipo desconectando el cable de energía y al día siguiente nota que un documento se dañó. Revisa el procedimiento e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "El usuario termina su jornada y desea apagar el equipo",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario guarda los documentos abiertos",
         "tipo": "proceso"
       },
       {
-        "label": "Cierra los documentos sin guardar los cambios",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Desconecta el cable de alimentación para apagar el equipo",
-        "tipo": "salida",
+        "label": "El usuario desconecta el cable de energía para apagar el equipo",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "El usuario enciende el equipo al día siguiente",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "El procedimiento es correcto y apaga el equipo sin ningún riesgo."
-      },
-      {
         "id": 1,
-        "texto": "El error es desconectar el cable de alimentación: el equipo debe apagarse desde el menú Inicio (opción Apagar) para cerrar el sistema de forma segura y evitar la pérdida de datos."
+        "texto": "Desconectar el cable es la forma más rápida y recomendada de apagar el equipo."
       },
       {
         "id": 2,
-        "texto": "Debe presionarse la tecla Esc para apagar el equipo."
+        "texto": "El error es que el usuario guardó los documentos antes de apagar."
       },
       {
         "id": 3,
-        "texto": "El equipo solo puede apagarse dejándolo en suspensión."
+        "texto": "El equipo no enciende al día siguiente porque la memoria RAM es insuficiente."
+      },
+      {
+        "id": 0,
+        "texto": "Apagar desconectando el cable de energía es incorrecto: el sistema operativo no cierra los procesos de forma ordenada y se pueden dañar los archivos; se debe usar la opción Apagar del menú Inicio."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Error de Procedimiento",
+    "titulo": "Encuentra la falla: cerrar sesión pensando que el equipo se apaga",
+    "indicacion": "Un usuario termina su jornada y selecciona Cerrar sesión creyendo que el equipo se apagará por completo. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario finaliza su jornada laboral",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Selecciona la opción Cerrar sesión del menú Inicio pensando que el equipo se apagará",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El usuario retira el equipo del puesto de trabajo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "Cerrar sesión no apaga el equipo: solo finaliza la sesión del usuario y el equipo sigue encendido; para apagarlo se debe usar la opción Apagar."
+      },
+      {
+        "id": 0,
+        "texto": "Cerrar sesión apaga el equipo por completo."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que el usuario no desconectó el monitor."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Ejecución del Proceso",
+    "titulo": "Prueba de escritorio: apagado seguro del equipo",
+    "indicacion": "Un usuario guarda sus documentos y apaga el equipo desde el menú Inicio. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario guarda los documentos con la opción Guardar",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Cierra cada programa desde el botón X de la ventana",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Abre el menú Inicio y selecciona la opción Apagar",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el sistema cierra los procesos de forma ordenada y apaga el equipo",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "El equipo se reinicia automáticamente."
+      },
+      {
+        "id": 0,
+        "texto": "El equipo se apaga de forma segura y la información queda guardada."
+      },
+      {
+        "id": 2,
+        "texto": "Los documentos se pierden porque no se cerraron."
+      },
+      {
+        "id": 3,
+        "texto": "La sesión se bloquea y el equipo sigue encendido."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error en Manejo de Ventanas",
-    "titulo": "Encuentra la falla: efecto de minimizar una ventana",
-    "indicacion": "Un aprendiz trabaja con dos programas a la vez y minimiza una ventana. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Ejecución del Proceso",
+    "titulo": "Prueba de escritorio: crear una carpeta y guardar un archivo en ella",
+    "indicacion": "Un usuario crea la carpeta Informes en el escritorio y guarda dentro un texto del Bloc de notas. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "El aprendiz trabaja en dos programas a la vez",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario crea una carpeta llamada Informes en el escritorio",
         "tipo": "proceso"
       },
       {
-        "label": "Minimiza una ventana para ocultarla temporalmente",
+        "label": "Abre el Bloc de notas y escribe un texto",
         "tipo": "proceso"
       },
       {
-        "label": "Al minimizar, el programa se cierra y se pierde el trabajo sin guardar",
-        "tipo": "salida",
-        "error": true
+        "label": "Selecciona Guardar como y elige la carpeta Informes",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el archivo queda guardado dentro de la carpeta Informes del escritorio",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Minimizar una ventana cierra el programa; por eso se pierde el trabajo."
+        "texto": "El archivo se pierde al apagar el equipo."
       },
       {
         "id": 1,
-        "texto": "Minimizar maximiza la ventana a pantalla completa."
-      },
-      {
-        "id": 3,
-        "texto": "El error es afirmar que minimizar cierra el programa: minimizar oculta la ventana pero el programa sigue activo en la barra de tareas; el trabajo se pierde solo si se cierra el programa sin guardar."
+        "texto": "El archivo se guarda en la papelera de reciclaje."
       },
       {
         "id": 2,
-        "texto": "El programa se cierra automáticamente después de cinco minutos de inactividad."
+        "texto": "El archivo queda guardado dentro de la carpeta Informes del escritorio."
+      },
+      {
+        "id": 3,
+        "texto": "El archivo se envía por correo electrónico automáticamente."
       }
     ],
     "correcta": 2
@@ -770,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -829,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1096,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1129,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

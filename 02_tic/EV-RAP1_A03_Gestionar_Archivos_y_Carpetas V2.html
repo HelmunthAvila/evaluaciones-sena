@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Gestión de Archivos y Carpetas</title>
+<title>Evaluación Práctica - Gestionar Archivos y Carpetas</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Gestión de Archivos y Carpetas</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Gestionar Archivos y Carpetas</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la gestión de archivos y carpetas: uso del explorador de archivos, creación, copiado, movimiento, renombrado y eliminación de elementos, reconocimiento de extensiones, rutas de acceso y unidades de almacenamiento, mediante retos prácticos interactivos.
+          Pon en práctica la gestión de archivos y carpetas con el explorador de Windows en casos reales: decide qué operación se usa para organizar la información, ordena la creación, la copia y el movimiento de archivos, corrige fallas de rutas y de eliminación definitiva y ejecuta mentalmente el procedimiento de un usuario que organiza sus documentos. Sin teoría: aquí se demuestra gestionando archivos.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos del explorador de archivos, extensiones, rutas y unidades de almacenamiento.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso las operaciones con archivos y carpetas y predecir el resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para crear, copiar, mover, renombrar y eliminar archivos y carpetas.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en las operaciones de gestión de archivos y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué operación del explorador de archivos cumple cada tarea real.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real para crear, copiar y mover archivos y carpetas.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un procedimiento con rutas, copias o eliminación de archivos.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente una operación de archivos y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,425 +243,438 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Gestión de Archivos y Carpetas</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Gestionar Archivos y Carpetas</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Selección de Concepto",
-    "titulo": "¿Qué aplicación del sistema operativo permite explorar y administrar archivos y carpetas?",
-    "indicacion": "El explorador de archivos es la herramienta principal para navegar por las unidades y administrar los elementos almacenados. Selecciona la aplicación que cumple esta función.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Selección de Herramienta",
+    "titulo": "¿Qué herramienta de Windows permite ver, organizar y administrar los archivos y carpetas del equipo?",
+    "indicacion": "Un usuario necesita ubicar, copiar y renombrar sus documentos. Selecciona la herramienta del sistema operativo que permite administrar los archivos y carpetas.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Panel de control"
+        "id": 0,
+        "texto": "El Bloc de notas."
       },
       {
-        "id": 0,
-        "texto": "Explorador de archivos"
+        "id": 1,
+        "texto": "El explorador de archivos."
       },
       {
         "id": 2,
-        "texto": "Bloc de notas"
+        "texto": "La calculadora."
       },
       {
         "id": 3,
-        "texto": "Símbolo del sistema"
+        "texto": "El reproductor multimedia."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Reconocimiento de Extensiones",
-    "titulo": "¿Qué extensión identifica un documento creado en Microsoft Word?",
-    "indicacion": "La extensión es la parte final del nombre de un archivo y determina el tipo de contenido. Selecciona la extensión propia de un documento de Word.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Renombrar Archivo",
+    "titulo": "¿Cuál es la forma correcta de cambiar el nombre a un archivo ya existente?",
+    "indicacion": "Un usuario quiere cambiar el nombre del archivo Informe.txt por Informe_final.txt sin alterar su contenido. Selecciona el procedimiento correcto.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": ".txt"
-      },
-      {
-        "id": 2,
-        "texto": ".exe"
+        "texto": "Presionar la tecla Supr."
       },
       {
         "id": 1,
-        "texto": ".docx"
+        "texto": "Arrastrar el archivo hasta la papelera."
+      },
+      {
+        "id": 2,
+        "texto": "Seleccionar el archivo, presionar F2 y escribir el nuevo nombre."
       },
       {
         "id": 3,
-        "texto": ".jpg"
+        "texto": "Apagar y encender el equipo."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Ruta de Acceso",
-    "titulo": "¿Cuál es la ruta correcta para acceder al archivo informe.docx que está dentro de la carpeta Documentos en la unidad C?",
-    "indicacion": "Una ruta indica la ubicación completa de un archivo comenzando por la unidad y descendiendo por las carpetas hasta llegar al archivo. Selecciona la ruta escrita correctamente.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Extensiones de Archivo",
+    "titulo": "Un documento de texto plano creado con el Bloc de notas se identifica por la extensión:",
+    "indicacion": "Un usuario debe reconocer el tipo de un archivo por su extensión para abrirlo con el programa correcto. Selecciona la extensión que corresponde a un documento de texto plano.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "C:\\informe.docx"
+        "texto": ".jpg"
       },
       {
         "id": 1,
-        "texto": "Documentos\\informe.docx\\C:"
-      },
-      {
-        "id": 3,
-        "texto": "informe.docx:\\Documentos"
+        "texto": ".mp3"
       },
       {
         "id": 2,
-        "texto": "C:\\Documentos\\informe.docx"
+        "texto": ".exe"
+      },
+      {
+        "id": 3,
+        "texto": ".txt"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Eliminación Temporal",
-    "titulo": "Al eliminar un archivo desde el Explorador de archivos, ¿dónde queda almacenado de forma temporal?",
-    "indicacion": "El sistema operativo no borra el archivo de forma definitiva en el primer paso. Selecciona el lugar donde queda almacenado el archivo eliminado.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Creación de Carpeta",
+    "titulo": "Ordena el proceso: crear una carpeta para organizar los trabajos",
+    "indicacion": "Un usuario necesita crear la carpeta Trabajos dentro de Documentos. Ordena los bloques para construir la secuencia correcta con el explorador de archivos.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 3,
-        "texto": "Papelera de reciclaje"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
+        "id": "b2",
+        "texto": "Abrir el explorador de archivos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Ubicarse en la carpeta o unidad donde se creará la nueva carpeta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Hacer clic derecho y elegir Nuevo y luego Carpeta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir el nombre Trabajos y presionar Enter",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Copiar Archivo",
+    "titulo": "Ordena el proceso: copiar un archivo a otra carpeta",
+    "indicacion": "Un usuario quiere copiar el archivo Informe.docx a la carpeta Documentos sin eliminar el original. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el explorador de archivos y ubicar el archivo Informe.docx",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Seleccionar el archivo y presionar Ctrl + C",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Abrir la carpeta de destino, por ejemplo Documentos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Presionar Ctrl + V para pegar la copia del archivo",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Mover Archivo",
+    "titulo": "Ordena el proceso: mover un archivo a otra carpeta arrastrándolo",
+    "indicacion": "Un usuario quiere mover el archivo Foto.jpg desde el Escritorio hasta la carpeta Imagenes. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el explorador de archivos y ubicar el archivo Foto.jpg",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Seleccionar el archivo y mantener presionado el botón del ratón",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Arrastrar el archivo hasta la carpeta Imagenes y soltarlo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que el archivo ya no está en la ubicación original",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Ruta Incorrecta",
+    "titulo": "Encuentra la falla: el archivo no aparece donde el usuario lo busca",
+    "indicacion": "Un usuario guardó un archivo y afirma que se perdió porque no lo encuentra en el Escritorio. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario crea el archivo Notas.txt con el Bloc de notas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Guarda el archivo en la carpeta Documentos mediante Guardar como",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El usuario busca el archivo en el Escritorio y no lo encuentra",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
         "id": 0,
-        "texto": "Carpeta de descargas"
+        "texto": "El archivo se perdió y debe crearse nuevamente."
       },
       {
         "id": 1,
-        "texto": "Unidad de red"
+        "texto": "El archivo se eliminó automáticamente al guardarse."
       },
       {
         "id": 2,
-        "texto": "Portapapeles"
+        "texto": "El error es no haber presionado el botón Guardar."
+      },
+      {
+        "id": 3,
+        "texto": "El archivo no se perdió: quedó guardado en Documentos; debe buscarse en la ruta donde se guardó y no en el Escritorio."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Eliminación Definitiva",
+    "titulo": "Encuentra la falla: el archivo eliminado ya no se puede recuperar",
+    "indicacion": "Un usuario eliminó un archivo importante, vació la papelera de reciclaje y ahora intenta restaurarlo. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario elimina el archivo Contrato.docx con la tecla Supr",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Vacía la papelera de reciclaje para liberar espacio",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El usuario intenta restaurar el archivo y ya no aparece",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "Al vaciar la papelera de reciclaje el archivo se elimina de forma definitiva; sin una copia de seguridad no se puede recuperar."
+      },
+      {
+        "id": 1,
+        "texto": "Los archivos vaciados se recuperan automáticamente al reiniciar el equipo."
+      },
+      {
+        "id": 2,
+        "texto": "La papelera conserva los archivos vaciados durante un mes."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Operación de Copiado",
-    "titulo": "Prueba de escritorio: copiar y renombrar un archivo",
-    "indicacion": "Sigue mentalmente cada paso de la operación y determina la ubicación y el nombre final del archivo copiado.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Crear la carpeta C:\\Proyecto\\Informes",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Copiar el archivo informe1.docx desde la carpeta C:\\Descargas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Renombrar la copia como informe_final.docx",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar el contenido de la carpeta C:\\Proyecto\\Informes",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "C:\\Descargas\\informe_final.docx"
-      },
-      {
-        "id": 0,
-        "texto": "C:\\Proyecto\\Informes\\informe_final.docx"
-      },
-      {
-        "id": 2,
-        "texto": "C:\\Proyecto\\Informes\\informe1.docx"
-      },
-      {
-        "id": 3,
-        "texto": "C:\\Descargas\\informe1.docx"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Operación de Movimiento",
-    "titulo": "Prueba de escritorio: mover un archivo con Cortar y Pegar",
-    "indicacion": "Sigue mentalmente los pasos de la operación e indica qué ocurre con el archivo en su ubicación original.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Seleccionar el archivo datos.txt en la carpeta C:\\Documentos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Pulsar la opción Cortar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Abrir la carpeta C:\\Backup",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Pulsar la opción Pegar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Verificar la ubicación del archivo datos.txt",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El archivo permanece en la carpeta original y en C:\\Backup"
-      },
-      {
-        "id": 2,
-        "texto": "El archivo se elimina definitivamente del equipo"
-      },
-      {
-        "id": 1,
-        "texto": "El archivo ya no existe en la ubicación original porque Cortar y Pegar lo movió a C:\\Backup"
-      },
-      {
-        "id": 3,
-        "texto": "El archivo se duplica automáticamente con el nombre datos(1).txt"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje de Procedimiento",
-    "titulo": "Ordena los pasos para renombrar un archivo",
-    "indicacion": "El procedimiento para cambiar el nombre de un archivo inicia abriendo el explorador de archivos y termina al confirmar el nuevo nombre. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el Explorador de archivos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Ubicar el archivo informe.docx en la carpeta correspondiente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Hacer clic derecho sobre el archivo y elegir la opción Cambiar nombre",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Escribir el nuevo nombre informe_final.docx",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b6",
-        "texto": "Presionar la tecla Entrar para confirmar el cambio",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Creación de Carpeta",
-    "titulo": "Ordena los pasos para crear una carpeta nueva",
-    "indicacion": "Para crear una carpeta se abre el explorador, se elige la ubicación y se usa el botón Nueva carpeta. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el Explorador de archivos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Desplazarse hasta la ubicación C:\\MisDocumentos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Hacer clic en el botón Nueva carpeta",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Escribir el nombre PROYECTO",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b6",
-        "texto": "Presionar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Operación Inadecuada",
-    "titulo": "Encuentra la falla: el archivo no se movió de ubicación",
-    "indicacion": "El aprendiz quería mover el archivo informe.docx a la carpeta C:\\Proyecto, pero el archivo sigue en su ubicación original y además apareció una copia. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Copiar y Pegar",
+    "titulo": "Prueba de escritorio: copiar un archivo con Ctrl + C y Ctrl + V",
+    "indicacion": "Un usuario copia un archivo y lo pega en otra carpeta. Ejecuta mentalmente el procedimiento y determina en qué lugares queda el archivo.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Seleccionar el archivo informe.docx en C:\\Documentos",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario selecciona el archivo Foto.jpg y presiona Ctrl + C",
         "tipo": "proceso"
       },
       {
-        "label": "Pulsar la opción Copiar",
+        "label": "Abre la carpeta Imagenes y presiona Ctrl + V",
         "tipo": "proceso"
       },
       {
-        "label": "Abrir la carpeta C:\\Proyecto y pulsar Pegar",
+        "label": "El usuario revisa la carpeta original y la carpeta Imagenes",
         "tipo": "proceso"
       },
       {
-        "label": "El archivo informe.docx permanece en C:\\Documentos y aparece una copia en C:\\Proyecto",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el archivo aparece en las dos carpetas",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El archivo se eliminó porque Windows no permite copiar documentos."
+        "texto": "El archivo solo queda en la carpeta Imagenes."
       },
       {
         "id": 2,
-        "texto": "Copiar crea una réplica y conserva el original; para mover el archivo debe usarse Cortar y luego Pegar."
+        "texto": "El archivo queda en la carpeta original y también en la carpeta Imagenes."
       },
       {
         "id": 1,
-        "texto": "La carpeta de destino debe crearse después de pegar el archivo."
+        "texto": "El archivo desaparece de la carpeta original."
       },
       {
         "id": 3,
-        "texto": "El proceso es correcto; el archivo siempre desaparece de su ubicación al copiarlo."
+        "texto": "El archivo se convierte en un acceso directo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Extensión",
-    "titulo": "Encuentra la falla: el archivo cambió de tipo",
-    "indicacion": "El aprendiz renombró el archivo informe.docx y al finalizar el archivo ya no abre en Word. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Ruta de Acceso",
+    "titulo": "Prueba de escritorio: ubicar un archivo escribiendo la ruta completa",
+    "indicacion": "Un usuario guarda un archivo y luego lo busca escribiendo su ruta en la barra de direcciones del explorador. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Seleccionar el archivo informe.docx",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario guarda el archivo Informe.txt en la carpeta C:\\Usuarios\\Estudiante\\Documentos",
         "tipo": "proceso"
       },
       {
-        "label": "Pulsar la opción Cambiar nombre",
+        "label": "Abre el explorador de archivos y escribe la ruta C:\\Usuarios\\Estudiante\\Documentos en la barra de direcciones",
         "tipo": "proceso"
       },
       {
-        "label": "Escribir informe.txt y presionar la tecla Entrar",
+        "label": "Presiona Enter y revisa el contenido de la carpeta",
         "tipo": "proceso"
       },
       {
-        "label": "El archivo informe.txt ya no se abre con Word",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el archivo Informe.txt aparece en la carpeta Documentos",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El archivo se dañó porque era demasiado grande."
+        "texto": "El archivo no aparece porque la ruta es incorrecta."
       },
       {
         "id": 1,
-        "texto": "Word no permite abrir archivos que fueron renombrados."
+        "texto": "El archivo aparece solo en la papelera de reciclaje."
       },
       {
         "id": 3,
-        "texto": "Al renombrar se cambió la extensión de .docx a .txt, por lo que el archivo cambió de tipo; solo debe modificarse el nombre base conservando la extensión."
+        "texto": "El archivo Informe.txt aparece en la carpeta Documentos porque la ruta coincide con el lugar donde se guardó."
       },
       {
         "id": 2,
-        "texto": "El Explorador de archivos presenta un error temporal."
+        "texto": "El archivo se muestra en otra carpeta distinta."
       }
     ],
     "correcta": 2
@@ -794,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -853,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1120,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1153,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

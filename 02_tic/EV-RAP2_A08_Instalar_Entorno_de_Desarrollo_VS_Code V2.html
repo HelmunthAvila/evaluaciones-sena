@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la instalación y configuración del entorno de desarrollo Visual Studio Code: descarga e instalación del programa, manejo de la interfaz, instalación de extensiones, apertura de carpetas de trabajo y creación del primer archivo, mediante retos prácticos interactivos.
+          Demuestra el proceso de instalación y configuración del entorno de desarrollo Visual Studio Code: decide la fuente oficial de descarga y la extensión adecuada, ordena el proceso de descargar, instalar, agregar extensiones y abrir la carpeta del proyecto, corrige errores como descargar desde sitios de terceros o guardar el archivo sin extensión, y ejecuta mentalmente el procedimiento de un aprendiz que prepara su entorno. Sin teoría: aquí se demuestra instalando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Entorno de Desarrollo:</strong> Conceptos de Visual Studio Code, su interfaz, las extensiones y el flujo de instalación.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la instalación y configuración del editor y predecir el resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para instalar VS Code, abrir carpetas y crear el primer archivo.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la instalación y configuración del entorno y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide la fuente oficial, la extensión y el comando correctos para configurar el entorno de desarrollo.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real de descarga, instalación, extensiones y creación del primer archivo.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un procedimiento de instalación o configuración de VS Code.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el procedimiento de un aprendiz y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,191 +250,247 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Editor de Código",
-    "titulo": "¿Cuál es el editor de código fuente gratuito y de código abierto desarrollado por Microsoft?",
-    "indicacion": "El entorno de desarrollo de esta actividad es un editor de código ampliamente usado en programación. Selecciona el programa correcto.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Fuente de Descarga",
+    "titulo": "¿Desde dónde debe descargarse Visual Studio Code para evitar riesgos de seguridad?",
+    "indicacion": "Un aprendiz necesita instalar VS Code en su equipo. Selecciona la fuente de descarga segura y oficial del programa.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Microsoft Word"
-      },
-      {
-        "id": 2,
-        "texto": "Visual Studio Code"
-      },
-      {
-        "id": 1,
-        "texto": "Paint"
+        "texto": "Desde un enlace que llegó por correo de un remitente desconocido."
       },
       {
         "id": 3,
-        "texto": "Calculadora de Windows"
+        "texto": "Desde el sitio oficial code.visualstudio.com."
+      },
+      {
+        "id": 1,
+        "texto": "Desde una página de descargas de terceros."
+      },
+      {
+        "id": 2,
+        "texto": "Desde un anuncio del navegador."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Descarga Oficial",
-    "titulo": "¿Desde dónde debe descargarse Visual Studio Code para garantizar una instalación segura?",
-    "indicacion": "Descargar software de fuentes no oficiales puede poner en riesgo el equipo. Selecciona el origen correcto de la descarga.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Extensión Correcta",
+    "titulo": "¿Qué extensión se instala en VS Code para trabajar con el lenguaje Python?",
+    "indicacion": "El aprendiz va a escribir programas en Python y necesita el resaltado de sintaxis y las herramientas del lenguaje. Selecciona la extensión adecuada.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 1,
-        "texto": "Desde un enlace recibido por correo de un remitente desconocido"
+        "texto": "Una extensión llamada Python Desconocido de un autor anónimo."
       },
       {
         "id": 2,
-        "texto": "Desde una página de descargas de programas modificados"
+        "texto": "Una extensión de videojuegos."
       },
       {
         "id": 0,
-        "texto": "Desde el sitio web oficial code.visualstudio.com"
+        "texto": "La extensión Python publicada por Microsoft."
       },
       {
         "id": 3,
-        "texto": "Desde la papelera de reciclaje"
+        "texto": "Ninguna, VS Code no admite extensiones."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Extensión Python",
-    "titulo": "¿Qué extensión se instala en VS Code para programar en el lenguaje Python?",
-    "indicacion": "Las extensiones agregan funcionalidades al editor. Selecciona la extensión que habilita el soporte para Python.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Descarga e Instalación",
+    "titulo": "Ordena el proceso: descargar e instalar Visual Studio Code",
+    "indicacion": "Un aprendiz debe instalar VS Code en su computador por primera vez. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Live Server"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 1,
-        "texto": "Prettier"
+        "id": "b2",
+        "texto": "Abrir el navegador e ingresar al sitio oficial code.visualstudio.com",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Material Icon Theme"
+        "id": "b3",
+        "texto": "Descargar el instalador según el sistema operativo del equipo",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Python (publicada por Microsoft)"
+        "id": "b4",
+        "texto": "Ejecutar el instalador descargado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Aceptar los términos y elegir las opciones de instalación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Finalizar la instalación y abrir VS Code",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 3
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 4,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Terminal Integrada",
-    "titulo": "¿Cómo se abre la terminal integrada en Visual Studio Code?",
-    "indicacion": "La terminal integrada permite ejecutar comandos sin salir del editor. Selecciona la forma correcta de abrirla.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Instalación de Extensión",
+    "titulo": "Ordena el proceso: instalar una extensión en VS Code",
+    "indicacion": "El aprendiz debe instalar la extensión de Python en VS Code. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 1,
-        "texto": "Desde el menú Terminal, opción Nueva terminal"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 0,
-        "texto": "Desde el menú Ver, opción Apariencia"
+        "id": "b2",
+        "texto": "Abrir Visual Studio Code",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Desde el menú Ayuda, opción Acerca de"
+        "id": "b3",
+        "texto": "Abrir la vista de extensiones con el ícono lateral o la combinación Ctrl+Shift+X",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Desde el menú Archivo, opción Imprimir"
+        "id": "b4",
+        "texto": "Buscar el nombre de la extensión en el cuadro de búsqueda",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Seleccionar la extensión oficial y hacer clic en Instalar",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que la extensión quede activa en el editor",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 0
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Proceso de Instalación",
-    "titulo": "Prueba de escritorio: instalación de VS Code",
-    "indicacion": "Sigue mentalmente cada paso del proceso de instalación y determina qué ocurre al finalizar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Abrir Carpeta y Crear Archivo",
+    "titulo": "Ordena el proceso: abrir la carpeta del proyecto y crear el primer archivo",
+    "indicacion": "El aprendiz debe abrir su carpeta de trabajo en VS Code y crear su primer archivo de Python. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Descargar el instalador desde el sitio oficial",
+        "id": "b2",
+        "texto": "Abrir Visual Studio Code",
         "tipo": "proceso"
       },
       {
-        "label": "Ejecutar el archivo de instalación descargado",
+        "id": "b3",
+        "texto": "Ir a Archivo y seleccionar Abrir carpeta",
         "tipo": "proceso"
       },
       {
-        "label": "Aceptar los términos de licencia y elegir la carpeta de instalación",
+        "id": "b4",
+        "texto": "Buscar y seleccionar la carpeta del proyecto",
         "tipo": "proceso"
       },
       {
-        "label": "Completar la instalación y abrir Visual Studio Code",
+        "id": "b5",
+        "texto": "Crear un archivo nuevo con el botón Nuevo archivo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Escribir el código y guardar el archivo con la extensión .py",
         "tipo": "salida"
       },
       {
-        "label": "Fin",
+        "id": "b7",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "El editor solo funciona durante una semana de prueba"
-      },
-      {
-        "id": 0,
-        "texto": "El editor queda instalado y listo para crear archivos de código"
-      },
-      {
-        "id": 2,
-        "texto": "El editor se instala únicamente en el navegador web"
-      },
-      {
-        "id": 3,
-        "texto": "El editor requiere comprar una licencia anual"
-      }
-    ],
-    "correcta": 1
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Abrir Carpeta de Trabajo",
-    "titulo": "Prueba de escritorio: abrir una carpeta de trabajo y crear el primer archivo",
-    "indicacion": "Sigue mentalmente los pasos de la operación e indica dónde queda el archivo creado al finalizar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Error",
+    "tipo": "Descarga Insegura",
+    "titulo": "Encuentra la falla: VS Code se descargó desde una fuente no confiable",
+    "indicacion": "Un aprendiz descargó VS Code desde el primer enlace que apareció en un anuncio. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Crear la carpeta C:\\ProyectoTIC en el explorador de archivos",
+        "label": "Buscar Visual Studio Code en el navegador",
         "tipo": "proceso"
       },
       {
-        "label": "En VS Code elegir Archivo, Abrir carpeta y seleccionar ProyectoTIC",
+        "label": "Hacer clic en el anuncio de descarga de una página de terceros (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Descargar y ejecutar el instalador obtenido",
         "tipo": "proceso"
       },
       {
-        "label": "Crear un archivo nuevo y guardarlo como index.html",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Verificar que el archivo aparezca en el explorador de VS Code",
+        "label": "Salida: el equipo queda expuesto a programas no deseados",
         "tipo": "salida"
       },
       {
@@ -442,222 +498,236 @@
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El archivo no puede guardarse dentro de una carpeta abierta"
-      },
+    "opciones": [
       {
         "id": 1,
-        "texto": "El archivo index.html se guarda fuera de la carpeta ProyectoTIC"
+        "texto": "El error es que el navegador no debe usarse para descargar programas."
       },
       {
         "id": 2,
-        "texto": "El archivo index.html queda creado dentro de la carpeta ProyectoTIC y visible en el explorador"
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 0,
+        "texto": "La descarga debe hacerse únicamente desde el sitio oficial code.visualstudio.com: los anuncios y páginas de terceros pueden instalar programas no deseados."
       },
       {
         "id": 3,
-        "texto": "VS Code elimina la carpeta ProyectoTIC al abrirla"
+        "texto": "El error es que VS Code solo se instala con un disco físico."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Instalación de VS Code",
-    "titulo": "Ordena los pasos para instalar Visual Studio Code",
-    "indicacion": "La instalación inicia con la descarga del instalador y termina abriendo el editor. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b4",
-        "texto": "Aceptar los términos de la licencia",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b3",
-        "texto": "Descargar el instalador desde el sitio oficial",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Seleccionar la carpeta de instalación y completar el proceso",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Ejecutar el instalador descargado",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Abrir Visual Studio Code",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b3",
-      "b2",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Instalación de Extensión",
-    "titulo": "Ordena los pasos para instalar una extensión en VS Code",
-    "indicacion": "La instalación de una extensión inicia abriendo el editor y termina verificando que quede activa. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b6",
-        "texto": "Verificar que la extensión quede activa",
-        "tipo": "salida"
-      },
-      {
-        "id": "b3",
-        "texto": "Hacer clic en el icono de extensiones de la barra lateral",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b5",
-        "texto": "Hacer clic en el botón Instalar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir Visual Studio Code",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Buscar la extensión deseada, por ejemplo Python",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Extensión No Disponible",
-    "titulo": "Encuentra la falla: la extensión no aparece instalada",
-    "indicacion": "El aprendiz instaló una extensión para Python, pero al reiniciar VS Code la extensión no aparece. Revisa el proceso e identifica la falla.",
+    "categoria": "Corregir el Error",
+    "tipo": "Apertura de Archivo",
+    "titulo": "Encuentra la falla: el archivo de Python se abre en el Bloc de notas",
+    "indicacion": "Un aprendiz creó el archivo saludo.py y quiere editarlo en VS Code. Hace doble clic sobre el archivo y se abre en el Bloc de notas. Revisa el procedimiento e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Abrir Visual Studio Code",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Crear el archivo saludo.py con el código del programa",
         "tipo": "proceso"
       },
       {
-        "label": "Buscar la extensión Python en el mercado de extensiones",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Hacer clic en el botón Instalar y esperar a que termine",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Reiniciar VS Code y la extensión no aparece disponible",
-        "tipo": "salida",
+        "label": "Cerrar VS Code y hacer doble clic sobre el archivo saludo.py (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "El archivo se abre con el programa predeterminado del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el código se muestra en el Bloc de notas, sin resaltado de sintaxis",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El error es que el archivo saludo.py está dañado."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que Windows no puede abrir archivos de código."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 2,
+        "texto": "El archivo se abrió con el programa predeterminado: primero debe abrirse la carpeta en VS Code y luego el archivo dentro del editor."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Extensión del Archivo",
+    "titulo": "Encuentra la falla: VS Code no reconoce el archivo como código Python",
+    "indicacion": "Un aprendiz guardó su programa en VS Code con el nombre prueba y espera el resaltado de sintaxis de Python, pero el editor no lo reconoce. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Abrir la carpeta del proyecto en VS Code",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Escribir el código del programa en un archivo nuevo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Guardar el archivo con el nombre prueba, sin la extensión .py (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Salida: VS Code no aplica el resaltado del lenguaje Python",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "Las extensiones solo funcionan sin conexión a internet."
+        "texto": "El archivo se guardó sin la extensión .py, por eso VS Code no lo reconoce como código Python: debe guardarse con el nombre prueba.py."
       },
       {
         "id": 0,
-        "texto": "La extensión se instaló pero requiere descargar e instalar Python en el equipo para funcionar; además debe verificarse que la instalación haya finalizado correctamente."
+        "texto": "El error es que el archivo tiene demasiados caracteres."
       },
       {
         "id": 2,
-        "texto": "VS Code elimina las extensiones automáticamente cada semana."
+        "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
         "id": 3,
-        "texto": "La extensión debe comprarse en la tienda de Microsoft."
+        "texto": "El error es que la extensión Python de VS Code no sirve."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Instalación sin PATH",
+    "titulo": "Prueba de escritorio: la instalación se realiza sin la opción Añadir a PATH",
+    "indicacion": "Durante la instalación de VS Code aparece la opción Añadir a PATH y el aprendiz la desactiva. Ejecuta mentalmente el procedimiento y determina la consecuencia.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz ejecuta el instalador de VS Code",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Desactiva la opción Añadir a PATH en las opciones de instalación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Finaliza la instalación y abre el editor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: VS Code funciona, pero el comando code no se reconoce en la terminal",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "El equipo se reiniciará automáticamente."
+      },
+      {
+        "id": 0,
+        "texto": "VS Code no se podrá abrir desde la terminal con el comando code y algunas herramientas no se reconocerán en la consola."
+      },
+      {
+        "id": 2,
+        "texto": "VS Code no se instalará en el equipo."
+      },
+      {
+        "id": 3,
+        "texto": "La opción no tiene ninguna consecuencia."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Archivo en Ubicación Incorrecta",
-    "titulo": "Encuentra la falla: el archivo no aparece en el explorador",
-    "indicacion": "El aprendiz guardó su primer archivo, pero no lo encuentra dentro del explorador de VS Code. Revisa el proceso e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Archivo con Extensión Python",
+    "titulo": "Prueba de escritorio: abrir un archivo .py con la extensión Python instalada",
+    "indicacion": "Un aprendiz creó el archivo saludo.py con el código print('Hola') y lo abrió en VS Code con la extensión Python instalada. Ejecuta mentalmente el procedimiento y determina qué observa.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Abrir la carpeta C:\\ProyectoTIC en VS Code",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz instala la extensión Python en VS Code",
         "tipo": "proceso"
       },
       {
-        "label": "Crear un archivo nuevo con Ctrl + N",
+        "label": "Crea el archivo saludo.py con el código print('Hola')",
         "tipo": "proceso"
       },
       {
-        "label": "Guardar el archivo directamente sin indicar carpeta ni extensión",
+        "label": "Abre la carpeta del proyecto y el archivo dentro del editor",
         "tipo": "proceso"
       },
       {
-        "label": "El archivo no aparece en el explorador de la carpeta ProyectoTIC",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el código se muestra con colores y palabras del lenguaje reconocidas",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "VS Code solo muestra carpetas que contienen archivos HTML."
-      },
-      {
-        "id": 2,
-        "texto": "El explorador de VS Code se desactiva al crear archivos con Ctrl + N."
+        "texto": "El archivo se convierte en una imagen."
       },
       {
         "id": 1,
-        "texto": "El archivo debe guardarse dentro de la carpeta abierta con Archivo, Guardar como, indicando el nombre y la extensión; guardarlo sin carpeta lo deja fuera del proyecto."
+        "texto": "VS Code borra el archivo al abrirlo."
+      },
+      {
+        "id": 2,
+        "texto": "El código se muestra con resaltado de sintaxis: las palabras del lenguaje Python aparecen con colores según su función."
       },
       {
         "id": 3,
-        "texto": "El archivo se eliminó porque tenía el mismo nombre de la carpeta."
+        "texto": "El archivo se abre en Excel."
       }
     ],
     "correcta": 2
@@ -790,6 +860,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +934,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1341,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1380,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

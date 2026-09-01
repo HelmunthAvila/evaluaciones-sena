@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Gestión de Archivos en la Nube</title>
+<title>Evaluación Práctica - Gestionar Archivos en la Nube</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Gestión de Archivos en la Nube</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Gestionar Archivos en la Nube</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la gestión de archivos en la nube: uso de servicios como Google Drive y OneDrive, subida y descarga de archivos, opciones de uso compartido, configuración de permisos, sincronización entre dispositivos y realización de respaldos de información, mediante retos prácticos interactivos.
+          Pon en práctica la gestión de archivos en la nube con situaciones reales del oficio: decide qué servicio y qué permiso usar para cada necesidad, ordena los pasos para subir, compartir y sincronizar archivos, corrige errores de permisos y de sincronización y ejecuta mentalmente el proceso de compartir un archivo con un compañero. Sin teoría: aquí se demuestra gestionando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos de almacenamiento en la nube, sincronización, permisos de acceso y respaldo de información.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso las operaciones de subida, sincronización y uso compartido y predecir el resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para subir archivos, compartirlos con permisos y configurar la sincronización.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la gestión de archivos en la nube y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué servicio, permiso o acción de la nube aplica en cada situación.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real para subir, compartir y sincronizar archivos.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en la configuración de permisos o de sincronización.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el proceso de la nube y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,433 +243,438 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Gestión de Archivos en la Nube</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Gestionar Archivos en la Nube</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Almacenamiento en la Nube",
-    "titulo": "¿Cómo se denomina el servicio que permite guardar archivos en servidores remotos y acceder a ellos desde cualquier dispositivo con internet?",
-    "indicacion": "Este servicio elimina la dependencia del almacenamiento local del equipo. Selecciona el término que lo identifica.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Servicio de Nube",
+    "titulo": "¿Cuál de estos es un servicio de almacenamiento en la nube?",
+    "indicacion": "El aprendiz quiere guardar el proyecto en línea para acceder desde cualquier equipo. Selecciona el servicio de almacenamiento en la nube.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
+        "id": 1,
+        "texto": "La calculadora de Windows."
+      },
+      {
         "id": 0,
-        "texto": "Memoria caché"
+        "texto": "Google Drive."
       },
       {
         "id": 2,
-        "texto": "Almacenamiento en la nube"
-      },
-      {
-        "id": 1,
-        "texto": "Disco duro externo"
+        "texto": "El Bloc de notas."
       },
       {
         "id": 3,
-        "texto": "Sistema operativo"
+        "texto": "El reproductor de medios."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Permisos de Acceso",
-    "titulo": "Para que solo una persona específica pueda abrir un archivo de Google Drive, ¿qué opción de uso compartido debe configurarse?",
-    "indicacion": "Al compartir se puede restringir quién accede al archivo. Selecciona la configuración que limita el acceso a una persona determinada.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Permisos de Compartir",
+    "titulo": "El compañero solo debe VER el archivo sin poder editarlo. ¿Qué permiso debe otorgarle?",
+    "indicacion": "Un aprendiz comparte el documento del proyecto con un compañero que solo debe consultarlo. Selecciona el permiso correcto.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Cualquier persona con el enlace"
+        "id": 0,
+        "texto": "Editor."
       },
       {
         "id": 2,
-        "texto": "Público en la web"
+        "texto": "Administrador del equipo."
       },
       {
-        "id": 0,
-        "texto": "Restringido: solo las personas que se agreguen pueden abrir el archivo"
+        "id": 1,
+        "texto": "Lector."
       },
       {
         "id": 3,
-        "texto": "Cualquier persona de la organización"
+        "texto": "Propietario."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Herramientas",
     "tipo": "Sincronización",
-    "titulo": "¿Qué significa que una carpeta local esté sincronizada con la nube?",
-    "indicacion": "La sincronización mantiene el contenido actualizado entre el equipo y el servicio en línea. Selecciona la afirmación correcta.",
+    "titulo": "El aprendiz modifica un archivo en su equipo y quiere que se actualice solo en la nube. ¿Qué acción debe tener activa?",
+    "indicacion": "El aprendiz instaló la aplicación de escritorio del servicio de nube y trabaja en la carpeta sincronizada. Selecciona la acción que actualiza los archivos automáticamente.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Los archivos solo se suben cuando se ejecuta un comando manual"
-      },
-      {
-        "id": 2,
-        "texto": "La carpeta se convierte en un archivo comprimido"
-      },
-      {
-        "id": 3,
-        "texto": "Los archivos se eliminan del equipo al subirse a la nube"
+        "texto": "El modo avión del equipo."
       },
       {
         "id": 1,
-        "texto": "Los cambios realizados en la carpeta se actualizan automáticamente en la nube y en los demás dispositivos conectados"
+        "texto": "La protección de pantalla."
+      },
+      {
+        "id": 3,
+        "texto": "El bloqueo del teclado."
+      },
+      {
+        "id": 2,
+        "texto": "La sincronización de la carpeta local con la nube."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Niveles de Permiso",
-    "titulo": "Al compartir un documento con permiso \"Puede editar\", ¿qué puede hacer la persona invitada?",
-    "indicacion": "Cada nivel de permiso define las acciones permitidas sobre el archivo. Selecciona la acción que corresponde al permiso indicado.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Subir Archivos",
+    "titulo": "Construye el proceso: subir un archivo a la nube",
+    "indicacion": "El aprendiz quiere subir el informe del proyecto a Google Drive. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el servicio de almacenamiento en la nube",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Seleccionar la opción subir o arrastrar el archivo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Esperar a que termine la carga del archivo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que el archivo quedó disponible en la nube",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Compartir con Permisos",
+    "titulo": "Construye el proceso: compartir un archivo con permisos",
+    "indicacion": "El aprendiz va a compartir el documento con un compañero que solo debe verlo. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Seleccionar el archivo que se va a compartir",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Abrir la opción compartir del archivo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Ingresar el correo del compañero",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Elegir el permiso Lector y enviar la invitación",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Sincronización con el Equipo",
+    "titulo": "Construye el proceso: sincronizar la carpeta del equipo con la nube",
+    "indicacion": "El aprendiz instala la aplicación de escritorio para sincronizar su carpeta. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Instalar la aplicación de escritorio del servicio de nube",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Iniciar sesión con la cuenta del aprendiz",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Elegir la carpeta local que se sincronizará",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que los archivos se sincronizan en ambos sentidos",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Permiso Incorrecto",
+    "titulo": "Encuentra la falla: permiso de editor otorgado a un compañero que solo debe ver",
+    "indicacion": "El aprendiz compartió el documento con un compañero que solo debía consultarlo, pero le otorgó permiso de Editor. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Seleccionar el documento del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Compartir con el compañero y otorgar permiso de Editor (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Enviar la invitación al correo del compañero",
+        "tipo": "salida"
+      }
+    ],
     "opciones": [
       {
-        "id": 3,
-        "texto": "Puede ver, comentar y modificar el contenido del documento"
-      },
-      {
-        "id": 0,
-        "texto": "Solo puede ver el contenido sin modificarlo"
-      },
-      {
         "id": 1,
-        "texto": "Puede eliminar el archivo del Drive del propietario"
+        "texto": "El permiso Editor impide abrir el archivo."
       },
       {
         "id": 2,
-        "texto": "Puede cambiar la contraseña de la cuenta del propietario"
+        "texto": "El error es que el documento no debe compartirse por correo."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto."
+      },
+      {
+        "id": 0,
+        "texto": "El permiso Editor permite modificar el archivo: para que solo pueda verlo debe otorgarse el permiso Lector."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Borrado Sincronizado",
+    "titulo": "Encuentra la falla: el aprendiz borra la carpeta local y el archivo desaparece de la nube",
+    "indicacion": "Un aprendiz eliminó la carpeta local sincronizada pensando que el archivo seguía seguro solo en la nube. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Trabajar con la carpeta sincronizada del servicio de nube",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Eliminar la carpeta local del equipo (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Buscar el archivo en la nube desde otro equipo",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 3,
+        "texto": "La sincronización funciona en ambos sentidos: al borrar el archivo local también se elimina de la nube; debe usarse la papelera o mover el archivo, no borrarlo."
+      },
+      {
+        "id": 0,
+        "texto": "Borrar la carpeta local no afecta la nube."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que la carpeta debe estar comprimida."
+      },
+      {
+        "id": 2,
+        "texto": "El procedimiento es correcto y el archivo sigue en la nube."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Subida Automática",
-    "titulo": "Prueba de escritorio: guardar un archivo en la carpeta sincronizada de OneDrive",
-    "indicacion": "Sigue mentalmente cada paso de la operación e indica qué ocurre con el archivo después de guardarlo en la carpeta local de OneDrive.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Abrir la carpeta local de OneDrive",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Guardar el archivo informe.docx dentro de la carpeta de OneDrive",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Esperar a que el icono de sincronización indique que terminó",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Verificar el archivo desde el sitio web de OneDrive",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El archivo solo existe en el equipo y no aparece en el sitio web"
-      },
-      {
-        "id": 1,
-        "texto": "El archivo se sube automáticamente a la nube y queda disponible en el sitio web de OneDrive"
-      },
-      {
-        "id": 2,
-        "texto": "El archivo se convierte en una copia de seguridad del sistema"
-      },
-      {
-        "id": 3,
-        "texto": "El archivo se elimina de la carpeta local al subirse"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Uso Compartido",
-    "titulo": "Prueba de escritorio: compartir un archivo con permiso de comentar",
-    "indicacion": "La aprendiz compartió un enlace con permiso \"Puede comentar\". Sigue mentalmente la secuencia e indica qué puede hacer el compañero con el archivo.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Abrir el archivo propuesta.docx en Google Drive",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Hacer clic en el botón Compartir",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Configurar el permiso \"Puede comentar\" y copiar el enlace",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El compañero abre el enlace del archivo",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El compañero puede modificar el contenido y eliminar el archivo"
-      },
-      {
-        "id": 1,
-        "texto": "El compañero debe iniciar sesión con la cuenta del propietario para ver el archivo"
-      },
-      {
-        "id": 2,
-        "texto": "El compañero puede ver el archivo y dejar comentarios, pero no puede modificar el contenido"
-      },
-      {
-        "id": 3,
-        "texto": "El compañero puede descargar, editar y volver a compartir el archivo con permisos de editor"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Subida de Archivo",
-    "titulo": "Ordena los pasos para subir un archivo a Google Drive desde el navegador",
-    "indicacion": "El proceso inicia abriendo el servicio en el navegador y termina verificando el archivo en Mi unidad. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir drive.google.com en el navegador",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Hacer clic en el botón Nuevo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Seleccionar la opción Subir archivo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Elegir el archivo informe.docx en el equipo",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b6",
-        "texto": "Esperar a que la barra de progreso indique el final de la carga",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Verificar el archivo en la sección Mi unidad",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Uso Compartido con Permisos",
-    "titulo": "Ordena los pasos para compartir un archivo con una persona específica",
-    "indicacion": "El proceso inicia abriendo el archivo y termina cuando la persona invitada recibe el acceso. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el archivo que se desea compartir",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Hacer clic en el botón Compartir",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Escribir el correo electrónico de la persona invitada",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b5",
-        "texto": "Elegir el nivel de permiso Lector",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Enviar la invitación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Confirmar que la persona recibió el correo de acceso",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Archivo Fuera de la Carpeta Sincronizada",
-    "titulo": "Encuentra la falla: el archivo modificado no aparece en la nube",
-    "indicacion": "El aprendiz modificó un documento en su equipo, pero el cambio no aparece en la versión en línea desde otro dispositivo. Revisa la secuencia e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Compartir un Archivo",
+    "titulo": "Prueba de escritorio: compartir el informe con el instructor",
+    "indicacion": "Un aprendiz comparte el informe del proyecto con el instructor. Ejecuta mentalmente el proceso y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Editar el documento informe.docx en el equipo",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz sube el informe del proyecto a la nube",
         "tipo": "proceso"
       },
       {
-        "label": "Guardar el documento en la carpeta Descargas",
+        "label": "Abre la opción compartir del archivo",
         "tipo": "proceso"
       },
       {
-        "label": "Abrir el sitio web del servicio en la nube",
+        "label": "Ingresa el correo del instructor y elige el permiso Lector",
         "tipo": "proceso"
       },
       {
-        "label": "El documento en línea no refleja los cambios realizados",
-        "tipo": "salida",
-        "error": true
+        "label": "Envía la invitación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el instructor recibe la invitación y puede consultar el informe sin modificarlo",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "El servicio en la nube solo se actualiza una vez por semana."
+        "texto": "El instructor no puede abrir el archivo porque no tiene cuenta."
       },
       {
         "id": 0,
-        "texto": "El documento se guardó en Descargas, que no es una carpeta sincronizada; debe guardarse dentro de la carpeta de sincronización para que se suba a la nube."
+        "texto": "El instructor recibe la invitación y puede consultar el informe sin modificarlo."
       },
       {
         "id": 2,
-        "texto": "Los documentos de Word no se pueden sincronizar con la nube."
+        "texto": "El informe se elimina al compartirse."
       },
       {
         "id": 3,
-        "texto": "El documento debe enviarse por correo electrónico antes de poder sincronizarse."
+        "texto": "El aprendiz debe enviar el archivo por correo tradicional."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Permiso Incorrecto",
-    "titulo": "Encuentra la falla: el archivo compartido se puede modificar sin autorización",
-    "indicacion": "El aprendiz compartió un enlace público de su carpeta y ahora cualquier persona con el enlace puede modificar los archivos, cuando él solo quería que los vieran. Revisa la secuencia e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Sincronización de Cambios",
+    "titulo": "Prueba de escritorio: editar un archivo en la carpeta sincronizada",
+    "indicacion": "El aprendiz edita el documento del proyecto en su equipo, dentro de la carpeta sincronizada. Ejecuta mentalmente el proceso y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Seleccionar la carpeta Proyecto en Google Drive",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz abre el documento desde la carpeta sincronizada",
         "tipo": "proceso"
       },
       {
-        "label": "Activar la opción Cualquier persona con el enlace",
+        "label": "Corrige los errores de ortografía del documento",
         "tipo": "proceso"
       },
       {
-        "label": "Asignar el rol Editor y copiar el enlace",
+        "label": "Guarda el documento en el equipo",
         "tipo": "proceso"
       },
       {
-        "label": "Cualquier persona con el enlace modifica los archivos de la carpeta",
-        "tipo": "salida",
-        "error": true
+        "label": "La aplicación sincroniza el cambio con la nube",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: la versión corregida queda disponible en la nube y en los demás dispositivos",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
-        "id": 0,
-        "texto": "El enlace compartido caduca a los pocos minutos y por eso se permite la edición."
+        "id": 1,
+        "texto": "El documento se duplica en la nube sin cambios."
       },
       {
         "id": 2,
-        "texto": "Los archivos de Drive siempre pueden editarse sin importar el permiso configurado."
+        "texto": "La corrección solo queda en el equipo local."
       },
       {
-        "id": 1,
-        "texto": "El rol Editor permite modificar el contenido; para que solo puedan ver debe asignarse el rol Lector o restringir el acceso a personas específicas."
+        "id": 0,
+        "texto": "La versión corregida queda disponible en la nube y en los demás dispositivos."
       },
       {
         "id": 3,
-        "texto": "El problema es el nombre de la carpeta, que debe contener la palabra Compartida."
+        "texto": "El documento se bloquea para siempre."
       }
     ],
     "correcta": 2
@@ -802,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -861,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1128,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1161,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

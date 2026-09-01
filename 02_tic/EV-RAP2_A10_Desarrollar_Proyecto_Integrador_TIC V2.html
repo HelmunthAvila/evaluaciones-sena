@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el desarrollo del proyecto integrador TIC: planificación de actividades, organización de archivos y carpetas, integración de herramientas ofimáticas como procesador de texto, hoja de cálculo y presentaciones, y presentación del resultado final, mediante retos prácticos interactivos.
+          Pon en práctica el desarrollo del proyecto integrador TIC con situaciones reales del oficio: decide qué definir primero al planificar, organiza los archivos del proyecto, integra las herramientas aprendidas y prepara la presentación final. Sin teoría: aquí se demuestra planificando, integrando y presentando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos de planificación, estructura del proyecto y herramientas ofimáticas integradas.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso el desarrollo del proyecto y predecir el resultado de cada etapa.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para planificar, organizar archivos y presentar el proyecto.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la organización e integración del proyecto y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué herramienta o decisión de planificación aplica en cada etapa del proyecto.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real de planificación, organización e integración del proyecto.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en la organización, integración o presentación del proyecto.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el proceso del proyecto y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,414 +250,423 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Planificación",
-    "titulo": "¿Cuál es el primer paso para desarrollar un proyecto integrador TIC?",
-    "indicacion": "Todo proyecto requiere una etapa inicial que oriente las actividades siguientes. Selecciona el primer paso correcto.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Planificación del Proyecto",
+    "titulo": "¿Qué debe definir el aprendiz PRIMERO al iniciar el proyecto integrador?",
+    "indicacion": "Un aprendiz inicia el proyecto integrador TIC. Debe planificar antes de crear archivos. Selecciona la primera definición que debe hacer.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
+        "id": 1,
+        "texto": "El color de la presentación final."
+      },
+      {
         "id": 0,
-        "texto": "Presentar el resultado final sin preparación previa"
+        "texto": "El alcance del proyecto: qué problema resuelve y qué entregará."
       },
       {
         "id": 2,
-        "texto": "Planificar las actividades, los recursos y los tiempos de entrega"
-      },
-      {
-        "id": 1,
-        "texto": "Eliminar todos los archivos del proyecto"
+        "texto": "La contraseña del equipo de cómputo."
       },
       {
         "id": 3,
-        "texto": "Instalar programas sin relación con el proyecto"
+        "texto": "El nombre del instructor."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Herramienta de Presentación",
-    "titulo": "¿Qué herramienta ofimática se utiliza para exponer los resultados del proyecto ante el instructor?",
-    "indicacion": "El resultado del proyecto se socializa mediante diapositivas. Selecciona la herramienta adecuada.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Organización de Archivos",
+    "titulo": "¿Cómo debe organizar los archivos del proyecto integrador?",
+    "indicacion": "El aprendiz va a guardar el código, los documentos y las imágenes del proyecto. Selecciona la organización correcta de los archivos.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Calculadora de Windows"
-      },
-      {
-        "id": 1,
-        "texto": "Bloc de notas"
-      },
-      {
-        "id": 3,
-        "texto": "Un programa de presentaciones como PowerPoint o Impress"
+        "texto": "Todo en un solo archivo en el escritorio."
       },
       {
         "id": 2,
-        "texto": "Explorador de archivos"
+        "texto": "Cada archivo en una carpeta diferente sin relación entre ellas."
+      },
+      {
+        "id": 1,
+        "texto": "Una carpeta del proyecto con subcarpetas por tipo: codigo, documentos e imagenes."
+      },
+      {
+        "id": 3,
+        "texto": "Solo en la papelera de reciclaje."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Organización de Archivos",
-    "titulo": "¿Cuál es la estructura adecuada para organizar los archivos de un proyecto integrador?",
-    "indicacion": "Una buena organización facilita localizar los documentos en cualquier momento. Selecciona la estructura recomendada.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Presentación del Proyecto",
+    "titulo": "¿Qué herramienta usa el aprendiz para presentar el proyecto integrador al instructor?",
+    "indicacion": "El proyecto integrador debe presentarse ante el instructor y los compañeros. Selecciona la herramienta adecuada para la presentación.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Todos los archivos sueltos en el escritorio sin carpetas"
+        "id": 0,
+        "texto": "El editor de texto sin formato (Bloc de notas)."
       },
       {
-        "id": 2,
-        "texto": "Un solo archivo con todo el contenido mezclado"
+        "id": 1,
+        "texto": "La calculadora del sistema."
       },
       {
         "id": 3,
-        "texto": "Los archivos guardados en la papelera de reciclaje"
+        "texto": "El reproductor de música."
       },
       {
-        "id": 0,
-        "texto": "Una carpeta principal con subcarpetas por etapa, por ejemplo Planificacion, Documentos y Presentacion"
+        "id": 2,
+        "texto": "Un programa de presentación de diapositivas (PowerPoint o Google Slides)."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Cronograma de Actividades",
-    "titulo": "¿En qué herramienta ofimática se elabora el cronograma de actividades del proyecto?",
-    "indicacion": "El cronograma organiza las actividades y sus fechas en filas y columnas. Selecciona la herramienta adecuada.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Planificación del Proyecto",
+    "titulo": "Construye el proceso: planificación del proyecto integrador",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta de planificación del proyecto integrador.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Definir el alcance del proyecto y los entregables",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Elaborar el cronograma con las fechas de las actividades",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Asignar las tareas y los recursos necesarios",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Aprobar el plan antes de empezar a construir",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Organización de Archivos",
+    "titulo": "Construye el proceso: organización de los archivos del proyecto",
+    "indicacion": "El aprendiz va a organizar los archivos del proyecto integrador. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Crear la carpeta principal con el nombre del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Crear las subcarpetas por tipo: codigo, documentos e imagenes",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Guardar cada archivo en la subcarpeta correspondiente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que todos los archivos estén en su lugar",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Integración de Herramientas",
+    "titulo": "Construye el proceso: integración de las herramientas del proyecto",
+    "indicacion": "El proyecto une las herramientas aprendidas: editor de código, hoja de cálculo y procesador de texto. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Desarrollar cada parte del proyecto con la herramienta correspondiente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Unir las partes en la carpeta del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Probar que las partes funcionan juntas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Documentar el proceso y los resultados obtenidos",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Archivos Desorganizados",
+    "titulo": "Encuentra la falla: archivos del proyecto guardados sueltos en el escritorio",
+    "indicacion": "Un aprendiz guardó los archivos del proyecto integrador de forma desordenada. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Crear el proyecto integrador con código, documentos e imágenes",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Guardar todos los archivos sueltos en el escritorio del equipo (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Entregar el proyecto al instructor",
+        "tipo": "salida"
+      }
+    ],
     "opciones": [
       {
         "id": 1,
-        "texto": "En la hoja de cálculo, por ejemplo Excel"
-      },
-      {
-        "id": 0,
-        "texto": "En el programa de presentaciones"
+        "texto": "Guardar los archivos en el escritorio es la forma correcta de organizar un proyecto."
       },
       {
         "id": 2,
-        "texto": "En el editor de imágenes"
+        "texto": "El error es que el proyecto no debe contener documentos."
       },
       {
         "id": 3,
-        "texto": "En el reproductor de video"
+        "texto": "El error es que falta instalar una impresora."
+      },
+      {
+        "id": 0,
+        "texto": "Los archivos sueltos en el escritorio dificultan ubicar y entregar el proyecto: deben organizarse en una carpeta con subcarpetas por tipo."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Presentación sin Prueba",
+    "titulo": "Encuentra la falla: el aprendiz presenta el proyecto sin probarlo",
+    "indicacion": "Un aprendiz va a presentar el proyecto integrador. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Elaborar la presentación del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Presentar el proyecto sin verificar antes que funciona (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Recibir la evaluación del instructor",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 3,
+        "texto": "Antes de presentar debe probarse el proyecto y verificarse que funciona: una presentación con fallas técnicas pierde validez."
+      },
+      {
+        "id": 0,
+        "texto": "Presentar sin probar es correcto porque el instructor entiende los errores técnicos."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que la presentación debe hacerse en video."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que no se usó la herramienta de presentación."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Etapas del Proyecto",
-    "titulo": "Prueba de escritorio: etapas del proyecto integrador",
-    "indicacion": "Sigue mentalmente cada etapa del proyecto y determina qué ocurre al finalizar el proceso.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Definir el objetivo del proyecto y las actividades a realizar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Organizar las carpetas y archivos del proyecto",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Elaborar los documentos con las herramientas ofimáticas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Presentar el resultado final al instructor",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El proyecto se presenta sin documentos de soporte"
-      },
-      {
-        "id": 1,
-        "texto": "El resultado final se presenta con los archivos organizados y los documentos elaborados"
-      },
-      {
-        "id": 2,
-        "texto": "Las herramientas ofimáticas se usan solo después de la presentación"
-      },
-      {
-        "id": 3,
-        "texto": "El proyecto queda guardado únicamente en la papelera de reciclaje"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Integración Ofimática",
-    "titulo": "Prueba de escritorio: integrar herramientas ofimáticas",
-    "indicacion": "Sigue mentalmente los pasos de la integración e indica qué contiene el documento final.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Redactar el informe del proyecto en el procesador de texto",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Calcular los datos del proyecto en la hoja de cálculo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Insertar la tabla de resultados en el informe",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar el documento final antes de entregarlo",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El informe final queda sin los datos calculados"
-      },
-      {
-        "id": 1,
-        "texto": "La hoja de cálculo reemplaza al procesador de texto"
-      },
-      {
-        "id": 2,
-        "texto": "El informe final integra el texto y la tabla de resultados calculada"
-      },
-      {
-        "id": 3,
-        "texto": "Los datos de la hoja de cálculo no pueden insertarse en el informe"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Desarrollo del Proyecto",
-    "titulo": "Ordena los pasos para desarrollar el proyecto integrador",
-    "indicacion": "El proyecto inicia con la definición del objetivo y termina con la presentación del resultado. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b6",
-        "texto": "Presentar el resultado final",
-        "tipo": "salida"
-      },
-      {
-        "id": "b2",
-        "texto": "Definir el objetivo y las actividades del proyecto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b4",
-        "texto": "Elaborar los documentos e integrar los resultados",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b5",
-        "texto": "Revisar el proyecto completo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Crear las carpetas para organizar los archivos",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Presentación del Proyecto",
-    "titulo": "Ordena los pasos para preparar la presentación del proyecto",
-    "indicacion": "La preparación inicia seleccionando los resultados principales y termina presentando el proyecto. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b5",
-        "texto": "Ensaya la exposición",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Crear las diapositivas con el programa de presentaciones",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b2",
-        "texto": "Seleccionar los resultados principales del proyecto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Presentar el proyecto ante el instructor",
-        "tipo": "salida"
-      },
-      {
-        "id": "b4",
-        "texto": "Insertar imágenes y tablas de apoyo",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Archivos Desorganizados",
-    "titulo": "Encuentra la falla: el proyecto no se encuentra al momento de presentarlo",
-    "indicacion": "El aprendiz dejó para el final la organización de los archivos y no encontró los documentos al momento de la presentación. Revisa el proceso e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Planificación en Ejecución",
+    "titulo": "Prueba de escritorio: planificación del proyecto integrador",
+    "indicacion": "Un aprendiz planifica el proyecto integrador siguiendo los pasos. Ejecuta mentalmente el proceso y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Guardar los documentos con nombres como Final1, Final2 y Final3 en distintas carpetas",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz define el alcance del proyecto: un sistema de inventario para la tienda escolar",
         "tipo": "proceso"
       },
       {
-        "label": "No definir una estructura de carpetas al iniciar el proyecto",
+        "label": "Elabora el cronograma con las fechas de cada actividad",
         "tipo": "proceso"
       },
       {
-        "label": "Buscar los archivos minutos antes de presentar",
+        "label": "Asigna las tareas y los recursos necesarios",
         "tipo": "proceso"
       },
       {
-        "label": "No se encuentra el documento final para la presentación",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el aprendiz aprueba el plan y comienza a construir el proyecto",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "La falla es que el computador no tiene suficiente memoria."
+        "texto": "El aprendiz borra el proyecto y empieza de nuevo."
       },
       {
         "id": 0,
-        "texto": "La falla es no organizar los archivos desde el inicio; deben crearse carpetas por etapa y usar nombres claros y estándar para localizar los documentos."
+        "texto": "El aprendiz empieza a construir el proyecto con un plan aprobado."
       },
       {
         "id": 2,
-        "texto": "El error se corrige eliminando todos los archivos del proyecto."
+        "texto": "El aprendiz entrega el proyecto sin planificar."
       },
       {
         "id": 3,
-        "texto": "Los documentos se pierden porque el procesador de texto no guarda archivos."
+        "texto": "El aprendiz no puede iniciar porque falta el instructor."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Resultados No Integrados",
-    "titulo": "Encuentra la falla: la presentación no muestra los resultados",
-    "indicacion": "El aprendiz presentó su proyecto pero las diapositivas no incluían los datos calculados ni el informe final. Revisa el proceso e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Integración de Módulos",
+    "titulo": "Prueba de escritorio: integración de las partes del proyecto",
+    "indicacion": "El aprendiz desarrolló el código, el documento y la presentación del proyecto por separado y ahora los integra. Ejecuta mentalmente el proceso y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Elaborar el informe en el procesador de texto",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz desarrolla el código, el documento y la presentación por separado",
         "tipo": "proceso"
       },
       {
-        "label": "Calcular los datos en la hoja de cálculo",
+        "label": "Ubica las tres partes en la carpeta del proyecto",
         "tipo": "proceso"
       },
       {
-        "label": "Crear las diapositivas sin insertar los resultados del informe ni de la hoja de cálculo",
+        "label": "Ejecuta el proyecto y verifica que las partes funcionan juntas",
         "tipo": "proceso"
       },
       {
-        "label": "La presentación final no muestra los resultados del proyecto",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el proyecto integrado funciona y queda listo para presentar",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El programa de presentaciones elimina los datos por sí solo."
+        "texto": "El proyecto queda incompleto porque falta la presentación."
       },
       {
         "id": 2,
-        "texto": "El error se corrige presentando solo la hoja de cálculo sin diapositivas."
+        "texto": "La integración no es necesaria en un proyecto integrador."
       },
       {
         "id": 1,
-        "texto": "Las diapositivas deben incluir los resultados elaborados en las demás herramientas; la falla es no integrar el informe y los datos calculados en la presentación."
+        "texto": "El proyecto integrado funciona y queda listo para presentar."
       },
       {
         "id": 3,
-        "texto": "La presentación debe hacerse sin ningún documento de apoyo."
+        "texto": "El código se borra al integrar las partes."
       }
     ],
     "correcta": 2
@@ -790,6 +799,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +873,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1280,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1319,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

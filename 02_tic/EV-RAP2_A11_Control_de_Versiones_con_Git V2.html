@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el control de versiones con Git: creación de repositorios, registro de cambios con commit, sincronización con repositorios remotos mediante push y pull, consulta del estado del proyecto y manejo de ramas básicas, usando GitHub como plataforma de alojamiento, mediante retos prácticos interactivos.
+          Pon en práctica el control de versiones con Git en situaciones reales de desarrollo: decide qué comando crea el repositorio y guarda los cambios, ordena el ciclo de trabajo con commits y el envío a GitHub, corrige errores de comandos mal ejecutados y ejecuta mentalmente el flujo completo de versionamiento. Sin teoría: aquí se demuestra versionando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos y comandos de Git: repositorio, commit, push, pull, estado y ramas básicas.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso las operaciones de Git y predecir el estado del repositorio.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para inicializar un repositorio, publicar cambios en GitHub y trabajar con ramas.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el flujo de trabajo con Git y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué comando de Git ejecuta cada acción del control de versiones.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla el ciclo real de trabajo con commits, push y pull.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en una secuencia de comandos mal ejecutada.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el flujo de Git y determina el estado del repositorio.</li>
           </ul>
         </div>
 
@@ -250,18 +250,18 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Comando de Inicialización",
-    "titulo": "¿Qué comando crea un repositorio Git nuevo en la carpeta actual?",
-    "indicacion": "El repositorio es el lugar donde Git guarda el historial de versiones del proyecto. Selecciona el comando que lo inicializa en el directorio de trabajo.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Inicializar Repositorio",
+    "titulo": "¿Qué comando crea un repositorio nuevo en Git?",
+    "indicacion": "Un aprendiz va a iniciar el control de versiones de su proyecto. Selecciona el comando que crea el repositorio.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
+        "id": 1,
         "texto": "git status"
       },
       {
-        "id": 1,
+        "id": 0,
         "texto": "git init"
       },
       {
@@ -277,73 +277,42 @@
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Registro de Cambios",
-    "titulo": "¿Qué comando guarda los cambios en el historial del repositorio con un mensaje descriptivo?",
-    "indicacion": "Después de preparar los archivos con git add, el siguiente paso es registrarlos en el historial. Selecciona el comando que crea la versión con su mensaje.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Guardar Cambios",
+    "titulo": "¿Qué comando guarda los cambios con un mensaje descriptivo?",
+    "indicacion": "El aprendiz terminó de modificar un archivo y quiere guardar el cambio en el historial con un mensaje. Selecciona el comando correcto.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "git pull"
       },
       {
         "id": 2,
-        "texto": "git remote add origin URL"
+        "texto": "git log"
       },
       {
-        "id": 0,
-        "texto": "git commit -m 'Mensaje descriptivo'"
+        "id": 1,
+        "texto": "git commit -m 'mensaje'"
       },
       {
         "id": 3,
-        "texto": "git branch"
+        "texto": "git remote"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Sincronización Remota",
-    "titulo": "¿Qué comando envía los commits de la rama local al repositorio remoto de GitHub?",
-    "indicacion": "GitHub aloja una copia remota del repositorio. Selecciona el comando que sube los commits locales al repositorio remoto.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "git pull"
-      },
-      {
-        "id": 1,
-        "texto": "git log"
-      },
-      {
-        "id": 3,
-        "texto": "git add"
-      },
-      {
-        "id": 2,
-        "texto": "git push"
-      }
-    ],
-    "correcta": 3
-  },
-  {
-    "id": 4,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Herramientas",
     "tipo": "Estado del Repositorio",
-    "titulo": "¿Qué comando muestra los archivos modificados, los que están en el área de preparación y los que no tienen seguimiento?",
-    "indicacion": "Antes de hacer un commit conviene revisar cómo está el repositorio. Selecciona el comando que presenta esta información de forma resumida.",
+    "titulo": "¿Qué comando muestra el estado de los archivos del repositorio?",
+    "indicacion": "El aprendiz quiere saber qué archivos fueron modificados y cuáles faltan por guardar. Selecciona el comando que muestra ese estado.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
-        "texto": "git status"
-      },
-      {
         "id": 0,
-        "texto": "git checkout"
+        "texto": "git push"
       },
       {
         "id": 1,
@@ -351,321 +320,357 @@
       },
       {
         "id": 2,
-        "texto": "git init"
+        "texto": "git branch"
+      },
+      {
+        "id": 3,
+        "texto": "git status"
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 4,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Ciclo de Trabajo Local",
+    "titulo": "Construye el proceso: guardar un cambio con Git",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta que guarda un cambio en el repositorio local.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Modificar el archivo del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Agregar el archivo al área de preparación con git add",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Guardar el cambio con git commit y un mensaje",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Consultar el estado con git status para verificar",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Envío a GitHub",
+    "titulo": "Construye el proceso: subir los cambios al repositorio remoto (GitHub)",
+    "indicacion": "El aprendiz guardó sus cambios en local y ahora quiere publicarlos en GitHub. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Crear el repositorio en GitHub",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Conectar el repositorio local con el remoto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Agregar y confirmar los cambios con git add y git commit",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Subir los cambios con git push",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Trabajo con el Remoto",
+    "titulo": "Construye el proceso: actualizar el proyecto con los cambios del equipo",
+    "indicacion": "El equipo trabajó en el repositorio compartido y el aprendiz necesita actualizar su copia local. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Traer los cambios del repositorio remoto con git pull",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Revisar los archivos actualizados en el equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Realizar los nuevos cambios en el código",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Guardar y subir los cambios con git commit y git push",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Commit sin Add",
+    "titulo": "Encuentra la falla: el aprendiz ejecuta git commit sin agregar los archivos",
+    "indicacion": "Un aprendiz modificó un archivo y ejecutó directamente git commit, sin pasar por git add. Revisa la secuencia e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Modificar el archivo index.html",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Ejecutar git commit -m 'cambios' sin ejecutar git add antes (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Revisar que el cambio quedó guardado",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "git commit agrega automáticamente todos los archivos sin necesidad de git add."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que el mensaje del commit es demasiado corto."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y el cambio quedó guardado."
+      },
+      {
+        "id": 0,
+        "texto": "El commit no guarda los archivos nuevos o modificados que no se agregaron con git add: primero debe ejecutarse git add y luego git commit."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Push sin Commit",
+    "titulo": "Encuentra la falla: el aprendiz ejecuta git push sin hacer commit",
+    "indicacion": "Un aprendiz modificó un archivo y ejecutó git push para subirlo a GitHub, sin hacer git add ni git commit. Revisa la secuencia e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Modificar el archivo del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Ejecutar git push sin haber hecho git add ni git commit (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Verificar en GitHub que el cambio apareció",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "git push no puede subir cambios que no fueron guardados con commit: primero debe ejecutarse git add y git commit."
+      },
+      {
+        "id": 0,
+        "texto": "git push sube los cambios directamente desde la carpeta de trabajo."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que GitHub no permite repositorios públicos."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y el cambio apareció en GitHub."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Seguimiento de Comandos",
-    "titulo": "Prueba de escritorio: estado del archivo después de add y commit",
-    "indicacion": "Ejecuta mentalmente la secuencia de comandos e indica el estado final del archivo index.html en el repositorio.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "git init",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Crear el archivo index.html",
-        "tipo": "proceso"
-      },
-      {
-        "label": "git add index.html",
-        "tipo": "proceso"
-      },
-      {
-        "label": "git commit -m 'Página inicial'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar el estado con git status",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "index.html está modificado y sin seguimiento"
-      },
-      {
-        "id": 2,
-        "texto": "index.html está confirmado en el repositorio local y el árbol de trabajo queda limpio"
-      },
-      {
-        "id": 1,
-        "texto": "index.html está en el área de preparación esperando el commit"
-      },
-      {
-        "id": 3,
-        "texto": "index.html se eliminó del repositorio al ejecutar el commit"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Sincronización entre Equipos",
-    "titulo": "Prueba de escritorio: actualizar el repositorio local con git pull",
-    "indicacion": "Un compañero publicó cambios en GitHub. Ejecuta mentalmente la secuencia e indica qué ocurre con el repositorio local.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El compañero ejecuta git push en su equipo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Abrir la terminal en la carpeta del proyecto",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Ejecutar git pull",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar el archivo actualizado en el editor",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "El repositorio local envía sus commits al repositorio remoto"
-      },
-      {
-        "id": 2,
-        "texto": "Se elimina el historial de commits del repositorio local"
-      },
-      {
-        "id": 0,
-        "texto": "El repositorio local se actualiza con los commits nuevos del remoto y el archivo refleja los cambios del compañero"
-      },
-      {
-        "id": 3,
-        "texto": "git pull crea una rama nueva llamada pull"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Publicación en GitHub",
-    "titulo": "Ordena los pasos para publicar el proyecto en GitHub",
-    "indicacion": "El proceso inicia inicializando el repositorio local y termina con la publicación de la rama principal en el remoto. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Ejecutar git init en la carpeta del proyecto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Preparar los archivos con git add .",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Registrar la versión con git commit -m 'Primer commit'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Crear el repositorio vacío en GitHub",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Vincular el remoto con git remote add origin URL",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Enviar los commits con git push -u origin main",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Trabajo con Ramas",
-    "titulo": "Ordena los pasos para crear una rama de desarrollo y registrar cambios en ella",
-    "indicacion": "El proceso inicia creando la rama y termina volviendo a la rama principal. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Crear la rama con git branch desarrollo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Cambiar a la rama con git checkout desarrollo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Editar el archivo index.html",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Preparar el archivo con git add index.html",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Registrar el cambio con git commit -m 'Ajuste en la página'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Volver a la rama principal con git checkout main",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Commit sin Preparar",
-    "titulo": "Encuentra la falla: Git no registró el commit",
-    "indicacion": "El aprendiz modificó el archivo index.html y ejecutó git commit, pero Git respondió que no hay cambios para confirmar. Revisa la secuencia e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Flujo de Versionamiento",
+    "titulo": "Prueba de escritorio: el flujo completo de Git",
+    "indicacion": "Un aprendiz ejecuta el flujo de versionamiento de su proyecto. Ejecuta mentalmente los comandos y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Editar el archivo index.html",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz modifica el archivo index.html",
         "tipo": "proceso"
       },
       {
-        "label": "Ejecutar git commit -m 'Cambio en la página'",
+        "label": "Ejecuta git add index.html",
         "tipo": "proceso"
       },
       {
-        "label": "Git indica que no hay cambios en el área de preparación para confirmar",
-        "tipo": "salida",
-        "error": true
+        "label": "Ejecuta git commit -m 'actualiza titulo'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Ejecuta git push origin main",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el cambio quedó guardado en el repositorio local y publicado en GitHub",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El mensaje del commit debe ir en inglés para que Git lo acepte."
+        "texto": "El cambio no se guardó porque falta el mensaje del commit."
       },
       {
         "id": 1,
-        "texto": "Faltó ejecutar git add index.html para pasar el archivo al área de preparación antes del commit."
+        "texto": "El cambio quedó guardado en el repositorio local y publicado en GitHub."
       },
       {
         "id": 2,
-        "texto": "Git no permite hacer commits en la rama main."
+        "texto": "GitHub rechazó el push porque el repositorio no existe."
       },
       {
         "id": 3,
-        "texto": "El archivo index.html debe estar en la raíz del proyecto para poder confirmarlo."
+        "texto": "El archivo se eliminó del proyecto."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Push Rechazado",
-    "titulo": "Encuentra la falla: el push fue rechazado por el remoto",
-    "indicacion": "El aprendiz intentó enviar sus commits a GitHub, pero el servidor rechazó la operación porque la rama remota tiene commits que él no tiene. Revisa la secuencia e identifica la corrección adecuada.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Estado del Repositorio",
+    "titulo": "Prueba de escritorio: estado del repositorio después de modificar un archivo",
+    "indicacion": "El aprendiz modifica un archivo y ejecuta git status. Ejecuta mentalmente el proceso y determina qué muestra el comando.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Registrar los cambios locales con git commit -m 'Ajustes'",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz abre el repositorio de su proyecto",
         "tipo": "proceso"
       },
       {
-        "label": "Ejecutar git push origin main",
+        "label": "Modifica el archivo README.md",
         "tipo": "proceso"
       },
       {
-        "label": "El remoto rechaza el push: la rama remota tiene cambios no integrados",
-        "tipo": "salida",
-        "error": true
+        "label": "Ejecuta git status",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el comando indica que README.md está modificado y pendiente de agregar",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El push se rechaza porque el repositorio local no tiene configurado un correo electrónico."
-      },
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "Debe eliminarse el repositorio remoto y crear uno nuevo para poder hacer push."
-      },
-      {
-        "id": 3,
-        "texto": "Antes del push debe ejecutarse git pull para integrar los commits del remoto en la rama local."
+        "texto": "El comando indica que el repositorio está vacío."
       },
       {
         "id": 2,
-        "texto": "GitHub solo acepta push desde la rama main y el aprendiz está en otra rama."
+        "texto": "El comando borra los cambios no guardados."
+      },
+      {
+        "id": 0,
+        "texto": "El comando indica que README.md está modificado y pendiente de agregar."
+      },
+      {
+        "id": 3,
+        "texto": "El comando sube los cambios a GitHub."
       }
     ],
     "correcta": 2
@@ -798,6 +803,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -857,6 +877,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1124,6 +1284,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1157,6 +1323,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

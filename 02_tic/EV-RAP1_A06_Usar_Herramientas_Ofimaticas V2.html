@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Uso de Herramientas Ofimáticas</title>
+<title>Evaluación Práctica - Usar Herramientas Ofimáticas</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Uso de Herramientas Ofimáticas</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Usar Herramientas Ofimáticas</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el uso de las herramientas ofimáticas: procesador de texto (Word), hoja de cálculo (Excel) y presentaciones (PowerPoint), incluyendo guardar y abrir documentos, y la aplicación de formatos básicos, mediante retos prácticos interactivos.
+          Pon en práctica el uso de las herramientas ofimáticas con situaciones reales de oficina: decide qué aplicación de Word, Excel o PowerPoint cumple cada tarea, ordena el proceso de crear, guardar y abrir documentos, corrige errores frecuentes como fórmulas sin el signo igual o guardados en el formato equivocado, y ejecuta mentalmente el trabajo de un usuario que elabora un informe. Sin teoría: aquí se demuestra usando las herramientas.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Diseño Lógico:</strong> Identificar la aplicación y el comando adecuados para cada tarea ofimática.</li>
-<li><strong>Prueba de Escritorio:</strong> Ejecutar mentalmente fórmulas y operaciones de la hoja de cálculo.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para guardar, abrir y crear documentos ofimáticos.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en fórmulas y en el manejo de los documentos.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué aplicación ofimática y qué comando cumplen cada tarea.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real de crear, guardar, abrir y editar documentos, libros y presentaciones.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un procedimiento de edición, cálculo o guardado de archivos.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el procedimiento de un usuario y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,429 +243,464 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Herramientas Ofimáticas</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Usar Herramientas Ofimáticas</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Diseño Lógico",
-    "tipo": "Atajos de Teclado",
-    "titulo": "¿Qué combinación de teclas guarda el documento actual en la versión en español de Word?",
-    "indicacion": "En la versión en español de Word, los atajos de teclado usan la letra inicial de la acción en español. Selecciona la combinación que guarda el documento.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Aplicación Correcta",
+    "titulo": "¿Qué aplicación ofimática se usa para crear una hoja de cálculo con datos numéricos?",
+    "indicacion": "Una asistente debe registrar el presupuesto mensual del proyecto en una tabla con fórmulas de suma. Selecciona la aplicación adecuada para esta tarea.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Ctrl + A"
+        "texto": "Microsoft Word."
       },
       {
         "id": 1,
-        "texto": "Ctrl + G"
+        "texto": "Microsoft Excel."
       },
       {
         "id": 2,
-        "texto": "Ctrl + P"
+        "texto": "Microsoft PowerPoint."
       },
       {
         "id": 3,
-        "texto": "Ctrl + E"
+        "texto": "El Bloc de notas."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
-    "tipo": "Aplicación Correcta",
-    "titulo": "¿Qué aplicación se utiliza para crear y editar una hoja de cálculo?",
-    "indicacion": "Cada herramienta ofimática tiene una finalidad específica. Selecciona la aplicación destinada a las hojas de cálculo.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Guardado Inicial",
+    "titulo": "¿Qué comando permite guardar un documento por primera vez eligiendo nombre y ubicación?",
+    "indicacion": "Un aprendiz terminó su informe en Word y quiere guardarlo con su nombre en la carpeta del curso. Selecciona el comando correcto para el primer guardado.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Word"
+        "texto": "Imprimir."
       },
       {
         "id": 1,
-        "texto": "PowerPoint"
-      },
-      {
-        "id": 2,
-        "texto": "Excel"
+        "texto": "Cerrar."
       },
       {
         "id": 3,
-        "texto": "Outlook"
+        "texto": "Guardar como."
+      },
+      {
+        "id": 2,
+        "texto": "Revisar."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
-    "tipo": "Extensiones Ofimáticas",
-    "titulo": "¿Cuál es la extensión de archivo de una presentación creada en PowerPoint?",
-    "indicacion": "La extensión identifica el tipo de archivo. Selecciona la extensión propia de una presentación de PowerPoint.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Inserción de Elementos",
+    "titulo": "¿En qué pestaña de la cinta de opciones se encuentra el comando para insertar una imagen en Word?",
+    "indicacion": "El aprendiz debe agregar una imagen corporativa al inicio del informe. Selecciona la pestaña donde se encuentra la opción Imágenes.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": ".xlsx"
+        "id": 0,
+        "texto": "Diseño."
       },
       {
-        "id": 2,
-        "texto": ".docx"
+        "id": 1,
+        "texto": "Referencias."
       },
       {
         "id": 3,
-        "texto": ".txt"
+        "texto": "Vista."
       },
       {
-        "id": 0,
-        "texto": ".pptx"
+        "id": 2,
+        "texto": "Insertar."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Diseño Lógico",
-    "tipo": "Formato Básico",
-    "titulo": "¿Qué comando de Word permite cambiar el tipo, el tamaño y el color de la letra de un texto seleccionado?",
-    "indicacion": "Los formatos básicos del texto se aplican con un comando específico de la cinta de opciones. Selecciona el comando correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Crear y Guardar Documento",
+    "titulo": "Ordena el proceso: crear y guardar un documento nuevo en Word",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta de creación y guardado de un documento en Word.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir Microsoft Word y seleccionar un documento en blanco",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Escribir el contenido del documento",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Hacer clic en Archivo y elegir Guardar como",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Asignar el nombre y seleccionar la carpeta de destino",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Hacer clic en Guardar y verificar el archivo en la carpeta",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Inserción de Tabla",
+    "titulo": "Ordena el proceso: insertar una tabla en Word y diligenciarla",
+    "indicacion": "El aprendiz debe insertar una tabla de tres columnas en un informe y escribir los datos. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Ubicar el cursor en el lugar donde irá la tabla",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Ir a la pestaña Insertar y hacer clic en Tabla",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Seleccionar la cantidad de filas y columnas en la cuadrícula",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir los encabezados y los datos en las celdas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Ajustar el ancho de las columnas para que la tabla se vea ordenada",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Crear Presentación",
+    "titulo": "Ordena el proceso: crear una presentación en PowerPoint",
+    "indicacion": "El aprendiz debe crear una presentación de tres diapositivas para sustentar su proyecto. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir PowerPoint y crear una presentación en blanco",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Agregar las diapositivas necesarias con el botón Nueva diapositiva",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Escribir el título y el contenido de cada diapositiva",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Insertar la imagen del proyecto en la diapositiva final",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Guardar la presentación con el nombre y en la carpeta indicada",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Fórmula en Excel",
+    "titulo": "Encuentra la falla: la celda no muestra el resultado de la suma",
+    "indicacion": "Un aprendiz digitó en la celda C1 la expresión A1+B1 y esperaba el resultado de sumar los valores de A1 y B1. En su lugar, la celda muestra el texto A1+B1. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Escribir el valor 5 en la celda A1 y el valor 3 en la celda B1",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Seleccionar la celda C1 para escribir la fórmula",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Escribir A1+B1 sin el signo igual (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Presionar Enter y observar que C1 muestra el texto A1+B1",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
-        "id": 3,
-        "texto": "Fuente"
-      },
-      {
-        "id": 0,
-        "texto": "Interlineado"
-      },
-      {
         "id": 1,
-        "texto": "Márgenes"
+        "texto": "El error es que los valores de A1 y B1 son demasiado pequeños."
       },
       {
         "id": 2,
-        "texto": "Encabezado"
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 3,
+        "texto": "El error es usar la celda C1; la fórmula debe escribirse en la celda D1."
+      },
+      {
+        "id": 0,
+        "texto": "Toda fórmula en Excel debe iniciar con el signo igual: la expresión correcta es =A1+B1."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Formato de Archivo",
+    "titulo": "Encuentra la falla: la presentación no se puede seguir editando",
+    "indicacion": "Un aprendiz terminó su presentación en PowerPoint y la guardó para entregarla. Al día siguiente abre el archivo y no puede modificar las diapositivas. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Elaborar las diapositivas de la presentación en PowerPoint",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Guardar la presentación seleccionando el tipo PDF (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Cerrar el programa y entregar el archivo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Al abrir el archivo, solo se puede ver el contenido sin editarlo",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El formato PDF solo permite visualizar e imprimir, no editar: la presentación debe guardarse como presentación de PowerPoint (.pptx) para seguir modificándola."
+      },
+      {
+        "id": 0,
+        "texto": "El error es que la presentación tenía demasiadas diapositivas."
+      },
+      {
+        "id": 2,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 3,
+        "texto": "El error es que PowerPoint no permite guardar archivos."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Fórmula de Suma",
-    "titulo": "Prueba de escritorio: suma de celdas en Excel",
-    "indicacion": "Ejecuta mentalmente la operación de la hoja de cálculo y determina el valor que muestra la celda A3.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "En la celda A1 se escribe el valor 120",
-        "tipo": "entrada"
-      },
-      {
-        "label": "En la celda A2 se escribe el valor 80",
-        "tipo": "entrada"
-      },
-      {
-        "label": "En la celda A3 se escribe la fórmula =A1+A2",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se observa el resultado mostrado en la celda A3",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "12080"
-      },
-      {
-        "id": 1,
-        "texto": "200"
-      },
-      {
-        "id": 2,
-        "texto": "120"
-      },
-      {
-        "id": 3,
-        "texto": "80"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Fórmula de Promedio",
-    "titulo": "Prueba de escritorio: promedio de notas en Excel",
-    "indicacion": "Ejecuta mentalmente la fórmula y determina el valor que muestra la celda B4.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "En las celdas B1, B2 y B3 se escriben las notas 4.0, 4.5 y 3.5",
-        "tipo": "entrada"
-      },
-      {
-        "label": "En la celda B4 se escribe la fórmula =PROMEDIO(B1:B3)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se observa el resultado mostrado en la celda B4",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "4.5"
-      },
-      {
-        "id": 1,
-        "texto": "12.0"
-      },
-      {
-        "id": 2,
-        "texto": "4.0"
-      },
-      {
-        "id": 3,
-        "texto": "3.5"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Guardar Documento",
-    "titulo": "Ordena los pasos para guardar un documento con un nombre específico",
-    "indicacion": "El procedimiento de Guardar como inicia al terminar de escribir el documento y termina al confirmar el guardado. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Escribir el contenido del documento en Word",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Hacer clic en la pestaña Archivo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Seleccionar la opción Guardar como",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Elegir la ubicación donde se guardará el archivo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Escribir el nombre del archivo",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b7",
-        "texto": "Hacer clic en el botón Guardar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Crear Presentación",
-    "titulo": "Ordena los pasos para crear una presentación en PowerPoint",
-    "indicacion": "El procedimiento para crear una presentación inicia abriendo la aplicación y termina guardando el archivo. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir PowerPoint",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Elegir una plantilla o una presentación en blanco",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Escribir el título en la primera diapositiva",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b5",
-        "texto": "Insertar una nueva diapositiva",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Agregar texto, imágenes y otros elementos a las diapositivas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Guardar la presentación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Fórmula sin Signo Igual",
-    "titulo": "Encuentra la falla: la celda no calcula la suma",
-    "indicacion": "El aprendiz escribió una operación en Excel, pero la celda muestra el texto en lugar del resultado. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Primer Guardado",
+    "titulo": "Prueba de escritorio: primer guardado de un documento en Word",
+    "indicacion": "Un aprendiz escribió su taller en Word y hace clic en el botón Guardar por primera vez. Ejecuta mentalmente el procedimiento y determina qué sucede.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "En la celda A1 está el valor 10",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz abre Word y escribe el taller completo",
         "tipo": "proceso"
       },
       {
-        "label": "En la celda A2 está el valor 5",
+        "label": "Hace clic en el botón Guardar de la barra de acceso rápido",
         "tipo": "proceso"
       },
       {
-        "label": "En la celda A3 se escribe A1+A2 (sin el signo igual)",
-        "tipo": "entrada"
+        "label": "Word abre el cuadro de diálogo Guardar como",
+        "tipo": "proceso"
       },
       {
-        "label": "La celda A3 muestra el texto A1+A2 en lugar del valor 15",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el aprendiz asigna el nombre y elige la carpeta de destino",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "Las celdas deben escribirse en minúscula."
-      },
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Toda fórmula en Excel inicia con el signo =; sin él, Excel interpreta el contenido como texto y no calcula: debe escribirse =A1+A2."
+        "texto": "Word guarda el archivo automáticamente con el nombre Documento1 sin preguntar."
+      },
+      {
+        "id": 1,
+        "texto": "Al ser el primer guardado, Word abre el cuadro Guardar como para asignar nombre y ubicación."
       },
       {
         "id": 2,
-        "texto": "Excel solo calcula cuando los números son mayores que 10."
+        "texto": "Word cierra el documento sin guardar los cambios."
       },
       {
         "id": 3,
-        "texto": "El error se corrige reiniciando el equipo."
+        "texto": "Word imprime el documento en lugar de guardarlo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Cierre sin Guardar",
-    "titulo": "Encuentra la falla: el documento se perdió",
-    "indicacion": "El aprendiz cerró Word sin guardar y al día siguiente no encontró el documento. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Resultado de Fórmula",
+    "titulo": "Prueba de escritorio: calcular una suma en Excel",
+    "indicacion": "Un aprendiz digita el valor 5 en la celda A1, el valor 3 en la celda B1 y en la celda C1 escribe la fórmula =A1+B1. Ejecuta mentalmente el cálculo y determina qué muestra la celda C1.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "El aprendiz redacta el informe de la actividad en Word",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Digitar el valor 5 en la celda A1",
+        "tipo": "entrada"
+      },
+      {
+        "label": "Digitar el valor 3 en la celda B1",
+        "tipo": "entrada"
+      },
+      {
+        "label": "Escribir =A1+B1 en la celda C1 y presionar Enter",
         "tipo": "proceso"
       },
       {
-        "label": "Cierra el programa sin guardar los cambios",
-        "tipo": "proceso"
+        "label": "Salida: la celda C1 muestra el resultado de la suma",
+        "tipo": "salida"
       },
       {
-        "label": "Vuelve a abrir Word al día siguiente",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El documento no aparece y el trabajo se perdió",
-        "tipo": "salida",
-        "error": true
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Word guarda automáticamente todos los cambios sin importar lo que se haga."
+        "texto": "A1+B1"
       },
       {
         "id": 1,
-        "texto": "El documento se perdió por un virus del antivirus."
-      },
-      {
-        "id": 3,
-        "texto": "Debió guardar el documento antes de cerrar (Archivo > Guardar o Ctrl + G); al cerrar sin guardar, los cambios se pierden definitivamente."
+        "texto": "53"
       },
       {
         "id": 2,
-        "texto": "Debe reinstalar Word para recuperar el archivo."
+        "texto": "8"
+      },
+      {
+        "id": 3,
+        "texto": "5+3"
       }
     ],
     "correcta": 2
@@ -798,6 +833,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -857,6 +907,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1124,6 +1314,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1157,6 +1353,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

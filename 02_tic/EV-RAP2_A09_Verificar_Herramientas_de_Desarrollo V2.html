@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la verificación de las herramientas de desarrollo: uso de la terminal o consola de comandos, comprobación de las versiones instaladas con comandos como python --version y node -v, y ejecución de programas básicos para confirmar que el entorno funciona correctamente, mediante retos prácticos interactivos.
+          Demuestra la verificación de las herramientas de desarrollo desde la consola: decide el comando correcto para consultar la versión de Python y Node.js, ordena el proceso de verificar la instalación y ejecutar un programa básico, corrige errores como escribir mal el comando o ejecutarlo desde la carpeta equivocada, y ejecuta mentalmente la salida real de la consola. Sin teoría: aquí se demuestra verificando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Entorno de Desarrollo:</strong> Comandos para verificar versiones, terminal de comandos y herramientas instaladas.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la ejecución de comandos y programas y predecir la salida.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para verificar versiones y ejecutar programas desde la terminal.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la ejecución de comandos y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide el comando y la herramienta correctos para verificar la instalación de Python y Node.js.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real de verificación de versiones y ejecución de un programa básico.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un comando o en el lugar desde donde se ejecuta.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el comando y determina el resultado que muestra la consola.</li>
           </ul>
         </div>
 
@@ -250,402 +250,457 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Versión de Python",
-    "titulo": "¿Qué comando se ejecuta en la terminal para conocer la versión de Python instalada?",
-    "indicacion": "Los comandos de verificación permiten confirmar que una herramienta quedó instalada. Selecciona el comando correcto para Python.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Comando de Python",
+    "titulo": "¿Qué comando se escribe en la consola para verificar la versión de Python instalada?",
+    "indicacion": "Un aprendiz debe comprobar que Python quedó instalado en su equipo. Selecciona el comando correcto para la verificación.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "python --ayuda"
+        "id": 1,
+        "texto": "node -v"
       },
       {
-        "id": 1,
+        "id": 0,
         "texto": "python --version"
       },
       {
         "id": 2,
-        "texto": "python --instalar"
+        "texto": "dir"
       },
       {
         "id": 3,
-        "texto": "python --borrar"
+        "texto": "cd"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Versión de Node.js",
-    "titulo": "¿Qué comando permite verificar la versión de Node.js instalada en el equipo?",
-    "indicacion": "Node.js se verifica con una opción abreviada del comando node. Selecciona el comando correcto.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Comando de Node.js",
+    "titulo": "¿Qué comando se escribe en la consola para verificar la versión de Node.js?",
+    "indicacion": "Un aprendiz debe comprobar que Node.js quedó instalado en su equipo. Selecciona el comando correcto para la verificación.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "node --ayuda"
-      },
-      {
-        "id": 1,
-        "texto": "node --nuevo"
-      },
-      {
-        "id": 3,
-        "texto": "node -v"
+        "texto": "python --version"
       },
       {
         "id": 2,
-        "texto": "node --instalar"
+        "texto": "git status"
+      },
+      {
+        "id": 1,
+        "texto": "node -v"
+      },
+      {
+        "id": 3,
+        "texto": "cls"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Consola de Comandos",
-    "titulo": "¿Dónde se ejecutan los comandos para verificar las herramientas de desarrollo?",
-    "indicacion": "Las herramientas de desarrollo se verifican escribiendo comandos de texto. Selecciona el lugar donde se ejecutan.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Herramienta del Sistema",
+    "titulo": "¿Qué herramienta de Windows se usa para escribir los comandos de verificación?",
+    "indicacion": "El aprendiz debe ejecutar los comandos de verificación de las herramientas de desarrollo. Selecciona la herramienta del sistema donde se escriben.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "En la calculadora de Windows"
+        "id": 0,
+        "texto": "El explorador de archivos."
       },
       {
-        "id": 2,
-        "texto": "En el explorador de archivos"
+        "id": 1,
+        "texto": "El bloc de notas."
       },
       {
         "id": 3,
-        "texto": "En el panel de control"
+        "texto": "El panel de control."
       },
       {
-        "id": 0,
-        "texto": "En la terminal o consola de comandos del sistema"
+        "id": 2,
+        "texto": "El símbolo del sistema (cmd) o PowerShell."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Entorno de Desarrollo",
-    "tipo": "Listar Archivos",
-    "titulo": "¿Qué comando de Windows muestra los archivos y carpetas del directorio actual?",
-    "indicacion": "Antes de ejecutar un programa conviene verificar los archivos de la carpeta actual. Selecciona el comando que los lista.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Verificación de Python",
+    "titulo": "Ordena el proceso: verificar que Python está instalado",
+    "indicacion": "Un aprendiz debe comprobar que Python quedó instalado correctamente. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el símbolo del sistema (cmd) o PowerShell",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Escribir el comando python --version",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Presionar Enter y observar la respuesta de la consola",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que aparezca la versión, por ejemplo Python 3.12.4",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Salida: confirmar que Python está instalado y funcionando",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Ejecución de Programa",
+    "titulo": "Ordena el proceso: ejecutar un programa básico de Python desde la consola",
+    "indicacion": "El aprendiz creó el archivo saludo.py y debe ejecutarlo desde la consola. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Guardar el archivo saludo.py en una carpeta del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Abrir el símbolo del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Ubicarse en la carpeta donde está el archivo con el comando cd",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Ejecutar el programa con el comando python saludo.py",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar en la consola la salida del programa",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Verificación de Node.js",
+    "titulo": "Ordena el proceso: verificar que Node.js y npm están instalados",
+    "indicacion": "Un aprendiz debe comprobar que Node.js y su administrador de paquetes quedaron instalados. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el símbolo del sistema o PowerShell",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Escribir el comando node -v y presionar Enter",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Verificar que aparezca la versión de Node.js, por ejemplo v20.11.0",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir el comando npm -v y presionar Enter",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que aparezca la versión de npm",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Comando Mal Escrito",
+    "titulo": "Encuentra la falla: la consola no reconoce el comando",
+    "indicacion": "Un aprendiz quiere verificar la versión de Python y escribe phython --version. La consola responde que phython no se reconoce como comando. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Abrir el símbolo del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Escribir el comando phython --version (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Presionar Enter",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: la consola indica que phython no se reconoce como comando",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
-        "id": 2,
-        "texto": "dir"
-      },
-      {
         "id": 0,
-        "texto": "cd"
+        "texto": "El error es que la consola no funciona en ese equipo."
       },
       {
-        "id": 1,
-        "texto": "cls"
+        "id": 2,
+        "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
         "id": 3,
-        "texto": "exit"
+        "texto": "El error es que falta instalar la consola."
+      },
+      {
+        "id": 1,
+        "texto": "El comando está mal escrito: el nombre correcto del programa es python, no phython."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Carpeta de Ejecución",
+    "titulo": "Encuentra la falla: el programa no se encuentra al ejecutarlo",
+    "indicacion": "Un aprendiz guardó el archivo saludo.py en la carpeta Proyectos y ejecuta python saludo.py desde la carpeta Documentos. La consola indica que no se encuentra el archivo. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Guardar el archivo saludo.py en la carpeta Proyectos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Abrir el símbolo del sistema en la carpeta Documentos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Ejecutar python saludo.py sin cambiarse de carpeta (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Salida: la consola indica que no se encuentra el archivo saludo.py",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "La consola está en una carpeta distinta a la del archivo: debe ubicarse en la carpeta Proyectos con el comando cd o indicar la ruta completa del archivo."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que el archivo tiene errores de escritura."
+      },
+      {
+        "id": 2,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 3,
+        "texto": "El error es que Python no admite archivos."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Salida de python --version",
-    "titulo": "Prueba de escritorio: verificar la versión de Python",
-    "indicacion": "Sigue mentalmente cada paso de la verificación y determina qué mensaje muestra la terminal.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Abrir la terminal de comandos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Escribir el comando python --version",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Presionar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "La terminal responde Python 3.11.15",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "La terminal no reconoce el comando"
-      },
-      {
-        "id": 1,
-        "texto": "Python 3.11.15"
-      },
-      {
-        "id": 2,
-        "texto": "Windows 10"
-      },
-      {
-        "id": 3,
-        "texto": "Versión 4.5.0"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución de Programa Básico",
-    "titulo": "Prueba de escritorio: ejecutar un programa básico en Python",
-    "indicacion": "Sigue mentalmente los pasos de la ejecución y determina qué mensaje muestra la terminal al finalizar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Crear el archivo saludo.py con el código print('Hola SENA')",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Ejecutar el comando python saludo.py en la terminal",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Presionar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Observar el mensaje que muestra la terminal",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "saludo.py"
-      },
-      {
-        "id": 2,
-        "texto": "python"
-      },
-      {
-        "id": 0,
-        "texto": "Hola SENA"
-      },
-      {
-        "id": 3,
-        "texto": "No se muestra ningún mensaje"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Verificación de Versión",
-    "titulo": "Ordena los pasos para verificar la versión de Python instalada",
-    "indicacion": "La verificación inicia abriendo la terminal y termina leyendo la versión mostrada. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b5",
-        "texto": "Leer la versión que muestra la terminal",
-        "tipo": "salida"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b3",
-        "texto": "Escribir el comando python --version",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir la terminal de comandos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Presionar la tecla Entrar",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ejecución desde la Terminal",
-    "titulo": "Ordena los pasos para ejecutar un programa Python desde la terminal",
-    "indicacion": "La ejecución inicia ubicándose en la carpeta del archivo y termina observando la salida. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b4",
-        "texto": "Presionar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Ubicarse en la carpeta donde está el archivo con el comando cd",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b5",
-        "texto": "Observar la salida del programa en la terminal",
-        "tipo": "salida"
-      },
-      {
-        "id": "b3",
-        "texto": "Escribir python nombre_del_archivo.py",
-        "tipo": "entrada"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Comando No Reconocido",
-    "titulo": "Encuentra la falla: la terminal no reconoce el comando",
-    "indicacion": "El aprendiz escribió phyton --version y la terminal respondió que el comando no se reconoce. Revisa el proceso e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Versión de Python",
+    "titulo": "Prueba de escritorio: la consola muestra Python 3.12.4",
+    "indicacion": "Un aprendiz ejecuta python --version y la consola responde Python 3.12.4. Ejecuta mentalmente el comando y determina qué indica ese resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Abrir la terminal de comandos",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz abre el símbolo del sistema",
         "tipo": "proceso"
       },
       {
-        "label": "Escribir phyton --version",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Presionar la tecla Entrar",
+        "label": "Escribe el comando python --version y presiona Enter",
         "tipo": "proceso"
       },
       {
-        "label": "La terminal indica que el comando no se reconoce",
-        "tipo": "salida",
-        "error": true
+        "label": "La consola responde Python 3.12.4",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: la verificación confirma la versión instalada",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "La terminal solo funciona si se abre con permisos de administrador."
-      },
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El comando correcto es python --version; phyton está mal escrito y por eso el sistema no lo reconoce."
+        "texto": "Python no está instalado."
       },
       {
         "id": 2,
-        "texto": "El error se debe a que la terminal está bloqueada por el antivirus."
+        "texto": "Python está instalado y funcionando correctamente: la verificación fue exitosa."
+      },
+      {
+        "id": 1,
+        "texto": "El equipo tiene un virus."
       },
       {
         "id": 3,
-        "texto": "El comando correcto es python --ayuda, que es la única opción válida."
+        "texto": "Debe reinstalarse el sistema operativo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Programa No Encontrado",
-    "titulo": "Encuentra la falla: el programa no se ejecuta",
-    "indicacion": "El aprendiz escribió python saludo.py pero la terminal indicó que el archivo no existe. Revisa el proceso e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Node.js no Reconocido",
+    "titulo": "Prueba de escritorio: la consola no reconoce el comando node",
+    "indicacion": "Un aprendiz ejecuta node -v y la consola responde que node no se reconoce como un comando interno o externo. Ejecuta mentalmente el comando y determina qué significa el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Crear el archivo saludo.py en la carpeta C:\\MisCodigos",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz abre el símbolo del sistema",
         "tipo": "proceso"
       },
       {
-        "label": "Abrir la terminal de comandos",
+        "label": "Escribe el comando node -v y presiona Enter",
         "tipo": "proceso"
       },
       {
-        "label": "Escribir python saludo.py sin ubicarse en la carpeta del archivo",
-        "tipo": "entrada"
+        "label": "La consola indica que node no se reconoce como un comando",
+        "tipo": "proceso"
       },
       {
-        "label": "La terminal indica que el archivo no se encuentra",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el comando de verificación no fue exitoso",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El programa falla porque Python no soporta el nombre saludo."
+        "texto": "Node.js está instalado y funcionando."
       },
       {
         "id": 1,
-        "texto": "El archivo se borró solo porque contenía una sola línea de código."
-      },
-      {
-        "id": 2,
-        "texto": "La terminal busca el archivo en el directorio actual; debe usarse el comando cd para ubicarse en C:\\MisCodigos antes de ejecutar python saludo.py."
+        "texto": "El comando se ejecutó correctamente."
       },
       {
         "id": 3,
-        "texto": "El error se corrige ejecutando node saludo.py en lugar de python."
+        "texto": "Node.js no está instalado o no está agregado a las variables de entorno (PATH)."
+      },
+      {
+        "id": 2,
+        "texto": "El error es del teclado y no tiene solución."
       }
     ],
     "correcta": 2
@@ -778,6 +833,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -837,6 +907,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1104,6 +1314,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1137,6 +1353,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

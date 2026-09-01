@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Utilización de Servicios de Internet</title>
+<title>Evaluación Práctica - Utilizar Servicios de Internet</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Utilización de Servicios de Internet</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Utilizar Servicios de Internet</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la utilización de los servicios de internet: manejo del correo electrónico y sus adjuntos, almacenamiento de archivos en la nube, participación en videollamadas y realización de descargas seguras, mediante retos prácticos interactivos.
+          Pon en práctica el uso de los servicios de internet con casos reales: decide qué servicio se usa para enviar documentos, ordena el envío de correos con adjuntos y la carga de archivos a la nube, corrige fallas como el adjunto olvidado o la descarga insegura y ejecuta mentalmente el procedimiento de un usuario que envía y consulta información. Sin teoría: aquí se demuestra utilizando los servicios.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos de correo electrónico, adjuntos, almacenamiento en la nube y descargas seguras.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular paso a paso el envío de correos, las descargas y el uso de servicios en línea.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para realizar videollamadas y guardar archivos en la nube.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el envío de adjuntos y en las descargas desde sitios no confiables.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué servicio de internet cumple cada función en una situación real.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real para enviar correos, adjuntar archivos y usar la nube.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un procedimiento de envío de correo o de descarga segura.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente un procedimiento de correo o de nube y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,235 +243,98 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Servicios de Internet</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Utilizar Servicios de Internet</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Dirección de Correo",
-    "titulo": "¿Cuál de las siguientes estructuras corresponde a una dirección de correo electrónico válida?",
-    "indicacion": "Una dirección de correo electrónico combina un nombre de usuario, el símbolo arroba y un dominio. Selecciona la estructura escrita correctamente.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Correo Electrónico",
+    "titulo": "¿Qué servicio de internet permite enviar mensajes y documentos a otras personas de forma digital?",
+    "indicacion": "Un usuario debe enviar una guía desarrollada a su instructor. Selecciona el servicio de internet adecuado para esta tarea.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "nombre.dominio.com"
+        "id": 0,
+        "texto": "La videollamada."
       },
       {
-        "id": 0,
-        "texto": "nombre@dominio.com"
+        "id": 1,
+        "texto": "El correo electrónico."
       },
       {
         "id": 2,
-        "texto": "www.nombre.com"
+        "texto": "El navegador web."
       },
       {
         "id": 3,
-        "texto": "nombre#dominio.com"
+        "texto": "El explorador de archivos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Campos del Correo",
-    "titulo": "¿Qué campo del correo electrónico se usa para enviar una copia a otros destinatarios sin que los demás destinatarios la vean?",
-    "indicacion": "Los campos del correo definen los destinatarios y el tipo de copia. Selecciona el campo que oculta la lista de destinatarios adicionales.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Archivos Adjuntos",
+    "titulo": "¿Qué se debe hacer para enviar un archivo junto con un correo electrónico?",
+    "indicacion": "Un usuario redactó un correo y necesita que el destinatario reciba también un archivo PDF. Selecciona la acción correcta para incluir el archivo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Para"
+        "id": 1,
+        "texto": "Usar el botón Responder."
       },
       {
         "id": 2,
-        "texto": "CC"
+        "texto": "Escribir el nombre del archivo en el asunto."
       },
       {
-        "id": 1,
-        "texto": "CCO"
+        "id": 0,
+        "texto": "Usar el botón Adjuntar archivo o el icono del clip y seleccionar el archivo."
       },
       {
         "id": 3,
-        "texto": "Asunto"
+        "texto": "Copiar el archivo en el cuerpo del mensaje con Ctrl + C."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Archivos Adjuntos",
-    "titulo": "¿Qué acción permite enviar un archivo desde el computador junto con un correo electrónico?",
-    "indicacion": "Para enviar un archivo se utiliza una función específica del editor de correo. Selecciona la acción correcta.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Descarga Segura",
+    "titulo": "¿Cuál es la señal de que una descarga se realiza desde una página segura?",
+    "indicacion": "Un usuario debe descargar un programa y quiere verificar que el sitio sea seguro. Selecciona la señal correcta de seguridad en la dirección de la página.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Redactar"
+        "texto": "Una página sin candado ni https."
       },
       {
         "id": 1,
-        "texto": "Reenviar"
+        "texto": "Una ventana emergente que pide datos personales."
       },
       {
         "id": 3,
-        "texto": "Responder"
+        "texto": "Un archivo .exe recibido de un desconocido."
       },
       {
         "id": 2,
-        "texto": "Adjuntar archivo"
+        "texto": "El candado y el prefijo https en la dirección de la página."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Almacenamiento en la Nube",
-    "titulo": "¿Qué es el almacenamiento en la nube?",
-    "indicacion": "La nube es un modelo de almacenamiento en línea. Selecciona la definición correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 3,
-        "texto": "Guardar archivos en servidores remotos a los que se accede por internet"
-      },
-      {
-        "id": 0,
-        "texto": "Un programa para editar fotografías"
-      },
-      {
-        "id": 1,
-        "texto": "Guardar archivos únicamente en el disco duro del equipo"
-      },
-      {
-        "id": 2,
-        "texto": "Una red social para compartir videos"
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Envío con Adjunto",
-    "titulo": "Prueba de escritorio: enviar un correo con archivo adjunto",
-    "indicacion": "Sigue mentalmente los pasos del envío e indica qué debe verificar el aprendiz antes de pulsar el botón Enviar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Redactar el mensaje del correo electrónico",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Escribir la dirección del destinatario y el asunto",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Hacer clic en el ícono de adjuntar archivo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Seleccionar el archivo informe.pdf desde el equipo",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Pulsar el botón Enviar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Verificar que el correo llegó con el archivo adjunto",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "Que el correo tenga letras de color llamativo"
-      },
-      {
-        "id": 0,
-        "texto": "Que el archivo adjunto se haya cargado por completo y que el destinatario sea el correcto antes de pulsar Enviar"
-      },
-      {
-        "id": 2,
-        "texto": "Que la bandeja de entrada esté vacía"
-      },
-      {
-        "id": 3,
-        "texto": "Que el computador esté conectado mediante cable de red"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Descarga Segura",
-    "titulo": "Prueba de escritorio: descarga desde un sitio desconocido",
-    "indicacion": "Sigue mentalmente la situación e indica cuál es la acción correcta ante una descarga ofrecida desde un sitio no confiable.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Mientras navega, aparece una ventana emergente que ofrece descargar un programa desde un sitio desconocido",
-        "tipo": "entrada"
-      },
-      {
-        "label": "El aprendiz hace clic en el botón Descargar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El programa se instala y el equipo empieza a mostrar anuncios no deseados",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Aceptar la descarga e instalar el programa de inmediato"
-      },
-      {
-        "id": 2,
-        "texto": "Compartir el enlace con los compañeros para probarlo primero"
-      },
-      {
-        "id": 1,
-        "texto": "Cerrar la ventana y descargar el programa únicamente desde el sitio oficial del fabricante"
-      },
-      {
-        "id": 3,
-        "texto": "Ingresar los datos personales que solicita la ventana"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Videollamada",
-    "titulo": "Ordena los pasos para participar en una videollamada",
-    "indicacion": "El procedimiento para una videollamada inicia abriendo la aplicación y termina verificando el funcionamiento de los dispositivos. Ordena los bloques correctamente.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Envío de Correo",
+    "titulo": "Ordena el proceso: enviar un correo electrónico con archivo adjunto",
+    "indicacion": "Un usuario debe enviar a su instructor un correo con la guía desarrollada adjunta. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -481,7 +344,55 @@
       },
       {
         "id": "b2",
-        "texto": "Abrir la aplicación de videollamadas",
+        "texto": "Abrir la aplicación de correo electrónico e iniciar sesión",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Hacer clic en Redactar o Nuevo correo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Escribir el destinatario, el asunto y el mensaje",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Adjuntar el archivo con el botón de adjuntos y hacer clic en Enviar",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Almacenamiento en la Nube",
+    "titulo": "Ordena el proceso: guardar un archivo en la nube",
+    "indicacion": "Un usuario quiere subir el archivo Informe.pdf a su cuenta de almacenamiento en la nube. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el navegador e ingresar al servicio de almacenamiento en la nube, como Google Drive o OneDrive",
         "tipo": "proceso"
       },
       {
@@ -491,21 +402,16 @@
       },
       {
         "id": "b4",
-        "texto": "Crear una nueva reunión",
+        "texto": "Hacer clic en Nuevo y luego en Subir archivo",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Compartir el enlace de la reunión con los participantes",
+        "texto": "Seleccionar el archivo del equipo y esperar a que termine la carga",
         "tipo": "salida"
       },
       {
         "id": "b6",
-        "texto": "Verificar el funcionamiento de la cámara y el micrófono",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -516,16 +422,15 @@
       "b3",
       "b4",
       "b5",
-      "b6",
-      "b7"
+      "b6"
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Carga en la Nube",
-    "titulo": "Ordena los pasos para guardar un archivo en la nube",
-    "indicacion": "El procedimiento para subir un archivo a la nube inicia abriendo la aplicación y termina verificando la carga. Ordena los bloques correctamente.",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Videollamada",
+    "titulo": "Ordena el proceso: participar en una videollamada",
+    "indicacion": "Un usuario recibió la invitación a una videollamada de su equipo de trabajo. Ordena los bloques para construir la secuencia correcta para ingresar a la reunión.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -535,31 +440,26 @@
       },
       {
         "id": "b2",
-        "texto": "Abrir la aplicación de almacenamiento en la nube",
+        "texto": "Recibir la invitación a la videollamada por correo o mensaje",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Seleccionar la opción Subir o Cargar archivo",
+        "texto": "Hacer clic en el enlace de la reunión",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Elegir el archivo informe.docx desde el equipo",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b5",
-        "texto": "Esperar a que la carga del archivo termine",
+        "texto": "Permitir el uso del micrófono y la cámara si se requieren",
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Verificar que el archivo aparezca en la carpeta en línea",
+        "id": "b5",
+        "texto": "Ingresar a la sala y participar en la reunión",
         "tipo": "salida"
       },
       {
-        "id": "b7",
+        "id": "b6",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -570,98 +470,211 @@
       "b3",
       "b4",
       "b5",
-      "b6",
-      "b7"
+      "b6"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Adjunto Incompleto",
-    "titulo": "Encuentra la falla: el correo llegó sin el archivo adjunto",
-    "indicacion": "El aprendiz envió un correo con un archivo adjunto, pero el destinatario informó que no lo recibió. Revisa los pasos e identifica la falla.",
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Adjunto sin Enviar",
+    "titulo": "Encuentra la falla: el correo menciona un adjunto que no llegó",
+    "indicacion": "Un usuario envió un correo que anuncia un informe adjunto, pero el destinatario no recibió ningún archivo. Revisa el procedimiento e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Redactar el correo y escribir el destinatario",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario redacta un correo y escribe: Envío el informe completo en el archivo adjunto",
         "tipo": "proceso"
       },
       {
-        "label": "Hacer clic en Adjuntar y seleccionar el archivo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Pulsar Enviar antes de que el adjunto termine de cargarse",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El destinatario recibe el correo sin el archivo adjunto",
-        "tipo": "salida",
+        "label": "El usuario hace clic en Enviar sin adjuntar ningún archivo",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "El destinatario abre el correo y no encuentra el informe",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "El correo debe enviarse a través de otro servicio de mensajería."
+        "id": 1,
+        "texto": "El destinatario debe buscar el archivo en su equipo."
       },
       {
         "id": 2,
-        "texto": "Antes de enviar debe esperarse a que el archivo adjunto termine de cargarse; si el correo se envía antes, viaja sin el archivo."
-      },
-      {
-        "id": 1,
-        "texto": "El destinatario debe tener la misma cuenta de correo que el remitente."
+        "texto": "El error es que el asunto del correo no lleva mayúsculas."
       },
       {
         "id": 3,
-        "texto": "Los archivos adjuntos solo pueden enviarse en horario laboral."
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 0,
+        "texto": "El correo menciona un adjunto que nunca se adjuntó: antes de enviar se debe verificar que el archivo aparezca en la lista de adjuntos."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Descarga Insegura",
+    "titulo": "Encuentra la falla: descargar un programa desde una página sin https",
+    "indicacion": "Un usuario descargó un programa desde una página sin candado ni https y el equipo mostró alertas de seguridad. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario necesita instalar un programa en su equipo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Descarga el instalador desde una página sin candado y sin https",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El equipo muestra alertas de seguridad durante la instalación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "Descargar desde una página sin candado ni https expone el equipo a programas maliciosos: solo deben usarse sitios oficiales y verificados."
+      },
+      {
+        "id": 0,
+        "texto": "Las descargas sin https siempre son seguras."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que el usuario no apagó el equipo antes de descargar."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Seguimiento del Correo",
+    "titulo": "Prueba de escritorio: verificar que un correo se envió",
+    "indicacion": "Un usuario envió un correo con un adjunto y quiere confirmar que llegó a la bandeja de salida. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario redacta un correo para el instructor y adjunta la guía desarrollada",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Hace clic en Enviar",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El correo pasa por la bandeja de salida y luego a Elementos enviados",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el usuario verifica que el correo aparece en Elementos enviados",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "El correo se pierde después de enviarlo."
+      },
+      {
+        "id": 3,
+        "texto": "El correo aparece en Elementos enviados, lo que confirma que se envió con su adjunto."
+      },
+      {
+        "id": 1,
+        "texto": "El correo queda en borradores y nunca se envía."
+      },
+      {
+        "id": 2,
+        "texto": "El correo no se puede enviar con adjuntos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Descarga Insegura",
-    "titulo": "Encuentra la falla: el equipo se llenó de anuncios",
-    "indicacion": "El aprendiz ignoró la advertencia del navegador y descargó un programa desde un sitio no oficial; después el equipo empezó a mostrar anuncios no deseados. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Acceso desde la Nube",
+    "titulo": "Prueba de escritorio: consultar un archivo subido a la nube desde otro equipo",
+    "indicacion": "Un usuario subió un archivo a la nube y luego intenta abrirlo desde otro equipo. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "El navegador advierte que el sitio no es seguro",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario sube el archivo Informe.pdf a su cuenta de Google Drive",
         "tipo": "proceso"
       },
       {
-        "label": "El aprendiz continúa y descarga el archivo desde el sitio no confiable",
+        "label": "Desde otro equipo inicia sesión en la misma cuenta",
         "tipo": "proceso"
       },
       {
-        "label": "Instala el programa descargado",
+        "label": "Abre Google Drive y busca el archivo Informe.pdf",
         "tipo": "proceso"
       },
       {
-        "label": "El equipo empieza a mostrar anuncios no deseados",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el archivo está disponible porque la nube sincroniza la cuenta en cualquier dispositivo",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "La descarga fue correcta; los anuncios emergentes son un comportamiento normal."
-      },
-      {
-        "id": 1,
-        "texto": "El problema es que el navegador está desactualizado."
-      },
-      {
-        "id": 3,
-        "texto": "Debió atender la advertencia del navegador y descargar solo desde fuentes oficiales; el archivo probablemente contenía software no deseado."
+        "texto": "El archivo solo se puede ver en el equipo donde se subió."
       },
       {
         "id": 2,
-        "texto": "Debe reiniciar el equipo para que los anuncios desaparezcan."
+        "texto": "El archivo se elimina al cerrar sesión."
+      },
+      {
+        "id": 1,
+        "texto": "El archivo está disponible desde cualquier equipo con la misma cuenta de usuario."
+      },
+      {
+        "id": 3,
+        "texto": "La nube solo guarda imágenes."
       }
     ],
     "correcta": 2
@@ -794,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -853,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1120,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1153,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

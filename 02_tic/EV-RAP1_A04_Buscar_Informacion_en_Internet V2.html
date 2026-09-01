@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Búsqueda de Información en Internet</title>
+<title>Evaluación Práctica - Buscar Informacion en Internet</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Búsqueda de Información en Internet</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Buscar Informacion en Internet</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la búsqueda de información en internet: uso de navegadores y buscadores, selección de palabras clave, aplicación de operadores de búsqueda, evaluación de la confiabilidad de las fuentes y administración de favoritos, mediante retos prácticos interactivos.
+          Pon en práctica la búsqueda de información en internet con casos reales de consulta: decide cómo usar el navegador y el buscador, ordena la secuencia para buscar y refinar resultados, corrige fallas en las palabras clave y en la selección de fuentes y ejecuta mentalmente una búsqueda para determinar el resultado. Sin teoría: aquí se demuestra buscando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos de navegadores, buscadores, palabras clave y operadores de búsqueda.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular búsquedas paso a paso y predecir el efecto de las palabras clave y los operadores.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para buscar información y guardar sitios en favoritos.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores al evaluar fuentes y al formular las búsquedas.</li>
+            <li><strong>Usar Herramientas:</strong> Decide qué herramienta del navegador o del buscador cumple cada función.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real para buscar y evaluar información en internet.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en una búsqueda o en la selección de una fuente.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente una búsqueda y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,425 +243,438 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Búsqueda de Información en Internet</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Buscar Informacion en Internet</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Selección de Concepto",
-    "titulo": "¿Cuál de los siguientes es un navegador web?",
-    "indicacion": "El navegador es el programa que permite visualizar y navegar por las páginas web. Selecciona la aplicación que cumple esta función.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Navegador Web",
+    "titulo": "¿Qué programa se utiliza para consultar páginas web en internet?",
+    "indicacion": "Un usuario quiere consultar la página del SENA desde su equipo. Selecciona el programa que permite abrir y navegar por las páginas web.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Microsoft Word"
+        "id": 0,
+        "texto": "El explorador de archivos."
       },
       {
-        "id": 0,
-        "texto": "Google Chrome"
+        "id": 1,
+        "texto": "El navegador web, como Microsoft Edge o Google Chrome."
       },
       {
         "id": 2,
-        "texto": "Adobe Photoshop"
+        "texto": "El Bloc de notas."
       },
       {
         "id": 3,
-        "texto": "Windows Defender"
+        "texto": "La calculadora de Windows."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Operadores de Búsqueda",
-    "titulo": "¿Qué operador se utiliza en un buscador para excluir una palabra de los resultados?",
-    "indicacion": "Los operadores permiten afinar las búsquedas. Selecciona el operador que indica al buscador que excluya una palabra de los resultados.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Palabras Clave",
+    "titulo": "Para obtener resultados precisos, ¿qué se debe escribir en el buscador?",
+    "indicacion": "Un usuario necesita información sobre el clima en Bogotá y no sabe cómo formular su búsqueda. Selecciona la forma más eficaz de escribir la consulta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "+"
-      },
-      {
-        "id": 2,
-        "texto": "*"
+        "texto": "Una pregunta completa con signos de puntuación."
       },
       {
         "id": 1,
-        "texto": "-"
+        "texto": "El nombre del sitio web con http://"
+      },
+      {
+        "id": 2,
+        "texto": "Palabras clave concretas del tema, por ejemplo: clima Bogotá hoy."
       },
       {
         "id": 3,
-        "texto": "#"
+        "texto": "La dirección del navegador."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Favoritos y Marcadores",
-    "titulo": "¿Cuál es el propósito de los favoritos o marcadores del navegador?",
-    "indicacion": "Los favoritos son una función propia del navegador para administrar los sitios de interés. Selecciona la finalidad correcta.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Evaluación de Fuentes",
+    "titulo": "¿Qué tipo de dominio indica mayor confiabilidad para información oficial?",
+    "indicacion": "Un usuario debe citar información oficial para un trabajo académico. Selecciona el dominio de página web que ofrece mayor confiabilidad.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Acelerar la conexión a internet"
+        "texto": ".blogspot.com"
       },
       {
         "id": 1,
-        "texto": "Bloquear las ventanas emergentes"
+        "texto": ".wordpress.com"
       },
       {
         "id": 3,
-        "texto": "Eliminar el historial de navegación"
+        "texto": ".xyz"
       },
       {
         "id": 2,
-        "texto": "Guardar las direcciones de los sitios para acceder a ellas rápidamente"
+        "texto": ".gov.co o .edu.co"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Evaluación de Fuentes",
-    "titulo": "¿Qué criterio indica que una fuente es confiable para una investigación?",
-    "indicacion": "Antes de usar información de internet se debe evaluar la fuente. Selecciona el criterio que indica confiabilidad.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Búsqueda en Internet",
+    "titulo": "Ordena el proceso: buscar información en internet",
+    "indicacion": "Un usuario necesita buscar información sobre la historia de la programación. Ordena los bloques para construir la secuencia correcta de una búsqueda en internet.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el navegador web",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Escribir las palabras clave del tema en la barra de búsqueda",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Revisar los resultados que entrega el buscador",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Abrir un resultado y verificar que la información responde a la consulta",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Refinamiento de Búsqueda",
+    "titulo": "Ordena el proceso: refinar una búsqueda con una frase exacta",
+    "indicacion": "Un usuario no encuentra resultados precisos y decide buscar una frase exacta entre comillas. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el buscador",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Escribir la frase exacta entre comillas, por ejemplo 'etapas del desarrollo de software'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Revisar los resultados que entrega el buscador",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Comparar los resultados con la búsqueda anterior sin comillas",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Evaluación de Fuente",
+    "titulo": "Ordena el proceso: evaluar una fuente antes de usarla",
+    "indicacion": "Un usuario encontró varias páginas sobre un tema y debe elegir una fuente confiable para su trabajo. Ordena los bloques para construir la secuencia correcta de verificación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Identificar el dominio de la página consultada",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Verificar el autor o la institución responsable del contenido",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Comprobar la fecha de publicación o actualización",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Decidir si la fuente es confiable para citarla en el trabajo",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Error",
+    "tipo": "Búsqueda Ineficaz",
+    "titulo": "Encuentra la falla: la búsqueda con una frase completa no da resultados precisos",
+    "indicacion": "Un usuario escribió una pregunta completa en el buscador y obtuvo resultados poco precisos. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario necesita saber el significado de la palabra hardware",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Escribe en el buscador: ¿Cuál es el significado de la palabra hardware por favor?",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El buscador devuelve resultados poco precisos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
-        "id": 3,
-        "texto": "El autor es una entidad reconocida y la información está actualizada"
-      },
-      {
         "id": 0,
-        "texto": "La página contiene muchos anuncios"
-      },
-      {
-        "id": 1,
-        "texto": "El sitio aparece en el primer lugar de los resultados"
+        "texto": "El buscador no entiende las preguntas en español."
       },
       {
         "id": 2,
-        "texto": "La página utiliza colores llamativos"
+        "texto": "El error es usar el navegador equivocado."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 1,
+        "texto": "La frase completa es innecesaria: el buscador funciona mejor con palabras clave; al repetir la búsqueda con significado hardware se obtienen resultados precisos."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Fuente No Confiable",
+    "titulo": "Encuentra la falla: se cita un blog personal como fuente académica",
+    "indicacion": "Un usuario debe sustentar un trabajo con información oficial sobre cambio climático y tomó como única fuente un blog sin autor. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario debe citar información oficial sobre cambio climático",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Toma como única fuente un blog personal sin autor identificado",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El usuario cita la información en el trabajo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "Un blog personal sin autor identificado no es una fuente confiable para un trabajo académico: la información debe contrastarse con entidades oficiales o con sitios de dominio .gov o .edu."
+      },
+      {
+        "id": 1,
+        "texto": "Cualquier página de internet es válida como fuente académica."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que el tema no existe en internet."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Operador de Exclusión",
-    "titulo": "Prueba de escritorio: búsqueda con el operador de exclusión",
-    "indicacion": "Sigue mentalmente la búsqueda e indica qué efecto produce el operador -financiero en los resultados.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Escribir en el buscador: informes SENA -financiero",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Pulsar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar los resultados obtenidos",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "Muestra únicamente resultados financieros"
-      },
-      {
-        "id": 0,
-        "texto": "Excluye los resultados que contienen la palabra financiero"
-      },
-      {
-        "id": 2,
-        "texto": "Busca la frase exacta informes SENA financiero"
-      },
-      {
-        "id": 3,
-        "texto": "Aumenta la cantidad de resultados financieros"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Búsqueda con Comillas",
-    "titulo": "Prueba de escritorio: búsqueda de una frase exacta",
-    "indicacion": "Sigue mentalmente la búsqueda e indica qué efecto tienen las comillas en los resultados obtenidos.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Escribir en el buscador: \"aprendizaje colaborativo\"",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Pulsar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar los resultados obtenidos",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El buscador ignora las comillas y muestra cualquier resultado"
-      },
-      {
-        "id": 2,
-        "texto": "El buscador busca cada palabra por separado"
-      },
-      {
-        "id": 1,
-        "texto": "El buscador busca la frase exacta con las palabras en ese orden"
-      },
-      {
-        "id": 3,
-        "texto": "El buscador solo muestra resultados de diccionarios"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Guardar Favorito",
-    "titulo": "Ordena los pasos para guardar un sitio en favoritos",
-    "indicacion": "El procedimiento para guardar un favorito inicia abriendo el navegador y termina confirmando el guardado del marcador. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el navegador web",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Escribir la dirección del sitio en la barra de direcciones",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b4",
-        "texto": "Pulsar la tecla Entrar para cargar la página",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Hacer clic en el ícono de favoritos o estrella de la barra del navegador",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Seleccionar la carpeta de marcadores donde se guardará",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Confirmar la acción con el botón Listo o Guardar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Búsqueda de Información",
-    "titulo": "Ordena los pasos para buscar información confiable",
-    "indicacion": "El procedimiento de búsqueda inicia abriendo el navegador y termina seleccionando una fuente confiable. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el navegador web",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Ir a la página del buscador",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Escribir las palabras clave relacionadas con el tema",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b5",
-        "texto": "Pulsar la tecla Entrar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Evaluar la confiabilidad de las fuentes de los resultados",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Seleccionar la fuente más confiable y consultar la información",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Evaluación Inadecuada de Fuentes",
-    "titulo": "Encuentra la falla: la información no fue verificada",
-    "indicacion": "El aprendiz usó como única referencia el primer resultado de su búsqueda, sin revisar quién publicó la información ni su fecha. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Búsqueda con Palabras Clave",
+    "titulo": "Prueba de escritorio: buscar el precio de un portátil",
+    "indicacion": "Un usuario quiere comprar un portátil y realiza una búsqueda con palabras clave. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "El aprendiz necesita información sobre el sistema respiratorio para su tarea",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario escribe en el buscador: precio portatil 8 GB RAM Colombia",
         "tipo": "proceso"
       },
       {
-        "label": "Escribe en el buscador: sistema respiratorio",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Pulsa la tecla Entrar",
+        "label": "El buscador muestra resultados de tiendas y comparadores de precios",
         "tipo": "proceso"
       },
       {
-        "label": "Toma como única fuente el primer resultado, sin revisar autor ni fecha de publicación",
-        "tipo": "salida",
-        "error": true
+        "label": "El usuario abre un resultado y verifica el precio y la fecha de publicación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el usuario obtiene precios actualizados y puede comparar opciones",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El buscador ordena los resultados de peor a mejor calidad."
-      },
-      {
-        "id": 3,
-        "texto": "El primer resultado no garantiza confiabilidad; debe evaluarse la fuente, el autor y la fecha de publicación antes de usar la información."
-      },
-      {
-        "id": 1,
-        "texto": "Las tareas académicas no pueden apoyarse en internet."
+        "texto": "El buscador no encuentra resultados porque faltan signos de puntuación."
       },
       {
         "id": 2,
-        "texto": "Debe reiniciarse el navegador antes de continuar."
+        "texto": "El usuario obtiene precios actualizados de varias tiendas y puede comparar antes de comprar."
+      },
+      {
+        "id": 1,
+        "texto": "La búsqueda falla y debe usarse otro navegador."
+      },
+      {
+        "id": 3,
+        "texto": "El buscador muestra únicamente videos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Búsqueda por Tipo de Archivo",
-    "titulo": "Encuentra la falla: no se filtraron los archivos PDF",
-    "indicacion": "El aprendiz necesita el manual de convivencia en formato PDF, pero su búsqueda no filtró por tipo de archivo. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Comparación de Fuentes",
+    "titulo": "Prueba de escritorio: elegir la fuente más confiable",
+    "indicacion": "Un usuario encontró dos páginas sobre el mismo tema y debe decidir cuál citar. Ejecuta mentalmente el procedimiento de evaluación y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "El aprendiz necesita el manual de convivencia en formato PDF",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario encuentra dos páginas: una en www.mineducacion.gov.co y un blog sin autor",
         "tipo": "proceso"
       },
       {
-        "label": "Escribe en el buscador: manual de convivencia en formato pdf",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Pulsa la tecla Entrar",
+        "label": "Revisa el dominio, el autor y la fecha de ambas páginas",
         "tipo": "proceso"
       },
       {
-        "label": "El buscador muestra únicamente archivos PDF",
-        "tipo": "salida",
-        "error": true
+        "label": "Compara la información entre las dos fuentes",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el usuario cita la página oficial por su mayor confiabilidad",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Debe escribir la búsqueda en mayúsculas sostenidas."
-      },
-      {
-        "id": 1,
-        "texto": "El buscador no reconoce la palabra manual."
+        "texto": "El usuario cita el blog porque es más fácil de leer."
       },
       {
         "id": 2,
-        "texto": "Sin el operador filetype:pdf el buscador no filtra por tipo de archivo; debe escribirse: manual de convivencia filetype:pdf."
+        "texto": "El usuario descarta las dos fuentes."
+      },
+      {
+        "id": 1,
+        "texto": "El usuario cita la página oficial .gov.co porque la información proviene de una entidad reconocida y verificable."
       },
       {
         "id": 3,
-        "texto": "Debe cambiar de navegador para obtener archivos PDF."
+        "texto": "El usuario cita ambas por igual sin verificar."
       }
     ],
     "correcta": 2
@@ -794,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -853,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1120,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1153,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

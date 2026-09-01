@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Aplicar Buenas Prácticas TIC</title>
+<title>Evaluación Práctica - Aplicar Buenas Practicas TIC</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Aplicar Buenas Prácticas TIC</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Aplicar Buenas Practicas TIC</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de buenas prácticas TIC: ergonomía frente al computador, pausas activas, cuidado del equipo, creación de contraseñas seguras, respaldo de la información y uso responsable de los recursos tecnológicos, mediante retos prácticos interactivos.
+          Demuestra la aplicación de las buenas prácticas TIC en el puesto de trabajo: decide la postura ergonómica correcta y la contraseña segura, ordena el proceso de las pausas activas, la creación de claves y el respaldo de la información, corrige malos hábitos como limpiar el equipo encendido o anotar la contraseña en el monitor, y ejecuta mentalmente el procedimiento de un usuario que protege su información. Sin teoría: aquí se demuestra aplicando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Conceptos de ergonomía, pausas activas, cuidado del equipo, contraseñas seguras y respaldo de información.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso las rutinas de trabajo seguro y predecir el resultado de cada hábito.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para realizar pausas activas, crear contraseñas seguras y respaldar la información.</li>
-<li><strong>Depuración de Errores:</strong> Detectar prácticas inadecuadas en el uso del equipo y aplicar la corrección adecuada.</li>
+            <li><strong>Usar Herramientas:</strong> Decide la práctica correcta de ergonomía, seguridad y cuidado del equipo para cada situación.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real de las pausas activas, la creación de contraseñas y el respaldo de la información.</li>
+<li><strong>Corregir el Error:</strong> Encuentra la falla en un hábito o procedimiento que pone en riesgo la salud, el equipo o los datos.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el procedimiento de un usuario y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,71 +243,44 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Buenas Prácticas TIC</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Buenas Practicas TIC</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Postura Ergonómica",
-    "titulo": "¿Cuál es la postura correcta frente al computador durante la jornada de trabajo?",
-    "indicacion": "La ergonomía busca evitar lesiones por posturas inadecuadas. Selecciona la postura recomendada para trabajar frente al computador.",
+    "categoria": "Usar Herramientas",
+    "tipo": "Ergonomía",
+    "titulo": "¿Cuál es la posición correcta de la pantalla del computador para trabajar sin afectar la salud?",
+    "indicacion": "Una aprendiz pasa varias horas frente al computador y quiere evitar dolores de cuello y espalda. Selecciona la posición ergonómica correcta de la pantalla.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Espalda encorvada y pies cruzados debajo de la silla"
-      },
-      {
-        "id": 1,
-        "texto": "Espalda recta, pies apoyados en el piso y pantalla a la altura de los ojos"
+        "texto": "Colocar la pantalla por debajo del nivel de la mesa."
       },
       {
         "id": 2,
-        "texto": "Acostarse en la silla con la pantalla sobre el regazo"
+        "texto": "Ajustar la pantalla a la altura de los ojos para mantener la mirada al frente."
+      },
+      {
+        "id": 1,
+        "texto": "Ubicar la pantalla a un lado del escritorio."
       },
       {
         "id": 3,
-        "texto": "Trabajar de pie con la pantalla sobre el regazo"
+        "texto": "Colocar la pantalla lo más lejos posible del usuario."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Pausas Activas",
-    "titulo": "¿Con qué frecuencia se recomienda realizar pausas activas durante la jornada frente al computador?",
-    "indicacion": "Las pausas activas previenen la fatiga visual y muscular. Selecciona la frecuencia recomendada por las guías de salud ocupacional.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "Cada 8 horas de trabajo continuo"
-      },
-      {
-        "id": 1,
-        "texto": "Solo al finalizar la jornada"
-      },
-      {
-        "id": 3,
-        "texto": "Cada 1 o 2 horas de trabajo continuo, durante 5 a 10 minutos"
-      },
-      {
-        "id": 2,
-        "texto": "Una vez por semana"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 3,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Herramientas",
     "tipo": "Contraseña Segura",
-    "titulo": "¿Cuál de las siguientes contraseñas es la más segura?",
-    "indicacion": "Una contraseña segura combina mayúsculas, minúsculas, números y símbolos, y tiene una longitud suficiente. Selecciona la opción más robusta.",
+    "titulo": "¿Cuál de estas contraseñas es la más segura para una cuenta institucional?",
+    "indicacion": "Un aprendiz debe elegir la contraseña de su cuenta de correo institucional. Selecciona la opción que cumple las buenas prácticas de seguridad.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -315,126 +288,209 @@
         "texto": "123456"
       },
       {
+        "id": 2,
+        "texto": "clave"
+      },
+      {
         "id": 1,
-        "texto": "nombre123"
+        "texto": "S3n@2026#Tic"
       },
       {
         "id": 3,
-        "texto": "contraseña"
-      },
-      {
-        "id": 2,
-        "texto": "T1c$2026*Segura"
+        "texto": "password"
       }
     ],
-    "correcta": 3
+    "correcta": 2
+  },
+  {
+    "id": 3,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Pausas Activas",
+    "titulo": "Ordena el proceso: realizar pausas activas durante la jornada",
+    "indicacion": "Un aprendiz trabaja varias horas seguidas frente al computador y debe realizar pausas activas. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Programar una pausa activa cada 60 o 90 minutos de trabajo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Levantarse del puesto de trabajo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Estirar brazos, cuello y espalda con movimientos suaves",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Mirar hacia un punto lejano para descansar la vista",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Volver al puesto y continuar la actividad",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Respaldo de Información",
-    "titulo": "¿Cuál es la mejor práctica para proteger la información importante del equipo?",
-    "indicacion": "La información puede perderse por fallas del equipo, virus o errores humanos. Selecciona la práctica que protege mejor los datos.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Creación de Contraseña",
+    "titulo": "Ordena el proceso: crear una contraseña segura",
+    "indicacion": "Un aprendiz debe crear la contraseña de su cuenta institucional siguiendo las buenas prácticas. Ordena la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Realizar copias de seguridad periódicas en un dispositivo externo o en la nube"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 1,
-        "texto": "Guardar todo únicamente en el escritorio del equipo"
+        "id": "b2",
+        "texto": "Elegir una frase base fácil de recordar solo para el usuario",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Enviar los archivos por correo una sola vez"
+        "id": "b3",
+        "texto": "Combinar letras mayúsculas, minúsculas, números y símbolos",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Comprimir los archivos y dejarlos en la papelera de reciclaje"
+        "id": "b4",
+        "texto": "Verificar que tenga al menos 8 caracteres",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Evitar datos personales como nombres o fechas de nacimiento",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Memorizar la contraseña sin compartirla con otras personas",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 0
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Rutina de Apagado",
-    "titulo": "Prueba de escritorio: apagado correcto del equipo",
-    "indicacion": "Sigue mentalmente cada paso de la rutina de apagado y determina qué ocurre al final del proceso.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Respaldo de Información",
+    "titulo": "Ordena el proceso: realizar el respaldo de la información",
+    "indicacion": "Un aprendiz debe proteger sus trabajos del curso con un respaldo. Ordena la secuencia correcta para realizar la copia de seguridad.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Guardar los documentos abiertos",
+        "id": "b2",
+        "texto": "Identificar los archivos importantes que se van a respaldar",
         "tipo": "proceso"
       },
       {
-        "label": "Cerrar las aplicaciones en uso",
+        "id": "b3",
+        "texto": "Elegir el medio de respaldo: memoria USB, disco externo o nube",
         "tipo": "proceso"
       },
       {
-        "label": "Elegir la opción Apagar desde el menú de inicio",
+        "id": "b4",
+        "texto": "Copiar los archivos al medio de respaldo",
         "tipo": "proceso"
       },
       {
-        "label": "Esperar a que el equipo se apague por completo",
+        "id": "b5",
+        "texto": "Verificar que los archivos copiados se abran correctamente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Programar respaldos periódicos de la información",
         "tipo": "salida"
       },
       {
-        "label": "Fin",
+        "id": "b7",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "El equipo se reinicia automáticamente"
-      },
-      {
-        "id": 0,
-        "texto": "El equipo se apaga de forma segura y se evita la pérdida de información"
-      },
-      {
-        "id": 2,
-        "texto": "Los documentos sin guardar se conservan sin necesidad de guardarlos"
-      },
-      {
-        "id": 3,
-        "texto": "El equipo entra en modo de suspensión"
-      }
-    ],
-    "correcta": 1
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Copia de Seguridad",
-    "titulo": "Prueba de escritorio: respaldo de la información",
-    "indicacion": "Sigue mentalmente los pasos de la copia de seguridad e indica qué ocurre con la carpeta Proyectos al finalizar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Error",
+    "tipo": "Cuidado del Equipo",
+    "titulo": "Encuentra la falla: limpieza del computador que puede dañar el equipo",
+    "indicacion": "Un aprendiz quiere limpiar el computador del salón. Revisa el procedimiento que sigue e identifica el error que pone en riesgo el equipo.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Conectar un disco duro externo al equipo",
+        "label": "Apagar el equipo y desconectarlo de la corriente",
         "tipo": "proceso"
       },
       {
-        "label": "Seleccionar la carpeta Proyectos",
+        "label": "Aplicar el líquido limpiador directamente sobre el teclado y la torre (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Pasar un paño seco por las superficies",
         "tipo": "proceso"
       },
       {
-        "label": "Copiar la carpeta Proyectos en el disco externo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Verificar que la copia esté completa",
+        "label": "Esperar a que seque antes de volver a conectar el equipo",
         "tipo": "salida"
       },
       {
@@ -442,210 +498,236 @@
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
-        "id": 0,
-        "texto": "La carpeta Proyectos solo queda en el disco externo"
+        "id": 1,
+        "texto": "El error es que el equipo debe limpiarse siempre encendido."
       },
       {
         "id": 2,
-        "texto": "El disco externo se formatea automáticamente"
+        "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 1,
-        "texto": "La carpeta Proyectos queda en el equipo y una copia idéntica en el disco externo"
+        "id": 0,
+        "texto": "El líquido nunca debe aplicarse directamente sobre el equipo: debe humedecerse ligeramente un paño y pasarlo por las superficies."
       },
       {
         "id": 3,
-        "texto": "La carpeta Proyectos se elimina del equipo"
+        "texto": "El error es que la limpieza debe hacerse con agua del grifo."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Pausa Activa",
-    "titulo": "Ordena los pasos para realizar una pausa activa correctamente",
-    "indicacion": "La pausa activa inicia alejándose del puesto de trabajo y termina al regresar a la actividad. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b4",
-        "texto": "Mover la vista hacia un punto lejano para descansar los ojos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b3",
-        "texto": "Realizar ejercicios de estiramiento de cuello, brazos y muñecas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Regresar al puesto de trabajo y continuar la actividad",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Alejarse del computador y levantarse del puesto de trabajo",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Contraseña Segura",
-    "titulo": "Ordena los pasos para crear una contraseña segura",
-    "indicacion": "La creación de una contraseña segura parte de una frase base y termina guardándola en un lugar seguro. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b5",
-        "texto": "Guardar la contraseña en un lugar seguro, sin escribirla en notas visibles",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b2",
-        "texto": "Definir una frase base fácil de recordar para el usuario",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      },
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b4",
-        "texto": "Verificar que la contraseña tenga al menos 8 caracteres",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Combinar mayúsculas, minúsculas, números y símbolos",
-        "tipo": "proceso"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Hábito Inadecuado",
-    "titulo": "Encuentra la falla: molestias musculares al final de la jornada",
-    "indicacion": "El aprendiz presenta dolor de cuello y espalda al finalizar la jornada. Revisa sus hábitos de trabajo e identifica la falla.",
+    "categoria": "Corregir el Error",
+    "tipo": "Seguridad de Contraseña",
+    "titulo": "Encuentra la falla: la contraseña queda expuesta en el puesto de trabajo",
+    "indicacion": "Un aprendiz creó una contraseña segura para su cuenta institucional. Revisa el procedimiento que sigue e identifica la práctica insegura.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Trabajar 4 horas continuas sin levantarse del puesto",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Crear una contraseña con letras, números y símbolos",
         "tipo": "proceso"
       },
       {
-        "label": "Mantener la pantalla a la altura de los ojos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Apoyar los pies en el piso",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Finalizar la jornada con dolor de cuello y espalda",
-        "tipo": "salida",
+        "label": "Escribir la contraseña en una nota y pegarla en el monitor para no olvidarla (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Usar la contraseña para iniciar sesión",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Cerrar la sesión al terminar la jornada",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "El dolor es normal y desaparece sin hacer nada."
-      },
-      {
-        "id": 1,
-        "texto": "La falla es trabajar sin pausas activas ni cambios de postura; deben realizarse pausas cada 1 o 2 horas y estirar el cuerpo."
+        "texto": "El error es que la contraseña es muy corta."
       },
       {
         "id": 2,
-        "texto": "La falla es mantener la pantalla a la altura de los ojos."
+        "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
         "id": 3,
-        "texto": "La falla es apoyar los pies en el piso."
+        "texto": "El error es cerrar la sesión al terminar la jornada."
+      },
+      {
+        "id": 1,
+        "texto": "Anotar la contraseña en un lugar visible la expone ante otras personas: la contraseña debe memorizarse o guardarse en un medio protegido."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Error",
+    "tipo": "Apagado del Equipo",
+    "titulo": "Encuentra la falla: apagado del computador que pone en riesgo los datos",
+    "indicacion": "Un usuario termina su jornada y quiere apagar el computador. Revisa el procedimiento que sigue e identifica el error que puede dañar el sistema o los archivos.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Cerrar los programas y guardar los trabajos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Desconectar el equipo de la corriente sin apagar el sistema operativo (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Retirar el cable de alimentación del tomacorriente",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el equipo queda apagado",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "Cortar la corriente sin apagar el sistema puede dañar el equipo y perder información: primero debe apagarse el equipo desde Inicio y luego desconectarlo."
+      },
+      {
+        "id": 0,
+        "texto": "El error es que los programas no deben cerrarse antes de apagar."
+      },
+      {
+        "id": 1,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 3,
+        "texto": "El error es que el cable debe desconectarse siempre con el equipo encendido."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Contraseña Rechazada",
+    "titulo": "Prueba de escritorio: la contraseña no cumple la política de seguridad",
+    "indicacion": "Un aprendiz crea la contraseña Sena2026 para su cuenta institucional y el sistema la rechaza. Ejecuta mentalmente el procedimiento y determina la causa.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz propone la contraseña Sena2026",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El sistema evalúa la contraseña con la política de complejidad",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El sistema rechaza la contraseña y pide una nueva",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el aprendiz debe crear otra contraseña que cumpla la política",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "La contraseña es correcta y el sistema tiene un error."
+      },
+      {
+        "id": 0,
+        "texto": "La contraseña combina letras y números, pero le faltan símbolos especiales: no cumple la política de complejidad."
+      },
+      {
+        "id": 2,
+        "texto": "Debe usarse una contraseña compuesta únicamente por números."
+      },
+      {
+        "id": 3,
+        "texto": "Debe usarse la misma contraseña del correo personal."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Contraseña Débil",
-    "titulo": "Encuentra la falla: la cuenta fue vulnerada",
-    "indicacion": "El aprendiz usó la contraseña 123456 en varias plataformas y su cuenta fue vulnerada. Revisa el proceso e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Equipo sin Respaldo",
+    "titulo": "Prueba de escritorio: el equipo falla y no hay respaldo de la información",
+    "indicacion": "Un usuario guarda sus trabajos solo en el escritorio del computador del salón. El equipo falla y el técnico reinstala el sistema operativo. Ejecuta mentalmente el procedimiento y determina qué sucede con los archivos.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Crear la contraseña 123456 por ser fácil de recordar",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario guarda sus trabajos solo en el escritorio del equipo",
         "tipo": "proceso"
       },
       {
-        "label": "Usar la misma contraseña en el correo y en las redes sociales",
+        "label": "El equipo presenta una falla en el sistema operativo",
         "tipo": "proceso"
       },
       {
-        "label": "No activar la verificación en dos pasos",
+        "label": "El técnico reinstala el sistema operativo del equipo",
         "tipo": "proceso"
       },
       {
-        "label": "La cuenta es vulnerada por un tercero",
-        "tipo": "salida",
-        "error": true
+        "label": "Salida: el equipo queda funcional pero sin los archivos del usuario",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "La falla es que la contraseña debe escribirse en un cuaderno para recordarla mejor."
+        "texto": "Los archivos se recuperan solos al encender el equipo."
       },
       {
         "id": 1,
-        "texto": "La falla es activar la verificación en dos pasos."
-      },
-      {
-        "id": 2,
-        "texto": "El uso de contraseñas débiles y repetidas facilita el acceso de terceros; deben usarse contraseñas fuertes, diferentes por plataforma y con verificación en dos pasos."
+        "texto": "El técnico recupera los archivos desde la nube automáticamente."
       },
       {
         "id": 3,
-        "texto": "La cuenta se vulnera porque el equipo es lento."
+        "texto": "Los archivos se pierden porque solo estaban guardados en el equipo, sin ningún respaldo."
+      },
+      {
+        "id": 2,
+        "texto": "Los archivos quedan guardados en la memoria RAM del equipo."
       }
     ],
     "correcta": 2
@@ -778,6 +860,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -837,6 +934,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1104,6 +1341,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1137,6 +1380,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Introducción al Modelado de Software (UML)</title>
+<title>Evaluación Práctica - Introduccion al Modelado de Software (UML)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el modelado de software con UML: comprender qué es el Lenguaje Unificado de Modelado, diferenciar los diagramas estructurales de los de comportamiento, reconocer las herramientas de modelado y valorar los beneficios de modelar antes de programar, mediante retos prácticos interactivos.
+          Pon en práctica el modelado de software con UML en situaciones reales de diseño: identifica los elementos UML en un diagrama, decide qué tipo de diagrama estructural o de comportamiento usar para cada necesidad, ordena el proceso de elaboración de un modelo y corrige diagramas con relaciones mal dibujadas. Sin teoría: aquí se demuestra modelando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar conceptos UML, clasificar diagramas estructurales y de comportamiento, y reconocer los beneficios del modelado.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso el proceso de modelado y predecir el resultado obtenido.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos del proceso de modelado UML y de elaboración de los diagramas.</li>
-<li><strong>Depuración de Errores:</strong> Detectar confusiones conceptuales y clasificaciones incorrectas en el modelado UML, y aplicar la corrección adecuada.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce el símbolo UML correcto para actor, clase, asociación y línea de vida.</li>
+<li><strong>Diseño Lógico:</strong> Decide qué diagrama estructural o de comportamiento usar en cada situación de modelado.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para elaborar y documentar un modelo UML.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra relaciones mal dibujadas y elementos mal ubicados en el diagrama.</li>
           </ul>
         </div>
 
@@ -243,71 +243,122 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Introducción al Modelado de Software (UML)</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Introduccion al Modelado de Software (UML)</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Significado de UML",
-    "titulo": "¿Qué significa la sigla UML en el contexto de la ingeniería de software?",
-    "indicacion": "UML es un estándar utilizado para representar gráficamente los elementos de un sistema de software. Selecciona el significado correcto de la sigla.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa una CLASE?",
+    "indicacion": "La clase describe la estructura de un objeto con su nombre, sus atributos y sus métodos. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Lenguaje Universal de Máquinas."
-      },
-      {
         "id": 0,
-        "texto": "Lenguaje Unificado de Modelado."
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Unidad de Modelado de Lenguajes."
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
+      },
+      {
+        "id": 1,
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre dos clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
       },
       {
         "id": 3,
-        "texto": "Lenguaje Único de Mantenimiento."
+        "nombre": "Herencia (Flecha de triángulo)",
+        "uso": "Generalización entre clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Animal</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Perro</text><line x1=\"35\" y1=\"25\" x2=\"56\" y2=\"25\" stroke=\"#15803d\" stroke-width=\"2\"/><polygon points=\"56,17 70,25 56,33\" fill=\"white\" stroke=\"#15803d\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Diagrama Estructural",
-    "titulo": "¿Cuál de los siguientes diagramas UML es un diagrama ESTRUCTURAL?",
-    "indicacion": "Los diagramas estructurales representan la organización estática del sistema. Selecciona el diagrama que pertenece a esta categoría.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa un ACTOR?",
+    "indicacion": "El actor es quien interactúa con el sistema desde el exterior. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Diagrama de casos de uso."
-      },
-      {
         "id": 1,
-        "texto": "Diagrama de secuencia."
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Diagrama de clases."
+        "nombre": "Línea de Vida",
+        "uso": "Línea punteada bajo un objeto en secuencia",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><rect x=\"8\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"25\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Cliente</text><line x1=\"25\" y1=\"22\" x2=\"25\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"58\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"75\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Sistema</text><line x1=\"75\" y1=\"22\" x2=\"75\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/></svg>"
+      },
+      {
+        "id": 0,
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Diagrama de actividades."
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre dos clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Diagrama de Comportamiento",
-    "titulo": "¿Cuál de los siguientes diagramas UML es un diagrama de COMPORTAMIENTO?",
-    "indicacion": "Los diagramas de comportamiento representan la dinámica del sistema: qué hace y cómo lo hace en el tiempo. Selecciona el diagrama correspondiente.",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la ASOCIACIÓN entre dos clases?",
+    "indicacion": "La asociación conecta dos clases que se relacionan entre sí. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
+    "opciones": [
+      {
+        "id": 0,
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
+      },
+      {
+        "id": 2,
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
+      },
+      {
+        "id": 3,
+        "nombre": "Herencia (Flecha de triángulo)",
+        "uso": "Generalización entre clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Animal</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Perro</text><line x1=\"35\" y1=\"25\" x2=\"56\" y2=\"25\" stroke=\"#15803d\" stroke-width=\"2\"/><polygon points=\"56,17 70,25 56,33\" fill=\"white\" stroke=\"#15803d\" stroke-width=\"2\"/></svg>"
+      },
+      {
+        "id": 1,
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre dos clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 4,
+    "categoria": "Diseño Lógico",
+    "tipo": "Diagrama Estructural",
+    "titulo": "¿Qué diagrama UML es ESTRUCTURAL y muestra las clases del sistema con sus atributos y métodos?",
+    "indicacion": "El analista necesita representar la estructura estática del sistema: las clases, sus atributos y sus métodos. Selecciona el diagrama UML adecuado.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -316,158 +367,79 @@
       },
       {
         "id": 1,
-        "texto": "Diagrama de componentes."
-      },
-      {
-        "id": 2,
-        "texto": "Diagrama de despliegue."
-      },
-      {
-        "id": 3,
         "texto": "Diagrama de secuencia."
-      }
-    ],
-    "correcta": 3
-  },
-  {
-    "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Beneficio del Modelado",
-    "titulo": "¿Qué beneficio principal aporta el modelado UML al desarrollo de software?",
-    "indicacion": "El modelado UML se utiliza antes de la codificación para comprender y comunicar la solución. Selecciona el beneficio que corresponde.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "Facilita la comunicación entre el equipo de desarrollo y el cliente mediante una notación estándar."
-      },
-      {
-        "id": 0,
-        "texto": "Elimina la necesidad de programar el sistema."
       },
       {
         "id": 2,
-        "texto": "Genera automáticamente el código final sin revisión humana."
+        "texto": "Diagrama de actividades."
       },
       {
         "id": 3,
-        "texto": "Reemplaza la documentación técnica del proyecto."
+        "texto": "Diagrama de casos de uso."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Selección de Diagramas",
-    "titulo": "Prueba de escritorio: selección de los diagramas UML del sistema",
-    "indicacion": "Ejecuta mentalmente el proceso de selección de diagramas para el modelo del sistema y determina el resultado de la clasificación.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Requisitos: el sistema de ventas debe registrar pedidos y mostrar su estado",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Los pedidos y su estructura se representan con diagramas estructurales",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El flujo de registro y consulta de pedidos se representa con diagramas de comportamiento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: el modelo combina diagramas estructurales y de comportamiento",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Diagrama de Comportamiento",
+    "titulo": "¿Qué diagrama UML de COMPORTAMIENTO muestra el orden de los mensajes entre objetos a lo largo del tiempo?",
+    "indicacion": "El analista necesita representar cómo interactúan los objetos paso a paso, mostrando el orden temporal de los mensajes. Selecciona el diagrama UML adecuado.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "El modelo solo utiliza diagramas de secuencia."
-      },
-      {
-        "id": 2,
-        "texto": "El modelo combina diagramas estructurales y de comportamiento para representar el sistema."
+        "texto": "Diagrama de clases."
       },
       {
         "id": 1,
-        "texto": "El modelo solo utiliza diagramas de casos de uso."
+        "texto": "Diagrama de secuencia."
+      },
+      {
+        "id": 2,
+        "texto": "Diagrama de componentes."
       },
       {
         "id": 3,
-        "texto": "El modelo no requiere diagramas, solo código."
+        "texto": "Diagrama de objetos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Uso de Herramienta de Modelado",
-    "titulo": "Prueba de escritorio: trabajo con la herramienta de modelado",
-    "indicacion": "Sigue paso a paso el trabajo del analista con la herramienta de modelado y determina el resultado final del proceso.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Herramientas y Beneficios",
+    "titulo": "¿Cuál de los siguientes es un BENEFICIO del modelado con UML?",
+    "indicacion": "El equipo de desarrollo decide modelar el sistema con UML antes de programar. Selecciona el beneficio que justifica esa decisión.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Abrir la herramienta de modelado (por ejemplo, StarUML o draw.io)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Crear un nuevo proyecto de modelado",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Agregar un diagrama de clases con las entidades del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Guardar el proyecto en el repositorio del equipo",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El diagrama se perdió porque la herramienta no guarda proyectos."
+        "id": 1,
+        "texto": "Evitar por completo la programación del sistema."
       },
       {
         "id": 2,
-        "texto": "La herramienta compiló el diagrama y generó el programa ejecutable."
+        "texto": "Reemplazar la necesidad de documentación escrita."
       },
       {
-        "id": 1,
-        "texto": "El diagrama de clases quedó guardado en el proyecto de modelado del repositorio."
+        "id": 0,
+        "texto": "Comunicar el diseño entre analistas, desarrolladores y clientes de forma estándar."
       },
       {
         "id": 3,
-        "texto": "La herramienta creó automáticamente la base de datos del sistema."
+        "texto": "Hacer que el sistema funcione sin computadores."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Modelado UML",
-    "titulo": "Ordena los pasos del proceso de modelado UML del sistema",
-    "indicacion": "El proceso de modelado inicia con el análisis de los requisitos y termina con la validación de los diagramas. Ordena los bloques correctamente.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del Modelo",
+    "titulo": "Construye el proceso: elaboración de un modelo UML",
+    "indicacion": "El analista va a modelar el sistema con UML. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -482,22 +454,22 @@
       },
       {
         "id": "b3",
-        "texto": "Identificar los elementos que deben representarse en el modelo",
+        "texto": "Identificar los elementos que participan (clases, actores, objetos)",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Seleccionar los diagramas estructurales y de comportamiento adecuados",
+        "texto": "Seleccionar el tipo de diagrama UML según la necesidad",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Elaborar los diagramas en la herramienta de modelado",
+        "texto": "Dibujar el diagrama con la herramienta de modelado",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Validar los diagramas con el equipo y con el cliente",
+        "texto": "Validar el modelo con el equipo y el cliente",
         "tipo": "salida"
       },
       {
@@ -518,10 +490,10 @@
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Elaboración del Modelo",
-    "titulo": "Ordena los pasos para elaborar el modelo UML del sistema de biblioteca",
-    "indicacion": "La elaboración del modelo parte de la documentación de requisitos y culmina con la documentación de las decisiones de diseño. Ordena los bloques.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Construcción de un Diagrama de Clases",
+    "titulo": "Construye el proceso: elaboración de un diagrama de clases",
+    "indicacion": "El analista elabora el diagrama de clases del sistema de pedidos. Ordena los bloques.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -531,27 +503,27 @@
       },
       {
         "id": "b2",
-        "texto": "Revisar la documentación de requisitos del sistema de biblioteca",
+        "texto": "Identificar las clases del sistema a partir de los requisitos",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Elegir la herramienta de modelado disponible en el entorno",
+        "texto": "Definir los atributos de cada clase",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Crear el proyecto de modelado con el nombre del sistema",
+        "texto": "Definir los métodos de cada clase",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Dibujar los diagramas estructurales y de comportamiento",
+        "texto": "Dibujar las asociaciones y la herencia entre las clases",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Documentar las decisiones de diseño del modelo",
+        "texto": "Revisar que el diagrama represente correctamente el sistema",
         "tipo": "salida"
       },
       {
@@ -572,10 +544,10 @@
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Clasificación Incorrecta",
-    "titulo": "Encuentra la falla: el diagrama de secuencia se clasificó como estructural",
-    "indicacion": "El aprendiz elaboró un diagrama de secuencia y lo clasificó en el informe como diagrama estructural. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Herencia Mal Dibujada",
+    "titulo": "Encuentra la falla: la herencia se dibujó como una asociación simple",
+    "indicacion": "En el diagrama de clases, la relación entre 'Animal' y 'Perro' se dibujó con una línea de asociación, pero 'Perro' ES un tipo de 'Animal'. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -583,45 +555,49 @@
         "tipo": "inicio"
       },
       {
-        "label": "Diagrama elaborado: diagrama de secuencia del registro de pedidos",
+        "label": "Identificar las clases 'Animal' y 'Perro'",
         "tipo": "proceso"
       },
       {
-        "label": "Clasificación registrada en el informe: diagrama estructural",
+        "label": "Establecer que 'Perro' hereda de 'Animal'",
         "tipo": "proceso"
       },
       {
-        "label": "El informe se entrega al instructor para su revisión",
-        "tipo": "salida",
+        "label": "Dibujar la relación con una línea de asociación simple (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Validar el diagrama como correcto",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "La clasificación es correcta porque todos los diagramas UML son estructurales."
+        "texto": "La asociación simple es la notación correcta para la herencia."
       },
       {
         "id": 0,
-        "texto": "El diagrama de secuencia es un diagrama de comportamiento, no estructural; la clasificación correcta debe indicar diagrama de comportamiento."
+        "texto": "La herencia se representa con una flecha de triángulo vacío desde la subclase hacia la superclase, no con una asociación simple."
       },
       {
         "id": 2,
-        "texto": "El error es que el diagrama no incluye suficientes actores."
+        "texto": "El error es que la clase 'Perro' no debe existir."
       },
       {
         "id": 3,
-        "texto": "El error es que no se usó una herramienta de modelado."
+        "texto": "El error es que falta un actor en el diagrama."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "UML como Lenguaje de Programación",
-    "titulo": "Encuentra la falla: UML se describe como un lenguaje de programación",
-    "indicacion": "En el informe técnico se afirmó que UML es un lenguaje de programación que se compila para ejecutar. Revisa los pasos e identifica la falla conceptual.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Línea de Vida Continua",
+    "titulo": "Encuentra la falla: la línea de vida se dibujó con línea continua",
+    "indicacion": "En el diagrama de secuencia, la línea de vida del objeto se dibujó como una línea continua, cuando debe ser punteada. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -629,35 +605,35 @@
         "tipo": "inicio"
       },
       {
-        "label": "Afirmación del informe: UML es un lenguaje de programación que se compila y se ejecuta",
+        "label": "Dibujar el objeto 'Cliente' en el diagrama de secuencia",
         "tipo": "proceso"
       },
       {
-        "label": "La afirmación se incluye en la sección de conceptos del informe",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El informe se entrega como parte de la evidencia",
-        "tipo": "salida",
+        "label": "Trazar la línea de vida del objeto con línea continua (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Entregar el diagrama de secuencia para revisión",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "El error es que el informe no menciona la versión de UML utilizada."
-      },
-      {
-        "id": 2,
-        "texto": "La afirmación es correcta porque UML es un lenguaje de programación de bajo nivel."
+        "texto": "La línea continua es la notación correcta para la línea de vida."
       },
       {
         "id": 1,
-        "texto": "UML es un lenguaje de modelado gráfico, no un lenguaje de programación; no se compila ni se ejecuta."
+        "texto": "El error es que el objeto no debe tener nombre."
       },
       {
         "id": 3,
-        "texto": "El error es que UML solo se utiliza para diagramas de base de datos."
+        "texto": "La línea de vida se representa con una línea vertical punteada bajo el objeto, no con línea continua."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que el diagrama de secuencia no usa líneas de vida."
       }
     ],
     "correcta": 2
@@ -790,6 +766,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +840,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1247,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1286,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }
