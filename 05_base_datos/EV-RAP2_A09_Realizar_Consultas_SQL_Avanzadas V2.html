@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluación Práctica - Realizar Consultas SQL Avanzadas</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  .sena-green { color: #39a900; }
+  .bg-sena-green { background-color: #39a900; }
+  .sena-blue { color: #00324d; }
+  .bg-sena-blue { background-color: #00324d; }
+  .flow-node { transition: all 0.2s ease-in-out; }
+  .flow-node:hover { transform: translateY(-2px); }
+  .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+  .badge-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .7; } }
+</style>
+</head>
+<body class="min-h-screen bg-slate-900 text-slate-800 flex flex-col justify-between antialiased selection:bg-emerald-500 selection:text-white">
+
+  <header class="bg-[#00324d] text-white border-b border-slate-700 sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-[#39a900] flex items-center justify-center font-extrabold text-white text-xl shadow-inner">
+          S
+        </div>
+        <div>
+          <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Realizar Consultas SQL Avanzadas</p>
+        </div>
+      </div>
+      <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
+        <span id="header-nombre" class="font-semibold block text-slate-200"></span>
+        <span id="header-ficha" class="text-slate-400 font-mono"></span>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-4 py-6 max-w-5xl flex items-center justify-center">
+
+    <!-- VISTA INICIO -->
+    <div id="vista-inicio" class="w-full bg-white rounded-2xl shadow-2xl overflow-hidden border border-slate-200">
+      <div class="bg-gradient-to-r from-[#00324d] to-slate-800 p-6 sm:p-8 text-white relative">
+        <div class="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-microchip"></i> Formación Práctica Interactiva
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
+        <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
+          Pon en práctica las consultas SQL avanzadas: escribe el JOIN correcto para unir tablas, agrupa y agrega con GROUP BY, COUNT, SUM y AVG, filtra grupos con HAVING, usa subconsultas y predice las filas que devuelve cada consulta real. Sin teoría: aquí se demuestra consultando.
+        </p>
+      </div>
+
+      <div class="p-6 sm:p-8 space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start gap-3">
+            <div class="p-2.5 bg-blue-100 text-blue-700 rounded-lg"><i class="fa-solid fa-sitemap text-lg"></i></div>
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase">Modalidad</p>
+              <p class="text-sm font-bold text-slate-800">Práctica con Diagramas</p>
+            </div>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start gap-3">
+            <div class="p-2.5 bg-emerald-100 text-emerald-700 rounded-lg"><i class="fa-solid fa-list-check text-lg"></i></div>
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase">Retos Prácticos</p>
+              <p class="text-sm font-bold text-slate-800">10 Casos Prácticos</p>
+            </div>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 p-4 rounded-xl flex items-start gap-3">
+            <div class="p-2.5 bg-amber-100 text-amber-700 rounded-lg"><i class="fa-solid fa-award text-lg"></i></div>
+            <div>
+              <p class="text-xs font-semibold text-slate-500 uppercase">Mínimo Aprobatorio</p>
+              <p class="text-sm font-bold text-slate-800">70% (7.0 / 10)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
+          <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
+          <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
+            <li><strong>Elegir la Consulta:</strong> Selecciona el SQL correcto con JOIN, GROUP BY, HAVING y subconsultas.</li>
+<li><strong>Predecir el Resultado:</strong> Ejecuta mentalmente una consulta y determina las filas o el valor que devuelve.</li>
+<li><strong>Completar Sentencias:</strong> Llena los huecos de JOIN, GROUP BY y funciones de agregación.</li>
+<li><strong>Corregir Errores:</strong> Encuentra el fallo de sintaxis o lógica en consultas avanzadas reales.</li>
+          </ul>
+        </div>
+
+        <form id="form-inicio" class="space-y-4 pt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nombre Completo del Aprendiz *</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-user"></i></span>
+                <input id="nombre" type="text" placeholder="Ej. Ana María Gómez" required
+                       class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#39a900] focus:border-transparent transition">
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Número de Ficha de Formación *</label>
+              <div class="relative">
+                <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-hashtag"></i></span>
+                <input id="ficha" type="text" placeholder="Ej. 2671940" required
+                       class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#39a900] focus:border-transparent transition">
+              </div>
+            </div>
+          </div>
+
+          <div id="error-inicio" class="hidden p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-xs font-medium">
+            <i class="fa-solid fa-triangle-exclamation mr-1"></i> Por favor diligencia ambos campos para comenzar.
+          </div>
+
+          <button type="submit" class="w-full bg-[#39a900] hover:bg-emerald-600 text-white font-extrabold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-emerald-500/25 transition transform active:scale-[0.99] flex items-center justify-center gap-2 text-base">
+            <span>Iniciar Evaluación Práctica</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- VISTA EVALUACION -->
+    <div id="vista-preguntas" class="w-full bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden hidden">
+      <!-- Barra superior de estado -->
+      <div class="bg-slate-800 text-white px-6 py-4 border-b border-slate-700 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
+          <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Avance Práctico</span>
+          <span id="num-pregunta-badge" class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 font-mono text-xs font-bold border border-emerald-500/30">
+            Reto <span id="num-actual">1</span> de <span id="num-total">10</span>
+          </span>
+        </div>
+        <div class="w-full sm:w-64 bg-slate-700 rounded-full h-2.5 overflow-hidden">
+          <div id="barra-progreso" class="bg-emerald-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- Tarjeta principal del Reto -->
+      <div class="p-6 sm:p-8">
+        <div class="mb-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span id="categoria-badge" class="px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wide bg-blue-100 text-blue-800">
+              Categoría
+            </span>
+            <span id="tipo-reto-badge" class="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700">
+              Tipo de Reto
+            </span>
+          </div>
+          <h3 id="pregunta-titulo" class="text-lg sm:text-xl font-bold text-slate-900 leading-snug">
+            Cargando reto práctico...
+          </h3>
+          <p id="pregunta-indicacion" class="text-sm text-slate-600 mt-1">
+            Lee atentamente las instrucciones antes de interactuar.
+          </p>
+        </div>
+
+        <div id="contenedor-interactivo" class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-6 mb-6 min-h-[300px] flex flex-col justify-center">
+        </div>
+
+        <div id="caja-feedback" class="hidden mb-6 p-4 rounded-xl text-sm border transition"></div>
+
+        <div class="flex justify-between items-center pt-4 border-t border-slate-200">
+          <button id="btn-anterior" disabled
+                  class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-600 font-bold hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Anterior</span>
+          </button>
+
+          <button id="btn-siguiente" disabled
+                  class="px-6 py-2.5 bg-[#39a900] hover:bg-emerald-600 text-white font-extrabold rounded-xl shadow-md disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-2">
+            <span id="btn-siguiente-texto">Siguiente Reto</span>
+            <i id="btn-siguiente-icono" class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- VISTA RESULTADOS -->
+    <div id="vista-resultados" class="w-full bg-white rounded-2xl shadow-2xl border border-slate-200 p-6 sm:p-10 hidden">
+      <div class="text-center max-w-2xl mx-auto space-y-6">
+
+        <div class="inline-flex items-center justify-center p-3 bg-emerald-50 rounded-full mb-2">
+          <div class="w-16 h-16 rounded-full bg-[#39a900] text-white flex items-center justify-center text-2xl shadow-lg">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+        </div>
+
+        <h2 class="text-3xl font-extrabold text-slate-900">Resultado de la Evaluación</h2>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 inline-block text-left w-full sm:w-auto min-w-[280px]">
+          <p class="text-xs uppercase font-bold text-slate-400">Aprendiz Evaluado</p>
+          <p id="res-nombre" class="font-extrabold text-slate-800 text-base">---</p>
+          <p class="text-xs text-slate-500 mt-1">Ficha: <span id="res-ficha" class="font-mono font-bold text-slate-700">---</span></p>
+        </div>
+
+        <div class="relative w-48 h-48 mx-auto flex items-center justify-center my-4">
+          <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="42" stroke="#e2e8f0" stroke-width="12" fill="none" />
+            <circle id="circulo-resultado" cx="50" cy="50" r="42" stroke="#39a900" stroke-width="12" fill="none"
+                    stroke-dasharray="263.89" stroke-dashoffset="263.89" stroke-linecap="round" class="transition-all duration-1000 ease-out" />
+          </svg>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <span id="res-porcentaje" class="text-4xl font-extrabold text-slate-900">0%</span>
+            <span id="res-puntos" class="text-xs font-semibold text-slate-500 mt-0.5">0 de 10 Aciertos</span>
+          </div>
+        </div>
+
+        <div>
+          <div id="res-badge" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-lg shadow-md">
+          </div>
+        </div>
+
+        <p id="res-mensaje" class="text-sm text-slate-600 max-w-lg mx-auto">
+          Cargando retroalimentación...
+        </p>
+
+        <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 text-left space-y-3">
+          <h4 class="text-xs font-extrabold uppercase text-slate-500 tracking-wider mb-2">Desglose de Desempeño Práctico</h4>
+          <div id="desglose-categorias" class="space-y-2 text-sm">
+          </div>
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 font-medium flex items-center justify-center gap-2">
+          <i class="fa-solid fa-camera"></i>
+          <span>Tome una captura de pantalla completa de esta vista como evidencia de su desempeño para la plataforma SENA.</span>
+        </div>
+
+        <div class="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
+          <button onclick="window.print()" class="px-6 py-3 border border-slate-300 text-slate-700 font-bold rounded-xl hover:bg-slate-100 transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-print"></i>
+            <span>Imprimir Evidencia</span>
+          </button>
+          <button onclick="location.reload()" class="px-6 py-3 bg-[#00324d] hover:bg-slate-800 text-white font-bold rounded-xl shadow-md transition flex items-center justify-center gap-2">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>Reiniciar Evaluación</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Consultas SQL Avanzadas</p>
+  </footer>
+
+  <script>
+  const RETOS = [
+  {
+    "id": 1,
+    "categoria": "Elegir la Consulta",
+    "tipo": "INNER JOIN",
+    "titulo": "Unir ventas con clientes",
+    "indicacion": "Necesitas listar el nombre del cliente y el total de cada venta. ¿Cuál consulta con INNER JOIN es la correcta?",
+    "tipoComp": "sql_consulta",
+    "contexto": "Tablas: ventas (id, cliente_id, total), clientes (id, nombre)",
+    "opciones": [
+      {
+        "id": 1,
+        "sql": "SELECT clientes.nombre, ventas.total FROM ventas INNER JOIN clientes ON ventas.id = clientes.id;"
+      },
+      {
+        "id": 0,
+        "sql": "SELECT clientes.nombre, ventas.total FROM ventas INNER JOIN clientes ON ventas.cliente_id = clientes.id;"
+      },
+      {
+        "id": 2,
+        "sql": "SELECT clientes.nombre, ventas.total FROM ventas, clientes;"
+      },
+      {
+        "id": 3,
+        "sql": "SELECT clientes.nombre, ventas.total FROM ventas LEFT JOIN clientes ON ventas.cliente_id = clientes.id WHERE ventas.total IS NULL;"
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 2,
+    "categoria": "Predecir el Resultado",
+    "tipo": "SUM con GROUP BY",
+    "titulo": "¿Cuánto suma cada cliente?",
+    "indicacion": "Ejecuta mentalmente la consulta y determina el total de ventas de cada cliente.",
+    "tipoComp": "sql_resultado",
+    "consulta": "SELECT clientes.nombre, SUM(ventas.total) AS total FROM ventas INNER JOIN clientes ON ventas.cliente_id = clientes.id GROUP BY clientes.nombre;",
+    "datos": {
+      "encabezados": [
+        "ventas.id",
+        "cliente_id",
+        "total",
+        "clientes.id",
+        "nombre"
+      ],
+      "filas": [
+        [
+          "1",
+          "1",
+          "50000",
+          "1",
+          "Ana"
+        ],
+        [
+          "2",
+          "2",
+          "30000",
+          "2",
+          "Luis"
+        ],
+        [
+          "3",
+          "1",
+          "20000",
+          "1",
+          "Ana"
+        ],
+        [
+          "4",
+          "3",
+          "40000",
+          "3",
+          "Maria"
+        ]
+      ]
+    },
+    "opciones": [
+      {
+        "id": 0,
+        "resultado": "4 filas: Ana (50000), Luis (30000), Ana (20000), Maria (40000)."
+      },
+      {
+        "id": 1,
+        "resultado": "2 filas: Ana (70000) y Luis (30000)."
+      },
+      {
+        "id": 2,
+        "resultado": "3 filas: Ana (70000), Luis (30000) y Maria (40000)."
+      },
+      {
+        "id": 3,
+        "resultado": "La consulta falla porque GROUP BY no se puede usar con SUM."
+      }
+    ],
+    "correcta": 2
+  },
+  {
+    "id": 3,
+    "categoria": "Completar Sentencias",
+    "tipo": "GROUP BY con COUNT",
+    "titulo": "Completa: contar ventas por cliente",
+    "indicacion": "Completa los huecos de la consulta que cuenta cuántas ventas registró cada cliente.",
+    "tipoComp": "sql_completar",
+    "consulta": "SELECT cliente_id, ___(*) AS total_ventas FROM ventas ___ cliente_id;",
+    "opciones": [
+      [
+        "COUNT",
+        "SUM",
+        "AVG",
+        "MAX"
+      ],
+      [
+        "GROUP BY",
+        "WHERE",
+        "ORDER BY",
+        "HAVING"
+      ]
+    ],
+    "correcta": [
+      "COUNT",
+      "GROUP BY"
+    ]
+  },
+  {
+    "id": 4,
+    "categoria": "Elegir la Consulta",
+    "tipo": "HAVING correcto",
+    "titulo": "Filtrar clientes por total acumulado",
+    "indicacion": "Necesitas los clientes cuya suma de ventas supera 35000. ¿Cuál consulta es la correcta?",
+    "tipoComp": "sql_consulta",
+    "contexto": "Tabla: ventas (id, cliente_id, total)",
+    "opciones": [
+      {
+        "id": 3,
+        "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas GROUP BY cliente_id HAVING SUM(total) > 35000;"
+      },
+      {
+        "id": 0,
+        "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas WHERE SUM(total) > 35000 GROUP BY cliente_id;"
+      },
+      {
+        "id": 1,
+        "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas GROUP BY cliente_id WHERE SUM(total) > 35000;"
+      },
+      {
+        "id": 2,
+        "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas HAVING SUM(total) > 35000;"
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 5,
+    "categoria": "Predecir el Resultado",
+    "tipo": "LEFT JOIN",
+    "titulo": "¿Qué filas devuelve el LEFT JOIN?",
+    "indicacion": "Ejecuta mentalmente la consulta y determina qué filas devuelve, incluyendo los clientes sin ventas.",
+    "tipoComp": "sql_resultado",
+    "consulta": "SELECT clientes.nombre, ventas.total FROM clientes LEFT JOIN ventas ON ventas.cliente_id = clientes.id;",
+    "datos": {
+      "encabezados": [
+        "clientes.id",
+        "nombre",
+        "ventas.id",
+        "cliente_id",
+        "total"
+      ],
+      "filas": [
+        [
+          "1",
+          "Ana",
+          "1",
+          "1",
+          "50000"
+        ],
+        [
+          "2",
+          "Luis",
+          "2",
+          "2",
+          "30000"
+        ],
+        [
+          "3",
+          "Maria",
+          "4",
+          "3",
+          "40000"
+        ],
+        [
+          "4",
+          "Sofia",
+          "NULL",
+          "NULL",
+          "NULL"
+        ]
+      ]
+    },
+    "opciones": [
+      {
+        "id": 0,
+        "resultado": "3 filas: Ana (50000), Luis (30000), Maria (40000)."
+      },
+      {
+        "id": 1,
+        "resultado": "4 filas: Ana (50000), Luis (30000), Maria (40000) y Sofia (sin ventas, total NULL)."
+      },
+      {
+        "id": 2,
+        "resultado": "Solo 1 fila: Sofia, porque no tiene ventas."
+      },
+      {
+        "id": 3,
+        "resultado": "La consulta falla porque LEFT JOIN no existe."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 6,
+    "categoria": "Corregir Errores",
+    "tipo": "SUM en WHERE",
+    "titulo": "Encuentra el error: agregado en WHERE",
+    "indicacion": "Se intentó filtrar por el total acumulado, pero la consulta genera un error. ¿Cuál es la falla?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "SELECT cliente_id, SUM(total)",
+        "tipo": "proceso"
+      },
+      {
+        "label": "FROM ventas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "WHERE SUM(total) > 35000",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "GROUP BY cliente_id;",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "La columna cliente_id no existe en ventas."
+      },
+      {
+        "id": 2,
+        "texto": "Falta la llave primaria en la tabla."
+      },
+      {
+        "id": 0,
+        "texto": "SUM(total) no se puede usar en WHERE: las funciones de agregación se filtran con HAVING después de GROUP BY."
+      },
+      {
+        "id": 3,
+        "texto": "La consulta está correcta."
+      }
+    ],
+    "correcta": 2
+  },
+  {
+    "id": 7,
+    "categoria": "Completar Sentencias",
+    "tipo": "INNER JOIN",
+    "titulo": "Completa el JOIN entre ventas y clientes",
+    "indicacion": "Completa los huecos de la consulta que une ventas con clientes.",
+    "tipoComp": "sql_completar",
+    "consulta": "SELECT clientes.nombre, ventas.total FROM ventas ___ JOIN clientes ___ ventas.cliente_id = clientes.id;",
+    "opciones": [
+      [
+        "INNER",
+        "FROM",
+        "WHERE",
+        "SET"
+      ],
+      [
+        "ON",
+        "IN",
+        "LIKE",
+        "AS"
+      ]
+    ],
+    "correcta": [
+      "INNER",
+      "ON"
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Elegir la Consulta",
+    "tipo": "Subconsulta",
+    "titulo": "Clientes con ventas superiores a 30000",
+    "indicacion": "Necesitas los nombres de los clientes que han hecho al menos una venta mayor a 30000, usando una subconsulta. ¿Cuál es la correcta?",
+    "tipoComp": "sql_consulta",
+    "contexto": "Tablas: clientes (id, nombre), ventas (id, cliente_id, total)",
+    "opciones": [
+      {
+        "id": 2,
+        "sql": "SELECT nombre FROM clientes WHERE id IN (SELECT cliente_id FROM ventas WHERE total > 30000);"
+      },
+      {
+        "id": 0,
+        "sql": "SELECT nombre FROM clientes WHERE id = (SELECT cliente_id FROM ventas WHERE total > 30000);"
+      },
+      {
+        "id": 1,
+        "sql": "SELECT nombre FROM clientes WHERE id IN (SELECT total FROM ventas WHERE total > 30000);"
+      },
+      {
+        "id": 3,
+        "sql": "SELECT nombre FROM clientes WHERE total > 30000;"
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Predecir el Resultado",
+    "tipo": "AVG",
+    "titulo": "¿Cuál es el promedio de las ventas?",
+    "indicacion": "Ejecuta mentalmente la función AVG sobre la columna total y determina el valor que devuelve.",
+    "tipoComp": "sql_resultado",
+    "consulta": "SELECT AVG(total) FROM ventas;",
+    "datos": {
+      "encabezados": [
+        "ventas.id",
+        "cliente_id",
+        "total"
+      ],
+      "filas": [
+        [
+          "1",
+          "1",
+          "50000"
+        ],
+        [
+          "2",
+          "2",
+          "30000"
+        ],
+        [
+          "3",
+          "1",
+          "20000"
+        ],
+        [
+          "4",
+          "3",
+          "40000"
+        ]
+      ]
+    },
+    "opciones": [
+      {
+        "id": 0,
+        "resultado": "El promedio es 50000, que es la venta más alta."
+      },
+      {
+        "id": 3,
+        "resultado": "El promedio es 35000: (50000 + 30000 + 20000 + 40000) / 4."
+      },
+      {
+        "id": 1,
+        "resultado": "El promedio es 30000, que es el valor del medio."
+      },
+      {
+        "id": 2,
+        "resultado": "El promedio es 140000, que es la suma de todas las ventas."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Corregir Errores",
+    "tipo": "GROUP BY Faltante",
+    "titulo": "Encuentra el error: falta GROUP BY",
+    "indicacion": "La consulta mezcla una columna normal con una función de agregación y el motor genera un error. ¿Cuál es la falla?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "SELECT cliente_id, SUM(total)",
+        "tipo": "proceso"
+      },
+      {
+        "label": "FROM ventas;",
+        "tipo": "proceso",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "La tabla ventas no tiene la columna total."
+      },
+      {
+        "id": 2,
+        "texto": "SUM no existe como función en SQL."
+      },
+      {
+        "id": 1,
+        "texto": "Falta GROUP BY cliente_id: al combinar cliente_id con SUM(total), la consulta debe agrupar por cliente_id (error 1140 en MySQL)."
+      },
+      {
+        "id": 3,
+        "texto": "La consulta está correcta."
+      }
+    ],
+    "correcta": 2
+  }
+];
+
+  const ICONOS_CATEGORIA = {
+    "Simbología Estándar": ["fa-shapes", "text-blue-600"],
+    "Prueba de Escritorio": ["fa-table-cells", "text-emerald-600"],
+    "Reordenamiento de Bloques": ["fa-diagram-project", "text-purple-600"],
+    "Depuración de Errores": ["fa-bug", "text-amber-600"],
+    "Tablas de Verdad": ["fa-table-list", "text-indigo-600"],
+    "Conectivas Lógicas": ["fa-arrow-right-arrow-left", "text-sky-600"],
+    "Evaluación de Expresiones": ["fa-calculator", "text-rose-600"],
+    "Razonamiento Lógico": ["fa-brain", "text-rose-600"],
+    "Secuencias y Patrones": ["fa-wave-square", "text-lime-600"],
+    "Simbología de Decisión": ["fa-shapes", "text-blue-600"],
+    "Diseño Lógico": ["fa-pen-ruler", "text-indigo-600"],
+    "Implementación": ["fa-code", "text-violet-600"],
+    "Validación": ["fa-circle-check", "text-emerald-600"],
+    "Lógica Condicional": ["fa-code-branch", "text-orange-600"],
+    "Estructuras de Ciclo": ["fa-rotate", "text-cyan-600"],
+    "Ciclos y Contadores": ["fa-rotate", "text-cyan-600"],
+    "Índices y Posiciones": ["fa-list-ol", "text-teal-600"],
+    "Simulación de Arreglos": ["fa-table-cells-large", "text-fuchsia-600"],
+    "Seguimiento de Variables": ["fa-eye", "text-emerald-600"],
+    "Tablas de Rastreo": ["fa-table", "text-indigo-600"],
+    "Técnica de Prueba": ["fa-flask", "text-violet-600"],
+    "Sintaxis PSeInt": ["fa-terminal", "text-slate-600"],
+    "Ejecución de Pseudocódigo": ["fa-play", "text-sky-600"],
+    "Análisis del Problema": ["fa-magnifying-glass", "text-blue-600"],
+    "Solución Integrada": ["fa-cubes", "text-purple-600"],
+    "Automatización VBA": ["fa-bolt", "text-amber-600"],
+    "Sintaxis VBA": ["fa-file-excel", "text-emerald-600"],
+    "Componentes UI": ["fa-cubes-stacked", "text-sky-600"],
+    "Interfaces de Usuario": ["fa-window-maximize", "text-blue-600"],
+    "Wireframes y Prototipos": ["fa-drafting-compass", "text-violet-600"],
+    "Sintaxis de HTML": ["fa-code", "text-orange-600"],
+    "Estructura HTML": ["fa-sitemap", "text-rose-600"],
+    "Formularios Web": ["fa-wpforms", "text-cyan-600"],
+    "Sintaxis CSS": ["fa-palette", "text-pink-600"],
+    "Selectores CSS": ["fa-crosshairs", "text-fuchsia-600"],
+    "Sintaxis JavaScript": ["fa-brands fa-js", "text-yellow-600"],
+    "DOM y Eventos": ["fa-mouse-pointer", "text-indigo-600"],
+    "Framework CSS": ["fa-layer-group", "text-blue-600"],
+    "Validación y Accesibilidad": ["fa-universal-access", "text-teal-600"],
+    "Fundamentos Python": ["fa-python", "text-blue-600"],
+    "Funciones y Módulos": ["fa-puzzle-piece", "text-emerald-600"],
+    "Manejo de Errores": ["fa-triangle-exclamation", "text-red-600"],
+    "Lenguajes de Programación": ["fa-terminal", "text-slate-600"],
+    "Entorno de Desarrollo": ["fa-gears", "text-cyan-600"],
+    "Consumo de APIs": ["fa-plug", "text-violet-600"],
+    "Pruebas Unitarias": ["fa-vial-circle-check", "text-emerald-600"],
+    "Documentación": ["fa-book", "text-indigo-600"],
+    "Buenas Prácticas": ["fa-star", "text-amber-500"],
+    "Sintaxis de Lenguaje": ["fa-keyboard", "text-slate-600"]
+  };
+
+  let estadoApp = {
+    nombre: "",
+    ficha: "",
+    indiceActual: 0,
+    respuestas: new Array(RETOS.length).fill(null),
+    bloquesUsuario: {}
+  };
+
+  const elVistaInicio = document.getElementById('vista-inicio');
+  const elVistaPreguntas = document.getElementById('vista-preguntas');
+  const elVistaResultados = document.getElementById('vista-resultados');
+  const elFormInicio = document.getElementById('form-inicio');
+
+  document.addEventListener('DOMContentLoaded', () => {
+    elFormInicio.addEventListener('submit', iniciarEvaluacion);
+    document.getElementById('btn-anterior').addEventListener('click', retoAnterior);
+    document.getElementById('btn-siguiente').addEventListener('click', retoSiguiente);
+  });
+
+  function iniciarEvaluacion(e) {
+    e.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const ficha = document.getElementById('ficha').value.trim();
+
+    if (!nombre || !ficha) {
+      document.getElementById('error-inicio').classList.remove('hidden');
+      return;
+    }
+
+    estadoApp.nombre = nombre;
+    estadoApp.ficha = ficha;
+
+    document.getElementById('header-nombre').textContent = nombre;
+    document.getElementById('header-ficha').textContent = `Ficha: ${ficha}`;
+    document.getElementById('header-user-info').classList.remove('hidden');
+
+    elVistaInicio.classList.add('hidden');
+    elVistaPreguntas.classList.remove('hidden');
+
+    document.getElementById('num-total').textContent = RETOS.length;
+
+    renderizarRetoActual();
+  }
+
+  function renderizarRetoActual() {
+    const reto = RETOS[estadoApp.indiceActual];
+
+    document.getElementById('num-actual').textContent = estadoApp.indiceActual + 1;
+    document.getElementById('barra-progreso').style.width = `${((estadoApp.indiceActual) / RETOS.length) * 100}%`;
+    document.getElementById('categoria-badge').textContent = reto.categoria;
+    document.getElementById('tipo-reto-badge').textContent = reto.tipo;
+    document.getElementById('pregunta-titulo').textContent = reto.titulo;
+    document.getElementById('pregunta-indicacion').textContent = reto.indicacion;
+
+    const btnAnterior = document.getElementById('btn-anterior');
+    btnAnterior.disabled = estadoApp.indiceActual === 0;
+
+    const esUltimo = estadoApp.indiceActual === RETOS.length - 1;
+    document.getElementById('btn-siguiente-texto').textContent = esUltimo ? "Finalizar Evaluación" : "Siguiente Reto";
+    document.getElementById('btn-siguiente-icono').className = esUltimo ? "fa-solid fa-flag-checkered" : "fa-solid fa-arrow-right";
+
+    const contenedor = document.getElementById('contenedor-interactivo');
+    contenedor.innerHTML = '';
+
+    const cajaFeedback = document.getElementById('caja-feedback');
+    cajaFeedback.classList.add('hidden');
+
+    switch (reto.tipoComp) {
+      case "simbolo_seleccion":
+        renderizarSimboloSeleccion(reto, contenedor);
+        break;
+      case "seleccion_rapida":
+        renderizarSeleccionRapida(reto, contenedor);
+        break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
+      case "prueba_escritorio":
+        renderizarPruebaEscritorio(reto, contenedor);
+        break;
+      case "ordenar_bloques":
+        renderizarOrdenarBloques(reto, contenedor);
+        break;
+      case "depuracion_diagrama":
+      case "depuracion_simbolo":
+        renderizarDepuracion(reto, contenedor);
+        break;
+      case "tabla_verdad":
+        renderizarTablaVerdad(reto, contenedor);
+        break;
+    }
+
+    actualizarEstadoBotonSiguiente();
+  }
+
+  function renderizarSimboloSeleccion(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+
+    let html = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="flow-node border-2 rounded-xl p-4 text-left flex items-center gap-4 transition ${estaSeleccionado ? 'border-[#39a900] bg-emerald-50/80 shadow-md ring-2 ring-[#39a900]/20' : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'}">
+          <div class="flex-shrink-0 bg-slate-100 p-2 rounded-lg border border-slate-200">
+            ${opc.svg}
+          </div>
+          <div>
+            <p class="font-bold text-slate-800 text-sm">${opc.nombre}</p>
+            <p class="text-xs text-slate-500 mt-1">${opc.uso}</p>
+          </div>
+        </button>
+      `;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSeleccionRapida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+
+    let html = `<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl mx-auto w-full">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left p-4 rounded-xl border-2 transition text-sm font-medium flex items-center justify-between gap-3 ${estaSeleccionado ? 'border-[#39a900] bg-emerald-50 text-emerald-950 font-bold shadow-sm ring-2 ring-[#39a900]/20' : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'}">
+          <span class="pr-2">${opc.texto}</span>
+          <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+            ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+          </span>
+        </button>
+      `;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
+  }
+
+  function renderizarPruebaEscritorio(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+
+    let html = `
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-6 bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-center space-y-2 overflow-x-auto">
+          <span class="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1"><i class="fa-solid fa-code"></i> Diagrama del Algoritmo</span>
+    `;
+
+    reto.diagramaSteps.forEach((step, idx) => {
+      let shapeHtml = "";
+
+      if (step.tipo === "inicio" || step.tipo === "fin") {
+        shapeHtml = `<ellipse cx="110" cy="22" rx="100" ry="18" class="fill-emerald-600 stroke-emerald-400 stroke-2"/>`;
+      } else if (step.tipo === "entrada" || step.tipo === "salida") {
+        shapeHtml = `<polygon points="20,5 210,5 195,39 5,39" class="fill-blue-600 stroke-blue-400 stroke-2"/>`;
+      } else if (step.tipo === "proceso") {
+        shapeHtml = `<rect x="10" y="5" width="200" height="34" rx="4" class="fill-purple-600 stroke-purple-400 stroke-2"/>`;
+      } else if (step.tipo === "decision") {
+        shapeHtml = `<polygon points="110,3 200,22 110,41 20,22" class="fill-amber-500 stroke-amber-300 stroke-2"/>`;
+      }
+
+      html += `
+        <div class="flex flex-col items-center">
+          <svg class="w-56 h-11" viewBox="0 0 220 44">
+            ${shapeHtml}
+            <text x="110" y="26" text-anchor="middle" fill="white" font-weight="bold" font-size="10" font-family="monospace">${step.label}</text>
+          </svg>
+          ${idx < reto.diagramaSteps.length - 1 ? `<i class="fa-solid fa-arrow-down text-slate-500 text-xs my-0.5"></i>` : ''}
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+        <div class="md:col-span-6 space-y-3">
+          <p class="text-xs font-bold uppercase text-slate-500 tracking-wider"><i class="fa-solid fa-calculator text-emerald-600 mr-1"></i> Seleccione la respuesta resultante:</p>
+    `;
+
+    reto.opcionesRespuesta.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left p-3.5 rounded-xl border-2 transition font-medium text-sm flex items-center justify-between ${estaSeleccionado ? 'border-[#39a900] bg-emerald-50 text-emerald-900 font-bold shadow-sm' : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'}">
+          <span>${opc.texto}</span>
+          <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+            ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+          </span>
+        </button>
+      `;
+    });
+
+    html += `
+        </div>
+      </div>
+    `;
+
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarOrdenarBloques(reto, contenedor) {
+    if (!estadoApp.bloquesUsuario[reto.id]) {
+      estadoApp.bloquesUsuario[reto.id] = [...reto.bloquesIniciales];
+    }
+
+    const bloquesActuales = estadoApp.bloquesUsuario[reto.id];
+
+    let html = `
+      <div class="space-y-4">
+        <p class="text-xs font-bold uppercase text-slate-500 tracking-wider flex items-center gap-1.5">
+          <i class="fa-solid fa-arrows-up-down text-blue-600"></i> Usa los botones de flecha para ordenar la secuencia desde INICIO hasta FIN:
+        </p>
+
+        <div class="space-y-2 max-w-xl mx-auto">
+    `;
+
+    bloquesActuales.forEach((bloque, idx) => {
+      let badgeStyle = "bg-purple-100 text-purple-700 border-purple-200";
+      let icon = "fa-gear";
+
+      if (bloque.tipo === "inicio" || bloque.tipo === "fin") {
+        badgeStyle = "bg-emerald-100 text-emerald-700 border-emerald-200";
+        icon = "fa-play";
+      } else if (bloque.tipo === "entrada" || bloque.tipo === "salida") {
+        badgeStyle = "bg-blue-100 text-blue-700 border-blue-200";
+        icon = "fa-right-left";
+      } else if (bloque.tipo === "decision") {
+        badgeStyle = "bg-amber-100 text-amber-700 border-amber-200";
+        icon = "fa-arrows-split-up-and-left";
+      }
+
+      html += `
+        <div class="flex items-center gap-2 bg-white border border-slate-300 rounded-xl p-3 shadow-sm hover:border-slate-400 transition">
+          <span class="w-6 text-center font-mono font-bold text-xs text-slate-400">${idx + 1}.</span>
+          <div class="flex-grow flex items-center gap-3">
+            <span class="px-2 py-1 rounded text-[10px] font-bold uppercase border ${badgeStyle} flex items-center gap-1">
+              <i class="fa-solid ${icon}"></i> ${bloque.tipo}
+            </span>
+            <span class="font-mono font-bold text-slate-800 text-sm">${bloque.texto}</span>
+          </div>
+          <div class="flex flex-col gap-1">
+            <button type="button" onclick="moverBloque(${idx}, -1)" ${idx === 0 ? 'disabled class="text-slate-200 cursor-not-allowed px-2"' : 'class="text-slate-600 hover:text-emerald-600 hover:bg-slate-100 rounded px-2 py-0.5 transition"'}>
+              <i class="fa-solid fa-chevron-up text-xs"></i>
+            </button>
+            <button type="button" onclick="moverBloque(${idx}, 1)" ${idx === bloquesActuales.length - 1 ? 'disabled class="text-slate-200 cursor-not-allowed px-2"' : 'class="text-slate-600 hover:text-emerald-600 hover:bg-slate-100 rounded px-2 py-0.5 transition"'}>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+        <div class="text-center pt-2">
+          <p class="text-xs text-slate-500"><i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i> La secuencia se guardará automáticamente al acomodarla.</p>
+        </div>
+      </div>
+    `;
+
+    contenedor.innerHTML = html;
+
+    estadoApp.respuestas[estadoApp.indiceActual] = bloquesActuales.map(b => b.id);
+    actualizarEstadoBotonSiguiente();
+  }
+
+  function renderizarDepuracion(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+
+    let html = `
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+        <div class="md:col-span-5 bg-slate-900 p-4 rounded-xl border border-slate-800 flex flex-col items-center justify-center space-y-2">
+          <span class="text-[10px] font-mono text-amber-400 uppercase tracking-widest mb-1"><i class="fa-solid fa-bug"></i> Diagrama con Falla</span>
+    `;
+
+    if (reto.tipoComp === "depuracion_diagrama") {
+      reto.diagramaError.forEach((step, idx) => {
+        let isError = step.error;
+        let strokeClass = isError ? "stroke-red-500 fill-red-950/80 stroke-2" : "stroke-slate-600 fill-slate-800";
+        html += `
+          <div class="flex flex-col items-center">
+            <svg class="w-52 h-10" viewBox="0 0 200 40">
+              <rect x="5" y="5" width="190" height="30" rx="4" class="${strokeClass}"/>
+              <text x="100" y="24" text-anchor="middle" fill="${isError ? '#fca5a5' : 'white'}" font-weight="bold" font-size="10" font-family="monospace">${step.label}</text>
+            </svg>
+            ${idx < reto.diagramaError.length - 1 ? `<i class="fa-solid fa-arrow-down text-slate-600 text-xs my-0.5"></i>` : ''}
+          </div>
+        `;
+      });
+    } else if (reto.tipoComp === "depuracion_simbolo") {
+      html += `<div class="p-4">${reto.svgError}</div>`;
+    }
+
+    html += `
+        </div>
+        <div class="md:col-span-7 space-y-3">
+          <p class="text-xs font-bold uppercase text-slate-500 tracking-wider"><i class="fa-solid fa-magnifying-glass text-amber-500 mr-1"></i> Selecciona la depuración o corrección correcta:</p>
+    `;
+
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left p-3.5 rounded-xl border-2 transition text-xs sm:text-sm font-medium flex items-center justify-between ${estaSeleccionado ? 'border-[#39a900] bg-emerald-50 text-emerald-950 font-bold shadow-sm' : 'border-slate-200 bg-white hover:border-slate-300 text-slate-700'}">
+          <span class="pr-2">${opc.texto}</span>
+          <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+            ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+          </span>
+        </button>
+      `;
+    });
+
+    html += `
+        </div>
+      </div>
+    `;
+
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarTablaVerdad(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+
+    let html = `
+      <div class="max-w-2xl mx-auto w-full">
+        <div class="bg-white border border-slate-300 rounded-xl overflow-hidden shadow-sm mb-4">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-800 text-white text-xs uppercase tracking-wider">
+                <th class="px-3 py-2.5 text-center font-bold">Expresión: ${reto.expresion}</th>
+              </tr>
+            </thead>
+            <tbody>
+    `;
+
+    reto.filas.forEach((fila, idx) => {
+      const guardadaFila = Array.isArray(guardada) ? guardada[idx] : null;
+      const valores = fila.map(v => v ? "V" : "F").join("  ·  ");
+      html += `
+        <tr class="border-t border-slate-200 ${idx % 2 ? 'bg-slate-50' : 'bg-white'}">
+          <td class="px-4 py-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="font-mono font-bold text-slate-700 text-sm">${reto.variables.map((v, i) => v + " = " + (fila[i] ? "V" : "F")).join(" | ")}</span>
+              <select onchange="seleccionarFilaTabla(${idx}, this.value)"
+                      class="border-2 rounded-lg px-3 py-1.5 text-sm font-bold bg-white ${guardadaFila === null || guardadaFila === undefined ? 'border-slate-300 text-slate-500' : 'border-[#39a900] text-emerald-700'}">
+                <option value="" ${guardadaFila === null || guardadaFila === undefined ? 'selected' : ''}>Seleccionar V o F</option>
+                <option value="V" ${guardadaFila === true ? 'selected' : ''}>Verdadero (V)</option>
+                <option value="F" ${guardadaFila === false ? 'selected' : ''}>Falso (F)</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+      `;
+    });
+
+    html += `
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i>
+          Evalúe la expresión para cada combinación de valores y seleccione si el resultado es Verdadero (V) o Falso (F).</p>
+      </div>
+    `;
+
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarOpcionSimple(idOpcion) {
+    estadoApp.respuestas[estadoApp.indiceActual] = idOpcion;
+    renderizarRetoActual();
+  }
+
+  function seleccionarFilaTabla(idxFila, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].filas.length).fill(null);
+    }
+    const resp = estadoApp.respuestas[estadoApp.indiceActual];
+    if (valor === "V") resp[idxFila] = true;
+    else if (valor === "F") resp[idxFila] = false;
+    else resp[idxFila] = null;
+    renderizarRetoActual();
+  }
+
+  function moverBloque(index, direccion) {
+    const reto = RETOS[estadoApp.indiceActual];
+    const lista = estadoApp.bloquesUsuario[reto.id];
+    const nuevoIndex = index + direccion;
+
+    if (nuevoIndex < 0 || nuevoIndex >= lista.length) return;
+
+    const temp = lista[index];
+    lista[index] = lista[nuevoIndex];
+    lista[nuevoIndex] = temp;
+
+    renderizarRetoActual();
+  }
+
+  function actualizarEstadoBotonSiguiente() {
+    const btnSiguiente = document.getElementById('btn-siguiente');
+    const reto = RETOS[estadoApp.indiceActual];
+    const respuestaDada = estadoApp.respuestas[estadoApp.indiceActual];
+    let estaRespondido = respuestaDada !== null && respuestaDada !== undefined;
+    if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v === true || v === false);
+    }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    btnSiguiente.disabled = !estaRespondido;
+  }
+
+  function retoAnterior() {
+    if (estadoApp.indiceActual > 0) {
+      estadoApp.indiceActual--;
+      renderizarRetoActual();
+    }
+  }
+
+  function retoSiguiente() {
+    if (estadoApp.indiceActual < RETOS.length - 1) {
+      estadoApp.indiceActual++;
+      renderizarRetoActual();
+    } else {
+      evaluarYMostrarResultados();
+    }
+  }
+
+  function evaluarYMostrarResultados() {
+    let puntosTotales = 0;
+    let scoresCategoria = {};
+
+    RETOS.forEach((reto, idx) => {
+      const respUsuario = estadoApp.respuestas[idx];
+      let esCorrecto = false;
+
+      if (reto.tipoComp === "ordenar_bloques") {
+        const ordenCorrecto = reto.ordenCorrecto;
+        if (Array.isArray(respUsuario) && respUsuario.length === ordenCorrecto.length) {
+          esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
+        }
+      } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else {
+        esCorrecto = respUsuario === reto.correcta;
+      }
+
+      if (esCorrecto) {
+        puntosTotales++;
+        scoresCategoria[reto.categoria] = (scoresCategoria[reto.categoria] || 0) + 1;
+      }
+    });
+
+    const porcentaje = Math.round((puntosTotales / RETOS.length) * 100);
+    const aprobado = porcentaje >= 70;
+
+    document.getElementById('res-nombre').textContent = estadoApp.nombre;
+    document.getElementById('res-ficha').textContent = estadoApp.ficha;
+    document.getElementById('res-porcentaje').textContent = `${porcentaje}%`;
+    document.getElementById('res-puntos').textContent = `${puntosTotales} de ${RETOS.length} Retos Aprobados`;
+
+    const contDesglose = document.getElementById('desglose-categorias');
+    contDesglose.innerHTML = '';
+    const ordenCategorias = [...new Set(RETOS.map(r => r.categoria))];
+    ordenCategorias.forEach(cat => {
+      const total = RETOS.filter(r => r.categoria === cat).length;
+      const logrado = scoresCategoria[cat] || 0;
+      const icono = (ICONOS_CATEGORIA[cat] || ["fa-microchip", "text-slate-600"]);
+      const row = document.createElement('div');
+      row.className = "flex justify-between items-center";
+      row.innerHTML = `
+        <span class="text-slate-700 font-medium"><i class="fa-solid ${icono[0]} ${icono[1]} w-5"></i> ${cat}:</span>
+        <span class="font-bold font-mono">${logrado}/${total}</span>`;
+      contDesglose.appendChild(row);
+    });
+
+    const badge = document.getElementById('res-badge');
+    const mensaje = document.getElementById('res-mensaje');
+
+    if (aprobado) {
+      badge.className = "inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-lg shadow-md bg-emerald-600 text-white badge-pulse";
+      badge.innerHTML = `<i class="fa-solid fa-circle-check"></i> APROBADO`;
+      mensaje.textContent = `¡Felicitaciones! Has demostrado una excelente competencia técnica en los retos prácticos de esta actividad.`;
+    } else {
+      badge.className = "inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-extrabold text-lg shadow-md bg-red-600 text-white";
+      badge.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> NO APROBADO (Requerido: 70%)`;
+      mensaje.textContent = `Te recomendamos repasar los conceptos de esta actividad, practicar con los bancos de ejercicios y presentar un nuevo intento.`;
+    }
+
+    elVistaPreguntas.classList.add('hidden');
+    elVistaResultados.classList.remove('hidden');
+
+    setTimeout(() => {
+      const circulo = document.getElementById('circulo-resultado');
+      const circunferencia = 263.89;
+      const offset = circunferencia - (porcentaje / 100) * circunferencia;
+      circulo.style.strokeDashoffset = offset;
+      circulo.setAttribute('stroke', aprobado ? '#39a900' : '#dc2626');
+    }, 100);
+  }
+  </script>
+</body>
+</html>
