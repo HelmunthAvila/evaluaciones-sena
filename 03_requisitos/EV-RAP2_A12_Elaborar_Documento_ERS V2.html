@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Elaborar el Documento ERS</title>
+<title>Evaluación Práctica - Elaboración del Documento ERS</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración del documento de Especificación de Requisitos de Software (ERS): redacción de requisitos verificables, completos y consistentes, sin ambigüedad, y organización del contenido según la estructura establecida, mediante retos prácticos interactivos.
+          Pon en práctica la redacción del documento ERS con calidad: decide cuál enunciado es verificable y sin ambigüedad, ordena el proceso de redacción y revisión de completitud, corrige un ERS con requisitos no verificables y contradictorios, y sigue el proceso de depuración para determinar cuántos requisitos quedan. Sin teoría: aquí se demuestra redactando requisitos de calidad.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Evaluar la calidad de los enunciados de requisitos y aplicar los criterios de redacción.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer mentalmente la revisión y redacción de requisitos para determinar su validez.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos de redacción de un requisito y del proceso de elaboración del ERS.</li>
-<li><strong>Depuración de Errores:</strong> Detectar requisitos ambiguos, incompletos o no verificables y aplicar la corrección.</li>
+            <li><strong>Análisis del Problema:</strong> Decide cuál enunciado es verificable, completo y sin ambigüedad.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla el proceso de redacción y revisión del ERS.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra requisitos no verificables y contradicciones en el ERS.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de depuración y determina el resultado final.</li>
           </ul>
         </div>
 
@@ -243,7 +243,7 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Elaborar el Documento ERS</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Elaboración del Documento ERS</p>
   </footer>
 
   <script>
@@ -251,170 +251,356 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Calidad del Requisito",
-    "titulo": "¿Qué característica debe cumplir un requisito para poder comprobar que el sistema lo satisface?",
-    "indicacion": "Un requisito bien redactado permite confirmar su cumplimiento mediante una prueba. Selecciona la característica correcta.",
+    "tipo": "Requisito Verificable",
+    "titulo": "¿Cuál enunciado es verificable?",
+    "indicacion": "Selecciona el requisito que se puede comprobar con una prueba objetiva.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Debe ser subjetivo para admitir varias interpretaciones."
-      },
-      {
-        "id": 3,
-        "texto": "Debe ser verificable: permitir comprobar mediante una prueba si se cumple."
+        "texto": "'El sistema debe ser amigable.'"
       },
       {
         "id": 1,
-        "texto": "Debe describir la solución tecnológica."
+        "texto": "'El sistema debe responder cada consulta en menos de 3 segundos.'"
       },
       {
         "id": 2,
-        "texto": "Debe mencionar los nombres de los desarrolladores."
+        "texto": "'El sistema debe funcionar bien.'"
+      },
+      {
+        "id": 3,
+        "texto": "'El sistema debe verse moderno.'"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Redacción Correcta",
-    "titulo": "¿Cuál de los siguientes enunciados es un requisito funcional bien redactado?",
-    "indicacion": "Un requisito funcional describe una capacidad del sistema de forma clara y medible. Selecciona el enunciado que cumple estas condiciones.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Redacción del ERS",
+    "titulo": "Construye el proceso: redactar el ERS",
+    "indicacion": "Ordena los pasos que sigue el analista para redactar el ERS con requisitos de calidad.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 1,
-        "texto": "'El sistema debe ser fácil de usar para todos.'"
+        "id": "b1",
+        "texto": "Verificar la consistencia entre todos los requisitos",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "'El sistema debe procesar los datos rápido.'"
+        "id": "b2",
+        "texto": "Redactar cada requisito con la estructura 'El sistema debe...'",
+        "tipo": "proceso"
       },
       {
-        "id": 0,
-        "texto": "'El sistema debe permitir al auxiliar de facturación registrar clientes con nombre, documento y teléfono, y mostrar un mensaje de confirmación.'"
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 3,
-        "texto": "'El sistema debe mejorar la imagen de la empresa.'"
+        "id": "b4",
+        "texto": "Revisar que cada requisito sea verificable y sin ambigüedad",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Asignar un identificador único a cada requisito (RF-01, RF-02)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Entregar el ERS para validación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b5",
+      "b4",
+      "b1",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Ambigüedad",
-    "titulo": "El enunciado 'el sistema debe responder rápido' aparece en un ERS. ¿Qué defecto presenta?",
-    "indicacion": "Al redactar requisitos deben evitarse términos que no permitan medir el cumplimiento. Identifica el defecto del enunciado.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Corregir el Documento",
+    "tipo": "Requisito No Verificable",
+    "titulo": "Encuentra el error: requisito sin comprobación",
+    "indicacion": "El ERS contiene un requisito que no se puede comprobar. Identifica la falla y su corrección.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "RF-01: 'El sistema debe registrar el nombre y la cédula del cliente'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "RF-02: 'El sistema debe hacer las cosas bien' (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "RF-03: 'El sistema debe calcular el IVA de la factura'",
+        "tipo": "proceso"
+      }
+    ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "Es un requisito correcto porque describe el comportamiento del sistema."
-      },
-      {
         "id": 1,
-        "texto": "Es un requisito no funcional perfectamente definido."
-      },
-      {
-        "id": 3,
-        "texto": "Es un requisito completo porque incluye al sistema."
+        "texto": "El documento está correcto."
       },
       {
         "id": 2,
-        "texto": "Es ambiguo y no verificable: no define en cuánto tiempo ni bajo qué condiciones debe responder."
+        "texto": "RF-01 es ambiguo."
+      },
+      {
+        "id": 3,
+        "texto": "Falta la introducción."
+      },
+      {
+        "id": 0,
+        "texto": "RF-02 no es verificable: 'hacer las cosas bien' no se puede comprobar; debe reescribirse con un resultado concreto."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Consistencia",
-    "titulo": "Dos requisitos del ERS se contradicen entre sí. ¿Qué atributo de calidad del documento se está incumpliendo?",
-    "indicacion": "Los requisitos de un mismo documento no pueden oponerse. Selecciona el atributo que se viola en esta situación.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Depuración del ERS",
+    "titulo": "¿Cuántos requisitos quedan en el ERS?",
+    "indicacion": "Ejecuta mentalmente el proceso de depuración del ERS y determina cuántos requisitos quedan documentados.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "id": 1,
-        "texto": "Consistencia."
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El ERS contiene 20 requisitos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "La revisión encuentra: 3 ambiguos, 2 no verificables y 1 duplicado",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Se corrigen los 3 ambiguos y los 2 no verificables",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Se elimina el requisito duplicado",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "19 requisitos."
       },
       {
         "id": 0,
-        "texto": "Completitud."
+        "texto": "17 requisitos."
+      },
+      {
+        "id": 1,
+        "texto": "20 requisitos."
       },
       {
         "id": 2,
-        "texto": "Trazabilidad."
-      },
-      {
-        "id": 3,
-        "texto": "Modularidad."
+        "texto": "21 requisitos."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Evaluación de Requisito",
-    "titulo": "Prueba de escritorio: defecto de un enunciado de requisito",
-    "indicacion": "Ejecuta mentalmente la revisión del enunciado y determina el defecto que impide considerarlo un buen requisito.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Enunciado: 'el sistema debe manejar varios datos de los clientes'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Aplicar los criterios: verificable, completo, sin ambigüedad",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El término 'varios datos' no define cuáles ni cuántos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: el enunciado es ambiguo e incompleto",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El enunciado es completo y verificable."
-      },
+    "categoria": "Análisis del Problema",
+    "tipo": "Enunciado Ambiguo",
+    "titulo": "¿Qué problema tiene este requisito?",
+    "indicacion": "El ERS dice: 'El sistema debe procesar datos'. Analiza el enunciado y selecciona el problema principal.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 1,
-        "texto": "El enunciado es ambiguo e incompleto: no especifica qué datos ni sus características."
+        "texto": "Usa demasiado código."
+      },
+      {
+        "id": 0,
+        "texto": "Es ambiguo e incompleto: no indica qué datos ni qué procesamiento debe hacer."
       },
       {
         "id": 2,
-        "texto": "El enunciado es correcto porque menciona al sistema."
+        "texto": "Es demasiado largo."
       },
       {
         "id": 3,
-        "texto": "El enunciado es un requisito no funcional de rendimiento."
+        "texto": "No tiene ningún problema."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "De Necesidad a Requisito",
+    "titulo": "Construye el proceso: convertir la necesidad en requisito",
+    "indicacion": "Ordena los pasos para transformar una necesidad vaga del cliente en un requisito verificable.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Definir el criterio medible: tiempo máximo de respuesta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "El cliente dice: 'el sistema debe ser rápido'",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Verificar que el enunciado sea comprobable con una prueba",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Redactar: 'El sistema debe responder en menos de 2 segundos'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b1",
+      "b5",
+      "b4",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Contradicción entre Requisitos",
+    "titulo": "Encuentra el error: requisitos contradictorios",
+    "indicacion": "Dos requisitos del ERS se contradicen y el documento fue aprobado sin revisar la consistencia. ¿Cuál es la falla?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "RF-05: 'La contraseña debe tener mínimo 4 caracteres'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "RF-09: 'La contraseña debe tener mínimo 12 caracteres' (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El ERS se aprobó sin revisar la consistencia",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 2,
+        "texto": "Falta el glosario."
+      },
+      {
+        "id": 3,
+        "texto": "Las contraseñas no son un requisito."
+      },
+      {
+        "id": 1,
+        "texto": "RF-05 y RF-09 se contradicen; debe unificarse el criterio de longitud de la contraseña antes de aprobar el ERS."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Revisión de Completitud",
+    "titulo": "Construye el proceso: verificar completitud",
+    "indicacion": "Ordena los pasos para verificar que el ERS esté completo frente a las funciones identificadas.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Redactar los requisitos faltantes",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Listar las funciones identificadas en el análisis",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Confirmar que el ERS cubre todas las funciones",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que cada función tenga su requisito en el ERS",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Marcar las funciones sin requisito asociado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b5",
+      "b6",
+      "b1",
+      "b4",
+      "b7"
+    ]
+  },
+  {
+    "id": 9,
     "categoria": "Prueba de Escritorio",
-    "tipo": "Redacción Verificable",
-    "titulo": "Prueba de escritorio: conversión a requisito verificable",
-    "indicacion": "Sigue mentalmente el procedimiento de redacción y determina el enunciado verificable resultante.",
+    "tipo": "Fusión de Requisitos",
+    "titulo": "¿Cuántos requisitos quedan después de la fusión?",
+    "indicacion": "Sigue el proceso de depuración del ERS y determina cuántos requisitos quedan documentados.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
       {
@@ -422,20 +608,16 @@
         "tipo": "inicio"
       },
       {
-        "label": "Necesidad expresada: 'el sistema debe guardar bien los pedidos'",
+        "label": "El ERS contiene 15 requisitos aprobados",
         "tipo": "proceso"
       },
       {
-        "label": "Precisar la acción, los datos y el resultado esperado",
+        "label": "En la revisión final se detecta que RF-07 y RF-08 describen la misma función",
         "tipo": "proceso"
       },
       {
-        "label": "Definir el criterio de aceptación medible",
+        "label": "Se fusionan en un solo requisito RF-07",
         "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: 'el sistema debe registrar los pedidos con código, fecha, cliente y valor total, y permitir consultarlos por código'",
-        "tipo": "salida"
       },
       {
         "label": "Fin",
@@ -445,219 +627,46 @@
     "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "'El sistema debe guardar bien los pedidos.'"
-      },
-      {
-        "id": 1,
-        "texto": "'El sistema debe ser confiable con la información.'"
+        "texto": "15 requisitos."
       },
       {
         "id": 2,
-        "texto": "'El sistema debe registrar los pedidos con código, fecha, cliente y valor total, y permitir consultarlos por código.'"
-      },
-      {
-        "id": 3,
-        "texto": "'El sistema debe usar una base de datos moderna.'"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Redacción de Requisito",
-    "titulo": "Ordena los pasos para redactar un requisito funcional",
-    "indicacion": "La redacción de un requisito sigue un procedimiento que garantiza claridad y verificabilidad. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar el actor que ejecuta la acción",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Definir la acción que el sistema debe realizar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Especificar los datos de entrada y el resultado esperado",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Agregar el criterio de aceptación medible",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Revisar que el enunciado no sea ambiguo ni incompleto",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Elaboración",
-    "titulo": "Ordena el proceso de elaboración del documento ERS",
-    "indicacion": "La elaboración del ERS inicia con la recolección de información y culmina con la aprobación del documento. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Recopilar la información mediante entrevistas y análisis de documentos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Clasificar los requisitos en funcionales y no funcionales",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Redactar cada requisito con claridad y verificabilidad",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Revisar el documento contra los criterios de calidad",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Presentar el ERS al cliente para su aprobación",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Requisito Ambiguo",
-    "titulo": "Encuentra la falla: requisito con términos subjetivos",
-    "indicacion": "El equipo redactó un requisito de seguridad en el ERS. Revisa los pasos e identifica el defecto del enunciado.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Redactar el requisito: 'el sistema debe tener un acceso seguro a los datos'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Verificar que el enunciado sea claro para el cliente",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Incluir el requisito en el ERS y declararlo aprobado",
-        "tipo": "salida",
-        "error": true
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El requisito es correcto porque menciona la seguridad."
+        "texto": "14 requisitos."
       },
       {
         "id": 1,
-        "texto": "El requisito es ambiguo y no verificable: 'acceso seguro' no define el mecanismo ni el nivel de protección exigido."
-      },
-      {
-        "id": 2,
-        "texto": "La falla es que el requisito no menciona al sistema."
+        "texto": "16 requisitos."
       },
       {
         "id": 3,
-        "texto": "La falla es que el ERS no admite requisitos de seguridad."
+        "texto": "13 requisitos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Requisito Incompleto",
-    "titulo": "Encuentra la falla: el requisito no define el resultado esperado",
-    "indicacion": "El analista redactó un requisito del módulo de pagos. Revisa los pasos e identifica por qué el enunciado está incompleto.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Redactar el requisito: 'el sistema debe recibir el pago del cliente'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Considerar que la acción de recibir el pago es suficiente",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Aprobar el requisito sin definir los datos de entrada ni la respuesta del sistema",
-        "tipo": "salida",
-        "error": true
-      }
-    ],
+    "categoria": "Análisis del Problema",
+    "tipo": "Calidad del ERS",
+    "titulo": "¿Qué característica del ERS se viola?",
+    "indicacion": "RF-05 exige una contraseña de mínimo 4 caracteres y RF-09 exige mínimo 12. ¿Qué característica de calidad del ERS se está violando?",
+    "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "El requisito es correcto porque la acción está definida."
+        "id": 0,
+        "texto": "Completitud."
       },
       {
         "id": 2,
-        "texto": "La falla es que los pagos no son parte del sistema."
+        "texto": "Verificabilidad."
       },
       {
-        "id": 0,
-        "texto": "El requisito está incompleto: no especifica los datos del pago, el medio ni la confirmación que el sistema debe mostrar."
+        "id": 1,
+        "texto": "Consistencia: los requisitos no deben contradecirse entre sí."
       },
       {
         "id": 3,
-        "texto": "La falla es que el requisito debe redactarse en inglés."
+        "texto": "Trazabilidad."
       }
     ],
     "correcta": 2
@@ -790,6 +799,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +873,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1280,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1319,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

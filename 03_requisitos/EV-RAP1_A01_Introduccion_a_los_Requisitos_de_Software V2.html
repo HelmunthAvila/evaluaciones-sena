@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la introducción a los requisitos de software: concepto de requisito, clasificación en requisitos funcionales y no funcionales, importancia de una especificación clara y el ciclo de vida de los requisitos, mediante retos prácticos interactivos.
+          Demuestra que sabes trabajar con requisitos de software en un caso real: convierte las necesidades del cliente en enunciados claros, clasifica requisitos funcionales y no funcionales, ordena el ciclo de vida del requisito y corrige un documento de especificación mal redactado. Sin teoría: aquí se demuestra escribiendo y depurando requisitos.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Concepto de requisito, clasificación funcional y no funcional, e importancia de la especificación.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la clasificación de requisitos y el ciclo de requisitos y predecir el resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las fases del ciclo de requisitos y los pasos para redactar un buen requisito.</li>
-<li><strong>Depuración de Errores:</strong> Detectar requisitos ambiguos o mal clasificados y aplicar la corrección adecuada.</li>
+            <li><strong>Análisis del Problema:</strong> Redacta y clasifica requisitos a partir de necesidades reales.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla el ciclo de vida del requisito y sus fases.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra requisitos ambiguos o mal clasificados en el ERS.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el ciclo del requisito y determina su estado o validez.</li>
           </ul>
         </div>
 
@@ -251,26 +251,26 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Concepto de Requisito",
-    "titulo": "¿Qué es un requisito de software?",
-    "indicacion": "El requisito expresa lo que el sistema debe hacer o las condiciones que debe cumplir. Selecciona la definición correcta.",
+    "tipo": "Redacción de Requisito",
+    "titulo": "¿Qué enunciado es un requisito de software?",
+    "indicacion": "En una reunión, el cliente dice: 'Quiero que el sistema guarde los datos de mis clientes para poder buscarlos después'. Selecciona el enunciado que convierte esta necesidad en un REQUISITO de software.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 1,
-        "texto": "Es el lenguaje de programación usado para construir el sistema"
+        "texto": "'El sistema debe ser moderno.'"
       },
       {
         "id": 0,
-        "texto": "Es una condición o capacidad que el sistema debe cumplir para satisfacer una necesidad del usuario"
+        "texto": "'El sistema debe registrar y consultar los datos de los clientes.'"
       },
       {
         "id": 2,
-        "texto": "Es el contrato de mantenimiento del sistema"
+        "texto": "'El cliente quiere algo bueno.'"
       },
       {
         "id": 3,
-        "texto": "Es el diseño gráfico de la interfaz del sistema"
+        "texto": "'Hay que programar rápido.'"
       }
     ],
     "correcta": 1
@@ -278,26 +278,26 @@
   {
     "id": 2,
     "categoria": "Análisis del Problema",
-    "tipo": "Requisito Funcional",
-    "titulo": "El enunciado \"El sistema debe permitir registrar clientes\" corresponde a un requisito...",
-    "indicacion": "Los requisitos se clasifican según lo que el sistema hace o las propiedades que debe tener. Selecciona la clasificación correcta del enunciado.",
+    "tipo": "Funcional o No Funcional",
+    "titulo": "¿Qué tipo de requisito es este enunciado?",
+    "indicacion": "El cliente dice: 'El sistema debe permitir que solo el administrador elimine un cliente'. ¿Cómo se clasifica este enunciado?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "No funcional"
-      },
-      {
-        "id": 2,
-        "texto": "De hardware"
+        "id": 3,
+        "texto": "Requisito de rendimiento del sistema."
       },
       {
         "id": 1,
-        "texto": "Funcional"
+        "texto": "Funcional: describe la acción de eliminar un cliente."
       },
       {
-        "id": 3,
-        "texto": "De mantenimiento"
+        "id": 0,
+        "texto": "No funcional de seguridad: restringe el acceso a una operación del sistema."
+      },
+      {
+        "id": 2,
+        "texto": "No es un requisito, es una sugerencia."
       }
     ],
     "correcta": 2
@@ -305,207 +305,66 @@
   {
     "id": 3,
     "categoria": "Análisis del Problema",
-    "tipo": "Requisito No Funcional",
-    "titulo": "El enunciado \"El sistema debe responder a cada consulta en menos de dos segundos\" corresponde a un requisito...",
-    "indicacion": "Este tipo de requisito describe propiedades de calidad del sistema, no funciones específicas. Selecciona la clasificación correcta.",
+    "tipo": "Importancia de los Requisitos",
+    "titulo": "¿Qué práctica evitó construir lo que nadie pidió?",
+    "indicacion": "En un proyecto mal gestionado, el equipo implementó una pantalla que el cliente nunca solicitó. ¿Qué práctica evitó que esto ocurriera en proyectos bien gestionados?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Funcional"
-      },
-      {
-        "id": 1,
-        "texto": "De base de datos"
+        "id": 2,
+        "texto": "Entregar el sistema sin revisar nada."
       },
       {
         "id": 3,
-        "texto": "De interfaz"
+        "texto": "Reducir las reuniones con el cliente."
       },
       {
-        "id": 2,
-        "texto": "No funcional"
+        "id": 1,
+        "texto": "Programar primero y preguntar después."
+      },
+      {
+        "id": 0,
+        "texto": "Documentar y validar los requisitos con el cliente antes de construir el sistema."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Importancia de los Requisitos",
-    "titulo": "¿Por qué es importante especificar correctamente los requisitos al inicio del proyecto?",
-    "indicacion": "Una especificación deficiente genera retrabajo y costos adicionales. Selecciona la razón principal.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 3,
-        "texto": "Porque evita malentendidos con el cliente y reduce los costos de corregir errores en etapas avanzadas"
-      },
-      {
-        "id": 0,
-        "texto": "Porque elimina la necesidad de probar el software"
-      },
-      {
-        "id": 1,
-        "texto": "Porque acelera la escritura del código sin revisar nada"
-      },
-      {
-        "id": 2,
-        "texto": "Porque reemplaza el manual de usuario"
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Clasificación de Requisitos",
-    "titulo": "Prueba de escritorio: contar los requisitos funcionales de una lista",
-    "indicacion": "Clasifica mentalmente cada enunciado e indica cuántos requisitos funcionales hay en la lista.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "R1: El sistema debe registrar los pedidos de los clientes",
-        "tipo": "proceso"
-      },
-      {
-        "label": "R2: El sistema debe operar en un navegador compatible con Windows 10",
-        "tipo": "proceso"
-      },
-      {
-        "label": "R3: El sistema debe calcular el total de cada factura",
-        "tipo": "proceso"
-      },
-      {
-        "label": "R4: El sistema debe respaldar la información diariamente",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Contar los requisitos que describen funciones del sistema",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "4 requisitos funcionales"
-      },
-      {
-        "id": 2,
-        "texto": "2 requisitos funcionales"
-      },
-      {
-        "id": 1,
-        "texto": "3 requisitos funcionales"
-      },
-      {
-        "id": 3,
-        "texto": "1 requisito funcional"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ciclo de Requisitos",
-    "titulo": "Prueba de escritorio: identificar la fase que sigue a la validación",
-    "indicacion": "El ciclo de requisitos tiene fases ordenadas. Sigue mentalmente la secuencia e indica qué fase continúa después de la validación.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Elicitación: recoger las necesidades de los usuarios",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Análisis: organizar y priorizar los requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Especificación: documentar los requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Validación: confirmar con el usuario que los requisitos son correctos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Identificar la fase siguiente del ciclo",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "La codificación del sistema"
-      },
-      {
-        "id": 2,
-        "texto": "La eliminación de todos los requisitos no funcionales"
-      },
-      {
-        "id": 1,
-        "texto": "La gestión de requisitos, que controla los cambios y mantiene la trazabilidad"
-      },
-      {
-        "id": 3,
-        "texto": "La instalación del sistema en producción"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ciclo de Requisitos",
-    "titulo": "Ordena las fases del ciclo de requisitos",
-    "indicacion": "El ciclo inicia con la recolección de necesidades y termina con la gestión de los cambios. Ordena los bloques correctamente.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Ciclo de Vida del Requisito",
+    "titulo": "Construye el proceso: ciclo de vida del requisito",
+    "indicacion": "Ordena las fases del ciclo de vida de los requisitos, desde la recolección hasta el control de cambios.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
         "id": "b1",
+        "texto": "Especificación: documentar cada requisito por escrito",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Elicitación: recoger las necesidades de los usuarios",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
-        "texto": "Análisis: organizar, clasificar y priorizar los requisitos",
+        "texto": "Elicitación: recolectar las necesidades de los interesados",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Especificación: documentar los requisitos en el documento correspondiente",
+        "texto": "Análisis: depurar, clasificar y priorizar los requisitos",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Validación: confirmar con el usuario que los requisitos son correctos y completos",
+        "texto": "Validación: confirmar con el cliente que los requisitos son correctos",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Gestión: controlar los cambios y mantener la trazabilidad",
+        "texto": "Gestión: controlar cambios y versiones del documento",
         "tipo": "proceso"
       },
       {
@@ -515,21 +374,69 @@
       }
     ],
     "ordenCorrecto": [
-      "b1",
       "b2",
       "b3",
       "b4",
+      "b1",
       "b5",
       "b6",
       "b7"
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Redacción de Requisitos",
-    "titulo": "Ordena los pasos para redactar un buen requisito funcional",
-    "indicacion": "El proceso inicia conociendo la necesidad del usuario y termina con la aprobación del requisito. Ordena los bloques correctamente.",
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Redacción de un Requisito",
+    "titulo": "Construye el proceso: redacción de un requisito",
+    "indicacion": "Ordena los pasos para redactar correctamente un requisito a partir de la necesidad de un usuario.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Verificar que el enunciado sea claro, completo y verificable",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "Identificar la necesidad concreta del usuario",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Redactar el enunciado con la estructura 'El sistema debe ...'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Revisar el enunciado con el interesado y ajustarlo si es necesario",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b2",
+      "b3",
+      "b4",
+      "b1",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "De la Necesidad al Documento",
+    "titulo": "Construye el proceso: de la necesidad al ERS",
+    "indicacion": "Ordena los pasos que sigue el analista para llevar una necesidad del cliente al documento de especificación de requisitos.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -539,36 +446,26 @@
       },
       {
         "id": "b2",
-        "texto": "Identificar la necesidad real del usuario",
+        "texto": "Escuchar al usuario y registrar sus necesidades",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Redactar el enunciado en lenguaje claro, sin tecnicismos innecesarios",
+        "texto": "Traducir cada necesidad en un enunciado técnico",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Usar el formato \"El sistema debe...\" para iniciar el requisito",
+        "texto": "Clasificar el requisito como funcional o no funcional",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Verificar que el requisito sea medible y verificable",
+        "texto": "Registrar el requisito en el documento de especificación",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Revisar el requisito con el usuario",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Aprobar el requisito",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -579,99 +476,199 @@
       "b3",
       "b4",
       "b5",
-      "b6",
-      "b7",
-      "b8"
+      "b6"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Requisito Ambiguo",
-    "titulo": "Encuentra la falla: el requisito no se puede verificar",
-    "indicacion": "El documento contiene el requisito \"El sistema debe procesar muchos datos rápidamente\", pero el equipo no puede comprobarlo. Revisa la secuencia e identifica la falla.",
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Requisito No Verificable",
+    "titulo": "Encuentra el error: requisito ambiguo en el ERS",
+    "indicacion": "El borrador del ERS tiene un requisito que no se puede verificar. ¿Cuál es el problema?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "El usuario pide que el sistema sea rápido",
+        "label": "REQ-001: El sistema debe calcular el IVA de cada factura.",
         "tipo": "proceso"
       },
       {
-        "label": "Redactar el requisito: \"El sistema debe procesar muchos datos rápidamente\"",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Intentar verificar el requisito con una prueba de rendimiento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El equipo no puede comprobar si el requisito se cumple",
-        "tipo": "salida",
+        "label": "REQ-002: El sistema debe ser fácil de usar. (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "REQ-003: El sistema debe imprimir el comprobante de venta.",
+        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "El requisito debe eliminarse porque los requisitos de rendimiento no existen."
-      },
-      {
-        "id": 0,
-        "texto": "El requisito es ambiguo: palabras como \"muchos\" y \"rápidamente\" no son medibles; debe definirse un valor concreto, por ejemplo, procesar 10 000 registros en menos de 3 segundos."
+        "texto": "REQ-001 está mal porque el IVA se calcula a mano."
       },
       {
         "id": 2,
-        "texto": "La falla es que el usuario no sabe lo que quiere."
+        "texto": "REQ-003 está mal porque imprimir no es una función del sistema."
       },
       {
         "id": 3,
-        "texto": "El requisito debe escribirse en inglés para poder verificarlo."
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 0,
+        "texto": "REQ-002 no es verificable: 'fácil de usar' es subjetivo; debe cuantificarse, por ejemplo con tiempos de aprendizaje o criterios de usabilidad."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
+    "tipo": "Requisito Mal Clasificado",
+    "titulo": "Encuentra el error: clasificación incorrecta",
+    "indicacion": "El analista clasificó los requisitos del proyecto en el documento. Uno está MAL clasificado. ¿Cuál?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "REQ-004: El sistema debe registrar la entrada y salida de mercancía → Funcional",
+        "tipo": "proceso"
+      },
+      {
+        "label": "REQ-005: El sistema debe estar disponible el 99% del tiempo → No funcional",
+        "tipo": "proceso"
+      },
+      {
+        "label": "REQ-006: El sistema debe generar el reporte de ventas → No funcional (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "REQ-006 está mal: generar un reporte es una acción que el sistema realiza, por lo tanto es un requisito funcional."
+      },
+      {
+        "id": 1,
+        "texto": "REQ-004 está mal: registrar mercancía es no funcional."
+      },
+      {
+        "id": 2,
+        "texto": "REQ-005 está mal: la disponibilidad es un requisito funcional."
+      },
+      {
+        "id": 3,
+        "texto": "El documento está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Estado del Ciclo",
+    "titulo": "¿En qué fase del ciclo está el proyecto?",
+    "indicacion": "Sigue el avance del proyecto de requisitos y determina en qué fase del ciclo se encuentra cuando el cliente revisa el documento.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El analista realiza entrevistas al personal de bodega",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Registra las necesidades en la lista de requisitos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Clasifica cada enunciado como funcional o no funcional",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Redacta el documento de especificación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Presenta el documento al cliente para su revisión",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "Gestión de cambios del documento."
+      },
+      {
+        "id": 0,
+        "texto": "Validación: se confirma con el cliente que los requisitos son correctos."
+      },
+      {
+        "id": 1,
+        "texto": "Elicitación: se está recolectando información."
+      },
+      {
+        "id": 2,
+        "texto": "Análisis: se están clasificando requisitos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Clasificación Incorrecta",
-    "titulo": "Encuentra la falla: el requisito fue clasificado como no funcional",
-    "indicacion": "El analista registró en la sección de requisitos no funcionales el enunciado \"El sistema debe enviar un correo al usuario cuando su contraseña caduque\". Revisa la secuencia e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Requisito Incompleto",
+    "titulo": "¿El requisito está completo?",
+    "indicacion": "Sigue la revisión del requisito propuesto y determina la decisión del analista.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Escribir el enunciado: \"El sistema debe enviar un correo al usuario cuando su contraseña caduque\"",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Requisito propuesto: 'El sistema debe facturar' (sin más detalle)",
         "tipo": "proceso"
       },
       {
-        "label": "Clasificar el enunciado como requisito no funcional",
+        "label": "Revisar claridad: ¿qué se factura, cuándo y a quién?",
         "tipo": "proceso"
       },
       {
-        "label": "Entregar el documento al usuario para su revisión",
+        "label": "Revisar verificabilidad: ¿cómo se comprueba que cumple?",
         "tipo": "proceso"
       },
       {
-        "label": "El usuario observa que el enunciado describe una función del sistema, no una propiedad de calidad",
-        "tipo": "salida",
-        "error": true
+        "label": "Decidir si el requisito está completo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El enunciado está bien clasificado porque los correos son un servicio externo."
-      },
+    "opcionesRespuesta": [
       {
         "id": 2,
-        "texto": "La falla es del usuario, que no entiende la clasificación de requisitos."
-      },
-      {
-        "id": 1,
-        "texto": "El enunciado describe una función concreta del sistema, por lo que es un requisito funcional, no no funcional."
+        "texto": "Es un requisito no funcional y no requiere más detalle."
       },
       {
         "id": 3,
-        "texto": "El requisito debe eliminarse porque las contraseñas no caducan."
+        "texto": "El requisito debe eliminarse porque facturar no es necesario."
+      },
+      {
+        "id": 0,
+        "texto": "El requisito está incompleto: falta detalle (qué, cuándo, a quién) y no se puede verificar; debe reescribirse."
+      },
+      {
+        "id": 1,
+        "texto": "El requisito está completo y puede aprobarse."
       }
     ],
     "correcta": 2
@@ -804,6 +801,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -863,6 +875,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1130,6 +1282,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1163,6 +1321,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

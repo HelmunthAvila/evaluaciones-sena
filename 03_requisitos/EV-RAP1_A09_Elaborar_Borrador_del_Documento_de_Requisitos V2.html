@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Elaborar Borrador del Documento de Requisitos</title>
+<title>Evaluación Práctica - Borrador del Documento de Requisitos</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Elaborar Borrador del Documento de Requisitos</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Elaborar el Borrador del Documento de Requisitos</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración del borrador del documento de requisitos: estructuración de las secciones del documento, redacción con lenguaje claro y medible, y revisión del borrador con los interesados, mediante retos prácticos interactivos.
+          Pon en práctica la elaboración del borrador del documento de requisitos con un caso real: decide qué secciones debe contener, ordena el proceso de redacción y revisión, corrige un borrador con lenguaje ambiguo y contenido mal ubicado, y sigue el recorrido del documento hasta su aprobación. Sin teoría: aquí se demuestra redactando, revisando y depurando borradores.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Estructurar las secciones del documento de requisitos y redactar con lenguaje claro.</li>
-<li><strong>Prueba de Escritorio:</strong> Analizar el borrador paso a paso para detectar secciones faltantes y requisitos ambiguos.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos de elaboración y las secciones del documento.</li>
-<li><strong>Depuración de Errores:</strong> Detectar requisitos mal redactados y fallas en la revisión del borrador.</li>
+            <li><strong>Análisis del Problema:</strong> Decide qué secciones y qué redacción corresponden al borrador.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases de elaboración y revisión del borrador.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra errores de contenido, lenguaje y estructura en el borrador.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de elaboración y determina el estado final del documento.</li>
           </ul>
         </div>
 
@@ -243,7 +243,7 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Elaborar Borrador del Documento de Requisitos</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Borrador del Documento de Requisitos</p>
   </footer>
 
   <script>
@@ -251,170 +251,344 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Estructura del Documento",
-    "titulo": "¿Cuál es la primera sección que debe incluir el borrador del documento de requisitos?",
-    "indicacion": "El documento de requisitos inicia con una sección que presenta el propósito y el alcance del sistema. Selecciona la sección correcta.",
+    "tipo": "Secciones del Borrador",
+    "titulo": "¿Qué sección debe abrir el borrador?",
+    "indicacion": "El analista empieza a redactar el borrador del documento de requisitos. Selecciona la sección que debe aparecer PRIMERO para orientar al lector.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "El código fuente del sistema."
+        "id": 1,
+        "texto": "Código fuente del sistema."
       },
       {
-        "id": 1,
-        "texto": "La introducción, con el propósito, el alcance y las definiciones."
+        "id": 0,
+        "texto": "Introducción: propósito del documento, alcance y definiciones."
       },
       {
         "id": 2,
-        "texto": "El manual de instalación del software."
+        "texto": "Cronograma de vacaciones del equipo."
       },
       {
         "id": 3,
-        "texto": "Las credenciales de acceso a la base de datos."
+        "texto": "Lista de precios de los equipos de cómputo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Lenguaje Claro",
-    "titulo": "¿Qué característica debe tener el lenguaje utilizado en el documento de requisitos?",
-    "indicacion": "El documento de requisitos es leído por clientes y desarrolladores. Selecciona la característica que debe cumplir la redacción.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del Borrador",
+    "titulo": "Construye el proceso: redacción del borrador",
+    "indicacion": "Ordena los pasos que sigue el analista para elaborar el borrador del documento de requisitos, desde el inicio hasta la entrega para revisión.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Ser ambiguo y general para no comprometer al equipo."
+        "id": "b1",
+        "texto": "Presentar el borrador al equipo para su revisión",
+        "tipo": "proceso"
       },
       {
-        "id": 1,
-        "texto": "Usar lenguaje publicitario para destacar el producto."
+        "id": "b2",
+        "texto": "Redactar cada sección del borrador (propósito, alcance, requisitos)",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Ser claro, preciso y sin ambigüedades, comprensible para clientes y desarrolladores."
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 3,
-        "texto": "Redactarse únicamente en inglés técnico."
+        "id": "b4",
+        "texto": "Revisar la información recolectada en las entrevistas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Corregir lenguaje ambiguo y errores de redacción",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b4",
+      "b2",
+      "b5",
+      "b1",
+      "b6"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Secciones del Borrador",
-    "titulo": "¿Cuál de las siguientes secciones NO pertenece al borrador del documento de requisitos?",
-    "indicacion": "El borrador contiene secciones que describen el sistema y sus requisitos. Selecciona el elemento que no corresponde al documento.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Corregir el Documento",
+    "tipo": "Contenido Mal Ubicado",
+    "titulo": "Encuentra el error: contenido fuera de lugar",
+    "indicacion": "El borrador del documento de requisitos tiene una sección con contenido que no le corresponde. Identifica la falla.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Sección 1: Introducción (propósito y alcance)",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Sección 2: Descripción general del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Sección 3: Requisitos del sistema (contiene la nómina de los desarrolladores) (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Sección 4: Anexos (formato de la entrevista)",
+        "tipo": "proceso"
+      }
+    ],
     "opciones": [
       {
         "id": 0,
-        "texto": "Descripción general del sistema."
+        "texto": "La sección de requisitos está correctamente redactada."
       },
       {
         "id": 1,
-        "texto": "Requisitos funcionales."
-      },
-      {
-        "id": 2,
-        "texto": "Requisitos no funcionales."
+        "texto": "Falta la fecha de elaboración del documento."
       },
       {
         "id": 3,
-        "texto": "Código fuente del sistema en Python."
+        "texto": "La descripción general debe ir después de los anexos."
+      },
+      {
+        "id": 2,
+        "texto": "La sección de requisitos contiene información ajena (la nómina del equipo); ese dato debe retirarse del documento."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Revisión del Borrador",
-    "titulo": "¿Cuál es el objetivo de revisar el borrador del documento de requisitos con los interesados?",
-    "indicacion": "La revisión del borrador es una actividad clave antes de continuar con el diseño. Selecciona el objetivo principal de esta revisión.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Estado del Documento",
+    "titulo": "¿En qué estado queda el borrador?",
+    "indicacion": "Ejecuta mentalmente el proceso de elaboración y determina el estado final del documento.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El analista organiza la información de las entrevistas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Clasifica las necesidades en funcionales y no funcionales",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Redacta el borrador y numera cada requisito (RF-01, RF-02, ...)",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Entrega el borrador al líder técnico para revisión",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "El documento es un borrador numerado, listo para revisión y aún no aprobado."
+      },
       {
         "id": 0,
-        "texto": "Validar que los requisitos reflejen las necesidades reales del cliente y sean comprendidos por todos los interesados."
+        "texto": "El borrador se rechaza y se cancela el proyecto."
       },
       {
         "id": 1,
-        "texto": "Corregir únicamente los errores ortográficos del documento."
+        "texto": "Se entrega el borrador sin la revisión de lenguaje."
       },
       {
         "id": 2,
-        "texto": "Aumentar el número de páginas del documento."
-      },
-      {
-        "id": 3,
-        "texto": "Eliminar todos los requisitos no funcionales del borrador."
+        "texto": "El borrador se convierte automáticamente en el código del sistema."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Sección Faltante",
-    "titulo": "Prueba de escritorio: identifica la sección omitida en el borrador",
-    "indicacion": "Ejecuta mentalmente la revisión del borrador y determina qué sección faltó en el documento.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El analista redacta el borrador del documento de requisitos del sistema de pedidos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Incluye las secciones: introducción, requisitos funcionales y requisitos no funcionales",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisión: la introducción no describe el alcance del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: se omitió la descripción del alcance en la introducción",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "Se omitió el manual de usuario."
-      },
+    "categoria": "Análisis del Problema",
+    "tipo": "Lenguaje Claro",
+    "titulo": "¿Qué problema tiene esta redacción?",
+    "indicacion": "El borrador dice: 'El sistema debe manejar los datos de forma adecuada'. Analiza la redacción y selecciona el problema principal.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Se omitió la descripción del alcance del sistema."
+        "texto": "Usa demasiadas siglas técnicas."
+      },
+      {
+        "id": 1,
+        "texto": "Es vago: no define qué significa 'adecuada' ni cómo se puede verificar."
       },
       {
         "id": 2,
-        "texto": "Se omitió el plan de pruebas del sistema."
+        "texto": "Es demasiado extenso para un borrador."
       },
       {
         "id": 3,
-        "texto": "El documento está completo, no se omitió ninguna sección."
+        "texto": "No presenta ningún problema de redacción."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Revisión del Borrador",
+    "titulo": "Construye el proceso: revisión del borrador",
+    "indicacion": "Ordena los pasos de la revisión del borrador del documento de requisitos antes de entregarlo al cliente.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Verificar que cada sección tenga su contenido completo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Marcar los requisitos ambiguos para su corrección",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Leer el borrador completo de principio a fin",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Aprobar el borrador o solicitar los cambios encontrados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b4",
+      "b1",
+      "b2",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Enunciado Ambiguo",
+    "titulo": "Encuentra el error: requisito no medible",
+    "indicacion": "El borrador contiene un requisito que no se puede verificar. Identifica la falla y su corrección.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "'El sistema debe registrar la fecha del pedido'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "'El sistema debe procesar los pedidos con rapidez' (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El verbo 'procesar' está mal escrito."
+      },
+      {
+        "id": 2,
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 3,
+        "texto": "Falta la palabra 'usuario' en la oración."
+      },
+      {
+        "id": 0,
+        "texto": "El enunciado es ambiguo: 'con rapidez' no es medible; debe cuantificarse, por ejemplo 'procesar cada pedido en menos de 5 segundos'."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura del Documento",
+    "titulo": "Construye el borrador: secciones en orden",
+    "indicacion": "Ordena las secciones del borrador del documento de requisitos en la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Requisitos funcionales y no funcionales",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Introducción: propósito y alcance",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Descripción general del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Portada con los datos del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b5",
+      "b2",
+      "b4",
+      "b1",
+      "b6"
+    ]
+  },
+  {
+    "id": 9,
     "categoria": "Prueba de Escritorio",
-    "tipo": "Requisito Ambiguo",
-    "titulo": "Prueba de escritorio: determina la acción correcta ante un requisito ambiguo",
-    "indicacion": "Sigue mentalmente el análisis del requisito redactado en el borrador y determina qué acción debe tomar el analista.",
+    "tipo": "Resultado de la Revisión",
+    "titulo": "¿Cuál es el resultado de la revisión?",
+    "indicacion": "Sigue el proceso de revisión del borrador y determina el resultado final.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
       {
@@ -422,19 +596,19 @@
         "tipo": "inicio"
       },
       {
-        "label": "Requisito del borrador: el sistema debe ser bueno y rápido",
+        "label": "El borrador se redacta con 5 secciones",
         "tipo": "proceso"
       },
       {
-        "label": "Análisis: 'bueno' y 'rápido' son términos subjetivos sin métrica definida",
+        "label": "En la revisión de lenguaje se encuentran 3 enunciados ambiguos",
         "tipo": "proceso"
       },
       {
-        "label": "Conclusión: el requisito es ambiguo y no verificable",
+        "label": "Se reescriben los 3 enunciados con criterios medibles",
         "tipo": "proceso"
       },
       {
-        "label": "Resultado: el requisito debe reescribirse con criterios medibles",
+        "label": "Se aprueba el borrador",
         "tipo": "salida"
       },
       {
@@ -445,223 +619,65 @@
     "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Aprobar el requisito tal como está redactado."
-      },
-      {
-        "id": 2,
-        "texto": "Eliminar el requisito del documento sin justificación."
-      },
-      {
-        "id": 1,
-        "texto": "Reescribir el requisito con criterios medibles y verificables."
+        "texto": "El borrador se rechaza y se cancela el proyecto."
       },
       {
         "id": 3,
-        "texto": "Cambiar el título del documento de requisitos."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Elaboración del Borrador",
-    "titulo": "Ordena los pasos para elaborar el borrador del documento de requisitos",
-    "indicacion": "La elaboración del borrador inicia con la recolección de información y termina con la incorporación de las observaciones de los interesados. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "texto": "El borrador queda aprobado con los enunciados corregidos y verificables."
       },
-      {
-        "id": "b2",
-        "texto": "Reunir la información recolectada en entrevistas, encuestas y observaciones",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Organizar la información en secciones: introducción, funcionales y no funcionales",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Redactar cada requisito con lenguaje claro y medible",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Revisar el borrador con los interesados del proyecto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Incorporar las observaciones y ajustar el documento",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Secciones del Documento",
-    "titulo": "Ordena las secciones del documento de requisitos",
-    "indicacion": "El documento de requisitos sigue un orden lógico desde la presentación hasta los anexos. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Introducción: propósito, alcance y definiciones",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Descripción general del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Requisitos funcionales",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Requisitos no funcionales",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Anexos y referencias",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Requisito Vago",
-    "titulo": "Encuentra la falla: el requisito del borrador es vago",
-    "indicacion": "El analista incluyó un requisito en el borrador y lo dio por aprobado. Revisa los pasos e identifica por qué el requisito no cumple las reglas de redacción.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se redacta el requisito: el sistema debe procesar la información",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se decide dejarlo así porque el enunciado suena profesional",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se envía el borrador al cliente para su aprobación",
-        "tipo": "salida",
-        "error": true
-      }
-    ],
-    "opciones": [
       {
         "id": 1,
-        "texto": "El requisito es correcto porque menciona al sistema."
-      },
-      {
-        "id": 0,
-        "texto": "El requisito es vago: 'procesar la información' no define qué información ni qué proceso; debe ser específico y verificable."
+        "texto": "Se entrega el borrador sin la revisión de lenguaje."
       },
       {
         "id": 2,
-        "texto": "La falla es que el borrador no incluye el nombre del analista."
-      },
-      {
-        "id": 3,
-        "texto": "El requisito debía redactarse en inglés técnico."
+        "texto": "El borrador se convierte automáticamente en el código del sistema."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Introducción No Necesaria",
-    "titulo": "Encuentra la falla: se omitió la introducción del documento",
-    "indicacion": "Durante la revisión, el analista defendió un borrador incompleto. Revisa los pasos e identifica la falla en la respuesta del analista.",
+    "categoria": "Corregir el Documento",
+    "tipo": "Aprobación Prematura",
+    "titulo": "Encuentra el error: aprobación sin sección",
+    "indicacion": "El analista marcó el borrador como aprobado, pero el documento tiene una falla grave. ¿Cuál es?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El analista entrega el borrador del documento de requisitos al cliente",
+        "label": "RF-01: 'El sistema debe registrar clientes'",
         "tipo": "proceso"
       },
       {
-        "label": "El cliente observa que el documento solo contiene requisitos funcionales y no funcionales, sin introducción",
+        "label": "RF-02: 'El sistema debe generar la factura'",
         "tipo": "proceso"
       },
       {
-        "label": "El analista responde que la sección de introducción no es necesaria",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El cliente acepta la explicación y firma la aprobación",
-        "tipo": "salida",
+        "label": "No se incluyó la sección de requisitos no funcionales (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Revisión final: el documento se marcó como aprobado",
+        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "El analista tiene razón porque la introducción es opcional."
-      },
-      {
-        "id": 1,
-        "texto": "La falla es que el documento incluye requisitos no funcionales."
+        "texto": "Los requisitos funcionales sobran en un borrador."
       },
       {
         "id": 2,
-        "texto": "La introducción es una sección obligatoria del documento de requisitos: presenta el propósito, el alcance y las definiciones; omitirla es un error."
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 1,
+        "texto": "El documento se aprobó sin contener la sección de requisitos no funcionales; debe completarse antes de aprobar."
       },
       {
         "id": 3,
-        "texto": "El error es que el borrador debía entregarse sin revisión previa."
+        "texto": "Faltan las entrevistas al cliente."
       }
     ],
     "correcta": 2
@@ -794,6 +810,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -853,6 +884,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1120,6 +1291,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1153,6 +1330,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

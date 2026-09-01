@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de técnicas de recolección de información: observación, encuesta, cuestionario y análisis documental, reconociendo cuándo utilizar cada una según el objetivo del levantamiento de requisitos, mediante retos prácticos interactivos.
+          Pon en práctica la recolección de información para los requisitos con un caso real: elige la técnica adecuada según el objetivo (observación, encuesta, cuestionario o análisis documental), ordena el proceso de aplicación y corrige un plan de recolección mal diseñado. Sin teoría: aquí se demuestra recolectando información como un analista.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Reconocer cada técnica de recolección y el momento adecuado para aplicarla.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la aplicación de una técnica y predecir su resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para aplicar la observación, la encuesta y el análisis documental.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el diseño de instrumentos y en la elección de la técnica.</li>
+            <li><strong>Análisis del Problema:</strong> Elige la técnica de recolección correcta según el objetivo.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos de cada técnica de recolección.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra errores en el plan y en el cuestionario.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de recolección y determina la técnica o la conclusión.</li>
           </ul>
         </div>
 
@@ -243,7 +243,7 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Técnicas de Recolección de Información</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Técnicas de Recolección de Información</p>
   </footer>
 
   <script>
@@ -251,26 +251,26 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Técnica de Observación",
-    "titulo": "Se necesita conocer cómo ejecutan realmente los auxiliares el proceso de recepción de mercancía. ¿Qué técnica es la más adecuada?",
-    "indicacion": "Cuando se requiere verificar la forma real de ejecutar un proceso, existe una técnica que permite presenciar las actividades directamente. Selecciona la técnica correcta.",
+    "tipo": "Observación Directa",
+    "titulo": "¿Qué técnica aplica el analista?",
+    "indicacion": "El analista necesita conocer el proceso REAL de despacho de pedidos, tal como ocurre en la bodega, sin depender de lo que digan los empleados. ¿Qué técnica debe aplicar?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Encuesta a los clientes externos."
+        "id": 1,
+        "texto": "Análisis documental de manuales desactualizados."
       },
       {
-        "id": 1,
-        "texto": "Observación directa del proceso."
+        "id": 0,
+        "texto": "Observación directa: el analista presencia y registra el proceso real."
       },
       {
         "id": 2,
-        "texto": "Análisis del manual de usuario del sistema."
+        "texto": "Encuesta a clientes externos."
       },
       {
         "id": 3,
-        "texto": "Entrevista al gerente general."
+        "texto": "Ninguna, con preguntar al gerente basta."
       }
     ],
     "correcta": 1
@@ -279,25 +279,25 @@
     "id": 2,
     "categoria": "Análisis del Problema",
     "tipo": "Encuesta y Cuestionario",
-    "titulo": "¿Cuál es la diferencia entre encuesta y cuestionario?",
-    "indicacion": "Estos dos términos suelen confundirse en el levantamiento de requisitos. Selecciona la afirmación que los diferencia correctamente.",
+    "titulo": "¿Qué técnica se usa con muchos usuarios?",
+    "indicacion": "La empresa quiere conocer la opinión de 300 clientes sobre el nuevo servicio de domicilios. ¿Qué técnica es la más adecuada para recoger datos de muchos usuarios?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Son exactamente lo mismo y no existe diferencia alguna."
+        "id": 3,
+        "texto": "Entrevista a profundidad con un empleado."
       },
       {
         "id": 1,
-        "texto": "La encuesta es el instrumento y el cuestionario es el método."
+        "texto": "Observación de un solo cliente."
+      },
+      {
+        "id": 0,
+        "texto": "Encuesta con cuestionario estructurado aplicada a la muestra de clientes."
       },
       {
         "id": 2,
-        "texto": "La encuesta es el método y el cuestionario es el instrumento que contiene las preguntas."
-      },
-      {
-        "id": 3,
-        "texto": "El cuestionario solo se utiliza en las entrevistas personales."
+        "texto": "Análisis documental del acta de la junta."
       }
     ],
     "correcta": 2
@@ -306,168 +306,35 @@
     "id": 3,
     "categoria": "Análisis del Problema",
     "tipo": "Análisis Documental",
-    "titulo": "Se requiere conocer los procedimientos establecidos por la empresa para el trámite de permisos. ¿Qué técnica permite examinar esta información?",
-    "indicacion": "La información requerida ya existe en documentos de la organización. Selecciona la técnica que permite extraerla.",
+    "titulo": "¿Qué técnica aprovecha los documentos existentes?",
+    "indicacion": "Para definir los requisitos del módulo de nómina, el analista necesita conocer la liquidación actual. ¿Qué técnica aprovecha los formatos y registros existentes?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Observación de la cafetería de la empresa."
-      },
-      {
         "id": 2,
-        "texto": "Encuesta telefónica a los proveedores."
+        "texto": "Encuesta a los clientes del servicio de domicilios."
       },
       {
         "id": 3,
-        "texto": "Prueba de escritorio del sistema anterior."
+        "texto": "Ninguna, la nómina no se documenta."
+      },
+      {
+        "id": 1,
+        "texto": "Observación del restaurante de la empresa."
       },
       {
         "id": 0,
-        "texto": "Análisis documental de manuales, formatos y reglamentos."
+        "texto": "Análisis documental: revisar formatos de liquidación, manuales y reglamentos."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Selección de Técnica",
-    "titulo": "Se necesita recoger la opinión de 500 clientes sobre un servicio. ¿Qué técnica es la más adecuada?",
-    "indicacion": "Cuando la población es numerosa y se requiere información estandarizada, se emplea una técnica masiva. Selecciona la opción correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 3,
-        "texto": "Encuesta con cuestionario aplicado a la muestra."
-      },
-      {
-        "id": 0,
-        "texto": "Observación directa de un solo cliente."
-      },
-      {
-        "id": 1,
-        "texto": "Análisis documental de las facturas."
-      },
-      {
-        "id": 2,
-        "texto": "Entrevista al director de la empresa."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Aplicación de Encuesta",
-    "titulo": "Prueba de escritorio: aplicación de una encuesta",
-    "indicacion": "Sigue mentalmente los pasos de la aplicación de la encuesta y determina qué información se obtiene al finalizar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Definir el objetivo: conocer la frecuencia de uso del módulo de inventario",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Diseñar el cuestionario con 10 preguntas cerradas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Aplicar la encuesta a 40 auxiliares de bodega",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Tabular y resumir las respuestas en una tabla de frecuencias",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Se obtiene el código fuente del módulo de inventario."
-      },
-      {
-        "id": 2,
-        "texto": "Se obtiene la opinión de 40 auxiliares sobre la frecuencia de uso del módulo de inventario."
-      },
-      {
-        "id": 1,
-        "texto": "Se obtienen los datos personales de los clientes de la empresa."
-      },
-      {
-        "id": 3,
-        "texto": "Se obtiene la aprobación del gerente para comprar el sistema."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Análisis Documental",
-    "titulo": "Prueba de escritorio: análisis documental del proceso de compras",
-    "indicacion": "Sigue mentalmente los pasos del análisis documental y determina qué información se extrae de los documentos revisados.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Solicitar los formatos de solicitud de compra vigentes",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Revisar el reglamento interno de compras",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Extraer los campos obligatorios y el flujo de aprobación",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: se identifican los datos y las reglas que debe manejar el nuevo sistema",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Se determina cuántos empleados usan el sistema actual."
-      },
-      {
-        "id": 2,
-        "texto": "Se conoce la opinión de los proveedores sobre los precios."
-      },
-      {
-        "id": 1,
-        "texto": "Se identifican los campos, los datos y las reglas del proceso documentado que debe soportar el sistema."
-      },
-      {
-        "id": 3,
-        "texto": "Se calcula el costo del desarrollo del software."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Procedimiento de Observación",
-    "titulo": "Ordena los pasos para aplicar la observación del proceso",
-    "indicacion": "El procedimiento de observación inicia con la definición del objetivo y termina con las conclusiones sobre la forma real de ejecutar el proceso. Ordena los bloques correctamente.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Aplicación de una Encuesta",
+    "titulo": "Construye el proceso: aplicación de una encuesta",
+    "indicacion": "Ordena los pasos para aplicar una encuesta de recolección de información, desde el objetivo hasta el análisis de resultados.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -477,71 +344,17 @@
       },
       {
         "id": "b2",
-        "texto": "Definir el objetivo de la observación",
+        "texto": "Definir el objetivo de la encuesta y la población objetivo",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Solicitar permiso al responsable del área",
+        "texto": "Diseñar el cuestionario con preguntas claras y opciones de respuesta",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Observar el proceso y registrar en la lista de chequeo las actividades, los tiempos y los documentos utilizados",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Comparar lo observado con el procedimiento documentado",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Elaborar conclusiones sobre la forma real de ejecutar el proceso",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Procedimiento de Encuesta",
-    "titulo": "Ordena los pasos para aplicar una encuesta",
-    "indicacion": "La encuesta inicia con la definición del objetivo y termina con la tabulación de las respuestas. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Definir el objetivo de la encuesta y la población",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Diseñar el cuestionario con preguntas claras y cerradas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Validar el cuestionario con una prueba piloto",
+        "texto": "Probar el cuestionario con un grupo piloto y ajustarlo",
         "tipo": "proceso"
       },
       {
@@ -551,8 +364,8 @@
       },
       {
         "id": "b6",
-        "texto": "Tabular las respuestas y elaborar el resumen de resultados",
-        "tipo": "salida"
+        "texto": "Tabular y analizar los resultados",
+        "tipo": "proceso"
       },
       {
         "id": "b7",
@@ -571,93 +384,287 @@
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Técnica Inadecuada",
-    "titulo": "Encuentra la falla: se eligió la técnica equivocada",
-    "indicacion": "El objetivo era contar las consultas reales de precio que realizan los cajeros al día. Revisa los pasos e identifica la falla en la elección de la técnica.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Sesión de Observación",
+    "titulo": "Construye el proceso: sesión de observación",
+    "indicacion": "Ordena los pasos de una sesión de observación directa del proceso de despacho.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Objetivo: conocer el número exacto de veces que los cajeros consultan el precio de un producto al día",
+        "id": "b2",
+        "texto": "Solicitar autorización al responsable del proceso",
         "tipo": "proceso"
       },
       {
-        "label": "Se decide aplicar una encuesta con preguntas de opinión a los cajeros",
+        "id": "b3",
+        "texto": "Observar el proceso real sin intervenir",
         "tipo": "proceso"
       },
       {
-        "label": "Los resultados no permiten contar las consultas reales realizadas",
-        "tipo": "salida",
+        "id": "b4",
+        "texto": "Registrar los pasos, tiempos y formatos usados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Contrastar lo observado con lo documentado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Análisis Documental",
+    "titulo": "Construye el proceso: análisis documental",
+    "indicacion": "Ordena los pasos del análisis documental aplicado a los manuales y formatos de la empresa.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Localizar los documentos del proceso (manuales, formatos, informes)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Revisar y extraer los datos relevantes para los requisitos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Organizar la información por tema o proceso",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Complementar con otras técnicas (entrevista u observación)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Técnica Inadecuada",
+    "titulo": "Encuentra el error: técnica que no cumple el objetivo",
+    "indicacion": "El plan de recolección de información tiene un error: la técnica asignada no corresponde al objetivo. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Objetivo: medir el tiempo real que tarda el despacho de un pedido",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Técnica asignada: encuesta de satisfacción a los clientes (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Fuente de información: operarios de la bodega",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El plan está correcto."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que el objetivo no sirve para el proyecto."
+      },
+      {
+        "id": 3,
+        "texto": "Falta la firma del gerente en el plan."
+      },
+      {
+        "id": 0,
+        "texto": "La encuesta de satisfacción no mide tiempos reales: para medir el proceso se usa la observación directa con registro de tiempos."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
+    "tipo": "Pregunta Sesgada",
+    "titulo": "Encuentra el error: pregunta que induce la respuesta",
+    "indicacion": "El cuestionario de la encuesta tiene una pregunta mal formulada que sesga la respuesta. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Pregunta 1: ¿Con qué frecuencia usa el sistema? (Diaria, Semanal, Mensual, Nunca)",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Pregunta 2: ¿No cree usted que el sistema actual es demasiado lento? (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Pregunta 3: ¿Qué funciones considera más importantes? (selección múltiple)",
+        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La encuesta es la técnica adecuada para contar eventos automáticos del sistema."
+        "texto": "La pregunta 2 induce la respuesta ('¿No cree que es lento?'): debe ser neutral, por ejemplo '¿Cómo califica la velocidad del sistema?'."
       },
       {
         "id": 1,
-        "texto": "Las preguntas de opinión no permiten medir un hecho cuantificable; para contar las consultas reales es adecuada la observación o la revisión de los registros del sistema."
+        "texto": "La pregunta 1 está mal porque ofrece varias opciones."
       },
       {
         "id": 2,
-        "texto": "El error fue no encuestar a todos los cajeros de la empresa."
+        "texto": "La pregunta 3 está mal porque es de selección múltiple."
       },
       {
         "id": 3,
-        "texto": "La falla es que la encuesta se aplicó en papel y no por internet."
+        "texto": "El cuestionario está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Selección de Técnica",
+    "titulo": "¿Qué técnica corresponde a cada objetivo?",
+    "indicacion": "Sigue el proceso de asignación de técnicas y determina la combinación correcta para los tres objetivos.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Objetivo A: conocer la opinión de 500 usuarios sobre el sistema",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Objetivo B: comprender a fondo las necesidades de un usuario experto",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Objetivo C: medir el tiempo real de una tarea en el puesto de trabajo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Asignar la técnica adecuada a cada objetivo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "A: análisis documental, B: observación, C: encuesta."
+      },
+      {
+        "id": 0,
+        "texto": "A: encuesta, B: entrevista, C: observación."
+      },
+      {
+        "id": 1,
+        "texto": "A: entrevista, B: encuesta, C: análisis documental."
+      },
+      {
+        "id": 2,
+        "texto": "A: observación, B: encuesta, C: entrevista."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Pregunta Ambigua",
-    "titulo": "Encuentra la falla: el cuestionario tiene una pregunta ambigua",
-    "indicacion": "El cuestionario contenía una pregunta mal redactada. Revisa los pasos e identifica la falla y su corrección.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Análisis de Resultados",
+    "titulo": "¿Qué concluye el analista con los datos?",
+    "indicacion": "Sigue el proceso de tabulación de la encuesta sobre el módulo de inventario y determina la conclusión del analista.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Redactar la pregunta: '¿Usa el sistema a veces o casi nunca?'",
+        "label": "Encuesta aplicada a 40 operarios sobre el módulo de inventario",
         "tipo": "proceso"
       },
       {
-        "label": "Aplicar el cuestionario a 30 usuarios",
+        "label": "Pregunta: ¿El módulo actual le permite encontrar un producto rápidamente?",
         "tipo": "proceso"
       },
       {
-        "label": "Las respuestas son confusas y no se pueden tabular correctamente",
-        "tipo": "salida",
-        "error": true
+        "label": "Resultados: Sí = 8, No = 28, No sabe = 4",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Elaborar la conclusión a partir de los datos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El cuestionario debía aplicarse a más de 100 usuarios."
-      },
+    "opcionesRespuesta": [
       {
         "id": 2,
-        "texto": "La falla es que la pregunta no incluía opciones de respuesta numérica."
-      },
-      {
-        "id": 0,
-        "texto": "La pregunta combina dos opciones en una sola y es ambigua; debe redactarse de forma única y clara, por ejemplo: '¿Con qué frecuencia usa el sistema?'"
+        "texto": "Los datos no sirven porque la muestra es pequeña y no se concluye nada."
       },
       {
         "id": 3,
-        "texto": "El cuestionario es correcto; el problema es que los usuarios no saben responder."
+        "texto": "El analista debe entrevistar a los clientes en lugar de concluir."
+      },
+      {
+        "id": 0,
+        "texto": "El 70% de los operarios reporta que el módulo no permite encontrar productos rápidamente; es un requisito a corregir o rediseñar."
+      },
+      {
+        "id": 1,
+        "texto": "La mayoría de los operarios está satisfecha con el módulo."
       }
     ],
     "correcta": 2
@@ -790,6 +797,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +871,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1278,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1317,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

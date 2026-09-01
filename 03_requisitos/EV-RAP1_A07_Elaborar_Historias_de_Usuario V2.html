@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración de historias de usuario: aplicación del formato 'Como… quiero… para…', definición de criterios de aceptación verificables, control del tamaño y asignación de prioridades, mediante retos prácticos interactivos.
+          Pon en práctica la elaboración de historias de usuario con un caso real: redacta historias con el formato 'Como… quiero… para…', define criterios de aceptación verificables y asigna la prioridad adecuada a cada historia. Sin teoría: aquí se demuestra redactando, ordenando el proceso y corrigiendo historias mal elaboradas.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Diseño Lógico:</strong> Redactar historias de usuario con el formato estándar y definir criterios de aceptación verificables.</li>
-<li><strong>Prueba de Escritorio:</strong> Analizar historias paso a paso para determinar criterios, tamaño y prioridad.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para elaborar y priorizar historias de usuario.</li>
-<li><strong>Depuración de Errores:</strong> Detectar historias mal redactadas o demasiado grandes y aplicar la corrección adecuada.</li>
+            <li><strong>Análisis del Problema:</strong> Reconoce el formato de la historia, los criterios de aceptación y la prioridad.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue paso a paso la elaboración de una historia y determina su resultado.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases de redacción, criterios y priorización de historias.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra historias mal redactadas o demasiado grandes y aplica la corrección.</li>
           </ul>
         </div>
 
@@ -250,10 +250,10 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Diseño Lógico",
+    "categoria": "Análisis del Problema",
     "tipo": "Formato de Historia",
     "titulo": "¿Cuál es el formato estándar de una historia de usuario?",
-    "indicacion": "Las historias de usuario se redactan desde la perspectiva de quien usa el sistema. Selecciona la estructura que define el formato estándar.",
+    "indicacion": "Las historias se redactan desde la perspectiva de quien usa el sistema. Selecciona la estructura del formato estándar.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -277,70 +277,39 @@
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
+    "categoria": "Análisis del Problema",
     "tipo": "Criterios de Aceptación",
     "titulo": "¿Qué propósito cumplen los criterios de aceptación de una historia de usuario?",
-    "indicacion": "Toda historia de usuario requiere condiciones que permitan verificar su cumplimiento. Selecciona el propósito correcto de los criterios de aceptación.",
+    "indicacion": "Toda historia requiere condiciones que permitan verificar su cumplimiento. Selecciona el propósito correcto de los criterios de aceptación.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Reemplazar el documento completo de requisitos del proyecto."
-      },
-      {
-        "id": 2,
+        "id": 0,
         "texto": "Describir la estructura de las tablas de la base de datos."
       },
       {
-        "id": 0,
-        "texto": "Definir las condiciones que la historia debe cumplir para considerarse terminada y verificable."
+        "id": 1,
+        "texto": "Asignar el desarrollador responsable de implementar la historia."
       },
       {
         "id": 3,
-        "texto": "Asignar el desarrollador responsable de implementar la historia."
+        "texto": "Definir las condiciones que la historia debe cumplir para considerarse terminada y verificable."
+      },
+      {
+        "id": 2,
+        "texto": "Reemplazar el documento completo de requisitos del proyecto."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
-    "tipo": "Tamaño de la Historia",
-    "titulo": "¿Cuál es el tamaño adecuado para una historia de usuario?",
-    "indicacion": "El tamaño de una historia influye en su planificación y desarrollo. Selecciona la afirmación correcta sobre el tamaño recomendado.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "Una historia debe abarcar todos los módulos del sistema."
-      },
-      {
-        "id": 1,
-        "texto": "Una historia debe ser lo suficientemente extensa para no requerir pruebas."
-      },
-      {
-        "id": 3,
-        "texto": "Una historia debe incluir el código fuente de la solución."
-      },
-      {
-        "id": 2,
-        "texto": "Una historia debe ser lo suficientemente pequeña para poder implementarse en una iteración o sprint."
-      }
-    ],
-    "correcta": 3
-  },
-  {
-    "id": 4,
-    "categoria": "Diseño Lógico",
+    "categoria": "Análisis del Problema",
     "tipo": "Prioridad MoSCoW",
-    "titulo": "¿Qué técnica se utiliza comúnmente para priorizar historias de usuario?",
+    "titulo": "¿Qué técnica se utiliza para priorizar las historias de usuario?",
     "indicacion": "La priorización permite decidir qué historias se implementan primero. Selecciona la técnica que clasifica las historias en obligatorias, deberían, podrían y no se harán.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
-      {
-        "id": 3,
-        "texto": "Técnica MoSCoW (Must, Should, Could, Won't)."
-      },
       {
         "id": 0,
         "texto": "Modelo entidad-relación."
@@ -350,128 +319,75 @@
         "texto": "Análisis DAFO."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Diagrama de Gantt."
+      },
+      {
+        "id": 2,
+        "texto": "Técnica MoSCoW (Must, Should, Could, Won't)."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 4,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Tamaño de la Historia",
+    "titulo": "Prueba de escritorio: tamaño de la historia de usuario",
+    "indicacion": "Sigue mentalmente el análisis del equipo sobre una historia extensa y determina la decisión correcta.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Historia: como administrador, quiero gestionar usuarios, productos, clientes y pedidos, para administrar todo el negocio",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El equipo estima que la historia requiere varias semanas de desarrollo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El equipo decide dividirla en historias más pequeñas por función",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Resultado: cada historia nueva se implementa en una iteración",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "Una historia demasiado grande debe dividirse en historias pequeñas que se puedan implementar en una iteración."
+      },
+      {
+        "id": 0,
+        "texto": "La historia debe mantenerse completa porque el actor es único."
+      },
+      {
+        "id": 1,
+        "texto": "Las historias extensas deben eliminarse y reemplazarse por un diagrama."
+      },
+      {
+        "id": 2,
+        "texto": "La decisión correcta es asignar la historia completa al primer sprint sin dividirla."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Conteo de Criterios",
-    "titulo": "Prueba de escritorio: identifica los criterios de aceptación",
-    "indicacion": "Analiza la historia de usuario y sus criterios de aceptación, y determina cuántos criterios se definieron.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Historia: como administrador, quiero consultar el estado de los pedidos, para informar a los clientes",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Criterio 1: el sistema muestra la lista de pedidos con su estado actual",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Criterio 2: el sistema permite filtrar los pedidos por estado",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Criterio 3: la consulta responde en menos de dos segundos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: la historia tiene tres criterios de aceptación",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Un criterio de aceptación."
-      },
-      {
-        "id": 2,
-        "texto": "Tres criterios de aceptación."
-      },
-      {
-        "id": 1,
-        "texto": "Dos criterios de aceptación."
-      },
-      {
-        "id": 3,
-        "texto": "La historia no tiene criterios de aceptación."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Asignación de Prioridad",
-    "titulo": "Prueba de escritorio: determina la prioridad de la historia",
-    "indicacion": "Sigue mentalmente el análisis de priorización realizado por el equipo y determina la categoría asignada a la historia.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Historia: como cajero, quiero registrar las devoluciones, para ajustar el inventario automáticamente",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El cliente afirma que sin esta función no puede operar el negocio",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El equipo clasifica la historia como obligatoria para la primera entrega",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: prioridad alta, categoría Must en la técnica MoSCoW",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Prioridad baja, categoría Won't."
-      },
-      {
-        "id": 2,
-        "texto": "Prioridad media, categoría Could."
-      },
-      {
-        "id": 1,
-        "texto": "Prioridad alta, categoría Must."
-      },
-      {
-        "id": 3,
-        "texto": "La historia no requiere prioridad."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Elaboración de la Historia",
     "titulo": "Ordena los pasos para elaborar una historia de usuario",
-    "indicacion": "La elaboración de una historia inicia con la identificación del rol y termina con la asignación de la prioridad. Ordena los bloques correctamente.",
+    "indicacion": "La elaboración inicia con la identificación del rol y termina con la asignación de la prioridad. Ordena los bloques.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -527,11 +443,65 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Criterios de Aceptación",
+    "titulo": "Ordena los pasos para definir los criterios de aceptación",
+    "indicacion": "Los criterios se definen después de redactar la historia y se validan con el interesado. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Revisar la historia redactada y su alcance",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Listar las condiciones que demuestran el cumplimiento de la historia",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Redactar cada criterio de forma concreta y medible",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Validar los criterios con el cliente o el usuario",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Documentar los criterios junto con la historia",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Ordenar el Proceso",
     "tipo": "Priorización MoSCoW",
-    "titulo": "Ordena los pasos para priorizar las historias de usuario",
-    "indicacion": "La priorización con la técnica MoSCoW inicia con la reunión del equipo y termina con la confirmación con el cliente. Ordena los bloques correctamente.",
+    "titulo": "Ordena los pasos para priorizar las historias con la técnica MoSCoW",
+    "indicacion": "La priorización inicia con la reunión del equipo y el cliente y termina con el orden de implementación. Ordena los bloques.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -581,8 +551,8 @@
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
+    "id": 8,
+    "categoria": "Corregir el Documento",
     "tipo": "Criterio Vago",
     "titulo": "Encuentra la falla: el criterio de aceptación no es verificable",
     "indicacion": "El equipo definió un criterio de aceptación para la historia 'generar reporte de ventas'. Revisa los pasos e identifica la falla.",
@@ -609,29 +579,29 @@
     "opciones": [
       {
         "id": 0,
-        "texto": "El criterio es correcto porque la historia está bien redactada."
-      },
-      {
-        "id": 2,
-        "texto": "El criterio 'el sistema funciona correctamente' es vago y no verificable; debe ser concreto y medible, por ejemplo, 'el reporte muestra las ventas del rango de fechas solicitado'."
+        "texto": "El criterio 'el sistema funciona correctamente' es vago y no verificable; debe ser concreto y medible, por ejemplo: 'el reporte muestra las ventas del rango de fechas solicitado'."
       },
       {
         "id": 1,
         "texto": "La historia no cumple el formato como… quiero… para…."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Falta asignar la prioridad antes de redactar la historia."
+      },
+      {
+        "id": 3,
+        "texto": "El criterio es correcto porque la historia está bien redactada."
       }
     ],
-    "correcta": 1
+    "correcta": 0
   },
   {
-    "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Historia Demasiado Grande",
-    "titulo": "Encuentra la falla: la historia es demasiado extensa",
-    "indicacion": "El equipo redactó una historia que abarca varias funciones del sistema. Revisa los pasos e identifica por qué la historia no cumple las reglas de tamaño.",
+    "id": 9,
+    "categoria": "Corregir el Documento",
+    "tipo": "Formato Incompleto",
+    "titulo": "Encuentra la falla: la historia no tiene beneficio",
+    "indicacion": "El equipo redactó una historia sin el beneficio para el usuario. Revisa los pasos e identifica la falla.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -639,15 +609,61 @@
         "tipo": "inicio"
       },
       {
-        "label": "Historia: como administrador, quiero gestionar usuarios, productos, clientes, pedidos, facturas e inventario, para administrar todo el negocio",
+        "label": "Historia: como cajero, quiero registrar las devoluciones",
         "tipo": "proceso"
       },
       {
-        "label": "El equipo asigna esta historia al primer sprint",
+        "label": "El equipo envía la historia al desarrollo sin el beneficio",
         "tipo": "proceso"
       },
       {
-        "label": "El equipo considera que la historia está lista para desarrollarse",
+        "label": "El desarrollador implementa la función sin conocer la razón del negocio",
+        "tipo": "salida",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "La historia está completa porque menciona al actor y la función."
+      },
+      {
+        "id": 1,
+        "texto": "El formato estándar exige las tres partes: como… quiero… para…; falta el beneficio, por ejemplo: '…, para ajustar el inventario automáticamente'."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que el cajero no es un rol válido para una historia."
+      },
+      {
+        "id": 3,
+        "texto": "Las historias no necesitan beneficio cuando el actor es un usuario operativo."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Corregir el Documento",
+    "tipo": "Historia sin Actor",
+    "titulo": "Encuentra la falla: la historia no tiene rol definido",
+    "indicacion": "El equipo redactó un requisito que no cumple la estructura de historia de usuario. Revisa los pasos e identifica la falla.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Enunciado: el sistema debe permitir consultar el historial de compras del cliente",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El equipo lo registra como historia de usuario",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El cliente no reconoce quién usa la función ni qué beneficio obtiene",
         "tipo": "salida",
         "error": true
       }
@@ -655,19 +671,19 @@
     "opciones": [
       {
         "id": 1,
-        "texto": "La historia es correcta porque menciona a un actor definido."
+        "texto": "El enunciado es correcto porque describe una función del sistema."
       },
       {
         "id": 2,
-        "texto": "El error es que la historia no incluye criterios de aceptación numéricos."
+        "texto": "El error es que el historial de compras no es una función válida."
       },
       {
         "id": 0,
-        "texto": "La historia agrupa muchas funciones independientes; debe dividirse en historias más pequeñas que se puedan implementar en una iteración."
+        "texto": "El enunciado no es una historia de usuario porque no define el rol ni el beneficio; debe reescribirse como: 'como asesor comercial, quiero consultar el historial de compras del cliente, para ofrecerle productos acordes'."
       },
       {
         "id": 3,
-        "texto": "La historia debía priorizarse como Won't."
+        "texto": "El enunciado debe convertirse en un diagrama de flujo antes de redactarse."
       }
     ],
     "correcta": 2
@@ -800,6 +816,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -859,6 +890,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1126,6 +1297,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1159,6 +1336,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

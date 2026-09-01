@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la identificación de los actores del sistema (stakeholders): reconocimiento de quiénes son, sus roles, intereses, prioridad e influencia sobre el sistema, mediante retos prácticos interactivos.
+          Pon en práctica la identificación de actores del sistema con un caso real: reconoce quiénes son los stakeholders, define sus roles e intereses y priorízalos según su poder e influencia sobre el proyecto. Sin teoría: aquí se demuestra identificando, ordenando el proceso y corrigiendo un registro de actores incompleto.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Reconocer los stakeholders del sistema, sus roles e intereses.</li>
-<li><strong>Diseño Lógico:</strong> Clasificar los actores según su poder e interés para priorizarlos.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la identificación y priorización de actores.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la identificación de actores y en la asignación de prioridades.</li>
+            <li><strong>Análisis del Problema:</strong> Reconoce quiénes son los stakeholders y cuál es su rol e interés.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue paso a paso la identificación y priorización de actores.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases de identificación, priorización y registro de actores.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra fallas en la identificación de actores y en la asignación de prioridades.</li>
           </ul>
         </div>
 
@@ -261,15 +261,15 @@
         "texto": "Únicamente los programadores que desarrollan el software."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Todas las personas u organizaciones que tienen interés o se ven afectadas por el sistema."
       },
       {
         "id": 1,
-        "texto": "Solo los clientes que pagan por el software."
+        "texto": "Solo los clientes que pagan por el desarrollo del software."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Únicamente los equipos de cómputo que ejecutan el sistema."
       }
     ],
@@ -280,23 +280,23 @@
     "categoria": "Análisis del Problema",
     "tipo": "Stakeholder Directo",
     "titulo": "En un sistema de matrícula académica, ¿quién es un stakeholder directo?",
-    "indicacion": "Los stakeholders directos interactúan directamente con el sistema o con el proceso que este apoya. Selecciona la opción correcta.",
+    "indicacion": "Los stakeholders directos interactúan con el sistema o con el proceso que este apoya. Selecciona la opción correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El proveedor de papelería de la institución."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La empresa de aseo del edificio."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El estudiante que realiza su matrícula en el sistema."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El fabricante de los computadores."
       }
     ],
@@ -304,60 +304,6 @@
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Interés del Stakeholder",
-    "titulo": "El gerente financiero de la empresa aprueba el presupuesto del proyecto. ¿Cuál es su principal interés como stakeholder?",
-    "indicacion": "Cada stakeholder tiene intereses particulares según su rol. Selecciona el interés principal del gerente financiero.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "Conocer el código fuente de cada módulo."
-      },
-      {
-        "id": 1,
-        "texto": "Que el sistema cumpla los requisitos técnicos de hardware."
-      },
-      {
-        "id": 3,
-        "texto": "Que el sistema funcione sin necesidad de capacitación."
-      },
-      {
-        "id": 2,
-        "texto": "Que el proyecto cumpla los objetivos con un costo controlado y dentro del presupuesto."
-      }
-    ],
-    "correcta": 3
-  },
-  {
-    "id": 4,
-    "categoria": "Diseño Lógico",
-    "tipo": "Matriz Poder-Interés",
-    "titulo": "Según la matriz de poder e interés, un actor con alto poder y alto interés debe:",
-    "indicacion": "La matriz de poder e interés orienta la estrategia de gestión de cada stakeholder. Selecciona la estrategia correcta para este cuadrante.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 3,
-        "texto": "Ser gestionado de cerca y participar activamente en el proyecto."
-      },
-      {
-        "id": 0,
-        "texto": "Ser ignorado durante todo el proyecto."
-      },
-      {
-        "id": 1,
-        "texto": "Recibir solo informes al final del proyecto."
-      },
-      {
-        "id": 2,
-        "texto": "Ser reemplazado por otro actor."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
     "categoria": "Prueba de Escritorio",
     "tipo": "Clasificación de Actores",
     "titulo": "Prueba de escritorio: clasificación de los actores del sistema de ventas",
@@ -373,7 +319,7 @@
         "tipo": "proceso"
       },
       {
-        "label": "Evaluar el poder: el gerente aprueba los cambios; los vendedores usan el sistema a diario",
+        "label": "Evaluar el poder: el gerente aprueba los cambios y los vendedores usan el sistema a diario",
         "tipo": "proceso"
       },
       {
@@ -395,22 +341,22 @@
         "texto": "El gerente es un actor de bajo poder y bajo interés."
       },
       {
-        "id": 2,
-        "texto": "El gerente es un actor de alto poder y alto interés que debe gestionarse de cerca."
-      },
-      {
         "id": 1,
         "texto": "Los vendedores no son stakeholders porque no aprueban presupuestos."
       },
       {
         "id": 3,
         "texto": "Los clientes no deben tenerse en cuenta en el sistema de ventas."
+      },
+      {
+        "id": 2,
+        "texto": "El gerente es un actor de alto poder y alto interés que debe gestionarse de cerca."
       }
     ],
-    "correcta": 1
+    "correcta": 3
   },
   {
-    "id": 6,
+    "id": 4,
     "categoria": "Prueba de Escritorio",
     "tipo": "Consecuencia de Omitir un Actor",
     "titulo": "Prueba de escritorio: consecuencia de omitir un actor",
@@ -441,6 +387,10 @@
     "opcionesRespuesta": [
       {
         "id": 0,
+        "texto": "Omitir a los auxiliares de nómina generó que el sistema no cubriera sus necesidades; los usuarios operativos también son stakeholders."
+      },
+      {
+        "id": 1,
         "texto": "El sistema es correcto porque el gerente es el único stakeholder válido."
       },
       {
@@ -448,22 +398,18 @@
         "texto": "La falla se corrige eliminando el módulo de novedades."
       },
       {
-        "id": 1,
-        "texto": "Omitir a los auxiliares de nómina generó que el sistema no cubriera sus necesidades; los usuarios operativos también son stakeholders."
-      },
-      {
         "id": 3,
         "texto": "Los stakeholders solo se identifican al final del proyecto."
       }
     ],
-    "correcta": 2
+    "correcta": 0
   },
   {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
     "tipo": "Identificación de Actores",
     "titulo": "Ordena los pasos para identificar los actores del sistema",
-    "indicacion": "La identificación de actores inicia con el análisis del proceso y termina con el listado final de stakeholders. Ordena los bloques correctamente.",
+    "indicacion": "La identificación de actores inicia con el análisis del proceso y termina con el listado final de stakeholders. Ordena los bloques.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -513,11 +459,11 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
     "tipo": "Priorización de Actores",
     "titulo": "Ordena los pasos para priorizar los actores según poder e interés",
-    "indicacion": "La priorización de actores inicia con la elaboración de la matriz y termina con la estrategia de gestión por cuadrante. Ordena los bloques correctamente.",
+    "indicacion": "La priorización inicia con la elaboración de la matriz y termina con la estrategia de gestión por cuadrante. Ordena los bloques.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -547,7 +493,7 @@
       },
       {
         "id": "b6",
-        "texto": "Definir la estrategia de gestión según el cuadrante (gestionar de cerca, mantener informado, entre otras)",
+        "texto": "Definir la estrategia de gestión según el cuadrante: gestionar de cerca, mantener informado, entre otras",
         "tipo": "salida"
       },
       {
@@ -567,8 +513,62 @@
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
+    "id": 7,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Registro de Actores",
+    "titulo": "Ordena los pasos para registrar los actores en el documento de requisitos",
+    "indicacion": "Cada actor identificado debe quedar documentado con su rol, su interés y su prioridad. Ordena los bloques.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Diligenciar una ficha por actor con su rol y su área",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Describir el interés de cada actor en el sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Asignar la prioridad según poder e influencia",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Validar el registro con los interesados del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Incorporar las fichas al documento de requisitos",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
     "tipo": "Actor Omitido",
     "titulo": "Encuentra la falla: se omitió al usuario final",
     "indicacion": "El analista identificó los actores del sistema de citas médicas sin consultar a las usuarias directas. Revisa los pasos e identifica la falla.",
@@ -594,12 +594,12 @@
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "La identificación es correcta porque el gerente representa a todo el hospital."
-      },
-      {
         "id": 1,
         "texto": "Falta consultar a las secretarias de admisiones porque son usuarias directas y conocen la operación diaria del registro de citas."
+      },
+      {
+        "id": 0,
+        "texto": "La identificación es correcta porque el gerente representa a todo el hospital."
       },
       {
         "id": 2,
@@ -607,14 +607,14 @@
       },
       {
         "id": 3,
-        "texto": "El error es que el analista debió entrevistar a los pacientes en primer lugar."
+        "texto": "El error es que el analista debió entrevistar primero a los pacientes."
       }
     ],
-    "correcta": 1
+    "correcta": 0
   },
   {
-    "id": 10,
-    "categoria": "Depuración de Errores",
+    "id": 9,
+    "categoria": "Corregir el Documento",
     "tipo": "Prioridad Equivocada",
     "titulo": "Encuentra la falla: la prioridad se asignó por jerarquía",
     "indicacion": "El equipo priorizó a los actores del sistema de compras según el cargo y no según su relación con el sistema. Revisa los pasos e identifica la falla.",
@@ -640,20 +640,70 @@
     ],
     "opciones": [
       {
-        "id": 0,
+        "id": 1,
         "texto": "La prioridad debe asignarse por el cargo jerárquico y no por el uso del sistema."
       },
       {
-        "id": 1,
-        "texto": "El gerente siempre debe tener prioridad máxima sin importar el contexto."
+        "id": 0,
+        "texto": "La prioridad debe considerar la influencia y el interés de cada actor en el sistema; el auxiliar de compras es usuario directo y sus requisitos son esenciales."
       },
       {
         "id": 2,
-        "texto": "La prioridad debe considerar la influencia y el interés de cada actor en el sistema; el auxiliar de compras es usuario directo y sus requisitos son esenciales."
+        "texto": "El gerente siempre debe tener prioridad máxima sin importar el contexto."
       },
       {
         "id": 3,
         "texto": "El auxiliar de compras no debe tener requisitos porque no aprueba presupuestos."
+      }
+    ],
+    "correcta": 1
+  },
+  {
+    "id": 10,
+    "categoria": "Corregir el Documento",
+    "tipo": "Actor Incorrecto",
+    "titulo": "Encuentra la falla: se registró un actor que no interactúa con el sistema",
+    "indicacion": "En el registro de actores del sistema de inventario aparece un actor que no corresponde. Revisa los pasos e identifica la falla.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Identificar los actores del sistema de inventario: almacenista, administrador y proveedor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Registrar al proveedor como actor principal del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El almacenista consulta el inventario y registra las entradas y salidas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El documento de requisitos se envía con el listado de actores aprobado",
+        "tipo": "salida",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El almacenista no es stakeholder porque no aprueba compras."
+      },
+      {
+        "id": 1,
+        "texto": "El documento está correcto y no tiene errores."
+      },
+      {
+        "id": 3,
+        "texto": "El proveedor no interactúa directamente con el sistema; los actores son quienes lo usan o se benefician de él, como el almacenista y el administrador."
+      },
+      {
+        "id": 2,
+        "texto": "El administrador no debe aparecer en el listado de actores."
       }
     ],
     "correcta": 2
@@ -786,6 +836,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -845,6 +910,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1112,6 +1317,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1145,6 +1356,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

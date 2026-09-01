@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Identificar la Estructura del Documento ERS</title>
+<title>Evaluación Práctica - Estructura del Documento ERS</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la identificación de la estructura del documento de Especificación de Requisitos de Software (ERS): propósito y alcance de la introducción, contenido de la descripción general, organización de los requisitos específicos y aplicación de las secciones definidas en la norma IEEE 830, mediante retos prácticos interactivos.
+          Pon en práctica la identificación de la estructura del documento de Especificación de Requisitos de Software (ERS): decide en qué sección va cada contenido, ordena el armado del documento según la norma IEEE 830, corrige un ERS con requisitos mal ubicados y secciones faltantes, y sigue el proceso de clasificación de requisitos. Sin teoría: aquí se demuestra estructurando el ERS.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar la sección del ERS donde corresponde cada contenido del documento.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer mentalmente la estructura del ERS y determinar la sección correcta para cada elemento.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las secciones y subsecciones del documento según la norma.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la ubicación y organización del contenido del ERS.</li>
+            <li><strong>Análisis del Problema:</strong> Decide qué norma y qué sección del ERS corresponden a cada contenido.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la estructura del ERS y el proceso para armarlo.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra requisitos mal ubicados y secciones faltantes en el ERS.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de estructuración y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,7 +243,7 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Identificar la Estructura del Documento ERS</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Estructura del Documento ERS</p>
   </footer>
 
   <script>
@@ -251,170 +251,352 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Propósito del Documento",
-    "titulo": "¿En qué sección del documento ERS se declara el propósito del sistema y los objetivos que debe cumplir?",
-    "indicacion": "El ERS organiza su contenido en secciones según la norma IEEE 830. Identifica la sección que presenta la finalidad del documento y del producto.",
+    "tipo": "Norma de Referencia",
+    "titulo": "¿Qué norma guía la estructura del ERS?",
+    "indicacion": "El analista necesita una guía internacional para estructurar el documento ERS. Selecciona la norma correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "En la descripción general, junto con la perspectiva del producto."
+        "id": 1,
+        "texto": "ISO 9001: gestión de la calidad de procesos."
       },
       {
-        "id": 1,
-        "texto": "En la introducción, dentro de la subsección de propósito."
+        "id": 0,
+        "texto": "IEEE 830: guía para la Especificación de Requisitos de Software."
       },
       {
         "id": 2,
-        "texto": "En los requisitos específicos, junto con cada requisito funcional."
+        "texto": "IEEE 754: estándar de números de punto flotante."
       },
       {
         "id": 3,
-        "texto": "En los apéndices, como material complementario."
+        "texto": "RFC 2616: protocolo HTTP."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Descripción General",
-    "titulo": "¿Qué información se documenta en la sección de descripción general del ERS?",
-    "indicacion": "La descripción general contextualiza el producto antes de detallar los requisitos. Selecciona el contenido propio de esta sección.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura del ERS",
+    "titulo": "Construye el ERS: secciones en orden",
+    "indicacion": "Ordena las secciones del documento ERS según la estructura recomendada por la norma IEEE 830.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 1,
-        "texto": "El código fuente de los módulos del sistema."
+        "id": "b1",
+        "texto": "3. Requisitos específicos (funcionales y no funcionales)",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "El cronograma de actividades del proyecto de desarrollo."
+        "id": "b2",
+        "texto": "2. Descripción general (perspectiva, funciones y usuarios)",
+        "tipo": "proceso"
       },
       {
-        "id": 0,
-        "texto": "La perspectiva del producto, sus funciones principales, las características de los usuarios y las restricciones generales."
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 3,
-        "texto": "El manual de instalación del software."
+        "id": "b4",
+        "texto": "1. Introducción (propósito, alcance y definiciones)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Apéndices y referencias",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b4",
+      "b2",
+      "b1",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Requisitos Específicos",
-    "titulo": "¿Qué subsecciones componen la sección de requisitos específicos del ERS?",
-    "indicacion": "La sección central del documento detalla lo que el sistema debe hacer y las condiciones bajo las cuales lo hará. Selecciona la composición correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Corregir el Documento",
+    "tipo": "Requisito Vago en el ERS",
+    "titulo": "Encuentra el error: requisito sin criterio",
+    "indicacion": "El ERS contiene un requisito que no se puede verificar. Identifica la falla y su corrección.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "id": 0,
-        "texto": "Portada, tabla de contenido e índice de figuras."
+        "label": "1. Introducción: propósito y alcance",
+        "tipo": "proceso"
       },
       {
+        "label": "2. Descripción general: perspectiva y usuarios",
+        "tipo": "proceso"
+      },
+      {
+        "label": "3. Requisitos específicos: 'El sistema debe tener buena interfaz' (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Apéndices: formato de la entrevista",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
         "id": 1,
-        "texto": "Propósito, alcance y definiciones."
+        "texto": "La introducción sobra en el ERS."
       },
       {
         "id": 2,
-        "texto": "Presupuesto, cronograma y recursos humanos."
+        "texto": "El documento está correcto."
       },
       {
         "id": 3,
-        "texto": "Requisitos funcionales, requisitos no funcionales e interfaces externas."
+        "texto": "Falta la portada con el logo de la institución."
+      },
+      {
+        "id": 0,
+        "texto": "El requisito es vago: 'buena interfaz' no se puede medir ni verificar; debe redactarse con criterios concretos."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Orden de Secciones",
-    "titulo": "Según la norma IEEE 830, ¿cuál es el orden correcto de las secciones principales del ERS?",
-    "indicacion": "La norma organiza el documento en un orden lógico que va de lo general a lo particular. Selecciona la secuencia correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Conteo de Requisitos",
+    "titulo": "¿Cuántos requisitos no funcionales quedan documentados?",
+    "indicacion": "Ejecuta mentalmente el proceso de estructuración del ERS y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "id": 2,
-        "texto": "Introducción, descripción general, requisitos específicos, apéndices."
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El analista recibe el borrador con 12 requisitos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Clasifica: 8 funcionales y 4 no funcionales",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Ubica los funcionales en la sección 3.2 y los no funcionales en la 3.3",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Numera: RF-01 a RF-08 y RNF-01 a RNF-04",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "4 requisitos no funcionales."
       },
       {
         "id": 0,
-        "texto": "Requisitos específicos, descripción general, introducción, apéndices."
+        "texto": "8 requisitos no funcionales."
       },
       {
         "id": 1,
-        "texto": "Introducción, requisitos específicos, descripción general, apéndices."
+        "texto": "12 requisitos no funcionales."
       },
       {
-        "id": 3,
-        "texto": "Descripción general, introducción, apéndices, requisitos específicos."
+        "id": 2,
+        "texto": "16 requisitos no funcionales."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Clasificación de Contenido",
-    "titulo": "Prueba de escritorio: ubicación de un contenido en el ERS",
-    "indicacion": "Ejecuta mentalmente el recorrido por las secciones del documento y determina en cuál se debe registrar el fragmento descrito.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Fragmento: 'el sistema debe permitir registrar clientes con nombre, documento y teléfono'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El fragmento describe una capacidad observable del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Consultar la estructura del ERS: introducción, descripción general, requisitos específicos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: el fragmento corresponde a un requisito funcional de la sección de requisitos específicos",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Análisis del Problema",
+    "tipo": "Sección del ERS",
+    "titulo": "¿En qué sección del ERS va el propósito del sistema?",
+    "indicacion": "Se debe documentar el propósito del software y su alcance. Selecciona la sección del ERS que corresponde.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "En la introducción, porque presenta el propósito del sistema."
-      },
-      {
-        "id": 2,
-        "texto": "En los requisitos específicos, porque es un requisito funcional del sistema."
+        "texto": "Requisitos específicos."
       },
       {
         "id": 1,
-        "texto": "En la descripción general, porque describe la perspectiva del producto."
+        "texto": "Introducción: propósito, alcance y definiciones."
+      },
+      {
+        "id": 2,
+        "texto": "Índice de tablas."
       },
       {
         "id": 3,
-        "texto": "En los apéndices, porque es información complementaria."
+        "texto": "Referencias bibliográficas."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Armado del ERS",
+    "titulo": "Construye el proceso: identificar la estructura",
+    "indicacion": "Ordena los pasos que sigue el analista para identificar y armar la estructura del ERS a partir del borrador.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Asignar cada requisito a la sección correspondiente de la norma IEEE 830",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Clasificar el contenido según las secciones del ERS",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Verificar que no falte ninguna sección obligatoria",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Leer el borrador de requisitos completo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b5",
+      "b2",
+      "b1",
+      "b4",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Sección Faltante",
+    "titulo": "Encuentra el error: ERS incompleto",
+    "indicacion": "El ERS se declaró con estructura completa, pero le falta una parte obligatoria. ¿Cuál es la falla?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "El ERS contiene: Introducción y Descripción general",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Contiene la sección de Requisitos específicos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "No incluye los requisitos no funcionales (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El documento se marcó como 'estructura completa'",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 2,
+        "texto": "Falta la sección de introducción."
+      },
+      {
+        "id": 3,
+        "texto": "Los requisitos funcionales no pertenecen al ERS."
+      },
+      {
+        "id": 1,
+        "texto": "El ERS se marcó como completo sin incluir los requisitos no funcionales, que son parte obligatoria de los requisitos específicos."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Registro de un Requisito",
+    "titulo": "Construye el proceso: documentar un requisito específico",
+    "indicacion": "Ordena los pasos para documentar un requisito dentro de la sección de requisitos específicos del ERS.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Asignar la prioridad del requisito",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Redactar el enunciado de forma clara y verificable",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Registrarlo en la sección de requisitos específicos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Identificar el requisito y asignarle su código (RF-03)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b5",
+      "b2",
+      "b1",
+      "b4",
+      "b6"
+    ]
+  },
+  {
+    "id": 9,
     "categoria": "Prueba de Escritorio",
-    "tipo": "Identificación de Sección",
-    "titulo": "Prueba de escritorio: sección para las restricciones del sistema",
-    "indicacion": "Sigue mentalmente el análisis y determina la sección del ERS donde se documentan las restricciones de diseño y los estándares que debe cumplir el producto.",
+    "tipo": "Conteo de Secciones",
+    "titulo": "¿Cuántas secciones principales tiene el ERS?",
+    "indicacion": "Sigue el proceso de armado del ERS y determina cuántas secciones principales quedan al final.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
       {
@@ -422,20 +604,20 @@
         "tipo": "inicio"
       },
       {
-        "label": "Contenido: restricciones de hardware, estándares de seguridad y normas de diseño",
+        "label": "El ERS se arma con 3 secciones: Introducción, Descripción general y Requisitos específicos",
         "tipo": "proceso"
       },
       {
-        "label": "Las restricciones condicionan el desarrollo pero no definen funciones",
+        "label": "Se agrega una sección 4: Apéndices",
         "tipo": "proceso"
       },
       {
-        "label": "Ubicar el contenido dentro de la descripción general del ERS",
+        "label": "Se numeran las secciones: 1, 2, 3 y 4",
         "tipo": "proceso"
       },
       {
-        "label": "Resultado: las restricciones se documentan en la descripción general",
-        "tipo": "salida"
+        "label": "Se verifica la estructura contra la norma IEEE 830",
+        "tipo": "proceso"
       },
       {
         "label": "Fin",
@@ -445,219 +627,46 @@
     "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "En la introducción, en la subsección de definiciones."
-      },
-      {
-        "id": 2,
-        "texto": "En los requisitos específicos, como requisitos funcionales."
+        "texto": "3 secciones principales."
       },
       {
         "id": 0,
-        "texto": "En la descripción general, en la subsección de restricciones."
-      },
-      {
-        "id": 3,
-        "texto": "En el apéndice de referencias bibliográficas."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Estructura del ERS",
-    "titulo": "Ordena las secciones principales del documento ERS",
-    "indicacion": "La norma IEEE 830 define un orden para las secciones del documento de requisitos. Ordena los bloques desde la portada hasta el cierre del documento.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Portada y tabla de contenido",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Introducción: propósito, alcance, definiciones y referencias",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Descripción general: perspectiva, funciones, usuarios y restricciones",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Requisitos específicos: funcionales, no funcionales e interfaces",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Apéndices e índice",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Estructura de la Introducción",
-    "titulo": "Ordena las subsecciones de la introducción del ERS",
-    "indicacion": "La introducción del ERS presenta el documento y el producto. Ordena los bloques en el orden establecido por la norma IEEE 830.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Propósito: finalidad del documento y del producto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Alcance: identificar el software, sus beneficios, objetivos y metas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Definiciones y siglas empleadas en el documento",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Referencias: documentos externos citados",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Visión general: organización del contenido del ERS",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Sección Inadecuada",
-    "titulo": "Encuentra la falla: requisito no funcional mal ubicado",
-    "indicacion": "El equipo documentó un requisito de rendimiento en el ERS. Revisa los pasos e identifica el error en la ubicación del contenido.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Registrar el requisito: 'el sistema debe responder en menos de tres segundos'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Clasificarlo como requisito no funcional de rendimiento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Ubicar el requisito en la sección de introducción, subsección de propósito",
-        "tipo": "salida",
-        "error": true
-      }
-    ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "La falla es que el requisito debía registrarse sin clasificarlo previamente."
+        "texto": "4 secciones principales."
       },
       {
         "id": 2,
-        "texto": "La falla es que el requisito se ubicó en la introducción; los requisitos no funcionales van en la sección de requisitos específicos."
-      },
-      {
-        "id": 1,
-        "texto": "La falla es que el requisito de rendimiento no pertenece al ERS."
+        "texto": "2 secciones principales."
       },
       {
         "id": 3,
-        "texto": "La falla es que la introducción no tiene subsección de propósito."
+        "texto": "5 secciones principales."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Sección Incompleta",
-    "titulo": "Encuentra la falla: la descripción general no cumple su función",
-    "indicacion": "El analista redactó la descripción general del ERS. Revisa los pasos e identifica por qué la sección quedó incompleta.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Crear la sección de descripción general del ERS",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Redactar únicamente la perspectiva del producto",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Declarar completa la descripción general y continuar con los requisitos específicos",
-        "tipo": "salida",
-        "error": true
-      }
-    ],
+    "categoria": "Análisis del Problema",
+    "tipo": "Ubicación de Requisitos",
+    "titulo": "¿Dónde se documentan los requisitos funcionales?",
+    "indicacion": "El ERS debe documentar los requisitos funcionales identificados (RF-01, RF-02...). Selecciona la sección correcta.",
+    "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "La descripción general es correcta porque solo debe contener la perspectiva del producto."
-      },
-      {
-        "id": 2,
-        "texto": "La falla es que la descripción general no debe existir en el ERS."
+        "texto": "En la introducción."
       },
       {
         "id": 1,
-        "texto": "La descripción general está incompleta: además de la perspectiva debe incluir las funciones del producto, las características de los usuarios y las restricciones."
+        "texto": "En la descripción general."
+      },
+      {
+        "id": 2,
+        "texto": "En la sección de requisitos específicos (funcionales y no funcionales)."
       },
       {
         "id": 3,
-        "texto": "La falla es que la perspectiva del producto pertenece a los requisitos específicos."
+        "texto": "En el glosario de términos."
       }
     ],
     "correcta": 2
@@ -790,6 +799,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +873,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1280,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1319,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

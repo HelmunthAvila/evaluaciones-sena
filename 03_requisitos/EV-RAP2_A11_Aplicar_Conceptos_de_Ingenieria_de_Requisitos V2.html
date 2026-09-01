@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Aplicar Conceptos de Ingeniería de Requisitos</title>
+<title>Evaluación Práctica - Ingeniería de Requisitos</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de los conceptos de la ingeniería de requisitos: elicitación de necesidades, análisis y negociación, especificación formal, validación con los interesados y gestión de cambios, mediante retos prácticos interactivos.
+          Pon en práctica la ingeniería de requisitos con un caso real: identifica cuál actividad (elicitación, análisis, especificación, validación o gestión) corresponde a cada situación, ordena el proceso completo, corrige un ERS mal validado y una matriz de trazabilidad incompleta, y sigue el recorrido de los requisitos desde la entrevista hasta la aprobación. Sin teoría: aquí se demuestra aplicando el proceso.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Reconocer las fases de la ingeniería de requisitos y los conceptos asociados a cada una.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer mentalmente el proceso de ingeniería de requisitos y determinar la fase aplicada.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las fases del proceso y las actividades de las técnicas de elicitación.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la aplicación del proceso de ingeniería de requisitos.</li>
+            <li><strong>Análisis del Problema:</strong> Decide qué actividad de la ingeniería de requisitos corresponde a cada situación.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases de la ingeniería de requisitos.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra requisitos mal validados y trazabilidad incompleta.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de requisitos y determina el resultado final.</li>
           </ul>
         </div>
 
@@ -243,7 +243,7 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Conceptos de Ingeniería de Requisitos</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Ingeniería de Requisitos</p>
   </footer>
 
   <script>
@@ -251,9 +251,9 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Fase de Elicitación",
-    "titulo": "¿Cómo se denomina la fase de la ingeniería de requisitos en la que se recolectan las necesidades de los interesados?",
-    "indicacion": "El proceso de ingeniería de requisitos inicia con la obtención de información de los stakeholders. Selecciona el nombre correcto de esta fase.",
+    "tipo": "Actividad del Proceso",
+    "titulo": "¿Qué actividad recolecta las necesidades?",
+    "indicacion": "El analista aplica entrevistas, cuestionarios y observación para obtener las necesidades de los interesados. ¿Qué actividad de la ingeniería de requisitos está ejecutando?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -262,7 +262,7 @@
       },
       {
         "id": 2,
-        "texto": "Elicitación."
+        "texto": "Elicitación: recolección de información de los interesados."
       },
       {
         "id": 1,
@@ -270,151 +270,347 @@
       },
       {
         "id": 3,
-        "texto": "Gestión de cambios."
+        "texto": "Mantenimiento del sistema."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Fase de Especificación",
-    "titulo": "¿Qué actividad de la ingeniería de requisitos consiste en redactar los requisitos en un documento formal y sin ambigüedades?",
-    "indicacion": "Una vez analizadas las necesidades, se representan de manera estructurada. Selecciona la fase que corresponde a esta actividad.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Proceso General",
+    "titulo": "Construye el proceso: ingeniería de requisitos",
+    "indicacion": "Ordena las fases de la ingeniería de requisitos en la secuencia correcta, desde la recolección hasta el control de cambios.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "La elicitación de requisitos."
+        "id": "b1",
+        "texto": "Análisis: clasificar y priorizar los requisitos",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "La validación de requisitos."
+        "id": "b2",
+        "texto": "Elicitación: recolectar las necesidades",
+        "tipo": "proceso"
       },
       {
-        "id": 1,
-        "texto": "La especificación de requisitos."
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 3,
-        "texto": "La gestión de la configuración."
+        "id": "b4",
+        "texto": "Gestión: controlar cambios y trazabilidad",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Validación: revisar con los interesados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Especificación: documentar en el ERS",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b1",
+      "b6",
+      "b5",
+      "b4",
+      "b7"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Gestión de Requisitos",
-    "titulo": "¿Qué disciplina de la ingeniería de requisitos controla los cambios, la trazabilidad y el estado de cada requisito?",
-    "indicacion": "Durante el proyecto los requisitos evolucionan. Selecciona la disciplina que registra y controla esas variaciones.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Corregir el Documento",
+    "tipo": "Requisito Inválido",
+    "titulo": "Encuentra el error: requisito sin sentido",
+    "indicacion": "El analista marcó todos los requisitos como validados con el cliente, pero uno no debió pasar la validación. ¿Cuál es la falla?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "RF-01: 'El sistema debe registrar clientes' → validado",
+        "tipo": "proceso"
+      },
+      {
+        "label": "RF-02: 'El sistema debe generar facturas' → validado",
+        "tipo": "proceso"
+      },
+      {
+        "label": "RF-03: 'El sistema debe hacer magia' → validado (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "RNF-01: 'Disponibilidad del 99%' → validado",
+        "tipo": "proceso"
+      }
+    ],
     "opciones": [
       {
         "id": 0,
-        "texto": "El análisis de viabilidad."
-      },
-      {
-        "id": 1,
-        "texto": "La especificación del software."
+        "texto": "El documento está correcto."
       },
       {
         "id": 2,
-        "texto": "El diseño de la arquitectura."
+        "texto": "Falta la elicitación."
       },
       {
         "id": 3,
-        "texto": "La gestión de requisitos."
+        "texto": "Los requisitos funcionales deben ir en otro documento."
+      },
+      {
+        "id": 1,
+        "texto": "RF-03 no es un requisito válido: no describe una función real ni verificable y no debió marcarse como validado."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Fase de Validación",
-    "titulo": "¿En qué fase se confirma con el cliente que los requisitos son correctos, completos y reflejan sus necesidades?",
-    "indicacion": "Antes de iniciar el diseño, el cliente debe aprobar lo documentado. Selecciona la fase en la que ocurre esta confirmación.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Conteo Final de Requisitos",
+    "titulo": "¿Cuántos requisitos quedan aprobados?",
+    "indicacion": "Ejecuta mentalmente el proceso de ingeniería de requisitos y determina cuántos requisitos quedan aprobados en el ERS.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Se entrevistan 3 usuarios y se obtienen 15 necesidades",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El análisis descarta 3 necesidades por estar fuera del alcance",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Se especifican los 12 requisitos restantes en el ERS",
+        "tipo": "proceso"
+      },
+      {
+        "label": "La validación aprueba 10 y rechaza 2",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "10 requisitos aprobados."
+      },
       {
         "id": 0,
-        "texto": "Validación de requisitos."
+        "texto": "15 requisitos aprobados."
       },
       {
         "id": 1,
-        "texto": "Elicitación de requisitos."
+        "texto": "3 requisitos aprobados."
       },
       {
         "id": 2,
-        "texto": "Análisis de requisitos."
-      },
-      {
-        "id": 3,
-        "texto": "Documentación técnica."
+        "texto": "12 requisitos aprobados."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Identificación de Fase",
-    "titulo": "Prueba de escritorio: fase del proceso de ingeniería de requisitos",
-    "indicacion": "Ejecuta mentalmente la secuencia de actividades y determina la fase de la ingeniería de requisitos que se está aplicando.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El analista agenda reuniones con los usuarios del sistema de matrícula",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Aplica la técnica de entrevista y registra las necesidades expresadas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Organiza la información obtenida por prioridad",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: se está aplicando la elicitación de requisitos",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Se está aplicando la especificación de requisitos."
-      },
+    "categoria": "Análisis del Problema",
+    "tipo": "Gestión de Cambios",
+    "titulo": "¿Qué proceso controla el cambio?",
+    "indicacion": "Durante el proyecto el cliente solicita una nueva función. ¿Qué proceso de la ingeniería de requisitos se encarga de controlar ese cambio?",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 1,
-        "texto": "Se está aplicando la elicitación de requisitos."
+        "texto": "La elicitación."
+      },
+      {
+        "id": 0,
+        "texto": "La gestión de requisitos: control de cambios, versiones y trazabilidad."
       },
       {
         "id": 2,
-        "texto": "Se está aplicando la validación de requisitos."
+        "texto": "La validación."
       },
       {
         "id": 3,
-        "texto": "Se está aplicando la gestión de cambios."
+        "texto": "El diseño de la base de datos."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Validación con el Cliente",
+    "titulo": "Construye el proceso: validación con el cliente",
+    "indicacion": "Ordena los pasos de la sesión de validación del ERS con el cliente.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Registrar las observaciones y correcciones del cliente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Preparar la sesión de validación con el cliente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Obtener la aprobación final del cliente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Presentar el ERS requisito por requisito",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Actualizar el documento con los ajustes acordados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b5",
+      "b1",
+      "b6",
+      "b4",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Orden del Proceso",
+    "titulo": "Encuentra el error: proceso desordenado",
+    "indicacion": "El analista documentó requisitos que aún no había recolectado. Identifica el error en la secuencia del proceso.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Paso 1: Especificación: se documentaron requisitos sin haberlos recolectado (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Paso 2: Elicitación: se entrevistó al cliente",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Paso 3: Validación: se revisó el documento con el cliente",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 2,
+        "texto": "La validación debe hacerse al inicio del proceso."
+      },
+      {
+        "id": 3,
+        "texto": "No se debe entrevistar al cliente."
+      },
+      {
+        "id": 0,
+        "texto": "El orden está mal: primero se debe elicitar (recolectar) y luego especificar; se documentaron requisitos antes de recolectarlos."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Gestión de un Cambio",
+    "titulo": "Construye el proceso: control de cambios",
+    "indicacion": "Ordena los pasos del control de cambios de un requisito solicitado por el cliente.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Aprobar o rechazar el cambio",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Recibir la solicitud de cambio del cliente",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Informar a los interesados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Evaluar el impacto en costo, tiempo y alcance",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Actualizar el ERS y la matriz de trazabilidad",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b3",
+      "b2",
+      "b5",
+      "b1",
+      "b6",
+      "b4",
+      "b7"
+    ]
+  },
+  {
+    "id": 9,
     "categoria": "Prueba de Escritorio",
-    "tipo": "Secuencia del Proceso",
-    "titulo": "Prueba de escritorio: proceso de validación de requisitos",
-    "indicacion": "Sigue mentalmente el procedimiento y determina la fase final del proceso de ingeniería de requisitos descrito.",
+    "tipo": "Resultado del Cambio",
+    "titulo": "¿Qué ocurre después de aprobar el cambio?",
+    "indicacion": "Sigue el proceso de gestión de cambios y determina el resultado final.",
     "tipoComp": "prueba_escritorio",
     "diagramaSteps": [
       {
@@ -422,20 +618,20 @@
         "tipo": "inicio"
       },
       {
-        "label": "Los requisitos del sistema de inventario quedaron redactados en el ERS",
+        "label": "El cliente solicita el cambio: agregar pago en línea",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El comité evalúa el impacto: agrega 2 semanas al cronograma",
         "tipo": "proceso"
       },
       {
-        "label": "El equipo presenta el documento al jefe de almacén",
+        "label": "El cambio se aprueba",
         "tipo": "proceso"
       },
       {
-        "label": "El jefe de almacén verifica cada requisito contra sus necesidades y aprueba el documento",
+        "label": "Se actualiza el ERS y la matriz de trazabilidad",
         "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: se ejecutó la validación de requisitos con el cliente",
-        "tipo": "salida"
       },
       {
         "label": "Fin",
@@ -445,219 +641,65 @@
     "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Se ejecutó la fase de elicitación."
-      },
-      {
-        "id": 1,
-        "texto": "Se ejecutó la fase de análisis."
-      },
-      {
-        "id": 3,
-        "texto": "Se ejecutó la fase de validación de requisitos."
+        "texto": "El ERS queda desactualizado."
       },
       {
         "id": 2,
-        "texto": "Se ejecutó la fase de gestión de requisitos."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Ingeniería",
-    "titulo": "Ordena las fases del proceso de ingeniería de requisitos",
-    "indicacion": "La ingeniería de requisitos sigue un orden lógico que inicia con la obtención de información y culmina con el control del cambio. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "texto": "El cambio queda aprobado y documentado en el ERS y la trazabilidad."
       },
-      {
-        "id": "b2",
-        "texto": "Elicitación: recolectar las necesidades de los interesados",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Análisis: clasificar, priorizar y negociar los requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Especificación: redactar el documento de requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Validación: confirmar los requisitos con el cliente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Gestión: controlar cambios y trazabilidad",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Técnicas de Elicitación",
-    "titulo": "Ordena el desarrollo de una entrevista de elicitación",
-    "indicacion": "La entrevista es una técnica de elicitación de requisitos. Ordena los bloques desde la preparación hasta el cierre de la sesión.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Preparar el cuestionario con preguntas abiertas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Convocar a los usuarios clave del proceso",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Realizar la entrevista y registrar las respuestas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Consolidar la información y aclarar los puntos dudosos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Elaborar el acta con las necesidades identificadas",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Fase Omitida",
-    "titulo": "Encuentra la falla: se especificó sin analizar los requisitos",
-    "indicacion": "El equipo documentó los requisitos directamente después de las entrevistas. Revisa los pasos e identifica el error en el proceso de ingeniería de requisitos.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Realizar entrevistas a los usuarios del proceso de facturación",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Redactar el documento de requisitos con la información recolectada",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El equipo aprueba el documento y continúa con el diseño",
-        "tipo": "salida",
-        "error": true
-      }
-    ],
-    "opciones": [
       {
         "id": 1,
-        "texto": "La falla es que las entrevistas no son una técnica válida de elicitación."
-      },
-      {
-        "id": 0,
-        "texto": "La falla es que se omitió el análisis de requisitos: los datos deben clasificarse, priorizarse y verificarse antes de especificar."
-      },
-      {
-        "id": 2,
-        "texto": "La falla es que el documento de requisitos no debe redactarse nunca."
+        "texto": "Se cancela el proyecto."
       },
       {
         "id": 3,
-        "texto": "La falla es que el diseño debió iniciarse antes de las entrevistas."
+        "texto": "Se elimina el requisito de pago en línea."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Gestión Omitida",
-    "titulo": "Encuentra la falla: los cambios no se gestionaron",
-    "indicacion": "Durante el desarrollo el cliente solicitó modificar un requisito. Revisa los pasos e identifica el error en la gestión de requisitos.",
+    "categoria": "Corregir el Documento",
+    "tipo": "Trazabilidad Incompleta",
+    "titulo": "Encuentra el error: matriz incompleta",
+    "indicacion": "La matriz de trazabilidad se declaró completa, pero hay un requisito sin asociar. ¿Cuál es la falla?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El cliente solicita cambiar el formato del reporte de ventas",
+        "label": "RF-01 → caso de uso CU-01",
         "tipo": "proceso"
       },
       {
-        "label": "El desarrollador modifica el código sin registrar el cambio",
+        "label": "RF-02 → caso de uso CU-02",
         "tipo": "proceso"
       },
       {
-        "label": "El requisito queda modificado pero el ERS sigue con la versión anterior",
-        "tipo": "salida",
+        "label": "RF-03 → sin caso de uso asociado (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Se declaró la trazabilidad completa",
+        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La falla es que el cliente no tiene derecho a solicitar cambios."
+        "texto": "La matriz está correcta."
       },
       {
         "id": 2,
-        "texto": "La falla es que los cambios solo deben aplicarse al código y nunca al ERS."
+        "texto": "Falta la entrevista."
       },
       {
         "id": 1,
-        "texto": "La falla es que el cambio debió registrarse y controlarse mediante la gestión de requisitos: actualizar el ERS y la trazabilidad."
+        "texto": "RF-03 no tiene caso de uso asociado y aun así se declaró trazabilidad completa; debe asignarse el caso de uso o eliminarse el requisito."
       },
       {
         "id": 3,
-        "texto": "La falla es que el reporte de ventas no es un requisito del sistema."
+        "texto": "La matriz de trazabilidad no hace parte de la gestión."
       }
     ],
     "correcta": 2
@@ -790,6 +832,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +906,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1313,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1352,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la identificación del problema del sistema: diferenciación entre síntomas y causas, análisis de la situación actual, detección de oportunidades de mejora y formulación de la definición del problema, mediante retos prácticos interactivos.
+          Pon en práctica el diagnóstico de problemas de un sistema con un caso real de la empresa: distingue síntomas de causas, aplica los cinco porqués hasta llegar a la causa raíz, ordena el proceso de análisis y corrige un documento de diagnóstico mal redactado. Sin teoría: aquí se demuestra encontrando el problema real.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Diferenciar síntomas de causas, analizar la situación actual y formular la definición del problema.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso el proceso de análisis y predecir el problema identificado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos del proceso de identificación del problema.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el planteamiento del problema y aplicar la corrección adecuada.</li>
+            <li><strong>Análisis del Problema:</strong> Distingue síntomas, causas y definiciones correctas del problema.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases del análisis del problema del sistema.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra los errores en el diagnóstico y la definición del problema.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el análisis y determina la causa raíz o el problema central.</li>
           </ul>
         </div>
 
@@ -252,25 +252,25 @@
     "id": 1,
     "categoria": "Análisis del Problema",
     "tipo": "Síntoma o Causa",
-    "titulo": "Un jefe de almacén afirma: 'el inventario siempre aparece desactualizado'. ¿Cómo se clasifica esta afirmación?",
-    "indicacion": "En el análisis de un problema es fundamental diferenciar lo que se observa de lo que lo origina. Selecciona la clasificación correcta de la afirmación del jefe de almacén.",
+    "titulo": "¿Cuál es el síntoma observable?",
+    "indicacion": "En la empresa, 'los pedidos se pierden porque los vendedores anotan los datos en hojas sueltas'. Selecciona el SÍNTOMA observable del problema.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Es la causa raíz del problema."
+        "id": 1,
+        "texto": "Los vendedores anotan los datos en hojas sueltas."
       },
       {
-        "id": 1,
-        "texto": "Es un síntoma: la manifestación observable del problema."
+        "id": 0,
+        "texto": "Los pedidos se pierden."
       },
       {
         "id": 2,
-        "texto": "Es la solución que debe implementarse."
+        "texto": "Falta un sistema de pedidos."
       },
       {
         "id": 3,
-        "texto": "Es un requisito funcional del sistema."
+        "texto": "El gerente no revisa los informes."
       }
     ],
     "correcta": 1
@@ -278,26 +278,26 @@
   {
     "id": 2,
     "categoria": "Análisis del Problema",
-    "tipo": "Definición del Problema",
-    "titulo": "¿Cuál es la característica principal de un buen enunciado de problema?",
-    "indicacion": "El enunciado del problema es el punto de partida del levantamiento de requisitos. Selecciona la característica que debe cumplir una definición correcta.",
+    "tipo": "Causa Raíz",
+    "titulo": "¿Cuál es la causa raíz del problema?",
+    "indicacion": "Aplicando los cinco porqués: ¿Por qué se pierden los pedidos? → Porque no quedan registrados. ¿Por qué no quedan registrados? → Porque se anotan en hojas sueltas. ¿Por qué se anotan en hojas sueltas? → Porque no existe un formato único ni un sistema de registro. Selecciona la CAUSA RAÍZ.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Propone la tecnología y el lenguaje de programación que se deben usar."
+        "id": 3,
+        "texto": "La empresa no tiene acceso a internet."
       },
       {
-        "id": 2,
-        "texto": "Nombra a las personas responsables de implementar la solución."
+        "id": 1,
+        "texto": "Los vendedores son desorganizados."
       },
       {
         "id": 0,
-        "texto": "Describe la situación problemática sin proponer la solución."
+        "texto": "No existe un mecanismo formal y centralizado para registrar los pedidos."
       },
       {
-        "id": 3,
-        "texto": "Indica el costo estimado del proyecto."
+        "id": 2,
+        "texto": "Los pedidos se pierden."
       }
     ],
     "correcta": 2
@@ -305,359 +305,374 @@
   {
     "id": 3,
     "categoria": "Análisis del Problema",
-    "tipo": "Oportunidad de Mejora",
-    "titulo": "Un proceso manual de liquidación de facturas tarda cuatro horas diarias y podría automatizarse. ¿Cómo se denomina esta situación?",
-    "indicacion": "No todo hallazgo en el análisis es un problema; algunas situaciones representan posibilidades de mejorar el proceso. Selecciona el término correcto.",
+    "tipo": "Definición del Problema",
+    "titulo": "¿Cuál enunciado define el problema sin proponer la solución?",
+    "indicacion": "Selecciona el enunciado que define el PROBLEMA del sistema sin proponer la solución.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Un error de programación."
-      },
-      {
-        "id": 1,
-        "texto": "Una restricción técnica del hardware."
-      },
-      {
         "id": 2,
-        "texto": "Un requisito no funcional."
+        "texto": "Se deben contratar más vendedores."
       },
       {
         "id": 3,
-        "texto": "Una oportunidad de mejora."
+        "texto": "Se debe instalar una red nueva."
+      },
+      {
+        "id": 1,
+        "texto": "Se debe comprar un software de pedidos."
+      },
+      {
+        "id": 0,
+        "texto": "Los pedidos se pierden por falta de un registro centralizado, lo que genera demoras en la entrega."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Situación Actual",
-    "titulo": "¿Qué documento describe la forma en que se realiza hoy el proceso, antes de proponer el nuevo sistema?",
-    "indicacion": "Para identificar el problema es necesario conocer cómo funciona el proceso en la actualidad. Selecciona el elemento que describe esa condición.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Análisis del Problema",
+    "titulo": "Construye el proceso: análisis del problema",
+    "indicacion": "Ordena las fases del análisis del problema de un sistema, desde la situación actual hasta la validación de la definición.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 2,
-        "texto": "La descripción de la situación actual del proceso."
+        "id": "b1",
+        "texto": "Describir la situación actual del proceso",
+        "tipo": "proceso"
       },
       {
-        "id": 0,
-        "texto": "El manual de usuario del nuevo sistema."
+        "id": "b2",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 1,
-        "texto": "El cronograma de actividades del proyecto."
+        "id": "b3",
+        "texto": "Identificar los síntomas observables",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "El contrato de mantenimiento del software."
+        "id": "b4",
+        "texto": "Investigar las causas con los cinco porqués o el diagrama de Ishikawa",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Definir el problema central por escrito",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Validar la definición con los involucrados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 0
+    "ordenCorrecto": [
+      "b2",
+      "b1",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Análisis de Síntomas",
-    "titulo": "Prueba de escritorio: del síntoma a la causa raíz",
-    "indicacion": "Ejecuta mentalmente el análisis aplicando la técnica de los cinco porqués y determina cuál es la causa raíz identificada.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "De Síntoma a Causa",
+    "titulo": "Construye el proceso: del síntoma a la causa raíz",
+    "indicacion": "Ordena los pasos de la técnica de los cinco porqués aplicada al diagnóstico del sistema.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Síntoma: los clientes reclaman demoras en la facturación",
+        "id": "b2",
+        "texto": "Observar y registrar el síntoma (qué está pasando)",
         "tipo": "proceso"
       },
       {
-        "label": "Preguntar ¿por qué ocurre la demora? → los datos del cliente se digitaron con errores",
+        "id": "b3",
+        "texto": "Preguntar por qué ocurre (primer porqué)",
         "tipo": "proceso"
       },
       {
-        "label": "Preguntar ¿por qué se digita con errores? → el operario vuelve a escribir datos que ya existen en la base",
+        "id": "b4",
+        "texto": "Repetir el porqué hasta llegar a la causa raíz",
         "tipo": "proceso"
       },
       {
-        "label": "Conclusión: la causa raíz es la doble digitación de información existente",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Confirmar la causa con datos o evidencia",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "La causa raíz es que los clientes reclaman con frecuencia."
-      },
-      {
-        "id": 1,
-        "texto": "La causa raíz es la doble digitación de datos que ya existen en la base de datos."
-      },
-      {
-        "id": 2,
-        "texto": "La causa raíz es la demora del sistema de facturación."
-      },
-      {
-        "id": 3,
-        "texto": "La causa raíz es que el operario trabaja demasiado lento."
-      }
-    ],
-    "correcta": 1
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Análisis de la Situación",
-    "titulo": "Prueba de escritorio: identificación del problema real",
-    "indicacion": "Sigue mentalmente el proceso de análisis y determina cuál es el problema real identificado para el sistema.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Redacción de la Definición",
+    "titulo": "Construye el proceso: redacción de la definición del problema",
+    "indicacion": "Ordena los pasos para redactar la definición del problema en el acta de inicio del proyecto.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Registrar los síntomas reportados: pérdida de pedidos y errores en los despachos",
+        "id": "b2",
+        "texto": "Reunir la evidencia del problema (informes, quejas, mediciones)",
         "tipo": "proceso"
       },
       {
-        "label": "Clasificar las posibles causas por categorías: métodos, personal y herramientas",
+        "id": "b3",
+        "texto": "Redactar el problema indicando qué ocurre y a quién afecta",
         "tipo": "proceso"
       },
       {
-        "label": "Verificar con el personal: los pedidos se registran en hojas sueltas que se extravían",
+        "id": "b4",
+        "texto": "Evitar proponer soluciones en la definición",
         "tipo": "proceso"
       },
       {
-        "label": "Resultado: el problema real es la pérdida de información por el registro manual en papel",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Revisar la definición con los interesados",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "El problema real es que los clientes no pagan a tiempo."
-      },
-      {
-        "id": 2,
-        "texto": "El problema real es la falta de capacitación del personal."
-      },
-      {
-        "id": 0,
-        "texto": "El problema real es la pérdida de pedidos por el registro manual en papel."
-      },
-      {
-        "id": 3,
-        "texto": "El problema real es el costo del sistema nuevo."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Identificación",
-    "titulo": "Ordena los pasos para identificar el problema del sistema",
-    "indicacion": "El proceso de identificación del problema inicia con la observación de los síntomas y termina con la formulación del enunciado. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Observar y registrar los síntomas reportados por los usuarios",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Analizar la situación actual del proceso",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Aplicar la técnica de los cinco porqués para hallar las causas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Diferenciar los síntomas de las causas raíz",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Formular el enunciado del problema sin proponer solución",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Enunciado del Problema",
-    "titulo": "Ordena las partes del enunciado del problema",
-    "indicacion": "Un enunciado de problema describe el proceso afectado, el síntoma y el impacto, sin proponer la solución. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Describir el proceso afectado: control de inventario",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Mencionar el síntoma principal: existencias desactualizadas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Señalar el impacto: pedidos incompletos a los clientes",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Redactar el enunciado: 'El control de inventario presenta existencias desactualizadas que generan pedidos incompletos a los clientes'",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que el enunciado no proponga la solución",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Confusión Síntoma-Causa",
-    "titulo": "Encuentra la falla: el problema se definió con un síntoma",
-    "indicacion": "El equipo definió el problema sin profundizar en las causas. Revisa los pasos e identifica la falla en el planteamiento.",
+    "categoria": "Corregir el Documento",
+    "tipo": "Causa Confundida con Síntoma",
+    "titulo": "Encuentra el error: causa y síntoma invertidos",
+    "indicacion": "El documento de diagnóstico del proyecto contiene un error conceptual: un síntoma aparece listado como causa. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Registrar los síntomas: quejas por demora en la entrega de informes",
+        "label": "Síntoma: el inventario no coincide con lo registrado",
         "tipo": "proceso"
       },
       {
-        "label": "Definir el problema: 'el sistema no imprime los informes rápido'",
+        "label": "Causa: las salidas de mercancía no se registran en el momento",
         "tipo": "proceso"
       },
       {
-        "label": "El equipo aprueba esta definición y comienza el diseño",
-        "tipo": "salida",
+        "label": "Causa: el inventario no coincide con lo registrado (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 2,
+        "texto": "Falta incluir el nombre del proveedor."
+      },
+      {
+        "id": 3,
+        "texto": "El inventario siempre coincide con lo registrado."
+      },
+      {
+        "id": 0,
+        "texto": "'El inventario no coincide' es el síntoma, no la causa; la causa es la falta de registro de las salidas de mercancía."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
+    "tipo": "Definición que Propone Solución",
+    "titulo": "Encuentra el error: la definición propone una solución",
+    "indicacion": "La definición del problema en el acta de inicio contiene un error. ¿Cuál es?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Problema: las facturas se elaboran a mano y presentan errores de cálculo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Afecta a: área de facturación (3 auxiliares)",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Problema: se debe comprar un software de facturación (ERROR)",
+        "tipo": "proceso",
         "error": true
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La definición es correcta porque menciona al sistema."
+        "texto": "'Se debe comprar un software' es una solución, no el problema; la definición debe describir la situación actual sin proponer la solución."
       },
       {
         "id": 1,
-        "texto": "El problema se definió con un síntoma y no con la causa; debe aplicarse el análisis de causas antes de redactar el enunciado."
+        "texto": "El documento está correcto."
       },
       {
         "id": 2,
-        "texto": "Falta incluir el nombre del jefe de informes en la definición del problema."
+        "texto": "Falta indicar el presupuesto del proyecto."
       },
       {
         "id": 3,
-        "texto": "El equipo debió aprobar la definición sin realizar ningún análisis previo."
+        "texto": "El error es que las facturas se elaboran a mano."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Cinco Porqués",
+    "titulo": "¿Cuál es la causa raíz?",
+    "indicacion": "Sigue la aplicación de los cinco porqués sobre las facturas incorrectas y determina la causa raíz.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Síntoma: los clientes reclaman facturas con totales incorrectos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Porqué 1: el auxiliar digita mal los precios",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Porqué 2: digita a mano desde listas impresas desactualizadas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Porqué 3: no existe una base de precios actualizada consultable al facturar",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Determinar la causa raíz",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 3,
+        "texto": "No hay causa raíz, los errores de cálculo son normales."
+      },
+      {
+        "id": 0,
+        "texto": "La causa raíz es la ausencia de una base de precios actualizada y consultable al momento de facturar."
+      },
+      {
+        "id": 1,
+        "texto": "La causa raíz es que los clientes reclaman las facturas."
+      },
+      {
+        "id": 2,
+        "texto": "La causa raíz es que el auxiliar es descuidado."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Problema con Solución Incluida",
-    "titulo": "Encuentra la falla: el enunciado propone la solución",
-    "indicacion": "El analista redactó el problema del proceso de matrícula. Revisa los pasos e identifica por qué el enunciado no cumple las reglas de una buena definición.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Problema Central",
+    "titulo": "¿Cuál es el problema central?",
+    "indicacion": "Sigue el análisis de la situación actual del despacho de pedidos y determina el problema central del sistema.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Analizar la situación actual del proceso de matrícula",
+        "label": "Observación: el despacho de pedidos tarda 2 días en promedio",
         "tipo": "proceso"
       },
       {
-        "label": "Identificar el síntoma: los aspirantes esperan más de dos horas",
+        "label": "Registro de tiempos: el 60% del tiempo se gasta buscando la mercancía",
         "tipo": "proceso"
       },
       {
-        "label": "Redactar el problema: 'el proceso de matrícula debe cambiarse por un sistema web con base de datos MySQL'",
-        "tipo": "salida",
-        "error": true
+        "label": "Entrevista: los operarios no saben dónde está cada producto",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Revisar el plano de la bodega: no existe una ubicación definida por producto",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Definir el problema central",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El enunciado es válido porque incluye la tecnología que se utilizará."
-      },
-      {
-        "id": 1,
-        "texto": "El problema debía redactarse sin analizar primero la situación actual."
-      },
+    "opcionesRespuesta": [
       {
         "id": 2,
-        "texto": "El enunciado propone la solución y la tecnología; el problema debe describir la situación sin proponer soluciones."
+        "texto": "El problema central es que los clientes piden demasiado."
       },
       {
         "id": 3,
-        "texto": "La falla es que el síntoma no se registró antes de redactar el enunciado."
+        "texto": "No existe un problema, el despacho funciona bien."
+      },
+      {
+        "id": 0,
+        "texto": "El problema central es la falta de una ubicación definida para la mercancía, que provoca demoras en el despacho."
+      },
+      {
+        "id": 1,
+        "texto": "El problema central es que los operarios son lentos."
       }
     ],
     "correcta": 2
@@ -790,6 +805,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +879,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1286,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1325,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }
