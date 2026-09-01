@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la definición de tu perfil profesional y tu proyecto de vida: identificación de habilidades y competencias, planteamiento de metas, construcción del plan de formación y compromiso con el proceso formativo, mediante retos prácticos interactivos.
+          Pon en práctica la construcción de tu perfil profesional y de tu proyecto de vida: decide si una meta está bien planteada o si un enunciado hace parte del perfil, ordena los pasos para construir el proyecto de vida, el perfil profesional y el plan de formación, corrige un registro de metas mal diligenciado y recorre paso a paso una situación de planeación para determinar el resultado. Sin teoría: aquí se demuestra planificando tu formación y tu futuro profesional.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los componentes del perfil profesional, el proyecto de vida y las metas de formación.</li>
-<li><strong>Prueba de Escritorio:</strong> Evaluar situaciones de planeación personal y determinar la decisión correcta.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para construir el proyecto de vida y el plan de formación.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en el planteamiento de metas y en los compromisos de formación.</li>
+            <li><strong>Vida en el SENA:</strong> Decide si la meta, el perfil o el plan de formación están bien planteados.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para construir el proyecto de vida y el plan de formación.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra los errores en el planteamiento de metas y en el registro del perfil.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre la situación de planeación y determina el resultado correcto.</li>
           </ul>
         </div>
 
@@ -243,412 +243,417 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Definir Perfil Profesional y Proyecto de Vida en Formación</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Perfil Profesional y Proyecto de Vida</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Perfil Profesional",
-    "titulo": "¿Qué es el perfil profesional de un aprendiz SENA?",
-    "indicacion": "El perfil profesional describe las capacidades que desarrolla el aprendiz. Selecciona la opción que lo define correctamente.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Metas Bien Planteadas",
+    "titulo": "¿Cuál de estas metas está bien planteada?",
+    "indicacion": "Un aprendiz escribió varias metas en su proyecto de vida. Selecciona la que está planteada de forma específica y medible.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
+        "id": 1,
+        "texto": "Ser muy exitoso en la vida."
+      },
+      {
         "id": 0,
-        "texto": "El conjunto de materias que debe repetir el aprendiz."
+        "texto": "Graduarme como tecnólogo en Análisis y Desarrollo de Software en 2028 con promedio superior a 4.0."
       },
       {
         "id": 2,
-        "texto": "El conjunto de competencias, conocimientos y habilidades que desarrolla el aprendiz para desempeñarse en un campo ocupacional."
-      },
-      {
-        "id": 1,
-        "texto": "El horario de clases del trimestre."
+        "texto": "Tal vez algún día mejorar."
       },
       {
         "id": 3,
-        "texto": "El promedio de notas obtenido en el colegio."
+        "texto": "Aprender todo lo posible."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Proyecto de Vida",
-    "titulo": "¿Cuál es el primer paso para construir un proyecto de vida durante la formación?",
-    "indicacion": "El proyecto de vida orienta las decisiones del aprendiz. Selecciona la acción con la que se inicia su construcción.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "titulo": "Construye el proceso: proyecto de vida",
+    "indicacion": "Ordena los pasos que sigue un aprendiz para construir su proyecto de vida.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Esperar a terminar la formación para tomar decisiones."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 1,
-        "texto": "Copiar el proyecto de vida de un compañero."
+        "id": "b2",
+        "texto": "Definir la visión a largo plazo",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Realizar un autodiagnóstico: identificar intereses, fortalezas, debilidades y metas personales."
+        "id": "b3",
+        "texto": "Reconocer las fortalezas y debilidades",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Concentrarse únicamente en las actividades recreativas."
+        "id": "b4",
+        "texto": "Elaborar el plan de acción para cada meta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Establecer metas a corto, mediano y largo plazo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b3",
+      "b2",
+      "b5",
+      "b4",
+      "b6"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Planteamiento de Metas",
-    "titulo": "Una meta efectiva debe ser específica, medible y con plazo. ¿Cuál de las siguientes metas está bien planteada?",
-    "indicacion": "Las metas orientan el esfuerzo del aprendiz. Selecciona la meta que cumple las características de una meta bien planteada.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Componentes del Perfil",
+    "titulo": "¿Qué elemento NO hace parte del perfil profesional?",
+    "indicacion": "Selecciona el enunciado que no corresponde a los componentes del perfil profesional del egresado.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
+        "id": 0,
+        "texto": "Las competencias técnicas del programa de formación."
+      },
+      {
         "id": 1,
-        "texto": "Ser millonario algún día."
+        "texto": "Los valores y las actitudes profesionales."
       },
       {
         "id": 2,
-        "texto": "Estudiar cuando tenga tiempo."
+        "texto": "Las capacidades para desempeñarse en el cargo."
       },
       {
         "id": 3,
-        "texto": "Tal vez mejorar mis notas."
-      },
-      {
-        "id": 0,
-        "texto": "Graduarme como técnico en programación de software en el segundo trimestre del año 2027, cumpliendo los compromisos académicos del programa."
+        "texto": "El número de la ficha de matrícula."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
+    "categoria": "Prueba de Escritorio",
     "tipo": "Plan de Formación",
-    "titulo": "¿Qué papel cumple el plan de formación en el proceso del aprendiz?",
-    "indicacion": "El plan de formación es la guía del proceso formativo. Selecciona la opción que describe su función correctamente.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "titulo": "Recorre el proceso: plan de formación del aprendiz",
+    "indicacion": "Sigue paso a paso la construcción del plan de formación de un aprendiz y determina el resultado correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "El aprendiz revisa el itinerario de formación del programa",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El aprendiz identifica las competencias que debe alcanzar en cada trimestre",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aprendiz organiza su horario de estudio y sus compromisos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aprendiz ejecuta el plan y evalúa sus avances cada mes",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "Define la ruta de aprendizaje: resultados de aprendizaje, actividades, evidencias y tiempos que el aprendiz debe cumplir."
+        "texto": "El aprendiz avanza de forma organizada y puede medir su progreso por competencias."
       },
       {
         "id": 0,
-        "texto": "Es un documento que solo firma el instructor."
+        "texto": "El aprendiz abandona la formación."
       },
       {
         "id": 2,
-        "texto": "Es una lista de sanciones disciplinarias."
+        "texto": "El aprendiz estudia sin horario definido."
       },
       {
         "id": 3,
-        "texto": "Es el registro de asistencia de cada sesión de formación."
+        "texto": "El aprendiz cambia de programa cada mes."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Mejoramiento del Desempeño",
-    "titulo": "Prueba de escritorio: decisión frente a un bajo rendimiento",
-    "indicacion": "Un aprendiz obtiene calificaciones bajas en el primer corte. Ejecuta mentalmente el proceso y determina el resultado de la decisión tomada.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Registro",
+    "tipo": "Metas del Proyecto de Vida",
+    "titulo": "Encuentra el error: registro de metas",
+    "indicacion": "Un aprendiz registró sus metas en el proyecto de vida. Una de ellas no cumple con las condiciones de una buena meta. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El aprendiz obtiene calificaciones bajas en el primer corte",
+        "label": "Meta 1: Obtener un promedio superior a 4.0 en el primer trimestre",
         "tipo": "proceso"
       },
       {
-        "label": "Revisa su plan de formación y detecta que no ha presentado dos evidencias",
+        "label": "Meta 2: Presentar la prueba de certificación de inglés en 2027",
         "tipo": "proceso"
       },
       {
-        "label": "Decisión: reprogramar las evidencias y organizar un horario de estudio",
-        "tipo": "decision"
+        "label": "Meta 3: Ser millonario antes de terminar el tecnólogo (ERROR)",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "Salida: el aprendiz entrega las evidencias y mejora su desempeño",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Meta 4: Realizar la etapa productiva en una empresa de desarrollo",
+        "tipo": "proceso"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El aprendiz es retirado del programa de formación."
-      },
-      {
-        "id": 3,
-        "texto": "El aprendiz cumple sus compromisos, presenta las evidencias y avanza en su formación."
-      },
+    "opciones": [
       {
         "id": 1,
-        "texto": "El aprendiz espera la nivelación del próximo trimestre sin actuar."
+        "texto": "La meta 1 no se puede medir."
+      },
+      {
+        "id": 0,
+        "texto": "La meta 3 no es realista ni medible en el horizonte de la formación: las metas deben ser alcanzables y verificables."
       },
       {
         "id": 2,
-        "texto": "El instructor asume la responsabilidad de presentar las evidencias."
+        "texto": "La meta 4 es innecesaria en la formación."
+      },
+      {
+        "id": 3,
+        "texto": "El registro está correcto."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Planeación del Estudio",
-    "titulo": "Prueba de escritorio: horas de estudio autónomo",
-    "indicacion": "Un aprendiz dispone de 20 horas semanales para su formación y destina 12 horas a las sesiones con el instructor. Ejecuta mentalmente el proceso y determina el valor que se muestra.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Perfil Profesional",
+    "titulo": "Construye el proceso: definición del perfil profesional",
+    "indicacion": "Ordena los pasos que sigue un aprendiz para definir su perfil profesional.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz dispone de 20 horas semanales para su formación",
+        "id": "b2",
+        "texto": "Identificar las competencias requeridas",
         "tipo": "proceso"
       },
       {
-        "label": "Destina 12 horas a las sesiones con el instructor",
+        "id": "b3",
+        "texto": "Investigar las funciones del cargo u ocupación",
         "tipo": "proceso"
       },
       {
-        "label": "Horas de estudio autónomo = 20 - 12",
+        "id": "b4",
+        "texto": "Escribir el perfil profesional",
         "tipo": "proceso"
       },
       {
-        "label": "Salida: mostrar las horas disponibles para el estudio independiente",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Comparar las competencias con las fortalezas y oportunidades",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "10 horas"
-      },
-      {
-        "id": 2,
-        "texto": "12 horas"
-      },
-      {
-        "id": 0,
-        "texto": "8 horas"
-      },
-      {
-        "id": 3,
-        "texto": "20 horas"
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b3",
+      "b2",
+      "b5",
+      "b4",
+      "b6"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Construcción del Proyecto de Vida",
-    "titulo": "Ordena los pasos para construir el proyecto de vida",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta en la elaboración del proyecto de vida del aprendiz.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
+    "categoria": "Vida en el SENA",
+    "tipo": "Visión del Proyecto de Vida",
+    "titulo": "¿Qué es la visión en el proyecto de vida?",
+    "indicacion": "Un aprendiz está construyendo su proyecto de vida y pregunta qué es la visión. Selecciona la respuesta correcta.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": 0,
+        "texto": "El inventario de mis debilidades."
       },
       {
-        "id": "b2",
-        "texto": "El aprendiz realiza su autodiagnóstico personal y vocacional",
-        "tipo": "proceso"
+        "id": 1,
+        "texto": "El listado de las materias que debo repetir."
       },
       {
-        "id": "b3",
-        "texto": "Define su misión y visión personal",
-        "tipo": "proceso"
+        "id": 3,
+        "texto": "El presupuesto mensual de gastos."
       },
       {
-        "id": "b4",
-        "texto": "Plantea metas a corto, mediano y largo plazo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Establece acciones y compromisos para alcanzar cada meta",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": 2,
+        "texto": "La imagen clara y realista de la persona que quiero ser en el futuro."
       }
     ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
+    "correcta": 3
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Compromiso con la Formación",
-    "titulo": "Ordena el proceso para asumir el compromiso con la formación",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue un aprendiz al asumir su compromiso con el plan de formación.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El aprendiz conoce los resultados de aprendizaje de su programa",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Identifica las actividades y evidencias que debe desarrollar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Organiza su tiempo para cumplir las entregas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Cumple los compromisos y evalúa su avance con el instructor",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Meta Mal Planteada",
-    "titulo": "Encuentra la falla: meta sin plazo ni acciones",
-    "indicacion": "El aprendiz plantea una meta para mejorar sus competencias técnicas. Revisa el procedimiento e identifica el error en el planteamiento.",
+    "categoria": "Corregir el Registro",
+    "tipo": "Registro del Plan de Formación",
+    "titulo": "Encuentra el error: plan de formación",
+    "indicacion": "Revisa el registro del avance de formación de un aprendiz. Un campo es incorrecto. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El aprendiz quiere mejorar sus competencias técnicas",
+        "label": "Competencia: Desarrollar software según requerimientos",
         "tipo": "proceso"
       },
       {
-        "label": "Plantea la meta: 'ser el mejor programador del mundo' sin definir plazos ni acciones",
-        "tipo": "proceso",
-        "error": true
+        "label": "Trimestre: 2",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Resultado de aprendizaje: Diseñar la base de datos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Cumplimiento: Aprobado por decisión propia del aprendiz (ERROR)",
+        "tipo": "proceso",
+        "error": true
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La meta debe escribirse en inglés obligatoriamente."
+        "texto": "El cumplimiento de un resultado de aprendizaje no lo declara el aprendiz: lo evalúa el instructor según las evidencias."
       },
       {
         "id": 1,
-        "texto": "La meta planteada no es específica ni medible: una meta efectiva debe definir un resultado concreto, un plazo y las acciones para lograrla, por ejemplo dominar Python en 3 meses."
+        "texto": "La competencia está mal nombrada."
       },
       {
         "id": 2,
-        "texto": "El aprendiz no debe plantear metas técnicas durante la inducción."
+        "texto": "El trimestre no puede ser el número 2."
       },
       {
         "id": 3,
-        "texto": "El proyecto de vida solo contempla metas económicas."
+        "texto": "El registro está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Seguimiento de la Meta",
+    "titulo": "Recorre el proceso: seguimiento de la meta",
+    "indicacion": "Sigue paso a paso el cumplimiento de una meta de formación y determina el resultado correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "El aprendiz define la meta: certificarse en inglés nivel B1 en 2027",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El aprendiz inscribe el curso de inglés en la plataforma",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aprendiz estudia dos horas diarias y presenta las evaluaciones",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aprendiz presenta la prueba de certificación y obtiene el nivel B1",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "La meta se cancela."
+      },
+      {
+        "id": 2,
+        "texto": "La meta se cumple: el aprendiz obtiene la certificación B1."
+      },
+      {
+        "id": 1,
+        "texto": "El aprendiz pierde el cupo."
+      },
+      {
+        "id": 3,
+        "texto": "El aprendiz repite el tecnólogo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Falta de Compromiso",
-    "titulo": "Encuentra la falla: evidencias atrasadas",
-    "indicacion": "Un aprendiz está atrasado en varias evidencias. Revisa el procedimiento e identifica el error en su decisión.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Evaluación del Avance",
+    "titulo": "Construye el proceso: evaluación del avance trimestral",
+    "indicacion": "Ordena los pasos que sigue un aprendiz para evaluar su avance al final de cada trimestre.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz identifica que está atrasado en tres evidencias",
+        "id": "b2",
+        "texto": "Comparar los logros con las metas planteadas",
         "tipo": "proceso"
       },
       {
-        "label": "Decide no informar al instructor y abandonar las entregas del trimestre",
-        "tipo": "proceso",
-        "error": true
+        "id": "b3",
+        "texto": "Revisar los resultados de aprendizaje del trimestre",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b4",
+        "texto": "Ajustar el plan para el siguiente trimestre",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Identificar las acciones de mejora",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El aprendiz debe ocultar su atraso para evitar llamados de atención."
-      },
-      {
-        "id": 1,
-        "texto": "El instructor debe presentar las evidencias por el aprendiz."
-      },
-      {
-        "id": 2,
-        "texto": "La decisión correcta es comunicar la situación, solicitar orientación y cumplir los compromisos pendientes dentro de los plazos establecidos."
-      },
-      {
-        "id": 3,
-        "texto": "El reglamento permite entregar las evidencias cuando finalice el programa."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b3",
+      "b2",
+      "b5",
+      "b4",
+      "b6"
+    ]
   }
 ];
 
@@ -778,6 +783,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -837,6 +857,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1104,6 +1264,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1137,6 +1303,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

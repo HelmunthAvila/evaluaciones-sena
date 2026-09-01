@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la validación de requisitos con el cliente: conducción de reuniones de revisión, registro de observaciones, aprobación formal del documento, gestión de solicitudes de cambio y control de versiones, mediante retos prácticos interactivos.
+          Pon en práctica la validación de requisitos con el cliente: decide si un requisito está listo para aprobarse, ordena la sesión de validación y el procedimiento de control de cambios, corrige un acta y un historial de versiones mal diligenciados y recorre paso a paso el proceso de aprobación hasta determinar el estado final del documento. Sin teoría: aquí se demuestra validando requisitos con el cliente.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Validación:</strong> Confirmar con el cliente que los requisitos documentados corresponden a sus necesidades.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer paso a paso el proceso de revisión, aprobación y control de cambios.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las etapas de la validación y del control de cambios.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el proceso de aprobación y en el control de versiones del documento.</li>
+            <li><strong>Validación:</strong> Decide si cada requisito está aprobado o requiere cambios por parte del cliente.</li>
+<li><strong>Reordenamiento de Bloques:</strong> Ensambla las fases de la sesión de validación y del control de versiones.</li>
+<li><strong>Depuración de Errores:</strong> Encuentra las fallas en el acta de validación y en el control de cambios.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre el proceso de aprobación y determina el resultado correcto.</li>
           </ul>
         </div>
 
@@ -251,432 +251,409 @@
   {
     "id": 1,
     "categoria": "Validación",
-    "tipo": "Concepto de Validación",
-    "titulo": "¿Qué significa validar los requisitos con el cliente?",
-    "indicacion": "La validación es una etapa del ciclo de vida de los requisitos. Selecciona la definición correcta.",
+    "tipo": "Aprobación de Requisito",
+    "titulo": "¿Qué significa que el cliente apruebe un requisito?",
+    "indicacion": "En la sesión de validación, el cliente revisó el requisito R-04 y lo aprobó. Selecciona la interpretación correcta de esa aprobación.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Traducir los requisitos a código de programación."
-      },
-      {
-        "id": 3,
-        "texto": "Confirmar que los requisitos documentados corresponden a lo que el cliente realmente necesita."
-      },
-      {
         "id": 1,
-        "texto": "Calcular el costo del proyecto."
+        "texto": "Que el desarrollador decidió que el requisito ya no es necesario."
+      },
+      {
+        "id": 0,
+        "texto": "Que el cliente confirmó por escrito que el requisito cumple con lo que necesita y puede cerrarse en esa versión."
       },
       {
         "id": 2,
-        "texto": "Asignar responsables a cada requisito."
+        "texto": "Que el requisito se elimina del documento sin más trámite."
+      },
+      {
+        "id": 3,
+        "texto": "Que el requisito quedará pendiente de revisión en la siguiente reunión."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Validación",
-    "tipo": "Técnica de Prototipo",
-    "titulo": "¿Qué técnica de validación consiste en presentar al cliente un modelo interactivo y navegable del sistema?",
-    "indicacion": "Existen varias técnicas para validar los requisitos. Selecciona la que corresponde a la descripción dada.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Reordenamiento de Bloques",
+    "tipo": "Sesión de Validación",
+    "titulo": "Construye el proceso: sesión de validación de requisitos",
+    "indicacion": "Ordena las etapas de la sesión de validación de requisitos con el cliente, desde la preparación hasta la aprobación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 1,
-        "texto": "La entrevista estructurada."
+        "id": "b1",
+        "texto": "Presentar cada requisito al cliente y explicar su alcance",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "El acta de reunión."
+        "id": "b2",
+        "texto": "Registrar las observaciones y decisiones del cliente",
+        "tipo": "proceso"
       },
       {
-        "id": 0,
-        "texto": "El prototipo."
+        "id": "b3",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 3,
-        "texto": "La matriz de trazabilidad."
+        "id": "b4",
+        "texto": "Preparar la lista de requisitos y la documentación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Aprobar los requisitos y firmar el acta de validación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b3",
+      "b4",
+      "b1",
+      "b2",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 3,
     "categoria": "Validación",
     "tipo": "Solicitud de Cambio",
-    "titulo": "El cliente solicita un cambio aprobado sobre el requisito RF-003. ¿Qué debe hacer el analista?",
-    "indicacion": "Una vez aprobado el documento, los cambios deben gestionarse de manera controlada. Selecciona el procedimiento correcto.",
+    "titulo": "El cliente solicita un cambio sobre el requisito R-07",
+    "indicacion": "Durante la validación, el cliente indica que el requisito R-07 debe aceptar 200 caracteres en la descripción y no 100. ¿Qué acción corresponde?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Aplicar el cambio directamente y no dejar registro."
-      },
-      {
-        "id": 1,
-        "texto": "Rechazar la solicitud porque el documento ya fue aprobado."
-      },
-      {
-        "id": 3,
-        "texto": "Entregar el documento anterior sin modificaciones."
+        "texto": "Aprobar el requisito igualmente y ajustar el texto después de la entrega."
       },
       {
         "id": 2,
-        "texto": "Registrar la solicitud, evaluar su impacto, aplicar el cambio aprobado y actualizar la versión del documento."
+        "texto": "Eliminar el requisito R-07 del documento."
+      },
+      {
+        "id": 3,
+        "texto": "Aplicar el cambio sin documentarlo para agilizar el proceso."
+      },
+      {
+        "id": 1,
+        "texto": "Registrar la observación, ajustar el requisito y someterlo a una nueva validación."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Validación",
-    "tipo": "Aprobación Formal",
-    "titulo": "¿Quién debe aprobar formalmente el documento de requisitos para que el proyecto continúe?",
-    "indicacion": "La aprobación formal cierra la etapa de validación. Selecciona el responsable correcto de esa aprobación.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Control de Cambios",
+    "titulo": "Recorre el proceso: solicitud de cambio de un requisito",
+    "indicacion": "Sigue paso a paso el recorrido de la solicitud de cambio del requisito R-03 y determina el resultado correcto del proceso.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "id": 1,
-        "texto": "El cliente o usuario del sistema, en la reunión de validación."
+        "label": "El cliente solicita por correo el cambio del requisito R-03",
+        "tipo": "entrada"
       },
       {
+        "label": "El analista registra la solicitud en la matriz de control de cambios",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El comité evalúa el impacto del cambio en el alcance y los tiempos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Se actualiza el documento a la versión 1.3 y se notifica al cliente",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
         "id": 0,
-        "texto": "El programador líder del equipo."
+        "texto": "El documento queda en la versión 1.3 y el cliente es notificado para validar el cambio."
+      },
+      {
+        "id": 1,
+        "texto": "El documento se elimina y el proyecto se reinicia."
       },
       {
         "id": 2,
-        "texto": "El analista que redactó el documento."
+        "texto": "El cambio se aplica sin registrarse en la matriz."
       },
       {
         "id": 3,
-        "texto": "El administrador de la base de datos."
+        "texto": "El documento permanece en la versión 1.0 porque no se documentó el cambio."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Reunión de Revisión",
-    "titulo": "Prueba de escritorio: resultado de la reunión de validación",
-    "indicacion": "Ejecuta mentalmente la reunión de validación con el cliente y determina cuál es el resultado correcto del proceso.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Depuración de Errores",
+    "tipo": "Acta de Validación",
+    "titulo": "Encuentra el error: acta de validación",
+    "indicacion": "El acta registra el resultado de la sesión de validación. Uno de los registros es incorrecto. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se convoca al cliente a la reunión de validación del documento de requisitos",
+        "label": "R-01: Aprobado por el cliente",
         "tipo": "proceso"
       },
       {
-        "label": "Se presentan los requisitos funcionales y no funcionales uno a uno",
+        "label": "R-02: Aprobado por el cliente",
         "tipo": "proceso"
       },
       {
-        "label": "El cliente solicita aclaración sobre el requisito RF-005 y el analista la registra",
+        "label": "R-03: Aprobado por el analista (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Acta firmada y archivada",
         "tipo": "proceso"
-      },
-      {
-        "label": "Se resuelve la duda y el cliente manifiesta su conformidad con el documento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado esperado de la reunión",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
         "id": 1,
-        "texto": "El documento se modifica sin registrar las observaciones."
+        "texto": "El requisito R-01 debió ser rechazado."
       },
       {
         "id": 0,
-        "texto": "Se registran las observaciones en el acta y el cliente aprueba el documento, dejando constancia firmada."
+        "texto": "El requisito R-03 no puede aprobarlo el analista: la aprobación es una decisión del cliente, no del equipo de desarrollo."
       },
       {
         "id": 2,
-        "texto": "La reunión termina sin acta ni decisión."
+        "texto": "El acta no debe archivarse después de firmarse."
       },
       {
         "id": 3,
-        "texto": "El analista aprueba el documento en nombre del cliente."
+        "texto": "El acta está correctamente diligenciada."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
+    "categoria": "Reordenamiento de Bloques",
     "tipo": "Control de Versiones",
-    "titulo": "Prueba de escritorio: versión del documento tras un cambio aprobado",
-    "indicacion": "Sigue mentalmente el proceso de control de versiones y determina la versión correcta que debe asignarse al documento.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "titulo": "Construye el proceso: control de versiones del documento",
+    "indicacion": "Ordena los pasos del control de versiones cuando el cliente solicita un cambio al documento de requisitos.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El documento de requisitos se aprueba como versión 1.0",
+        "id": "b2",
+        "texto": "Registrar la solicitud de cambio del cliente",
         "tipo": "proceso"
       },
       {
-        "label": "El cliente solicita agregar el requisito RF-009: reporte de ventas por sucursal",
+        "id": "b3",
+        "texto": "Actualizar el documento y asignar el nuevo número de versión",
         "tipo": "proceso"
       },
       {
-        "label": "El cambio se evalúa, se aprueba y se actualiza el documento",
+        "id": "b4",
+        "texto": "Analizar el impacto del cambio en el alcance y el cronograma",
         "tipo": "proceso"
       },
       {
-        "label": "Se asigna la nueva versión del documento",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Distribuir la nueva versión y archivar la anterior",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El documento conserva la versión 1.0 porque ya fue aprobado."
-      },
-      {
-        "id": 1,
-        "texto": "El documento pasa a la versión 0.1."
-      },
-      {
-        "id": 2,
-        "texto": "El documento pasa a la versión 1.1 (o 2.0 según la política), registrando el cambio en el historial de versiones."
-      },
-      {
-        "id": 3,
-        "texto": "El documento se elimina y se vuelve a redactar."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b4",
+      "b3",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Validación",
-    "titulo": "Ordena el proceso de validación de requisitos con el cliente",
-    "indicacion": "La validación inicia con la preparación del documento y termina con el control de la versión aprobada. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
+    "categoria": "Validación",
+    "tipo": "Participación del Cliente",
+    "titulo": "El cliente no asiste a la sesión de validación",
+    "indicacion": "Llegó el día de la sesión de validación y el cliente no se presentó. ¿Qué debe hacer el analista?",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": 0,
+        "texto": "Aprobar los requisitos sin el cliente para no atrasar el proyecto."
       },
       {
-        "id": "b2",
-        "texto": "Preparar el documento de requisitos y la agenda de la reunión",
-        "tipo": "proceso"
+        "id": 2,
+        "texto": "Firmar el acta en nombre del cliente."
       },
       {
-        "id": "b3",
-        "texto": "Convocar al cliente y a los usuarios clave",
-        "tipo": "proceso"
+        "id": 3,
+        "texto": "Eliminar del documento los requisitos que no alcanzaron a revisarse."
       },
       {
-        "id": "b4",
-        "texto": "Presentar los requisitos y resolver las dudas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Registrar las observaciones y solicitudes de cambio",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Obtener la aprobación formal y firmar el acta",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Actualizar el documento y controlar la versión",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": 1,
+        "texto": "Reagendar la sesión porque la validación requiere la participación del cliente."
       }
     ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
+    "correcta": 3
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Control de Cambios",
-    "titulo": "Ordena el proceso de control de cambios de los requisitos",
-    "indicacion": "El control de cambios sigue un flujo que va desde la solicitud hasta la notificación de la nueva versión. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Recibir la solicitud de cambio del cliente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Evaluar el impacto del cambio en alcance, tiempo y costo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Presentar el análisis al cliente y obtener su aprobación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Aplicar el cambio en el documento de requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Actualizar la versión y registrar el cambio en el historial",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Informar a los interesados sobre la nueva versión",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 9,
     "categoria": "Depuración de Errores",
-    "tipo": "Aprobación sin Acta",
-    "titulo": "Encuentra la falla: se inició el diseño sin dejar constancia de la aprobación",
-    "indicacion": "El equipo validó los requisitos con el cliente pero omitió un paso del proceso. Revisa los pasos e identifica la falla.",
+    "tipo": "Historial de Versiones",
+    "titulo": "Encuentra el error: control de versiones del documento",
+    "indicacion": "Revisa el historial de versiones del documento de requisitos. Un registro rompe la secuencia. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se realiza la reunión de validación con el cliente",
+        "label": "v1.0: Documento inicial aprobado por el cliente",
         "tipo": "proceso"
       },
       {
-        "label": "El cliente manifiesta verbalmente que está de acuerdo con los requisitos",
+        "label": "v1.1: Se corrige el requisito R-05 por solicitud del cliente",
         "tipo": "proceso"
       },
       {
-        "label": "El analista inicia el diseño del sistema sin dejar constancia escrita de la aprobación",
-        "tipo": "salida",
+        "label": "v2.0: Se incorporan tres requisitos nuevos aprobados",
+        "tipo": "proceso"
+      },
+      {
+        "label": "v1.2: Se cambia el formato del documento (ERROR)",
+        "tipo": "proceso",
         "error": true
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La aprobación verbal es suficiente y no requiere registro."
+        "id": 2,
+        "texto": "El cambio de formato no puede volver a v1.2: las versiones son secuenciales y la última es la v2.0."
       },
       {
         "id": 0,
-        "texto": "La aprobación debe quedar documentada en un acta firmada; iniciar el diseño sin constancia escrita pone en riesgo el proyecto ante cambios posteriores."
+        "texto": "La versión v1.0 no debió aprobarse."
       },
       {
-        "id": 2,
-        "texto": "El error es que la reunión de validación no debía realizarse."
+        "id": 1,
+        "texto": "Los requisitos nuevos no pueden incorporarse en una versión mayor."
       },
       {
         "id": 3,
-        "texto": "El analista debe iniciar el diseño aunque el cliente no haya aprobado."
+        "texto": "El control de versiones está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Aprobación del Documento",
+    "titulo": "Recorre el proceso: aprobación del documento de requisitos",
+    "indicacion": "Sigue el recorrido del documento de requisitos desde la entrega hasta el ajuste y determina en qué estado queda.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Se entrega al cliente el documento de requisitos versión 1.0",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El cliente revisa cada requisito durante tres días",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El cliente solicita ajustar el requisito R-09",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El analista aplica el ajuste y genera la versión 1.1",
+        "tipo": "proceso"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "Versión 1.0 aprobada y cerrada."
+      },
+      {
+        "id": 3,
+        "texto": "Versión 1.1, pendiente de una nueva validación del cliente."
+      },
+      {
+        "id": 1,
+        "texto": "Versión 2.0 aprobada sin observaciones."
+      },
+      {
+        "id": 2,
+        "texto": "El documento se devuelve sin cambios."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Versión Sin Registrar",
-    "titulo": "Encuentra la falla: el documento se modificó sin actualizar la versión",
-    "indicacion": "El analista aplicó un cambio aprobado en el documento de requisitos pero omitió el control de versiones. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Reordenamiento de Bloques",
+    "tipo": "Cierre de la Validación",
+    "titulo": "Construye el proceso: cierre de la validación",
+    "indicacion": "Ordena los pasos finales de la validación, desde la consolidación de observaciones hasta la publicación del documento.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El cliente aprueba el cambio del requisito RF-007",
+        "id": "b2",
+        "texto": "Consolidar las observaciones y los ajustes aprobados",
         "tipo": "proceso"
       },
       {
-        "label": "El analista modifica el documento de requisitos",
+        "id": "b3",
+        "texto": "Generar la versión final del documento de requisitos",
         "tipo": "proceso"
       },
       {
-        "label": "El analista entrega el documento corregido sin actualizar el número de versión ni el historial de cambios",
-        "tipo": "salida",
-        "error": true
+        "id": "b4",
+        "texto": "Obtener la firma de aprobación del cliente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Publicar el documento y comunicarlo al equipo de desarrollo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El número de versión no es necesario porque el documento ya está aprobado."
-      },
-      {
-        "id": 2,
-        "texto": "El error es que el analista no debía modificar el documento."
-      },
-      {
-        "id": 0,
-        "texto": "Debe actualizarse el número de versión y registrar el cambio en el historial para garantizar el control de versiones del documento."
-      },
-      {
-        "id": 3,
-        "texto": "El historial de cambios solo se actualiza al final del proyecto."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   }
 ];
 
@@ -806,6 +783,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -865,6 +857,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1132,6 +1264,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1165,6 +1303,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

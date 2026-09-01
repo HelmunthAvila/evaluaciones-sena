@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la identificación de los componentes del computador: hardware y software, componentes internos como CPU, memoria RAM y disco de almacenamiento, periféricos de entrada y salida, y tipos de computador, mediante retos prácticos interactivos.
+          Pon en práctica la identificación de los componentes del computador con casos reales de soporte: decide qué componente comprar para que el equipo sea más rápido, ordena el diagnóstico cuando el equipo no enciende, corrige fallas de conexión e incompatibilidad y ejecuta mentalmente el procedimiento de un técnico que resuelve un problema. Sin teoría: aquí se demuestra identificando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Clasificar los componentes del computador según su función y tipo.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular el flujo de datos a través de los componentes del computador.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar procesos como el arranque del equipo y el flujo entrada-proceso-salida.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en la clasificación e identificación de componentes.</li>
+            <li><strong>Identificar Componentes:</strong> Decide qué componente de hardware cumple cada función en una situación real.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla la secuencia real de encendido, diagnóstico e instalación de componentes.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra la falla en un procedimiento de conexión o compatibilidad.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el diagnóstico de un equipo y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,390 +250,437 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Hardware y Software",
-    "titulo": "¿Cuál de las siguientes opciones corresponde a software?",
-    "indicacion": "Los componentes del computador se clasifican en hardware y software. Selecciona la opción que corresponde a software.",
+    "categoria": "Identificar Componentes",
+    "tipo": "Selección de Hardware",
+    "titulo": "¿Qué componente debe comprar para que el equipo sea más rápido al abrir programas?",
+    "indicacion": "Un usuario tiene un equipo lento: los programas tardan en abrir y se congela al tener varias ventanas. Selecciona el componente que debe adquirir para mejorar el rendimiento.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "La unidad central de proceso (CPU)."
+        "texto": "Un monitor más grande."
       },
       {
         "id": 1,
-        "texto": "El sistema operativo Windows."
+        "texto": "Ampliar la memoria RAM del equipo."
       },
       {
         "id": 2,
-        "texto": "El disco de almacenamiento."
+        "texto": "Un teclado inalámbrico nuevo."
       },
       {
         "id": 3,
-        "texto": "La memoria RAM."
+        "texto": "Una carcasa de otro color."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Componentes Internos",
-    "titulo": "¿Cuál es la función de la memoria RAM en el computador?",
-    "indicacion": "La memoria RAM es un componente interno fundamental. Selecciona la función correcta.",
+    "categoria": "Identificar Componentes",
+    "tipo": "Almacenamiento Permanente",
+    "titulo": "¿Qué componente guarda los archivos aunque el equipo se apague?",
+    "indicacion": "Un usuario quiere guardar sus documentos de forma permanente. Selecciona el componente del computador que conserva la información cuando el equipo queda sin energía.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Almacenar permanentemente los archivos del usuario."
-      },
-      {
         "id": 1,
-        "texto": "Ejecutar los cálculos aritméticos y lógicos del sistema."
+        "texto": "La memoria RAM."
       },
       {
         "id": 2,
-        "texto": "Almacenar temporalmente los datos e instrucciones que están en ejecución."
+        "texto": "El procesador (CPU)."
+      },
+      {
+        "id": 0,
+        "texto": "El disco duro o el disco de estado sólido (SSD)."
       },
       {
         "id": 3,
-        "texto": "Mostrar la información procesada en pantalla."
+        "texto": "La fuente de poder."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Periféricos",
-    "titulo": "¿Cuál de los siguientes dispositivos es un periférico de entrada?",
-    "indicacion": "Los periféricos se clasifican según la dirección del flujo de datos. Selecciona el dispositivo de entrada.",
+    "categoria": "Identificar Componentes",
+    "tipo": "Clasificación de Periféricos",
+    "titulo": "¿Cuál de estos periféricos es de salida?",
+    "indicacion": "Un técnico clasifica los periféricos del equipo según su función. Selecciona el periférico que solo entrega información al usuario.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
+        "id": 0,
+        "texto": "El teclado."
+      },
+      {
         "id": 1,
-        "texto": "El monitor."
+        "texto": "El ratón."
       },
       {
         "id": 2,
-        "texto": "La impresora."
+        "texto": "El micrófono."
       },
       {
         "id": 3,
-        "texto": "Los parlantes."
-      },
-      {
-        "id": 0,
-        "texto": "El teclado."
+        "texto": "El monitor."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Tipos de Computador",
-    "titulo": "¿Qué tipo de computador se caracteriza por brindar servicios de red, almacenamiento y procesamiento a otros equipos?",
-    "indicacion": "Existen varios tipos de computador según su uso. Selecciona el que presta servicios a otros equipos.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Encendido del Equipo",
+    "titulo": "Ordena el proceso: encendido correcto del computador",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta del encendido de un computador de escritorio.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Verificar que el equipo esté conectado a la fuente de energía",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Presionar el botón de encendido del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Esperar la carga del sistema operativo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Iniciar sesión con el usuario y la contraseña",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Diagnóstico de Encendido",
+    "titulo": "Ordena el proceso: diagnóstico cuando el equipo no enciende",
+    "indicacion": "Un técnico debe diagnosticar un computador que no enciende. Ordena los bloques para construir la secuencia correcta de verificación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Verificar que el cable de energía esté conectado al equipo y al tomacorriente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Revisar el estado y la posición del botón de encendido",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Comprobar la fuente de poder del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Probar el equipo en otro tomacorriente",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Instalación de Memoria RAM",
+    "titulo": "Ordena el proceso: instalación de un módulo de memoria RAM",
+    "indicacion": "Un técnico va a instalar un módulo de memoria RAM en un computador de escritorio. Ordena los bloques para construir la secuencia correcta.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Apagar el equipo y desconectarlo de la corriente",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Abrir la carcasa del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Ubicar el slot de memoria en la placa madre",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Insertar el módulo de memoria hasta que encaje",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Cerrar la carcasa, conectar y encender el equipo",
+        "tipo": "salida"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Registro",
+    "tipo": "Conexión de Video",
+    "titulo": "Encuentra la falla: el equipo enciende pero la pantalla no muestra imagen",
+    "indicacion": "Un técnico atiende un reporte: el equipo enciende, se oyen los ventiladores, pero la pantalla queda en negro. Revisa el procedimiento e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Verificar que el equipo enciende correctamente",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Conectar el cable de video al puerto de la tarjeta madre con una tarjeta de video instalada (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Encender el monitor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
-        "id": 3,
-        "texto": "Servidor."
-      },
-      {
-        "id": 0,
-        "texto": "Computador de escritorio."
-      },
-      {
         "id": 1,
-        "texto": "Computador portátil."
+        "texto": "El monitor debe permanecer apagado mientras el equipo enciende."
       },
       {
         "id": 2,
-        "texto": "Tableta."
+        "texto": "El cable de energía del monitor no es necesario."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 0,
+        "texto": "El cable de video debe conectarse al puerto de la tarjeta de video activa: si está instalada, el puerto de video integrado en la placa madre queda deshabilitado."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Registro",
+    "tipo": "Compatibilidad de Memoria",
+    "titulo": "Encuentra la falla: módulo de memoria incompatible",
+    "indicacion": "Un técnico compró un módulo de memoria para ampliar un equipo. Revisa el procedimiento e identifica el error de compatibilidad.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Identificar que la placa madre del equipo usa memoria DDR4",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Adquirir e instalar un módulo de memoria DDR3 (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Encender el equipo para verificar la ampliación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "El módulo DDR3 no es compatible con una placa que usa DDR4: debe adquirirse el tipo y la velocidad correctos para la placa madre."
+      },
+      {
+        "id": 0,
+        "texto": "La memoria DDR3 funciona igual en una placa que usa DDR4."
+      },
+      {
+        "id": 1,
+        "texto": "El slot de memoria acepta cualquier tipo de módulo sin importar la generación."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Flujo Entrada-Proceso-Salida",
-    "titulo": "Prueba de escritorio: flujo de datos en el computador",
-    "indicacion": "Ejecuta mentalmente el flujo de datos descrito y determina qué ocurre con el resultado del procesamiento.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El usuario digita dos números en el teclado",
-        "tipo": "entrada"
-      },
-      {
-        "label": "La CPU procesa la suma de los números",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El resultado se entrega al usuario",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El resultado se imprime automáticamente en la impresora."
-      },
-      {
-        "id": 1,
-        "texto": "El resultado se muestra en el monitor, que es un periférico de salida."
-      },
-      {
-        "id": 2,
-        "texto": "El resultado se guarda únicamente en la memoria ROM."
-      },
-      {
-        "id": 3,
-        "texto": "El resultado se envía al servidor sin mostrarse al usuario."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Capacidad de Almacenamiento",
-    "titulo": "Prueba de escritorio: número de archivos que caben en el disco",
-    "indicacion": "Ejecuta mentalmente el cálculo con los datos dados y determina cuántos archivos caben en el disco de almacenamiento.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Un disco duro tiene una capacidad de 500 GB",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Cada archivo de video ocupa 5 GB",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Cálculo: 500 / 5",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Número máximo de archivos que caben en el disco",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "2.500 archivos"
-      },
-      {
-        "id": 2,
-        "texto": "50 archivos"
-      },
-      {
-        "id": 0,
-        "texto": "100 archivos"
-      },
-      {
-        "id": 3,
-        "texto": "500 archivos"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Secuencia de Arranque",
-    "titulo": "Ordena la secuencia de arranque del computador",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue el computador desde que se enciende hasta mostrar el escritorio.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Pulsar el botón de encendido del equipo",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "El BIOS o UEFI verifica los componentes del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Se carga el sistema operativo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Se muestra el escritorio del sistema",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Datos",
-    "titulo": "Construye el proceso de datos del computador",
-    "indicacion": "Ordena los bloques para construir el proceso completo que siguen los datos desde su captura hasta su almacenamiento.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Capturar los datos con un periférico de entrada",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "Procesar los datos en la CPU con apoyo de la RAM",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Entregar el resultado por un periférico de salida",
-        "tipo": "salida"
-      },
-      {
-        "id": "b5",
-        "texto": "Guardar los datos en el disco de almacenamiento",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Clasificación",
-    "titulo": "Encuentra la falla: clasificación incorrecta de un periférico",
-    "indicacion": "Un aprendiz clasificó los periféricos del laboratorio y registró una conclusión. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Equipo con Memoria Insuficiente",
+    "titulo": "Prueba de escritorio: equipo lento al abrir varios programas",
+    "indicacion": "Un equipo con 4 GB de RAM se vuelve lento al abrir varios programas. El usuario revisa el administrador de tareas. Ejecuta mentalmente el diagnóstico y determina la solución correcta.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Se identifican el teclado, el mouse y el monitor como periféricos",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario abre el navegador, el editor de texto y la aplicación de correo al mismo tiempo",
         "tipo": "proceso"
       },
       {
-        "label": "El teclado y el mouse se clasifican como periféricos de entrada",
+        "label": "El equipo se pone lento y deja de responder",
         "tipo": "proceso"
       },
       {
-        "label": "El monitor se registra como periférico de entrada",
-        "tipo": "salida",
-        "error": true
+        "label": "El usuario consulta el administrador de tareas y observa la memoria al límite",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el diagnóstico indica memoria RAM insuficiente para la carga de programas",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "La clasificación es correcta porque el monitor se usa para interactuar con el equipo."
-      },
-      {
-        "id": 1,
-        "texto": "El error es clasificar el monitor como periférico de entrada: el monitor es un periférico de SALIDA, pues muestra la información procesada por el computador."
-      },
-      {
-        "id": 2,
-        "texto": "El teclado debe clasificarse como periférico de salida."
+        "texto": "El procesador está dañado y debe cambiarse por uno más nuevo."
       },
       {
         "id": 3,
-        "texto": "El mouse debe clasificarse como periférico de almacenamiento."
+        "texto": "La solución es ampliar la memoria RAM o cerrar programas para liberar memoria."
+      },
+      {
+        "id": 1,
+        "texto": "El disco duro se borró y debe reinstalarse el sistema."
+      },
+      {
+        "id": 2,
+        "texto": "La solución es reemplazar el monitor por uno de mayor resolución."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Componente Interno",
-    "titulo": "Encuentra la falla: definición incorrecta de la memoria RAM",
-    "indicacion": "Se registró la definición de un componente interno en la ficha técnica del equipo. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Pantalla sin Imagen",
+    "titulo": "Prueba de escritorio: el equipo enciende pero la pantalla queda en negro",
+    "indicacion": "Un usuario reporta que su equipo enciende, se oyen los ventiladores, pero la pantalla queda en negro. El técnico revisa las conexiones. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Se describen los componentes internos del computador",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El usuario enciende el equipo y nota que no hay imagen",
         "tipo": "proceso"
       },
       {
-        "label": "La memoria RAM se define como almacenamiento permanente de los archivos del usuario",
-        "tipo": "proceso",
-        "error": true
+        "label": "El técnico verifica el encendido y escucha los ventiladores girando",
+        "tipo": "proceso"
       },
       {
-        "label": "Se registra la definición en la ficha técnica del equipo",
+        "label": "Revisa el cable de video y encuentra el conector flojo en el puerto de la tarjeta de video",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: al ajustar el cable de video, el equipo muestra la imagen y funciona",
         "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "La definición es correcta: la RAM guarda los archivos para siempre."
-      },
-      {
-        "id": 1,
-        "texto": "La RAM ejecuta los cálculos aritméticos, no almacena datos."
+        "texto": "El disco duro está dañado y debe formatearse."
       },
       {
         "id": 2,
-        "texto": "El error es definir la RAM como almacenamiento permanente: la memoria RAM es volátil y almacena temporalmente los datos en ejecución; el almacenamiento permanente corresponde al disco."
+        "texto": "La memoria RAM se quemó y debe reemplazarse."
+      },
+      {
+        "id": 1,
+        "texto": "Al ajustar el cable de video en el puerto correcto, el equipo muestra la imagen y funciona."
       },
       {
         "id": 3,
-        "texto": "El error es de la ficha técnica, no de la definición registrada."
+        "texto": "Debe comprarse un computador nuevo porque el equipo no tiene solución."
       }
     ],
     "correcta": 2
@@ -766,6 +813,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -825,6 +887,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1092,6 +1294,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1125,6 +1333,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

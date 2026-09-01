@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración de la matriz de trazabilidad: vinculación de cada requisito con los artefactos de diseño y los casos de prueba, verificación de la cobertura, seguimiento del estado de cada requisito y detección de requisitos sin implementar o sin probar, mediante retos prácticos interactivos.
+          Elabora en la práctica la matriz de trazabilidad: identifica las columnas correctas y el propósito de la matriz, ordena el proceso de construcción y verificación de cobertura, corrige matrices con huecos o asociaciones incorrectas entre requisitos, diseño y pruebas, y sigue el proceso de revisión para determinar si la cobertura está completa. Sin teoría: aquí se demuestra trazando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Diseño Lógico:</strong> Relacionar requisitos con artefactos de diseño y casos de prueba en la matriz.</li>
-<li><strong>Técnica de Prueba:</strong> Verificar la cobertura de los requisitos y el estado de cada vínculo trazado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para construir y mantener la matriz.</li>
-<li><strong>Depuración de Errores:</strong> Detectar inconsistencias y requisitos mal trazados en la matriz.</li>
+            <li><strong>Análisis del Problema:</strong> Identifica las columnas y el propósito de la matriz de trazabilidad.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para construir y verificar la matriz.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra huecos y asociaciones incorrectas en la matriz.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de revisión de cobertura y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,228 +250,91 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Diseño Lógico",
-    "tipo": "Concepto de Trazabilidad",
-    "titulo": "¿Qué es la trazabilidad de requisitos?",
-    "indicacion": "La trazabilidad es una práctica de seguimiento dentro de la ingeniería de requisitos. Selecciona la definición correcta.",
+    "categoria": "Análisis del Problema",
+    "tipo": "Columnas de la Matriz",
+    "titulo": "¿Qué columnas mínimas debe contener la matriz de trazabilidad?",
+    "indicacion": "El analista debe construir la matriz que relaciona los requisitos con el resto del proyecto. Selecciona las columnas mínimas correctas.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
+        "id": 1,
+        "texto": "Nombre, fecha y autor del documento."
+      },
+      {
         "id": 0,
-        "texto": "El historial de versiones del documento de requisitos."
+        "texto": "Requisito, elemento de diseño, caso de prueba y estado."
       },
       {
         "id": 2,
-        "texto": "La capacidad de seguir la relación de cada requisito con los artefactos de diseño, código y pruebas."
-      },
-      {
-        "id": 1,
-        "texto": "La lista de actores que intervienen en el sistema."
+        "texto": "Solo el listado de requisitos."
       },
       {
         "id": 3,
-        "texto": "El cronograma de actividades del proyecto."
+        "texto": "Código del sistema y precio del proyecto."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
-    "tipo": "Sentido de la Trazabilidad",
-    "titulo": "En la matriz de trazabilidad, ¿cuál es la cadena de vínculos que se debe registrar?",
-    "indicacion": "La matriz relaciona los requisitos con los artefactos que los implementan y los verifican. Selecciona la secuencia correcta.",
+    "categoria": "Análisis del Problema",
+    "tipo": "Propósito de la Matriz",
+    "titulo": "¿Cuál es el propósito principal de la matriz de trazabilidad?",
+    "indicacion": "La matriz de trazabilidad se elabora para un fin específico dentro del proyecto de software. Selecciona el propósito correcto.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Prueba → diseño → requisito."
-      },
-      {
-        "id": 2,
-        "texto": "Caso de prueba → requisito → actores."
+        "texto": "Calcular el costo del proyecto."
       },
       {
         "id": 1,
-        "texto": "Requisito → diseño → caso de prueba."
+        "texto": "Documentar las actas de las reuniones."
+      },
+      {
+        "id": 2,
+        "texto": "Verificar que cada requisito tenga diseño y pruebas asociadas (cobertura)."
       },
       {
         "id": 3,
-        "texto": "Diseño → requisito → cronograma."
+        "texto": "Diseñar la base de datos del sistema."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Columna de Pruebas",
-    "titulo": "¿Qué información debe contener la columna de casos de prueba en la matriz de trazabilidad?",
-    "indicacion": "La columna de pruebas permite saber cómo y con qué resultado se verificó cada requisito. Selecciona la información correcta.",
+    "categoria": "Análisis del Problema",
+    "tipo": "Cobertura de Requisitos",
+    "titulo": "Un requisito SIN caso de prueba en la matriz indica...",
+    "indicacion": "Durante la revisión de la matriz se encontró un requisito sin pruebas asociadas. Selecciona la interpretación correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "El costo estimado de cada prueba."
-      },
-      {
-        "id": 1,
-        "texto": "El nombre del programador que desarrolló el módulo."
+        "texto": "Que el requisito está completo."
       },
       {
         "id": 2,
-        "texto": "La fecha de inicio del proyecto."
+        "texto": "Que el requisito no es importante."
       },
       {
         "id": 3,
-        "texto": "El identificador del caso de prueba que verifica el requisito y su resultado."
+        "texto": "Que el sistema está terminado."
+      },
+      {
+        "id": 1,
+        "texto": "Que falta diseñar la prueba que lo cubre: hay un hueco de cobertura."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Cobertura",
-    "titulo": "Al revisar la matriz, se encuentra que el requisito RF-004 no tiene ningún caso de prueba asociado. ¿Qué indica esta situación?",
-    "indicacion": "La revisión de la matriz permite detectar requisitos sin verificar. Selecciona la interpretación correcta del hallazgo.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "Que el requisito no está cubierto por las pruebas y debe diseñarse un caso de prueba."
-      },
-      {
-        "id": 1,
-        "texto": "Que el requisito ya fue aprobado por el cliente."
-      },
-      {
-        "id": 2,
-        "texto": "Que el requisito debe eliminarse de la matriz."
-      },
-      {
-        "id": 3,
-        "texto": "Que el requisito está cubierto automáticamente por los demás."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Completar la Matriz",
-    "titulo": "Prueba de escritorio: registro del requisito RF-001 en la matriz",
-    "indicacion": "Ejecuta mentalmente el proceso de trazado del requisito 'Registrar préstamos de libros' y determina cómo queda registrado en la matriz.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Requisito RF-001: el sistema debe registrar los préstamos de libros",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Artefacto de diseño asociado: caso de uso CU-002 'Registrar préstamo'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Caso de prueba asociado: CP-010 'Préstamo con libro disponible'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Ejecución: el préstamo se registra correctamente y el estado del libro cambia a prestado",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: forma en que queda registrado RF-001 en la matriz",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "RF-001 queda sin caso de prueba asociado."
-      },
-      {
-        "id": 1,
-        "texto": "RF-001 queda trazado con CU-002 y CP-010, y se registra el resultado 'aprobado' en la matriz."
-      },
-      {
-        "id": 2,
-        "texto": "CP-010 se vincula al requisito RF-002."
-      },
-      {
-        "id": 3,
-        "texto": "La matriz no registra el resultado de la ejecución."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Verificación de Cobertura",
-    "titulo": "Prueba de escritorio: análisis de cobertura de la matriz",
-    "indicacion": "Sigue mentalmente el análisis de cobertura del sistema y determina la conclusión correcta sobre el estado de la matriz.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Total de requisitos funcionales del sistema: 12",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Requisitos con caso de prueba asociado: 10",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Requisitos con caso de prueba ejecutado y aprobado: 8",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: conclusión del análisis de cobertura",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "La cobertura es del 100% porque todos los requisitos tienen pruebas."
-      },
-      {
-        "id": 1,
-        "texto": "No se requiere ninguna acción porque 8 pruebas fueron aprobadas."
-      },
-      {
-        "id": 3,
-        "texto": "Hay 2 requisitos sin caso de prueba y 2 casos de prueba pendientes de ejecución; la cobertura está incompleta."
-      },
-      {
-        "id": 2,
-        "texto": "Hay 4 requisitos sin caso de prueba asociado."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Elaboración de la Matriz",
-    "titulo": "Ordena los pasos para elaborar la matriz de trazabilidad",
-    "indicacion": "La construcción de la matriz sigue un orden: desde el listado de requisitos hasta el mantenimiento de los vínculos. Ordena los bloques correctamente.",
+    "titulo": "Construye el proceso: elaboración de la matriz de trazabilidad",
+    "indicacion": "Ordena los pasos que sigue el analista para elaborar la matriz de trazabilidad del proyecto.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -481,28 +344,76 @@
       },
       {
         "id": "b2",
-        "texto": "Listar los requisitos aprobados con su identificador único",
+        "texto": "Listar todos los requisitos con su identificador",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Vincular cada requisito con su artefacto de diseño",
+        "texto": "Asociar cada requisito al elemento de diseño que lo implementa",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Asociar los casos de prueba que verifican cada requisito",
+        "texto": "Asociar cada requisito a sus casos de prueba",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Verificar la cobertura y detectar requisitos sin prueba",
+        "texto": "Verificar la cobertura y marcar los requisitos sin prueba",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Registrar el estado de cada requisito y mantener la matriz actualizada",
-        "tipo": "salida"
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Verificación de Cobertura",
+    "titulo": "Construye el proceso: verificación de cobertura de la matriz",
+    "indicacion": "Ordena los pasos del proceso que verifica la cobertura de todos los requisitos en la matriz.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Tomar el primer requisito de la matriz",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Verificar si tiene elemento de diseño asociado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Verificar si tiene al menos un caso de prueba",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Registrar el resultado en la columna Estado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Pasar al siguiente requisito hasta completar la lista",
+        "tipo": "proceso"
       },
       {
         "id": "b7",
@@ -521,11 +432,11 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Columnas de la Matriz",
-    "titulo": "Ordena las columnas típicas de la matriz de trazabilidad",
-    "indicacion": "Cada fila de la matriz registra el recorrido de un requisito. Ordena los bloques para construir la estructura de columnas correcta.",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Cadena de Trazabilidad",
+    "titulo": "Construye el proceso: cadena de trazabilidad del requisito RF-01",
+    "indicacion": "Ordena la cadena de trazabilidad completa que une el requisito con su diseño y su prueba.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -535,36 +446,26 @@
       },
       {
         "id": "b2",
-        "texto": "Identificador del requisito (RF-001)",
+        "texto": "Requisito RF-01: 'Registrar pedido'",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Descripción del requisito",
+        "texto": "Elemento de diseño: módulo de pedidos",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Artefacto de diseño asociado",
+        "texto": "Caso de prueba CP-01: registrar pedido válido",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Caso de prueba asociado",
+        "texto": "Resultado de la prueba: aprobado",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Resultado de la prueba y estado del requisito",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Revisar que cada fila tenga todos los vínculos completos",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -575,103 +476,180 @@
       "b3",
       "b4",
       "b5",
-      "b6",
-      "b7",
-      "b8"
+      "b6"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Requisito Mal Trazado",
-    "titulo": "Encuentra la falla: el requisito quedó vinculado al caso de uso equivocado",
-    "indicacion": "El analista registró la fila del requisito RF-002 en la matriz pero cometió un error de vinculación. Revisa los pasos e identifica la falla.",
+    "id": 7,
+    "categoria": "Corregir el Documento",
+    "tipo": "Hueco de Cobertura",
+    "titulo": "Encuentra el error: requisito sin caso de prueba",
+    "indicacion": "El analista entregó la matriz de trazabilidad del sistema de pedidos. Revisa las filas y determina el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Requisito RF-002: 'el sistema debe calcular el IVA de cada factura'",
+        "label": "RF-01: módulo de pedidos → CP-01",
         "tipo": "proceso"
       },
       {
-        "label": "Artefacto de diseño asociado: CU-005 'Registrar cliente'",
+        "label": "RF-02: módulo de clientes → CP-02",
+        "tipo": "proceso"
+      },
+      {
+        "label": "RF-05: módulo de inventario → sin caso de prueba (ERROR)",
         "tipo": "proceso",
         "error": true
       },
       {
-        "label": "Caso de prueba asociado: CP-007 'Registro de cliente con datos válidos'",
+        "label": "RF-06: módulo de reportes → CP-04",
         "tipo": "proceso"
-      },
-      {
-        "label": "Se registra la fila completa en la matriz como aprobada",
-        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "La fila está correcta porque todos los campos están diligenciados."
-      },
-      {
-        "id": 0,
-        "texto": "El requisito RF-002 está vinculado a un caso de uso equivocado: el cálculo del IVA corresponde a la facturación, no al registro de clientes."
+        "texto": "El error es que RF-01 tiene dos casos de prueba."
       },
       {
         "id": 2,
-        "texto": "El error es que el caso de prueba no se ejecutó antes de registrar la fila."
+        "texto": "Los requisitos no necesitan casos de prueba."
       },
       {
         "id": 3,
-        "texto": "El requisito RF-002 no necesita diseño ni caso de prueba."
+        "texto": "La matriz está correcta."
+      },
+      {
+        "id": 0,
+        "texto": "RF-05 no tiene caso de prueba: falta diseñar la prueba que cubra el requisito (hueco de cobertura)."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
+    "tipo": "Asociación Incorrecta",
+    "titulo": "Encuentra el error: caso de prueba asociado al requisito equivocado",
+    "indicacion": "En la matriz, el caso de prueba CP-03 quedó asociado a un requisito que no corresponde. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Requisito RF-02: 'Registrar cliente'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Caso de prueba CP-03: valida el registro de pedidos (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Requisito RF-01: 'Registrar pedido'",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "CP-03 valida el registro de pedidos, por lo que corresponde a RF-01 y no a RF-02; la asociación está invertida."
+      },
+      {
+        "id": 0,
+        "texto": "La asociación es correcta porque ambos son registros."
+      },
+      {
+        "id": 2,
+        "texto": "Falta el elemento de diseño de RF-02."
+      },
+      {
+        "id": 3,
+        "texto": "La matriz está correcta."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Corregir el Documento",
+    "tipo": "Cobertura Declarada sin Diseño",
+    "titulo": "Encuentra el error: cobertura total declarada con un requisito sin diseño",
+    "indicacion": "El resumen de la matriz afirma que todos los requisitos están cubiertos, pero la revisión encontró una inconsistencia. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Resumen de la matriz: 'Todos los requisitos están cubiertos'",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Requisito RF-04: sin elemento de diseño asociado (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Requisitos RF-01 a RF-03: con diseño y prueba",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El resumen es correcto porque la mayoría de los requisitos está cubierta."
+      },
+      {
+        "id": 3,
+        "texto": "RF-04 no tiene diseño: no se puede declarar cobertura total mientras exista un requisito sin elemento de diseño."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que faltan más casos de prueba por requisito."
+      },
+      {
+        "id": 2,
+        "texto": "Los requisitos sin diseño no afectan la cobertura."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Matriz Desactualizada",
-    "titulo": "Encuentra la falla: la matriz no se actualizó tras un cambio de requisito",
-    "indicacion": "El equipo aplicó un cambio aprobado por el cliente pero no actualizó la matriz de trazabilidad. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Revisión de Cobertura",
+    "titulo": "Sigue el proceso: revisión de cobertura de la matriz",
+    "indicacion": "Ejecuta mentalmente el proceso de revisión de cobertura con los datos de la matriz y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
+        "label": "Requisitos totales del proyecto: 12",
+        "tipo": "entrada"
       },
       {
-        "label": "El cliente aprueba el cambio del requisito RF-006: la factura ahora debe incluir el descuento por pronto pago",
+        "label": "Requisitos con elemento de diseño asociado: 12",
         "tipo": "proceso"
       },
       {
-        "label": "El equipo modifica el diseño y el código del módulo de facturación",
+        "label": "Requisitos con al menos un caso de prueba: 10",
         "tipo": "proceso"
       },
       {
-        "label": "La matriz de trazabilidad se conserva sin cambios desde la versión anterior",
-        "tipo": "salida",
-        "error": true
+        "label": "Resultado de la revisión de cobertura",
+        "tipo": "salida"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
-        "id": 1,
-        "texto": "La matriz no debe modificarse cuando cambian los requisitos."
+        "id": 0,
+        "texto": "La cobertura está completa: todos los requisitos tienen prueba."
       },
       {
         "id": 2,
-        "texto": "El error es que el cliente no debía aprobar el cambio."
+        "texto": "Sobran 2 requisitos en la matriz."
       },
       {
-        "id": 0,
-        "texto": "La matriz quedó desactualizada: debe actualizarse la descripción de RF-006 y verificar sus vínculos de diseño y prueba tras el cambio."
+        "id": 1,
+        "texto": "Faltan 2 casos de prueba: la cobertura está incompleta."
       },
       {
         "id": 3,
-        "texto": "La matriz está correcta porque el código ya se modificó."
+        "texto": "No se puede revisar la cobertura."
       }
     ],
     "correcta": 2
@@ -804,6 +782,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -863,6 +856,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1130,6 +1263,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1163,6 +1302,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

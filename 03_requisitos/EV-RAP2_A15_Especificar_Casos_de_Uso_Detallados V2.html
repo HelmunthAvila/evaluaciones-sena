@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la especificación detallada de casos de uso: definición de precondiciones y postcondiciones, redacción del flujo principal, descripción de los flujos alternativos y estructuración del formato documental, mediante retos prácticos interactivos.
+          Especifica en la práctica casos de uso detallados: identifica precondiciones, flujo principal, flujos alternativos y postcondiciones, ordena el proceso de redacción de la especificación, corrige casos de uso incompletos o incoherentes y sigue el flujo de un caso de uso real para determinar el resultado del sistema. Sin teoría: aquí se demuestra especificando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Diseño Lógico:</strong> Redactar precondiciones, flujo principal, flujos alternativos y postcondiciones de un caso de uso.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer el flujo de un caso de uso y determinar la postcondición o la salida resultante.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las secciones del formato y los pasos del flujo principal.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas de redacción y de secuencia en la especificación.</li>
+            <li><strong>Análisis del Problema:</strong> Identifica los campos de la especificación del caso de uso.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla el flujo principal y la estructura de la especificación.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra errores en precondiciones, flujos y postcondiciones.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el flujo del caso de uso y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,430 +250,410 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Diseño Lógico",
-    "tipo": "Precondición",
-    "titulo": "¿Qué sección del formato de caso de uso describe el estado del sistema ANTES de que se ejecute el caso?",
-    "indicacion": "La especificación detallada registra el estado inicial y final del sistema. Selecciona la sección que describe el estado previo a la ejecución.",
+    "categoria": "Análisis del Problema",
+    "tipo": "Precondición Correcta",
+    "titulo": "¿Qué campo describe el estado que debe cumplirse ANTES de ejecutar el caso de uso?",
+    "indicacion": "La especificación de un caso de uso detallado incluye varios campos. Selecciona el campo que define el estado previo necesario para ejecutarlo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Las postcondiciones."
-      },
-      {
-        "id": 1,
-        "texto": "Las precondiciones."
+        "texto": "Flujo alternativo: las variantes del proceso."
       },
       {
         "id": 2,
-        "texto": "El flujo principal."
+        "texto": "Precondición: el estado que debe cumplirse antes de ejecutar el caso de uso."
+      },
+      {
+        "id": 1,
+        "texto": "Postcondición: el estado final del sistema."
       },
       {
         "id": 3,
-        "texto": "El flujo alternativo."
+        "texto": "Actor principal: el rol que inicia la interacción."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
-    "tipo": "Flujo Principal",
-    "titulo": "¿Qué es el flujo principal de un caso de uso?",
-    "indicacion": "El flujo principal es una de las secciones centrales de la especificación. Selecciona la definición correcta.",
+    "categoria": "Análisis del Problema",
+    "tipo": "Postcondición Correcta",
+    "titulo": "¿Qué campo describe el estado del sistema DESPUÉS de que el caso de uso termina con éxito?",
+    "indicacion": "Al finalizar un caso de uso con éxito, el sistema queda en un estado determinado. Selecciona el campo de la especificación que lo documenta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "El conjunto de pasos que solo se ejecuta cuando ocurre un error."
-      },
-      {
-        "id": 1,
-        "texto": "La lista de actores que participan en el caso de uso."
+        "texto": "Flujo principal: los pasos normales del proceso."
       },
       {
         "id": 2,
-        "texto": "La secuencia de pasos que se ejecuta cuando todo ocurre con normalidad."
+        "texto": "Precondición: el estado previo del sistema."
+      },
+      {
+        "id": 1,
+        "texto": "Postcondición: el estado del sistema después de ejecutar el caso de uso con éxito."
       },
       {
         "id": 3,
-        "texto": "El estado del sistema después de ejecutar el caso."
+        "texto": "Excepción: el error que puede presentarse."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
-    "tipo": "Flujo Alternativo",
-    "titulo": "En el caso de uso 'Pagar factura', el paso 'mostrar mensaje de pago rechazado y solicitar otro medio' solo se ejecuta cuando la tarjeta es rechazada. ¿Cómo se documenta este paso?",
-    "indicacion": "No todos los pasos del caso de uso forman parte de la ejecución normal. Selecciona la sección donde debe registrarse este comportamiento.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Flujo Principal",
+    "titulo": "Construye el proceso: flujo principal de 'Registrar pedido'",
+    "indicacion": "Ordena los pasos del flujo principal del caso de uso 'Registrar pedido' en el orden en que los ejecuta el sistema.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 1,
-        "texto": "Como una precondición del caso de uso."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 2,
-        "texto": "Como una postcondición de éxito."
+        "id": "b2",
+        "texto": "El vendedor digita los datos del cliente y los productos",
+        "tipo": "entrada"
       },
       {
-        "id": 3,
-        "texto": "Como parte de la descripción del actor."
+        "id": "b3",
+        "texto": "El sistema valida los datos y el stock disponible",
+        "tipo": "proceso"
       },
       {
-        "id": 0,
-        "texto": "Como un flujo alternativo del flujo principal."
+        "id": "b4",
+        "texto": "El sistema calcula el total del pedido",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "El sistema guarda el pedido y genera el número de orden",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 3
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 4,
-    "categoria": "Diseño Lógico",
-    "tipo": "Identificador del Caso",
-    "titulo": "¿Qué elemento del encabezado de la especificación identifica de forma ÚNICA al caso de uso dentro del documento?",
-    "indicacion": "Cada caso de uso debe poder referenciarse sin ambigüedad en el documento de requisitos. Selecciona el elemento que cumple esa función.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Estructura de la Especificación",
+    "titulo": "Construye el proceso: estructura de la especificación del caso de uso",
+    "indicacion": "Ordena los pasos que sigue el analista para redactar la especificación detallada de un caso de uso.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 3,
-        "texto": "El código del caso de uso, por ejemplo CU-001."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 0,
-        "texto": "El nombre del actor."
+        "id": "b2",
+        "texto": "Identificar el caso de uso y los actores que participan",
+        "tipo": "proceso"
       },
       {
-        "id": 1,
-        "texto": "La fecha de elaboración."
+        "id": "b3",
+        "texto": "Escribir las precondiciones del caso de uso",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "La prioridad asignada."
+        "id": "b4",
+        "texto": "Describir el flujo principal paso a paso",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Documentar los flujos alternativos y las postcondiciones",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 0
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Postcondición",
-    "titulo": "Prueba de escritorio: postcondición del caso de uso 'Registrar matrícula'",
-    "indicacion": "Ejecuta mentalmente la especificación del caso de uso y determina cuál es la postcondición correcta que debe registrarse.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Flujos Alternativos",
+    "titulo": "Construye el proceso: documentación de flujos alternativos",
+    "indicacion": "Ordena los pasos del proceso que documenta los flujos alternativos de un caso de uso.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Caso de uso: 'Registrar matrícula'",
+        "id": "b2",
+        "texto": "Revisar el flujo principal del caso de uso",
         "tipo": "proceso"
       },
       {
-        "label": "Precondición: el aspirante ha sido admitido y presenta los documentos requeridos",
+        "id": "b3",
+        "texto": "Identificar los puntos donde el proceso puede fallar",
         "tipo": "proceso"
       },
       {
-        "label": "El sistema verifica los documentos, registra la matrícula y genera el recibo de pago",
+        "id": "b4",
+        "texto": "Describir qué hace el sistema en cada falla",
         "tipo": "proceso"
       },
       {
-        "label": "Resultado: postcondición que describe el estado final del sistema",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Registrar la postcondición de cada alternativa",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "El aspirante debe presentar los documentos requeridos."
-      },
-      {
-        "id": 0,
-        "texto": "El sistema queda con la matrícula registrada y el recibo de pago generado."
-      },
-      {
-        "id": 2,
-        "texto": "El aspirante aún no ha sido admitido en el programa."
-      },
-      {
-        "id": 3,
-        "texto": "El sistema no genera ningún recibo de pago."
-      }
-    ],
-    "correcta": 1
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Recorrido del Flujo",
-    "titulo": "Prueba de escritorio: recorrido del flujo principal de 'Retirar efectivo'",
-    "indicacion": "Sigue mentalmente los pasos del flujo principal del cajero automático y determina la salida final del caso de uso.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Documento",
+    "tipo": "Especificación Incompleta",
+    "titulo": "Encuentra el error: especificación sin precondiciones",
+    "indicacion": "Un analista entregó la especificación del caso de uso 'Consultar saldo'. Revisa los campos y determina el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Paso 1: el cliente se autentica con su tarjeta y su clave",
+        "label": "Caso de uso: Consultar saldo",
         "tipo": "proceso"
       },
       {
-        "label": "Paso 2: el sistema valida la clave y muestra las opciones",
+        "label": "Precondiciones: campo vacío (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Flujo principal: el cliente consulta el saldo de su cuenta",
         "tipo": "proceso"
-      },
-      {
-        "label": "Paso 3: el cliente solicita el retiro de $200.000",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Paso 4: el sistema verifica que el saldo sea suficiente y entrega el dinero",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: salida final del flujo principal",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
       {
         "id": 0,
-        "texto": "El sistema rechaza el retiro por saldo insuficiente."
+        "texto": "El campo vacío no afecta la especificación."
       },
       {
         "id": 1,
-        "texto": "El sistema muestra el saldo pero no entrega el dinero."
-      },
-      {
-        "id": 2,
-        "texto": "El sistema entrega $200.000 y descuenta ese valor del saldo del cliente."
+        "texto": "Falta el flujo alternativo de la consulta."
       },
       {
         "id": 3,
-        "texto": "El sistema entrega el dinero sin descontar nada del saldo."
+        "texto": "Sin precondiciones no se sabe qué estado debe cumplirse antes de ejecutar el caso de uso; la especificación está incompleta."
+      },
+      {
+        "id": 2,
+        "texto": "La postcondición debe escribirse antes que el flujo principal."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Estructura del Formato",
-    "titulo": "Ordena la estructura del formato de especificación del caso de uso",
-    "indicacion": "El formato de especificación sigue un orden documental establecido. Ordena los bloques para construir la estructura correcta.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Encabezado: código, nombre, actor y fecha",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Precondiciones: estado del sistema antes de la ejecución",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Flujo principal: pasos numerados de la ejecución normal",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Flujos alternativos: variaciones y errores del flujo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Postcondiciones: estado del sistema después de la ejecución",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Verificar que la especificación sea clara y completa",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Flujo Principal",
-    "titulo": "Ordena los pasos del flujo principal del caso de uso 'Retirar efectivo'",
-    "indicacion": "El flujo principal describe la secuencia normal de la operación. Ordena los bloques para reconstruir el flujo correcto.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El cliente inserta la tarjeta e ingresa su clave",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "El sistema valida la clave y muestra las opciones disponibles",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "El cliente selecciona 'Retiro' e ingresa el valor solicitado",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "El sistema verifica el saldo disponible",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "El sistema entrega el dinero e imprime el comprobante",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "El cliente retira la tarjeta y el comprobante",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Postcondición Errónea",
-    "titulo": "Encuentra la falla: la postcondición describe el estado inicial",
-    "indicacion": "El analista redactó la especificación del caso de uso 'Registrar solicitud de préstamo' pero una sección quedó mal redactada. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Documento",
+    "tipo": "Flujo Mal Redactado",
+    "titulo": "Encuentra el error: flujo principal sin validación",
+    "indicacion": "El flujo principal del caso de uso 'Retirar dinero' tiene un paso incorrecto. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Redactar la precondición: 'el cliente está autenticado en el sistema'",
+        "label": "Paso 1: El cliente solicita retirar 200.000",
         "tipo": "proceso"
       },
       {
-        "label": "Redactar el flujo principal: el cliente registra la solicitud de préstamo y el sistema la confirma",
+        "label": "Paso 2: El sistema registra el retiro sin verificar el saldo (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Paso 3: El sistema entrega el dinero",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El flujo está correcto porque el cliente siempre tiene saldo."
+      },
+      {
+        "id": 2,
+        "texto": "Falta la precondición del flujo alternativo."
+      },
+      {
+        "id": 3,
+        "texto": "El error es que el retiro debe ser de 500.000."
+      },
+      {
+        "id": 1,
+        "texto": "El flujo principal debe verificar el saldo antes de registrar el retiro; falta el paso de validación."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
+    "tipo": "Postcondición Incoherente",
+    "titulo": "Encuentra el error: postcondición que contradice el flujo principal",
+    "indicacion": "La especificación del caso de uso 'Registrar pedido' tiene una postcondición que no coincide con su flujo principal. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Flujo principal: 'El sistema confirma el pedido y cambia su estado a confirmado'",
         "tipo": "proceso"
       },
       {
-        "label": "Redactar la postcondición: 'el cliente debe estar autenticado antes de registrar la solicitud'",
-        "tipo": "salida",
+        "label": "Postcondición: 'El pedido queda en estado borrador' (ERROR)",
+        "tipo": "proceso",
         "error": true
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La postcondición está correcta porque menciona al cliente."
+        "id": 0,
+        "texto": "La postcondición contradice el flujo principal: debe reflejar el estado final real (pedido confirmado)."
       },
       {
-        "id": 0,
-        "texto": "La postcondición describe el estado inicial y no el final; debe indicar, por ejemplo, que la solicitud quedó registrada y confirmada."
+        "id": 1,
+        "texto": "La postcondición es correcta porque el pedido siempre queda en borrador."
       },
       {
         "id": 2,
-        "texto": "El error está en la precondición, no en la postcondición."
+        "texto": "Falta la precondición del caso de uso."
       },
       {
         "id": 3,
-        "texto": "El flujo principal debe redactarse después de la postcondición."
+        "texto": "El flujo principal debe borrar el pedido."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Postcondición del Caso de Uso",
+    "titulo": "Sigue el proceso: postcondición de 'Consultar saldo'",
+    "indicacion": "Ejecuta mentalmente el caso de uso 'Consultar saldo' y determina la postcondición correcta.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Caso de uso: Consultar saldo",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El cliente ingresa el número de su cuenta",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El sistema valida la cuenta y muestra el saldo disponible",
+        "tipo": "proceso"
+      },
+      {
+        "label": "La postcondición de este caso de uso es...",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "El saldo de la cuenta se modifica."
+      },
+      {
+        "id": 1,
+        "texto": "El cliente conoce el saldo de su cuenta sin que este se modifique."
+      },
+      {
+        "id": 2,
+        "texto": "La cuenta queda bloqueada."
+      },
+      {
+        "id": 3,
+        "texto": "El caso de uso no tiene postcondición."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Paso Fuera de Lugar",
-    "titulo": "Encuentra la falla: el flujo principal contiene un paso de otro caso de uso",
-    "indicacion": "El equipo especificó el caso de uso 'Registrar pedido' pero el flujo principal incluye un paso que pertenece a otro caso. Revisa los pasos e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Flujo Alternativo",
+    "titulo": "Sigue el proceso: flujo alternativo por fondos insuficientes",
+    "indicacion": "Ejecuta mentalmente el caso de uso 'Retirar dinero' con los datos dados y determina qué hace el sistema.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
+        "label": "El cliente solicita retirar 500.000",
+        "tipo": "entrada"
       },
       {
-        "label": "Paso 1: el vendedor registra los productos solicitados por el cliente",
+        "label": "El sistema verifica el saldo disponible: 200.000",
         "tipo": "proceso"
       },
       {
-        "label": "Paso 2: el cliente consulta el historial de sus pedidos anteriores",
-        "tipo": "proceso",
-        "error": true
+        "label": "¿El saldo es suficiente para el retiro? No",
+        "tipo": "decision"
       },
       {
-        "label": "Paso 3: el sistema confirma el pedido y asigna el número de orden",
+        "label": "El sistema ejecuta el flujo alternativo y...",
         "tipo": "salida"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "El paso 2 está correcto porque el cliente también participa en el caso."
+        "texto": "Efectúa el retiro por 500.000."
       },
       {
         "id": 2,
-        "texto": "La falla es que el paso 1 no menciona al vendedor."
+        "texto": "Efectúa el retiro por 200.000."
       },
       {
         "id": 0,
-        "texto": "El paso 2 pertenece a otro caso de uso ('Consultar historial'); el flujo principal solo debe contener los pasos propios de 'Registrar pedido'."
+        "texto": "Muestra el mensaje 'fondos insuficientes' y cancela el retiro."
       },
       {
         "id": 3,
-        "texto": "El error es que el sistema no debe confirmar el pedido."
+        "texto": "Cierra la sesión del cliente."
       }
     ],
     "correcta": 2
@@ -806,6 +786,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -865,6 +860,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1132,6 +1267,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1165,6 +1306,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

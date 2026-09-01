@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de las normas institucionales del SENA y el uso correcto de las plataformas: reglamento del aprendiz, normas institucionales, manejo de usuario y contraseña, y operación de Sofía Plus y Territorium, mediante retos prácticos interactivos.
+          Pon en práctica el manejo de las normas institucionales y de las plataformas del SENA con situaciones reales: decide la acción correcta al recuperar una contraseña o reportar una falla, ordena el proceso de matrícula en Sofía Plus y de ingreso a Territorium, corrige un registro de credenciales mal diligenciado y recorre paso a paso un trámite académico para determinar el resultado. Sin teoría: aquí se demuestra operando las plataformas y aplicando el reglamento.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar normas institucionales, deberes del aprendiz y usos correctos de las plataformas SENA.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso los procedimientos de las plataformas y determinar el resultado correcto.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para operar Sofía Plus, Territorium y los trámites académicos.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en el manejo de credenciales y en los procedimientos institucionales.</li>
+            <li><strong>Vida en el SENA:</strong> Decide la actuación correcta del aprendiz frente a las normas y las plataformas.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos de los trámites en Sofía Plus y Territorium.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra los errores en el manejo del usuario, la contraseña y el registro académico.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre el trámite en la plataforma y determina el resultado correcto.</li>
           </ul>
         </div>
 
@@ -243,416 +243,417 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Normas Institucionales y Uso de Plataformas del SENA</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Normas Institucionales y Plataformas del SENA</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Plataforma de Matrícula",
-    "titulo": "¿Qué plataforma utiliza el SENA para la gestión de la matrícula y el registro académico del aprendiz?",
-    "indicacion": "El SENA dispone de plataformas para distintos trámites. Selecciona la plataforma donde el aprendiz consulta su matrícula, su ficha y su registro académico.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Recuperación de Clave",
+    "titulo": "Un aprendiz olvidó la contraseña de Sofía Plus",
+    "indicacion": "El aprendiz necesita ingresar a Sofía Plus pero no recuerda su contraseña. Selecciona el procedimiento correcto.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Territorium"
+        "id": 1,
+        "texto": "Crear una cuenta nueva con otro correo electrónico."
       },
       {
-        "id": 1,
-        "texto": "Sofía Plus"
+        "id": 0,
+        "texto": "Usar la opción de recuperación de contraseña de la plataforma y seguir las instrucciones."
       },
       {
         "id": 2,
-        "texto": "Microsoft Teams"
+        "texto": "Pedir la contraseña a un compañero."
       },
       {
         "id": 3,
-        "texto": "Google Classroom"
+        "texto": "Solicitar el cambio de clave al instructor por chat."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Plataforma de Aprendizaje",
-    "titulo": "¿Cuál es el uso principal de la plataforma Territorium en el SENA?",
-    "indicacion": "Territorium es una de las plataformas digitales del SENA. Selecciona la opción que describe su uso principal en el proceso de formación.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Recuperación de Contraseña",
+    "titulo": "Construye el proceso: recuperación de contraseña en Sofía Plus",
+    "indicacion": "Ordena los pasos que sigue un aprendiz para recuperar la contraseña de Sofía Plus.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Consultar el estado de la matrícula."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 1,
-        "texto": "Descargar el certificado de estudios del colegio."
+        "id": "b2",
+        "texto": "Seleccionar la opción de recuperación de contraseña",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Desarrollar las actividades de formación en línea y hacer seguimiento al aprendizaje."
+        "id": "b3",
+        "texto": "Crear la nueva contraseña e ingresar a la plataforma",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Pagar la matrícula del programa de formación."
+        "id": "b4",
+        "texto": "Digitar el número de documento y el correo registrado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Ingresar a la página de Sofía Plus",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b5",
+      "b2",
+      "b4",
+      "b3",
+      "b6"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Recuperación de Contraseña",
-    "titulo": "Según las normas institucionales, ¿qué debe hacer el aprendiz si olvida la contraseña de acceso a las plataformas?",
-    "indicacion": "Las credenciales son personales e intransferibles. Selecciona la acción correcta cuando un aprendiz olvida su contraseña.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Uso de Territorium",
+    "titulo": "¿Para qué se usa Territorium en la formación?",
+    "indicacion": "Un aprendiz nuevo pregunta para qué sirve la plataforma Territorium. Selecciona la respuesta correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Crear una cuenta nueva con otro correo electrónico."
+        "texto": "Para comprar materiales de estudio."
       },
       {
         "id": 1,
-        "texto": "Solicitar la clave a un compañero de formación."
-      },
-      {
-        "id": 2,
-        "texto": "Usar la contraseña del instructor."
+        "texto": "Para descargar música y videos."
       },
       {
         "id": 3,
-        "texto": "Utilizar la opción de recuperación de contraseña que dispone la plataforma."
+        "texto": "Para cambiar la contraseña del correo personal."
+      },
+      {
+        "id": 2,
+        "texto": "Para acceder a las actividades de formación virtual y hacer seguimiento del aprendizaje."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Falta Disciplinaria",
-    "titulo": "¿Cuál de las siguientes acciones constituye una falta disciplinaria según el reglamento del aprendiz?",
-    "indicacion": "El reglamento del aprendiz define las faltas y sus sanciones. Identifica cuál de las acciones presentadas constituye una falta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Matrícula en Sofía Plus",
+    "titulo": "Recorre el proceso: matrícula en Sofía Plus",
+    "indicacion": "Sigue paso a paso el proceso de matrícula que realiza un aspirante en Sofía Plus y determina el resultado correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "id": 0,
-        "texto": "Suplantar la identidad de otro aprendiz al presentar evaluaciones en línea."
+        "label": "El aspirante ingresa a Sofía Plus con el usuario y la contraseña",
+        "tipo": "entrada"
       },
       {
+        "label": "El aspirante busca el programa de formación y el horario",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aspirante confirma la matrícula y descarga el comprobante",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El sistema registra la matrícula y habilita el acceso a la formación",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
         "id": 1,
-        "texto": "Cuidar los equipos del ambiente de formación."
+        "texto": "El aspirante queda matriculado y puede acceder a la formación."
+      },
+      {
+        "id": 0,
+        "texto": "El aspirante pierde el cupo."
       },
       {
         "id": 2,
-        "texto": "Cumplir con los compromisos académicos definidos en el plan de formación."
+        "texto": "La matrícula queda pendiente de pago."
       },
       {
         "id": 3,
-        "texto": "Consultar los canales oficiales de información institucional."
+        "texto": "El sistema bloquea la cuenta del aspirante."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Recuperación de Clave",
-    "titulo": "Prueba de escritorio: recuperación de contraseña en Sofía Plus",
-    "indicacion": "Un aprendiz olvidó su contraseña. Ejecuta mentalmente el procedimiento de recuperación y determina el resultado correcto al finalizar.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Registro",
+    "tipo": "Credenciales del Aprendiz",
+    "titulo": "Encuentra el error: credenciales del aprendiz",
+    "indicacion": "Revisa el registro de credenciales de un aprendiz. Una práctica es incorrecta. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El aprendiz selecciona la opción ¿Olvidó su contraseña?",
+        "label": "Usuario: 1020345678",
         "tipo": "proceso"
       },
       {
-        "label": "Ingresa su número de documento y su correo electrónico registrado",
-        "tipo": "entrada"
-      },
-      {
-        "label": "El sistema envía un enlace de restablecimiento al correo",
+        "label": "Contraseña: clave temporal asignada por la plataforma",
         "tipo": "proceso"
       },
       {
-        "label": "El aprendiz crea una nueva contraseña segura",
+        "label": "Correo de recuperación: mariaperez@correo.com",
         "tipo": "proceso"
       },
       {
-        "label": "Salida: el sistema confirma el cambio y permite el ingreso",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Contraseña anotada en un papel pegado al computador (ERROR)",
+        "tipo": "proceso",
+        "error": true
       }
     ],
-    "opcionesRespuesta": [
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El usuario no puede contener números."
+      },
       {
         "id": 0,
-        "texto": "El sistema crea automáticamente un usuario nuevo."
+        "texto": "Anotar la contraseña en un lugar visible es inseguro: la clave debe mantenerse en forma confidencial."
       },
       {
         "id": 2,
-        "texto": "El aprendiz ingresa a la plataforma con su nueva contraseña."
-      },
-      {
-        "id": 1,
-        "texto": "El correo electrónico deja de estar asociado a la cuenta."
+        "texto": "El correo de recuperación está mal escrito."
       },
       {
         "id": 3,
-        "texto": "La plataforma se bloquea durante 30 días."
+        "texto": "El registro está correcto."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Consulta de Horario",
-    "titulo": "Prueba de escritorio: consulta del horario de formación",
-    "indicacion": "Un aprendiz quiere conocer las sesiones de formación de la semana. Ejecuta mentalmente el procedimiento y determina qué obtiene al final.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Ingreso a Territorium",
+    "titulo": "Construye el proceso: ingreso a Territorium",
+    "indicacion": "Ordena los pasos que sigue un aprendiz para ingresar a Territorium y presentar una actividad.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz ingresa a Sofía Plus con su usuario y contraseña",
+        "id": "b2",
+        "texto": "Iniciar sesión con el usuario institucional",
         "tipo": "proceso"
       },
       {
-        "label": "Selecciona la opción Consultar Horario",
+        "id": "b3",
+        "texto": "Realizar y enviar la actividad pendiente",
         "tipo": "proceso"
       },
       {
-        "label": "Selecciona la ficha de su programa de formación",
+        "id": "b4",
+        "texto": "Seleccionar el curso o la actividad pendiente",
         "tipo": "proceso"
       },
       {
-        "label": "Salida: se muestra el horario con las sesiones asignadas",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Abrir el navegador y entrar al portal de Territorium",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b5",
+      "b2",
+      "b4",
+      "b3",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Vida en el SENA",
+    "tipo": "Reporte de Fallas",
+    "titulo": "La plataforma no permite ingresar al aprendiz",
+    "indicacion": "El aprendiz intenta ingresar a la plataforma varias veces y no lo logra. ¿Qué debe hacer?",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "Crear una cuenta paralela."
+      },
+      {
+        "id": 1,
+        "texto": "Usar la cuenta de un compañero."
+      },
+      {
+        "id": 2,
+        "texto": "Dejar de presentar las actividades."
+      },
+      {
+        "id": 3,
+        "texto": "Intentar nuevamente y, si persiste, reportar el caso en la mesa de ayuda institucional."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Registro",
+    "tipo": "Registro Académico",
+    "titulo": "Encuentra el error: registro académico del aprendiz",
+    "indicacion": "Revisa el registro académico de un aprendiz. Un campo es incorrecto. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Programa: Tecnólogo en Análisis y Desarrollo de Software",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Ficha: 2894567",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Jornada: Diurna",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Estado de la matrícula: Aprobada por un compañero (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "La matrícula no puede aprobarla un compañero: el estado lo define la plataforma y la institución."
+      },
+      {
+        "id": 1,
+        "texto": "La ficha no puede tener siete dígitos."
+      },
+      {
+        "id": 2,
+        "texto": "El programa está mal escrito."
+      },
+      {
+        "id": 3,
+        "texto": "El registro está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Novedad Académica",
+    "titulo": "Recorre el proceso: reporte de novedad académica",
+    "indicacion": "Sigue paso a paso el trámite que realiza un aprendiz para reportar un cambio de jornada y determina el resultado correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "El aprendiz identifica una novedad en su registro (cambio de jornada)",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El aprendiz radica la solicitud por el aplicativo institucional",
+        "tipo": "proceso"
+      },
+      {
+        "label": "La coordinación revisa y aprueba la novedad",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El sistema actualiza el registro y notifica al aprendiz",
+        "tipo": "salida"
       }
     ],
     "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El listado de los instructores del centro sin horarios."
+        "texto": "El registro queda bloqueado."
       },
       {
         "id": 2,
-        "texto": "Su calificación final del trimestre."
+        "texto": "El registro queda actualizado y el aprendiz recibe la notificación."
       },
       {
         "id": 1,
-        "texto": "El horario de formación con las sesiones y ambientes asignados a su ficha."
+        "texto": "El aprendiz debe crear un usuario nuevo."
       },
       {
         "id": 3,
-        "texto": "El enlace para pagar la matrícula."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Sesión en Territorium",
-    "titulo": "Ordena el proceso de ingreso a una sesión de formación en Territorium",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue un aprendiz para desarrollar una actividad en Territorium.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El aprendiz abre el navegador y accede al portal de Territorium",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Ingresa su usuario y contraseña institucionales",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b4",
-        "texto": "Selecciona la actividad asignada por el instructor",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Desarrolla la actividad y envía la evidencia",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Novedad Académica",
-    "titulo": "Ordena el procedimiento para reportar una novedad académica",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta que debe seguir el aprendiz al presentar una novedad académica.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El aprendiz identifica la novedad (inasistencia, cambio de datos)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Revisa el procedimiento establecido en el reglamento",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Presenta la solicitud o el soporte ante la coordinación académica",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Recibe la respuesta oficial por el canal institucional",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Manejo de Credenciales",
-    "titulo": "Encuentra la falla: contraseña expuesta",
-    "indicacion": "El procedimiento de un aprendiz al recibir sus credenciales tiene una falla. Revisa los pasos e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El aprendiz recibe su usuario y contraseña institucionales",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Anota la contraseña en un papel y la pega en el monitor del ambiente de formación",
-        "tipo": "proceso",
-        "error": true
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El aprendiz debe cambiar su contraseña únicamente cada dos años."
-      },
-      {
-        "id": 0,
-        "texto": "Exponer la contraseña en un lugar visible es un error de seguridad: las credenciales deben mantenerse de forma confidencial y no compartirse ni dejarse a la vista."
-      },
-      {
-        "id": 2,
-        "texto": "El reglamento exige compartir la contraseña con el instructor."
-      },
-      {
-        "id": 3,
-        "texto": "El procedimiento es correcto."
+        "texto": "La novedad se elimina sin revisión."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Seguridad de la Información",
-    "titulo": "Encuentra la falla: archivo de remitente desconocido",
-    "indicacion": "Un aprendiz recibe un correo de un remitente desconocido. Revisa el procedimiento e identifica el error de seguridad.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Cierre de Sesión",
+    "titulo": "Construye el proceso: cierre de sesión seguro",
+    "indicacion": "Ordena los pasos que debe seguir un aprendiz al terminar de usar una plataforma institucional en un equipo compartido.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz ingresa a Territorium con su usuario",
+        "id": "b2",
+        "texto": "Guardar los avances realizados",
         "tipo": "proceso"
       },
       {
-        "label": "Descarga un archivo adjunto de un remitente desconocido que llega a su correo institucional",
-        "tipo": "proceso",
-        "error": true
+        "id": "b3",
+        "texto": "Terminar la actividad en la plataforma",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b4",
+        "texto": "Cerrar la sesión",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que la sesión quedó cerrada",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El correo institucional permite recibir archivos de cualquier remitente sin riesgo."
-      },
-      {
-        "id": 1,
-        "texto": "El aprendiz debe reenviar el archivo a sus compañeros para verificarlo."
-      },
-      {
-        "id": 3,
-        "texto": "Descargar archivos de remitentes desconocidos es un riesgo de seguridad: el aprendiz debe ignorar y reportar los mensajes sospechosos ante el área de sistemas o el instructor."
-      },
-      {
-        "id": 2,
-        "texto": "La plataforma bloquea automáticamente todo archivo descargado."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b3",
+      "b2",
+      "b4",
+      "b5",
+      "b6"
+    ]
   }
 ];
 
@@ -782,6 +783,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -841,6 +857,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1108,6 +1264,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1141,6 +1303,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

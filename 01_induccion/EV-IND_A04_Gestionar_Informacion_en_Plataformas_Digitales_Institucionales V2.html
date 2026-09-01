@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Gestionar Información en Plataformas Digitales Institucionales</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Gestión de Información en Plataformas Digitales Institucionales</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la gestión de información en las plataformas digitales del SENA: uso del correo institucional, navegación en el campus virtual, organización de documentos digitales y buenas prácticas de seguridad de la información, mediante retos prácticos interactivos.
+          Pon en práctica la gestión de la información en las plataformas digitales del SENA con un caso real: decide la acción correcta en el correo institucional, el campus virtual y la organización de documentos digitales, ordena los procedimientos de envío y respaldo, corrige registros mal gestionados y ejecuta mentalmente el flujo completo de una entrega de evidencia. Sin teoría: aquí se demuestra gestionando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar las plataformas digitales institucionales y sus usos correctos.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la gestión de documentos digitales y determinar el resultado correcto.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para enviar, guardar y gestionar información institucional.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en la administración del correo y de los documentos digitales.</li>
+            <li><strong>Vida en el SENA:</strong> Decide la acción correcta en el correo institucional, el campus virtual y la gestión de documentos digitales.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases reales de un trámite digital institucional.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra la falla en un procedimiento de gestión de información.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el flujo de una gestión y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,320 +250,229 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
+    "categoria": "Vida en el SENA",
     "tipo": "Correo Institucional",
-    "titulo": "¿Cuál es el uso del correo electrónico institucional del SENA?",
-    "indicacion": "El correo institucional es un canal oficial de comunicación. Selecciona la opción que describe su uso correcto.",
+    "titulo": "¿Cuál es el uso correcto del correo institucional del SENA?",
+    "indicacion": "Un aprendiz recibió su correo institucional. Selecciona la opción que describe el uso correcto de este canal oficial de comunicación.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Registrarse en redes sociales de entretenimiento."
-      },
-      {
-        "id": 3,
-        "texto": "Recibir comunicaciones oficiales del SENA relacionadas con el proceso de formación."
+        "texto": "Usarlo para registrarse en promociones y suscripciones personales."
       },
       {
         "id": 1,
-        "texto": "Recibir promociones de tiendas en línea."
+        "texto": "Recibir y enviar las comunicaciones oficiales del proceso de formación: convocatorias, evidencias y avisos del instructor."
       },
       {
         "id": 2,
-        "texto": "Crear cuentas personales en sitios web."
+        "texto": "Crear cuentas en redes sociales y servicios de entretenimiento."
+      },
+      {
+        "id": 3,
+        "texto": "Reenviarlo a terceros para que reciban las comunicaciones por el aprendiz."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
+    "categoria": "Vida en el SENA",
     "tipo": "Campus Virtual",
-    "titulo": "¿Qué es el campus virtual del SENA?",
-    "indicacion": "El campus virtual forma parte de las plataformas digitales institucionales. Selecciona la opción que lo define correctamente.",
+    "titulo": "¿Qué debe verificar el aprendiz antes de enviar una evidencia en el campus virtual?",
+    "indicacion": "El aprendiz terminó su guía y va a entregarla por el campus virtual. Selecciona la verificación obligatoria antes de enviar.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "La sede física principal del SENA en Bogotá."
-      },
-      {
-        "id": 2,
-        "texto": "Una red social exclusiva para instructores."
-      },
-      {
         "id": 0,
-        "texto": "El espacio digital donde el aprendiz accede a contenidos, actividades y herramientas de su programa de formación."
+        "texto": "Que la plataforma esté configurada en otro idioma."
+      },
+      {
+        "id": 1,
+        "texto": "Que el instructor esté conectado en ese momento."
       },
       {
         "id": 3,
-        "texto": "Un sistema de pago de matrículas."
+        "texto": "Que el archivo adjunto sea el correcto y que el envío quede registrado en la plataforma."
+      },
+      {
+        "id": 2,
+        "texto": "Que la evidencia esté en formato de video."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Organización de Archivos",
-    "titulo": "Al guardar un documento digital, ¿cuál es una buena práctica de organización?",
-    "indicacion": "La organización de los archivos facilita su ubicación y entrega. Selecciona la buena práctica correcta.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Gestión de Documentos",
+    "titulo": "¿Cuál nombre de archivo permite identificar una evidencia de forma clara?",
+    "indicacion": "El aprendiz va a guardar su evidencia de la guía 1. Selecciona el nombre de archivo que sigue la buena práctica de organización documental.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Guardar todos los archivos en el escritorio sin carpetas."
-      },
-      {
-        "id": 2,
-        "texto": "Dejar el nombre que asigna el navegador al descargar el archivo."
-      },
-      {
-        "id": 3,
-        "texto": "Guardar una sola copia sin ningún respaldo."
+        "texto": "documento1.pdf"
       },
       {
         "id": 1,
-        "texto": "Usar nombres descriptivos y carpetas por tema o trimestre, por ejemplo Evidencias/Trimestre_1/Guia_1.pdf."
+        "texto": "sintitulo (2).pdf"
+      },
+      {
+        "id": 3,
+        "texto": "final definitivo v2 copia.pdf"
+      },
+      {
+        "id": 2,
+        "texto": "Evidencia_GA1_Perez_Ana.pdf"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Envío de Documentos",
-    "titulo": "¿Qué debe hacer el aprendiz antes de enviar un documento por el correo institucional?",
-    "indicacion": "El envío de documentos por el correo institucional requiere verificación. Selecciona la acción correcta antes de enviar.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Configuración del Correo",
+    "titulo": "Ordena el proceso: activar el correo institucional por primera vez",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue un aprendiz al activar su correo institucional por primera vez.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 2,
-        "texto": "Verificar que el archivo adjunto sea el correcto y que el destinatario corresponda al trámite."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 0,
-        "texto": "Enviar el correo sin asunto para agilizar el trámite."
+        "id": "b2",
+        "texto": "Ingresar a la plataforma con el usuario institucional",
+        "tipo": "proceso"
       },
       {
-        "id": 1,
-        "texto": "Compartir el correo con todos los contactos de su agenda."
+        "id": "b3",
+        "texto": "Establecer una contraseña segura y personal",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Eliminar el correo institucional al terminar el envío."
+        "id": "b4",
+        "texto": "Revisar la bandeja de entrada y leer el mensaje de bienvenida",
+        "tipo": "salida"
+      },
+      {
+        "id": "b5",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 0
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5"
+    ]
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Envío de Evidencia",
-    "titulo": "Prueba de escritorio: envío de una evidencia por correo",
-    "indicacion": "Un aprendiz envía su evidencia al instructor. Ejecuta mentalmente el procedimiento y determina el resultado correcto.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Entrega en el Campus Virtual",
+    "titulo": "Ordena el proceso: entregar una evidencia por el campus virtual",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue un aprendiz al entregar su evidencia por el campus virtual.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz termina su guía de aprendizaje y la guarda en PDF",
+        "id": "b2",
+        "texto": "Ingresar al campus virtual con las credenciales institucionales",
         "tipo": "proceso"
       },
       {
-        "label": "Adjunta el archivo en un correo dirigido al instructor",
+        "id": "b3",
+        "texto": "Localizar el curso y la actividad correspondiente",
         "tipo": "proceso"
       },
       {
-        "label": "Escribe el asunto: Evidencia GA1 - Ana Pérez",
+        "id": "b4",
+        "texto": "Adjuntar el archivo de la evidencia",
         "tipo": "proceso"
       },
       {
-        "label": "Salida: el correo se envía y el aprendiz verifica el envío en la carpeta de enviados",
+        "id": "b5",
+        "texto": "Enviar la actividad y verificar que la entrega quedó registrada",
         "tipo": "salida"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El aprendiz pierde el archivo al adjuntarlo."
-      },
-      {
-        "id": 1,
-        "texto": "La evidencia queda registrada y el aprendiz puede verificar el envío en la carpeta de elementos enviados."
-      },
-      {
-        "id": 2,
-        "texto": "El correo se envía sin el archivo adjunto."
-      },
-      {
-        "id": 3,
-        "texto": "El sistema bloquea el correo del instructor."
-      }
-    ],
-    "correcta": 1
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Organización de Carpetas",
-    "titulo": "Prueba de escritorio: organización de documentos digitales",
-    "indicacion": "Un aprendiz organiza sus evidencias en carpetas. Ejecuta mentalmente el proceso y determina el beneficio obtenido al final.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Organización de Documentos",
+    "titulo": "Ordena el proceso: organizar los documentos digitales del trimestre",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue un aprendiz al organizar sus documentos digitales del trimestre.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz crea la carpeta Evidencias en su computador",
+        "id": "b2",
+        "texto": "Crear una estructura de carpetas por tema o trimestre",
         "tipo": "proceso"
       },
       {
-        "label": "Dentro crea las carpetas Guias y Evaluaciones",
+        "id": "b3",
+        "texto": "Renombrar los archivos con nombres descriptivos",
         "tipo": "proceso"
       },
       {
-        "label": "Guarda cada archivo en la carpeta correspondiente con un nombre descriptivo",
+        "id": "b4",
+        "texto": "Ubicar cada documento en su carpeta correspondiente",
         "tipo": "proceso"
       },
       {
-        "label": "Salida: el aprendiz ubica cualquier evidencia de forma rápida",
+        "id": "b5",
+        "texto": "Respaldar la información en una unidad externa o en la nube",
         "tipo": "salida"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El computador funciona más lento por el número de carpetas."
-      },
-      {
-        "id": 1,
-        "texto": "Los archivos se borran automáticamente al organizarlos."
-      },
-      {
-        "id": 3,
-        "texto": "El aprendiz encuentra y respalda sus documentos de forma rápida y ordenada."
-      },
-      {
-        "id": 2,
-        "texto": "La plataforma califica las evidencias de forma automática."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Entrega en el Campus Virtual",
-    "titulo": "Ordena el proceso para subir una evidencia al campus virtual",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta que sigue un aprendiz al entregar una evidencia en el campus virtual.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El aprendiz ingresa al campus virtual con su usuario institucional",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Localiza el curso y la actividad correspondiente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Adjunta el archivo de la evidencia",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Envía la actividad y verifica el registro de la entrega",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Gestión de Documento Oficial",
-    "titulo": "Ordena el proceso para gestionar un documento oficial recibido por correo",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta al recibir y gestionar un documento oficial en el correo institucional.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El aprendiz abre el correo institucional y localiza el mensaje oficial",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Descarga el documento adjunto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Lo guarda en la carpeta correspondiente con un nombre descriptivo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Lee el contenido y atiende las indicaciones dentro del plazo",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Nombre de Archivo",
-    "titulo": "Encuentra la falla: nombre del archivo sin identificar",
-    "indicacion": "Un aprendiz guarda un formato institucional descargado. Revisa el procedimiento e identifica el error en la gestión del archivo.",
+    "categoria": "Corregir el Registro",
+    "tipo": "Archivo Adjunto Equivocado",
+    "titulo": "Encuentra la falla: evidencia adjunta equivocada",
+    "indicacion": "Un aprendiz envía su evidencia de la guía 1 al instructor por el correo institucional. Revisa el procedimiento e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -571,11 +480,61 @@
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz descarga el formato de matrícula",
+        "label": "El aprendiz redacta el correo dirigido al instructor",
         "tipo": "proceso"
       },
       {
-        "label": "Guarda el archivo con el nombre 'sin título (2) final definitivo' sin identificarlo",
+        "label": "Adjunta el archivo Guia_GA1_Carlos_Ruiz.pdf sin verificar su contenido",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Escribe el asunto y envía el correo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El asunto del correo debe ir vacío para que el envío sea más rápido."
+      },
+      {
+        "id": 2,
+        "texto": "El correo institucional solo permite recibir mensajes, no enviarlos."
+      },
+      {
+        "id": 3,
+        "texto": "El procedimiento es correcto y no presenta errores."
+      },
+      {
+        "id": 0,
+        "texto": "Adjuntó la guía de otro aprendiz: antes de enviar debe verificar que el archivo adjunto sea el correcto y corresponda a su evidencia."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Registro",
+    "tipo": "Almacenamiento del Documento",
+    "titulo": "Encuentra la falla: certificado guardado sin identificar",
+    "indicacion": "Un aprendiz descarga su certificado del campus virtual y lo guarda en su equipo. Revisa el procedimiento e identifica el error en la gestión del documento.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz descarga el certificado desde el campus virtual",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Lo guarda en el escritorio con el nombre 'descarga (3)' sin carpeta",
         "tipo": "proceso",
         "error": true
       },
@@ -586,66 +545,126 @@
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "El nombre del archivo debe estar escrito en inglés."
+        "id": 2,
+        "texto": "El nombre 'descarga (3)' no permite identificar el documento: debe usar un nombre descriptivo y guardarlo en la carpeta correspondiente."
       },
       {
-        "id": 2,
-        "texto": "El nombre del archivo no permite identificarlo: una buena práctica es usar un nombre descriptivo como Matricula_Ana_Perez_2027.pdf que facilite su ubicación y entrega."
+        "id": 0,
+        "texto": "La plataforma bloquea los archivos descargados con acentos."
       },
       {
         "id": 1,
-        "texto": "La plataforma no permite cambiar el nombre de los archivos descargados."
+        "texto": "El aprendiz debe eliminar el certificado después de descargarlo."
       },
       {
         "id": 3,
-        "texto": "El aprendiz no debe descargar formatos institucionales."
+        "texto": "El procedimiento es correcto y no presenta errores."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Envío de Evidencia por Correo",
+    "titulo": "Prueba de escritorio: envío de una evidencia por el correo institucional",
+    "indicacion": "Un aprendiz guarda su evidencia en PDF, la adjunta a un correo con asunto claro y la envía al instructor. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz guarda su evidencia de la guía 2 en formato PDF",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Redacta el correo con asunto: Evidencia GA2 - Ana Perez",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Adjunta el archivo y envía el mensaje al instructor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el correo queda en la carpeta de enviados y el instructor lo recibe",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "El sistema borra el archivo adjunto al momento de enviarlo."
+      },
+      {
+        "id": 0,
+        "texto": "El correo queda registrado en la carpeta de enviados y el instructor recibe la evidencia."
+      },
+      {
+        "id": 2,
+        "texto": "La evidencia se pierde porque el correo no admite archivos PDF."
+      },
+      {
+        "id": 3,
+        "texto": "El archivo se convierte en imagen y el instructor no puede abrirlo."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Confidencialidad de la Información",
-    "titulo": "Encuentra la falla: reenvío de información institucional",
-    "indicacion": "Un aprendiz recibe un mensaje oficial del SENA. Revisa el procedimiento e identifica el error de seguridad.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Gestión de una Comunicación Oficial",
+    "titulo": "Prueba de escritorio: gestión de una circular recibida por correo",
+    "indicacion": "Un aprendiz recibe una circular de convocatoria en su correo institucional, la guarda de forma organizada y la atiende. Ejecuta mentalmente el procedimiento y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz recibe un mensaje oficial del SENA",
+        "label": "El aprendiz abre el correo institucional y localiza la circular",
         "tipo": "proceso"
       },
       {
-        "label": "Reenvía el mensaje a su correo personal y comparte el enlace de acceso con un desconocido",
-        "tipo": "proceso",
-        "error": true
+        "label": "Descarga el documento y lo guarda en la carpeta Documentos/Comunicaciones",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Lee el contenido y anota la fecha de la convocatoria",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el aprendiz asiste puntual a la convocatoria con la información consultada",
+        "tipo": "salida"
       },
       {
         "label": "Fin",
         "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "El correo institucional debe reenviarse a todos los contactos de la agenda."
-      },
-      {
-        "id": 2,
-        "texto": "Los enlaces de acceso son públicos y no requieren ningún cuidado."
-      },
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "Reenviar información institucional a terceros es un error de seguridad: los mensajes oficiales y los enlaces de acceso deben tratarse de forma confidencial y no compartirse con desconocidos."
+        "texto": "La circular se pierde porque el correo institucional no permite descargas."
+      },
+      {
+        "id": 1,
+        "texto": "El aprendiz no puede abrir el documento por estar en la carpeta Comunicaciones."
       },
       {
         "id": 3,
-        "texto": "El procedimiento es correcto y no genera ningún riesgo."
+        "texto": "El aprendiz asiste puntual a la convocatoria porque organizó y consultó la información a tiempo."
+      },
+      {
+        "id": 2,
+        "texto": "La plataforma bloquea el archivo por tener un nombre descriptivo."
       }
     ],
     "correcta": 2
@@ -778,6 +797,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -837,6 +871,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1104,6 +1278,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1137,6 +1317,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

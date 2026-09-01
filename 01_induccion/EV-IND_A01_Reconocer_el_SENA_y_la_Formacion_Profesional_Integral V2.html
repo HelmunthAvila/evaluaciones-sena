@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el reconocimiento del SENA y la Formación Profesional Integral: historia y misión de la institución, principios de la formación profesional, deberes y derechos del aprendiz y servicios de bienestar, mediante retos prácticos interactivos.
+          Pon en práctica lo que conoces del SENA y de la Formación Profesional Integral con situaciones reales de la vida del aprendiz: decide la actuación correcta ante un trámite de matrícula, el carné o un servicio de bienestar, ordena los procesos institucionales de ingreso y de bienestar, corrige un registro de datos del aprendiz mal diligenciado y recorre paso a paso una situación institucional para determinar el resultado. Sin teoría: aquí se demuestra actuando como aprendiz del SENA.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar conceptos clave del SENA, su historia, su misión y los principios de la Formación Profesional Integral.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso procesos institucionales y determinar el resultado correcto.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos de los procesos de matrícula, inducción y bienestar.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en procedimientos institucionales y proponer la corrección adecuada.</li>
+            <li><strong>Vida en el SENA:</strong> Decide la actuación correcta del aprendiz en situaciones reales (matrícula, carné, bienestar).</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos de los procesos institucionales del SENA.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra los errores en el registro y en los datos del aprendiz.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre el proceso institucional y determina el resultado correcto.</li>
           </ul>
         </div>
 
@@ -243,412 +243,417 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Reconocer el SENA y la Formación Profesional Integral</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Reconocer el SENA y la FPI</p>
   </footer>
 
   <script>
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Sigla Institucional",
-    "titulo": "¿Qué significa la sigla SENA?",
-    "indicacion": "El SENA es la institución pública de formación para el trabajo en Colombia. Selecciona la opción que corresponde al significado correcto de su sigla.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Identificación del Aprendiz",
+    "titulo": "¿Qué documento te identifica como aprendiz del SENA?",
+    "indicacion": "Estás ingresando al centro de formación y debes identificarte. Selecciona el documento correcto para acreditar tu condición de aprendiz.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 1,
-        "texto": "Sistema Educativo Nacional de Asistencia"
+        "texto": "La factura de servicios públicos."
       },
       {
         "id": 0,
-        "texto": "Servicio Nacional de Aprendizaje"
+        "texto": "El carné de aprendiz, que debe portarse durante la estancia en el centro de formación."
       },
       {
         "id": 2,
-        "texto": "Secretaría Nacional de Educación y Aprendizaje"
+        "texto": "El recibo de matrícula del colegio."
       },
       {
         "id": 3,
-        "texto": "Servicio Nacional de Empleo y Asistencia"
+        "texto": "El carné de salud."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Misión del SENA",
-    "titulo": "¿Cuál es la misión principal del SENA?",
-    "indicacion": "La misión define la razón de ser de la institución. Selecciona la opción que describe correctamente la misión del SENA.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Ingreso a la Formación",
+    "titulo": "Construye el proceso: ingreso a la formación",
+    "indicacion": "Ordena los pasos que sigue una persona desde la inscripción hasta la inducción en el SENA.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Formar técnicos y tecnólogos únicamente en la ciudad de Bogotá."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 2,
-        "texto": "Administrar los impuestos y tributos nacionales."
+        "id": "b2",
+        "texto": "Formalizar la matrícula con los documentos requeridos",
+        "tipo": "proceso"
       },
       {
-        "id": 1,
-        "texto": "Ofrecer formación profesional integral para contribuir al desarrollo social, económico y tecnológico del país."
+        "id": "b3",
+        "texto": "Presentar la prueba de selección",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Regular el comercio exterior de Colombia."
+        "id": "b4",
+        "texto": "Asistir a la inducción del programa de formación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Realizar la inscripción en la plataforma",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b5",
+      "b3",
+      "b2",
+      "b4",
+      "b6"
+    ]
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Formación Profesional Integral",
-    "titulo": "¿Qué comprende la Formación Profesional Integral del SENA?",
-    "indicacion": "La Formación Profesional Integral es el enfoque formativo del SENA. Selecciona la opción que describe correctamente su alcance.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Uso del Carné",
+    "titulo": "Un aprendiz olvidó el carné en casa",
+    "indicacion": "Al llegar al centro de formación, el aprendiz se da cuenta de que olvidó el carné. ¿Qué debe hacer?",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Solamente el desarrollo de habilidades técnicas de un oficio."
+        "texto": "Ingresar sin identificarse."
       },
       {
         "id": 1,
-        "texto": "Únicamente la formación académica universitaria."
+        "texto": "Falsificar un carné para poder ingresar."
       },
       {
         "id": 3,
-        "texto": "La certificación de empresas sin formación de personas."
+        "texto": "Esperar fuera del centro hasta tener el carné en físico."
       },
       {
         "id": 2,
-        "texto": "La formación de la persona en lo técnico, lo social, lo cultural y lo ético, preparándola para la vida productiva."
+        "texto": "Solicitar el ingreso reportando el caso en la portería y gestionar el carné lo antes posible."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Deberes del Aprendiz",
-    "titulo": "Según el reglamento del aprendiz, ¿cuál es un deber del aprendiz SENA?",
-    "indicacion": "El reglamento del aprendiz establece los deberes que todo aprendiz debe cumplir durante su proceso de formación. Selecciona la opción correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Reposición del Carné",
+    "titulo": "Recorre el proceso: pérdida del carné",
+    "indicacion": "Sigue paso a paso el procedimiento que realiza un aprendiz que perdió el carné y determina el resultado correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "id": 3,
-        "texto": "Cumplir puntualmente con las actividades académicas y convivenciales definidas en el reglamento."
+        "label": "El aprendiz extravía el carné en un viaje",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El aprendiz informa la pérdida en el centro de formación",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aprendiz presenta los documentos requeridos y solicita la reposición",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El centro de formación entrega el carné de reposición",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "El aprendiz recibe el carné de reposición y puede identificarse de nuevo."
       },
       {
         "id": 0,
-        "texto": "Compartir sus claves de acceso a las plataformas con otros compañeros."
-      },
-      {
-        "id": 1,
-        "texto": "Asistir a las actividades de formación solo cuando su tiempo lo permita."
+        "texto": "El aprendiz es retirado de la formación."
       },
       {
         "id": 2,
-        "texto": "Utilizar los equipos del centro de formación para fines personales."
+        "texto": "El aprendiz debe repetir la matrícula."
+      },
+      {
+        "id": 3,
+        "texto": "El aprendiz queda sin identificación definitivamente."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Proceso de Inducción",
-    "titulo": "Prueba de escritorio: asistencia a las sesiones de inducción",
-    "indicacion": "Ejecuta mentalmente el siguiente proceso y determina el resultado para un aprendiz que asistió a las 5 sesiones de inducción programadas.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Registro",
+    "tipo": "Deberes del Aprendiz",
+    "titulo": "Encuentra el error: deberes del aprendiz",
+    "indicacion": "Un compañero escribió una lista de deberes del aprendiz. Uno de los enunciados es incorrecto. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El aprendiz asiste a las 5 sesiones de inducción programadas",
+        "label": "Asistir puntualmente a las actividades de formación",
         "tipo": "proceso"
       },
       {
-        "label": "El instructor verifica el 100% de asistencia",
-        "tipo": "decision"
+        "label": "Portar el carné dentro del centro de formación",
+        "tipo": "proceso"
       },
       {
-        "label": "Salida: el aprendiz queda habilitado para continuar su formación",
-        "tipo": "salida"
+        "label": "Utilizar el uniforme solo en eventos sociales (ERROR)",
+        "tipo": "proceso",
+        "error": true
       },
       {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Cumplir con los compromisos académicos adquiridos",
+        "tipo": "proceso"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Debe repetir la inducción completa en el siguiente trimestre."
-      },
+    "opciones": [
       {
         "id": 1,
-        "texto": "Queda habilitado para continuar su proceso de formación."
+        "texto": "No es deber asistir puntualmente a la formación."
+      },
+      {
+        "id": 0,
+        "texto": "El uso del uniforme es obligatorio en el centro de formación, no solo en eventos sociales."
       },
       {
         "id": 2,
-        "texto": "Se cancela su matrícula de forma automática."
+        "texto": "El carné no es obligatorio dentro del centro."
       },
       {
         "id": 3,
-        "texto": "Debe presentar una prueba escrita adicional."
+        "texto": "El registro está correcto."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Cálculo de Porcentaje",
-    "titulo": "Prueba de escritorio: porcentaje obtenido en la evaluación de inducción",
-    "indicacion": "Un aprendiz obtiene 40 puntos en la evaluación de inducción que vale 50 puntos. Ejecuta mentalmente el proceso y determina el porcentaje que se muestra.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Bienestar al Aprendiz",
+    "titulo": "Construye el proceso: solicitud de bienestar",
+    "indicacion": "Ordena los pasos que sigue un aprendiz cuando presenta una dificultad y acude a Bienestar al Aprendiz.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aprendiz obtiene 40 puntos en la evaluación de inducción",
+        "id": "b2",
+        "texto": "Acudir a Bienestar al Aprendiz",
         "tipo": "proceso"
       },
       {
-        "label": "La evaluación tiene un valor total de 50 puntos",
+        "id": "b3",
+        "texto": "Identificar la necesidad o dificultad del aprendiz",
         "tipo": "proceso"
       },
       {
-        "label": "Porcentaje = (40 / 50) * 100",
+        "id": "b4",
+        "texto": "Recibir orientación o remisión según el caso",
         "tipo": "proceso"
       },
       {
-        "label": "Salida: mostrar el porcentaje obtenido",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Hacer seguimiento a la situación",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "50 %"
-      },
-      {
-        "id": 1,
-        "texto": "90 %"
-      },
-      {
-        "id": 2,
-        "texto": "80 %"
-      },
-      {
-        "id": 3,
-        "texto": "40 %"
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b3",
+      "b2",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Matrícula",
-    "titulo": "Ordena el proceso de matrícula del aprendiz",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta del proceso de matrícula de un aprendiz en el SENA.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
+    "categoria": "Vida en el SENA",
+    "tipo": "Derechos del Aprendiz",
+    "titulo": "¿Cuál de estas situaciones corresponde a un DERECHO del aprendiz?",
+    "indicacion": "Selecciona la situación que corresponde a un derecho del aprendiz del SENA.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": 0,
+        "texto": "Faltar a clase sin justificación."
       },
       {
-        "id": "b2",
-        "texto": "El aspirante realiza la inscripción en Sofía Plus",
-        "tipo": "proceso"
+        "id": 2,
+        "texto": "Hacer uso indebido de los elementos del centro."
       },
       {
-        "id": "b3",
-        "texto": "Presenta las pruebas de selección",
-        "tipo": "proceso"
+        "id": 3,
+        "texto": "Comercializar productos dentro del centro de formación."
       },
       {
-        "id": "b4",
-        "texto": "Es admitido y formaliza la matrícula",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Participa en la inducción del programa de formación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": 1,
+        "texto": "Recibir la formación profesional con calidad y en las condiciones pactadas."
       }
     ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
+    "correcta": 3
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Servicio de Bienestar",
-    "titulo": "Ordena los pasos para solicitar un servicio de bienestar",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta que debe seguir un aprendiz para acceder a un servicio de bienestar del SENA.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El aprendiz identifica su necesidad (salud, deporte, orientación)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Consulta la oferta de bienestar de su centro de formación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Se inscribe en el servicio según el procedimiento establecido",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Recibe la atención o el acompañamiento del área de bienestar",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Ejercicio de Derechos",
-    "titulo": "Encuentra la falla: procedimiento para ejercer un derecho",
-    "indicacion": "El reglamento del aprendiz establece canales para que el aprendiz ejerza sus derechos. Revisa el procedimiento e identifica la falla.",
+    "categoria": "Corregir el Registro",
+    "tipo": "Datos del Aprendiz",
+    "titulo": "Encuentra el error: registro del aprendiz",
+    "indicacion": "Revisa el registro de un aprendiz. Un dato es inválido. ¿Cuál es el error?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El aprendiz identifica una situación que afecta su proceso formativo",
+        "label": "Nombre y apellidos: María Pérez",
         "tipo": "proceso"
       },
       {
-        "label": "Decide no informar a nadie y esperar a que la situación se resuelva sola",
-        "tipo": "proceso",
-        "error": true
+        "label": "Documento: 1.020.345.678",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Programa de formación: Análisis y desarrollo de software",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fecha de matrícula: 31 de febrero de 2026 (ERROR)",
+        "tipo": "proceso",
+        "error": true
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "El aprendiz no tiene derecho a presentar peticiones ante la institución."
-      },
-      {
-        "id": 3,
-        "texto": "El aprendiz debe reportar la situación por los canales institucionales (coordinación académica, bienestar al aprendiz o peticiones formales) para que su caso sea gestionado."
+        "texto": "El 31 de febrero no existe en el calendario: la fecha de matrícula es inválida."
       },
       {
         "id": 1,
-        "texto": "Los derechos del aprendiz solo pueden ejercerse al finalizar la formación."
+        "texto": "El nombre está mal escrito."
       },
       {
         "id": 2,
-        "texto": "El reglamento no contempla canales de atención para los aprendices."
+        "texto": "El documento no puede tener diez dígitos."
+      },
+      {
+        "id": 3,
+        "texto": "El registro está correcto."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Matrícula del Aprendiz",
+    "titulo": "Recorre el proceso: matrícula del aprendiz",
+    "indicacion": "Sigue paso a paso el proceso de matrícula de un aspirante admitido y determina el resultado correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "El aspirante es admitido al programa de formación",
+        "tipo": "entrada"
+      },
+      {
+        "label": "El aspirante presenta los documentos requeridos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aspirante firma la matrícula y recibe el horario",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El aprendiz asiste a la inducción",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "El aspirante pierde el cupo."
+      },
+      {
+        "id": 3,
+        "texto": "El aspirante queda formalmente matriculado y participa de la inducción."
+      },
+      {
+        "id": 1,
+        "texto": "El aspirante debe volver a inscribirse en la plataforma."
+      },
+      {
+        "id": 2,
+        "texto": "El aspirante queda en lista de espera."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Seguridad de Credenciales",
-    "titulo": "Encuentra la falla: inscripción con datos personales",
-    "indicacion": "El proceso de inscripción de un aspirante tiene una falla. Revisa los pasos e identifica el error.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Jornada de Bienestar",
+    "titulo": "Construye el proceso: jornada de bienestar",
+    "indicacion": "Ordena los pasos que sigue un aprendiz para participar en una actividad de bienestar.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "El aspirante crea su usuario en Sofía Plus",
+        "id": "b2",
+        "texto": "Asistir a la actividad programada",
         "tipo": "proceso"
       },
       {
-        "label": "Selecciona el programa de formación de su interés",
+        "id": "b3",
+        "texto": "Inscribirse en la actividad de bienestar",
         "tipo": "proceso"
       },
       {
-        "label": "Entrega su número de documento y su contraseña a un tercero para que complete la inscripción",
-        "tipo": "proceso",
-        "error": true
+        "id": "b4",
+        "texto": "Diligenciar la encuesta de satisfacción",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b5",
+        "texto": "Recibir el certificado de participación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 1,
-        "texto": "La inscripción solo puede realizarse de forma presencial en el centro de formación."
-      },
-      {
-        "id": 2,
-        "texto": "No es posible seleccionar el programa de formación por internet."
-      },
-      {
-        "id": 0,
-        "texto": "Compartir las credenciales de acceso con terceros es un error de seguridad: las claves son personales e intransferibles y el aspirante debe realizar su propia inscripción."
-      },
-      {
-        "id": 3,
-        "texto": "El procedimiento es correcto y no representa ningún riesgo."
-      }
-    ],
-    "correcta": 2
+    "ordenCorrecto": [
+      "b1",
+      "b3",
+      "b2",
+      "b4",
+      "b5",
+      "b6"
+    ]
   }
 ];
 
@@ -778,6 +783,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -837,6 +857,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1104,6 +1264,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1137,6 +1303,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

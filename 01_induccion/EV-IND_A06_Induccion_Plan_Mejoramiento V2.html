@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Plan de Mejoramiento</title>
+<title>Evaluación Práctica - Inducción: Plan de Mejoramiento</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la formulación y seguimiento del plan de mejoramiento: definición de metas de superación, estrategias de mejora, seguimiento periódico y evaluación de avances, mediante retos prácticos interactivos.
+          Pon en práctica el plan de mejoramiento con un caso real: decide las metas medibles y las acciones de seguimiento, ordena las fases de elaboración y evaluación del plan, corrige un plan con metas vagas o avances sin soporte y ejecuta mentalmente el recorrido de un aprendiz que mejora su rendimiento. Sin teoría: aquí se demuestra mejorando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Técnica de Prueba:</strong> Aplicar e interpretar instrumentos de evaluación de avances académicos.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular el cálculo de metas e indicadores de mejoramiento.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las fases del plan de mejoramiento y su seguimiento.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en la interpretación de avances y en el seguimiento de metas.</li>
+            <li><strong>Vida en el SENA:</strong> Decide la meta medible y la acción de seguimiento correcta en el plan de mejoramiento.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases reales de elaboración, seguimiento y evaluación de avances.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra la falla en un plan de mejoramiento mal formulado.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el plan de mejoramiento y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,390 +250,431 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Metas de Superación",
-    "titulo": "¿Qué caracteriza una meta de superación bien formulada en el plan de mejoramiento?",
-    "indicacion": "Las metas orientan el plan de mejoramiento. Selecciona la opción que describe una meta correctamente formulada.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Concepto del Plan",
+    "titulo": "¿Qué es el plan de mejoramiento?",
+    "indicacion": "Un aprendiz no alcanzó dos logros del trimestre y el instructor le propone un plan de mejoramiento. Selecciona la opción que lo define correctamente.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Una meta general y ambigua como 'mejorar en todas las áreas'."
-      },
-      {
-        "id": 1,
-        "texto": "Una meta específica, medible y con plazo definido, por ejemplo 'alcanzar mínimo 70% en la próxima evaluación de algoritmos'."
+        "texto": "Una sanción impuesta por el instructor sin posibilidad de recuperación."
       },
       {
         "id": 2,
-        "texto": "Una meta definida únicamente por el aprendiz sin revisión del instructor."
+        "texto": "Una estrategia con metas y acciones concretas para superar los logros no alcanzados."
+      },
+      {
+        "id": 1,
+        "texto": "Un formato que se diligencia y no se vuelve a revisar."
       },
       {
         "id": 3,
-        "texto": "Una meta que duplica las actividades del plan de nivelación."
+        "texto": "Una excusa para que el aprendiz no asista a formación."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Seguimiento del Plan",
-    "titulo": "¿Con qué frecuencia debe realizarse el seguimiento del plan de mejoramiento?",
-    "indicacion": "El seguimiento es parte fundamental del plan. Selecciona la periodicidad correcta.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Formulación de Metas",
+    "titulo": "¿Cuál meta está bien formulada para el plan de mejoramiento?",
+    "indicacion": "El aprendiz debe escribir la meta de su plan de mejoramiento. Selecciona la meta que se puede medir y verificar.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Una sola vez, al finalizar la formación."
-      },
-      {
-        "id": 1,
-        "texto": "Únicamente cuando el aprendiz lo solicita."
+        "texto": "Mejorar mucho en todas las áreas."
       },
       {
         "id": 2,
-        "texto": "De manera periódica y acordada, con registro de los avances en cada sesión de verificación."
+        "texto": "Ser el mejor aprendiz de la sede."
+      },
+      {
+        "id": 1,
+        "texto": "Alcanzar una calificación superior a 4.0 en los tres logros pendientes del próximo corte."
       },
       {
         "id": 3,
-        "texto": "Cada vez que se aplica una nueva prueba diagnóstica inicial."
+        "texto": "Estudiar cuando haya tiempo libre."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Evaluación de Avances",
-    "titulo": "¿Qué instrumento permite verificar el avance del aprendiz frente a las metas del plan de mejoramiento?",
-    "indicacion": "La verificación de avances requiere un instrumento de evaluación. Selecciona el adecuado.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Seguimiento del Plan",
+    "titulo": "¿Qué acción corresponde a un seguimiento correcto del plan de mejoramiento?",
+    "indicacion": "El aprendiz inició su plan de mejoramiento. Selecciona la acción de seguimiento correcta durante el trimestre.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 1,
-        "texto": "El registro de asistencia a la jornada de formación."
+        "texto": "Esperar la evaluación final sin revisar el plan en todo el trimestre."
       },
       {
         "id": 2,
-        "texto": "La encuesta de satisfacción del ambiente de aprendizaje."
+        "texto": "Borrar el plan de mejoramiento del sistema."
       },
       {
         "id": 3,
-        "texto": "El contrato de aprendizaje firmado al matricularse."
+        "texto": "Delegar el seguimiento a un compañero del grupo."
       },
       {
         "id": 0,
-        "texto": "La lista de chequeo o rúbrica de seguimiento aplicada en las fechas pactadas."
+        "texto": "Revisar periódicamente el avance frente a cada meta y ajustar las acciones si no hay progreso."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Técnica de Prueba",
-    "tipo": "Estrategias de Mejora",
-    "titulo": "¿Cuál de las siguientes es una estrategia válida dentro del plan de mejoramiento?",
-    "indicacion": "Las estrategias del plan deben favorecer la superación de las dificultades. Selecciona la opción válida.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del Plan",
+    "titulo": "Ordena el proceso: elaboración del plan de mejoramiento",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta al elaborar un plan de mejoramiento.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 3,
-        "texto": "Acompañamiento personalizado, refuerzo dirigido y verificación periódica de resultados."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
+        "id": "b2",
+        "texto": "Analizar los resultados de la evaluación y los logros no alcanzados",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Definir metas concretas y alcanzables",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Plantear las acciones de mejora para cada meta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Establecer las fechas de seguimiento y evaluación de avances",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Seguimiento Periódico",
+    "titulo": "Ordena el proceso: seguimiento periódico del plan de mejoramiento",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta del seguimiento periódico que hace el aprendiz de su plan de mejoramiento.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Revisar el avance frente a cada meta definida",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Registrar los resultados obtenidos en el formato de seguimiento",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Ajustar las acciones si no se observa avance",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Informar al instructor sobre el progreso",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Evaluación de Avances",
+    "titulo": "Ordena el proceso: evaluación final de avances del plan",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta de la evaluación final de avances del plan de mejoramiento.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Reunirse con el instructor para la valoración del plan",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Presentar las evidencias de las acciones ejecutadas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Verificar el cumplimiento de las metas definidas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Registrar la valoración final de los avances",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Registro",
+    "tipo": "Meta sin Indicador",
+    "titulo": "Encuentra la falla: meta sin indicador ni plazo",
+    "indicacion": "Un aprendiz escribió la meta de su plan de mejoramiento. Revisa el registro e identifica el error en la formulación de la meta.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz registra la meta: mejorar el rendimiento",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Deja sin definir el indicador de logro y la fecha de cumplimiento (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Firma el plan con el instructor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
         "id": 0,
-        "texto": "Suspender al aprendiz de la jornada hasta que mejore."
+        "texto": "La meta debe escribirse en inglés para ser válida."
       },
       {
         "id": 1,
-        "texto": "Asignar únicamente actividades de consulta sin evaluación."
+        "texto": "El plan de mejoramiento no necesita metas."
       },
       {
         "id": 2,
-        "texto": "Repetir la misma actividad sin variar la metodología."
+        "texto": "El instructor debe proponer todas las metas sin participación del aprendiz."
+      },
+      {
+        "id": 3,
+        "texto": "Una meta sin indicador ni plazo no se puede evaluar: debe ser medible, por ejemplo 'subir la calificación de 3.2 a 4.0 en el próximo corte'."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Registro",
+    "tipo": "Avance sin Evidencia",
+    "titulo": "Encuentra la falla: avance reportado sin evidencias",
+    "indicacion": "En la reunión de seguimiento, el aprendiz reporta su avance. Revisa el registro e identifica el error en la verificación del plan.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz informa que la meta ya está cumplida",
+        "tipo": "proceso"
+      },
+      {
+        "label": "No presenta ninguna evidencia de las acciones ejecutadas (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "El instructor registra el avance como cumplido",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 1,
+        "texto": "El avance debe soportarse con evidencias: reportar un logro sin soporte invalida el seguimiento del plan."
+      },
+      {
+        "id": 0,
+        "texto": "El registro es correcto: la palabra del aprendiz basta para validar el avance."
+      },
+      {
+        "id": 2,
+        "texto": "Las evidencias solo las puede revisar el coordinador académico."
+      },
+      {
+        "id": 3,
+        "texto": "La meta se da por cumplida sin necesidad de verificación."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Cálculo de Meta",
-    "titulo": "Prueba de escritorio: avance requerido para alcanzar la meta",
-    "indicacion": "Ejecuta mentalmente el procedimiento con los datos dados y determina el avance que debe lograr el aprendiz.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Meta definida: alcanzar 70% en la prueba de seguimiento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado inicial del aprendiz: 45%",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Cálculo: 70% - 45% = avance requerido",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Avance que debe lograr el aprendiz",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "70 puntos porcentuales"
-      },
-      {
-        "id": 0,
-        "texto": "25 puntos porcentuales"
-      },
-      {
-        "id": 2,
-        "texto": "45 puntos porcentuales"
-      },
-      {
-        "id": 3,
-        "texto": "115 puntos porcentuales"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Indicador de Avance",
-    "titulo": "Prueba de escritorio: evaluación del avance frente a la meta",
-    "indicacion": "Ejecuta mentalmente el procedimiento de seguimiento con los datos dados y determina la conclusión correcta.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Meta: 80% | Resultado anterior: 50% | Resultado actual: 75%",
-        "tipo": "proceso"
-      },
-      {
-        "label": "¿El aprendiz alcanzó la meta?",
-        "tipo": "decision"
-      },
-      {
-        "label": "Conclusión del seguimiento",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Sí alcanzó la meta y el plan de mejoramiento se cierra definitivamente."
-      },
-      {
-        "id": 2,
-        "texto": "El avance del aprendiz es de 5 puntos porcentuales."
-      },
-      {
-        "id": 1,
-        "texto": "Aún no alcanza la meta, pero registra un avance de 25 puntos; debe continuar con el plan."
-      },
-      {
-        "id": 3,
-        "texto": "El plan de mejoramiento debe reiniciarse desde cero sin evaluar el avance."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Fases del Plan",
-    "titulo": "Ordena las fases del plan de mejoramiento",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta de las fases del plan de mejoramiento, desde el inicio hasta el fin.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar las causas del bajo rendimiento",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Definir metas de superación medibles",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Establecer estrategias y cronograma de mejora",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Ejecutar el seguimiento y evaluar los avances",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ciclo de Seguimiento",
-    "titulo": "Construye el ciclo de seguimiento del plan de mejoramiento",
-    "indicacion": "Ordena los bloques para construir el ciclo de seguimiento que verifica el cumplimiento de las metas del plan.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Revisar la meta pactada con el aprendiz",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Aplicar el instrumento de verificación de avances",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Registrar el resultado obtenido",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Ajustar las estrategias si el avance es insuficiente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Interpretación",
-    "titulo": "Encuentra la falla: registro incorrecto del avance",
-    "indicacion": "El instructor registró el resultado de una verificación del plan de mejoramiento. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Cumplimiento de la Meta",
+    "titulo": "Prueba de escritorio: un aprendiz que cumple su plan de mejoramiento",
+    "indicacion": "Un aprendiz con calificación de 3.2 define una meta de 4.0 y ejecuta su plan. Ejecuta mentalmente el proceso y determina el resultado de la evaluación de avances.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Meta del plan: 75% de logro",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz define la meta: alcanzar 4.0 en los logros pendientes",
         "tipo": "proceso"
       },
       {
-        "label": "El aprendiz obtiene 45% en la primera verificación",
+        "label": "Ejecuta las acciones del plan: talleres, tutorías y estudio dirigido",
         "tipo": "proceso"
       },
       {
-        "label": "Se registra que el aprendiz superó la meta con 45%",
-        "tipo": "salida",
-        "error": true
+        "label": "Revisa su avance cada quince días con el instructor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: obtiene 4.2 en el corte y la evaluación de avances es positiva",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El registro es válido porque el porcentaje siempre se redondea hacia arriba."
-      },
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "El registro es erróneo: 45% es inferior a la meta de 75%; el aprendiz aún requiere acompañamiento y nuevas estrategias."
+        "texto": "La meta se elimina del sistema por haberla superado."
+      },
+      {
+        "id": 0,
+        "texto": "Supera la meta definida y la evaluación de avances queda registrada de forma positiva."
       },
       {
         "id": 2,
-        "texto": "La meta debió cambiarse a 45% para que el aprendiz apruebe."
+        "texto": "Debe repetir todo el trimestre a pesar del resultado."
       },
       {
         "id": 3,
-        "texto": "El error es del instrumento: la prueba no debió aplicarse en la verificación."
+        "texto": "El instructor ignora el resultado obtenido por el aprendiz."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error en Seguimiento",
-    "titulo": "Encuentra la falla: seguimiento sin registro de resultados",
-    "indicacion": "Se realizó una sesión de seguimiento del plan de mejoramiento. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Plan sin Ejecución",
+    "titulo": "Prueba de escritorio: un plan de mejoramiento sin ejecutar",
+    "indicacion": "Un aprendiz firma su plan de mejoramiento pero no ejecuta las acciones ni asiste al seguimiento. Ejecuta mentalmente el proceso y determina el resultado de la evaluación de avances.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Se pacta seguimiento del plan cada dos semanas",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz firma el plan de mejoramiento con sus metas",
         "tipo": "proceso"
       },
       {
-        "label": "El instructor verifica los avances en la fecha acordada",
+        "label": "No desarrolla las acciones de mejora durante el trimestre",
         "tipo": "proceso"
       },
       {
-        "label": "Los resultados no se registran y no se ajustan las estrategias",
-        "tipo": "salida",
-        "error": true
+        "label": "No asiste a las sesiones de seguimiento programadas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: la evaluación de avances registra bajo progreso y el aprendiz debe reasumir el plan",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El seguimiento es correcto porque la verificación ya se realizó en la fecha pactada."
+        "texto": "El plan se aprueba automáticamente por haberse firmado."
       },
       {
         "id": 1,
-        "texto": "El seguimiento del plan debe realizarse una sola vez al año."
-      },
-      {
-        "id": 3,
-        "texto": "El error es no registrar los resultados ni ajustar las estrategias: el seguimiento exige evidencia del avance y decisiones de mejora."
+        "texto": "El plan desaparece del sistema al terminar el trimestre."
       },
       {
         "id": 2,
-        "texto": "Registrar los resultados es responsabilidad exclusiva del aprendiz."
+        "texto": "La evaluación de avances registra bajo progreso y el aprendiz debe reasumir el plan."
+      },
+      {
+        "id": 3,
+        "texto": "Las metas se cumplen sin necesidad de ejecutar las acciones."
       }
     ],
     "correcta": 2
@@ -766,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -825,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1092,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1125,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Plan de Nivelación</title>
+<title>Evaluación Práctica - Inducción: Plan de Nivelación</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración y aplicación del plan de nivelación: diagnóstico de conocimientos previos, análisis de resultados, actividades de refuerzo y compromisos académicos, mediante retos prácticos interactivos.
+          Pon en práctica el plan de nivelación con un caso real: decide el propósito del diagnóstico y las actividades de refuerzo, ordena las fases del plan y del seguimiento, corrige un plan mal diligenciado y ejecuta mentalmente el recorrido completo de un aprendiz que supera sus dificultades. Sin teoría: aquí se demuestra nivelando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar el propósito, las causas de las dificultades y las necesidades de nivelación.</li>
-<li><strong>Prueba de Escritorio:</strong> Simular el cálculo de porcentajes de logro y las decisiones del plan.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las etapas del plan de nivelación y las actividades de refuerzo.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores en la interpretación de resultados y en el seguimiento de compromisos.</li>
+            <li><strong>Vida en el SENA:</strong> Decide la acción correcta en el diagnóstico, el refuerzo y los compromisos del plan de nivelación.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases reales del plan de nivelación y su seguimiento.</li>
+<li><strong>Corregir el Registro:</strong> Encuentra la falla en un plan de nivelación mal diligenciado.</li>
+<li><strong>Prueba de Escritorio:</strong> Ejecuta mentalmente el plan de nivelación y determina el resultado.</li>
           </ul>
         </div>
 
@@ -250,394 +250,431 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Propósito del Plan",
-    "titulo": "¿Cuál es el propósito principal del plan de nivelación en la formación profesional?",
-    "indicacion": "El plan de nivelación se aplica al inicio de la formación. Selecciona la opción que describe correctamente su propósito.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Concepto del Plan",
+    "titulo": "¿Qué es el plan de nivelación?",
+    "indicacion": "Al instructor le asignaron elaborar el plan de nivelación del grupo. Selecciona la opción que define correctamente este instrumento formativo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 1,
-        "texto": "Adelantar los contenidos de las competencias del siguiente trimestre."
+        "texto": "Un examen de expulsión para los aprendices con bajo rendimiento."
       },
       {
         "id": 0,
-        "texto": "Igualar los conocimientos, habilidades y ritmos de aprendizaje de los aprendices que presentan dificultades en los temas iniciales."
+        "texto": "Una estrategia formativa que refuerza las competencias donde el aprendiz presenta dificultades."
       },
       {
         "id": 2,
-        "texto": "Reemplazar la evaluación final de la formación por actividades de refuerzo."
+        "texto": "Un formato de quejas sobre los instructores."
       },
       {
         "id": 3,
-        "texto": "Asignar calificaciones adicionales a los aprendices que aprueban las pruebas."
+        "texto": "Una actividad recreativa obligatoria al inicio del trimestre."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Instrumento de Diagnóstico",
-    "titulo": "¿Qué instrumento se aplica para identificar las dificultades académicas de los aprendices al iniciar la formación?",
-    "indicacion": "Antes de definir el plan de nivelación es necesario conocer el nivel de partida del grupo. Selecciona el instrumento adecuado.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Prueba Diagnóstica",
+    "titulo": "¿Cuál es el propósito de la prueba diagnóstica del plan de nivelación?",
+    "indicacion": "Antes de iniciar la nivelación se aplica una prueba diagnóstica. Selecciona el propósito correcto de esta prueba.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "La encuesta de clima laboral de la empresa."
+        "texto": "Asignar la nota definitiva del trimestre."
       },
       {
         "id": 2,
-        "texto": "El informe de notas del año escolar anterior."
+        "texto": "Llenar el tiempo de la jornada sin ningún uso pedagógico."
       },
       {
         "id": 1,
-        "texto": "La prueba diagnóstica inicial (evaluación integral de conocimientos previos)."
+        "texto": "Identificar las dificultades de cada aprendiz para orientar las actividades de refuerzo."
       },
       {
         "id": 3,
-        "texto": "La entrevista de selección realizada por el instructor."
+        "texto": "Seleccionar a los mejores aprendices del grupo."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Actividades de Refuerzo",
-    "titulo": "¿Qué caracteriza una actividad de refuerzo dentro del plan de nivelación?",
-    "indicacion": "Las actividades de refuerzo hacen parte de la estrategia de nivelación. Selecciona la característica correcta.",
+    "categoria": "Vida en el SENA",
+    "tipo": "Compromisos del Aprendiz",
+    "titulo": "¿Qué acción demuestra compromiso del aprendiz con la nivelación?",
+    "indicacion": "El aprendiz firmó su plan de nivelación. Selecciona la acción que demuestra un compromiso real con el proceso.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Una actividad opcional que no se evalúa ni se registra."
+        "texto": "Esperar que el instructor lo apruebe sin presentar actividades."
       },
       {
         "id": 1,
-        "texto": "Una actividad idéntica a la prueba diagnóstica que se repite sin cambios."
-      },
-      {
-        "id": 2,
-        "texto": "Un examen final con mayor nivel de dificultad."
+        "texto": "Asistir únicamente a las sesiones que le resultan fáciles."
       },
       {
         "id": 3,
-        "texto": "Una estrategia que profundiza en los temas donde el aprendiz presenta debilidades, con acompañamiento y seguimiento."
+        "texto": "Entregar el formato del plan sin firmar ni registrar fechas."
+      },
+      {
+        "id": 2,
+        "texto": "Cumplir las actividades de refuerzo y entregar las evidencias en los plazos acordados."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Compromisos Académicos",
-    "titulo": "¿Qué debe contener un compromiso académico del aprendiz dentro del plan de nivelación?",
-    "indicacion": "El compromiso académico formaliza la responsabilidad del aprendiz. Selecciona el contenido correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Fases del Plan de Nivelación",
+    "titulo": "Ordena el proceso: desarrollo del plan de nivelación",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta del desarrollo del plan de nivelación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Presentar la prueba diagnóstica al aprendiz",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Identificar las competencias con dificultad según el resultado",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Desarrollar las actividades de refuerzo programadas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Presentar la evaluación de superación y registrar el resultado",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Diligenciamiento del Formato",
+    "titulo": "Ordena el proceso: diligenciar el formato del plan de nivelación",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta al diligenciar el formato del plan de nivelación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Registrar los datos del aprendiz y del programa de formación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Describir las dificultades detectadas en el diagnóstico",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Definir las actividades de refuerzo con sus fechas de entrega",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Firmar los compromisos junto con el instructor",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Seguimiento de la Nivelación",
+    "titulo": "Ordena el proceso: seguimiento durante la nivelación",
+    "indicacion": "Ordena los bloques para construir la secuencia correcta del seguimiento que hace el aprendiz durante su nivelación.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Asistir a las sesiones de refuerzo programadas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Desarrollar las actividades asignadas en el plan",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Entregar las evidencias en las fechas pactadas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar con el instructor los logros alcanzados",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Registro",
+    "tipo": "Refuerzo sin Relación",
+    "titulo": "Encuentra la falla: actividades de refuerzo sin relación con el diagnóstico",
+    "indicacion": "Un instructor elaboró el plan de nivelación de un aprendiz con dificultad en lectura crítica. Revisa el plan e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Aplicar la prueba diagnóstica al aprendiz",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Registrar la dificultad detectada: lectura crítica",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Asignar actividades de refuerzo de operaciones matemáticas (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
     "opciones": [
       {
-        "id": 2,
-        "texto": "Metas claras, actividades a realizar, tiempos de entrega y firmas de las partes."
-      },
-      {
-        "id": 0,
-        "texto": "Únicamente la firma del instructor."
-      },
-      {
         "id": 1,
-        "texto": "La lista de materiales de la formación."
+        "texto": "La prueba diagnóstica no sirve para orientar el refuerzo."
+      },
+      {
+        "id": 2,
+        "texto": "Las actividades de refuerzo deben ser siempre más largas, sin importar el tema."
       },
       {
         "id": 3,
-        "texto": "El horario general de la jornada de formación."
+        "texto": "El plan está correcto y no presenta errores."
+      },
+      {
+        "id": 0,
+        "texto": "Las actividades de refuerzo deben apuntar a la dificultad detectada: si la falla es lectura crítica, el refuerzo debe ser de lectura crítica, no de matemáticas."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Registro",
+    "tipo": "Compromiso sin Validez",
+    "titulo": "Encuentra la falla: formato de compromisos sin fecha ni firma",
+    "indicacion": "Un aprendiz diligenció su formato de compromisos del plan de nivelación. Revisa el registro e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz diligenció los datos personales del formato",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Dejó vacíos los campos de fecha y firma del compromiso (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Entregó el formato al instructor",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 2,
+        "texto": "Un compromiso sin fecha ni firma no tiene validez: el aprendiz debe registrar la fecha y firmar para asumir formalmente el plan."
+      },
+      {
+        "id": 0,
+        "texto": "El formato debe diligenciarse en inglés para ser válido."
+      },
+      {
+        "id": 1,
+        "texto": "La firma del instructor no es necesaria en el plan."
+      },
+      {
+        "id": 3,
+        "texto": "El registro está correcto y no presenta errores."
       }
     ],
     "correcta": 0
   },
   {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Porcentaje de Logro",
-    "titulo": "Prueba de escritorio: cálculo del porcentaje de logro en el diagnóstico",
-    "indicacion": "Ejecuta mentalmente el procedimiento con los datos dados y determina el porcentaje de logro obtenido por el aprendiz.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Prueba diagnóstica: 40 preguntas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El aprendiz responde correctamente 28 preguntas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Cálculo: (28 / 40) x 100",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado del porcentaje de logro",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "28%"
-      },
-      {
-        "id": 0,
-        "texto": "70%"
-      },
-      {
-        "id": 2,
-        "texto": "40%"
-      },
-      {
-        "id": 3,
-        "texto": "72%"
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Decisión de Nivelación",
-    "titulo": "Prueba de escritorio: decisión a partir del porcentaje de logro",
-    "indicacion": "Ejecuta mentalmente el procedimiento de decisión con el umbral establecido y determina qué ocurre con el aprendiz.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Porcentaje de logro obtenido: 55%",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Umbral institucional: 70%",
-        "tipo": "proceso"
-      },
-      {
-        "label": "¿El porcentaje es menor que 70%?",
-        "tipo": "decision"
-      },
-      {
-        "label": "Se define la ruta del aprendiz en el plan de nivelación",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El aprendiz continúa su formación sin actividades de refuerzo."
-      },
-      {
-        "id": 1,
-        "texto": "El aprendiz repite la prueba diagnóstica sin acompañamiento."
-      },
-      {
-        "id": 3,
-        "texto": "El aprendiz ingresa al plan de nivelación para superar sus dificultades."
-      },
-      {
-        "id": 2,
-        "texto": "El porcentaje se redondea automáticamente a 70% para aprobar."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Etapas del Plan",
-    "titulo": "Ordena las etapas del plan de nivelación",
-    "indicacion": "Ordena los bloques para construir la secuencia correcta de las etapas del plan de nivelación, desde el inicio hasta el fin.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Aplicar la prueba diagnóstica inicial",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Analizar los resultados e identificar las dificultades",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Definir y ejecutar las actividades de refuerzo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Evaluar los avances y registrar los compromisos académicos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ciclo de Refuerzo",
-    "titulo": "Construye la secuencia de un ciclo de refuerzo",
-    "indicacion": "Ordena los bloques para construir el ciclo de refuerzo que desarrolla el aprendiz durante el plan de nivelación.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Revisar la temática con el instructor",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Desarrollar la guía de actividades de refuerzo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Presentar la evidencia de la actividad",
-        "tipo": "salida"
-      },
-      {
-        "id": "b5",
-        "texto": "Recibir retroalimentación y ajustar lo necesario",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Interpretación",
-    "titulo": "Encuentra la falla: interpretación incorrecta del diagnóstico",
-    "indicacion": "El instructor analizó los resultados de la prueba diagnóstica y registró una conclusión. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Superación de la Dificultad",
+    "titulo": "Prueba de escritorio: un aprendiz que cumple su nivelación",
+    "indicacion": "Un aprendiz con dificultad en matemáticas sigue su plan de nivelación completo. Ejecuta mentalmente el proceso y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Prueba diagnóstica aplicada a 40 aprendices",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz presenta la prueba diagnóstica y se detecta la dificultad en matemáticas",
         "tipo": "proceso"
       },
       {
-        "label": "12 aprendices presentan dificultades en algoritmos",
+        "label": "Asiste a las cuatro sesiones de refuerzo programadas",
         "tipo": "proceso"
       },
       {
-        "label": "Se concluye que el 12% de los aprendices necesita nivelación en algoritmos",
-        "tipo": "salida",
-        "error": true
+        "label": "Desarrolla y entrega las guías de refuerzo en las fechas pactadas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Presenta la evaluación de superación y la aprueba",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "La conclusión es correcta: 12 de 40 equivale al 12%."
+        "texto": "No puede presentar la evaluación porque faltó al diagnóstico."
       },
       {
         "id": 1,
-        "texto": "La conclusión es errónea: 12 de 40 equivale al 30%, no al 12% (porcentaje = aprendices con dificultad / total de aprendices x 100)."
+        "texto": "Supera la dificultad y continúa su formación con los logros alcanzados."
       },
       {
         "id": 2,
-        "texto": "Debió aplicarse la prueba a 100 aprendices para poder calcular un porcentaje."
+        "texto": "Debe repetir la prueba diagnóstica cada semana del trimestre."
       },
       {
         "id": 3,
-        "texto": "El porcentaje debe calcularse sobre los aprendices que aprobaron, no sobre el total."
+        "texto": "El plan se anula automáticamente por haberse firmado."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error en Compromisos",
-    "titulo": "Encuentra la falla: registro de compromisos académicos",
-    "indicacion": "Se firmó el compromiso académico de un aprendiz del plan de nivelación. Revisa el procedimiento e identifica la falla.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Registro de la Superación",
+    "titulo": "Prueba de escritorio: registro final de la nivelación superada",
+    "indicacion": "Un aprendiz firmó sus compromisos con fecha, cumplió las actividades de refuerzo y el instructor verificó las evidencias. Ejecuta mentalmente el proceso y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Se firma el compromiso académico del aprendiz",
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "El aprendiz firma los compromisos del plan con fecha y los asume",
         "tipo": "proceso"
       },
       {
-        "label": "El compromiso no define metas ni fechas de entrega",
+        "label": "Desarrolla las actividades de refuerzo y reúne sus evidencias",
         "tipo": "proceso"
       },
       {
-        "label": "El instructor archiva el compromiso sin dar seguimiento",
-        "tipo": "salida",
-        "error": true
+        "label": "Entrega las evidencias al instructor dentro del plazo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Salida: el instructor verifica los logros y registra la nivelación como superada",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El compromiso está completo porque solo requiere la firma del aprendiz."
+        "texto": "El plan se pierde en el momento en que el aprendiz lo firma."
       },
       {
         "id": 1,
-        "texto": "No se deben firmar compromisos académicos con los aprendices."
-      },
-      {
-        "id": 2,
-        "texto": "El error es archivarlo sin seguimiento: el compromiso exige metas, fechas de entrega y verificación periódica de su cumplimiento."
+        "texto": "Las evidencias se eliminan automáticamente al entregarlas."
       },
       {
         "id": 3,
-        "texto": "El instructor debe esperar a que el aprendiz solicite el seguimiento por iniciativa propia."
+        "texto": "La nivelación queda registrada como superada y el aprendiz continúa su proceso formativo."
+      },
+      {
+        "id": 2,
+        "texto": "La superación nunca queda registrada en el sistema."
       }
     ],
     "correcta": 2
@@ -770,6 +807,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -829,6 +881,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1096,6 +1288,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1129,6 +1327,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

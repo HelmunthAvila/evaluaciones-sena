@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Evaluación Práctica - Aplicar Normas Técnicas de Documentación (IEEE)</title>
+<title>Evaluación Práctica - Aplicar Normas Técnicas de Documentación (IEEE 830)</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,7 +30,7 @@
         </div>
         <div>
           <h1 class="font-bold text-base leading-none sm:text-lg">SENA - Servicio Nacional de Aprendizaje</h1>
-          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Aplicar Normas Técnicas de Documentación (IEEE)</p>
+          <p class="text-xs text-emerald-400 font-medium mt-0.5">Evaluación Práctica: Aplicar Normas Técnicas de Documentación (IEEE 830)</p>
         </div>
       </div>
       <div id="header-user-info" class="hidden text-right text-xs sm:text-sm">
@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la aplicación de las normas técnicas de documentación de software: uso de la plantilla de la norma IEEE 830, organización de sus secciones, atributos de calidad del documento y cumplimiento de los estándares de especificación de requisitos, mediante retos prácticos interactivos.
+          Aplica en la práctica la norma IEEE 830: identifica la norma y la sección correctas de la plantilla del documento de requisitos, ordena el proceso de elaboración y revisión del ERS, corrige documentos mal estructurados o con requisitos ambiguos y sigue el proceso de revisión de calidad para decidir si un requisito se aprueba. Sin teoría: aquí se demuestra documentando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Reconocer la norma IEEE 830, su plantilla y los atributos de calidad del documento.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer mentalmente la aplicación de la plantilla y la verificación del documento contra la norma.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las secciones de la plantilla IEEE 830 y el proceso de documentación.</li>
-<li><strong>Depuración de Errores:</strong> Detectar incumplimientos de la norma en la estructura y el contenido del ERS.</li>
+            <li><strong>Análisis del Problema:</strong> Identifica la norma y la sección correctas de la documentación.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla las fases de elaboración y revisión del documento de requisitos.</li>
+<li><strong>Corregir el Documento:</strong> Encuentra errores de estructura y redacción en el ERS.</li>
+<li><strong>Prueba de Escritorio:</strong> Sigue el proceso de revisión de calidad y determina el resultado.</li>
           </ul>
         </div>
 
@@ -243,7 +243,7 @@
   </main>
 
   <footer class="bg-slate-900 text-slate-500 text-xs py-4 text-center border-t border-slate-800">
-    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Normas Técnicas de Documentación (IEEE)</p>
+    <p>© SENA - Centro de Proceso Evaluativo en Programación de Software | Aplicar Normas Técnicas de Documentación (IEEE 830)</p>
   </footer>
 
   <script>
@@ -251,26 +251,26 @@
   {
     "id": 1,
     "categoria": "Análisis del Problema",
-    "tipo": "Norma de Referencia",
-    "titulo": "¿Qué norma IEEE define la estructura y el contenido recomendado para el documento de especificación de requisitos de software (ERS)?",
-    "indicacion": "La documentación de requisitos se apoya en estándares internacionales. Selecciona la norma que establece la plantilla del ERS.",
+    "tipo": "Norma Aplicable",
+    "titulo": "¿Qué norma establece la plantilla del documento de requisitos?",
+    "indicacion": "El analista debe documentar el ERS del proyecto. Selecciona la norma internacional que define la guía para la especificación de requisitos de software.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "IEEE 829."
+        "id": 0,
+        "texto": "ISO 9001: sistema de gestión de la calidad."
       },
       {
-        "id": 0,
-        "texto": "IEEE 830."
+        "id": 1,
+        "texto": "IEEE 830: guía para la especificación de requisitos de software."
       },
       {
         "id": 2,
-        "texto": "ISO 9001."
+        "texto": "IEEE 829: documentación de las pruebas de software."
       },
       {
         "id": 3,
-        "texto": "IEEE 610."
+        "texto": "UML 2.5: lenguaje de modelado unificado."
       }
     ],
     "correcta": 1
@@ -278,386 +278,396 @@
   {
     "id": 2,
     "categoria": "Análisis del Problema",
-    "tipo": "Sección de la Plantilla",
-    "titulo": "Según la plantilla IEEE 830, ¿en qué sección se documentan los requisitos funcionales, los requisitos no funcionales y las interfaces externas?",
-    "indicacion": "La plantilla organiza los requisitos en una sección central. Selecciona la sección correcta.",
+    "tipo": "Sección Correcta",
+    "titulo": "¿En qué sección del ERS se listan los requisitos funcionales y no funcionales?",
+    "indicacion": "Según la plantilla IEEE 830, el documento debe separar la descripción general de los requisitos. Selecciona la sección donde se especifican los requisitos funcionales y no funcionales.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "En la introducción."
+        "texto": "Introducción: propósito, alcance y definiciones."
       },
       {
         "id": 1,
-        "texto": "En la descripción general."
-      },
-      {
-        "id": 3,
-        "texto": "En los requisitos específicos."
+        "texto": "Glosario del documento."
       },
       {
         "id": 2,
-        "texto": "En los apéndices."
+        "texto": "Requisitos específicos: cada requisito con su identificador."
+      },
+      {
+        "id": 3,
+        "texto": "Apéndices e índice del documento."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Atributos de Calidad",
-    "titulo": "La norma IEEE 830 exige que el ERS sea correcto, no ambiguo, completo, consistente, verificable y trazable. ¿Qué significa que el documento sea completo?",
-    "indicacion": "Cada atributo de calidad define una exigencia sobre el contenido del documento. Selecciona la interpretación correcta del atributo.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Secciones del ERS",
+    "titulo": "Construye el proceso: secciones del ERS según IEEE 830",
+    "indicacion": "Ordena las secciones del documento de requisitos siguiendo la estructura de la plantilla IEEE 830.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "El documento no debe contener errores de redacción."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 2,
-        "texto": "El documento debe tener el menor número de páginas posible."
+        "id": "b2",
+        "texto": "Introducción: propósito, alcance, definiciones y referencias",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "El documento debe estar escrito por el cliente."
+        "id": "b3",
+        "texto": "Descripción general: perspectiva del producto y funciones del sistema",
+        "tipo": "proceso"
       },
       {
-        "id": 1,
-        "texto": "El documento debe incluir todos los requisitos relevantes y las respuestas a las preguntas pendientes."
+        "id": "b4",
+        "texto": "Requisitos específicos: funcionales y no funcionales con identificador",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Apéndices, glosario e índice del documento",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 3
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Verificabilidad",
-    "titulo": "¿Qué implica que un requisito del ERS sea verificable según la norma IEEE 830?",
-    "indicacion": "La verificabilidad es una exigencia de la norma sobre cada requisito. Selecciona la afirmación correcta.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del ERS",
+    "titulo": "Construye el proceso: elaboración del documento de requisitos",
+    "indicacion": "Ordena los pasos que sigue el analista para elaborar el ERS aplicando la norma IEEE 830.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "id": 0,
-        "texto": "Que exista un procedimiento finito y económico con el cual una persona o máquina pueda comprobar que el sistema cumple el requisito."
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": 1,
-        "texto": "Que el requisito esté escrito con letra legible."
+        "id": "b2",
+        "texto": "Identificar el propósito y el alcance del sistema",
+        "tipo": "proceso"
       },
       {
-        "id": 2,
-        "texto": "Que el requisito sea aprobado por todos los interesados."
+        "id": "b3",
+        "texto": "Describir la perspectiva general del producto",
+        "tipo": "proceso"
       },
       {
-        "id": 3,
-        "texto": "Que el requisito solo pueda verificarse al finalizar el proyecto."
+        "id": "b4",
+        "texto": "Especificar cada requisito con identificador único y características de calidad",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Revisar que el documento cumpla la plantilla IEEE 830",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       }
     ],
-    "correcta": 0
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Aplicación de la Plantilla",
-    "titulo": "Prueba de escritorio: ubicación de contenido según la norma IEEE 830",
-    "indicacion": "Ejecuta mentalmente el recorrido por la plantilla de la norma y determina la sección donde se debe registrar el contenido descrito.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Revisión de Calidad",
+    "titulo": "Construye el proceso: revisión de calidad del documento",
+    "indicacion": "Ordena los pasos del proceso de revisión que verifica la calidad del documento de requisitos antes de aprobarlo.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
-        "label": "Inicio",
+        "id": "b1",
+        "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Contenido: 'el sistema operará en computadores con Windows 11 y 8 GB de memoria RAM'",
+        "id": "b2",
+        "texto": "Revisar que cada requisito sea verificable (medible)",
         "tipo": "proceso"
       },
       {
-        "label": "El contenido condiciona el entorno donde operará el producto",
+        "id": "b3",
+        "texto": "Verificar que los requisitos no sean ambiguos",
         "tipo": "proceso"
       },
       {
-        "label": "Aplicar la plantilla IEEE 830: introducción, descripción general, requisitos específicos",
+        "id": "b4",
+        "texto": "Confirmar que el documento esté completo y sin secciones vacías",
         "tipo": "proceso"
       },
       {
-        "label": "Resultado: el contenido corresponde a restricciones de la descripción general",
-        "tipo": "salida"
+        "id": "b5",
+        "texto": "Solicitar las correcciones al analista si se detecta un error",
+        "tipo": "proceso"
       },
       {
-        "label": "Fin",
+        "id": "b6",
+        "texto": "Aprobar el documento y registrar la versión",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
         "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "En la introducción, en la subsección de propósito."
-      },
-      {
-        "id": 1,
-        "texto": "En la descripción general, en la subsección de restricciones."
-      },
-      {
-        "id": 2,
-        "texto": "En los requisitos específicos, como requisito funcional."
-      },
-      {
-        "id": 3,
-        "texto": "En el apéndice de referencias."
-      }
-    ],
-    "correcta": 1
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7"
+    ]
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Verificación de la Norma",
-    "titulo": "Prueba de escritorio: verificación de la estructura del ERS",
-    "indicacion": "Sigue mentalmente la revisión del documento contra la norma y determina el resultado de la verificación.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
+    "categoria": "Corregir el Documento",
+    "tipo": "Sección Mal Ubicada",
+    "titulo": "Encuentra el error: sección mal ubicada en el ERS",
+    "indicacion": "Un analista organizó el ERS siguiendo la norma IEEE 830, pero ubicó mal una sección. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Revisar el ERS del sistema de nómina contra la plantilla IEEE 830",
+        "label": "Sección 1: Introducción",
         "tipo": "proceso"
       },
       {
-        "label": "Verificar que existan introducción, descripción general y requisitos específicos",
+        "label": "Sección 1.1: Propósito y alcance",
         "tipo": "proceso"
       },
       {
-        "label": "Comprobar que cada requisito tenga identificador único",
+        "label": "Sección 1.2: Requisitos específicos (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Sección 2: Descripción general",
         "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: el documento cumple la estructura y el requisito de trazabilidad",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
       }
     ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El documento no cumple la norma porque falta el código fuente."
-      },
+    "opciones": [
       {
         "id": 1,
-        "texto": "El documento no cumple la norma porque no incluye el presupuesto."
-      },
-      {
-        "id": 3,
-        "texto": "El documento cumple la estructura de la norma y el requisito de trazabilidad mediante identificadores únicos."
+        "texto": "La introducción debe ubicarse al final del documento."
       },
       {
         "id": 2,
-        "texto": "El documento no cumple la norma porque el ERS no requiere identificación de requisitos."
+        "texto": "El error es que falta la sección de apéndices."
+      },
+      {
+        "id": 0,
+        "texto": "Los requisitos específicos deben ir en una sección propia (sección 3 de IEEE 830), no dentro de la introducción."
+      },
+      {
+        "id": 3,
+        "texto": "El documento está correcto."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Plantilla IEEE 830",
-    "titulo": "Ordena las secciones de la plantilla IEEE 830",
-    "indicacion": "La norma IEEE 830 define el orden de las secciones del documento de requisitos. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Introducción",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Descripción general",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Requisitos específicos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Apéndices",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Índice",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Documentación",
-    "titulo": "Ordena el proceso de documentación bajo la norma IEEE 830",
-    "indicacion": "Aplicar la norma implica seguir un procedimiento desde la selección de la plantilla hasta la aprobación. Ordena los bloques correctamente.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Seleccionar la plantilla IEEE 830 y las secciones requeridas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Redactar cada sección con los contenidos establecidos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Asignar identificadores únicos a los requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Revisar el documento contra los atributos de calidad de la norma",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Aprobar el ERS y controlar sus versiones",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Incumplimiento de la Norma",
-    "titulo": "Encuentra la falla: el ERS no permite la trazabilidad",
-    "indicacion": "El equipo entregó el ERS del sistema de compras. Revisa los pasos e identifica el incumplimiento de la norma IEEE 830.",
+    "categoria": "Corregir el Documento",
+    "tipo": "Requisito No Verificable",
+    "titulo": "Encuentra el error: requisito no verificable",
+    "indicacion": "El documento de requisitos contiene un enunciado que no cumple las características de calidad de IEEE 830. ¿Cuál es el problema?",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Redactar los requisitos del sistema de compras sin identificadores",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Numerar las páginas del documento",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Declarar que el documento cumple la norma IEEE 830",
-        "tipo": "salida",
+        "label": "Requisito RF-01: 'El sistema debe ser rápido' (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Requisito RF-02: 'El sistema debe calcular el total de la venta'",
+        "tipo": "proceso"
       }
     ],
     "opciones": [
       {
-        "id": 1,
-        "texto": "La falla es que la norma exige eliminar la numeración de páginas."
-      },
-      {
         "id": 0,
-        "texto": "La falla es que el documento no cumple la norma: los requisitos sin identificadores impiden la trazabilidad exigida."
+        "texto": "El requisito es demasiado largo para el documento."
       },
       {
         "id": 2,
-        "texto": "La falla es que el sistema de compras no requiere documentación."
+        "texto": "Falta el prefijo RNF en el identificador del requisito."
       },
       {
         "id": 3,
-        "texto": "La falla es que la norma IEEE 830 no exige trazabilidad."
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 1,
+        "texto": "'Rápido' es subjetivo y no verificable: debe cuantificarse, por ejemplo 'responder en menos de 2 segundos'."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Documento",
+    "tipo": "Documento Incompleto",
+    "titulo": "Encuentra el error: documento incompleto",
+    "indicacion": "El ERS fue aprobado por el cliente, pero la revisión según IEEE 830 encontró una omisión. ¿Cuál es el error?",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Requisitos funcionales: RF-01 a RF-06",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Requisitos no funcionales: no se documentaron (ERROR)",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Revisión del cliente: documento aprobado",
+        "tipo": "proceso"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 3,
+        "texto": "IEEE 830 exige documentar también los requisitos no funcionales (rendimiento, seguridad, disponibilidad); el documento está incompleto."
+      },
+      {
+        "id": 0,
+        "texto": "El documento está correcto."
+      },
+      {
+        "id": 1,
+        "texto": "Falta incluir los apéndices del documento."
+      },
+      {
+        "id": 2,
+        "texto": "Los requisitos funcionales deben ir después de los no funcionales."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Revisión de Calidad",
+    "titulo": "Sigue el proceso: revisión de calidad del requisito RF-01",
+    "indicacion": "Ejecuta mentalmente el proceso de revisión de calidad sobre el requisito RF-01 y determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Requisito RF-01: 'El sistema debe calcular el total de la venta'",
+        "tipo": "entrada"
+      },
+      {
+        "label": "Paso 1: ¿Es verificable? Sí, el cálculo se puede comprobar",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Paso 2: ¿Es no ambiguo? Sí, describe una sola acción",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Paso 3: ¿Está completo? Sí, define la acción y el dato de salida",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Resultado de la revisión de calidad",
+        "tipo": "salida"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "RF-01 es ambiguo y debe reescribirse."
+      },
+      {
+        "id": 0,
+        "texto": "RF-01 cumple las características de calidad y se aprueba."
+      },
+      {
+        "id": 2,
+        "texto": "RF-01 no es verificable."
+      },
+      {
+        "id": 3,
+        "texto": "RF-01 debe eliminarse del documento."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Sección Ausente",
-    "titulo": "Encuentra la falla: el ERS no tiene descripción general",
-    "indicacion": "El analista estructuró el ERS del sistema de matrícula. Revisa los pasos e identifica el error frente a la plantilla de la norma.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Identificadores de Requisitos",
+    "titulo": "Sigue el proceso: identificador del nuevo requisito",
+    "indicacion": "Ejecuta mentalmente el proceso de asignación de identificadores del ERS y determina el identificador correcto.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
-        "label": "Inicio",
-        "tipo": "inicio"
+        "label": "Regla: los requisitos funcionales usan el prefijo RF y los no funcionales RNF",
+        "tipo": "entrada"
       },
       {
-        "label": "Crear el ERS con las secciones: introducción y requisitos específicos",
+        "label": "Ya existen RF-01, RF-02 y RF-03 en el documento",
         "tipo": "proceso"
       },
       {
-        "label": "Omitir la descripción general por considerar que no aporta información",
+        "label": "El analista agrega un requisito no funcional de seguridad",
         "tipo": "proceso"
       },
       {
-        "label": "Entregar el documento como versión aprobada",
-        "tipo": "salida",
-        "error": true
+        "label": "El identificador asignado al nuevo requisito es...",
+        "tipo": "salida"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "La falla es que la norma permite omitir la descripción general."
+        "texto": "RF-04"
       },
       {
         "id": 1,
-        "texto": "La falla es que el ERS no debe contener introducción."
+        "texto": "RF-03"
       },
       {
         "id": 2,
-        "texto": "La falla es que el documento incumple la plantilla IEEE 830: la descripción general es una sección obligatoria del ERS."
+        "texto": "RNF-01"
       },
       {
         "id": 3,
-        "texto": "La falla es que el sistema de matrícula no requiere ERS."
+        "texto": "RNF-04"
       }
     ],
     "correcta": 2
@@ -790,6 +800,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -849,6 +874,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1116,6 +1281,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1149,6 +1320,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }
