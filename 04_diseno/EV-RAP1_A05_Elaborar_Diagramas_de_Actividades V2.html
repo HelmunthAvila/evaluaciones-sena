@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración de diagramas de actividades UML: identificar los elementos del modelado (inicio, acción, decisión, flujo, bifurcación y swimlanes), construir el diagrama que representa el comportamiento del sistema y detectar fallas en la secuencia modelada, mediante retos prácticos interactivos.
+          Pon en práctica la elaboración de diagramas de actividades en situaciones reales de diseño: identifica los símbolos UML de inicio, acción, decisión y bifurcación, decide cómo representar flujos, decisiones y swimlanes, ordena el proceso de construcción del diagrama y corrige diagramas con símbolos mal dibujados. Sin teoría: aquí se demuestra modelando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los elementos del diagrama de actividades y su propósito en el modelado del sistema.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer paso a paso el flujo de actividades y predecir el resultado del proceso modelado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar las actividades y decisiones para construir el diagrama en la secuencia correcta.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en la secuencia, en las decisiones y en el uso de la bifurcación, y aplicar la corrección adecuada.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce el símbolo UML correcto para inicio, acción, decisión, bifurcación y swimlane.</li>
+<li><strong>Diseño Lógico:</strong> Decide cómo representar flujos, decisiones y actividades paralelas.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para elaborar un diagrama de actividades.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra símbolos mal dibujados en el diagrama.</li>
           </ul>
         </div>
 
@@ -250,228 +250,196 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Nodo Inicial",
-    "titulo": "¿Qué símbolo representa el inicio de un diagrama de actividades?",
-    "indicacion": "El diagrama de actividades UML tiene un elemento específico para indicar dónde comienza el flujo. Selecciona la representación correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa el INICIO del diagrama de actividades?",
+    "indicacion": "El nodo inicial marca el punto donde comienza el flujo de actividades. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 1,
-        "texto": "Un rombo con la etiqueta Inicio."
+        "nombre": "Acción (Rectángulo redondeado)",
+        "uso": "Tarea o paso del proceso",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"26\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"50\" y=\"27\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"9\" font-weight=\"bold\">Validar datos</text></svg>"
       },
       {
         "id": 0,
-        "texto": "Un círculo pequeño relleno de color negro, llamado nodo inicial."
+        "nombre": "Inicio (Círculo relleno)",
+        "uso": "Punto de comienzo del flujo",
+        "svg": "<svg class=\"w-16 h-12\" viewBox=\"0 0 64 48\"><circle cx=\"32\" cy=\"24\" r=\"12\" fill=\"#111827\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"32\" y=\"45\" text-anchor=\"middle\" fill=\"#111827\" font-size=\"9\" font-weight=\"bold\">Inicio</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Un rectángulo redondeado con la palabra Inicio."
+        "nombre": "Decisión (Rombo)",
+        "uso": "Punto donde el flujo se divide según una condición",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,6 94,28 50,50 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#92400e\" font-size=\"8\" font-weight=\"bold\">¿Datos válidos?</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Una elipse alargada de color blanco."
+        "nombre": "Bifurcación (Barra gruesa)",
+        "uso": "División del flujo en actividades paralelas",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><line x1=\"50\" y1=\"4\" x2=\"50\" y2=\"14\" stroke=\"#0f766e\" stroke-width=\"2\"/><rect x=\"38\" y=\"14\" width=\"24\" height=\"36\" rx=\"2\" fill=\"#0f766e\" stroke=\"#134e4a\" stroke-width=\"2\"/><line x1=\"30\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"30,45 20,50 30,55\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"70,45 80,50 70,55\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\"/><text x=\"50\" y=\"62\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"8\" font-weight=\"bold\">Bifurcación</text></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Nodo de Decisión",
-    "titulo": "En un diagrama de actividades, ¿para qué se utiliza el rombo?",
-    "indicacion": "Cada figura del diagrama cumple una función en el flujo. Analiza el propósito del rombo y selecciona la respuesta correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa una DECISIÓN?",
+    "indicacion": "La decisión divide el flujo según una condición que se cumple o no. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Para representar una acción que se ejecuta en paralelo."
+        "nombre": "Acción (Rectángulo redondeado)",
+        "uso": "Tarea o paso del proceso",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"26\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"50\" y=\"27\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"9\" font-weight=\"bold\">Validar datos</text></svg>"
       },
       {
         "id": 1,
-        "texto": "Para indicar el nodo final del proceso."
+        "nombre": "Inicio (Círculo relleno)",
+        "uso": "Punto de comienzo del flujo",
+        "svg": "<svg class=\"w-16 h-12\" viewBox=\"0 0 64 48\"><circle cx=\"32\" cy=\"24\" r=\"12\" fill=\"#111827\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"32\" y=\"45\" text-anchor=\"middle\" fill=\"#111827\" font-size=\"9\" font-weight=\"bold\">Inicio</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Para representar una decisión que divide el flujo según una condición."
+        "nombre": "Decisión (Rombo)",
+        "uso": "Punto donde el flujo se divide según una condición",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,6 94,28 50,50 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#92400e\" font-size=\"8\" font-weight=\"bold\">¿Datos válidos?</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Para agrupar las actividades de un mismo actor."
+        "nombre": "Swimlane (Calles)",
+        "uso": "Agrupa las acciones por responsable",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 130 80\"><rect x=\"4\" y=\"4\" width=\"122\" height=\"72\" rx=\"3\" fill=\"none\" stroke=\"#6d28d9\" stroke-width=\"2\"/><line x1=\"48\" y1=\"4\" x2=\"48\" y2=\"76\" stroke=\"#6d28d9\" stroke-width=\"1.5\"/><line x1=\"88\" y1=\"4\" x2=\"88\" y2=\"76\" stroke=\"#6d28d9\" stroke-width=\"1.5\"/><line x1=\"4\" y1=\"22\" x2=\"126\" y2=\"22\" stroke=\"#6d28d9\" stroke-width=\"1.5\"/><text x=\"26\" y=\"16\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\" font-weight=\"bold\">Cliente</text><text x=\"68\" y=\"16\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\" font-weight=\"bold\">Ventas</text><text x=\"107\" y=\"16\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\" font-weight=\"bold\">Bodega</text><rect x=\"14\" y=\"30\" width=\"26\" height=\"36\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"27\" y=\"52\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"6\">Solicitar</text><rect x=\"56\" y=\"30\" width=\"24\" height=\"36\" rx=\"12\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"68\" y=\"52\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"6\">Aprobar</text><rect x=\"96\" y=\"30\" width=\"26\" height=\"36\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"109\" y=\"52\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"6\">Despachar</text></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Swimlanes",
-    "titulo": "¿Qué elemento del diagrama de actividades separa las acciones que ejecutan diferentes actores o departamentos?",
-    "indicacion": "Cuando varias áreas participan en un mismo proceso, el diagrama debe mostrar claramente quién ejecuta cada acción. Selecciona el elemento que cumple esta función.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa una ACCIÓN?",
+    "indicacion": "La acción es una tarea concreta que se ejecuta dentro del proceso. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Los nodos de decisión."
-      },
-      {
-        "id": 1,
-        "texto": "Las flechas de flujo."
+        "nombre": "Inicio (Círculo relleno)",
+        "uso": "Punto de comienzo del flujo",
+        "svg": "<svg class=\"w-16 h-12\" viewBox=\"0 0 64 48\"><circle cx=\"32\" cy=\"24\" r=\"12\" fill=\"#111827\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"32\" y=\"45\" text-anchor=\"middle\" fill=\"#111827\" font-size=\"9\" font-weight=\"bold\">Inicio</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Los nodos de unión."
+        "nombre": "Bifurcación (Barra gruesa)",
+        "uso": "División del flujo en actividades paralelas",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><line x1=\"50\" y1=\"4\" x2=\"50\" y2=\"14\" stroke=\"#0f766e\" stroke-width=\"2\"/><rect x=\"38\" y=\"14\" width=\"24\" height=\"36\" rx=\"2\" fill=\"#0f766e\" stroke=\"#134e4a\" stroke-width=\"2\"/><line x1=\"30\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"30,45 20,50 30,55\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"70,45 80,50 70,55\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\"/><text x=\"50\" y=\"62\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"8\" font-weight=\"bold\">Bifurcación</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Las swimlanes (calles o particiones) que agrupan las actividades por responsable."
+        "nombre": "Decisión (Rombo)",
+        "uso": "Punto donde el flujo se divide según una condición",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,6 94,28 50,50 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#92400e\" font-size=\"8\" font-weight=\"bold\">¿Datos válidos?</text></svg>"
+      },
+      {
+        "id": 1,
+        "nombre": "Acción (Rectángulo redondeado)",
+        "uso": "Tarea o paso del proceso",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"26\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"50\" y=\"27\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"9\" font-weight=\"bold\">Validar datos</text></svg>"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Bifurcación",
-    "titulo": "¿Qué representa una bifurcación (fork) en un diagrama de actividades?",
-    "indicacion": "La bifurcación es un elemento de control del flujo. Identifica su significado y selecciona la opción correcta.",
+    "categoria": "Diseño Lógico",
+    "tipo": "Flujo del Proceso",
+    "titulo": "En el diagrama de actividades, los FLUJOS entre acciones se representan con...",
+    "indicacion": "El analista conecta la acción 'Validar datos' con la decisión siguiente. Selecciona la notación correcta para el flujo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Que un flujo único se divide en varios flujos que se ejecutan en paralelo."
+        "id": 2,
+        "texto": "Flechas (líneas con punta de flecha)."
       },
       {
         "id": 0,
-        "texto": "Que el flujo termina y el proceso se reinicia."
+        "texto": "Líneas punteadas sin punta de flecha."
       },
       {
-        "id": 2,
-        "texto": "Que se debe tomar una decisión excluyente entre dos caminos."
+        "id": 1,
+        "texto": "Rectángulos redondeados."
       },
       {
         "id": 3,
-        "texto": "Que el flujo pasa obligatoriamente de una swimlane a otra."
+        "texto": "Elipses de caso de uso."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución del Flujo",
-    "titulo": "Prueba de escritorio: recorrido del flujo de un retiro de cajero",
-    "indicacion": "Ejecuta mentalmente el diagrama de actividades con los datos del proceso y determina qué mensaje se muestra cuando el saldo es suficiente.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Recibir el monto solicitado y el saldo de la cuenta",
-        "tipo": "entrada"
-      },
-      {
-        "label": "¿El saldo es mayor o igual que el monto?",
-        "tipo": "decision"
-      },
-      {
-        "label": "Si la condición es verdadera: entregar el dinero al cliente",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Mostrar el mensaje Retiro exitoso",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Actividades Paralelas",
+    "titulo": "Cuando un flujo se divide en varios flujos PARALELOS, se usa...",
+    "indicacion": "Dos actividades deben ejecutarse al mismo tiempo después de una acción. Selecciona el elemento UML correcto.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "El mensaje Saldo insuficiente."
+        "texto": "Un nodo de inicio adicional."
       },
       {
         "id": 1,
-        "texto": "El mensaje Retiro exitoso."
+        "texto": "Una barra de bifurcación (fork)."
       },
       {
         "id": 2,
-        "texto": "Ningún mensaje, el flujo termina en silencio."
+        "texto": "Una elipse de caso de uso."
       },
       {
         "id": 3,
-        "texto": "Se muestra de nuevo el menú principal sin mensaje."
+        "texto": "Un rectángulo de acción."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Ejecución con Bifurcación",
-    "titulo": "Prueba de escritorio: acciones en paralelo tras la bifurcación",
-    "indicacion": "Recorre el diagrama de actividades del proceso de recepción de pedidos y determina cómo se ejecutan las acciones después de la bifurcación.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Recibir el pedido del cliente",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Bifurcación: el flujo se divide en dos ramas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Rama 1: actualizar el inventario",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Rama 2: generar la factura",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Unión de las dos ramas y confirmación del pedido",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Primero se genera la factura y después se actualiza el inventario."
-      },
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Swimlanes",
+    "titulo": "Las bandas verticales que agrupan las acciones según el responsable se llaman...",
+    "indicacion": "En el diagrama de actividades del proceso de ventas, cada responsable tiene su banda. Selecciona el nombre correcto de ese elemento.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 1,
-        "texto": "Primero se actualiza el inventario y después se genera la factura."
+        "texto": "Líneas de vida."
       },
       {
         "id": 2,
-        "texto": "Actualizar el inventario y generar la factura se ejecutan en paralelo tras la bifurcación."
+        "texto": "Fronteras del sistema."
+      },
+      {
+        "id": 0,
+        "texto": "Swimlanes (calles de responsabilidad)."
       },
       {
         "id": 3,
-        "texto": "Solo se actualiza el inventario; la factura se genera en otro proceso."
+        "texto": "Particiones de clase."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Ensamblaje del Diagrama",
-    "titulo": "Ordena el diagrama de actividades del proceso de inicio de sesión",
-    "indicacion": "Ensambla el diagrama de actividades en el orden correcto: inicia con el nodo inicial, continúa con la entrada de datos, la validación y la decisión, y termina con la salida y el nodo final.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del Diagrama",
+    "titulo": "Construye el proceso: elaboración de un diagrama de actividades",
+    "indicacion": "El analista va a modelar el proceso de solicitud de permiso. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -481,22 +449,82 @@
       },
       {
         "id": "b2",
-        "texto": "Recibir el usuario y la contraseña",
-        "tipo": "entrada"
+        "texto": "Identificar las actividades del proceso",
+        "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Validar las credenciales en la base de datos",
+        "texto": "Determinar el orden del flujo entre las actividades",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "¿Las credenciales son válidas?",
+        "texto": "Ubicar las decisiones en los puntos donde el flujo se divide",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Dibujar las bifurcaciones para los flujos paralelos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Asignar las acciones a las swimlanes según el responsable",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Validar el diagrama con el equipo",
+        "tipo": "salida"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7",
+      "b8"
+    ]
+  },
+  {
+    "id": 8,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Escenario del Proceso",
+    "titulo": "Construye el proceso: solicitud de permiso del empleado",
+    "indicacion": "El analista modela la solicitud de permiso con su decisión. Ordena los bloques del flujo correcto.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "El empleado envía la solicitud de permiso",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "El jefe revisa la solicitud",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Se toma la decisión de aprobar o rechazar",
         "tipo": "decision"
       },
       {
         "id": "b5",
-        "texto": "Mostrar el panel principal del sistema",
+        "texto": "Se notifica el resultado al empleado",
         "tipo": "salida"
       },
       {
@@ -515,65 +543,11 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Diagrama con Swimlanes",
-    "titulo": "Ordena el proceso de registro de un cliente con swimlanes",
-    "indicacion": "Organiza los bloques del diagrama de actividades con swimlanes: el cliente diligencia el formulario, el sistema valida y guarda, y el cliente recibe la confirmación. Incluye inicio, decisión y fin.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Cliente: diligenciar el formulario de registro",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Sistema: validar los datos ingresados",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "¿Los datos son válidos?",
-        "tipo": "decision"
-      },
-      {
-        "id": "b5",
-        "texto": "Sistema: guardar el registro del cliente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Cliente: recibir la confirmación del registro",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7"
-    ]
-  },
-  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Lógica",
-    "titulo": "Encuentra la falla: se entrega el producto cuando el pago fue rechazado",
-    "indicacion": "El diagrama de actividades del proceso de pago tiene un error. Recorre el flujo, identifica la falla y selecciona la corrección adecuada.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Decisión Mal Dibujada",
+    "titulo": "Encuentra la falla: la decisión se dibujó como rectángulo de acción",
+    "indicacion": "En el diagrama de actividades, el punto donde el flujo se divide por la condición '¿Datos válidos?' se dibujó con un rectángulo redondeado. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -581,53 +555,49 @@
         "tipo": "inicio"
       },
       {
-        "label": "Recibir los datos de la tarjeta de crédito",
-        "tipo": "entrada"
-      },
-      {
-        "label": "Validar el pago con el banco",
+        "label": "Identificar el punto donde el flujo se divide según una condición",
         "tipo": "proceso"
       },
       {
-        "label": "¿El pago fue aprobado?",
-        "tipo": "decision"
+        "label": "Determinar que la condición es '¿Datos válidos?'",
+        "tipo": "proceso"
       },
       {
-        "label": "Si el pago fue rechazado: entregar el producto al cliente",
-        "tipo": "salida",
+        "label": "Dibujar la condición con un rectángulo redondeado de acción (ERROR)",
+        "tipo": "proceso",
         "error": true
       },
       {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Entregar el diagrama de actividades",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "El error es que falta el símbolo de inicio en el diagrama."
+        "texto": "El rectángulo redondeado es la notación correcta para una decisión."
       },
       {
         "id": 0,
-        "texto": "Si el pago fue rechazado no debe entregarse el producto; la acción correcta es mostrar el mensaje Pago rechazado y cancelar la entrega."
+        "texto": "La decisión se representa con un rombo, no con un rectángulo redondeado de acción."
       },
       {
         "id": 2,
-        "texto": "El diagrama está correcto porque la entrega siempre depende de la validación del banco."
+        "texto": "El error es que las decisiones no se usan en los diagramas de actividades."
       },
       {
         "id": 3,
-        "texto": "Falta agregar una swimlane para el banco en el diagrama."
+        "texto": "El error es que falta un nodo de inicio en la condición."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Símbolo Inadecuado",
-    "titulo": "Encuentra la falla: la bifurcación se usó en lugar de la decisión",
-    "indicacion": "El analista modeló la aprobación de un préstamo con una bifurcación. Revisa el flujo e identifica el error conceptual.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Bifurcación Mal Dibujada",
+    "titulo": "Encuentra la falla: la bifurcación se dibujó como rombo de decisión",
+    "indicacion": "En el diagrama de actividades, la división del flujo en dos actividades paralelas se dibujó con un rombo. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -635,39 +605,39 @@
         "tipo": "inicio"
       },
       {
-        "label": "Recibir la solicitud de préstamo",
-        "tipo": "entrada"
+        "label": "Determinar que dos actividades deben ejecutarse en paralelo",
+        "tipo": "proceso"
       },
       {
-        "label": "Bifurcación: los flujos se dividen para aprobar o rechazar el préstamo",
+        "label": "Dibujar una barra de bifurcación para dividir el flujo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Reemplazar la barra por un ROMBO de decisión (ERROR)",
         "tipo": "proceso",
         "error": true
       },
       {
-        "label": "Mostrar el resultado al cliente",
+        "label": "Validar el diagrama como correcto",
         "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La bifurcación es correcta porque los dos flujos se ejecutan en paralelo."
-      },
-      {
-        "id": 1,
-        "texto": "El error es que falta la swimlane del cliente en el diagrama."
-      },
-      {
-        "id": 3,
-        "texto": "Aprobar o rechazar son caminos excluyentes según una condición; debe usarse un nodo de decisión (rombo), no una bifurcación."
+        "texto": "La barra de bifurcación es incorrecta en UML."
       },
       {
         "id": 2,
-        "texto": "El diagrama está correcto porque la bifurcación divide el flujo en dos caminos."
+        "texto": "El error es que las actividades paralelas no se permiten en UML."
+      },
+      {
+        "id": 1,
+        "texto": "El rombo solo se usa para decisiones excluyentes; la bifurcación paralela se dibuja con una barra gruesa."
+      },
+      {
+        "id": 3,
+        "texto": "El error es que falta la swimlane en el diagrama."
       }
     ],
     "correcta": 2
@@ -800,6 +770,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -859,6 +844,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1126,6 +1251,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1159,6 +1290,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

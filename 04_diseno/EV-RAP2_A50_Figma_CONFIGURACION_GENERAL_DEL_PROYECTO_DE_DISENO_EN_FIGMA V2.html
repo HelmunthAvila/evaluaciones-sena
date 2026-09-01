@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la configuración general del proyecto de diseño en Figma: crear la cuenta y el proyecto, configurar un archivo de diseño, crear y ajustar frames, utilizar las herramientas básicas del lienzo y gestionar el guardado del trabajo, mediante retos prácticos interactivos.
+          Demuestra tus competencias en la configuración general del proyecto de diseño en Figma: crear la cuenta y el proyecto, configurar un archivo de diseño, crear y ajustar frames y utilizar las herramientas básicas del lienzo, mediante retos prácticos interactivos.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar la configuración y las herramientas básicas necesarias para iniciar un proyecto en Figma.</li>
+            <li><strong>Usar Figma:</strong> Identificar la configuración y las herramientas básicas necesarias para iniciar un proyecto en Figma.</li>
 <li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la creación y configuración de archivos y frames en Figma.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para crear el proyecto, configurar el archivo y crear el primer frame.</li>
-<li><strong>Depuración de Errores:</strong> Detectar errores de configuración en el proyecto de diseño y aplicar la corrección adecuada.</li>
+<li><strong>Ordenar el Proceso:</strong> Ordenar los pasos para crear el proyecto, configurar el archivo y crear el primer frame.</li>
+<li><strong>Corregir el Diseño:</strong> Detectar errores de configuración en el proyecto de diseño y aplicar la corrección adecuada.</li>
           </ul>
         </div>
 
@@ -250,18 +250,18 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Figma",
     "tipo": "Inicio del Proyecto",
     "titulo": "¿Cuál es el primer paso para comenzar a diseñar en Figma?",
     "indicacion": "Antes de dibujar cualquier elemento se debe preparar el espacio de trabajo. Selecciona la acción inicial para empezar un diseño en Figma.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Exportar los diseños a formato PDF antes de empezar."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Crear un nuevo archivo de diseño dentro de un proyecto de Figma."
       },
       {
@@ -277,14 +277,14 @@
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Figma",
     "tipo": "Frame de Trabajo",
     "titulo": "¿Qué elemento de Figma define el área de trabajo con las dimensiones de una pantalla, como las de un teléfono o un computador?",
     "indicacion": "El área de trabajo de una pantalla se crea con un elemento específico de Figma. Selecciona el elemento que representa una pantalla con tamaño y nombre propios.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
+        "id": 1,
         "texto": "El lienzo infinito, que no tiene dimensiones."
       },
       {
@@ -292,7 +292,7 @@
         "texto": "Una capa de texto."
       },
       {
-        "id": 1,
+        "id": 0,
         "texto": "Un frame, que representa una pantalla con tamaño y nombre propios."
       },
       {
@@ -304,10 +304,10 @@
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Figma",
     "tipo": "Guardado del Trabajo",
     "titulo": "¿Cómo se guarda el trabajo realizado en un archivo de Figma?",
-    "indicacion": "Figma trabaja con guardado automático en la nube. Selecciona la afirmación correcta sobre el guardado del trabajo.",
+    "indicacion": "Figma trabaja con guardado en la nube. Selecciona la afirmación correcta sobre el guardado del trabajo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -331,7 +331,7 @@
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
+    "categoria": "Usar Figma",
     "tipo": "Herramienta de Selección",
     "titulo": "¿Qué herramienta de Figma permite seleccionar y desplazar los objetos dentro del lienzo?",
     "indicacion": "Para manipular los objetos del lienzo se requiere una herramienta específica de la barra de herramientas. Selecciona la herramienta correcta.",
@@ -358,63 +358,6 @@
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Creación de un Frame",
-    "titulo": "Prueba de escritorio: crea el primer frame del proyecto",
-    "indicacion": "Ejecuta mentalmente el proceso de creación del primer frame y determina el resultado obtenido en el archivo de Figma.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Abrir Figma e ingresar al proyecto de diseño",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Crear un archivo de diseño nuevo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Seleccionar la herramienta Frame",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Elegir el tamaño predefinido de un teléfono",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: se crea el frame que representa la pantalla inicial",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "Se creó una imagen importada en lugar del frame."
-      },
-      {
-        "id": 0,
-        "texto": "Se creó un frame con el tamaño de una pantalla, listo para el diseño."
-      },
-      {
-        "id": 2,
-        "texto": "Se abrió un archivo de presentación sin lienzo."
-      },
-      {
-        "id": 3,
-        "texto": "El frame se creó fuera del archivo de diseño."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
     "categoria": "Prueba de Escritorio",
     "tipo": "Configuración del Archivo",
     "titulo": "Prueba de escritorio: configura el archivo del proyecto de diseño",
@@ -456,25 +399,82 @@
         "texto": "El archivo no quedó disponible porque Figma no permite crear proyectos."
       },
       {
-        "id": 1,
-        "texto": "La configuración quedó incompleta porque falta crear el frame."
-      },
-      {
         "id": 3,
         "texto": "El archivo Interfaz_Principal quedó creado y organizado dentro del proyecto Diseno_Sistema_Ventas."
+      },
+      {
+        "id": 1,
+        "texto": "La configuración quedó incompleta porque falta crear el frame."
       },
       {
         "id": 2,
         "texto": "El archivo se creó en otra herramienta distinta a Figma."
       }
     ],
+    "correcta": 1
+  },
+  {
+    "id": 6,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Creación de un Frame",
+    "titulo": "Prueba de escritorio: crea el primer frame del proyecto",
+    "indicacion": "Ejecuta mentalmente el proceso de creación del primer frame y determina el resultado obtenido en el archivo de Figma.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Abrir Figma e ingresar al proyecto de diseño",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Crear un archivo de diseño nuevo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Seleccionar la herramienta Frame",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Elegir el tamaño predefinido de un teléfono",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Resultado: se crea el frame que representa la pantalla inicial",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "Se creó una imagen importada en lugar del frame."
+      },
+      {
+        "id": 2,
+        "texto": "Se abrió un archivo de presentación sin lienzo."
+      },
+      {
+        "id": 0,
+        "texto": "Se creó un frame con el tamaño de una pantalla, listo para el diseño."
+      },
+      {
+        "id": 3,
+        "texto": "El frame se creó fuera del archivo de diseño."
+      }
+    ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Creación de Cuenta y Proyecto",
-    "titulo": "Ordena los pasos para crear la cuenta y el primer proyecto en Figma",
+    "titulo": "Ordena los pasos para crear la cuenta y el primer archivo en Figma",
     "indicacion": "La configuración general inicia con el registro de la cuenta y termina con la creación del archivo de diseño. Ordena los bloques correctamente.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
@@ -485,17 +485,17 @@
       },
       {
         "id": "b2",
-        "texto": "Ingresar al sitio web de Figma y seleccionar la opción de registro",
+        "texto": "Confirmar la cuenta mediante el enlace enviado al correo",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Registrar la cuenta con el correo institucional y una contraseña",
-        "tipo": "proceso"
+        "texto": "Asignar un nombre al archivo según el proyecto",
+        "tipo": "salida"
       },
       {
         "id": "b4",
-        "texto": "Confirmar la cuenta mediante el enlace enviado al correo",
+        "texto": "Ingresar al sitio web de Figma y seleccionar la opción de registro",
         "tipo": "proceso"
       },
       {
@@ -505,8 +505,8 @@
       },
       {
         "id": "b6",
-        "texto": "Asignar un nombre al archivo según el proyecto",
-        "tipo": "salida"
+        "texto": "Registrar la cuenta con el correo institucional y una contraseña",
+        "tipo": "proceso"
       },
       {
         "id": "b7",
@@ -516,17 +516,17 @@
     ],
     "ordenCorrecto": [
       "b1",
-      "b2",
-      "b3",
       "b4",
-      "b5",
       "b6",
+      "b2",
+      "b5",
+      "b3",
       "b7"
     ]
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Configuración del Frame",
     "titulo": "Ordena los pasos para configurar un frame con dimensiones de escritorio",
     "indicacion": "La configuración del frame inicia con la selección de la herramienta y termina con la verificación en el panel de capas. Ordena los bloques correctamente.",
@@ -539,28 +539,28 @@
       },
       {
         "id": "b2",
-        "texto": "Seleccionar la herramienta Frame en la barra de herramientas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Arrastrar el cursor en el lienzo para dibujar el frame",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Elegir el tamaño predefinido Desktop en el panel de propiedades",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
         "texto": "Asignar el nombre Pantalla_Principal al frame",
         "tipo": "proceso"
       },
       {
-        "id": "b6",
+        "id": "b3",
+        "texto": "Elegir el tamaño predefinido Desktop en el panel de propiedades",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Seleccionar la herramienta Frame en la barra de herramientas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
         "texto": "Verificar que el frame aparece en el panel de capas",
         "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Arrastrar el cursor en el lienzo para dibujar el frame",
+        "tipo": "proceso"
       },
       {
         "id": "b7",
@@ -570,17 +570,17 @@
     ],
     "ordenCorrecto": [
       "b1",
-      "b2",
-      "b3",
       "b4",
-      "b5",
       "b6",
+      "b3",
+      "b2",
+      "b5",
       "b7"
     ]
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
+    "categoria": "Corregir el Diseño",
     "tipo": "Elementos Fuera del Frame",
     "titulo": "Encuentra la falla: los elementos no aparecen en la pantalla del proyecto",
     "indicacion": "El aprendiz dibujó los elementos del diseño, pero al presentar el archivo las pantallas están vacías. Revisa los pasos e identifica la falla.",
@@ -626,7 +626,7 @@
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
+    "categoria": "Corregir el Diseño",
     "tipo": "Herramienta Inadecuada",
     "titulo": "Encuentra la falla: no se pueden seleccionar los objetos del lienzo",
     "indicacion": "El aprendiz quiere mover un rectángulo del lienzo, pero la herramienta activa no se lo permite. Revisa los pasos e identifica la falla.",
@@ -798,6 +798,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -857,6 +872,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1124,6 +1279,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1157,6 +1318,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

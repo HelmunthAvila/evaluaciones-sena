@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración de diagramas de casos de uso: identificar actores y casos de uso, delimitar el sistema, aplicar las relaciones include y extend, y representar correctamente los elementos UML, mediante retos prácticos interactivos.
+          Pon en práctica la elaboración de diagramas de casos de uso en situaciones reales de diseño: identifica los símbolos UML de actor, caso de uso y frontera del sistema, decide qué relación (include o extend) corresponde a cada necesidad del proceso, ordena los pasos para construir el diagrama y corrige diagramas con relaciones mal dibujadas. Sin teoría: aquí se demuestra modelando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar actores, casos de uso y las relaciones include y extend en el modelo del sistema.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la construcción del diagrama y predecir el resultado obtenido.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para elaborar el diagrama de casos de uso y aplicar las relaciones.</li>
-<li><strong>Depuración de Errores:</strong> Detectar elementos mal ubicados y relaciones incorrectas en el diagrama, y aplicar la corrección adecuada.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce el símbolo UML correcto para actor, caso de uso, frontera del sistema y relación include.</li>
+<li><strong>Diseño Lógico:</strong> Decide qué relación (include o extend) usar y dónde ubicar los actores en el diagrama.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para elaborar un diagrama de casos de uso.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra relaciones mal dibujadas y elementos mal ubicados en el diagrama.</li>
           </ul>
         </div>
 
@@ -250,232 +250,196 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Representación del Actor",
-    "titulo": "¿Cómo se representa un actor en un diagrama de casos de uso?",
-    "indicacion": "El actor es quien interactúa con el sistema desde el exterior. Selecciona la representación UML correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa un CASO DE USO?",
+    "indicacion": "El caso de uso describe una funcionalidad que el sistema ofrece al actor. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Un rectángulo con el nombre de la clase."
-      },
-      {
-        "id": 2,
-        "texto": "Una figura de palo (stick figure) con el nombre del actor debajo."
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
       },
       {
         "id": 1,
-        "texto": "Una elipse con el nombre del caso de uso."
+        "nombre": "Caso de Uso (Elipse)",
+        "uso": "Funcionalidad que el sistema ofrece al actor",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 120 56\"><ellipse cx=\"60\" cy=\"28\" rx=\"55\" ry=\"22\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"60\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"10\" font-weight=\"bold\">Registrar Pedido</text></svg>"
+      },
+      {
+        "id": 2,
+        "nombre": "Sistema (Frontera)",
+        "uso": "Límite del sistema con los casos de uso dentro",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 130 84\"><rect x=\"4\" y=\"16\" width=\"122\" height=\"64\" rx=\"3\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/><text x=\"10\" y=\"30\" fill=\"#0f766e\" font-size=\"10\" font-weight=\"bold\">Sistema de Ventas</text><ellipse cx=\"42\" cy=\"58\" rx=\"32\" ry=\"14\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"42\" y=\"62\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\">Registrar</text><ellipse cx=\"96\" cy=\"58\" rx=\"30\" ry=\"14\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"96\" y=\"62\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\">Facturar</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Un rombo con una condición."
+        "nombre": "Herencia (Flecha de triángulo)",
+        "uso": "Generalización entre elementos",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Animal</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Perro</text><line x1=\"35\" y1=\"25\" x2=\"56\" y2=\"25\" stroke=\"#15803d\" stroke-width=\"2\"/><polygon points=\"56,17 70,25 56,33\" fill=\"white\" stroke=\"#15803d\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Representación del Caso de Uso",
-    "titulo": "¿Cómo se representa un caso de uso en el diagrama UML?",
-    "indicacion": "El caso de uso describe una funcionalidad que el sistema ofrece al actor. Selecciona la notación correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la FRONTERA DEL SISTEMA?",
+    "indicacion": "La frontera delimita lo que el sistema hace: dentro van los casos de uso y fuera los actores. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
+        "id": 0,
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
+      },
+      {
         "id": 1,
-        "texto": "Un rectángulo etiquetado con la palabra CASO."
+        "nombre": "Caso de Uso (Elipse)",
+        "uso": "Funcionalidad que el sistema ofrece al actor",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 120 56\"><ellipse cx=\"60\" cy=\"28\" rx=\"55\" ry=\"22\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"60\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"10\" font-weight=\"bold\">Registrar Pedido</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Una línea de vida punteada vertical."
-      },
-      {
-        "id": 0,
-        "texto": "Una elipse con el nombre del caso de uso, generalmente un verbo en infinitivo."
+        "nombre": "Sistema (Frontera)",
+        "uso": "Límite del sistema con los casos de uso dentro",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 130 84\"><rect x=\"4\" y=\"16\" width=\"122\" height=\"64\" rx=\"3\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/><text x=\"10\" y=\"30\" fill=\"#0f766e\" font-size=\"10\" font-weight=\"bold\">Sistema de Ventas</text><ellipse cx=\"42\" cy=\"58\" rx=\"32\" ry=\"14\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"42\" y=\"62\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\">Registrar</text><ellipse cx=\"96\" cy=\"58\" rx=\"30\" ry=\"14\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"96\" y=\"62\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\">Facturar</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Un cuadrado con un candado."
+        "nombre": "Include (Dependencia punteada)",
+        "uso": "Un caso de uso siempre incluye a otro",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 120 56\"><ellipse cx=\"28\" cy=\"28\" rx=\"26\" ry=\"18\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"28\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\" font-weight=\"bold\">Pagar</text><line x1=\"54\" y1=\"28\" x2=\"74\" y2=\"28\" stroke=\"#6d28d9\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/><polygon points=\"74,23 84,28 74,33\" fill=\"none\" stroke=\"#6d28d9\" stroke-width=\"1.5\"/><text x=\"69\" y=\"19\" text-anchor=\"middle\" fill=\"#6d28d9\" font-size=\"7\">«include»</text><ellipse cx=\"103\" cy=\"28\" rx=\"17\" ry=\"18\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"103\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"7\">Validar</text></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Relación Include",
-    "titulo": "El caso de uso 'Realizar compra' siempre ejecuta el caso de uso 'Validar pago'. ¿Qué relación UML corresponde?",
-    "indicacion": "Cuando un caso de uso base siempre incluye la funcionalidad de otro caso de uso, se utiliza una relación específica. Selecciónala.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la relación INCLUDE?",
+    "indicacion": "La relación include indica que un caso de uso siempre ejecuta a otro para completarse. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Extend."
-      },
-      {
-        "id": 2,
-        "texto": "Generalización."
-      },
-      {
-        "id": 3,
-        "texto": "Asociación."
+        "nombre": "Caso de Uso (Elipse)",
+        "uso": "Funcionalidad que el sistema ofrece al actor",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 120 56\"><ellipse cx=\"60\" cy=\"28\" rx=\"55\" ry=\"22\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"60\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"10\" font-weight=\"bold\">Registrar Pedido</text></svg>"
       },
       {
         "id": 1,
-        "texto": "Include."
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre un actor y un caso de uso",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
+      },
+      {
+        "id": 2,
+        "nombre": "Sistema (Frontera)",
+        "uso": "Límite del sistema con los casos de uso dentro",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 130 84\"><rect x=\"4\" y=\"16\" width=\"122\" height=\"64\" rx=\"3\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\" stroke-dasharray=\"6,3\"/><text x=\"10\" y=\"30\" fill=\"#0f766e\" font-size=\"10\" font-weight=\"bold\">Sistema de Ventas</text><ellipse cx=\"42\" cy=\"58\" rx=\"32\" ry=\"14\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"42\" y=\"62\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\">Registrar</text><ellipse cx=\"96\" cy=\"58\" rx=\"30\" ry=\"14\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"96\" y=\"62\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\">Facturar</text></svg>"
+      },
+      {
+        "id": 3,
+        "nombre": "Include (Dependencia punteada)",
+        "uso": "Un caso de uso siempre incluye a otro",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 120 56\"><ellipse cx=\"28\" cy=\"28\" rx=\"26\" ry=\"18\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"28\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"8\" font-weight=\"bold\">Pagar</text><line x1=\"54\" y1=\"28\" x2=\"74\" y2=\"28\" stroke=\"#6d28d9\" stroke-width=\"1.5\" stroke-dasharray=\"5,3\"/><polygon points=\"74,23 84,28 74,33\" fill=\"none\" stroke=\"#6d28d9\" stroke-width=\"1.5\"/><text x=\"69\" y=\"19\" text-anchor=\"middle\" fill=\"#6d28d9\" font-size=\"7\">«include»</text><ellipse cx=\"103\" cy=\"28\" rx=\"17\" ry=\"18\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"103\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"7\">Validar</text></svg>"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Relación Extend",
-    "titulo": "El caso de uso 'Registrar pedido' puede ampliarse con 'Aplicar descuento' solo cuando se cumple una condición. ¿Qué relación UML corresponde?",
-    "indicacion": "Cuando un caso de uso opcional se agrega a un caso base bajo ciertas condiciones, se emplea una relación específica. Selecciónala.",
+    "categoria": "Diseño Lógico",
+    "tipo": "Relación entre Casos de Uso",
+    "titulo": "Un caso de uso SIEMPRE requiere ejecutar otro para completarse. ¿Qué relación UML lo representa?",
+    "indicacion": "El caso de uso 'Registrar Pedido' no termina sin ejecutar 'Validar Pago'. Selecciona la relación correcta para representarlo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
-        "texto": "Extend."
-      },
-      {
         "id": 0,
-        "texto": "Include."
+        "texto": "include: el caso de uso base siempre ejecuta el caso incluido."
       },
       {
         "id": 1,
-        "texto": "Asociación."
+        "texto": "extend: el caso extendido se ejecuta solo bajo una condición."
       },
       {
         "id": 2,
-        "texto": "Dependencia."
+        "texto": "Asociación simple entre dos actores."
+      },
+      {
+        "id": 3,
+        "texto": "Herencia entre dos casos de uso."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Identificación de Actores",
-    "titulo": "Prueba de escritorio: identificación de los actores del sistema de biblioteca",
-    "indicacion": "Ejecuta mentalmente el análisis de los requisitos del sistema de biblioteca y determina cuáles son los actores identificados.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Requisitos: el sistema de biblioteca administra préstamos de libros",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El bibliotecario registra los préstamos y las devoluciones",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El estudiante consulta los libros disponibles y sus préstamos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El administrador gestiona los usuarios del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: actores identificados",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Relación entre Casos de Uso",
+    "titulo": "Un caso de uso se ejecuta solo cuando se cumple una condición OPCIONAL. ¿Qué relación UML lo representa?",
+    "indicacion": "El caso de uso 'Aplicar Descuento' solo se ejecuta si el cliente tiene membresía. Selecciona la relación correcta.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Solo el bibliotecario."
+        "texto": "include: siempre se ejecuta el caso incluido."
       },
       {
         "id": 1,
-        "texto": "El bibliotecario, el estudiante y el administrador."
+        "texto": "extend: el caso que extiende se ejecuta bajo una condición opcional."
       },
       {
         "id": 2,
-        "texto": "Solo el sistema de biblioteca."
+        "texto": "Generalización entre actores."
       },
       {
         "id": 3,
-        "texto": "Ninguno; todos son casos de uso."
+        "texto": "Agregación entre casos de uso."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
+    "categoria": "Diseño Lógico",
     "tipo": "Ubicación de Elementos",
-    "titulo": "Prueba de escritorio: construcción del diagrama de casos de uso",
-    "indicacion": "Sigue paso a paso la construcción del diagrama y determina cómo quedaron ubicados los elementos.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Dibujar el rectángulo que delimita el sistema",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Ubicar los casos de uso identificados",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Ubicar a los actores",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Conectar cada actor con los casos de uso que puede ejecutar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: diagrama de casos de uso construido",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "titulo": "En el diagrama de casos de uso del módulo de ventas, ¿dónde se ubican los ACTORES respecto a la frontera del sistema?",
+    "indicacion": "El analista dibuja la frontera del sistema con los casos de uso dentro. Decide dónde debe colocar la figura de palo del 'Cliente'.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Los actores quedaron dentro del rectángulo del sistema."
+        "texto": "Dentro de la frontera del sistema."
       },
       {
         "id": 1,
-        "texto": "Los casos de uso quedaron fuera del rectángulo del sistema."
-      },
-      {
-        "id": 2,
-        "texto": "Los actores quedaron fuera del sistema y los casos de uso dentro, conectados mediante asociaciones."
+        "texto": "Sobre la línea de la frontera del sistema."
       },
       {
         "id": 3,
-        "texto": "El rectángulo del sistema se omitió porque no es obligatorio."
+        "texto": "Fuera de la frontera del sistema, conectado por una asociación."
+      },
+      {
+        "id": 2,
+        "texto": "En la parte inferior de cada elipse de caso de uso."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Elaboración del Diagrama",
-    "titulo": "Ordena los pasos para elaborar el diagrama de casos de uso",
-    "indicacion": "La elaboración inicia con la identificación de actores y termina con la validación del diagrama con el cliente. Ordena los bloques.",
+    "titulo": "Construye el proceso: elaboración de un diagrama de casos de uso",
+    "indicacion": "El analista va a modelar los casos de uso del sistema de pedidos. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -485,32 +449,32 @@
       },
       {
         "id": "b2",
-        "texto": "Identificar los actores que interactúan con el sistema",
+        "texto": "Identificar los actores del sistema",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Identificar los casos de uso a partir de los requisitos funcionales",
+        "texto": "Identificar los casos de uso a partir de los requisitos",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Dibujar el rectángulo que delimita el sistema",
+        "texto": "Dibujar la frontera del sistema con los casos de uso dentro",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Ubicar los casos de uso dentro del sistema",
+        "texto": "Ubicar los actores fuera de la frontera y conectarlos con sus casos de uso",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Conectar cada actor con sus casos de uso mediante asociaciones",
+        "texto": "Establecer las relaciones include y extend entre casos de uso",
         "tipo": "proceso"
       },
       {
         "id": "b7",
-        "texto": "Validar el diagrama con el cliente",
+        "texto": "Validar el diagrama con el equipo y el cliente",
         "tipo": "salida"
       },
       {
@@ -532,10 +496,10 @@
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Aplicación de Include",
-    "titulo": "Ordena los pasos para aplicar la relación include en el diagrama",
-    "indicacion": "La relación include vincula un caso de uso base con una funcionalidad común que siempre se ejecuta. Ordena los bloques.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Escenario del Caso de Uso",
+    "titulo": "Construye el proceso: registro de un pedido con include",
+    "indicacion": "El caso de uso 'Registrar Pedido' incluye 'Validar Disponibilidad'. Ordena los bloques del flujo correcto.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -545,31 +509,26 @@
       },
       {
         "id": "b2",
-        "texto": "Identificar el caso de uso base 'Realizar compra'",
+        "texto": "El actor 'Cliente' inicia el caso de uso 'Registrar Pedido'",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Identificar el caso de uso común 'Validar pago'",
+        "texto": "Se ejecuta el caso de uso incluido 'Validar Disponibilidad'",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Dibujar la flecha <<include>> desde 'Realizar compra' hacia 'Validar pago'",
+        "texto": "El sistema consulta el inventario del producto",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Verificar que 'Validar pago' siempre se ejecuta dentro de 'Realizar compra'",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Documentar la relación en la especificación del caso de uso",
+        "texto": "El sistema confirma la disponibilidad del producto",
         "tipo": "salida"
       },
       {
-        "id": "b7",
+        "id": "b6",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -580,16 +539,15 @@
       "b3",
       "b4",
       "b5",
-      "b6",
-      "b7"
+      "b6"
     ]
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Actor Dentro del Sistema",
-    "titulo": "Encuentra la falla: el actor se ubicó dentro del sistema",
-    "indicacion": "En el diagrama elaborado, el actor 'Cliente' se dibujó dentro del rectángulo del sistema. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Include Mal Dibujado",
+    "titulo": "Encuentra la falla: la relación include se dibujó con línea continua",
+    "indicacion": "En el diagrama, la relación entre 'Registrar Pedido' y 'Validar Pago' se dibujó con una línea continua de asociación, pero es una relación include. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -597,49 +555,49 @@
         "tipo": "inicio"
       },
       {
-        "label": "Se dibuja el rectángulo que delimita el sistema de pedidos",
+        "label": "Identificar los casos de uso 'Registrar Pedido' y 'Validar Pago'",
         "tipo": "proceso"
       },
       {
-        "label": "Se ubica al actor 'Cliente' dentro del rectángulo del sistema",
+        "label": "Determinar que 'Registrar Pedido' siempre ejecuta 'Validar Pago'",
         "tipo": "proceso"
       },
       {
-        "label": "Se conecta al actor con el caso de uso 'Registrar pedido'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se entrega el diagrama para revisión",
-        "tipo": "salida",
+        "label": "Dibujar la relación con una línea continua de asociación simple (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Entregar el diagrama para revisión",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "La ubicación es correcta porque el cliente pertenece al sistema."
+        "texto": "La línea continua de asociación es la notación correcta para include."
       },
       {
         "id": 0,
-        "texto": "El actor es externo al sistema; debe ubicarse fuera del rectángulo del sistema."
+        "texto": "La relación «include» se dibuja como una dependencia con línea punteada y el estereotipo «include», no con línea continua."
       },
       {
         "id": 2,
-        "texto": "El error es que el caso de uso 'Registrar pedido' no debe existir."
+        "texto": "El error es que el caso de uso 'Validar Pago' no debe existir."
       },
       {
         "id": 3,
-        "texto": "El error es que falta la relación extend en el diagrama."
+        "texto": "El error es que falta un actor conectado a la relación."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Relación Incorrecta",
-    "titulo": "Encuentra la falla: se usó extend para una funcionalidad obligatoria",
-    "indicacion": "En el diagrama se representó con <<extend>> la relación entre 'Autenticar usuario' y 'Validar credenciales', que siempre se ejecuta. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Actor Mal Ubicado",
+    "titulo": "Encuentra la falla: el actor se dibujó dentro de la frontera del sistema",
+    "indicacion": "En el diagrama, la figura del actor 'Cliente' quedó dentro del rectángulo que delimita el sistema. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -647,39 +605,39 @@
         "tipo": "inicio"
       },
       {
-        "label": "Caso de uso base: 'Autenticar usuario'",
+        "label": "Identificar al actor 'Cliente' del sistema de ventas",
         "tipo": "proceso"
       },
       {
-        "label": "Se dibuja la relación <<extend>> hacia 'Validar credenciales'",
+        "label": "Dibujar la frontera del sistema con los casos de uso dentro",
         "tipo": "proceso"
       },
       {
-        "label": "La especificación indica que 'Validar credenciales' siempre se ejecuta dentro de 'Autenticar usuario'",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se valida el diagrama como correcto",
-        "tipo": "salida",
+        "label": "Ubicar la figura del actor 'Cliente' DENTRO de la frontera del sistema (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Considerar terminado el diagrama",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La relación <<extend>> es correcta porque amplía la funcionalidad de autenticación."
+        "texto": "Los actores deben dibujarse dentro del sistema para mostrarlos como parte del software."
       },
       {
         "id": 1,
-        "texto": "Falta dibujar el rectángulo del sistema."
+        "texto": "El error es que la frontera del sistema no debe dibujarse."
       },
       {
         "id": 2,
-        "texto": "La relación correcta es <<include>>, porque 'Validar credenciales' siempre se ejecuta dentro de 'Autenticar usuario'."
+        "texto": "Los actores siempre se ubican FUERA de la frontera del sistema, pues interactúan desde el exterior."
       },
       {
         "id": 3,
-        "texto": "El error es que no se definió ningún actor en el diagrama."
+        "texto": "El error es que el actor debe representarse con una elipse."
       }
     ],
     "correcta": 2
@@ -812,6 +770,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -871,6 +844,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1138,6 +1251,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1171,6 +1290,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

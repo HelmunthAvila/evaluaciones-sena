@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el diseño de interfaces de usuario: aplicar principios de usabilidad y consistencia, organizar la jerarquía visual mediante el uso adecuado de colores y tipografía, y elaborar prototipos de pantalla para el sistema, mediante retos prácticos interactivos.
+          Pon en práctica el diseño de interfaces de usuario en situaciones reales: decide qué principio de usabilidad, jerarquía visual, contraste de colores y tipografía aplicar en cada pantalla, ordena el proceso de diseño y prototipado de la interfaz, corrige diseños con problemas de consistencia y legibilidad, y determina el resultado de aplicar las decisiones de diseño. Sin teoría: aquí se demuestra diseñando interfaces.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los principios de usabilidad y las buenas prácticas del diseño UI.</li>
-<li><strong>Interfaces de Usuario:</strong> Evaluar decisiones de jerarquía visual, color, tipografía y prototipado de pantallas.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos del diseño de la interfaz y de la construcción del prototipo.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas de usabilidad y consistencia en las pantallas diseñadas.</li>
+            <li><strong>Diseñar la Interfaz:</strong> Aplica usabilidad, jerarquía visual, contraste y tipografía en pantallas reales.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos del diseño y prototipado de la interfaz.</li>
+<li><strong>Corregir el Diseño:</strong> Encuentra problemas de consistencia, contraste y jerarquía en la interfaz.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre el proceso de diseño y determina el resultado obtenido.</li>
           </ul>
         </div>
 
@@ -250,268 +250,187 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Principio de Consistencia",
-    "titulo": "El botón Guardar está ubicado en la misma posición y con el mismo estilo en todas las pantallas del sistema. ¿Qué principio de usabilidad se está aplicando?",
-    "indicacion": "La usabilidad se logra mediante principios de diseño. Analiza el comportamiento descrito y selecciona el principio que corresponde.",
+    "categoria": "Diseñar la Interfaz",
+    "tipo": "Jerarquía Visual",
+    "titulo": "¿Qué técnica permite destacar el botón principal de una pantalla de registro?",
+    "indicacion": "La jerarquía visual guía la atención del usuario hacia la acción principal. Selecciona la técnica correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Rendimiento, porque la aplicación responde con rapidez."
+        "id": 0,
+        "texto": "Usar el mismo tamaño y color en todos los botones de la pantalla."
       },
       {
-        "id": 0,
-        "texto": "Consistencia, porque los elementos similares se ubican y se comportan igual en toda la aplicación."
+        "id": 1,
+        "texto": "Aplicar al botón principal mayor peso tipográfico y un color de contraste respecto al fondo."
       },
       {
         "id": 2,
-        "texto": "Seguridad, porque el botón está protegido contra accesos no autorizados."
+        "texto": "Eliminar los espacios entre los elementos para aprovechar la pantalla."
       },
       {
         "id": 3,
-        "texto": "Portabilidad, porque la interfaz funciona en varios dispositivos."
+        "texto": "Colocar el botón principal al final de la página, sin diferenciarlo del resto."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Jerarquía Visual",
-    "titulo": "¿Qué elemento debe tener mayor jerarquía visual en la pantalla principal de un sistema de ventas?",
-    "indicacion": "La jerarquía visual guía la atención del usuario. Determina qué elemento debe destacar en la pantalla principal.",
+    "categoria": "Diseñar la Interfaz",
+    "tipo": "Usabilidad",
+    "titulo": "¿Qué principio de usabilidad se cumple cuando todos los formularios del sistema usan los mismos colores y la misma ubicación de botones?",
+    "indicacion": "Un sistema es más fácil de usar cuando sus pantallas se comportan de forma predecible. Identifica el principio aplicado.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "La nota de copyright del pie de página."
-      },
-      {
         "id": 1,
-        "texto": "El enlace de ayuda de la barra superior."
+        "texto": "Redundancia: la información se repite varias veces en cada pantalla."
       },
       {
         "id": 2,
-        "texto": "El título de la pantalla y la acción principal que realiza el usuario."
+        "texto": "Saturación: la pantalla aprovecha al máximo todos los espacios."
+      },
+      {
+        "id": 0,
+        "texto": "Consistencia: elementos iguales se presentan siempre de la misma forma."
       },
       {
         "id": 3,
-        "texto": "Los espacios vacíos del formulario."
+        "texto": "Personalización: cada usuario define sus propios colores."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Interfaces de Usuario",
-    "tipo": "Color en Mensajes de Error",
-    "titulo": "Para los mensajes de error del formulario de registro, ¿qué combinación de color es la más adecuada?",
-    "indicacion": "El color cumple una función comunicativa en la interfaz. Selecciona la combinación adecuada para los mensajes de error.",
+    "categoria": "Diseñar la Interfaz",
+    "tipo": "Contraste y Legibilidad",
+    "titulo": "Un texto gris claro sobre fondo blanco es difícil de leer. ¿Qué decisión corrige el problema?",
+    "indicacion": "El contraste entre el texto y el fondo determina la legibilidad. Selecciona la corrección adecuada.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "Texto gris claro sobre fondo blanco, para no llamar la atención del usuario."
-      },
-      {
-        "id": 2,
-        "texto": "Texto verde sobre fondo amarillo con degradados."
-      },
-      {
-        "id": 3,
-        "texto": "Texto con parpadeo constante y colores en degradado."
+        "texto": "Agregar más texto a la pantalla para reforzar el mensaje."
       },
       {
         "id": 1,
-        "texto": "Texto rojo sobre fondo claro, con alto contraste y un mensaje que indique cómo corregir el dato."
+        "texto": "Cambiar la fuente a una decorativa para que se distinga mejor."
+      },
+      {
+        "id": 3,
+        "texto": "Reducir el tamaño del texto para que ocupe menos espacio."
+      },
+      {
+        "id": 2,
+        "texto": "Usar un color de texto con mayor contraste respecto al fondo, como gris oscuro o negro."
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Interfaces de Usuario",
-    "tipo": "Prototipo de Baja Fidelidad",
-    "titulo": "¿Qué tipo de prototipo se elabora primero para validar la estructura de las pantallas con el cliente?",
-    "indicacion": "El prototipado tiene niveles de fidelidad. Identifica el prototipo adecuado para validar la estructura inicial con el cliente.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 3,
-        "texto": "El wireframe de baja fidelidad, que muestra la estructura y la distribución de los elementos."
-      },
-      {
-        "id": 0,
-        "texto": "El prototipo final con todos los estilos, imágenes y animaciones."
-      },
-      {
-        "id": 1,
-        "texto": "El código HTML de producción del sistema."
-      },
-      {
-        "id": 2,
-        "texto": "La base de datos del sistema."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Interfaces de Usuario",
-    "tipo": "Diseño de Pantalla",
-    "titulo": "Prueba de escritorio: diseño de la pantalla de inicio de sesión",
-    "indicacion": "Ejecuta mentalmente el proceso de diseño de la pantalla de inicio de sesión y determina el resultado final del diseño.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Definir los campos del formulario: usuario y contraseña",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Establecer el botón principal Ingresar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Aplicar contraste entre el fondo y los textos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Definir el mensaje de error para credenciales inválidas",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: pantalla simple, legible y consistente",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Una pantalla con veinte campos de información del cliente."
-      },
-      {
-        "id": 1,
-        "texto": "Una pantalla con dos campos, un botón principal y mensajes de error claros."
-      },
-      {
-        "id": 2,
-        "texto": "Una pantalla sin botón, que ingresa automáticamente al sistema."
-      },
-      {
-        "id": 3,
-        "texto": "Una pantalla con los colores de todas las marcas del mercado."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Interfaces de Usuario",
-    "tipo": "Validación con Usuarios",
-    "titulo": "Prueba de escritorio: evaluación del prototipo con usuarios finales",
-    "indicacion": "Recorre el proceso de validación del prototipo y determina qué decisión se tomó después de la prueba con los usuarios.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se presenta el prototipo de la pantalla a cinco usuarios",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Tres usuarios no encuentran el botón Guardar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se registra la observación en el acta de la prueba",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se rediseña la pantalla ubicando el botón en un lugar visible",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: el prototipo mejora la usabilidad de la pantalla",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "El prototipo se aprobó sin realizar ningún cambio."
-      },
-      {
-        "id": 1,
-        "texto": "Se eliminó el botón Guardar de la pantalla."
-      },
-      {
-        "id": 2,
-        "texto": "El prototipo se rediseñó para mejorar la ubicación del botón Guardar."
-      },
-      {
-        "id": 3,
-        "texto": "Se aumentó el número de campos del formulario."
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Diseño UI",
-    "titulo": "Ordena los pasos para diseñar la interfaz de una pantalla",
-    "indicacion": "Organiza el proceso de diseño UI: se identifican las tareas del usuario, se elabora el wireframe, se definen la jerarquía visual y los estilos, y se valida el prototipo. Incluye inicio y fin.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Diseño de la Interfaz",
+    "titulo": "Ordena el proceso de diseño de la interfaz de usuario",
+    "indicacion": "El equipo diseña la interfaz del módulo de clientes. Ordena los bloques para construir el proceso correcto.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
+      {
+        "id": "b6",
+        "texto": "Construir el prototipo de alta fidelidad",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b3",
+        "texto": "Definir el flujo de pantallas de la tarea",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Definir la paleta de colores y la tipografía",
+        "tipo": "proceso"
+      },
       {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Identificar las tareas que el usuario realizará en la pantalla",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Validar el prototipo con los usuarios",
+        "tipo": "salida"
       },
       {
-        "id": "b3",
-        "texto": "Elaborar el wireframe con la estructura de los elementos",
+        "id": "b2",
+        "texto": "Identificar los usuarios y las tareas de la pantalla",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Definir la jerarquía visual, los colores y la tipografía",
+        "texto": "Elaborar el wireframe de la pantalla",
         "tipo": "proceso"
-      },
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6",
+      "b7",
+      "b8"
+    ]
+  },
+  {
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Prototipado",
+    "titulo": "Ordena el proceso de elaboración del prototipo de la interfaz",
+    "indicacion": "El aprendiz construye el prototipo navegable de la interfaz. Ordena los bloques del proceso de prototipado.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
       {
         "id": "b5",
-        "texto": "Construir el prototipo de alta fidelidad",
+        "texto": "Conectar las pantallas para simular la navegación",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Validar el prototipo con el usuario final",
-        "tipo": "salida"
       },
       {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b2",
+        "texto": "Dibujar el esquema básico de las pantallas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Probar el prototipo con usuarios y ajustar los detalles",
+        "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "Aplicar la paleta de colores y la tipografía del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "Estructurar los elementos por jerarquía visual",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -525,17 +444,17 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Consistencia Visual",
-    "titulo": "Ordena el proceso para garantizar la consistencia visual del sistema",
-    "indicacion": "Organiza los pasos de la consistencia visual: se define la paleta de colores, la tipografía y los componentes reutilizables, y se aplican en todas las pantallas. Incluye inicio y fin.",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Guía de Estilo",
+    "titulo": "Ordena el proceso de definición de la guía de estilo del sistema",
+    "indicacion": "El equipo define los estilos que darán consistencia visual al sistema. Ordena los bloques del proceso.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b6",
+        "texto": "Verificar la consistencia visual en todas las pantallas",
+        "tipo": "salida"
       },
       {
         "id": "b2",
@@ -543,29 +462,29 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "Seleccionar las familias tipográficas para títulos y textos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Crear componentes reutilizables: botones, campos y tablas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Aplicar los mismos estilos en todas las pantallas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar la consistencia visual en cada pantalla",
-        "tipo": "salida"
-      },
-      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Definir los componentes reutilizables (botones, tablas, formularios)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b5",
+        "texto": "Aplicar los estilos definidos en cada pantalla",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Definir la tipografía y los tamaños de los niveles de texto",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -579,11 +498,11 @@
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Error de Contraste",
-    "titulo": "Encuentra la falla: el mensaje de error no es legible",
-    "indicacion": "El diseño del formulario de registro contiene una falla de usabilidad. Recorre los pasos e identifica el error.",
+    "id": 7,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Contraste Insuficiente",
+    "titulo": "Encuentra la falla: el botón principal tiene menos contraste que el secundario",
+    "indicacion": "En el prototipo, el botón Guardar (acción principal) se dibujó en gris claro sobre fondo blanco y el botón Cancelar en azul intenso. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -591,20 +510,111 @@
         "tipo": "inicio"
       },
       {
-        "label": "El formulario solicita nombre, correo y contraseña",
+        "label": "Identificar Guardar como la acción principal del formulario",
         "tipo": "proceso"
       },
       {
-        "label": "El botón Guardar se ubica al final de la pantalla",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El mensaje de error se diseña con texto gris claro sobre fondo blanco",
+        "label": "Dibujar Guardar en gris claro y Cancelar en azul intenso",
         "tipo": "proceso",
         "error": true
       },
       {
-        "label": "El diseño se entrega al equipo de desarrollo",
+        "label": "Entregar el prototipo para revisión",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 0,
+        "texto": "El botón secundario debe tener el mayor contraste para llamar la atención."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que el formulario no tiene un título en la parte superior."
+      },
+      {
+        "id": 3,
+        "texto": "El prototipo es correcto porque los botones se distinguen entre sí."
+      },
+      {
+        "id": 1,
+        "texto": "La acción principal debe tener el mayor contraste visual; el botón secundario debe ser menos prominente."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Tipografía Inconsistente",
+    "titulo": "Encuentra la falla: cada pantalla del prototipo usa una tipografía distinta",
+    "indicacion": "El listado de clientes usa Arial, el formulario de registro usa Times New Roman y el reporte usa Comic Sans. Revisa los pasos e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Definir los textos de las tres pantallas del módulo",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Usar una tipografía diferente en cada pantalla",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Entregar el prototipo como versión final",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 3,
+        "texto": "La tipografía debe ser consistente en todo el sistema, usando máximo dos familias tipográficas."
+      },
+      {
+        "id": 0,
+        "texto": "Cambiar la tipografía en cada pantalla ayuda a diferenciar los módulos."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que faltan los colores institucionales en el prototipo."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que los textos no tienen justificación completa."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Jerarquía Aplicada",
+    "titulo": "Prueba de escritorio: se definen tres niveles de jerarquía y se aplican en todas las pantallas",
+    "indicacion": "El equipo definió títulos en tamaño 24, subtítulos en 18 y cuerpo de texto en 12, y los aplicó en todas las pantallas del sistema. Determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Definir tres niveles: título 24, subtítulo 18, cuerpo 12",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Aplicar los niveles en el listado de clientes",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Aplicar los mismos niveles en el formulario de registro",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Revisar que los títulos mantengan el mismo tamaño en todas las pantallas",
         "tipo": "salida"
       },
       {
@@ -612,45 +622,48 @@
         "tipo": "fin"
       }
     ],
-    "opciones": [
-      {
-        "id": 0,
-        "texto": "El diseño es correcto porque los mensajes de error no deben resaltar."
-      },
+    "opcionesRespuesta": [
       {
         "id": 1,
-        "texto": "El mensaje de error tiene bajo contraste y no orienta al usuario; debe usar un color llamativo con texto legible que indique la corrección."
+        "texto": "Cada pantalla termina con un tamaño de texto diferente al definido."
+      },
+      {
+        "id": 0,
+        "texto": "Todas las pantallas mantienen la misma jerarquía visual, lo que facilita la lectura y la navegación."
       },
       {
         "id": 2,
-        "texto": "Falta agregar una imagen de fondo al formulario."
+        "texto": "Los títulos desaparecen en las pantallas secundarias."
       },
       {
         "id": 3,
-        "texto": "El error es que el formulario tiene muy pocos campos."
+        "texto": "La jerarquía solo se aplica en la primera pantalla del sistema."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Tipografía Ilegible",
-    "titulo": "Encuentra la falla: el título de la factura usa tipografía decorativa pequeña",
-    "indicacion": "La pantalla de ventas fue diseñada con una tipografía inadecuada. Recorre los pasos e identifica el error de diseño.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Consistencia en la Navegación",
+    "titulo": "Prueba de escritorio: el botón de pago mantiene posición y color en todas las pantallas",
+    "indicacion": "El botón Pagar aparece en la misma posición y con el mismo color en las tres pantallas del proceso de compra. Determina el resultado para el usuario.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Diseño aplicado: título de la factura en tipografía cursiva decorativa de 10 píxeles",
-        "tipo": "proceso",
-        "error": true
+        "label": "El usuario navega entre el carrito, los datos de envío y el pago",
+        "tipo": "entrada"
       },
       {
-        "label": "El equipo aprueba el diseño y lo envía a desarrollo",
+        "label": "El botón Pagar conserva posición, color y tamaño en las tres pantallas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "El usuario localiza el botón sin buscarlo en cada pantalla",
         "tipo": "salida"
       },
       {
@@ -658,22 +671,22 @@
         "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
+      {
+        "id": 0,
+        "texto": "El usuario se confunde porque el botón cambia de lugar en cada pantalla."
+      },
       {
         "id": 1,
-        "texto": "El diseño es correcto porque la cursiva decorativa da elegancia a la pantalla."
+        "texto": "La consistencia impide que el usuario identifique el botón de pago."
       },
       {
         "id": 2,
-        "texto": "El error es que la pantalla no tiene colores definidos."
-      },
-      {
-        "id": 0,
-        "texto": "La tipografía decorativa de tamaño pequeño dificulta la lectura; los títulos deben usar tipografía legible con tamaño adecuado y buen contraste."
+        "texto": "El usuario encuentra el botón con facilidad porque su posición y color son consistentes."
       },
       {
         "id": 3,
-        "texto": "Falta agregar más elementos decorativos al título."
+        "texto": "El botón desaparece cuando cambia de pantalla."
       }
     ],
     "correcta": 2
@@ -806,6 +819,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -865,6 +893,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1132,6 +1300,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1165,6 +1339,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

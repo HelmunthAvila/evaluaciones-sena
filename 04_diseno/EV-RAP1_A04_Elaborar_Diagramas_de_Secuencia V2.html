@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración de diagramas de secuencia: identificar actores, objetos y líneas de vida, representar mensajes y activaciones, y respetar el orden temporal de las interacciones, mediante retos prácticos interactivos.
+          Pon en práctica la elaboración de diagramas de secuencia en situaciones reales de diseño: identifica los símbolos UML de objeto, línea de vida, mensaje y activación, decide el orden temporal correcto de los mensajes, ordena el proceso de construcción del diagrama y corrige diagramas con elementos mal dibujados. Sin teoría: aquí se demuestra modelando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los elementos del diagrama de secuencia: línea de vida, activación y mensajes.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la secuencia de mensajes y predecir el flujo resultante.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para elaborar el diagrama y construir la secuencia de interacción.</li>
-<li><strong>Depuración de Errores:</strong> Detectar mensajes fuera de orden y activaciones mal ubicadas en el diagrama, y aplicar la corrección adecuada.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce el símbolo UML correcto para objeto, línea de vida, mensaje y activación.</li>
+<li><strong>Diseño Lógico:</strong> Decide el orden temporal de los mensajes y el papel de cada elemento en la interacción.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para elaborar un diagrama de secuencia.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra mensajes y activaciones mal dibujados en el diagrama.</li>
           </ul>
         </div>
 
@@ -250,232 +250,196 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Línea de Vida",
-    "titulo": "¿Qué elemento del diagrama de secuencia representa el paso del tiempo?",
-    "indicacion": "El tiempo en un diagrama de secuencia fluye de arriba hacia abajo sobre cada participante. Selecciona el elemento que lo representa.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la LÍNEA DE VIDA de un objeto?",
+    "indicacion": "La línea de vida muestra el tiempo de existencia de un objeto durante la interacción. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
-        "texto": "El rectángulo de activación."
-      },
-      {
         "id": 0,
-        "texto": "La línea de vida, una línea vertical punteada bajo cada objeto."
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
       },
       {
         "id": 2,
-        "texto": "La elipse del caso de uso."
+        "nombre": "Línea de Vida",
+        "uso": "Línea punteada bajo un objeto en secuencia",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><rect x=\"8\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"25\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Cliente</text><line x1=\"25\" y1=\"22\" x2=\"25\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"58\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"75\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Sistema</text><line x1=\"75\" y1=\"22\" x2=\"75\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/></svg>"
+      },
+      {
+        "id": 1,
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
       },
       {
         "id": 3,
-        "texto": "El rombo de decisión."
+        "nombre": "Mensaje (Flecha)",
+        "uso": "Comunicación entre objetos",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"3\" y=\"10\" width=\"30\" height=\"20\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"18\" y=\"24\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"8\" font-weight=\"bold\">Usuario</text><line x1=\"33\" y1=\"20\" x2=\"60\" y2=\"20\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"60,15 72,20 60,25\" fill=\"#0f766e\"/><text x=\"52\" y=\"13\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"7\">solicitar()</text><rect x=\"72\" y=\"10\" width=\"25\" height=\"20\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"84\" y=\"24\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"8\" font-weight=\"bold\">Sistema</text></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Activación",
-    "titulo": "¿Cómo se representa la activación de un objeto en el diagrama de secuencia?",
-    "indicacion": "La activación indica el periodo durante el cual el objeto ejecuta una acción. Selecciona la notación UML correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa un MENSAJE entre objetos?",
+    "indicacion": "El mensaje indica que un objeto envía una solicitud a otro. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 0,
-        "texto": "Una línea vertical punteada."
+        "id": 1,
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre dos clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
       },
       {
         "id": 2,
-        "texto": "Una flecha etiquetada con <<include>>."
+        "nombre": "Línea de Vida",
+        "uso": "Línea punteada bajo un objeto en secuencia",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><rect x=\"8\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"25\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Cliente</text><line x1=\"25\" y1=\"22\" x2=\"25\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"58\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"75\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Sistema</text><line x1=\"75\" y1=\"22\" x2=\"75\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/></svg>"
       },
       {
-        "id": 1,
-        "texto": "Un rectángulo delgado superpuesto sobre la línea de vida."
+        "id": 0,
+        "nombre": "Mensaje (Flecha)",
+        "uso": "Comunicación entre objetos",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"3\" y=\"10\" width=\"30\" height=\"20\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"18\" y=\"24\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"8\" font-weight=\"bold\">Usuario</text><line x1=\"33\" y1=\"20\" x2=\"60\" y2=\"20\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"60,15 72,20 60,25\" fill=\"#0f766e\"/><text x=\"52\" y=\"13\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"7\">solicitar()</text><rect x=\"72\" y=\"10\" width=\"25\" height=\"20\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"84\" y=\"24\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"8\" font-weight=\"bold\">Sistema</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Un óvalo con el nombre del objeto."
+        "nombre": "Herencia (Flecha de triángulo)",
+        "uso": "Generalización entre clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Animal</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Perro</text><line x1=\"35\" y1=\"25\" x2=\"56\" y2=\"25\" stroke=\"#15803d\" stroke-width=\"2\"/><polygon points=\"56,17 70,25 56,33\" fill=\"white\" stroke=\"#15803d\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Mensaje",
-    "titulo": "¿Qué representa una flecha etiquetada que va del actor hacia un objeto en el diagrama de secuencia?",
-    "indicacion": "Las flechas entre participantes representan las interacciones del escenario. Selecciona el significado correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la ACTIVACIÓN de un objeto?",
+    "indicacion": "La activación indica el tiempo durante el cual un objeto ejecuta una operación. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Una relación de herencia."
+        "nombre": "Objeto (Rectángulo con nombre)",
+        "uso": "Participante de la interacción",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"8\" y=\"6\" width=\"84\" height=\"20\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"50\" y=\"19\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">: GestorPedidos</text><line x1=\"50\" y1=\"26\" x2=\"50\" y2=\"44\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/></svg>"
       },
       {
         "id": 1,
-        "texto": "Un atributo de la clase."
-      },
-      {
-        "id": 3,
-        "texto": "Una multiplicidad de la asociación."
+        "nombre": "Línea de Vida",
+        "uso": "Línea punteada bajo un objeto en secuencia",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><rect x=\"8\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"25\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Cliente</text><line x1=\"25\" y1=\"22\" x2=\"25\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"58\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"75\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Sistema</text><line x1=\"75\" y1=\"22\" x2=\"75\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/></svg>"
       },
       {
         "id": 2,
-        "texto": "Un mensaje que el actor envía al objeto."
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
+      },
+      {
+        "id": 3,
+        "nombre": "Activación (Barra sobre la línea de vida)",
+        "uso": "Tiempo de ejecución de una operación",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><rect x=\"8\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"25\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Cliente</text><line x1=\"25\" y1=\"22\" x2=\"25\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"21\" y=\"26\" width=\"8\" height=\"26\" fill=\"#be185d\"/><rect x=\"58\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"75\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Sistema</text><line x1=\"75\" y1=\"22\" x2=\"75\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"71\" y=\"30\" width=\"8\" height=\"22\" fill=\"#be185d\"/></svg>"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Mensaje de Retorno",
-    "titulo": "¿Qué tipo de mensaje se representa con una línea punteada y una flecha abierta?",
-    "indicacion": "Cuando un objeto responde a una solicitud anterior, se utiliza un tipo específico de mensaje. Selecciónalo.",
+    "categoria": "Diseño Lógico",
+    "tipo": "Orden Temporal",
+    "titulo": "En un diagrama de secuencia, ¿en qué orden se leen los mensajes?",
+    "indicacion": "El analista dibuja los mensajes del caso de uso 'Consultar Saldo'. Selecciona cómo debe leerse el orden de los mensajes.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
-        "texto": "Mensaje de retorno."
+        "id": 2,
+        "texto": "De arriba hacia abajo."
       },
       {
         "id": 0,
-        "texto": "Mensaje síncrono."
+        "texto": "De derecha a izquierda."
       },
       {
         "id": 1,
-        "texto": "Mensaje asíncrono."
+        "texto": "De abajo hacia arriba."
       },
       {
-        "id": 2,
-        "texto": "Mensaje de creación."
+        "id": 3,
+        "texto": "En orden alfabético por el nombre del mensaje."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Secuencia de Autenticación",
-    "titulo": "Prueba de escritorio: secuencia de autenticación de usuario",
-    "indicacion": "Ejecuta mentalmente la secuencia de mensajes del escenario de autenticación y determina el flujo resultante.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El actor Usuario envía ingresarCredenciales() a la clase Login",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Login envía validarUsuario() a la clase BaseDatos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "BaseDatos devuelve el resultado a Login",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Login devuelve la confirmación al Usuario",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: flujo de mensajes de la autenticación",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Elementos de la Interacción",
+    "titulo": "La línea vertical PUNTEADA que parte del rectángulo de un objeto representa...",
+    "indicacion": "En el diagrama de secuencia, bajo cada objeto se traza una línea vertical punteada. Selecciona qué representa.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "El Usuario recibe la confirmación antes de enviar las credenciales."
-      },
-      {
-        "id": 2,
-        "texto": "El flujo es: Usuario → Login → BaseDatos → Login → Usuario."
+        "texto": "La asociación con otra clase."
       },
       {
         "id": 1,
-        "texto": "El primer mensaje lo envía BaseDatos."
+        "texto": "La línea de vida del objeto durante la interacción."
+      },
+      {
+        "id": 2,
+        "texto": "La herencia entre los objetos."
       },
       {
         "id": 3,
-        "texto": "Los mensajes no tienen un orden definido en el diagrama."
+        "texto": "La frontera del sistema."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Fin de la Línea de Vida",
-    "titulo": "Prueba de escritorio: destrucción del objeto Pedido",
-    "indicacion": "Sigue paso a paso la construcción de la línea de vida del objeto Pedido y determina el significado del resultado.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Se crea el objeto Pedido a partir de la clase Pedido",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se dibuja su línea de vida vertical punteada",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El objeto recibe el mensaje calcularTotal()",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El objeto deja de existir al finalizar el escenario",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se dibuja una X al final de la línea de vida",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "La X indica el inicio del diagrama."
-      },
-      {
-        "id": 2,
-        "texto": "La X representa un mensaje de retorno."
-      },
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Elementos de la Interacción",
+    "titulo": "En el diagrama de secuencia de 'Consultar Saldo', el rectángulo con el nombre ':GestorCuentas' representa...",
+    "indicacion": "El analista dibuja el rectángulo ':GestorCuentas' en el diagrama de secuencia. Selecciona qué representa ese elemento.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "La X indica el momento en que el objeto es destruido."
+        "texto": "Un actor externo al sistema."
+      },
+      {
+        "id": 1,
+        "texto": "Un caso de uso del sistema."
       },
       {
         "id": 3,
-        "texto": "La X marca la ubicación del nombre del objeto."
+        "texto": "Un objeto del sistema que participa en la interacción."
+      },
+      {
+        "id": 2,
+        "texto": "Una clase abstracta."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Elaboración del Diagrama de Secuencia",
-    "titulo": "Ordena los pasos para elaborar el diagrama de secuencia",
-    "indicacion": "La elaboración inicia con la identificación del escenario y termina con la validación del diagrama. Ordena los bloques.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del Diagrama",
+    "titulo": "Construye el proceso: elaboración de un diagrama de secuencia",
+    "indicacion": "El analista va a modelar la interacción del caso de uso 'Registrar Pedido'. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -485,87 +449,27 @@
       },
       {
         "id": "b2",
-        "texto": "Identificar el escenario del caso de uso que se va a representar",
+        "texto": "Identificar los actores y objetos que participan en la interacción",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Identificar los actores y objetos participantes",
+        "texto": "Dibujar los rectángulos de los objetos con su línea de vida",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Colocar las líneas de vida en la parte superior del diagrama",
+        "texto": "Establecer los mensajes en orden temporal de arriba hacia abajo",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Dibujar los mensajes en orden cronológico",
+        "texto": "Dibujar las barras de activación sobre las líneas de vida",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Marcar las activaciones de cada objeto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Validar el diagrama con la especificación del caso de uso",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "ordenCorrecto": [
-      "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
-      "b6",
-      "b7",
-      "b8"
-    ]
-  },
-  {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Secuencia de Consulta de Saldo",
-    "titulo": "Ordena los bloques de la secuencia de consulta de saldo",
-    "indicacion": "La secuencia inicia con la solicitud del cliente y termina con la respuesta mostrada en pantalla. Ordena los bloques.",
-    "tipoComp": "ordenar_bloques",
-    "bloquesIniciales": [
-      {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "El actor Cliente envía consultarSaldo() al objeto Cajero",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "El objeto Cajero se activa al recibir el mensaje",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Cajero envía obtenerSaldo(cuenta) al objeto Cuenta",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Cuenta devuelve el saldo a Cajero",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Cajero muestra el saldo al Cliente",
+        "texto": "Revisar que el orden de los mensajes represente el caso de uso",
         "tipo": "salida"
       },
       {
@@ -585,11 +489,59 @@
     ]
   },
   {
+    "id": 8,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Escenario de la Interacción",
+    "titulo": "Construye el proceso: consulta de saldo en el cajero",
+    "indicacion": "El analista modela la consulta de saldo. Ordena los bloques del flujo correcto de mensajes.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "El actor 'Cliente' envía el mensaje consultarSaldo() al objeto ':Cajero'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "El objeto ':Cajero' solicita el saldo al objeto ':Cuenta'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "El objeto ':Cuenta' retorna el valor del saldo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "El objeto ':Cajero' muestra el saldo al cliente",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Mensaje Fuera de Orden",
-    "titulo": "Encuentra la falla: la respuesta se dibujó antes que la solicitud",
-    "indicacion": "En el diagrama de secuencia, el objeto Pedido devuelve los datos antes de recibir el mensaje de consulta. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Mensaje Mal Dibujado",
+    "titulo": "Encuentra la falla: el mensaje se dibujó sin punta de flecha",
+    "indicacion": "En el diagrama de secuencia, el mensaje de ':Cliente' hacia ':Sistema' se dibujó como una línea simple sin flecha. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -597,49 +549,49 @@
         "tipo": "inicio"
       },
       {
-        "label": "El actor Usuario aparece en la parte superior del diagrama",
+        "label": "Identificar los objetos ':Cliente' y ':Sistema'",
         "tipo": "proceso"
       },
       {
-        "label": "El objeto Pedido devuelve los datos al Usuario",
+        "label": "Determinar que ':Cliente' solicita un servicio a ':Sistema'",
         "tipo": "proceso"
       },
       {
-        "label": "Después se dibuja el mensaje consultarPedido() del Usuario hacia Pedido",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se valida el diagrama como correcto",
-        "tipo": "salida",
+        "label": "Dibujar el mensaje con una línea simple SIN punta de flecha (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Entregar el diagrama de secuencia",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "El orden es correcto porque la respuesta es lo más importante del escenario."
+        "texto": "Los mensajes no necesitan punta de flecha en UML."
       },
       {
         "id": 0,
-        "texto": "La respuesta no puede dibujarse antes que la solicitud; los mensajes siguen el orden del tiempo, de arriba hacia abajo."
+        "texto": "Los mensajes en el diagrama de secuencia se dibujan con punta de flecha que indica la dirección del envío."
       },
       {
         "id": 2,
-        "texto": "El error es que la clase Pedido no existe en el diagrama de clases."
+        "texto": "El error es que ':Sistema' no debe existir como objeto."
       },
       {
         "id": 3,
-        "texto": "Los mensajes en un diagrama de secuencia no tienen un orden definido."
+        "texto": "El error es que falta una línea de vida en el diagrama."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Activación Extendida",
-    "titulo": "Encuentra la falla: la activación cubre toda la línea de vida",
-    "indicacion": "En el diagrama, el objeto Factura presenta una activación desde el inicio aunque todavía no recibe mensajes. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Activación Mal Dibujada",
+    "titulo": "Encuentra la falla: la activación se dibujó como una elipse",
+    "indicacion": "En el diagrama de secuencia, la activación del objeto ':Cuenta' se dibujó con una elipse sobre la línea de vida. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -647,39 +599,39 @@
         "tipo": "inicio"
       },
       {
-        "label": "Objeto: Factura",
+        "label": "Dibujar el objeto ':Cuenta' con su línea de vida",
         "tipo": "proceso"
       },
       {
-        "label": "Se dibuja la activación desde el inicio del diagrama",
+        "label": "Determinar que ':Cuenta' procesa la solicitud de saldo",
         "tipo": "proceso"
       },
       {
-        "label": "La activación cubre toda la línea de vida, incluso antes del primer mensaje",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se entrega el diagrama como correcto",
-        "tipo": "salida",
+        "label": "Dibujar la activación como una ELIPSE sobre la línea de vida (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Validar el diagrama como correcto",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La activación es correcta porque todo objeto está activo todo el tiempo."
+        "texto": "La elipse se usa para los casos de uso, no para la activación."
       },
       {
         "id": 2,
-        "texto": "El error es que falta el rectángulo del sistema en el diagrama."
+        "texto": "La activación se dibuja con un rombo de decisión."
       },
       {
         "id": 1,
-        "texto": "La activación debe comenzar cuando el objeto recibe el primer mensaje y terminar cuando finaliza su ejecución; no debe cubrir toda la línea de vida."
+        "texto": "La activación se representa con un rectángulo delgado (barra) sobre la línea de vida del objeto."
       },
       {
         "id": 3,
-        "texto": "El diagrama está correcto tal como se elaboró."
+        "texto": "El error es que la línea de vida debe ser continua."
       }
     ],
     "correcta": 2
@@ -812,6 +764,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -871,6 +838,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1138,6 +1245,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1171,6 +1284,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

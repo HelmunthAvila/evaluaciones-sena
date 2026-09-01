@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la definición de la arquitectura de software bajo el patrón MVC: identificar las responsabilidades del Modelo, la Vista y el Controlador, comprender el flujo de una petición a través de las tres capas y reconocer las ventajas de esta arquitectura, mediante retos prácticos interactivos.
+          Pon en práctica la definición de la arquitectura del software con el patrón MVC en situaciones reales de diseño: identifica la capa del Modelo, la Vista y el Controlador en diagramas de arquitectura, decide qué responsabilidad corresponde a cada componente, ordena el flujo de una petición a través de las tres capas y corrige arquitecturas con responsabilidades mal asignadas. Sin teoría: aquí se demuestra definiendo la arquitectura.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los componentes del patrón MVC y las responsabilidades de cada capa.</li>
-<li><strong>Prueba de Escritorio:</strong> Recorrer paso a paso el flujo de una petición a través del Modelo, la Vista y el Controlador.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar el flujo de una petición y la estructura de carpetas de un proyecto MVC.</li>
-<li><strong>Depuración de Errores:</strong> Detectar responsabilidades mal asignadas y fallas en el flujo de la arquitectura MVC.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce la capa del Modelo, la Vista y el Controlador en el diagrama de arquitectura.</li>
+<li><strong>Diseño Lógico:</strong> Decide qué responsabilidad y qué flujo de petición corresponden a cada capa del patrón MVC.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla el flujo de una petición y la estructura de carpetas del proyecto MVC.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra responsabilidades mal asignadas y accesos indebidos entre las capas.</li>
           </ul>
         </div>
 
@@ -250,247 +250,212 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Responsabilidad del Modelo",
-    "titulo": "En el patrón MVC, ¿cuál es la responsabilidad del Modelo?",
-    "indicacion": "Cada capa del patrón MVC tiene una responsabilidad definida. Analiza las funciones de cada componente y selecciona la que corresponde al Modelo.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo representa la capa MODELO en la arquitectura MVC?",
+    "indicacion": "La capa Modelo gestiona los datos y las reglas de negocio de la aplicación. Selecciona el símbolo de arquitectura correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Mostrar los datos al usuario mediante formularios y tablas."
+        "nombre": "Capa Vista",
+        "uso": "Interfaz de usuario",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"11\" font-weight=\"bold\">VISTA</text><rect x=\"28\" y=\"32\" width=\"64\" height=\"10\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><rect x=\"28\" y=\"46\" width=\"44\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><rect x=\"28\" y=\"58\" width=\"58\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><text x=\"60\" y=\"76\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"8\">Interfaz de usuario</text></svg>"
       },
       {
         "id": 1,
-        "texto": "Gestionar los datos y las reglas de negocio de la aplicación."
+        "nombre": "Capa Modelo",
+        "uso": "Datos y reglas de negocio",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">MODELO</text><ellipse cx=\"60\" cy=\"46\" rx=\"18\" ry=\"9\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"42\" y1=\"46\" x2=\"42\" y2=\"60\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"78\" y1=\"46\" x2=\"78\" y2=\"60\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M42 60 A18 9 0 0 0 78 60\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"60\" y=\"74\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"8\">Datos y reglas de negocio</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Recibir las peticiones del usuario y decidir qué vista mostrar."
+        "nombre": "Capa Controlador",
+        "uso": "Coordina las peticiones",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"11\" font-weight=\"bold\">CONTROLADOR</text><path d=\"M26 48 L56 48 M56 48 L46 40 M56 48 L46 56\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"2\"/><rect x=\"64\" y=\"38\" width=\"28\" height=\"20\" rx=\"2\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"1.5\"/><text x=\"78\" y=\"51\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"7\">acción</text><text x=\"60\" y=\"74\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"8\">Coordina las peticiones</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Definir los estilos visuales de la interfaz."
+        "nombre": "Navegador",
+        "uso": "Cliente del usuario",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#f3f4f6\" stroke=\"#4b5563\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#374151\" font-size=\"11\" font-weight=\"bold\">NAVEGADOR</text><rect x=\"30\" y=\"32\" width=\"60\" height=\"34\" rx=\"2\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><circle cx=\"46\" cy=\"49\" r=\"7\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M53 57 Q59 45 70 53\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"60\" y=\"76\" text-anchor=\"middle\" fill=\"#374151\" font-size=\"8\">Cliente (usuario)</text></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Responsabilidad del Controlador",
-    "titulo": "¿Qué componente de MVC se encarga de recibir la petición del usuario y coordinar la respuesta?",
-    "indicacion": "El flujo de una petición MVC inicia en un componente específico. Selecciona el componente que cumple esa función.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo representa la capa CONTROLADOR en la arquitectura MVC?",
+    "indicacion": "El Controlador recibe la petición del usuario, coordina al Modelo y selecciona la Vista. Selecciona el símbolo de arquitectura correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "La Vista."
+        "nombre": "Capa Modelo",
+        "uso": "Datos y reglas de negocio",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">MODELO</text><ellipse cx=\"60\" cy=\"46\" rx=\"18\" ry=\"9\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"42\" y1=\"46\" x2=\"42\" y2=\"60\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"78\" y1=\"46\" x2=\"78\" y2=\"60\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M42 60 A18 9 0 0 0 78 60\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"60\" y=\"74\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"8\">Datos y reglas de negocio</text></svg>"
       },
       {
         "id": 1,
-        "texto": "El Modelo."
+        "nombre": "Capa Vista",
+        "uso": "Interfaz de usuario",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"11\" font-weight=\"bold\">VISTA</text><rect x=\"28\" y=\"32\" width=\"64\" height=\"10\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><rect x=\"28\" y=\"46\" width=\"44\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><rect x=\"28\" y=\"58\" width=\"58\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><text x=\"60\" y=\"76\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"8\">Interfaz de usuario</text></svg>"
       },
       {
         "id": 2,
-        "texto": "El Controlador."
+        "nombre": "Capa Controlador",
+        "uso": "Coordina las peticiones",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"11\" font-weight=\"bold\">CONTROLADOR</text><path d=\"M26 48 L56 48 M56 48 L46 40 M56 48 L46 56\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"2\"/><rect x=\"64\" y=\"38\" width=\"28\" height=\"20\" rx=\"2\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"1.5\"/><text x=\"78\" y=\"51\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"7\">acción</text><text x=\"60\" y=\"74\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"8\">Coordina las peticiones</text></svg>"
       },
       {
         "id": 3,
-        "texto": "La base de datos."
+        "nombre": "Navegador",
+        "uso": "Cliente del usuario",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#f3f4f6\" stroke=\"#4b5563\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#374151\" font-size=\"11\" font-weight=\"bold\">NAVEGADOR</text><rect x=\"30\" y=\"32\" width=\"60\" height=\"34\" rx=\"2\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><circle cx=\"46\" cy=\"49\" r=\"7\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M53 57 Q59 45 70 53\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"60\" y=\"76\" text-anchor=\"middle\" fill=\"#374151\" font-size=\"8\">Cliente (usuario)</text></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Ventaja de MVC",
-    "titulo": "¿Cuál es la principal ventaja de separar la Vista del Modelo en MVC?",
-    "indicacion": "La separación de capas aporta beneficios al mantenimiento del software. Selecciona la ventaja más representativa de esta arquitectura.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo representa la capa VISTA en la arquitectura MVC?",
+    "indicacion": "La Vista presenta la interfaz al usuario: formularios, tablas y reportes. Selecciona el símbolo de arquitectura correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 1,
-        "texto": "Elimina la necesidad de utilizar una base de datos."
+        "nombre": "Capa Modelo",
+        "uso": "Datos y reglas de negocio",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">MODELO</text><ellipse cx=\"60\" cy=\"46\" rx=\"18\" ry=\"9\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"42\" y1=\"46\" x2=\"42\" y2=\"60\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"78\" y1=\"46\" x2=\"78\" y2=\"60\" stroke=\"#0369a1\" stroke-width=\"2\"/><path d=\"M42 60 A18 9 0 0 0 78 60\" fill=\"none\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"60\" y=\"74\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"8\">Datos y reglas de negocio</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Garantiza que el sistema no tenga errores de programación."
+        "nombre": "Navegador",
+        "uso": "Cliente del usuario",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#f3f4f6\" stroke=\"#4b5563\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#374151\" font-size=\"11\" font-weight=\"bold\">NAVEGADOR</text><rect x=\"30\" y=\"32\" width=\"60\" height=\"34\" rx=\"2\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><circle cx=\"46\" cy=\"49\" r=\"7\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><path d=\"M53 57 Q59 45 70 53\" fill=\"none\" stroke=\"#4b5563\" stroke-width=\"1.5\"/><text x=\"60\" y=\"76\" text-anchor=\"middle\" fill=\"#374151\" font-size=\"8\">Cliente (usuario)</text></svg>"
       },
       {
         "id": 3,
-        "texto": "Hace que la aplicación funcione sin necesidad de un servidor."
+        "nombre": "Capa Controlador",
+        "uso": "Coordina las peticiones",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"11\" font-weight=\"bold\">CONTROLADOR</text><path d=\"M26 48 L56 48 M56 48 L46 40 M56 48 L46 56\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"2\"/><rect x=\"64\" y=\"38\" width=\"28\" height=\"20\" rx=\"2\" fill=\"none\" stroke=\"#b45309\" stroke-width=\"1.5\"/><text x=\"78\" y=\"51\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"7\">acción</text><text x=\"60\" y=\"74\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"8\">Coordina las peticiones</text></svg>"
       },
       {
         "id": 0,
-        "texto": "Permite modificar la interfaz sin cambiar la lógica de negocio y viceversa."
+        "nombre": "Capa Vista",
+        "uso": "Interfaz de usuario",
+        "svg": "<svg class=\"w-28 h-20\" viewBox=\"0 0 120 80\"><rect x=\"8\" y=\"4\" width=\"104\" height=\"72\" rx=\"4\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"60\" y=\"22\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"11\" font-weight=\"bold\">VISTA</text><rect x=\"28\" y=\"32\" width=\"64\" height=\"10\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><rect x=\"28\" y=\"46\" width=\"44\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><rect x=\"28\" y=\"58\" width=\"58\" height=\"8\" rx=\"2\" fill=\"none\" stroke=\"#15803d\" stroke-width=\"1.5\"/><text x=\"60\" y=\"76\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"8\">Interfaz de usuario</text></svg>"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Acceso a Datos",
-    "titulo": "En una aplicación web MVC, ¿qué componente consulta directamente la base de datos?",
-    "indicacion": "El acceso a los datos está encapsulado en una de las capas del patrón. Identifica cuál componente ejecuta las consultas a la base de datos.",
+    "categoria": "Diseño Lógico",
+    "tipo": "Responsabilidad de la Vista",
+    "titulo": "¿Cuál es la responsabilidad de la capa VISTA en el patrón MVC?",
+    "indicacion": "Cada capa cumple una función definida en la arquitectura. Identifica la responsabilidad que corresponde a la Vista.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
-        "texto": "El Modelo, que encapsula el acceso y la manipulación de los datos."
-      },
-      {
         "id": 0,
-        "texto": "La Vista, porque es la que muestra los datos."
+        "texto": "Presentar los datos al usuario mediante formularios, tablas y reportes."
       },
       {
         "id": 1,
-        "texto": "El Controlador, porque recibe la petición del usuario."
+        "texto": "Consultar directamente la base de datos para obtener los registros."
       },
       {
         "id": 2,
-        "texto": "El navegador del cliente."
+        "texto": "Definir las reglas de negocio del sistema."
+      },
+      {
+        "id": 3,
+        "texto": "Recibir la petición y decidir qué vista se muestra."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Flujo de Petición",
-    "titulo": "Prueba de escritorio: el usuario consulta el listado de clientes",
-    "indicacion": "Ejecuta mentalmente el flujo de una petición en una aplicación MVC y determina qué componente genera la respuesta final que ve el usuario.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El usuario solicita la opción listar clientes",
-        "tipo": "entrada"
-      },
-      {
-        "label": "El Controlador recibe y analiza la petición",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El Controlador llama al Modelo para obtener los clientes",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El Modelo consulta la base de datos y devuelve los registros",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El Controlador envía los datos a la Vista",
-        "tipo": "proceso"
-      },
-      {
-        "label": "La Vista genera el listado que se muestra al usuario",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Acceso a Datos",
+    "titulo": "¿Qué capa del patrón MVC accede directamente a la base de datos?",
+    "indicacion": "El acceso a los datos está encapsulado en una de las capas. Identifica cuál capa ejecuta las consultas.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "El Controlador muestra directamente el listado en el navegador."
-      },
-      {
-        "id": 1,
-        "texto": "El Modelo entrega los datos y la Vista renderiza el listado final que ve el usuario."
+        "texto": "La Vista, porque muestra los datos en pantalla."
       },
       {
         "id": 2,
-        "texto": "La base de datos envía los datos directamente al navegador del cliente."
+        "texto": "El Modelo, que encapsula el acceso y la manipulación de los datos."
+      },
+      {
+        "id": 1,
+        "texto": "El Controlador, porque recibe la petición del usuario."
       },
       {
         "id": 3,
-        "texto": "La petición termina sin respuesta porque falta el Modelo."
+        "texto": "El navegador del cliente."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Petición POST",
-    "titulo": "Prueba de escritorio: registro de un usuario desde el formulario",
-    "indicacion": "Recorre el flujo MVC de una petición de tipo POST y determina qué pantalla se presenta al final del proceso.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "El usuario envía el formulario de registro",
-        "tipo": "entrada"
-      },
-      {
-        "label": "El Controlador valida los datos recibidos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El Controlador invoca el método del Modelo para guardar",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El Modelo inserta el registro en la tabla usuarios",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El Controlador redirige a la Vista de confirmación",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 1,
-        "texto": "Se muestra el formulario vacío sin ningún mensaje."
-      },
-      {
-        "id": 2,
-        "texto": "El Modelo muestra directamente el mensaje de confirmación."
-      },
+    "categoria": "Diseño Lógico",
+    "tipo": "Ventaja de MVC",
+    "titulo": "¿Cuál es la principal ventaja de separar las capas en el patrón MVC?",
+    "indicacion": "La separación de responsabilidades aporta beneficios al mantenimiento del software. Selecciona la ventaja más representativa.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Se muestra la Vista de confirmación del registro."
+        "texto": "Garantiza que la aplicación no tenga errores de programación."
+      },
+      {
+        "id": 1,
+        "texto": "Elimina la necesidad de utilizar una base de datos."
       },
       {
         "id": 3,
-        "texto": "El navegador ejecuta el guardado sin pasar por el Controlador."
+        "texto": "Permite modificar la interfaz o la lógica de negocio de forma independiente, facilitando el mantenimiento."
+      },
+      {
+        "id": 2,
+        "texto": "Hace que la aplicación funcione sin servidor web."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Flujo de Petición MVC",
     "titulo": "Ordena el flujo de una petición en una aplicación MVC",
-    "indicacion": "Ordena los bloques del flujo MVC: la petición inicia en el navegador, pasa por el Controlador y el Modelo, y termina cuando la Vista genera la respuesta. Incluye inicio y fin.",
+    "indicacion": "El usuario solicita el listado de clientes desde el navegador. Ordena los bloques para construir el flujo correcto de la petición.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
+      {
+        "id": "b4",
+        "texto": "El Controlador consulta al Modelo",
+        "tipo": "proceso"
+      },
       {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "El usuario realiza una petición desde el navegador",
-        "tipo": "entrada"
+        "id": "b7",
+        "texto": "La Vista genera el listado que ve el usuario",
+        "tipo": "salida"
       },
       {
         "id": "b3",
@@ -498,29 +463,24 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "El Controlador consulta al Modelo",
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "El Controlador envía los datos a la Vista",
         "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "El usuario realiza la petición desde el navegador",
+        "tipo": "entrada"
       },
       {
         "id": "b5",
         "texto": "El Modelo obtiene los datos desde la base de datos",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "El Controlador selecciona la Vista y le envía los datos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "La Vista genera la respuesta que se muestra al usuario",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -536,16 +496,16 @@
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Estructura de Carpetas",
-    "titulo": "Ordena la estructura de carpetas de un proyecto MVC",
-    "indicacion": "Organiza los pasos para crear la estructura del proyecto MVC: se crean las carpetas de las tres capas, se ubican los archivos correspondientes y se verifica la separación. Incluye inicio y fin.",
+    "titulo": "Ordena la creación de la estructura de carpetas de un proyecto MVC",
+    "indicacion": "El equipo inicia el proyecto MVC. Ordena los bloques para crear la estructura de carpetas de las tres capas y ubicar los archivos.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b6",
+        "texto": "Verificar que ninguna capa acceda directamente a los datos de otra",
+        "tipo": "salida"
       },
       {
         "id": "b2",
@@ -553,9 +513,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "Crear la carpeta vistas",
-        "tipo": "proceso"
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -563,24 +523,24 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Ubicar las plantillas de interfaz en la carpeta vistas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "Ubicar las clases de acceso a datos en la carpeta modelos",
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Ubicar las plantillas de interfaz en la carpeta vistas",
+        "id": "b3",
+        "texto": "Crear la carpeta vistas",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Verificar la separación de las tres capas del proyecto",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -596,8 +556,8 @@
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Responsabilidad Mal Asignada",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Acceso Indebido",
     "titulo": "Encuentra la falla: la Vista consulta directamente la base de datos",
     "indicacion": "El diagrama del flujo MVC contiene una responsabilidad mal asignada. Recorre los pasos e identifica la falla.",
     "tipoComp": "depuracion_diagrama",
@@ -627,27 +587,27 @@
     "opciones": [
       {
         "id": 0,
-        "texto": "El flujo es correcto porque la Vista es la que muestra los datos."
+        "texto": "La Vista debe ejecutar las consultas SQL porque es la que muestra los datos."
       },
       {
         "id": 1,
-        "texto": "La Vista no debe acceder a la base de datos; la consulta debe realizarla el Modelo a través del Controlador."
+        "texto": "La Vista no debe acceder a la base de datos; la consulta la realiza el Modelo a través del Controlador."
       },
       {
         "id": 2,
-        "texto": "Falta una swimlane para el usuario en el diagrama."
+        "texto": "El error es que falta una petición del navegador al inicio del flujo."
       },
       {
         "id": 3,
-        "texto": "El error es que el Controlador no genera la vista de detalle."
+        "texto": "El flujo es correcto, pero falta el cálculo del total del pedido."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Lógica de Negocio en el Controlador",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Responsabilidad Mal Asignada",
     "titulo": "Encuentra la falla: el Controlador concentra toda la lógica de negocio",
     "indicacion": "El equipo implementó el cálculo del IVA y la validación del pago dentro del Controlador. Revisa los pasos e identifica el error de diseño.",
     "tipoComp": "depuracion_diagrama",
@@ -689,7 +649,7 @@
       },
       {
         "id": 3,
-        "texto": "El diagrama está correcto porque el Controlador gestiona los datos."
+        "texto": "El diagrama es correcto porque el Controlador gestiona los datos."
       }
     ],
     "correcta": 2
@@ -822,6 +782,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -881,6 +856,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1148,6 +1263,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1181,6 +1302,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la integración del diseño de la solución de software: articular los diagramas UML, el modelo de datos, las interfaces de usuario y la arquitectura en una propuesta coherente, verificar la consistencia entre los artefactos y consolidar el documento de diseño, mediante retos prácticos interactivos.
+          Demuestra tus competencias en la integración del diseño de la solución de software: unir los diagramas UML, el modelo de datos, las interfaces de usuario y la arquitectura en una propuesta coherente, verificar la consistencia entre los artefactos y consolidar el documento de diseño, mediante retos prácticos interactivos.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Diseño Lógico:</strong> Relacionar los artefactos de diseño (casos de uso, clases, modelo de datos y UI) en una propuesta coherente.</li>
+            <li><strong>Usar Figma:</strong> Identificar los artefactos de diseño (casos de uso, clases, modelo de datos y UI) que deben integrarse en la propuesta.</li>
 <li><strong>Prueba de Escritorio:</strong> Recorrer la integración de un caso de uso y verificar la consistencia entre los artefactos.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para integrar y consolidar la propuesta de diseño.</li>
-<li><strong>Depuración de Errores:</strong> Detectar inconsistencias entre los diagramas, el modelo de datos y las interfaces.</li>
+<li><strong>Ordenar el Proceso:</strong> Ordenar los pasos para integrar y consolidar la propuesta de diseño.</li>
+<li><strong>Corregir el Diseño:</strong> Detectar inconsistencias entre los diagramas, el modelo de datos y las interfaces.</li>
           </ul>
         </div>
 
@@ -250,10 +250,10 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Diseño Lógico",
+    "categoria": "Usar Figma",
     "tipo": "Artefacto de Verificación",
     "titulo": "¿Qué artefacto permite verificar que cada requisito del sistema se materializó en algún elemento del diseño?",
-    "indicacion": "La integración del diseño exige comprobar que ningún requisito quede sin atender. Selecciona el artefacto que relaciona los requisitos con los elementos del diseño.",
+    "indicacion": "La integración del diseño exige comprobar que ningún requisito quede sin atender. Selecciona el artefacto que relaciona cada requisito con su elemento de diseño.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
@@ -277,7 +277,7 @@
   },
   {
     "id": 2,
-    "categoria": "Diseño Lógico",
+    "categoria": "Usar Figma",
     "tipo": "Consistencia de Artefactos",
     "titulo": "El diagrama de clases define la entidad Producto con los atributos id, nombre, precio y stock. ¿Dónde deben reflejarse los mismos campos para que el diseño sea coherente?",
     "indicacion": "Para que la propuesta sea coherente, los elementos definidos en un artefacto deben aparecer en los artefactos relacionados. Selecciona el artefacto que debe contener los mismos atributos.",
@@ -304,7 +304,7 @@
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
+    "categoria": "Usar Figma",
     "tipo": "Diagrama de Interacción",
     "titulo": "¿Qué diagrama UML se utiliza para validar el orden de las interacciones entre el usuario, la interfaz y el sistema descritas en un caso de uso?",
     "indicacion": "Cada diagrama UML tiene un propósito. Identifica el diagrama que representa el intercambio de mensajes entre objetos a lo largo del tiempo.",
@@ -331,7 +331,7 @@
   },
   {
     "id": 4,
-    "categoria": "Diseño Lógico",
+    "categoria": "Usar Figma",
     "tipo": "Coherencia UI-Modelo",
     "titulo": "El formulario de registro de clientes de la interfaz debe mostrar los datos del cliente. ¿Qué regla garantiza la coherencia entre la interfaz y el modelo de datos?",
     "indicacion": "La interfaz de usuario no se diseña de forma aislada. Selecciona la regla que asegura la coherencia entre el formulario y la base de datos.",
@@ -468,7 +468,7 @@
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Consolidación de la Propuesta",
     "titulo": "Ordena los pasos para integrar y consolidar la propuesta de diseño",
     "indicacion": "La integración inicia con la revisión de los requisitos y termina con la consolidación de todos los artefactos. Ordena los bloques correctamente.",
@@ -481,28 +481,28 @@
       },
       {
         "id": "b2",
-        "texto": "Revisar los requisitos funcionales y no funcionales del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Verificar que los diagramas UML cubren los casos de uso definidos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Validar que el modelo de datos corresponde a las clases del diagrama",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
         "texto": "Comprobar que las interfaces incluyen los campos del modelo de datos",
         "tipo": "proceso"
       },
       {
-        "id": "b6",
+        "id": "b3",
+        "texto": "Validar que el modelo de datos corresponde a las clases del diagrama",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
         "texto": "Consolidar todos los artefactos en el documento de diseño de la solución",
         "tipo": "salida"
+      },
+      {
+        "id": "b5",
+        "texto": "Verificar que los diagramas UML cubren los casos de uso definidos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Revisar los requisitos funcionales y no funcionales del sistema",
+        "tipo": "proceso"
       },
       {
         "id": "b7",
@@ -512,17 +512,17 @@
     ],
     "ordenCorrecto": [
       "b1",
-      "b2",
-      "b3",
-      "b4",
-      "b5",
       "b6",
+      "b5",
+      "b3",
+      "b2",
+      "b4",
       "b7"
     ]
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Flujo de Integración",
     "titulo": "Ordena el flujo de integración de un caso de uso en la propuesta de diseño",
     "indicacion": "Cada caso de uso se integra desde su representación en el diagrama de secuencia hasta la verificación de coherencia. Ordena los bloques para reconstruir el flujo.",
@@ -535,22 +535,22 @@
       },
       {
         "id": "b2",
-        "texto": "Identificar el caso de uso: registrar pedido",
-        "tipo": "proceso"
+        "texto": "Verificar la coherencia entre todos los artefactos",
+        "tipo": "salida"
       },
       {
         "id": "b3",
-        "texto": "Representar la interacción en el diagrama de secuencia",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
         "texto": "Definir el método registrarPedido en la clase controladora",
         "tipo": "proceso"
       },
       {
+        "id": "b4",
+        "texto": "Identificar el caso de uso: registrar pedido",
+        "tipo": "proceso"
+      },
+      {
         "id": "b5",
-        "texto": "Crear la tabla pedidos en el modelo de datos",
+        "texto": "Representar la interacción en el diagrama de secuencia",
         "tipo": "proceso"
       },
       {
@@ -560,8 +560,8 @@
       },
       {
         "id": "b7",
-        "texto": "Verificar la coherencia entre todos los artefactos",
-        "tipo": "salida"
+        "texto": "Crear la tabla pedidos en el modelo de datos",
+        "tipo": "proceso"
       },
       {
         "id": "b8",
@@ -571,18 +571,18 @@
     ],
     "ordenCorrecto": [
       "b1",
-      "b2",
-      "b3",
       "b4",
       "b5",
-      "b6",
+      "b3",
       "b7",
+      "b6",
+      "b2",
       "b8"
     ]
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
+    "categoria": "Corregir el Diseño",
     "tipo": "Inconsistencia UI-Modelo",
     "titulo": "Encuentra la falla: el formulario de pedido no incluye el campo cliente",
     "indicacion": "Durante la integración se aprobó la interfaz sin verificar su coherencia con el modelo de datos. Revisa los pasos e identifica la falla.",
@@ -628,7 +628,7 @@
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
+    "categoria": "Corregir el Diseño",
     "tipo": "Método Inexistente",
     "titulo": "Encuentra la falla: el diagrama de secuencia llama un método que no existe",
     "indicacion": "La integración exige que los mensajes del diagrama de secuencia correspondan a los métodos del diagrama de clases. Revisa los pasos e identifica la falla.",
@@ -800,6 +800,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -859,6 +874,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1126,6 +1281,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1159,6 +1320,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

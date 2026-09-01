@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la elaboración de diagramas de clases: definir clases con sus atributos y métodos, aplicar los símbolos de visibilidad, y representar asociaciones, herencia y multiplicidades, mediante retos prácticos interactivos.
+          Pon en práctica la elaboración de diagramas de clases en situaciones reales de diseño: identifica los símbolos UML de clase, asociación, herencia y multiplicidad, decide la visibilidad correcta de atributos y métodos (+ - #), ordena el proceso de construcción del diagrama y corrige diagramas con relaciones mal dibujadas. Sin teoría: aquí se demuestra modelando.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar los elementos del diagrama de clases y los símbolos de visibilidad UML.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la construcción de la estructura de clases y predecir el resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para elaborar el diagrama de clases y definir sus miembros.</li>
-<li><strong>Depuración de Errores:</strong> Detectar símbolos de visibilidad y multiplicidades incorrectos en el diagrama, y aplicar la corrección adecuada.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce el símbolo UML correcto para clase, asociación, herencia y multiplicidad.</li>
+<li><strong>Diseño Lógico:</strong> Decide la visibilidad de atributos y métodos y el significado de la multiplicidad.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para elaborar un diagrama de clases.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra relaciones mal dibujadas y visibilidades incorrectas en el diagrama.</li>
           </ul>
         </div>
 
@@ -250,232 +250,196 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Visibilidad Privada",
-    "titulo": "¿Qué símbolo indica visibilidad PRIVADA en un diagrama de clases UML?",
-    "indicacion": "La visibilidad privada restringe el acceso a los miembros de la clase. Selecciona el símbolo UML correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa una CLASE con sus tres secciones?",
+    "indicacion": "La clase describe la estructura de un objeto con su nombre, sus atributos y sus métodos. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "+"
-      },
-      {
-        "id": 1,
-        "texto": "-"
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
       },
       {
         "id": 2,
-        "texto": "#"
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
+      },
+      {
+        "id": 1,
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre dos clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
       },
       {
         "id": 3,
-        "texto": "~"
+        "nombre": "Herencia (Flecha de triángulo)",
+        "uso": "Generalización entre clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Animal</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Perro</text><line x1=\"35\" y1=\"25\" x2=\"56\" y2=\"25\" stroke=\"#15803d\" stroke-width=\"2\"/><polygon points=\"56,17 70,25 56,33\" fill=\"white\" stroke=\"#15803d\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Visibilidad Protegida",
-    "titulo": "¿Qué símbolo indica visibilidad PROTEGIDA en un diagrama de clases UML?",
-    "indicacion": "La visibilidad protegida permite el acceso a las subclases. Selecciona el símbolo UML correcto.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la HERENCIA entre clases?",
+    "indicacion": "La herencia indica que una clase (subclase) hereda los atributos y métodos de otra (superclase). Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "-"
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
       },
       {
         "id": 1,
-        "texto": "+"
-      },
-      {
-        "id": 2,
-        "texto": "#"
+        "nombre": "Asociación (Línea)",
+        "uso": "Relación entre dos clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><line x1=\"35\" y1=\"25\" x2=\"65\" y2=\"25\" stroke=\"#b45309\" stroke-width=\"2\"/></svg>"
       },
       {
         "id": 3,
-        "texto": "*"
+        "nombre": "Herencia (Flecha de triángulo)",
+        "uso": "Generalización entre clases",
+        "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"3\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"19\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Animal</text><rect x=\"65\" y=\"10\" width=\"32\" height=\"30\" rx=\"2\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"81\" y=\"28\" text-anchor=\"middle\" fill=\"#15803d\" font-size=\"8\" font-weight=\"bold\">Perro</text><line x1=\"35\" y1=\"25\" x2=\"56\" y2=\"25\" stroke=\"#15803d\" stroke-width=\"2\"/><polygon points=\"56,17 70,25 56,33\" fill=\"white\" stroke=\"#15803d\" stroke-width=\"2\"/></svg>"
+      },
+      {
+        "id": 2,
+        "nombre": "Actor (Figura de Palo)",
+        "uso": "Interactúa con el sistema desde el exterior",
+        "svg": "<svg class=\"w-20 h-24\" viewBox=\"0 0 80 96\"><circle cx=\"40\" cy=\"16\" r=\"11\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"27\" x2=\"40\" y2=\"58\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"22\" y1=\"40\" x2=\"58\" y2=\"40\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"27\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"58\" x2=\"53\" y2=\"84\" stroke=\"#0f766e\" stroke-width=\"2.5\"/><text x=\"40\" y=\"93\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"11\" font-weight=\"bold\">Actor</text></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
-    "tipo": "Herencia",
-    "titulo": "¿Cómo se representa la herencia (generalización) en un diagrama de clases?",
-    "indicacion": "La herencia vincula una clase hija con su clase padre. Selecciona la notación UML correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo UML representa la MULTIPLICIDAD de una asociación?",
+    "indicacion": "La multiplicidad indica cuántas instancias de una clase se relacionan con las de otra. Selecciona el símbolo UML correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Una línea con un rombo relleno en el extremo de la clase hija."
+        "id": 0,
+        "nombre": "Clase (Rectángulo de 3 secciones)",
+        "uso": "Nombre, atributos y métodos",
+        "svg": "<svg class=\"w-24 h-20\" viewBox=\"0 0 110 84\"><rect x=\"8\" y=\"4\" width=\"94\" height=\"76\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"26\" x2=\"102\" y2=\"26\" stroke=\"#0369a1\" stroke-width=\"2\"/><line x1=\"8\" y1=\"52\" x2=\"102\" y2=\"52\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"55\" y=\"19\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">Cliente</text><text x=\"14\" y=\"40\" fill=\"#0c4a6e\" font-size=\"9\">- nombre</text><text x=\"14\" y=\"50\" fill=\"#0c4a6e\" font-size=\"9\">- telefono</text><text x=\"14\" y=\"65\" fill=\"#0c4a6e\" font-size=\"9\">+ registrar()</text><text x=\"14\" y=\"75\" fill=\"#0c4a6e\" font-size=\"9\">+ consultar()</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Una línea punteada con una flecha abierta."
+        "nombre": "Línea de Vida",
+        "uso": "Línea punteada bajo un objeto en secuencia",
+        "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><rect x=\"8\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"25\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Cliente</text><line x1=\"25\" y1=\"22\" x2=\"25\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/><rect x=\"58\" y=\"4\" width=\"34\" height=\"18\" rx=\"2\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"75\" y=\"16\" text-anchor=\"middle\" fill=\"#be185d\" font-size=\"9\" font-weight=\"bold\">Sistema</text><line x1=\"75\" y1=\"22\" x2=\"75\" y2=\"60\" stroke=\"#be185d\" stroke-width=\"1.5\" stroke-dasharray=\"4,3\"/></svg>"
       },
       {
         "id": 3,
-        "texto": "Una línea continua sin ninguna decoración."
+        "nombre": "Caso de Uso (Elipse)",
+        "uso": "Funcionalidad que el sistema ofrece al actor",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 120 56\"><ellipse cx=\"60\" cy=\"28\" rx=\"55\" ry=\"22\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"60\" y=\"32\" text-anchor=\"middle\" fill=\"#5b21b6\" font-size=\"10\" font-weight=\"bold\">Registrar Pedido</text></svg>"
       },
       {
-        "id": 0,
-        "texto": "Una línea con un triángulo vacío que apunta hacia la clase padre."
+        "id": 1,
+        "nombre": "Multiplicidad (1 y 1..*)",
+        "uso": "Cuántas instancias se relacionan en la asociación",
+        "svg": "<svg class=\"w-28 h-14\" viewBox=\"0 0 130 56\"><rect x=\"3\" y=\"14\" width=\"40\" height=\"34\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"23\" y=\"34\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Cliente</text><text x=\"23\" y=\"12\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">1</text><line x1=\"43\" y1=\"31\" x2=\"87\" y2=\"31\" stroke=\"#b45309\" stroke-width=\"2\"/><rect x=\"87\" y=\"14\" width=\"40\" height=\"34\" rx=\"2\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"107\" y=\"34\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">Pedido</text><text x=\"107\" y=\"12\" text-anchor=\"middle\" fill=\"#b45309\" font-size=\"8\" font-weight=\"bold\">1..*</text></svg>"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Multiplicidad",
-    "titulo": "En la asociación Cliente — Pedido, la multiplicidad 1..* en el extremo de Pedido indica que...",
-    "indicacion": "La multiplicidad define cuántas instancias participan en la asociación. Analiza el significado del valor 1..*.",
+    "categoria": "Diseño Lógico",
+    "tipo": "Visibilidad de Atributos",
+    "titulo": "En UML, el símbolo '-' delante de un atributo indica visibilidad...",
+    "indicacion": "El analista define el atributo 'saldo' de la clase 'Cuenta' con el símbolo '-'. Selecciona el significado correcto de esa visibilidad.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Un cliente puede tener uno o muchos pedidos."
+        "id": 0,
+        "texto": "Privada: el atributo solo es accesible desde la propia clase."
       },
       {
-        "id": 0,
-        "texto": "Un pedido pertenece a varios clientes."
+        "id": 1,
+        "texto": "Pública: el atributo es accesible desde cualquier clase."
       },
       {
         "id": 2,
-        "texto": "Un cliente solo puede tener un pedido."
+        "texto": "Protegida: el atributo es accesible desde la clase y sus subclases."
       },
       {
         "id": 3,
-        "texto": "Los pedidos no pueden asociarse a clientes."
+        "texto": "De paquete: el atributo solo es accesible en el mismo paquete."
       }
     ],
     "correcta": 0
   },
   {
     "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Notación de Atributos",
-    "titulo": "Prueba de escritorio: notación de los miembros de la clase Libro",
-    "indicacion": "Ejecuta mentalmente la construcción de la clase Libro y determina cómo se representa el atributo privado titulo.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Clase: Libro",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Atributo titulo de tipo String con acceso privado",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Atributo autor de tipo String con acceso privado",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Método getTitulo() con acceso público",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: notación de la clase Libro",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Diseño Lógico",
+    "tipo": "Multiplicidad",
+    "titulo": "La asociación 'Cliente 1 --- 1..* Pedido' indica que...",
+    "indicacion": "El analista dibujó la asociación entre 'Cliente' y 'Pedido' con multiplicidad 1 y 1..*. Selecciona el significado correcto.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "+ titulo: String"
-      },
-      {
-        "id": 2,
-        "texto": "- titulo: String"
+        "texto": "Un pedido pertenece a uno o muchos clientes."
       },
       {
         "id": 1,
-        "texto": "titulo: String (sin símbolo de visibilidad)"
+        "texto": "Un cliente puede realizar uno o muchos pedidos."
+      },
+      {
+        "id": 2,
+        "texto": "Un cliente realiza exactamente un pedido."
       },
       {
         "id": 3,
-        "texto": "# titulo: String"
+        "texto": "Muchos clientes comparten exactamente un pedido."
       }
     ],
     "correcta": 1
   },
   {
     "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Herencia de Métodos",
-    "titulo": "Prueba de escritorio: herencia entre Vehiculo y sus subclases",
-    "indicacion": "Sigue paso a paso el modelo de herencia y determina qué comparten las clases derivadas.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Clase base: Vehiculo con el método público acelerar()",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Clase derivada: Moto",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Clase derivada: Carro",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se dibuja la generalización de Moto y Carro hacia Vehiculo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: comportamiento de las clases derivadas",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Estructura de la Clase",
+    "titulo": "En el rectángulo de la clase 'Empleado', la sección INTERMEDIA contiene...",
+    "indicacion": "El analista dibuja la clase 'Empleado' con sus tres secciones. Selecciona qué elemento va en la sección intermedia.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Moto y Carro no comparten ningún miembro con Vehiculo."
-      },
-      {
-        "id": 2,
-        "texto": "Vehiculo hereda los métodos de Moto y Carro."
+        "texto": "El nombre de la clase."
       },
       {
         "id": 1,
-        "texto": "Moto y Carro heredan el método acelerar() de la clase Vehiculo."
+        "texto": "Los métodos de la clase."
+      },
+      {
+        "id": 2,
+        "texto": "Los atributos de la clase."
       },
       {
         "id": 3,
-        "texto": "La herencia no se representa en los diagramas de clases."
+        "texto": "Las asociaciones con otras clases."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Elaboración del Diagrama de Clases",
-    "titulo": "Ordena los pasos para elaborar el diagrama de clases del sistema",
-    "indicacion": "La elaboración inicia con la identificación de las clases y termina con la validación del diagrama. Ordena los bloques.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Elaboración del Diagrama",
+    "titulo": "Construye el proceso: elaboración de un diagrama de clases",
+    "indicacion": "El analista va a modelar las clases del sistema de pedidos. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -485,32 +449,32 @@
       },
       {
         "id": "b2",
-        "texto": "Identificar las clases a partir de los requisitos del sistema",
+        "texto": "Identificar las clases del sistema a partir de los requisitos",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Determinar los atributos y métodos de cada clase",
+        "texto": "Definir los atributos de cada clase con su visibilidad",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Definir la visibilidad de cada atributo y método",
+        "texto": "Definir los métodos de cada clase",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Establecer las asociaciones y las multiplicidades",
+        "texto": "Dibujar las asociaciones entre clases con su multiplicidad",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Identificar las relaciones de herencia entre clases",
+        "texto": "Dibujar la herencia entre las clases relacionadas",
         "tipo": "proceso"
       },
       {
         "id": "b7",
-        "texto": "Validar el diagrama con el equipo de desarrollo",
+        "texto": "Revisar que el diagrama represente correctamente el sistema",
         "tipo": "salida"
       },
       {
@@ -532,10 +496,10 @@
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Construcción de la Clase Cliente",
-    "titulo": "Ordena los bloques para construir la clase Cliente en el diagrama",
-    "indicacion": "La construcción de la clase inicia con el nombre de la clase y termina con la verificación de sus miembros. Ordena los bloques.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Definición de Herencia",
+    "titulo": "Construye el proceso: definir la herencia entre 'Vehículo' y 'Carro'",
+    "indicacion": "El analista modela la relación de herencia entre las clases 'Vehículo' y 'Carro'. Ordena los bloques.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
@@ -545,36 +509,31 @@
       },
       {
         "id": "b2",
-        "texto": "Nombre de la clase: Cliente",
+        "texto": "Identificar que 'Carro' es un tipo de 'Vehículo'",
         "tipo": "proceso"
       },
       {
         "id": "b3",
-        "texto": "Atributo privado nombre: String",
+        "texto": "Definir los atributos comunes en la clase 'Vehículo'",
         "tipo": "proceso"
       },
       {
         "id": "b4",
-        "texto": "Atributo privado cedula: String",
+        "texto": "Definir los atributos propios en la clase 'Carro'",
         "tipo": "proceso"
       },
       {
         "id": "b5",
-        "texto": "Método público consultarHistorial()",
+        "texto": "Dibujar la flecha de triángulo vacío desde 'Carro' hacia 'Vehículo'",
         "tipo": "proceso"
       },
       {
         "id": "b6",
-        "texto": "Método público registrarCompra()",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Resultado: clase Cliente construida y verificada",
+        "texto": "Verificar que los métodos heredados se reutilicen",
         "tipo": "salida"
       },
       {
-        "id": "b8",
+        "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
       }
@@ -586,16 +545,15 @@
       "b4",
       "b5",
       "b6",
-      "b7",
-      "b8"
+      "b7"
     ]
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Visibilidad Incorrecta",
-    "titulo": "Encuentra la falla: el método consultarSaldo() se marcó como privado",
-    "indicacion": "En la clase CuentaBancaria, el método consultarSaldo() debe ser invocado desde la interfaz de usuario, pero se marcó con el símbolo -. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Herencia Mal Dibujada",
+    "titulo": "Encuentra la falla: la herencia se dibujó como una asociación simple",
+    "indicacion": "En el diagrama de clases, la relación entre 'Vehículo' y 'Carro' se dibujó con una línea de asociación, pero 'Carro' ES un tipo de 'Vehículo'. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -603,53 +561,49 @@
         "tipo": "inicio"
       },
       {
-        "label": "Clase: CuentaBancaria",
+        "label": "Identificar las clases 'Vehículo' y 'Carro'",
         "tipo": "proceso"
       },
       {
-        "label": "Atributo - saldo: double",
+        "label": "Determinar que 'Carro' hereda de 'Vehículo'",
         "tipo": "proceso"
       },
       {
-        "label": "Método - consultarSaldo(): double",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El método debe ser invocado desde la interfaz de usuario",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se valida el diagrama como correcto",
-        "tipo": "salida",
+        "label": "Dibujar la relación con una línea de asociación simple (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Validar el diagrama como correcto",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "El atributo saldo debía marcarse como público (+)."
+        "id": 1,
+        "texto": "La asociación simple es la notación correcta para la herencia."
       },
       {
-        "id": 1,
-        "texto": "El método consultarSaldo() está marcado como privado (-) y debe ser público (+), porque se invoca desde la interfaz de usuario."
+        "id": 0,
+        "texto": "La herencia se representa con una flecha de triángulo vacío desde la subclase hacia la superclase, no con una asociación simple."
       },
       {
         "id": 2,
-        "texto": "La clase CuentaBancaria no debe contener métodos."
+        "texto": "El error es que 'Carro' no debe heredar de 'Vehículo'."
       },
       {
         "id": 3,
-        "texto": "El diagrama está correcto tal como se elaboró."
+        "texto": "El error es que falta la multiplicidad en la asociación."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Multiplicidad Invertida",
-    "titulo": "Encuentra la falla: la multiplicidad de la asociación Cliente — Pedido",
-    "indicacion": "En el diagrama, la multiplicidad en el extremo de Pedido se definió como 1, indicando que un cliente tiene exactamente un pedido. Revisa los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Visibilidad Incorrecta",
+    "titulo": "Encuentra la falla: un atributo sensible se declaró con visibilidad pública",
+    "indicacion": "En el diagrama de clases, el atributo 'clave' de la clase 'Usuario' se declaró con el símbolo '+'. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -657,43 +611,39 @@
         "tipo": "inicio"
       },
       {
-        "label": "Asociación entre Cliente y Pedido",
+        "label": "Identificar el atributo 'clave' de la clase 'Usuario'",
         "tipo": "proceso"
       },
       {
-        "label": "Multiplicidad en el extremo de Cliente: 1",
+        "label": "Definir que 'clave' solo debe ser accesible desde la propia clase",
         "tipo": "proceso"
       },
       {
-        "label": "Multiplicidad en el extremo de Pedido: 1",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se interpreta que un cliente solo puede tener un pedido",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Se entrega el diagrama como correcto",
-        "tipo": "salida",
+        "label": "Declarar el atributo con el símbolo '+' (público) (ERROR)",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Entregar el diagrama de clases",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
+        "id": 0,
+        "texto": "El símbolo '+' significa protegido, que es la visibilidad correcta para 'clave'."
+      },
+      {
         "id": 1,
-        "texto": "La multiplicidad es correcta porque cada pedido pertenece a un solo cliente."
+        "texto": "El error es que la clase 'Usuario' no debe tener atributos."
       },
       {
         "id": 2,
-        "texto": "El error es que los atributos no tienen símbolo de visibilidad."
-      },
-      {
-        "id": 0,
-        "texto": "La multiplicidad en el extremo de Pedido debe ser 0..* (o 1..*), porque un cliente puede registrar muchos pedidos."
+        "texto": "El símbolo '+' significa público y expone el atributo a todas las clases; la visibilidad correcta es '-' (privado)."
       },
       {
         "id": 3,
-        "texto": "La asociación debía representarse como una herencia."
+        "texto": "El error es que los atributos no llevan símbolo de visibilidad en UML."
       }
     ],
     "correcta": 2
@@ -826,6 +776,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -885,6 +850,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1152,6 +1257,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1185,6 +1296,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

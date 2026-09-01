@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en la definición de la estructura del proyecto de software: organizar las carpetas del patrón MVC (modelo, vista y controlador), ubicar cada archivo en la capa correspondiente, aplicar las convenciones de nombres establecidas y verificar que la estructura quede lista para la codificación, mediante retos prácticos interactivos.
+          Pon en práctica la definición de la estructura del proyecto de software en situaciones reales: decide en qué carpeta del proyecto MVC se ubica cada archivo, ordena el proceso de creación de la estructura de carpetas y de organización de los archivos, aplica las convenciones de nombres del equipo, y corrige estructuras con archivos mal ubicados y convenciones rotas. Sin teoría: aquí se demuestra organizando el proyecto.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar la capa del patrón MVC a la que pertenece cada componente y archivo del proyecto.</li>
-<li><strong>Prueba de Escritorio:</strong> Seguir paso a paso la organización de los archivos en la estructura y predecir el resultado.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos para crear la estructura del proyecto y atender una petición MVC.</li>
-<li><strong>Depuración de Errores:</strong> Detectar archivos ubicados en la capa incorrecta y nombres que incumplen la convención.</li>
+            <li><strong>Diseñar la Interfaz:</strong> Decide la ubicación correcta de cada archivo dentro de las carpetas del proyecto MVC.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para crear la estructura de carpetas y organizar los archivos.</li>
+<li><strong>Corregir el Diseño:</strong> Encuentra archivos mal ubicados y convenciones de nombres incumplidas.</li>
+<li><strong>Prueba de Escritorio:</strong> Recorre la organización del proyecto y determina el resultado obtenido.</li>
           </ul>
         </div>
 
@@ -250,272 +250,127 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Capa del Patrón MVC",
-    "titulo": "¿En qué carpeta del patrón MVC se almacenan las clases que implementan la lógica de negocio y el acceso a los datos?",
-    "indicacion": "En el patrón MVC cada capa tiene una responsabilidad definida. Identifica la carpeta destino de las clases que gestionan las reglas de negocio y la persistencia de la información.",
+    "categoria": "Diseñar la Interfaz",
+    "tipo": "Ubicación de Archivos",
+    "titulo": "¿En qué carpeta de un proyecto MVC se ubica la clase que consulta la tabla usuarios?",
+    "indicacion": "La estructura del proyecto separa las responsabilidades en carpetas. Selecciona la carpeta correcta para el acceso a datos.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
-        "texto": "En la carpeta vista, porque allí se presentan los datos al usuario."
+        "id": 0,
+        "texto": "En la carpeta vistas, junto a las plantillas."
       },
       {
-        "id": 0,
-        "texto": "En la carpeta modelo, porque allí se concentran las reglas de negocio y el acceso a los datos."
+        "id": 1,
+        "texto": "En la carpeta modelos, que encapsula el acceso y la manipulación de los datos."
       },
       {
         "id": 2,
-        "texto": "En la carpeta controlador, porque allí se definen las rutas de la aplicación."
+        "texto": "En la carpeta controladores, que recibe las peticiones."
       },
       {
         "id": 3,
-        "texto": "En la raíz del proyecto, sin carpeta específica."
+        "texto": "En la raíz del proyecto, fuera de cualquier carpeta."
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Archivo de Entrada",
-    "titulo": "¿Qué archivo suele ser el punto de entrada único de una aplicación MVC y se encarga de dirigir cada petición al controlador correspondiente?",
-    "indicacion": "La estructura MVC define un archivo central que recibe todas las peticiones del navegador. Selecciona el nombre convencional de ese archivo.",
+    "categoria": "Diseñar la Interfaz",
+    "tipo": "Ubicación de Vistas",
+    "titulo": "¿Dónde se guarda la plantilla HTML del listado de clientes?",
+    "indicacion": "Las plantillas de interfaz tienen una carpeta definida en la estructura MVC. Selecciona la ubicación correcta.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
         "id": 0,
-        "texto": "estilos.css"
-      },
-      {
-        "id": 2,
-        "texto": "base_datos.sql"
+        "texto": "En la carpeta controladores, junto al flujo de la petición."
       },
       {
         "id": 1,
-        "texto": "index.php, que actúa como controlador frontal y enruta las peticiones."
+        "texto": "En la carpeta modelos, con las consultas de datos."
+      },
+      {
+        "id": 2,
+        "texto": "En la carpeta vistas, donde se guardan las plantillas de interfaz."
       },
       {
         "id": 3,
-        "texto": "README.txt"
+        "texto": "En la base de datos, como parte de la información del sistema."
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Análisis del Problema",
+    "categoria": "Diseñar la Interfaz",
     "tipo": "Convención de Nombres",
-    "titulo": "Según la convención de nombres del proyecto, ¿cuál es el nombre correcto para el controlador encargado de gestionar los usuarios?",
-    "indicacion": "Las convenciones de nombres establecen el formato de los archivos del proyecto. Revisa el formato definido y selecciona el nombre que cumple la convención.",
+    "titulo": "El equipo definió que los controladores se nombran con el sufijo Controller. ¿Qué nombre cumple la convención?",
+    "indicacion": "Las convenciones de nombres mantienen ordenada la estructura del proyecto. Selecciona el nombre que cumple la regla del equipo.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 0,
-        "texto": "usuario_controller"
-      },
-      {
         "id": 1,
-        "texto": "controlador.usuario"
-      },
-      {
-        "id": 3,
-        "texto": "usuario.php"
+        "texto": "controlador_cliente.xlsx"
       },
       {
         "id": 2,
-        "texto": "UsuarioController, con la primera letra de cada palabra en mayúscula y el sufijo Controller."
+        "texto": "ctrl_1.php"
+      },
+      {
+        "id": 3,
+        "texto": "clientes_final_v2_ok.php"
+      },
+      {
+        "id": 0,
+        "texto": "ClienteController.php"
       }
     ],
     "correcta": 3
   },
   {
     "id": 4,
-    "categoria": "Análisis del Problema",
-    "tipo": "Ubicación de Vistas",
-    "titulo": "¿En qué carpeta de la estructura se almacenan las plantillas que muestran la interfaz al usuario?",
-    "indicacion": "Cada capa del patrón MVC tiene una carpeta propia en la estructura del proyecto. Selecciona la carpeta donde corresponden las plantillas de interfaz.",
-    "tipoComp": "seleccion_rapida",
-    "opciones": [
-      {
-        "id": 3,
-        "texto": "En la carpeta vista, porque contiene las plantillas que se presentan al usuario."
-      },
-      {
-        "id": 0,
-        "texto": "En la carpeta modelo, junto a las consultas de base de datos."
-      },
-      {
-        "id": 1,
-        "texto": "En la carpeta config, porque allí se define la conexión."
-      },
-      {
-        "id": 2,
-        "texto": "En la carpeta controlador, porque procesa la petición."
-      }
-    ],
-    "correcta": 0
-  },
-  {
-    "id": 5,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Asignación de Archivos",
-    "titulo": "Prueba de escritorio: asigna cada archivo a su capa en la estructura",
-    "indicacion": "Sigue mentalmente el proceso de ubicación de los archivos del proyecto en las carpetas de la estructura MVC y determina cómo quedó organizada la estructura.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Archivo recibido: Login.php",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Login.php muestra el formulario de ingreso al usuario → se ubica en la carpeta vista",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Archivo recibido: UsuarioController.php",
-        "tipo": "proceso"
-      },
-      {
-        "label": "UsuarioController.php recibe la petición del formulario → se ubica en la carpeta controlador",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Archivo recibido: UsuarioModel.php",
-        "tipo": "proceso"
-      },
-      {
-        "label": "UsuarioModel.php consulta la tabla de usuarios → se ubica en la carpeta modelo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: un archivo en cada capa: vista, controlador y modelo",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "Los tres archivos se ubican en la carpeta controlador."
-      },
-      {
-        "id": 1,
-        "texto": "Login.php en vista, UsuarioController.php en controlador y UsuarioModel.php en modelo."
-      },
-      {
-        "id": 2,
-        "texto": "Login.php en modelo y los demás en la raíz del proyecto."
-      },
-      {
-        "id": 3,
-        "texto": "Ningún archivo pertenece a la estructura definida."
-      }
-    ],
-    "correcta": 1
-  },
-  {
-    "id": 6,
-    "categoria": "Prueba de Escritorio",
-    "tipo": "Aplicación de Convención",
-    "titulo": "Prueba de escritorio: aplica la convención de nombres al archivo",
-    "indicacion": "La convención define nombres en PascalCase con el sufijo de la capa correspondiente. Sigue el proceso y determina el nombre correcto del archivo.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Componente: controlador para gestionar los productos",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Aplicar convención: primera letra de cada palabra en mayúscula",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Agregar el sufijo de la capa: Controller",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Nombre resultante: ProductoController",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
-      {
-        "id": 0,
-        "texto": "producto_controller.php"
-      },
-      {
-        "id": 1,
-        "texto": "Producto"
-      },
-      {
-        "id": 2,
-        "texto": "ProductoController"
-      },
-      {
-        "id": 3,
-        "texto": "CONTROLLER_PRODUCTO"
-      }
-    ],
-    "correcta": 2
-  },
-  {
-    "id": 7,
-    "categoria": "Reordenamiento de Bloques",
+    "categoria": "Ordenar el Proceso",
     "tipo": "Creación de la Estructura",
-    "titulo": "Ordena los pasos para crear la estructura del proyecto",
-    "indicacion": "La creación de la estructura inicia con la definición de la raíz del proyecto y termina con la verificación de las carpetas. Ordena los bloques correctamente.",
+    "titulo": "Ordena el proceso de creación de la estructura de carpetas del proyecto MVC",
+    "indicacion": "El equipo inicia el proyecto y crea su estructura de carpetas. Ordena los bloques del proceso.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
+      {
+        "id": "b5",
+        "texto": "Crear la carpeta public para css, js e imágenes",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b2",
+        "texto": "Crear la carpeta raíz del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar el árbol completo de carpetas del proyecto",
+        "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "Crear la carpeta controladores",
+        "tipo": "proceso"
+      },
       {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Crear la carpeta raíz del proyecto con el nombre definido",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
-        "texto": "Crear la carpeta modelo para las clases de negocio y acceso a datos",
+        "texto": "Crear las carpetas modelos y vistas",
         "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Crear la carpeta vista para las plantillas de interfaz",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Crear la carpeta controlador para la gestión de peticiones",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que las tres capas quedaron creadas",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -529,52 +384,47 @@
     ]
   },
   {
-    "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Flujo de una Petición",
-    "titulo": "Ordena el flujo de una petición dentro de la estructura MVC",
-    "indicacion": "Cuando el usuario solicita una página, la petición recorre las capas de la estructura en un orden definido. Ordena los bloques para reconstruir el flujo.",
+    "id": 5,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Organización de Archivos",
+    "titulo": "Ordena el proceso de organización de los archivos del proyecto",
+    "indicacion": "El equipo recibió los archivos del proyecto y los ubica en la estructura creada. Ordena los bloques del proceso.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
+      {
+        "id": "b5",
+        "texto": "Ubicar las hojas de estilo en public/css",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b2",
+        "texto": "Ubicar las clases de acceso a datos en modelos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que ningún archivo quede fuera de su carpeta",
+        "tipo": "salida"
+      },
+      {
+        "id": "b4",
+        "texto": "Ubicar las clases de coordinación en controladores",
+        "tipo": "proceso"
+      },
       {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "El usuario envía la petición desde el navegador",
-        "tipo": "entrada"
-      },
-      {
         "id": "b3",
-        "texto": "El controlador frontal dirige la petición al controlador correspondiente",
+        "texto": "Ubicar las plantillas de interfaz en vistas",
         "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "El controlador solicita los datos al modelo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "El modelo consulta la base de datos y devuelve la información",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "El controlador envía los datos a la vista",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "La vista genera la página que recibe el usuario",
-        "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -584,16 +434,63 @@
       "b4",
       "b5",
       "b6",
-      "b7",
-      "b8"
+      "b7"
     ]
   },
   {
-    "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Capa Incorrecta",
-    "titulo": "Encuentra la falla: el archivo de conexión quedó en la carpeta vista",
-    "indicacion": "Durante la organización del proyecto, un archivo se ubicó en la capa equivocada. Revisa los pasos e identifica la falla.",
+    "id": 6,
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Convenciones",
+    "titulo": "Ordena el proceso de aplicación de las convenciones de nombres del proyecto",
+    "indicacion": "El equipo aplica las convenciones de nombres a los archivos del proyecto. Ordena los bloques del proceso.",
+    "tipoComp": "ordenar_bloques",
+    "bloquesIniciales": [
+      {
+        "id": "b5",
+        "texto": "Revisar que los nombres sean descriptivos y sin espacios",
+        "tipo": "salida"
+      },
+      {
+        "id": "b2",
+        "texto": "Definir el prefijo del proyecto para los archivos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Nombrar las vistas en minúsculas separadas por guion bajo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "Nombrar los controladores con el sufijo Controller",
+        "tipo": "proceso"
+      }
+    ],
+    "ordenCorrecto": [
+      "b1",
+      "b2",
+      "b3",
+      "b4",
+      "b5",
+      "b6"
+    ]
+  },
+  {
+    "id": 7,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Archivo Mal Ubicado",
+    "titulo": "Encuentra la falla: el controlador de clientes quedó guardado en la carpeta vistas",
+    "indicacion": "El archivo ClienteController.php se guardó dentro de la carpeta vistas del proyecto. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -601,81 +498,191 @@
         "tipo": "inicio"
       },
       {
-        "label": "Se crea el archivo conexionBD.php con los datos de acceso a la base de datos",
+        "label": "Crear las carpetas modelos, vistas y controladores",
         "tipo": "proceso"
       },
       {
-        "label": "El archivo se ubica dentro de la carpeta vista",
-        "tipo": "proceso"
-      },
-      {
-        "label": "El equipo aprueba la estructura y continúa con la codificación",
-        "tipo": "salida",
+        "label": "Guardar ClienteController.php dentro de la carpeta vistas",
+        "tipo": "proceso",
         "error": true
+      },
+      {
+        "label": "Declarar la estructura como organizada",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
         "id": 1,
-        "texto": "La ubicación es correcta porque la vista necesita conectarse directamente a los datos."
-      },
-      {
-        "id": 0,
-        "texto": "La conexión a la base de datos pertenece a la capa modelo; el archivo conexionBD.php debe ubicarse en la carpeta modelo, no en la vista."
+        "texto": "La carpeta vistas es la ubicación correcta para los controladores."
       },
       {
         "id": 2,
-        "texto": "El error es que el archivo debía llamarse ConexionBD.php, su ubicación no importa."
+        "texto": "El error es que falta crear la carpeta modelos."
       },
       {
         "id": 3,
-        "texto": "El archivo no debe existir porque la conexión se define en el navegador."
+        "texto": "El error es que el controlador debe guardarse en la raíz del proyecto."
+      },
+      {
+        "id": 0,
+        "texto": "Los controladores deben ubicarse en la carpeta controladores; en vistas solo van las plantillas de interfaz."
+      }
+    ],
+    "correcta": 3
+  },
+  {
+    "id": 8,
+    "categoria": "Corregir el Diseño",
+    "tipo": "Convención Rota",
+    "titulo": "Encuentra la falla: se creó el archivo 'Nuevo Cliente(2).php' con espacios y paréntesis",
+    "indicacion": "El equipo creó la vista del nuevo cliente con un nombre que incumple la convención. Revisa los pasos e identifica el error.",
+    "tipoComp": "depuracion_diagrama",
+    "diagramaError": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Definir la convención: minúsculas, guion bajo, sin espacios",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Crear el archivo 'Nuevo Cliente(2).php'",
+        "tipo": "proceso",
+        "error": true
+      },
+      {
+        "label": "Guardar el archivo en la carpeta vistas",
+        "tipo": "salida"
+      }
+    ],
+    "opciones": [
+      {
+        "id": 3,
+        "texto": "El nombre incumple la convención: debe ser en minúsculas, sin espacios ni caracteres especiales, por ejemplo nuevo_cliente.php."
+      },
+      {
+        "id": 0,
+        "texto": "Los nombres con espacios y paréntesis son aceptados por todos los servidores web."
+      },
+      {
+        "id": 1,
+        "texto": "El error es que la vista no debe estar en la carpeta vistas."
+      },
+      {
+        "id": 2,
+        "texto": "El error es que falta el sufijo Controller en el nombre."
+      }
+    ],
+    "correcta": 0
+  },
+  {
+    "id": 9,
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Archivos Ubicados",
+    "titulo": "Prueba de escritorio: se ubican los archivos del módulo de clientes en la estructura MVC",
+    "indicacion": "El equipo organiza Usuario.php, UsuarioController.php y login.php en la estructura del proyecto. Determina el resultado.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
+      {
+        "label": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "label": "Crear las carpetas modelos, vistas y controladores",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mover Usuario.php a la carpeta modelos",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mover UsuarioController.php a la carpeta controladores",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Mover login.php a la carpeta vistas",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Revisar que cada archivo esté en su carpeta",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
+      }
+    ],
+    "opcionesRespuesta": [
+      {
+        "id": 1,
+        "texto": "UsuarioController.php debe estar en modelos con las consultas."
+      },
+      {
+        "id": 0,
+        "texto": "Cada archivo quedó en la carpeta que le corresponde según la arquitectura MVC."
+      },
+      {
+        "id": 2,
+        "texto": "login.php debe estar en controladores porque recibe la petición."
+      },
+      {
+        "id": 3,
+        "texto": "Los tres archivos deben quedar en la misma carpeta para simplificar."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Nombre sin Convención",
-    "titulo": "Encuentra la falla: el archivo no cumple la convención de nombres",
-    "indicacion": "El proyecto definió convenciones de nombres para todos los archivos. Revisa los pasos e identifica por qué el archivo no cumple la regla establecida.",
-    "tipoComp": "depuracion_diagrama",
-    "diagramaError": [
+    "categoria": "Prueba de Escritorio",
+    "tipo": "Ruta de Archivo",
+    "titulo": "Prueba de escritorio: se guarda la hoja de estilos en la estructura del proyecto",
+    "indicacion": "El proyecto tiene la carpeta public y, dentro de ella, la subcarpeta css. El equipo guarda allí el archivo estilos.css. Determina la ruta resultante.",
+    "tipoComp": "prueba_escritorio",
+    "diagramaSteps": [
       {
         "label": "Inicio",
         "tipo": "inicio"
       },
       {
-        "label": "Se crea el archivo productocontroller.php para gestionar los productos",
+        "label": "Crear la carpeta public en la raíz del proyecto",
         "tipo": "proceso"
       },
       {
-        "label": "Se verifica que el archivo está en la carpeta controlador",
+        "label": "Crear la subcarpeta css dentro de public",
         "tipo": "proceso"
       },
       {
-        "label": "Se registra el archivo en la documentación de la estructura",
-        "tipo": "salida",
-        "error": true
+        "label": "Guardar estilos.css dentro de public/css",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Registrar la ruta del archivo en la documentación",
+        "tipo": "salida"
+      },
+      {
+        "label": "Fin",
+        "tipo": "fin"
       }
     ],
-    "opciones": [
+    "opcionesRespuesta": [
       {
         "id": 0,
-        "texto": "El archivo cumple la convención porque está en la carpeta controlador."
-      },
-      {
-        "id": 1,
-        "texto": "La convención exige que la vista use el nombre del controlador."
+        "texto": "La ruta del archivo es css/public/estilos.css."
       },
       {
         "id": 2,
-        "texto": "El nombre no cumple la convención: debe escribirse en PascalCase con el sufijo de la capa, es decir, ProductoController.php."
+        "texto": "La ruta del archivo es estilos/public/css.css."
+      },
+      {
+        "id": 1,
+        "texto": "La ruta del archivo es public/css/estilos.css."
       },
       {
         "id": 3,
-        "texto": "El error es que el archivo debía ubicarse en la carpeta modelo."
+        "texto": "El archivo debe estar en la raíz del proyecto, sin carpeta."
       }
     ],
     "correcta": 2
@@ -808,6 +815,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -867,6 +889,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1134,6 +1296,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1167,6 +1335,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }

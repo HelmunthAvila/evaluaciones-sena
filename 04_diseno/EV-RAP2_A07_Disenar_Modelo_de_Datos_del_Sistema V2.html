@@ -50,7 +50,7 @@
         </div>
         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Taller Evaluativo Práctico</h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2 max-w-2xl">
-          Demuestra tus competencias en el diseño del modelo de datos del sistema: identificar entidades, atributos y relaciones, definir claves primarias y foráneas, y aplicar la normalización básica para eliminar redundancias, mediante retos prácticos interactivos.
+          Pon en práctica el diseño del modelo de datos del sistema en situaciones reales: identifica el símbolo de entidad, relación, atributo y clave primaria en el modelo entidad-relación, decide qué entidades, atributos, claves y cardinalidades corresponden a cada caso, ordena el proceso de construcción y normalización del modelo, y corrige modelos con claves y relaciones mal definidas. Sin teoría: aquí se demuestra modelando datos.
         </p>
       </div>
 
@@ -82,10 +82,10 @@
         <div class="bg-slate-50 border-l-4 border-[#39a900] p-4 rounded-r-xl text-xs sm:text-sm text-slate-700 space-y-1">
           <p class="font-bold text-slate-900"><i class="fa-solid fa-circle-info text-[#39a900] mr-1"></i> Tipos de retos prácticos que resolverás:</p>
           <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1">
-            <li><strong>Análisis del Problema:</strong> Identificar entidades, atributos y relaciones del sistema.</li>
-<li><strong>Diseño Lógico:</strong> Definir claves primarias y foráneas y aplicar la normalización básica al modelo.</li>
-<li><strong>Reordenamiento de Bloques:</strong> Ordenar los pasos del diseño del modelo de datos y del proceso de normalización.</li>
-<li><strong>Depuración de Errores:</strong> Detectar fallas en las claves, las relaciones y las redundancias del modelo.</li>
+            <li><strong>Identificar Elementos UML:</strong> Reconoce el símbolo de entidad, relación, atributo y clave primaria en el modelo de datos.</li>
+<li><strong>Diseño Lógico:</strong> Define entidades, atributos, claves primarias y foráneas y la cardinalidad de las relaciones.</li>
+<li><strong>Ordenar el Proceso:</strong> Ensambla los pasos para construir y normalizar el modelo de datos.</li>
+<li><strong>Corregir el Diagrama:</strong> Encuentra claves y relaciones mal definidas en el modelo.</li>
           </ul>
         </div>
 
@@ -250,81 +250,105 @@
   const RETOS = [
   {
     "id": 1,
-    "categoria": "Análisis del Problema",
-    "tipo": "Identificación de Entidades",
-    "titulo": "En el modelo de datos de un sistema de ventas, ¿cuál de los siguientes elementos es una entidad?",
-    "indicacion": "Una entidad representa un objeto del mundo real del cual se desea almacenar información. Identifica cuál de las opciones cumple esa condición.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo representa una ENTIDAD en el modelo de datos?",
+    "indicacion": "Una entidad representa un objeto del mundo real del cual se desea almacenar información. Selecciona el símbolo correcto del modelo entidad-relación.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
+        "id": 1,
+        "nombre": "Relación (Rombo)",
+        "uso": "Conexión entre dos entidades",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,4 94,28 50,52 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"9\" font-weight=\"bold\">REALIZA</text></svg>"
+      },
+      {
         "id": 0,
-        "texto": "El número de teléfono del cliente."
+        "nombre": "Entidad (Rectángulo)",
+        "uso": "Objeto del mundo real con información que se almacena",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><rect x=\"8\" y=\"6\" width=\"84\" height=\"44\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"50\" y=\"34\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">CLIENTE</text></svg>"
       },
       {
         "id": 2,
-        "texto": "El cliente, porque representa un objeto del mundo real con información que se desea almacenar."
-      },
-      {
-        "id": 1,
-        "texto": "La fecha de la factura."
+        "nombre": "Atributo (Elipse)",
+        "uso": "Característica de la entidad",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"28\" rx=\"44\" ry=\"20\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"9\" font-weight=\"bold\">nombre</text></svg>"
       },
       {
         "id": 3,
-        "texto": "La consulta SQL que lista los pedidos."
+        "nombre": "Clave Primaria (Elipse subrayada)",
+        "uso": "Identifica de forma única cada registro",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"25\" rx=\"46\" ry=\"18\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"#9d174d\" font-size=\"9\" font-weight=\"bold\">id_cliente</text><line x1=\"6\" y1=\"47\" x2=\"94\" y2=\"47\" stroke=\"#be185d\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 1
   },
   {
     "id": 2,
-    "categoria": "Análisis del Problema",
-    "tipo": "Clave Primaria",
-    "titulo": "¿Qué es una clave primaria en el modelo de datos?",
-    "indicacion": "La clave primaria es un concepto fundamental del diseño de tablas. Selecciona la definición correcta.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo representa una RELACIÓN entre dos entidades?",
+    "indicacion": "La relación conecta dos entidades y describe cómo se asocian entre sí. Selecciona el símbolo correcto del modelo entidad-relación.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
-        "texto": "Un atributo que puede repetirse en varios registros de la tabla."
+        "id": 0,
+        "nombre": "Entidad (Rectángulo)",
+        "uso": "Objeto del mundo real con información que se almacena",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><rect x=\"8\" y=\"6\" width=\"84\" height=\"44\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"50\" y=\"34\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">CLIENTE</text></svg>"
       },
       {
         "id": 2,
-        "texto": "Una columna que almacena la misma información en dos tablas diferentes."
+        "nombre": "Atributo (Elipse)",
+        "uso": "Característica de la entidad",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"28\" rx=\"44\" ry=\"20\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"9\" font-weight=\"bold\">nombre</text></svg>"
       },
       {
-        "id": 0,
-        "texto": "Un atributo o conjunto de atributos que identifica de forma única cada registro de la tabla."
+        "id": 1,
+        "nombre": "Relación (Rombo)",
+        "uso": "Conexión entre dos entidades",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,4 94,28 50,52 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"9\" font-weight=\"bold\">REALIZA</text></svg>"
       },
       {
         "id": 3,
-        "texto": "El nombre de la tabla dentro de la base de datos."
+        "nombre": "Clave Primaria (Elipse subrayada)",
+        "uso": "Identifica de forma única cada registro",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"25\" rx=\"46\" ry=\"18\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"#9d174d\" font-size=\"9\" font-weight=\"bold\">id_cliente</text><line x1=\"6\" y1=\"47\" x2=\"94\" y2=\"47\" stroke=\"#be185d\" stroke-width=\"2\"/></svg>"
       }
     ],
     "correcta": 2
   },
   {
     "id": 3,
-    "categoria": "Diseño Lógico",
-    "tipo": "Relación Uno a Muchos",
-    "titulo": "Una factura pertenece a un solo cliente y un cliente puede tener muchas facturas. ¿Cómo se representa esta relación en el modelo?",
-    "indicacion": "Las relaciones entre entidades se materializan mediante claves. Determina la forma correcta de representar la relación entre cliente y factura.",
-    "tipoComp": "seleccion_rapida",
+    "categoria": "Identificar Elementos UML",
+    "tipo": "Selección Visual",
+    "titulo": "¿Qué símbolo representa un ATRIBUTO de una entidad?",
+    "indicacion": "El atributo es una característica o propiedad de la entidad, como el nombre o el teléfono. Selecciona el símbolo correcto.",
+    "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
         "id": 0,
-        "texto": "Agregando el atributo total en la tabla cliente."
-      },
-      {
-        "id": 2,
-        "texto": "Creando una tercera tabla con el nombre de la relación."
-      },
-      {
-        "id": 3,
-        "texto": "Duplicando los datos del cliente dentro de cada factura."
+        "nombre": "Entidad (Rectángulo)",
+        "uso": "Objeto del mundo real con información que se almacena",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><rect x=\"8\" y=\"6\" width=\"84\" height=\"44\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"50\" y=\"34\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">CLIENTE</text></svg>"
       },
       {
         "id": 1,
-        "texto": "Agregando la clave foránea id_cliente en la tabla factura."
+        "nombre": "Relación (Rombo)",
+        "uso": "Conexión entre dos entidades",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,4 94,28 50,52 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"9\" font-weight=\"bold\">REALIZA</text></svg>"
+      },
+      {
+        "id": 3,
+        "nombre": "Clave Primaria (Elipse subrayada)",
+        "uso": "Identifica de forma única cada registro",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"25\" rx=\"46\" ry=\"18\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"#9d174d\" font-size=\"9\" font-weight=\"bold\">id_cliente</text><line x1=\"6\" y1=\"47\" x2=\"94\" y2=\"47\" stroke=\"#be185d\" stroke-width=\"2\"/></svg>"
+      },
+      {
+        "id": 2,
+        "nombre": "Atributo (Elipse)",
+        "uso": "Característica de la entidad",
+        "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"28\" rx=\"44\" ry=\"20\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"9\" font-weight=\"bold\">nombre</text></svg>"
       }
     ],
     "correcta": 3
@@ -332,26 +356,26 @@
   {
     "id": 4,
     "categoria": "Diseño Lógico",
-    "tipo": "Normalización",
-    "titulo": "¿Qué problema resuelve la normalización de datos?",
-    "indicacion": "La normalización es una técnica del diseño del modelo de datos. Identifica el problema principal que permite corregir.",
+    "tipo": "Clave Primaria",
+    "titulo": "¿Qué atributo debe ser la clave primaria de la tabla clientes?",
+    "indicacion": "La clave primaria identifica de forma única cada registro de la tabla. Selecciona el atributo adecuado para la tabla clientes.",
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
-        "texto": "Elimina la redundancia de datos y evita inconsistencias al modificar la información."
+        "id": 1,
+        "texto": "id_cliente, un código único que no se repite y no cambia."
       },
       {
         "id": 0,
-        "texto": "Acelera la conexión a internet del servidor."
-      },
-      {
-        "id": 1,
-        "texto": "Elimina la necesidad de definir claves primarias."
+        "texto": "El nombre del cliente, porque lo identifica en el sistema."
       },
       {
         "id": 2,
-        "texto": "Reduce el número de tablas a una sola tabla general."
+        "texto": "La dirección, porque cada cliente vive en un lugar diferente."
+      },
+      {
+        "id": 3,
+        "texto": "La fecha de registro del cliente."
       }
     ],
     "correcta": 0
@@ -359,52 +383,26 @@
   {
     "id": 5,
     "categoria": "Diseño Lógico",
-    "tipo": "Normalización Paso a Paso",
-    "titulo": "Prueba de escritorio: normalización de la tabla pedidos",
-    "indicacion": "Ejecuta mentalmente el proceso de normalización de la tabla pedidos y determina cómo quedó estructurado el modelo final.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Tabla inicial pedidos: id_pedido, cliente, direccion_cliente, producto",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Detectar que direccion_cliente depende solo del cliente y no del pedido",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Separar la información del cliente en la tabla clientes",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: pedidos(id_pedido, id_cliente, producto) y clientes(id_cliente, direccion_cliente)",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "tipo": "Clave Foránea",
+    "titulo": "Un cliente tiene muchas facturas y cada factura pertenece a un solo cliente. ¿Dónde se ubica la clave foránea?",
+    "indicacion": "La relación uno a muchos se materializa con una clave foránea. Determina en cuál tabla debe quedar la clave foránea.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "La tabla pedidos conserva la dirección repetida en cada pedido."
-      },
-      {
-        "id": 1,
-        "texto": "La dirección se movió a la tabla clientes y en pedidos quedó la clave foránea id_cliente."
+        "texto": "En la tabla cliente, agregando el campo id_factura."
       },
       {
         "id": 2,
-        "texto": "Se eliminó la clave primaria de la tabla pedidos."
+        "texto": "En la tabla factura, agregando el campo id_cliente."
+      },
+      {
+        "id": 1,
+        "texto": "En una tercera tabla que almacene el nombre de la relación."
       },
       {
         "id": 3,
-        "texto": "Todos los pedidos se guardaron en una sola fila de la tabla."
+        "texto": "En ambas tablas, duplicando la información del cliente."
       }
     ],
     "correcta": 1
@@ -412,103 +410,77 @@
   {
     "id": 6,
     "categoria": "Diseño Lógico",
-    "tipo": "Modelo de Biblioteca",
-    "titulo": "Prueba de escritorio: diseño del modelo de datos de una biblioteca",
-    "indicacion": "Recorre paso a paso el diseño del modelo de datos de una biblioteca y determina la estructura final del modelo.",
-    "tipoComp": "prueba_escritorio",
-    "diagramaSteps": [
-      {
-        "label": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "label": "Identificar las entidades: Libro, Autor y Prestamo",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Definir atributos: Libro(titulo, isbn), Autor(nombre), Prestamo(fecha)",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Relacionar: un libro pertenece a un autor y un prestamo referencia un libro",
-        "tipo": "proceso"
-      },
-      {
-        "label": "Resultado: tres tablas relacionadas por claves primarias y foraneas",
-        "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
-      }
-    ],
-    "opcionesRespuesta": [
+    "tipo": "Cardinalidad",
+    "titulo": "Un empleado pertenece a un solo departamento y un departamento tiene muchos empleados. ¿Qué cardinalidad describe esta relación?",
+    "indicacion": "La cardinalidad indica cuántas instancias de una entidad se asocian con la otra. Selecciona la cardinalidad correcta.",
+    "tipoComp": "seleccion_rapida",
+    "opciones": [
       {
         "id": 0,
-        "texto": "Una sola tabla con todos los atributos juntos."
+        "texto": "Uno a uno (1:1)."
       },
       {
         "id": 1,
-        "texto": "Dos tablas: Libro y Autor, sin registrar los prestamos."
-      },
-      {
-        "id": 2,
-        "texto": "Tres tablas: Libro, Autor y Prestamo, relacionadas entre sí mediante claves."
+        "texto": "Muchos a muchos (N:M)."
       },
       {
         "id": 3,
-        "texto": "Ninguna tabla, solo un documento de texto con los datos."
+        "texto": "Uno a muchos (1:N): un departamento tiene muchos empleados y cada empleado pertenece a un departamento."
+      },
+      {
+        "id": 2,
+        "texto": "No es una relación válida en el modelo de datos."
       }
     ],
     "correcta": 2
   },
   {
     "id": 7,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Proceso de Diseño",
-    "titulo": "Ordena los pasos para diseñar el modelo de datos del sistema",
-    "indicacion": "Organiza los bloques del proceso de diseño: se identifican las entidades, se definen atributos y relaciones, se asignan las claves y se normaliza. Incluye inicio y fin.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Construcción del Modelo",
+    "titulo": "Ordena el proceso de construcción del modelo de datos",
+    "indicacion": "El analista diseña el modelo de datos del sistema de ventas. Ordena los bloques para construir la secuencia correcta.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
+      {
+        "id": "b5",
+        "texto": "Definir las claves primarias de cada entidad",
+        "tipo": "proceso"
+      },
       {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Identificar las entidades del sistema",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Revisar el modelo con el equipo de desarrollo",
+        "tipo": "salida"
       },
       {
         "id": "b3",
-        "texto": "Definir los atributos de cada entidad",
+        "texto": "Identificar las entidades del sistema",
         "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Establecer las relaciones entre las entidades",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Asignar las claves primarias y foraneas",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Aplicar la normalización para eliminar redundancias",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Documentar el modelo de datos aprobado",
-        "tipo": "salida"
       },
       {
         "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Definir las relaciones y su cardinalidad (1:1, 1:N, N:M)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Analizar los requerimientos de información",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b4",
+        "texto": "Definir los atributos de cada entidad",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -524,41 +496,46 @@
   },
   {
     "id": 8,
-    "categoria": "Reordenamiento de Bloques",
-    "tipo": "Primera Forma Normal",
-    "titulo": "Ordena el proceso de normalización a la primera forma normal (1FN)",
-    "indicacion": "Organiza los pasos de la primera forma normal: se identifican los atributos con múltiples valores, se separan y se define la clave primaria. Incluye inicio y fin.",
+    "categoria": "Ordenar el Proceso",
+    "tipo": "Normalización",
+    "titulo": "Ordena el proceso de normalización de una tabla con datos repetidos",
+    "indicacion": "La tabla facturas repite el nombre y la dirección del cliente en cada fila. Ordena los bloques del proceso de normalización.",
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
+      {
+        "id": "b4",
+        "texto": "Separar la información del cliente en una tabla clientes",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que no queden datos repetidos",
+        "tipo": "salida"
+      },
+      {
+        "id": "b2",
+        "texto": "Detectar los datos que se repiten en varias filas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Vincular ambas tablas con la clave foránea id_cliente",
+        "tipo": "proceso"
+      },
       {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Identificar los atributos con múltiples valores en una misma celda",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
-        "texto": "Separar cada valor en una fila o tabla independiente",
+        "texto": "Identificar de qué entidad depende cada dato repetido",
         "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Definir la clave primaria de la tabla",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Verificar que cada atributo dependa de la clave primaria",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -567,15 +544,16 @@
       "b3",
       "b4",
       "b5",
-      "b6"
+      "b6",
+      "b7"
     ]
   },
   {
     "id": 9,
-    "categoria": "Depuración de Errores",
-    "tipo": "Clave Mal Definida",
-    "titulo": "Encuentra la falla: la clave foránea se definió como clave primaria",
-    "indicacion": "El diseñador definió la clave de la tabla factura de forma incorrecta. Recorre los pasos e identifica la falla.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Clave Foránea Mal Ubicada",
+    "titulo": "Encuentra la falla: la clave foránea de la relación cliente-factura quedó en la tabla equivocada",
+    "indicacion": "Para representar que un cliente tiene muchas facturas, se agregó el campo id_factura en la tabla clientes. Revisa los pasos e identifica el error.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -583,49 +561,49 @@
         "tipo": "inicio"
       },
       {
-        "label": "Tabla factura con el atributo id_cliente",
+        "label": "Identificar las entidades cliente y factura",
         "tipo": "proceso"
       },
       {
-        "label": "El diseñador define id_cliente como clave primaria de factura",
+        "label": "Establecer la relación 1:N entre cliente y factura",
+        "tipo": "proceso"
+      },
+      {
+        "label": "Agregar el campo id_factura en la tabla clientes",
         "tipo": "proceso",
         "error": true
       },
       {
-        "label": "El modelo se aprueba y se entrega al equipo de desarrollo",
+        "label": "Validar el modelo como correcto",
         "tipo": "salida"
-      },
-      {
-        "label": "Fin",
-        "tipo": "fin"
       }
     ],
     "opciones": [
       {
         "id": 0,
-        "texto": "La definición es correcta porque id_cliente identifica cada factura."
-      },
-      {
-        "id": 1,
-        "texto": "id_cliente es la clave primaria de clientes; en factura debe ser clave foránea y la clave primaria de factura debe ser id_factura."
+        "texto": "La clave foránea debe quedar en la tabla clientes, porque el cliente es la entidad principal."
       },
       {
         "id": 2,
-        "texto": "Falta crear una tabla intermedia para la relación entre factura y cliente."
+        "texto": "La clave foránea id_cliente debe estar en la tabla facturas (lado muchos), no id_factura en clientes."
+      },
+      {
+        "id": 1,
+        "texto": "En la relación 1:N la clave foránea va en ambas tablas para mayor seguridad."
       },
       {
         "id": 3,
-        "texto": "El error es que la tabla factura no tiene atributos adicionales."
+        "texto": "El modelo es correcto porque la relación quedó representada."
       }
     ],
     "correcta": 1
   },
   {
     "id": 10,
-    "categoria": "Depuración de Errores",
-    "tipo": "Tabla sin Normalizar",
-    "titulo": "Encuentra la falla: la tabla pedido almacena los productos en columnas fijas",
-    "indicacion": "El modelo de datos fue validado sin aplicar normalización. Revisa la estructura de la tabla pedido e identifica el error de diseño.",
+    "categoria": "Corregir el Diagrama",
+    "tipo": "Redundancia Sin Normalizar",
+    "titulo": "Encuentra la falla: la tabla facturas guarda datos del cliente en cada fila",
+    "indicacion": "Cada fila de la tabla facturas repite nombre_cliente y direccion_cliente. Revisa los pasos e identifica el error del modelo.",
     "tipoComp": "depuracion_diagrama",
     "diagramaError": [
       {
@@ -633,35 +611,35 @@
         "tipo": "inicio"
       },
       {
-        "label": "Tabla pedido: id_pedido, producto1, producto2, producto3",
+        "label": "Crear la tabla facturas con id_factura, total y fecha",
         "tipo": "proceso"
       },
       {
-        "label": "Se valida el diseño y se envía a implementación",
+        "label": "Agregar nombre_cliente y direccion_cliente en cada fila de facturas",
         "tipo": "proceso",
         "error": true
       },
       {
-        "label": "Fin",
-        "tipo": "fin"
+        "label": "Guardar el modelo como definitivo",
+        "tipo": "salida"
       }
     ],
     "opciones": [
       {
-        "id": 0,
-        "texto": "El diseño es correcto porque cada producto tiene su propia columna."
-      },
-      {
         "id": 1,
-        "texto": "El problema es que la tabla no incluye información del cliente."
+        "texto": "Repetir el nombre y la dirección en cada factura acelera las consultas y es la práctica recomendada."
       },
       {
         "id": 2,
-        "texto": "La tabla no está normalizada: almacenar varios productos en columnas fijas limita la cantidad e introduce redundancia; debe crearse una tabla detalle_pedido."
+        "texto": "El error es que la tabla facturas no debe tener clave primaria."
+      },
+      {
+        "id": 0,
+        "texto": "nombre_cliente y direccion_cliente dependen del cliente, no de la factura; deben separarse en la tabla clientes y vincularse con id_cliente."
       },
       {
         "id": 3,
-        "texto": "El error es que id_pedido no es un número entero."
+        "texto": "El error es que falta el atributo id_empleado en la tabla facturas."
       }
     ],
     "correcta": 2
@@ -794,6 +772,21 @@
       case "seleccion_rapida":
         renderizarSeleccionRapida(reto, contenedor);
         break;
+      case "sql_consulta":
+        renderizarSqlConsulta(reto, contenedor);
+        break;
+      case "sql_resultado":
+        renderizarSqlResultado(reto, contenedor);
+        break;
+      case "sql_completar":
+        renderizarSqlCompletar(reto, contenedor);
+        break;
+      case "codigo_completar":
+        renderizarCodigoCompletar(reto, contenedor);
+        break;
+      case "codigo_salida":
+        renderizarCodigoSalida(reto, contenedor);
+        break;
       case "prueba_escritorio":
         renderizarPruebaEscritorio(reto, contenedor);
         break;
@@ -853,6 +846,146 @@
     });
     html += `</div>`;
     contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlConsulta(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.contexto) {
+      html += `<div class="mb-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm text-slate-700"><i class="fa-solid fa-circle-info text-blue-600 mr-1"></i> ${reto.contexto}</div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-database text-emerald-600 mr-1"></i> Selecciona la consulta SQL correcta:</p>
+      <div class="space-y-3 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.sql}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlResultado(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = '';
+    if (reto.consulta) {
+      html += `<div class="mb-3 bg-slate-900 rounded-xl p-3"><pre class="font-mono text-[13px] text-emerald-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.consulta}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-2"><i class="fa-solid fa-table text-emerald-600 mr-1"></i> Datos de la tabla:</p>
+      <div class="mb-4 overflow-x-auto rounded-xl border border-slate-300"><table class="w-full text-xs">`;
+    html += `<thead><tr class="bg-slate-800 text-white">`;
+    reto.datos.encabezados.forEach(h => { html += `<th class="px-3 py-2 text-left font-bold">${h}</th>`; });
+    html += `</tr></thead><tbody>`;
+    reto.datos.filas.forEach(fila => {
+      html += `<tr class="border-t border-slate-200 ${fila === reto.datos.filas[0] ? 'bg-white' : 'bg-slate-50'}">`;
+      fila.forEach(c => { html += `<td class="px-3 py-1.5 font-mono">${c}</td>`; });
+      html += `</tr>`;
+    });
+    html += `</tbody></table></div>
+      <p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-arrow-right text-emerald-600 mr-1"></i> ¿Qué filas devuelve la consulta?</p>
+      <div class="space-y-2 max-w-3xl mx-auto">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.resultado}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarSqlCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.consulta.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos de la consulta con la palabra o cláusula correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoSalida(reto, contenedor) {
+    const selGuardada = estadoApp.respuestas[estadoApp.indiceActual];
+    let html = `<div class="max-w-3xl mx-auto">`;
+    if (reto.codigo) {
+      html += `<div class="mb-4 bg-slate-900 rounded-xl p-4"><pre class="font-mono text-[13px] text-sky-300 leading-relaxed m-0 whitespace-pre-wrap">${reto.codigo}</pre></div>`;
+    }
+    html += `<p class="text-xs font-bold uppercase text-slate-500 tracking-wider mb-3"><i class="fa-solid fa-terminal text-emerald-600 mr-1"></i> ¿Qué se muestra en pantalla al ejecutar?</p>
+      <div class="space-y-2">`;
+    reto.opciones.forEach((opc) => {
+      const estaSeleccionado = selGuardada === opc.id;
+      html += `
+        <button type="button" onclick="seleccionarOpcionSimple(${opc.id})"
+                class="w-full text-left rounded-xl border-2 transition overflow-hidden ${estaSeleccionado ? 'border-[#39a900] ring-2 ring-[#39a900]/20' : 'border-slate-200 hover:border-slate-300'}">
+          <div class="p-3 ${estaSeleccionado ? 'bg-emerald-50' : 'bg-white'} flex items-start justify-between gap-3">
+            <pre class="font-mono text-[13px] text-slate-800 leading-relaxed m-0 whitespace-pre-wrap flex-1">${opc.salida}</pre>
+            <span class="w-5 h-5 flex-shrink-0 rounded-full border border-slate-300 flex items-center justify-center ${estaSeleccionado ? 'bg-[#39a900] border-transparent text-white' : ''}">
+              ${estaSeleccionado ? '<i class="fa-solid fa-check text-xs"></i>' : ''}
+            </span>
+          </div>
+        </button>`;
+    });
+    html += `</div></div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function renderizarCodigoCompletar(reto, contenedor) {
+    const guardada = estadoApp.respuestas[estadoApp.indiceActual];
+    const partes = reto.codigo.split("___");
+    let html = `<div class="max-w-3xl mx-auto">
+      <div class="bg-slate-900 rounded-xl p-4 mb-4"><div class="font-mono text-[14px] text-slate-100 leading-relaxed whitespace-pre-wrap">`;
+    partes.forEach((parte, idx) => {
+      html += parte;
+      if (idx < partes.length - 1) {
+        const val = Array.isArray(guardada) ? guardada[idx] : null;
+        html += `<select onchange="seleccionarHuecoSql(${idx}, this.value)" class="mx-1 border-2 rounded-md px-2 py-0.5 font-mono text-[13px] bg-white ${val ? 'border-[#39a900] text-emerald-700' : 'border-amber-400 text-slate-500'}">`;
+        html += `<option value="" ${!val ? 'selected' : ''}>___</option>`;
+        reto.opciones[idx].forEach(op => {
+          html += `<option value="${op}" ${val === op ? 'selected' : ''}>${op}</option>`;
+        });
+        html += `</select>`;
+      }
+    });
+    html += `</div></div>
+      <p class="text-xs text-slate-500 text-center"><i class="fa-solid fa-circle-info text-indigo-500 mr-1"></i> Completa los huecos del código con la palabra o expresión correcta.</p>
+      </div>`;
+    contenedor.innerHTML = html;
+  }
+
+  function seleccionarHuecoSql(idxHueco, valor) {
+    if (!Array.isArray(estadoApp.respuestas[estadoApp.indiceActual])) {
+      estadoApp.respuestas[estadoApp.indiceActual] = new Array(RETOS[estadoApp.indiceActual].opciones.length).fill(null);
+    }
+    estadoApp.respuestas[estadoApp.indiceActual][idxHueco] = valor || null;
+    renderizarRetoActual();
   }
 
   function renderizarPruebaEscritorio(reto, contenedor) {
@@ -1120,6 +1253,12 @@
     if (reto.tipoComp === "tabla_verdad" && Array.isArray(respuestaDada)) {
       estaRespondido = respuestaDada.every(v => v === true || v === false);
     }
+    if (reto.tipoComp === "sql_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
+    if (reto.tipoComp === "codigo_completar" && Array.isArray(respuestaDada)) {
+      estaRespondido = respuestaDada.every(v => v !== null && v !== undefined && v !== "");
+    }
     btnSiguiente.disabled = !estaRespondido;
   }
 
@@ -1153,6 +1292,14 @@
           esCorrecto = respUsuario.every((val, i) => val === ordenCorrecto[i]);
         }
       } else if (reto.tipoComp === "tabla_verdad") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "sql_completar") {
+        if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
+          esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
+        }
+      } else if (reto.tipoComp === "codigo_completar") {
         if (Array.isArray(respUsuario) && respUsuario.length === reto.correcta.length) {
           esCorrecto = respUsuario.every((val, i) => val === reto.correcta[i]);
         }
