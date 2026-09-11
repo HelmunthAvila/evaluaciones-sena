@@ -258,11 +258,11 @@
     "contexto": "Tabla: productos (id, nombre, precio, stock)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "CREATE PROCEDURE ListarProductos() INSERT INTO productos (nombre) VALUES ('Nuevo');"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE PROCEDURE ListarProductos() SELECT * FROM productos;"
       },
       {
@@ -315,15 +315,15 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "4 filas: todos los productos de la tabla"
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "1 fila: Cuaderno, 3500"
       },
       {
-        "id": 0,
+        "id": 2,
         "resultado": "1 fila: Borrador, 1000"
       },
       {
@@ -418,11 +418,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "100000.00"
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "90000.00"
       },
       {
@@ -473,19 +473,19 @@
     "contexto": "Procedimiento: ContarProductos(OUT p_total INT)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "CALL ContarProductos(@total); SELECT total;"
       },
       {
-        "id": 2,
+        "id": 1,
         "sql": "SELECT ContarProductos(@total);"
       },
       {
-        "id": 3,
+        "id": 2,
         "sql": "CALL ContarProductos(5);"
       },
       {
-        "id": 0,
+        "id": 3,
         "sql": "CALL ContarProductos(@total); SELECT @total;"
       }
     ],
@@ -568,11 +568,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Falta declarar el parámetro como IN."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Una función debe devolver un valor con RETURN; SELECT solo muestra datos y no es un valor de retorno válido. Debe ser: BEGIN RETURN CONCAT(a, ' ', b); END."
       },
       {
@@ -606,15 +606,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "CALL no es válido en MySQL; debe usarse SELECT."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La invocación está correcta y no genera error."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Faltan los argumentos: el procedimiento exige el parámetro IN p_id. Debe ser CALL BuscarProducto(3);"
       },
       {

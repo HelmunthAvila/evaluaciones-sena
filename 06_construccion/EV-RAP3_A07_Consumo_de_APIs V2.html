@@ -321,11 +321,11 @@
         "salida": "None"
       },
       {
-        "id": 3,
+        "id": 2,
         "salida": "Error"
       },
       {
-        "id": 2,
+        "id": 3,
         "salida": "404"
       }
     ],
@@ -359,11 +359,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "respuesta.json es el método, no se está llamando: debe ser respuesta.json()."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "requests no puede conectarse a internet."
       },
       {
@@ -387,11 +387,11 @@
     "codigo": "import requests\n\nrespuesta = requests.get(\"https://api.ejemplo.com/ciudad/bogota\")\ndatos = respuesta.json()\nprint(datos[\"poblacion\"])\n# La API devuelve: {\"ciudad\": \"Bogota\", \"poblacion\": 7412566}",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "salida": "Bogota"
       },
       {
-        "id": 0,
+        "id": 1,
         "salida": "7412566"
       },
       {
@@ -460,7 +460,7 @@
     "titulo": "Completa la verificación de la respuesta",
     "indicacion": "Completa los huecos para verificar que la petición fue exitosa antes de continuar.",
     "tipoComp": "codigo_completar",
-    "codigo": "import requests\n\nrespuesta = requests.get(\"https://api.ejemplo.com/usuarios/5\")\nif respuesta.___ == 200:\n    print(\"Usuario encontrado\")\nelse:\n    print(\"Usuario no encontrado\")",
+    "codigo": "import requests\n\nrespuesta = requests.get(\"https://api.ejemplo.com/usuarios/5\")\nif respuesta.___ == ___:\n    print(\"Usuario encontrado\")\nelse:\n    print(\"Usuario no encontrado\")",
     "opciones": [
       [
         "status_code",
@@ -508,15 +508,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Se está enviando un GET para crear un recurso: debe usarse requests.post."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El diccionario debe ir entre corchetes."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La URL debe terminar en '/usuarios/'."
       },
       {
@@ -563,13 +563,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "import requests",
+        "id": "b5",
+        "texto": "if respuesta.status_code == 200:",
         "tipo": "proceso"
       },
       {
@@ -583,9 +578,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "if respuesta.status_code == 200:",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b6",
@@ -593,9 +588,14 @@
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "import requests",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       }
     ],
     "ordenCorrecto": [

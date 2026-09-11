@@ -258,11 +258,11 @@
     "contexto": "Herramientas disponibles: mysqldump y mysql",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "mysql -u root -p tienda < tienda.sql"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "mysqldump -u root -p tienda > tienda.sql"
       },
       {
@@ -310,15 +310,15 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "Un archivo comprimido con las imágenes y archivos adjuntos de la aplicación."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "Un listado de los usuarios y contraseñas de MySQL."
       },
       {
-        "id": 0,
+        "id": 2,
         "resultado": "Sentencias SQL (CREATE TABLE e INSERT) que permiten recrear la base tienda con sus datos."
       },
       {
@@ -417,11 +417,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "Solo la estructura de la tabla ventas, sin ningún registro."
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "La tabla ventas con todos sus registros, tal como estaban al momento del respaldo."
       },
       {
@@ -472,19 +472,19 @@
     "contexto": "Base de datos: tienda, tabla: productos",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "mysqldump -u root -p productos > tienda.sql"
       },
       {
-        "id": 2,
+        "id": 1,
         "sql": "mysql -u root -p tienda productos < productos.sql"
       },
       {
-        "id": 3,
+        "id": 2,
         "sql": "mysqldump -u root -p --all-databases > productos.sql"
       },
       {
-        "id": 0,
+        "id": 3,
         "sql": "mysqldump -u root -p tienda productos > productos.sql"
       }
     ],
@@ -554,11 +554,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "mysqldump no existe en MySQL; el respaldo se hace con CREATE TABLE."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Se usó < en lugar de > y falta el nombre de la base: con < se importa, no se exporta. Debe ser mysqldump -u root -p tienda > respaldo.sql."
       },
       {
@@ -592,15 +592,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El archivo respaldo.sql está vacío y por eso falla."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El cliente mysql no puede restaurar archivos de respaldo."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La base 'tienda' no existe: primero debe crearse con CREATE DATABASE tienda; y luego ejecutarse mysql -u root -p tienda < respaldo.sql."
       },
       {

@@ -257,13 +257,13 @@
     "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "nombre": "Acción (Rectángulo redondeado)",
         "uso": "Tarea o paso del proceso",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"26\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"50\" y=\"27\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"9\" font-weight=\"bold\">Validar datos</text></svg>"
       },
       {
-        "id": 0,
+        "id": 1,
         "nombre": "Inicio (Círculo relleno)",
         "uso": "Punto de comienzo del flujo",
         "svg": "<svg class=\"w-16 h-12\" viewBox=\"0 0 64 48\"><circle cx=\"32\" cy=\"24\" r=\"12\" fill=\"#111827\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"32\" y=\"45\" text-anchor=\"middle\" fill=\"#111827\" font-size=\"9\" font-weight=\"bold\">Inicio</text></svg>"
@@ -333,19 +333,19 @@
         "svg": "<svg class=\"w-16 h-12\" viewBox=\"0 0 64 48\"><circle cx=\"32\" cy=\"24\" r=\"12\" fill=\"#111827\" stroke=\"#111827\" stroke-width=\"2\"/><text x=\"32\" y=\"45\" text-anchor=\"middle\" fill=\"#111827\" font-size=\"9\" font-weight=\"bold\">Inicio</text></svg>"
       },
       {
-        "id": 2,
+        "id": 1,
         "nombre": "Bifurcación (Barra gruesa)",
         "uso": "División del flujo en actividades paralelas",
         "svg": "<svg class=\"w-24 h-16\" viewBox=\"0 0 100 64\"><line x1=\"50\" y1=\"4\" x2=\"50\" y2=\"14\" stroke=\"#0f766e\" stroke-width=\"2\"/><rect x=\"38\" y=\"14\" width=\"24\" height=\"36\" rx=\"2\" fill=\"#0f766e\" stroke=\"#134e4a\" stroke-width=\"2\"/><line x1=\"30\" y1=\"50\" x2=\"70\" y2=\"50\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"30,45 20,50 30,55\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\"/><polygon points=\"70,45 80,50 70,55\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2\"/><text x=\"50\" y=\"62\" text-anchor=\"middle\" fill=\"#0f766e\" font-size=\"8\" font-weight=\"bold\">Bifurcación</text></svg>"
       },
       {
-        "id": 3,
+        "id": 2,
         "nombre": "Decisión (Rombo)",
         "uso": "Punto donde el flujo se divide según una condición",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,6 94,28 50,50 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#92400e\" font-size=\"8\" font-weight=\"bold\">¿Datos válidos?</text></svg>"
       },
       {
-        "id": 1,
+        "id": 3,
         "nombre": "Acción (Rectángulo redondeado)",
         "uso": "Tarea o paso del proceso",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 48\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"26\" rx=\"13\" fill=\"#f0fdf4\" stroke=\"#16a34a\" stroke-width=\"2\"/><text x=\"50\" y=\"27\" text-anchor=\"middle\" fill=\"#166534\" font-size=\"9\" font-weight=\"bold\">Validar datos</text></svg>"
@@ -362,15 +362,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Flechas (líneas con punta de flecha)."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Líneas punteadas sin punta de flecha."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Rectángulos redondeados."
       },
       {
@@ -416,15 +416,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Líneas de vida."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Fronteras del sistema."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Swimlanes (calles de responsabilidad)."
       },
       {
@@ -443,23 +443,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar las actividades del proceso",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Determinar el orden del flujo entre las actividades",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Ubicar las decisiones en los puntos donde el flujo se divide",
         "tipo": "proceso"
       },
       {
@@ -468,19 +453,34 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b6",
         "texto": "Asignar las acciones a las swimlanes según el responsable",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Identificar las actividades del proceso",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Ubicar las decisiones en los puntos donde el flujo se divide",
         "tipo": "proceso"
       },
       {
         "id": "b7",
         "texto": "Validar el diagrama con el equipo",
         "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -503,9 +503,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Se notifica el resultado al empleado",
+        "tipo": "salida"
       },
       {
         "id": "b2",
@@ -513,9 +513,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "El jefe revisa la solicitud",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -523,14 +523,14 @@
         "tipo": "decision"
       },
       {
-        "id": "b5",
-        "texto": "Se notifica el resultado al empleado",
-        "tipo": "salida"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "El jefe revisa la solicitud",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -574,11 +574,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El rectángulo redondeado es la notación correcta para una decisión."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La decisión se representa con un rombo, no con un rectángulo redondeado de acción."
       },
       {
@@ -628,11 +628,11 @@
         "texto": "La barra de bifurcación es incorrecta en UML."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que las actividades paralelas no se permiten en UML."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El rombo solo se usa para decisiones excluyentes; la bifurcación paralela se dibuja con una barra gruesa."
       },
       {

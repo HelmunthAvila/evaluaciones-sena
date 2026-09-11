@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Análisis documental de manuales desactualizados."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Observación directa: el analista presencia y registra el proceso real."
       },
       {
@@ -284,7 +284,7 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "Entrevista a profundidad con un empleado."
       },
       {
@@ -292,11 +292,11 @@
         "texto": "Observación de un solo cliente."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Encuesta con cuestionario estructurado aplicada a la muestra de clientes."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Análisis documental del acta de la junta."
       }
     ],
@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Encuesta a los clientes del servicio de domicilios."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Ninguna, la nómina no se documenta."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Observación del restaurante de la empresa."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Análisis documental: revisar formatos de liquidación, manuales y reglamentos."
       }
     ],
@@ -338,13 +338,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Aplicar la encuesta a la muestra seleccionada",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Definir el objetivo de la encuesta y la población objetivo",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Tabular y analizar los resultados",
         "tipo": "proceso"
       },
       {
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Aplicar la encuesta a la muestra seleccionada",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Tabular y analizar los resultados",
+        "id": "b2",
+        "texto": "Definir el objetivo de la encuesta y la población objetivo",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -397,9 +397,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Solicitar autorización al responsable del proceso",
+        "id": "b5",
+        "texto": "Contrastar lo observado con lo documentado",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -412,14 +417,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Contrastar lo observado con lo documentado",
+        "id": "b2",
+        "texto": "Solicitar autorización al responsable del proceso",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Localizar los documentos del proceso (manuales, formatos, informes)",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Revisar y extraer los datos relevantes para los requisitos",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Organizar la información por tema o proceso",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Localizar los documentos del proceso (manuales, formatos, informes)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Organizar la información por tema o proceso",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -503,19 +503,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El plan está correcto."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el objetivo no sirve para el proyecto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Falta la firma del gerente en el plan."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "La encuesta de satisfacción no mide tiempos reales: para medir el proceso se usa la observación directa con registro de tiempos."
       }
     ],
@@ -598,19 +598,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "A: análisis documental, B: observación, C: encuesta."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "A: encuesta, B: entrevista, C: observación."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "A: entrevista, B: encuesta, C: análisis documental."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "A: observación, B: encuesta, C: entrevista."
       }
     ],
@@ -651,19 +651,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Los datos no sirven porque la muestra es pequeña y no se concluye nada."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El analista debe entrevistar a los clientes en lugar de concluir."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El 70% de los operarios reporta que el módulo no permite encontrar productos rápidamente; es un requisito a corregir o rediseñar."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "La mayoría de los operarios está satisfecha con el módulo."
       }
     ],

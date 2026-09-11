@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "node -v"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "python --version"
       },
       {
@@ -288,11 +288,11 @@
         "texto": "python --version"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "git status"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "node -v"
       },
       {
@@ -319,11 +319,11 @@
         "texto": "El bloc de notas."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El panel de control."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El símbolo del sistema (cmd) o PowerShell."
       }
     ],
@@ -338,14 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Verificar que aparezca la versión, por ejemplo Python 3.12.4",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Abrir el símbolo del sistema (cmd) o PowerShell",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Salida: confirmar que Python está instalado y funcionando",
+        "tipo": "salida"
       },
       {
         "id": "b3",
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Verificar que aparezca la versión, por ejemplo Python 3.12.4",
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el símbolo del sistema (cmd) o PowerShell",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Salida: confirmar que Python está instalado y funcionando",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -392,29 +392,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Guardar el archivo saludo.py en una carpeta del equipo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Abrir el símbolo del sistema",
-        "tipo": "proceso"
-      },
-      {
         "id": "b4",
         "texto": "Ubicarse en la carpeta donde está el archivo con el comando cd",
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Ejecutar el programa con el comando python saludo.py",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b6",
@@ -422,9 +412,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "Abrir el símbolo del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Guardar el archivo saludo.py en una carpeta del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Ejecutar el programa con el comando python saludo.py",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -446,28 +446,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el símbolo del sistema o PowerShell",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Escribir el comando node -v y presionar Enter",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Verificar que aparezca la versión de Node.js, por ejemplo v20.11.0",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Escribir el comando npm -v y presionar Enter",
         "tipo": "proceso"
       },
       {
@@ -476,9 +456,29 @@
         "tipo": "salida"
       },
       {
+        "id": "b4",
+        "texto": "Verificar que aparezca la versión de Node.js, por ejemplo v20.11.0",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir el comando npm -v y presionar Enter",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir el símbolo del sistema o PowerShell",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -531,15 +531,15 @@
         "texto": "El error es que la consola no funciona en ese equipo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El error es que falta instalar la consola."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "El comando está mal escrito: el nombre correcto del programa es python, no phython."
       }
     ],
@@ -638,11 +638,11 @@
         "texto": "Python no está instalado."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Python está instalado y funcionando correctamente: la verificación fue exitosa."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El equipo tiene un virus."
       },
       {
@@ -695,11 +695,11 @@
         "texto": "El comando se ejecutó correctamente."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Node.js no está instalado o no está agregado a las variables de entorno (PATH)."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El error es del teclado y no tiene solución."
       }
     ],

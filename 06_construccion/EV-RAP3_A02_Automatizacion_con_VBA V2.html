@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "If ... Then ... Else"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "For ... Next"
       },
       {
@@ -345,19 +345,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Range(\"A1\").Value = Range(\"B1\").Value"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Cells(1, 1).Value = 1"
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Copy Range(\"A1\") To Range(\"B1\")"
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Range(\"B1\").Value = Range(\"A1\").Value"
       }
     ],
@@ -442,9 +442,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Dim i As Integer",
+        "id": "b5",
+        "texto": "Next i",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -457,14 +462,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Next i",
+        "id": "b2",
+        "texto": "Dim i As Integer",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -516,15 +516,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La condición debe ser n < 5 en lugar de n <= 5."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La variable n debe declararse como Double."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Dentro del bucle nunca se modifica la variable n, por lo que la condición n <= 5 siempre es verdadera y el bucle se ejecuta sin terminar. Falta la instrucción n = n + 1."
       },
       {
@@ -543,19 +543,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Range(\"B11\").Value = Sum(B2:B10)"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Range(\"B11\").Value = Range(\"B2:B10\").Total"
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Range(\"B11\") = Add(Range(\"B2:B10\"))"
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Range(\"B11\").Value = Application.WorksheetFunction.Sum(Range(\"B2:B10\"))"
       }
     ],
@@ -570,14 +570,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "For i = 1 To 5",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Next i",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -593,16 +603,6 @@
         "id": "b5",
         "texto": "End If",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Next i",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -659,11 +659,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La condición debe ser total >= 100000."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Falta la instrucción End If que cierra el bloque If ... Else. Sin ella, VBA genera el error de compilación 'Block If without End If'."
       },
       {
@@ -732,11 +732,11 @@
         "texto": "3"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "9"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "6"
       },
       {

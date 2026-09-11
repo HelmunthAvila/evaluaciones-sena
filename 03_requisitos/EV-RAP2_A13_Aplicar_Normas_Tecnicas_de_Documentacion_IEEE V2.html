@@ -311,18 +311,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
         "id": "b2",
         "texto": "Introducción: propósito, alcance, definiciones y referencias",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Descripción general: perspectiva del producto y funciones del sistema",
         "tipo": "proceso"
       },
       {
@@ -331,8 +321,18 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "Apéndices, glosario e índice del documento",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Descripción general: perspectiva del producto y funciones del sistema",
         "tipo": "proceso"
       },
       {
@@ -359,19 +359,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar el propósito y el alcance del sistema",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Describir la perspectiva general del producto",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -384,9 +384,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Identificar el propósito y el alcance del sistema",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -407,13 +407,23 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Confirmar que el documento esté completo y sin secciones vacías",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Revisar que cada requisito sea verificable (medible)",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Aprobar el documento y registrar la versión",
         "tipo": "proceso"
       },
       {
@@ -422,24 +432,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Confirmar que el documento esté completo y sin secciones vacías",
+        "id": "b2",
+        "texto": "Revisar que cada requisito sea verificable (medible)",
         "tipo": "proceso"
       },
       {
         "id": "b5",
         "texto": "Solicitar las correcciones al analista si se detecta un error",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Aprobar el documento y registrar la versión",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -480,15 +480,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La introducción debe ubicarse al final del documento."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que falta la sección de apéndices."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Los requisitos específicos deben ir en una sección propia (sección 3 de IEEE 830), no dentro de la introducción."
       },
       {
@@ -522,15 +522,15 @@
         "texto": "El requisito es demasiado largo para el documento."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta el prefijo RNF en el identificador del requisito."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El documento está correcto."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "'Rápido' es subjetivo y no verificable: debe cuantificarse, por ejemplo 'responder en menos de 2 segundos'."
       }
     ],
@@ -560,19 +560,19 @@
     ],
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "IEEE 830 exige documentar también los requisitos no funcionales (rendimiento, seguridad, disponibilidad); el documento está incompleto."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El documento está correcto."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Falta incluir los apéndices del documento."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Los requisitos funcionales deben ir después de los no funcionales."
       }
     ],
@@ -609,11 +609,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "RF-01 es ambiguo y debe reescribirse."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "RF-01 cumple las características de calidad y se aprueba."
       },
       {

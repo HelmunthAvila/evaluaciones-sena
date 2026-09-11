@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Ctrl + C"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Windows + L"
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Alt + Tab"
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Mantener presionado el botón físico de encendido."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Cerrar la tapa del portátil sin realizar ninguna acción."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Usar el menú Inicio y seleccionar la opción Apagar."
       }
     ],
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Hacer clic derecho sobre un espacio vacío del escritorio",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Seleccionar la opción Nuevo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Hacer clic derecho sobre un espacio vacío del escritorio",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -391,9 +391,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Guardar y cerrar los documentos y programas abiertos",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Esperar a que el equipo finalice el apagado por completo",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -406,14 +411,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Esperar a que el equipo finalice el apagado por completo",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Guardar y cerrar los documentos y programas abiertos",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -434,24 +434,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Presionar las teclas Ctrl + Alt + Supr",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Seleccionar la opción Administrador de tareas",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Ubicar la aplicación que no responde en la lista de procesos",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -459,9 +449,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Presionar las teclas Ctrl + Alt + Supr",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Ubicar la aplicación que no responde en la lista de procesos",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -505,19 +505,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Desconectar el cable es la forma más rápida y recomendada de apagar el equipo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el usuario guardó los documentos antes de apagar."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El equipo no enciende al día siguiente porque la memoria RAM es insuficiente."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Apagar desconectando el cable de energía es incorrecto: el sistema operativo no cierra los procesos de forma ordenada y se pueden dañar los archivos; se debe usar la opción Apagar del menú Inicio."
       }
     ],
@@ -555,15 +555,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Cerrar sesión no apaga el equipo: solo finaliza la sesión del usuario y el equipo sigue encendido; para apagarlo se debe usar la opción Apagar."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Cerrar sesión apaga el equipo por completo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que el usuario no desconectó el monitor."
       },
       {
@@ -608,11 +608,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El equipo se reinicia automáticamente."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El equipo se apaga de forma segura y la información queda guardada."
       },
       {

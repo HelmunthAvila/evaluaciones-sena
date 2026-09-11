@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Directamente en producción."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "En el disco duro de cada desarrollador sin control de versiones."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Eliminando la rama principal."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "En la rama de desarrollo (feature) creada desde la rama principal."
       }
     ],
@@ -338,13 +338,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Etiquetar la versión (tag)",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Completar el desarrollo de los cambios",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Publicar el release",
         "tipo": "proceso"
       },
       {
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Etiquetar la versión (tag)",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Publicar el release",
+        "id": "b2",
+        "texto": "Completar el desarrollo de los cambios",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -397,9 +397,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Crear la rama de desarrollo para el cambio",
+        "id": "b5",
+        "texto": "Crear la etiqueta de la nueva versión",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -412,14 +417,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Crear la etiqueta de la nueva versión",
+        "id": "b2",
+        "texto": "Crear la rama de desarrollo para el cambio",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Revisar los cambios desde la última versión publicada",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Decidir si el cambio es mayor o menor",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Incrementar el número de versión (1.0, 1.1, 2.0)",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Revisar los cambios desde la última versión publicada",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Incrementar el número de versión (1.0, 1.1, 2.0)",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -503,19 +503,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es haber publicado la entrega."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es haber escrito un changelog."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El registro está correcto."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El número de versión no corresponde: una funcionalidad nueva importante debe subir la versión mayor (2.0)."
       }
     ],

@@ -261,11 +261,11 @@
         "texto": "Caso de uso: una función que el sistema ofrece."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Actor: el rol externo que interactúa con el sistema."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Frontera del sistema: el rectángulo que delimita el sistema."
       },
       {
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Rectángulo que delimita la frontera del sistema."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Figura de palo (stick figure) para el actor."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Elipse con el nombre de la función (por ejemplo, 'Registrar pedido')."
       },
       {
@@ -315,15 +315,15 @@
         "texto": "Extend: comportamiento opcional bajo condición."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Generalización: relación entre casos de uso padre e hijo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Dependencia: el cambio de uno afecta al otro."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "Include (inclusión): comportamiento obligatorio que siempre se ejecuta."
       }
     ],
@@ -338,13 +338,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Ubicar los actores fuera de la frontera y dibujar las asociaciones",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Identificar los actores que interactúan con el sistema",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Revisar el diagrama con el cliente",
         "tipo": "proceso"
       },
       {
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Ubicar los actores fuera de la frontera y dibujar las asociaciones",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Revisar el diagrama con el cliente",
+        "id": "b2",
+        "texto": "Identificar los actores que interactúan con el sistema",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -397,9 +397,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Dibujar el rectángulo de la frontera del sistema",
+        "id": "b5",
+        "texto": "Dibujar la asociación entre el Vendedor y 'Registrar pedido'",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -412,14 +417,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Dibujar la asociación entre el Vendedor y 'Registrar pedido'",
+        "id": "b2",
+        "texto": "Dibujar el rectángulo de la frontera del sistema",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar el caso de uso base",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Preguntar si el comportamiento adicional se ejecuta SIEMPRE",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Si es obligatorio, aplicar la relación include",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Identificar el caso de uso base",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Si es obligatorio, aplicar la relación include",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -507,19 +507,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El caso de uso 'Registrar pedido' debe ir fuera de la frontera."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que falta la relación extend."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El diagrama está correcto."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Los actores van FUERA de la frontera del sistema; dentro van solo los casos de uso."
       }
     ],
@@ -549,11 +549,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Como 'Verificar disponibilidad' siempre se ejecuta, la relación correcta es <<include>>, no <<extend>>."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La relación extend es correcta porque el comportamiento siempre se ejecuta."
       },
       {
@@ -594,11 +594,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Base de datos y Reloj del sistema."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Vendedor y Cliente."
       },
       {
@@ -647,11 +647,11 @@
         "texto": "generalización."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "include."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "asociación directa sin estereotipo."
       }
     ],

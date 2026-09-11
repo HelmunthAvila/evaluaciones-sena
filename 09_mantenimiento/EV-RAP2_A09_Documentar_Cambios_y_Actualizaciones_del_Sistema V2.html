@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Eliminar los datos antiguos para ganar espacio."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Desinstalar el sistema completamente."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Crear un respaldo (backup) de la base de datos y la configuración."
       },
       {
@@ -311,18 +311,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
         "id": "b2",
         "texto": "Registrar el cambio en el changelog con fecha y versión",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Actualizar el manual de usuario si cambia el manejo",
         "tipo": "proceso"
       },
       {
@@ -331,8 +321,18 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "Conservar el respaldo de la versión anterior",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Actualizar el manual de usuario si cambia el manejo",
         "tipo": "proceso"
       },
       {
@@ -359,13 +359,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Verificar el funcionamiento del sistema",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Crear el respaldo de la información actual",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Actualizar la documentación y notificar a los usuarios",
         "tipo": "proceso"
       },
       {
@@ -379,19 +384,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Verificar el funcionamiento del sistema",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Actualizar la documentación y notificar a los usuarios",
+        "id": "b2",
+        "texto": "Crear el respaldo de la información actual",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -418,9 +418,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Identificar exactamente qué se cambió",
+        "id": "b5",
+        "texto": "Revisar que la descripción sea entendible",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -433,14 +438,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Revisar que la descripción sea entendible",
+        "id": "b2",
+        "texto": "Identificar exactamente qué se cambió",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -476,11 +476,11 @@
         "texto": "El error es haber escrito un registro."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es haber actualizado el sistema."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El registro no indica qué cambió, en qué versión ni cuándo; una descripción vaga no sirve para el historial."
       },
       {
@@ -522,11 +522,11 @@
         "texto": "El error es haber aplicado la actualización."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El proceso está correcto."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Faltó el respaldo: si la actualización falla, no hay forma de restaurar la información."
       }
     ],
@@ -658,15 +658,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Se hace seguimiento a 15 usuarios."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Se hace seguimiento a 20 usuarios."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Se hace seguimiento a 5 usuarios (20 - 15)."
       },
       {

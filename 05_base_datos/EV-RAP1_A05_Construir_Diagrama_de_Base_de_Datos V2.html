@@ -314,11 +314,11 @@
         "resultado": "Es un dato calculado que cuenta cuántos libros escribió el autor."
       },
       {
-        "id": 3,
+        "id": 2,
         "resultado": "Es la llave foránea que relaciona cada libro con su autor: la relación es 1:N (un autor escribe varios libros)."
       },
       {
-        "id": 2,
+        "id": 3,
         "resultado": "Es un campo sin relación con la tabla autores."
       }
     ],
@@ -413,11 +413,11 @@
         "resultado": "Una relación 1:1 directa entre estudiantes y libros, sin tabla adicional."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "La tabla puente prestamos, con llave primaria id_prestamo y las foráneas libro_id y estudiante_id."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "Se agrega el campo id_estudiante dentro de la tabla libros."
       },
       {
@@ -455,11 +455,11 @@
         "texto": "Faltan las tablas estudiantes y autores en el diagrama."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La relación prestamos-libros está mal dibujada: un libro puede aparecer en muchos préstamos, por lo que es 1:N y no 1:1."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El diagrama está correcto."
       }
     ],
@@ -502,11 +502,11 @@
     "contexto": "Entidad: autores (id_autor, nombre)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "CREATE TABLE autores (id_autor INT PRIMARY KEY, nombre VARCHAR(60));"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE TABLE autores (nombre VARCHAR(60));"
       },
       {
@@ -550,11 +550,11 @@
         "resultado": "Relación N:M representada con una tabla puente adicional."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "Relación 1:N: prestamos lleva la llave foránea libro_id que referencia a libros.id_libro."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "Relación 1:1 porque cada préstamo tiene un solo libro."
       },
       {
@@ -588,15 +588,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El tipo VARCHAR no existe en SQL."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La tabla no necesita relacionarse con autores."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Falta la llave primaria: la tabla libros debe declarar id_libro INT PRIMARY KEY para identificar cada registro."
       },
       {

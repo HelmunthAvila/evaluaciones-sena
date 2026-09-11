@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Mantenimiento correctivo: corrige un error del sistema."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Mantenimiento evolutivo: agrega una funcionalidad nueva que no existía."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Implementar el cambio de inmediato para no retrasar al cliente."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Borrar los datos de prueba del ambiente de desarrollo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Analizar la solicitud: alcance, módulos afectados y tiempo estimado."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Prueba de instalación: verifica el proceso de instalación."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Prueba de estrés: somete el sistema a condiciones extremas."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Prueba de regresión: ejecuta casos anteriores para confirmar que nada se rompió."
       }
     ],
@@ -338,13 +338,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Probar la mejora y las funciones existentes",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Analizar la solicitud y su alcance",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Documentar el cambio en el registro",
         "tipo": "proceso"
       },
       {
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Probar la mejora y las funciones existentes",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Documentar el cambio en el registro",
+        "id": "b2",
+        "texto": "Analizar la solicitud y su alcance",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -397,9 +397,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Recibir la solicitud del usuario",
+        "id": "b5",
+        "texto": "Ejecutar el cambio y validarlo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -412,14 +417,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Ejecutar el cambio y validarlo",
+        "id": "b2",
+        "texto": "Recibir la solicitud del usuario",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Crear respaldo de la versión actual",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Instalar la nueva versión en el ambiente de pruebas",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Validar el funcionamiento en pruebas",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Crear respaldo de la versión actual",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Validar el funcionamiento en pruebas",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -503,19 +503,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El registro está correcto y completo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta el nombre del usuario que hizo la solicitud."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El error es que el formulario no debe tener un botón Guardar."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El registro no corresponde a la solicitud: documenta un cambio visual, no el campo teléfono solicitado."
       }
     ],
@@ -545,11 +545,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Faltó probar la mejora antes del despliegue; una falla no detectada afecta producción."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El error es haber documentado el cambio."
       },
       {
@@ -647,15 +647,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "8 casos pasan al final."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "2 casos pasan al final."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "10 casos pasan al final."
       },
       {

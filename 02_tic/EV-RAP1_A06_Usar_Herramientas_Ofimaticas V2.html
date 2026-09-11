@@ -292,11 +292,11 @@
         "texto": "Cerrar."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Guardar como."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Revisar."
       }
     ],
@@ -319,11 +319,11 @@
         "texto": "Referencias."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Vista."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Insertar."
       }
     ],
@@ -338,14 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Asignar el nombre y seleccionar la carpeta de destino",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Abrir Microsoft Word y seleccionar un documento en blanco",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Hacer clic en Guardar y verificar el archivo en la carpeta",
+        "tipo": "salida"
       },
       {
         "id": "b3",
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Asignar el nombre y seleccionar la carpeta de destino",
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir Microsoft Word y seleccionar un documento en blanco",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Hacer clic en Guardar y verificar el archivo en la carpeta",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -392,29 +392,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Ubicar el cursor en el lugar donde irá la tabla",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Ir a la pestaña Insertar y hacer clic en Tabla",
-        "tipo": "proceso"
-      },
-      {
         "id": "b4",
         "texto": "Seleccionar la cantidad de filas y columnas en la cuadrícula",
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Escribir los encabezados y los datos en las celdas",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b6",
@@ -422,9 +412,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "Ir a la pestaña Insertar y hacer clic en Tabla",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Ubicar el cursor en el lugar donde irá la tabla",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Escribir los encabezados y los datos en las celdas",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -446,28 +446,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir PowerPoint y crear una presentación en blanco",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Agregar las diapositivas necesarias con el botón Nueva diapositiva",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Escribir el título y el contenido de cada diapositiva",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Insertar la imagen del proyecto en la diapositiva final",
         "tipo": "proceso"
       },
       {
@@ -476,9 +456,29 @@
         "tipo": "salida"
       },
       {
+        "id": "b4",
+        "texto": "Escribir el título y el contenido de cada diapositiva",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Insertar la imagen del proyecto en la diapositiva final",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir PowerPoint y crear una presentación en blanco",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -527,19 +527,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que los valores de A1 y B1 son demasiado pequeños."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El error es usar la celda C1; la fórmula debe escribirse en la celda D1."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Toda fórmula en Excel debe iniciar con el signo igual: la expresión correcta es =A1+B1."
       }
     ],
@@ -581,11 +581,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El formato PDF solo permite visualizar e imprimir, no editar: la presentación debe guardarse como presentación de PowerPoint (.pptx) para seguir modificándola."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El error es que la presentación tenía demasiadas diapositivas."
       },
       {

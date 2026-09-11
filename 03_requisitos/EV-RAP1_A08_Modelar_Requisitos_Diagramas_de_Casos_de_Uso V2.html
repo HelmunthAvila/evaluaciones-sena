@@ -292,11 +292,11 @@
         "texto": "Ambas relaciones significan lo mismo y pueden usarse indistintamente."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Include indica que el caso base siempre ejecuta el caso incluido; extend agrega comportamiento opcional bajo una condición."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Include indica que el caso incluido se ejecuta solo bajo una condición especial."
       }
     ],
@@ -345,11 +345,11 @@
         "texto": "El inventario."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El administrador del portal."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El cliente."
       }
     ],
@@ -421,28 +421,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar los actores que interactúan con el sistema",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Identificar los casos de uso a partir de los requisitos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Dibujar el límite o rectángulo del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Ubicar los actores fuera del sistema y los casos de uso dentro",
         "tipo": "proceso"
       },
       {
@@ -451,9 +431,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b5",
+        "texto": "Ubicar los actores fuera del sistema y los casos de uso dentro",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Agregar las relaciones include y extend según corresponda",
         "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Dibujar el límite o rectángulo del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Identificar los actores que interactúan con el sistema",
+        "tipo": "proceso"
       },
       {
         "id": "b8",
@@ -481,28 +481,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Nombrar el caso de uso con un verbo en infinitivo",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Identificar el actor principal del caso de uso",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Definir las precondiciones necesarias para iniciar",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Describir el flujo normal de eventos paso a paso",
         "tipo": "proceso"
       },
       {
@@ -511,9 +491,29 @@
         "tipo": "salida"
       },
       {
+        "id": "b4",
+        "texto": "Definir las precondiciones necesarias para iniciar",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Describir el flujo normal de eventos paso a paso",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Nombrar el caso de uso con un verbo en infinitivo",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -535,23 +535,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Revisar los requisitos funcionales del documento",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Agrupar los requisitos por actor y por función",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Nombrar cada caso de uso con un verbo en infinitivo",
         "tipo": "proceso"
       },
       {
@@ -560,14 +545,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Validar la lista de casos con el cliente",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Nombrar cada caso de uso con un verbo en infinitivo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Revisar los requisitos funcionales del documento",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -612,11 +612,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La relación debe ser include, porque generar la factura se ejecuta siempre que se realiza un pago; extend solo se usa para comportamiento opcional."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La relación es correcta porque la factura es opcional."
       },
       {
@@ -662,11 +662,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El diagrama está correcto porque todos los elementos van dentro del sistema."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Los actores deben ubicarse fuera del límite del sistema; dentro del rectángulo solo van los casos de uso."
       },
       {

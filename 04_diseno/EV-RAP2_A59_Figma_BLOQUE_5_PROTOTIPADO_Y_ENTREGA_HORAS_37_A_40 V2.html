@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Formato JPG, porque comprime las imágenes."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Formato SVG, porque es vectorial y se escala sin perder calidad."
       },
       {
@@ -315,15 +315,15 @@
         "texto": "Eliminar la capa comentada."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Exportar la pantalla en PNG."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Cambiar el nombre del frame."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "Agregar un comentario de respuesta en el mismo hilo de la observación."
       }
     ],
@@ -338,19 +338,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "Usar la vista de presentación del prototipo para recorrer las pantallas y las interacciones con el cliente."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Enviar el archivo PSeInt del proyecto."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Entregar una hoja de cálculo con los colores."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Imprimir las pantallas en papel."
       }
     ],
@@ -399,15 +399,15 @@
         "texto": "El logo se eliminó del archivo de diseño."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El logo se exportó en PNG escala 2x y quedó guardado en la carpeta Assets del proyecto."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Se exportó el archivo completo de Figma en lugar del logo."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La exportación no se pudo realizar porque el logo es un componente."
       }
     ],
@@ -456,11 +456,11 @@
         "texto": "El cliente recibió permisos de edición sobre el archivo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El archivo se eliminó al compartirlo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El cliente puede ver el diseño y dejar comentarios, pero no modificar las capas."
       },
       {
@@ -479,23 +479,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Revisar que todas las pantallas del proyecto estén completas",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Exportar los assets necesarios para el desarrollo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Resolver los comentarios pendientes del equipo",
         "tipo": "proceso"
       },
       {
@@ -504,14 +489,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Presentar el prototipo navegable al cliente",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Resolver los comentarios pendientes del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Revisar que todas las pantallas del proyecto estén completas",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -533,14 +533,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Abrir el panel de comentarios del archivo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que no quedan comentarios sin responder",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -556,16 +566,6 @@
         "id": "b5",
         "texto": "Marcar el comentario como resuelto",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que no quedan comentarios sin responder",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -610,11 +610,11 @@
         "texto": "El error es que el logo no tiene nombre."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La falla es exportar el logo en JPG, formato con pérdida de calidad y sin transparencia; para logos e íconos se debe exportar en PNG o SVG."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El desarrollador debe dibujar el logo nuevamente."
       },
       {
@@ -652,15 +652,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que el archivo se guardó con otro nombre."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el prototipo no tiene transiciones."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La falla es entregar el proyecto con comentarios sin gestionar; todos los comentarios deben responderse y resolverse antes de declarar terminada la entrega."
       },
       {

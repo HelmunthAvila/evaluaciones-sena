@@ -261,15 +261,15 @@
         "texto": "Desde un enlace que llegó por correo de un remitente desconocido."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Desde el sitio oficial code.visualstudio.com."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Desde una página de descargas de terceros."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Desde un anuncio del navegador."
       }
     ],
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Una extensión llamada Python Desconocido de un autor anónimo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Una extensión de videojuegos."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La extensión Python publicada por Microsoft."
       },
       {
@@ -311,19 +311,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b3",
+        "texto": "Descargar el instalador según el sistema operativo del equipo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Finalizar la instalación y abrir VS Code",
+        "tipo": "salida"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Abrir el navegador e ingresar al sitio oficial code.visualstudio.com",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Descargar el instalador según el sistema operativo del equipo",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -336,14 +341,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Finalizar la instalación y abrir VS Code",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Abrir el navegador e ingresar al sitio oficial code.visualstudio.com",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -365,14 +365,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Seleccionar la extensión oficial y hacer clic en Instalar",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Abrir Visual Studio Code",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que la extensión quede activa en el editor",
+        "tipo": "salida"
       },
       {
         "id": "b3",
@@ -385,19 +390,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Seleccionar la extensión oficial y hacer clic en Instalar",
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir Visual Studio Code",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que la extensión quede activa en el editor",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -419,29 +419,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir Visual Studio Code",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Ir a Archivo y seleccionar Abrir carpeta",
-        "tipo": "proceso"
-      },
-      {
         "id": "b4",
         "texto": "Buscar y seleccionar la carpeta del proyecto",
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Crear un archivo nuevo con el botón Nuevo archivo",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b6",
@@ -449,9 +439,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "Ir a Archivo y seleccionar Abrir carpeta",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir Visual Studio Code",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b5",
+        "texto": "Crear un archivo nuevo con el botón Nuevo archivo",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -500,15 +500,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que el navegador no debe usarse para descargar programas."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La descarga debe hacerse únicamente desde el sitio oficial code.visualstudio.com: los anuncios y páginas de terceros pueden instalar programas no deseados."
       },
       {
@@ -562,11 +562,11 @@
         "texto": "El error es que Windows no puede abrir archivos de código."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El archivo se abrió con el programa predeterminado: primero debe abrirse la carpeta en VS Code y luego el archivo dentro del editor."
       }
     ],
@@ -608,11 +608,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El archivo se guardó sin la extensión .py, por eso VS Code no lo reconoce como código Python: debe guardarse con el nombre prueba.py."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El error es que el archivo tiene demasiados caracteres."
       },
       {
@@ -661,11 +661,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El equipo se reiniciará automáticamente."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "VS Code no se podrá abrir desde la terminal con el comando code y algunas herramientas no se reconocerán en la consola."
       },
       {

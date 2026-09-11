@@ -262,15 +262,15 @@
         "sql": "CREATE TABLE clientes (id_cliente PRIMARY KEY, nombre VARCHAR(50), telefono VARCHAR(15));"
       },
       {
-        "id": 3,
+        "id": 1,
         "sql": "CREATE TABLE clientes (id_cliente INT PRIMARY KEY, nombre VARCHAR(50), telefono VARCHAR(15));"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "CREATE TABLE clientes (nombre VARCHAR(50), telefono VARCHAR(15));"
       },
       {
-        "id": 2,
+        "id": 3,
         "sql": "CREATE DATABASE clientes;"
       }
     ],
@@ -314,11 +314,11 @@
         "resultado": "Solo 1 columna: id_cliente."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "5 columnas, incluyendo campos calculados."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "3 columnas: id_cliente (INT, llave primaria), nombre (VARCHAR(50)) y telefono (VARCHAR(15))."
       },
       {
@@ -417,11 +417,11 @@
         "resultado": "Relación 1:1: cada cliente tiene un único pedido."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "Relación 1:N: un cliente puede tener varios pedidos; pedidos guarda la llave foránea cliente_id."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "Relación N:M que requiere una tabla puente."
       },
       {
@@ -467,11 +467,11 @@
         "texto": "La tabla clientes no existe."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La llave foránea debe referenciar la llave primaria de clientes (id_cliente), no el campo nombre."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La sentencia está correcta."
       }
     ],
@@ -514,11 +514,11 @@
     "contexto": "Tabla: productos (id_producto, nombre, precio)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "CREATE TABLE productos (id_producto INT PRIMARY KEY, nombre VARCHAR(60), precio DECIMAL(10,2));"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE TABLE productos (id_producto INT PRIMARY KEY, nombre VARCHAR(60), precio INT);"
       },
       {
@@ -555,11 +555,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "1 tabla: clientes."
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "2 tablas: clientes y productos."
       },
       {

@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La calculadora de Windows."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Google Drive."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Editor."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Administrador del equipo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Lector."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "La protección de pantalla."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El bloqueo del teclado."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La sincronización de la carpeta local con la nube."
       }
     ],
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir el servicio de almacenamiento en la nube",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Seleccionar la opción subir o arrastrar el archivo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Abrir el servicio de almacenamiento en la nube",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -391,9 +391,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Seleccionar el archivo que se va a compartir",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Elegir el permiso Lector y enviar la invitación",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -406,14 +411,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Elegir el permiso Lector y enviar la invitación",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Seleccionar el archivo que se va a compartir",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -434,24 +434,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Instalar la aplicación de escritorio del servicio de nube",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Iniciar sesión con la cuenta del aprendiz",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Elegir la carpeta local que se sincronizará",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -459,9 +449,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Instalar la aplicación de escritorio del servicio de nube",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Elegir la carpeta local que se sincronizará",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -501,19 +501,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El permiso Editor impide abrir el archivo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el documento no debe compartirse por correo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El procedimiento es correcto."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El permiso Editor permite modificar el archivo: para que solo pueda verlo debe otorgarse el permiso Lector."
       }
     ],
@@ -547,19 +547,19 @@
     ],
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "La sincronización funciona en ambos sentidos: al borrar el archivo local también se elimina de la nube; debe usarse la papelera o mover el archivo, no borrarlo."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Borrar la carpeta local no afecta la nube."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que la carpeta debe estar comprimida."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El procedimiento es correcto y el archivo sigue en la nube."
       }
     ],
@@ -604,11 +604,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El instructor no puede abrir el archivo porque no tiene cuenta."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El instructor recibe la invitación y puede consultar el informe sin modificarlo."
       },
       {
@@ -661,15 +661,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El documento se duplica en la nube sin cambios."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La corrección solo queda en el equipo local."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La versión corregida queda disponible en la nube y en los demás dispositivos."
       },
       {

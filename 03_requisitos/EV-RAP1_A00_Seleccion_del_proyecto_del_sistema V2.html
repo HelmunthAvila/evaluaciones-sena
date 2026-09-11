@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El costo de la primera propuesta es más alto."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Viabilidad técnica: los recursos tecnológicos y de capacitación requeridos son excesivos para el proyecto."
       },
       {
@@ -284,7 +284,7 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "El sistema debe reemplazar todos los programas de la oficina."
       },
       {
@@ -292,11 +292,11 @@
         "texto": "El sistema debe facturar todo lo que la empresa necesite en el futuro."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El sistema debe registrar ventas, generar facturas y consultar el historial de facturación; no incluye nómina ni contabilidad."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El sistema debe estar listo lo antes posible."
       }
     ],
@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "La empresa necesita una red nueva."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El contador debe revisar las facturas dos veces."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Se debe comprar un software de facturación."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Los vendedores tardan 20 minutos en elaborar una factura a mano y cometen errores de cálculo."
       }
     ],
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar los procesos que el sistema debe soportar",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Listar las funciones que el sistema sí realizará",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Declarar explícitamente lo que el sistema NO hará",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Identificar los procesos que el sistema debe soportar",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Declarar explícitamente lo que el sistema NO hará",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -507,19 +507,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que el proyecto sí resuelve el problema de facturación."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el plazo de 3 meses es muy corto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La ficha está correcta."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El proyecto no debía aprobarse: supera el presupuesto, la viabilidad económica falla y el criterio era obligatorio."
       }
     ],
@@ -663,19 +663,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "El proyecto no es viable porque el costo supera el beneficio."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El proyecto es viable solo si se elimina la capacitación."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El proyecto es viable y se recomienda su aprobación."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "El proyecto no es viable por falta de tecnología."
       }
     ],

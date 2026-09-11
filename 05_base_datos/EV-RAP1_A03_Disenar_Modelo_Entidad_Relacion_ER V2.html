@@ -261,11 +261,11 @@
         "texto": "1:1 (uno a uno)."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "1:N (uno a muchos)."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "N:M (muchos a muchos)."
       },
       {
@@ -292,11 +292,11 @@
         "texto": "1:N (uno a muchos)."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "N:M (muchos a muchos)."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "N:1 (muchos a uno)."
       }
     ],
@@ -311,25 +311,25 @@
     "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "nombre": "Elipse",
         "uso": "Atributo",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><ellipse cx=\"50\" cy=\"25\" rx=\"42\" ry=\"18\" fill=\"#22c55e\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"10\">nombre</text></svg>"
       },
       {
-        "id": 2,
+        "id": 1,
         "nombre": "Rombo",
         "uso": "Relación",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><polygon points=\"50,5 92,25 50,45 8,25\" fill=\"#f59e0b\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"10\">Realiza</text></svg>"
       },
       {
-        "id": 3,
+        "id": 2,
         "nombre": "Línea",
         "uso": "Vínculo entre elementos",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><line x1=\"10\" y1=\"25\" x2=\"90\" y2=\"25\" stroke=\"#64748b\" stroke-width=\"3\"/><circle cx=\"10\" cy=\"25\" r=\"4\" fill=\"#64748b\"/><circle cx=\"90\" cy=\"25\" r=\"4\" fill=\"#64748b\"/></svg>"
       },
       {
-        "id": 0,
+        "id": 3,
         "nombre": "Rectángulo",
         "uso": "Entidad",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"30\" rx=\"3\" fill=\"#8b5cf6\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"50\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"11\">CLIENTE</text></svg>"
@@ -346,19 +346,19 @@
     "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "nombre": "Rombo",
         "uso": "Relación",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><polygon points=\"50,5 92,25 50,45 8,25\" fill=\"#f59e0b\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"10\">Realiza</text></svg>"
       },
       {
-        "id": 0,
+        "id": 1,
         "nombre": "Elipse",
         "uso": "Atributo",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><ellipse cx=\"50\" cy=\"25\" rx=\"42\" ry=\"18\" fill=\"#22c55e\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"10\">nombre</text></svg>"
       },
       {
-        "id": 1,
+        "id": 2,
         "nombre": "Rectángulo",
         "uso": "Entidad",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><rect x=\"10\" y=\"10\" width=\"80\" height=\"30\" rx=\"3\" fill=\"#8b5cf6\" stroke=\"#6d28d9\" stroke-width=\"2\"/><text x=\"50\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"11\">CLIENTE</text></svg>"
@@ -415,15 +415,15 @@
         "texto": "Un cliente no puede tener pedidos."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Un cliente puede tener uno o muchos pedidos, y cada pedido pertenece a un solo cliente."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Un cliente tiene exactamente un pedido."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Un pedido puede pertenecer a varios clientes."
       }
     ],
@@ -472,11 +472,11 @@
         "texto": "Se agrega la llave de Curso dentro de Estudiante y listo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Es una relación N:M; se implementa con una tabla intermedia Matricula que guarda las llaves de ambas entidades."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Se agrega la llave de Estudiante dentro de Curso y listo."
       }
     ],
@@ -491,23 +491,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar las entidades del sistema",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Determinar los atributos de cada entidad",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Definir la llave primaria de cada entidad",
         "tipo": "proceso"
       },
       {
@@ -516,19 +501,34 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b6",
         "texto": "Asignar la cardinalidad de cada relación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Identificar las entidades del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Definir la llave primaria de cada entidad",
         "tipo": "proceso"
       },
       {
         "id": "b7",
         "texto": "Validar el modelo ER con el usuario",
         "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -551,23 +551,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
         "id": "b2",
         "texto": "Dibujar la entidad Cliente con su llave id_cliente",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Dibujar la entidad Pedido con su llave id_pedido",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Dibujar el rombo Realiza entre las dos entidades",
         "tipo": "proceso"
       },
       {
@@ -576,8 +561,8 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Marcar cardinalidad N en el extremo de Pedido",
+        "id": "b4",
+        "texto": "Dibujar el rombo Realiza entre las dos entidades",
         "tipo": "proceso"
       },
       {
@@ -586,9 +571,24 @@
         "tipo": "salida"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b3",
+        "texto": "Dibujar la entidad Pedido con su llave id_pedido",
+        "tipo": "proceso"
+      },
+      {
         "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Marcar cardinalidad N en el extremo de Pedido",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -638,11 +638,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La cardinalidad es correcta porque cada pedido tiene un cliente."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La cardinalidad está invertida: un cliente tiene muchos pedidos (1 en Cliente, N en Pedido), no al revés."
       },
       {
@@ -688,11 +688,11 @@
         "texto": "La implementación es correcta porque la llave queda dentro de Estudiante."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que la relación debía ser 1:1."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que la relación N:M requiere una tabla intermedia (Matricula) con las llaves de Estudiante y Curso."
       },
       {

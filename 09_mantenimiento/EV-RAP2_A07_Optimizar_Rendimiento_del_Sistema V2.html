@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Eliminar registros antiguos de la base de datos."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Medir el tiempo de respuesta actual para tener una línea base."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Eliminar la columna categoria de la tabla."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Aumentar el tamaño de los nombres de los productos."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Un índice sobre la columna categoria usada en la condición."
       },
       {
@@ -311,19 +311,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b3",
+        "texto": "Identificar el punto lento del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Comparar los resultados antes y después",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Medir el rendimiento actual (tiempo de respuesta)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Identificar el punto lento del sistema",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -336,14 +341,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Comparar los resultados antes y después",
+        "id": "b2",
+        "texto": "Medir el rendimiento actual (tiempo de respuesta)",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -365,19 +365,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar la consulta lenta",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Analizar las columnas usadas en la condición",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -390,9 +390,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Identificar la consulta lenta",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -418,9 +418,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Identificar los datos consultados con frecuencia",
+        "id": "b5",
+        "texto": "Validar que los datos en caché estén actualizados",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -433,14 +438,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Validar que los datos en caché estén actualizados",
+        "id": "b2",
+        "texto": "Identificar los datos consultados con frecuencia",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -476,15 +476,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es haber identificado la consulta lenta."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es haber aplicado una optimización."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El error es no haber medido el tiempo antes del cambio; sin línea base no se puede comparar ni demostrar la mejora."
       },
       {
@@ -526,11 +526,11 @@
         "texto": "El error es ejecutar la consulta dos veces."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El proceso está correcto."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El índice debe crearse sobre la columna usada en la condición (ciudad), no sobre nombre."
       }
     ],
@@ -609,11 +609,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Es 2 veces más rápida."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Es 4 veces más rápida (8 ÷ 2)."
       },
       {
@@ -662,11 +662,11 @@
         "texto": "Se consulta la base de datos 100 veces."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Se consulta la base de datos 99 veces."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Se consulta la base de datos 1 vez al día."
       },
       {

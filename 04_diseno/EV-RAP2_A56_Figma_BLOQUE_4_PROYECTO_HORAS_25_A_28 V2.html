@@ -261,11 +261,11 @@
         "texto": "La pantalla de inicio de sesión, que valida el usuario y la contraseña antes de ingresar al sistema."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La pantalla de estadísticas, que muestra los indicadores del negocio."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La pantalla de facturación, que registra las ventas del día."
       },
       {
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La cantidad de capas de cada frame."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El orden de los frames en el panel de capas."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Los estilos de color y tipografía definidos en el proyecto, aplicados en todas las pantallas."
       },
       {
@@ -338,11 +338,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Las guías y la cuadrícula (layout grid) del frame, que definen márgenes y columnas uniformes."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El relleno de degradado del frame."
       },
       {
@@ -460,11 +460,11 @@
         "texto": "Se eliminaron todas las pantallas del proyecto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Las pantallas del proyecto quedaron visualmente consistentes tras aplicar los estilos."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La revisión se realizó sobre un archivo de presentación."
       }
     ],
@@ -479,23 +479,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Crear el frame Login con el tamaño del teléfono",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Insertar las instancias de los componentes de entrada de texto",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Agregar el botón Ingresar reutilizando el componente del proyecto",
         "tipo": "proceso"
       },
       {
@@ -504,14 +489,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Verificar que la pantalla usa los estilos del proyecto",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Agregar el botón Ingresar reutilizando el componente del proyecto",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Crear el frame Login con el tamaño del teléfono",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -533,14 +533,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Seleccionar el componente Boton_Primario en el panel de assets",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que ambas instancias reflejan el mismo componente",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -556,16 +566,6 @@
         "id": "b5",
         "texto": "Arrastrar otra instancia hasta el frame Menu_Principal",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que ambas instancias reflejan el mismo componente",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -610,11 +610,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que el botón no tenía nombre."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El error es que se modificó la instancia en lugar del componente maestro; los cambios directos sobre una instancia no se propagan a las demás y rompen la consistencia visual."
       },
       {

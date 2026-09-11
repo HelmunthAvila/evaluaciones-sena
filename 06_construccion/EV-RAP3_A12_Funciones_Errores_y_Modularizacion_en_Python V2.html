@@ -405,15 +405,15 @@
         "texto": "Adiós"
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Hola"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Hola Adiós"
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Error: variable no definida"
       }
     ],
@@ -446,15 +446,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Válido"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "abc"
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Entrada no numérica"
       },
       {
@@ -473,9 +473,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b3",
+        "texto": "radio = float(input('Radio: '))",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
@@ -483,24 +488,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "radio = float(input('Radio: '))",
-        "tipo": "entrada"
-      },
-      {
         "id": "b4",
         "texto": "area = math.pi * radio ** 2",
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "print(f'Área: {area:.2f}')",
         "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -521,14 +521,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "try:",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "print('No se puede dividir entre cero')",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -544,16 +554,6 @@
         "id": "b5",
         "texto": "except ZeroDivisionError:",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "print('No se puede dividir entre cero')",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [

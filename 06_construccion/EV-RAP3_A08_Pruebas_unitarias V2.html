@@ -262,11 +262,11 @@
         "salida": "AssertionError"
       },
       {
-        "id": 2,
+        "id": 1,
         "salida": "Prueba superada"
       },
       {
-        "id": 1,
+        "id": 2,
         "salida": "5"
       },
       {
@@ -367,11 +367,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El método debe llamarse test_verificar_resta: unittest solo ejecuta métodos que empiezan con test."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "restar debe devolver un string."
       },
       {
@@ -422,18 +422,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
         "id": "b2",
         "texto": "import unittest",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "class TestSuma(unittest.TestCase):",
         "tipo": "proceso"
       },
       {
@@ -442,8 +432,8 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "        self.assertEqual(sumar(2, 3), 5)",
+        "id": "b7",
+        "texto": "    unittest.main()",
         "tipo": "proceso"
       },
       {
@@ -452,14 +442,24 @@
         "tipo": "proceso"
       },
       {
-        "id": "b7",
-        "texto": "    unittest.main()",
-        "tipo": "proceso"
-      },
-      {
         "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b3",
+        "texto": "class TestSuma(unittest.TestCase):",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b5",
+        "texto": "        self.assertEqual(sumar(2, 3), 5)",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -524,19 +524,19 @@
     ],
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "En assert se usa == para comparar: '=' asigna y produce SyntaxError."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "es_par debe devolver un número."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "4 no es un número par."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "assert no existe en Python."
       }
     ],
@@ -552,11 +552,11 @@
     "codigo": "def dividir(a, b):\n    return a / b\n\ndef test_dividir():\n    assert dividir(10, 2) == 5\n    assert dividir(9, 3) == 3",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "salida": "2 pruebas: 1 pasa y 1 falla"
       },
       {
-        "id": 0,
+        "id": 1,
         "salida": "1 prueba: pasa correctamente"
       },
       {
@@ -579,24 +579,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "def mayor(a, b):",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "    if a > b:",
-        "tipo": "proceso"
-      },
-      {
         "id": "b4",
         "texto": "        return a",
         "tipo": "proceso"
+      },
+      {
+        "id": "b9",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -604,8 +594,23 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "assert mayor(3, 8) == 8",
+        "id": "b2",
+        "texto": "def mayor(a, b):",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b8",
+        "texto": "print('Pruebas superadas')",
+        "tipo": "salida"
+      },
+      {
+        "id": "b3",
+        "texto": "    if a > b:",
         "tipo": "proceso"
       },
       {
@@ -614,14 +619,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b8",
-        "texto": "print('Pruebas superadas')",
-        "tipo": "salida"
-      },
-      {
-        "id": "b9",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b6",
+        "texto": "assert mayor(3, 8) == 8",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [

@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Acceso de administrador total (root) del motor de base de datos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Permiso para crear y eliminar bases de datos."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Solo los que la aplicación necesita: SELECT, INSERT, UPDATE y DELETE sobre la base de la aplicación."
       },
       {
@@ -311,18 +311,13 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b6",
+        "texto": "Otorgar los privilegios necesarios al usuario",
+        "tipo": "proceso"
       },
       {
         "id": "b2",
         "texto": "Obtener el esquema desde el entorno de desarrollo (respaldo .sql)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Crear la base de datos en el servidor de producción",
         "tipo": "proceso"
       },
       {
@@ -331,24 +326,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b3",
+        "texto": "Crear la base de datos en el servidor de producción",
+        "tipo": "proceso"
+      },
+      {
         "id": "b5",
         "texto": "Crear el usuario de aplicación y asignar credenciales",
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Otorgar los privilegios necesarios al usuario",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b7",
         "texto": "Verificar la conexión con los datos de producción",
         "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -371,13 +371,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Otorgar privilegios: GRANT SELECT, INSERT, UPDATE, DELETE ON inventario_prod.* TO 'app_inv'@'localhost';",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Crear la base: CREATE DATABASE inventario_prod;",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Probar el acceso: mysql -u app_inv -p inventario_prod",
         "tipo": "proceso"
       },
       {
@@ -391,19 +396,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Otorgar privilegios: GRANT SELECT, INSERT, UPDATE, DELETE ON inventario_prod.* TO 'app_inv'@'localhost';",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Probar el acceso: mysql -u app_inv -p inventario_prod",
+        "id": "b2",
+        "texto": "Crear la base: CREATE DATABASE inventario_prod;",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -425,13 +425,23 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Verificar los registros base: SELECT COUNT(*) FROM productos;",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Listar las tablas importadas: SHOW TABLES;",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Registrar el resultado en el formato de implantación",
         "tipo": "proceso"
       },
       {
@@ -440,24 +450,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Verificar los registros base: SELECT COUNT(*) FROM productos;",
+        "id": "b2",
+        "texto": "Listar las tablas importadas: SHOW TABLES;",
         "tipo": "proceso"
       },
       {
         "id": "b5",
         "texto": "Probar la conexión de la aplicación con las credenciales de producción",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Registrar el resultado en el formato de implantación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -502,15 +502,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La contraseña del usuario es demasiado corta."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta crear la base de datos antes de importar el esquema."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El GRANT otorga privilegios sobre inventario_pruebas (base de pruebas) y no sobre inventario_prod: el usuario no podrá acceder a la base de producción."
       },
       {
@@ -560,11 +560,11 @@
         "texto": "El nombre de la base debe incluir la extensión .sql."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La configuración está correcta."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La contraseña es la del entorno de pruebas: debe reemplazarse por la credencial asignada al usuario en producción."
       }
     ],
@@ -594,19 +594,19 @@
     ],
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "Concluir que la base está lista cuando la conexión fue denegada: debe corregirse el usuario o la contraseña y repetirse la verificación."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El error 1045 indica que la base de datos no existe."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error 1045 indica que el puerto está bloqueado."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El proceso de verificación está correcto."
       }
     ],
@@ -696,15 +696,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La importación falló porque faltan tablas."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La tabla productos no existe en la base."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El esquema se importó correctamente, pero los datos aún no se cargan: solo se importó la estructura."
       },
       {

@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Nombre, fecha y autor del documento."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Requisito, elemento de diseño, caso de prueba y estado."
       },
       {
@@ -315,15 +315,15 @@
         "texto": "Que el requisito está completo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Que el requisito no es importante."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Que el sistema está terminado."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "Que falta diseñar la prueba que lo cubre: hay un hueco de cobertura."
       }
     ],
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Listar todos los requisitos con su identificador",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Asociar cada requisito al elemento de diseño que lo implementa",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Listar todos los requisitos con su identificador",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -386,13 +386,23 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Verificar si tiene al menos un caso de prueba",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Tomar el primer requisito de la matriz",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Pasar al siguiente requisito hasta completar la lista",
         "tipo": "proceso"
       },
       {
@@ -401,24 +411,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Verificar si tiene al menos un caso de prueba",
+        "id": "b2",
+        "texto": "Tomar el primer requisito de la matriz",
         "tipo": "proceso"
       },
       {
         "id": "b5",
         "texto": "Registrar el resultado en la columna Estado",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Pasar al siguiente requisito hasta completar la lista",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Requisito RF-01: 'Registrar pedido'",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Elemento de diseño: módulo de pedidos",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Caso de prueba CP-01: registrar pedido válido",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Requisito RF-01: 'Registrar pedido'",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Caso de prueba CP-01: registrar pedido válido",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -507,19 +507,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que RF-01 tiene dos casos de prueba."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Los requisitos no necesitan casos de prueba."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La matriz está correcta."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "RF-05 no tiene caso de prueba: falta diseñar la prueba que cubra el requisito (hueco de cobertura)."
       }
     ],
@@ -549,11 +549,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "CP-03 valida el registro de pedidos, por lo que corresponde a RF-01 y no a RF-02; la asociación está invertida."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La asociación es correcta porque ambos son registros."
       },
       {
@@ -595,15 +595,15 @@
         "texto": "El resumen es correcto porque la mayoría de los requisitos está cubierta."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "RF-04 no tiene diseño: no se puede declarar cobertura total mientras exista un requisito sin elemento de diseño."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que faltan más casos de prueba por requisito."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Los requisitos sin diseño no afectan la cobertura."
       }
     ],
@@ -640,11 +640,11 @@
         "texto": "La cobertura está completa: todos los requisitos tienen prueba."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Sobran 2 requisitos en la matriz."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Faltan 2 casos de prueba: la cobertura está incompleta."
       },
       {

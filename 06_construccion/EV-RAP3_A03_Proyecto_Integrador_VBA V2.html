@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Escribir directamente el código de la macro."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Identificar los datos de entrada (salario base, descuentos) y la salida esperada (salario neto)."
       },
       {
@@ -314,11 +314,11 @@
         "texto": "2000000"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "160000"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "1840000"
       },
       {
@@ -337,19 +337,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b3",
+        "texto": "promedio = (nota1 + nota2 + nota3) / 3",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Escribir \"Reprobado\"",
+        "tipo": "salida"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Leer nota1, nota2, nota3",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "promedio = (nota1 + nota2 + nota3) / 3",
-        "tipo": "proceso"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -362,14 +367,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Escribir \"Reprobado\"",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Leer nota1, nota2, nota3",
+        "tipo": "entrada"
       }
     ],
     "ordenCorrecto": [
@@ -518,15 +518,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La variable p debe declararse como Integer."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta la instrucción End If."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La división tiene prioridad sobre la suma: p = a + b + c / 3 divide solo la variable c entre 3. Se requieren paréntesis: p = (a + b + c) / 3."
       },
       {
@@ -545,19 +545,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Comprobar que el promedio se calcula solo con números enteros."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Confirmar que la macro quedó grabada en el módulo correcto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Evitar que Excel cierre el libro durante la ejecución."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Verificar el comportamiento de la rama Else cuando la condición nota >= 3.0 es falsa (valor justo por debajo del umbral)."
       }
     ],
@@ -572,9 +572,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "MsgBox total",
+        "tipo": "salida"
       },
       {
         "id": "b2",
@@ -582,9 +582,9 @@
         "tipo": "entrada"
       },
       {
-        "id": "b3",
-        "texto": "iva = subtotal * 0.19",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -592,14 +592,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "MsgBox total",
-        "tipo": "salida"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "iva = subtotal * 0.19",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -647,11 +647,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Las variables edad1 y edad2 deben declararse como String."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El operador & concatena textos: con edades 20 y 25 muestra '2025'. Para sumar valores numéricos se debe usar el operador +: MsgBox edad1 + edad2."
       },
       {
@@ -704,11 +704,11 @@
         "texto": "3"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "9"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "6"
       },
       {

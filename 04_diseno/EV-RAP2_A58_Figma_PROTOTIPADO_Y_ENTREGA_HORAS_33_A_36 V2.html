@@ -261,15 +261,15 @@
         "texto": "Exportar el diseño en formato PDF."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Conectar las pantallas mediante interacciones para simular la navegación del sistema."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Cambiar el tamaño de los frames del proyecto."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Agregar comentarios al diseño."
       }
     ],
@@ -288,11 +288,11 @@
         "texto": "Un comentario sobre el botón."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Una capa de texto nueva."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Un hotspot o zona interactiva sobre el botón, conectada al frame del menú principal."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "La transición Instalar (Install)."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La transición Imprimir (Print)."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La transición Deslizar (Slide), que mueve la pantalla hacia un lado."
       }
     ],
@@ -395,11 +395,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El botón quedó sin conexión porque no se configuró la interacción."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Al hacer clic en Ingresar, el prototipo navega al frame del menú principal con la transición configurada."
       },
       {
@@ -479,23 +479,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Seleccionar la pestaña Prototype en el panel derecho",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Seleccionar el frame Login como punto de inicio del flujo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Conectar el botón Ingresar con el frame Menu_Principal",
         "tipo": "proceso"
       },
       {
@@ -504,14 +489,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Probar el flujo en la vista de presentación",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Conectar el botón Ingresar con el frame Menu_Principal",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Seleccionar la pestaña Prototype en el panel derecho",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -533,14 +533,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Verificar que todas las pantallas están conectadas en el flujo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que las transiciones se ejecutan correctamente",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -556,16 +566,6 @@
         "id": "b5",
         "texto": "Navegar por las pantallas haciendo clic en los hotspots",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que las transiciones se ejecutan correctamente",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -660,11 +660,11 @@
         "texto": "El error es que falta exportar el prototipo a PNG."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La falla es no definir el frame de inicio del flujo; al presentar, Figma necesita un punto de partida y muestra el primer frame por defecto."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El error es que los comentarios no están resueltos."
       }
     ],

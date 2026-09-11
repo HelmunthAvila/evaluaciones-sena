@@ -258,11 +258,11 @@
     "contexto": "Tabla: productos (id, nombre, precio, stock)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "SELECT * FROM clientes;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "SELECT * FROM productos;"
       },
       {
@@ -320,15 +320,15 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "5 filas: todos los productos"
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "1 fila: Cartuchera"
       },
       {
-        "id": 0,
+        "id": 2,
         "resultado": "2 filas: Cuaderno, Cartuchera"
       },
       {
@@ -432,11 +432,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "Lapiz, Borrador, Cuaderno, Cartuchera (de menor a mayor)"
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "Cartuchera, Cuaderno, Borrador, Lapiz (de mayor a menor precio)"
       },
       {
@@ -470,15 +470,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "DELETE no se puede usar en una base de datos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Debe usarse DROP TABLE productos en su lugar."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Falta la cláusula WHERE: debe ser DELETE FROM productos WHERE id = 5; sin ella se borran todas las filas."
       },
       {
@@ -585,11 +585,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "2 filas: (Ana, 50000), (Luis, 30000)"
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "3 filas: (Ana, 50000), (Luis, 30000), (Ana, 20000)"
       },
       {
@@ -623,15 +623,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "UPDATE no necesita WHERE."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Debe usarse INSERT en lugar de UPDATE."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Falta la palabra SET: debe ser UPDATE productos SET stock = 25 WHERE id = 2;"
       },
       {

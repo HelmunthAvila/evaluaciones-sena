@@ -258,11 +258,11 @@
     "contexto": "Tablas: ventas (id, cliente_id, total), clientes (id, nombre)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "SELECT clientes.nombre, ventas.total FROM ventas INNER JOIN clientes ON ventas.id = clientes.id;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "SELECT clientes.nombre, ventas.total FROM ventas INNER JOIN clientes ON ventas.cliente_id = clientes.id;"
       },
       {
@@ -380,19 +380,19 @@
     "contexto": "Tabla: ventas (id, cliente_id, total)",
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas GROUP BY cliente_id HAVING SUM(total) > 35000;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas WHERE SUM(total) > 35000 GROUP BY cliente_id;"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas GROUP BY cliente_id WHERE SUM(total) > 35000;"
       },
       {
-        "id": 2,
+        "id": 3,
         "sql": "SELECT cliente_id, SUM(total) AS total FROM ventas HAVING SUM(total) > 35000;"
       }
     ],
@@ -493,15 +493,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La columna cliente_id no existe en ventas."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta la llave primaria en la tabla."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "SUM(total) no se puede usar en WHERE: las funciones de agregación se filtran con HAVING después de GROUP BY."
       },
       {
@@ -548,15 +548,15 @@
     "contexto": "Tablas: clientes (id, nombre), ventas (id, cliente_id, total)",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "sql": "SELECT nombre FROM clientes WHERE id IN (SELECT cliente_id FROM ventas WHERE total > 30000);"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "SELECT nombre FROM clientes WHERE id = (SELECT cliente_id FROM ventas WHERE total > 30000);"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "SELECT nombre FROM clientes WHERE id IN (SELECT total FROM ventas WHERE total > 30000);"
       },
       {
@@ -609,15 +609,15 @@
         "resultado": "El promedio es 50000, que es la venta más alta."
       },
       {
-        "id": 3,
+        "id": 1,
         "resultado": "El promedio es 35000: (50000 + 30000 + 20000 + 40000) / 4."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "El promedio es 30000, que es el valor del medio."
       },
       {
-        "id": 2,
+        "id": 3,
         "resultado": "El promedio es 140000, que es la suma de todas las ventas."
       }
     ],
@@ -647,11 +647,11 @@
         "texto": "La tabla ventas no tiene la columna total."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "SUM no existe como función en SQL."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Falta GROUP BY cliente_id: al combinar cliente_id con SUM(total), la consulta debe agrupar por cliente_id (error 1140 en MySQL)."
       },
       {

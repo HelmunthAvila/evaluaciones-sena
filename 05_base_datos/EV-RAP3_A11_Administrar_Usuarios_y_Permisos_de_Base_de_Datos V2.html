@@ -258,11 +258,11 @@
     "contexto": "Usuario: 'invitado'@'localhost', contraseña: clave123",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "CREATE USER invitado IDENTIFIED BY clave123;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE USER 'invitado'@'localhost' IDENTIFIED BY 'clave123';"
       },
       {
@@ -310,15 +310,15 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "Insertar, actualizar y eliminar registros de la tabla productos."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "Crear y eliminar tablas dentro de la base tienda."
       },
       {
-        "id": 0,
+        "id": 2,
         "resultado": "Solo consultar (SELECT) los datos de la tabla productos de la base tienda."
       },
       {
@@ -413,11 +413,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "SELECT e INSERT sobre tienda.productos."
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "Solo SELECT sobre tienda.productos."
       },
       {
@@ -468,19 +468,19 @@
     "contexto": "Base de datos: tienda, usuario: 'admin'@'localhost'",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "GRANT SELECT ON tienda.* TO 'admin'@'localhost';"
       },
       {
-        "id": 2,
+        "id": 1,
         "sql": "CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin123';"
       },
       {
-        "id": 3,
+        "id": 2,
         "sql": "REVOKE ALL PRIVILEGES ON tienda.* FROM 'admin'@'localhost';"
       },
       {
-        "id": 0,
+        "id": 3,
         "sql": "GRANT ALL PRIVILEGES ON tienda.* TO 'admin'@'localhost';"
       }
     ],
@@ -550,11 +550,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "SELECT no es un privilegio válido en MySQL."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Falta la cláusula TO: debe ser GRANT SELECT ON tienda.clientes TO 'lector'@'localhost';"
       },
       {
@@ -588,15 +588,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "REVOKE no existe en MySQL; solo existe GRANT."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta la palabra GRANT al inicio de la sentencia."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "REVOKE usa FROM, no TO: debe ser REVOKE SELECT ON tienda.productos FROM 'invitado'@'localhost';"
       },
       {

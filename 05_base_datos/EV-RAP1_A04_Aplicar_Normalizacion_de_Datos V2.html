@@ -261,11 +261,11 @@
         "texto": "Que todas las tablas tengan llave foránea."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Que cada atributo contenga un único valor atómico y no se repitan grupos de datos."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Que los datos estén cifrados."
       },
       {
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Está en 1FN aunque existan dependencias parciales de la llave."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "No tiene llave primaria."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Está en 1FN y todos los atributos no llave dependen de la totalidad de la llave primaria compuesta."
       },
       {
@@ -323,13 +323,13 @@
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><polygon points=\"50,5 92,25 50,45 8,25\" fill=\"#f59e0b\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"10\">Realiza</text></svg>"
       },
       {
-        "id": 3,
+        "id": 2,
         "nombre": "Línea",
         "uso": "Vínculo entre elementos",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><line x1=\"10\" y1=\"25\" x2=\"90\" y2=\"25\" stroke=\"#64748b\" stroke-width=\"3\"/><circle cx=\"10\" cy=\"25\" r=\"4\" fill=\"#64748b\"/><circle cx=\"90\" cy=\"25\" r=\"4\" fill=\"#64748b\"/></svg>"
       },
       {
-        "id": 2,
+        "id": 3,
         "nombre": "Elipse con nombre subrayado",
         "uso": "Atributo llave primaria",
         "svg": "<svg class=\"w-24 h-12\" viewBox=\"0 0 100 50\"><ellipse cx=\"50\" cy=\"25\" rx=\"42\" ry=\"18\" fill=\"#22c55e\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-weight=\"bold\" font-size=\"10\" text-decoration=\"underline\">id_cliente</text></svg>"
@@ -372,15 +372,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Separar cada producto en un registro o en una tabla hija, de modo que cada celda tenga un único valor."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Dejar el campo Productos tal como está."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Eliminar la tabla Pedidos."
       },
       {
@@ -429,15 +429,15 @@
         "texto": "La tabla ya está en 2FN y no requiere cambios."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Mover NombreEstudiante a la tabla Estudiante, porque depende parcialmente de la llave."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Eliminar la llave compuesta y dejar una sola llave."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Mover Nota a otra tabla."
       }
     ],
@@ -482,11 +482,11 @@
         "texto": "La tabla ya cumple la 3FN."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Duplicar NombreDepartamento en todas las tablas."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Crear la tabla Departamento con IdDepartamento y NombreDepartamento, y dejar en Empleado solo IdDepartamento como llave foránea."
       },
       {
@@ -505,23 +505,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Aplicar la 1FN: dividir los atributos multivaluados en valores atómicos",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Aplicar la 2FN: eliminar las dependencias parciales de la llave",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Aplicar la 3FN: eliminar las dependencias transitivas",
         "tipo": "proceso"
       },
       {
@@ -530,14 +515,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Resultado: base de datos normalizada",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Aplicar la 3FN: eliminar las dependencias transitivas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Aplicar la 1FN: dividir los atributos multivaluados en valores atómicos",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -559,14 +559,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Identificar el atributo multivaluado Telefonos en la entidad Cliente",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Resultado: entidad Cliente en primera forma normal",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -582,16 +592,6 @@
         "id": "b5",
         "texto": "Eliminar el atributo Telefonos de la entidad Cliente",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Resultado: entidad Cliente en primera forma normal",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -682,15 +682,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La tabla cumple la 3FN porque tiene llave primaria."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que la tabla no tiene atributos multivaluados."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La tabla NO cumple la 3FN: NombreCliente depende transitivamente de IdCliente; debe moverse a la tabla Cliente."
       },
       {

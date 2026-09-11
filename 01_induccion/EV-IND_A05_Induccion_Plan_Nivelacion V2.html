@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Un examen de expulsión para los aprendices con bajo rendimiento."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Una estrategia formativa que refuerza las competencias donde el aprendiz presenta dificultades."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Asignar la nota definitiva del trimestre."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Llenar el tiempo de la jornada sin ningún uso pedagógico."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Identificar las dificultades de cada aprendiz para orientar las actividades de refuerzo."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Asistir únicamente a las sesiones que le resultan fáciles."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Entregar el formato del plan sin firmar ni registrar fechas."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Cumplir las actividades de refuerzo y entregar las evidencias en los plazos acordados."
       }
     ],
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Presentar la prueba diagnóstica al aprendiz",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Identificar las competencias con dificultad según el resultado",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Presentar la prueba diagnóstica al aprendiz",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -391,9 +391,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Registrar los datos del aprendiz y del programa de formación",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Firmar los compromisos junto con el instructor",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -406,14 +411,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Firmar los compromisos junto con el instructor",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Registrar los datos del aprendiz y del programa de formación",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -434,24 +434,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Asistir a las sesiones de refuerzo programadas",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Desarrollar las actividades asignadas en el plan",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Entregar las evidencias en las fechas pactadas",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -459,9 +449,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Asistir a las sesiones de refuerzo programadas",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Entregar las evidencias en las fechas pactadas",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -505,19 +505,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La prueba diagnóstica no sirve para orientar el refuerzo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Las actividades de refuerzo deben ser siempre más largas, sin importar el tema."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El plan está correcto y no presenta errores."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Las actividades de refuerzo deben apuntar a la dificultad detectada: si la falla es lectura crítica, el refuerzo debe ser de lectura crítica, no de matemáticas."
       }
     ],
@@ -555,15 +555,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Un compromiso sin fecha ni firma no tiene validez: el aprendiz debe registrar la fecha y firmar para asumir formalmente el plan."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El formato debe diligenciarse en inglés para ser válido."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La firma del instructor no es necesaria en el plan."
       },
       {
@@ -669,11 +669,11 @@
         "texto": "Las evidencias se eliminan automáticamente al entregarlas."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La nivelación queda registrada como superada y el aprendiz continúa su proceso formativo."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La superación nunca queda registrada en el sistema."
       }
     ],

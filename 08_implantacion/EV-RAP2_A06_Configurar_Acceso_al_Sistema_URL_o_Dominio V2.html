@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Registro MX: apunta al servidor de correo."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Registro A: apunta el dominio a la dirección IP del servidor."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Certificado de firma digital de documentos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Certificado de dominio sin cifrado."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Certificado SSL/TLS: cifra la comunicación entre el navegador y el servidor (https)."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Registro MX con el servidor de correo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Registro TXT con la descripción del sistema."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Registro CNAME: apunta inventario.empresa.com a empresa.com, que ya resuelve a la IP del servidor."
       }
     ],
@@ -338,13 +338,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Esperar la propagación de los registros DNS",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Verificar la disponibilidad y contratar el dominio",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Probar el acceso con la URL del dominio",
         "tipo": "proceso"
       },
       {
@@ -358,19 +363,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Esperar la propagación de los registros DNS",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Probar el acceso con la URL del dominio",
+        "id": "b2",
+        "texto": "Verificar la disponibilidad y contratar el dominio",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -392,13 +392,23 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Configurar la redirección de http a https",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Generar el certificado SSL para el dominio (por ejemplo con Let's Encrypt)",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Comprobar que todas las páginas carguen por https",
         "tipo": "proceso"
       },
       {
@@ -407,24 +417,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Configurar la redirección de http a https",
+        "id": "b2",
+        "texto": "Generar el certificado SSL para el dominio (por ejemplo con Let's Encrypt)",
         "tipo": "proceso"
       },
       {
         "id": "b5",
         "texto": "Verificar el candado de seguridad en el navegador",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Comprobar que todas las páginas carguen por https",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -446,28 +446,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir la URL del sistema en un navegador en modo incógnito",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Verificar que la página cargue sin advertencias de seguridad",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Probar el acceso desde un dispositivo móvil",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Solicitar a un usuario externo que acceda desde otra red",
         "tipo": "proceso"
       },
       {
@@ -476,9 +456,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b4",
+        "texto": "Probar el acceso desde un dispositivo móvil",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Solicitar a un usuario externo que acceda desde otra red",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Abrir la URL del sistema en un navegador en modo incógnito",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -519,19 +519,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El protocolo de transferencia falla."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta crear el subdominio www."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La configuración DNS está correcta."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El registro A apunta a una IP que no es la del hosting: debe corregirse el valor a 190.10.20.99 y esperar la propagación."
       }
     ],
@@ -561,11 +561,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Falta la redirección de http a https: los visitantes entran por una conexión sin cifrar y sin candado de seguridad."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El certificado SSL sobra."
       },
       {
@@ -618,11 +618,11 @@
         "texto": "El sitio se ve con https automáticamente."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El cliente puede ver el sitio anterior o un error hasta que la propagación termine en su red; debe esperarse y repetirse la prueba."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El hosting bloquea al cliente."
       },
       {
@@ -675,11 +675,11 @@
         "texto": "El sitio queda sin conexión."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El navegador muestra https://www.empresa.com: la redirección 301 es permanente y conserva el posicionamiento del sitio."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La URL no cambia."
       }
     ],

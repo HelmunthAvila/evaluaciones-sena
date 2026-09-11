@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Usar el botón Responder."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Escribir el nombre del archivo en el asunto."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Usar el botón Adjuntar archivo o el icono del clip y seleccionar el archivo."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Una ventana emergente que pide datos personales."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Un archivo .exe recibido de un desconocido."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El candado y el prefijo https en la dirección de la página."
       }
     ],
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Abrir la aplicación de correo electrónico e iniciar sesión",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Hacer clic en Redactar o Nuevo correo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Abrir la aplicación de correo electrónico e iniciar sesión",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -391,9 +391,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Abrir el navegador e ingresar al servicio de almacenamiento en la nube, como Google Drive o OneDrive",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Seleccionar el archivo del equipo y esperar a que termine la carga",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -406,14 +411,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Seleccionar el archivo del equipo y esperar a que termine la carga",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Abrir el navegador e ingresar al servicio de almacenamiento en la nube, como Google Drive o OneDrive",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -434,24 +434,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Recibir la invitación a la videollamada por correo o mensaje",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Hacer clic en el enlace de la reunión",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Permitir el uso del micrófono y la cámara si se requieren",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -459,9 +449,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Recibir la invitación a la videollamada por correo o mensaje",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Permitir el uso del micrófono y la cámara si se requieren",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -505,19 +505,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El destinatario debe buscar el archivo en su equipo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el asunto del correo no lleva mayúsculas."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El correo menciona un adjunto que nunca se adjuntó: antes de enviar se debe verificar que el archivo aparezca en la lista de adjuntos."
       }
     ],
@@ -555,15 +555,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Descargar desde una página sin candado ni https expone el equipo a programas maliciosos: solo deben usarse sitios oficiales y verificados."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Las descargas sin https siempre son seguras."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que el usuario no apagó el equipo antes de descargar."
       },
       {
@@ -612,15 +612,15 @@
         "texto": "El correo se pierde después de enviarlo."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El correo aparece en Elementos enviados, lo que confirma que se envió con su adjunto."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El correo queda en borradores y nunca se envía."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El correo no se puede enviar con adjuntos."
       }
     ],
@@ -665,11 +665,11 @@
         "texto": "El archivo solo se puede ver en el equipo donde se subió."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El archivo se elimina al cerrar sesión."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El archivo está disponible desde cualquier equipo con la misma cuenta de usuario."
       },
       {

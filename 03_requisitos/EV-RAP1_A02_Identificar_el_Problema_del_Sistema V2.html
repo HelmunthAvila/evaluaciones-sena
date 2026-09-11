@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Los vendedores anotan los datos en hojas sueltas."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Los pedidos se pierden."
       },
       {
@@ -284,7 +284,7 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "La empresa no tiene acceso a internet."
       },
       {
@@ -292,11 +292,11 @@
         "texto": "Los vendedores son desorganizados."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "No existe un mecanismo formal y centralizado para registrar los pedidos."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Los pedidos se pierden."
       }
     ],
@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Se deben contratar más vendedores."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Se debe instalar una red nueva."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Se debe comprar un software de pedidos."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Los pedidos se pierden por falta de un registro centralizado, lo que genera demoras en la entrega."
       }
     ],
@@ -397,9 +397,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Observar y registrar el síntoma (qué está pasando)",
+        "id": "b5",
+        "texto": "Confirmar la causa con datos o evidencia",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -412,14 +417,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Confirmar la causa con datos o evidencia",
+        "id": "b2",
+        "texto": "Observar y registrar el síntoma (qué está pasando)",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -440,24 +440,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Reunir la evidencia del problema (informes, quejas, mediciones)",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Redactar el problema indicando qué ocurre y a quién afecta",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Evitar proponer soluciones en la definición",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -465,9 +455,19 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Reunir la evidencia del problema (informes, quejas, mediciones)",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Evitar proponer soluciones en la definición",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -503,19 +503,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El documento está correcto."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta incluir el nombre del proveedor."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El inventario siempre coincide con lo registrado."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "'El inventario no coincide' es el síntoma, no la causa; la causa es la falta de registro de las salidas de mercancía."
       }
     ],
@@ -602,19 +602,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "No hay causa raíz, los errores de cálculo son normales."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La causa raíz es la ausencia de una base de precios actualizada y consultable al momento de facturar."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La causa raíz es que los clientes reclaman las facturas."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La causa raíz es que el auxiliar es descuidado."
       }
     ],
@@ -659,19 +659,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "El problema central es que los clientes piden demasiado."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "No existe un problema, el despacho funciona bien."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El problema central es la falta de una ubicación definida para la mercancía, que provoca demoras en el despacho."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "El problema central es que los operarios son lentos."
       }
     ],

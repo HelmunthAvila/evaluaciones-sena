@@ -258,11 +258,11 @@
     "contexto": "Tabla: productos (id, nombre, precio, stock)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "CREATE INDEX ON productos (nombre);"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE INDEX idx_nombre ON productos (nombre);"
       },
       {
@@ -306,15 +306,15 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "La consulta usó el índice idx_nombre y es totalmente óptima."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "Solo se leyó 1 fila porque el nombre es único."
       },
       {
-        "id": 0,
+        "id": 2,
         "resultado": "Se escanean las 200.000 filas (full scan) sin usar ningún índice; conviene crear un índice sobre nombre."
       },
       {
@@ -408,11 +408,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "El índice eliminó filas de la tabla ventas y por eso hay menos."
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "El índice evita el escaneo completo: ahora se leen solo 42 filas para localizar al cliente buscado."
       },
       {
@@ -463,19 +463,19 @@
     "contexto": "Tabla: productos, índice: idx_nombre",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "DELETE INDEX idx_nombre FROM productos;"
       },
       {
-        "id": 2,
+        "id": 1,
         "sql": "DROP TABLE idx_nombre;"
       },
       {
-        "id": 3,
+        "id": 2,
         "sql": "ALTER INDEX idx_nombre DROP;"
       },
       {
-        "id": 0,
+        "id": 3,
         "sql": "DROP INDEX idx_nombre ON productos;"
       }
     ],
@@ -549,11 +549,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "CREATE INDEX no existe en MySQL."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Falta la lista de columnas entre paréntesis: debe ser CREATE INDEX idx_nombre ON productos (nombre);"
       },
       {
@@ -587,15 +587,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La columna id no existe en la tabla productos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Un índice no puede llamarse idx_nombre."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El índice se creó sobre id, que ya está indexado por ser clave primaria; debe crearse sobre la columna filtrada: CREATE INDEX idx_nombre ON productos (nombre);"
       },
       {

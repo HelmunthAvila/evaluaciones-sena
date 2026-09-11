@@ -257,13 +257,13 @@
     "tipoComp": "simbolo_seleccion",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "nombre": "Relación (Rombo)",
         "uso": "Conexión entre dos entidades",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,4 94,28 50,52 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"9\" font-weight=\"bold\">REALIZA</text></svg>"
       },
       {
-        "id": 0,
+        "id": 1,
         "nombre": "Entidad (Rectángulo)",
         "uso": "Objeto del mundo real con información que se almacena",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><rect x=\"8\" y=\"6\" width=\"84\" height=\"44\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"50\" y=\"34\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">CLIENTE</text></svg>"
@@ -298,13 +298,13 @@
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><rect x=\"8\" y=\"6\" width=\"84\" height=\"44\" rx=\"3\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"2\"/><text x=\"50\" y=\"34\" text-anchor=\"middle\" fill=\"#0c4a6e\" font-size=\"11\" font-weight=\"bold\">CLIENTE</text></svg>"
       },
       {
-        "id": 2,
+        "id": 1,
         "nombre": "Atributo (Elipse)",
         "uso": "Característica de la entidad",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"28\" rx=\"44\" ry=\"20\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"9\" font-weight=\"bold\">nombre</text></svg>"
       },
       {
-        "id": 1,
+        "id": 2,
         "nombre": "Relación (Rombo)",
         "uso": "Conexión entre dos entidades",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,4 94,28 50,52 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"9\" font-weight=\"bold\">REALIZA</text></svg>"
@@ -339,13 +339,13 @@
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><polygon points=\"50,4 94,28 50,52 6,28\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#78350f\" font-size=\"9\" font-weight=\"bold\">REALIZA</text></svg>"
       },
       {
-        "id": 3,
+        "id": 2,
         "nombre": "Clave Primaria (Elipse subrayada)",
         "uso": "Identifica de forma única cada registro",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"25\" rx=\"46\" ry=\"18\" fill=\"#fce7f3\" stroke=\"#be185d\" stroke-width=\"2\"/><text x=\"50\" y=\"29\" text-anchor=\"middle\" fill=\"#9d174d\" font-size=\"9\" font-weight=\"bold\">id_cliente</text><line x1=\"6\" y1=\"47\" x2=\"94\" y2=\"47\" stroke=\"#be185d\" stroke-width=\"2\"/></svg>"
       },
       {
-        "id": 2,
+        "id": 3,
         "nombre": "Atributo (Elipse)",
         "uso": "Característica de la entidad",
         "svg": "<svg class=\"w-24 h-14\" viewBox=\"0 0 100 56\"><ellipse cx=\"50\" cy=\"28\" rx=\"44\" ry=\"20\" fill=\"#dcfce7\" stroke=\"#15803d\" stroke-width=\"2\"/><text x=\"50\" y=\"32\" text-anchor=\"middle\" fill=\"#14532d\" font-size=\"9\" font-weight=\"bold\">nombre</text></svg>"
@@ -362,11 +362,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "id_cliente, un código único que no se repite y no cambia."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El nombre del cliente, porque lo identifica en el sistema."
       },
       {
@@ -393,11 +393,11 @@
         "texto": "En la tabla cliente, agregando el campo id_factura."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "En la tabla factura, agregando el campo id_cliente."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "En una tercera tabla que almacene el nombre de la relación."
       },
       {
@@ -424,11 +424,11 @@
         "texto": "Muchos a muchos (N:M)."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Uno a muchos (1:N): un departamento tiene muchos empleados y cada empleado pertenece a un departamento."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "No es una relación válida en el modelo de datos."
       }
     ],
@@ -584,11 +584,11 @@
         "texto": "La clave foránea debe quedar en la tabla clientes, porque el cliente es la entidad principal."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La clave foránea id_cliente debe estar en la tabla facturas (lado muchos), no id_factura en clientes."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "En la relación 1:N la clave foránea va en ambas tablas para mayor seguridad."
       },
       {
@@ -626,15 +626,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Repetir el nombre y la dirección en cada factura acelera las consultas y es la práctica recomendada."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que la tabla facturas no debe tener clave primaria."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "nombre_cliente y direccion_cliente dependen del cliente, no de la factura; deben separarse en la tabla clientes y vincularse con id_cliente."
       },
       {

@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La memoria RAM."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El procesador (CPU)."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El disco duro o el disco de estado sólido (SSD)."
       },
       {
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Verificar que el equipo esté conectado a la fuente de energía",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Presionar el botón de encendido del equipo",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Verificar que el equipo esté conectado a la fuente de energía",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -391,9 +391,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Verificar que el cable de energía esté conectado al equipo y al tomacorriente",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Probar el equipo en otro tomacorriente",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -406,14 +411,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Probar el equipo en otro tomacorriente",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Verificar que el cable de energía esté conectado al equipo y al tomacorriente",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -434,28 +434,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Apagar el equipo y desconectarlo de la corriente",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Abrir la carcasa del equipo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Ubicar el slot de memoria en la placa madre",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Insertar el módulo de memoria hasta que encaje",
         "tipo": "proceso"
       },
       {
@@ -464,9 +444,29 @@
         "tipo": "salida"
       },
       {
+        "id": "b4",
+        "texto": "Ubicar el slot de memoria en la placa madre",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Insertar el módulo de memoria hasta que encaje",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Apagar el equipo y desconectarlo de la corriente",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -511,19 +511,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El monitor debe permanecer apagado mientras el equipo enciende."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El cable de energía del monitor no es necesario."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El procedimiento es correcto y no presenta errores."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El cable de video debe conectarse al puerto de la tarjeta de video activa: si está instalada, el puerto de video integrado en la placa madre queda deshabilitado."
       }
     ],
@@ -561,15 +561,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "El módulo DDR3 no es compatible con una placa que usa DDR4: debe adquirirse el tipo y la velocidad correctos para la placa madre."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La memoria DDR3 funciona igual en una placa que usa DDR4."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El slot de memoria acepta cualquier tipo de módulo sin importar la generación."
       },
       {
@@ -618,15 +618,15 @@
         "texto": "El procesador está dañado y debe cambiarse por uno más nuevo."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "La solución es ampliar la memoria RAM o cerrar programas para liberar memoria."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El disco duro se borró y debe reinstalarse el sistema."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La solución es reemplazar el monitor por uno de mayor resolución."
       }
     ],
@@ -671,11 +671,11 @@
         "texto": "El disco duro está dañado y debe formatearse."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La memoria RAM se quemó y debe reemplazarse."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Al ajustar el cable de video en el puerto correcto, el equipo muestra la imagen y funciona."
       },
       {

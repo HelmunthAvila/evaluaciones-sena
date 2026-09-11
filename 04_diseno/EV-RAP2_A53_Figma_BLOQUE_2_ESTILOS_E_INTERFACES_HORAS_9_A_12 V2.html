@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "En el panel de Capas."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "En el panel de Assets, en la sección Estilos."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "El panel de Assets."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El panel de Prototipo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El panel de Propiedades (Design)."
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Un color de relleno guardado en el proyecto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Un atajo de teclado configurado por el usuario."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Un elemento reutilizable cuyas copias, llamadas instancias, heredan sus propiedades."
       }
     ],
@@ -338,11 +338,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Un rectángulo de fondo con el texto de la etiqueta encima."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Un gráfico vectorial y un video."
       },
       {
@@ -399,11 +399,11 @@
         "texto": "El color solo se aplicó al encabezado y el botón conserva el anterior."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Al modificar el estilo Primario, todos los elementos que lo usan actualizan su color automáticamente."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El estilo se eliminó al aplicarlo al botón."
       },
       {
@@ -452,15 +452,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El texto quedó ubicado fuera del rectángulo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Las esquinas permanecieron sin redondear."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Se obtiene un botón con esquinas redondeadas y el texto Guardar centrado sobre el fondo."
       },
       {
@@ -479,18 +479,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b3",
+        "texto": "Abrir la sección Relleno del panel de propiedades",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Seleccionar la forma a la que se asignará el color",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Abrir la sección Relleno del panel de propiedades",
         "tipo": "proceso"
       },
       {
@@ -499,14 +499,14 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "Crear el estilo con el icono de estilos y asignarle el nombre Primario",
         "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -527,9 +527,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Asignar el nombre Btn_Guardar al componente",
+        "tipo": "salida"
       },
       {
         "id": "b2",
@@ -537,9 +537,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "Seleccionar todas las capas que forman el botón",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b4",
@@ -547,14 +547,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Asignar el nombre Btn_Guardar al componente",
-        "tipo": "salida"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "Seleccionar todas las capas que forman el botón",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -602,15 +602,15 @@
         "texto": "El estilo de color debe borrarse del proyecto."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "La falla es aplicar el estilo en el trazo; el color de fondo se controla en la sección Relleno (Fill)."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Figma no permite crear estilos de color."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El error es que el botón no tiene texto."
       }
     ],
@@ -644,15 +644,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que el párrafo tiene demasiadas palabras."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Figma no permite cambiar la fuente de un texto."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La falla es aplicar el estilo de texto sobre el frame contenedor; debe seleccionarse la capa de texto para asignar el estilo tipográfico."
       },
       {

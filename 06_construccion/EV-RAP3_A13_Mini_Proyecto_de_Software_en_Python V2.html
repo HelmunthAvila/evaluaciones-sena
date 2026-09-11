@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El nombre del estudiante únicamente"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Tres valores numéricos: nota1, nota2 y nota3"
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Comentarios largos al inicio del archivo"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Variables globales para todo el programa"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Funciones definidas con def"
       },
       {
@@ -356,11 +356,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "4.0"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "12.0"
       },
       {
@@ -405,11 +405,11 @@
         "texto": "Edad registrada: veinte"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Dato inválido, intente de nuevo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El programa se cierra sin mensaje"
       },
       {
@@ -446,15 +446,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "7500"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "750"
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "6750"
       },
       {
@@ -473,9 +473,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b3",
+        "texto": "iva = precio * 0.19",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
@@ -483,24 +488,19 @@
         "tipo": "entrada"
       },
       {
-        "id": "b3",
-        "texto": "iva = precio * 0.19",
-        "tipo": "proceso"
-      },
-      {
         "id": "b4",
         "texto": "total = precio + iva",
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "print(f'Total a pagar: {total}')",
         "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -521,14 +521,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "edad = int(input('Digite su edad: '))",
         "tipo": "entrada"
+      },
+      {
+        "id": "b6",
+        "texto": "print('Mayor de edad')",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -544,16 +554,6 @@
         "id": "b5",
         "texto": "else:",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "print('Mayor de edad')",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -594,11 +594,11 @@
         "texto": "El método float no sirve para notas; debe usarse int."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La condición usa and y nunca es verdadera; debe ser or: if nota > 5.0 or nota < 0.0 para rechazar cualquier valor fuera del rango."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El programa está correcto; 8.0 es una nota válida."
       },
       {
@@ -636,11 +636,11 @@
         "texto": "La función debe llamarse sin paréntesis."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que la función usa return en lugar de print."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "print(area_rectangulo(5)) envía un solo argumento y la función requiere dos; debe ser print(area_rectangulo(5, 3))."
       },
       {

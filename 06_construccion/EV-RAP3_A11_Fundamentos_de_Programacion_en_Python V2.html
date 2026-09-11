@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "int"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "bool"
       },
       {
@@ -315,15 +315,15 @@
         "texto": "int edad = 18"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "var edad = 18"
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "edad := 18"
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "edad = 18"
       }
     ],
@@ -348,19 +348,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "Hola, Ana"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Hola, {nombre}"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Ana"
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El código genera un error"
       }
     ],
@@ -461,19 +461,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "nombre = input('¿Cómo te llamas? ')",
-        "tipo": "entrada"
-      },
-      {
-        "id": "b2",
-        "texto": "print('Hola, ' + nombre)",
+        "id": "b5",
+        "texto": "print('Fin del programa')",
         "tipo": "salida"
-      },
-      {
-        "id": "b3",
-        "texto": "edad = int(input('¿Cuántos años tienes? '))",
-        "tipo": "entrada"
       },
       {
         "id": "b4",
@@ -481,8 +471,18 @@
         "tipo": "salida"
       },
       {
-        "id": "b5",
-        "texto": "print('Fin del programa')",
+        "id": "b1",
+        "texto": "nombre = input('¿Cómo te llamas? ')",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b3",
+        "texto": "edad = int(input('¿Cuántos años tienes? '))",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b2",
+        "texto": "print('Hola, ' + nombre)",
         "tipo": "salida"
       }
     ],
@@ -503,9 +503,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "edad = int(input('Ingresa tu edad: '))",
-        "tipo": "entrada"
+        "id": "b5",
+        "texto": "    print('Eres menor de edad')",
+        "tipo": "salida"
       },
       {
         "id": "b2",
@@ -513,9 +513,9 @@
         "tipo": "decision"
       },
       {
-        "id": "b3",
-        "texto": "    print('Eres mayor de edad')",
-        "tipo": "salida"
+        "id": "b1",
+        "texto": "edad = int(input('Ingresa tu edad: '))",
+        "tipo": "entrada"
       },
       {
         "id": "b4",
@@ -523,8 +523,8 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "    print('Eres menor de edad')",
+        "id": "b3",
+        "texto": "    print('Eres mayor de edad')",
         "tipo": "salida"
       }
     ],
@@ -560,11 +560,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La función print debe escribirse con mayúscula: Print."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Falta la comilla de cierre: la cadena debe ser print('Hola, aprendices')."
       },
       {
@@ -602,11 +602,11 @@
         "texto": "La variable debe declararse como var nombre = 'Luis'."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La función print no admite llaves en el texto."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La cadena no es un f-string: debe escribirse print(f'Hola, {nombre}') para interpolar el valor de la variable."
       },
       {

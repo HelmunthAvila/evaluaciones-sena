@@ -262,11 +262,11 @@
         "salida": "[5.0, 4.0, 3.0]"
       },
       {
-        "id": 2,
+        "id": 1,
         "salida": "Calcula el promedio de una lista de notas."
       },
       {
-        "id": 1,
+        "id": 2,
         "salida": "calcular_promedio"
       },
       {
@@ -317,15 +317,15 @@
         "salida": "Suma dos números y devuelve el resultado."
       },
       {
-        "id": 2,
+        "id": 1,
         "salida": "calculadora.py"
       },
       {
-        "id": 3,
+        "id": 2,
         "salida": "Error: el módulo no está documentado"
       },
       {
-        "id": 1,
+        "id": 3,
         "salida": "Módulo con operaciones básicas de calculadora."
       }
     ],
@@ -355,11 +355,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El docstring no se cierra: falta \"\"\" al final de la documentación."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La función debe llamarse calcular."
       },
       {
@@ -387,11 +387,11 @@
         "salida": "Calcula el area usando la formula A = pi * r^2"
       },
       {
-        "id": 2,
+        "id": 1,
         "salida": "None"
       },
       {
-        "id": 1,
+        "id": 2,
         "salida": "3.1416"
       },
       {
@@ -410,28 +410,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "def saludar(nombre):",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "    \"\"\"Saluda al usuario por su nombre.\"\"\"",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "    return 'Hola, ' + nombre",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "mensaje = saludar('Ana')",
         "tipo": "proceso"
       },
       {
@@ -440,9 +420,29 @@
         "tipo": "salida"
       },
       {
+        "id": "b4",
+        "texto": "    return 'Hola, ' + nombre",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "mensaje = saludar('Ana')",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "def saludar(nombre):",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -506,15 +506,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "El comentario no describe lo que hace el código: dice sumar pero el código multiplica."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La función debe llamarse sumar."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "precio y cantidad deben ser strings."
       },
       {
@@ -538,15 +538,15 @@
         "salida": "True"
       },
       {
-        "id": 3,
+        "id": 1,
         "salida": "Registra una venta en el inventario."
       },
       {
-        "id": 1,
+        "id": 2,
         "salida": "Args:"
       },
       {
-        "id": 2,
+        "id": 3,
         "salida": "bool: True si la venta fue registrada."
       }
     ],
@@ -561,13 +561,33 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Aplicación para registrar notas de aprendices.",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b9",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "## Instalación",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "# Sistema de Notas",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "# Sistema de Notas",
+        "id": "b8",
+        "texto": "python main.py",
         "tipo": "proceso"
       },
       {
@@ -576,34 +596,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Aplicación para registrar notas de aprendices.",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "## Instalación",
+        "id": "b7",
+        "texto": "## Uso",
         "tipo": "proceso"
       },
       {
         "id": "b6",
         "texto": "pip install -r requirements.txt",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "## Uso",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "python main.py",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b9",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [

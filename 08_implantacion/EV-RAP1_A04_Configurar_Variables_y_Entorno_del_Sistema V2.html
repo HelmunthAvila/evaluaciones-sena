@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "En el código fuente, junto a las funciones del sistema."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "En un archivo .env separado del código, que no se sube al repositorio."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "DB_HOST=localhost"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "APP_DEBUG=true"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "APP_ENV=production"
       },
       {
@@ -319,11 +319,11 @@
         "texto": "Eliminar el archivo después de cada despliegue."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Subir el .env al repositorio para tener respaldo."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Agregar .env al archivo .gitignore y entregar un .env.example como plantilla."
       }
     ],
@@ -338,33 +338,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar los valores que cambian entre ambientes (credenciales, rutas, URLs)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Crear el archivo .env con las variables del sistema",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Crear el archivo .env.example con las mismas variables sin valores reales",
-        "tipo": "proceso"
-      },
-      {
         "id": "b5",
         "texto": "Agregar .env al .gitignore del repositorio",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Configurar la aplicación para leer las variables del .env",
         "tipo": "proceso"
       },
       {
@@ -373,9 +348,34 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b6",
+        "texto": "Configurar la aplicación para leer las variables del .env",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "Crear el archivo .env con las variables del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Identificar los valores que cambian entre ambientes (credenciales, rutas, URLs)",
+        "tipo": "proceso"
+      },
+      {
         "id": "b8",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Crear el archivo .env.example con las mismas variables sin valores reales",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -398,13 +398,23 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Definir APP_ENV según el ambiente desplegado",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Mantener el archivo .env.desarrollo con los valores locales",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Probar que cada ambiente use sus propios valores",
         "tipo": "proceso"
       },
       {
@@ -413,24 +423,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Definir APP_ENV según el ambiente desplegado",
+        "id": "b2",
+        "texto": "Mantener el archivo .env.desarrollo con los valores locales",
         "tipo": "proceso"
       },
       {
         "id": "b5",
         "texto": "Cargar el archivo correspondiente al ambiente activo",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Probar que cada ambiente use sus propios valores",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -452,28 +452,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Definir la ruta base del proyecto en el servidor",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Configurar la URL pública de la aplicación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Establecer la clave de cifrado de la aplicación",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b5",
-        "texto": "Configurar las credenciales de la base de datos",
         "tipo": "proceso"
       },
       {
@@ -482,9 +462,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b4",
+        "texto": "Establecer la clave de cifrado de la aplicación",
+        "tipo": "proceso"
+      },
+      {
         "id": "b7",
         "texto": "Fin",
         "tipo": "fin"
+      },
+      {
+        "id": "b5",
+        "texto": "Configurar las credenciales de la base de datos",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b2",
+        "texto": "Definir la ruta base del proyecto en el servidor",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -529,19 +529,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El archivo .env.example no debe existir."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Las variables APP_ENV y APP_KEY sobran en la plantilla."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La configuración está correcta."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El .env.example contiene valores reales: la plantilla debe llevar valores vacíos o ficticios (por ejemplo DB_PASSWORD=), nunca claves de producción."
       }
     ],
@@ -575,11 +575,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "APP_ENV=development activa el ambiente de desarrollo en el servidor de producción: debe ser APP_ENV=production con APP_DEBUG=false."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El nombre de la variable DB_HOST es incorrecto."
       },
       {
@@ -632,15 +632,15 @@
         "texto": "La aplicación conecta a la base local porque el .env no se carga."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "La aplicación conecta al servidor de producción usando las credenciales reales del .env."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La aplicación muestra las credenciales en pantalla."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La aplicación falla porque falta el archivo .env."
       }
     ],
@@ -681,15 +681,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La aplicación usa automáticamente la base local."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El servidor genera el .env automáticamente."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "La aplicación no puede conectarse a la base de datos: falta el archivo .env con las variables del entorno."
       },
       {

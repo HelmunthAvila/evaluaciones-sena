@@ -294,11 +294,11 @@
         "salida": "9.0"
       },
       {
-        "id": 3,
+        "id": 2,
         "salida": "5.5"
       },
       {
-        "id": 2,
+        "id": 3,
         "salida": "5.0"
       }
     ],
@@ -314,19 +314,19 @@
     "codigo": "# main.py — validación de entrada\ntry:\n    nota = float(input(\"Nota: \"))\n    print(\"Nota registrada\")\nexcept ValueError:\n    print(\"Debe digitar un número\")\n# Entrada del usuario: ocho",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "salida": "Nota registrada"
       },
       {
-        "id": 2,
+        "id": 1,
         "salida": "ocho"
       },
       {
-        "id": 3,
+        "id": 2,
         "salida": "Error de sintaxis"
       },
       {
-        "id": 0,
+        "id": 3,
         "salida": "Debe digitar un número"
       }
     ],
@@ -342,15 +342,15 @@
     "codigo": "# calculos.py\ndef promedio(notas):\n    return sum(notas) / len(notas)\n\n# main.py\nfrom calculos import promedio\nnotas = []\nnotas.append(3.0)\nnotas.append(5.0)\nprint(promedio(notas))",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "salida": "4.0"
       },
       {
-        "id": 0,
+        "id": 1,
         "salida": "3.0"
       },
       {
-        "id": 1,
+        "id": 2,
         "salida": "5.0"
       },
       {
@@ -423,24 +423,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "from validaciones import nota_valida",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "nota = float(input(\"Nota: \"))",
         "tipo": "entrada"
-      },
-      {
-        "id": "b4",
-        "texto": "if nota_valida(nota):",
-        "tipo": "proceso"
       },
       {
         "id": "b5",
@@ -448,19 +433,34 @@
         "tipo": "salida"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b6",
         "texto": "else:",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "from validaciones import nota_valida",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "if nota_valida(nota):",
         "tipo": "proceso"
       },
       {
         "id": "b7",
         "texto": "print(\"Nota fuera de rango\")",
         "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -483,9 +483,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
@@ -493,9 +493,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "return sum(notas) / len(notas)",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -503,9 +503,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b5",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "return sum(notas) / len(notas)",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -544,11 +544,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "sum no puede operar sobre listas de números."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La función calcula el promedio pero no lo devuelve: falta la sentencia return; por eso print muestra None."
       },
       {

@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Solo permite almacenar datos numéricos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "No requiere ningún software especializado."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "No permite consultas sobre la información almacenada."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Permite gestionar grandes volúmenes de datos con integridad, seguridad y acceso simultáneo de varios usuarios."
       }
     ],
@@ -372,15 +372,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "3 registros."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "3 campos."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "3 tablas."
       },
       {
@@ -429,15 +429,15 @@
         "texto": "La hoja de cálculo."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El sistema gestor de bases de datos (SGBD)."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El sistema operativo."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El editor de texto."
       }
     ],
@@ -482,11 +482,11 @@
         "texto": "Usar una hoja de cálculo compartida por correo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Usar un procesador de texto."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Usar una base de datos porque permite el acceso simultáneo con integridad."
       },
       {
@@ -505,23 +505,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Analizar los datos que maneja el sistema",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Identificar las tablas necesarias",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Definir los campos de cada tabla",
         "tipo": "proceso"
       },
       {
@@ -530,19 +515,34 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b6",
         "texto": "Crear la base de datos en el SGBD",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Analizar los datos que maneja el sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Definir los campos de cada tabla",
         "tipo": "proceso"
       },
       {
         "id": "b7",
         "texto": "Verificar el almacenamiento de los datos",
         "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -565,14 +565,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Base de datos: contenedor principal de la información",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Resultado: estructura jerárquica completa",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -588,16 +598,6 @@
         "id": "b5",
         "texto": "Campos: cada columna de la tabla",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Resultado: estructura jerárquica completa",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -638,11 +638,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La afirmación es correcta porque las columnas almacenan datos."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La afirmación es incorrecta: cada columna es un CAMPO y cada fila es un REGISTRO."
       },
       {

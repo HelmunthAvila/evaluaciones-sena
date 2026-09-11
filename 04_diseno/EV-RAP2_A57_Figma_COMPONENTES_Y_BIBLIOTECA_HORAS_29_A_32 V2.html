@@ -292,11 +292,11 @@
         "texto": "Eliminar las instancias del componente del proyecto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Agrupar en un solo componente varias versiones del mismo elemento, como el botón en estado normal, al pasar el cursor y presionado."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "Bloquear el componente maestro para que nadie lo edite."
       }
     ],
@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Enviar una captura de pantalla del componente por correo electrónico."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Renombrar el archivo con el nombre del equipo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Descargar el componente en formato PDF."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Publicar el archivo como biblioteca de componentes desde el panel Compartir y habilitar la biblioteca en los archivos del equipo."
       }
     ],
@@ -338,15 +338,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Las instancias se actualizan automáticamente para reflejar los cambios del componente maestro."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Las instancias se convierten en imágenes estáticas."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Las instancias se eliminan del proyecto."
       },
       {
@@ -399,11 +399,11 @@
         "texto": "El campo de texto se exportó como imagen PNG."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El componente Input_Texto quedó creado y disponible en el panel de assets para insertar instancias."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El rectángulo y el texto se bloquearon sin crear el componente."
       },
       {
@@ -452,15 +452,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Se crearon tres componentes independientes sin relación entre sí."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Se eliminó el componente maestro del proyecto."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El botón quedó con tres estados (Normal, Hover y Presionado) agrupados en la variante Estado."
       },
       {
@@ -479,23 +479,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Dibujar un rectángulo con la herramienta Rectangle",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Asignar el color de fondo del proyecto al rectángulo",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Agregar el texto del botón, por ejemplo Ingresar",
         "tipo": "proceso"
       },
       {
@@ -504,14 +489,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Crear el componente con Ctrl+Alt+K y nombrarlo Boton_Primario",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Agregar el texto del botón, por ejemplo Ingresar",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Dibujar un rectángulo con la herramienta Rectangle",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -533,14 +533,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Organizar los componentes creados en una página llamada Biblioteca",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que los componentes aparecen en el panel de assets de los otros archivos",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -556,16 +566,6 @@
         "id": "b5",
         "texto": "Habilitar la biblioteca en los archivos de diseño del equipo",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que los componentes aparecen en el panel de assets de los otros archivos",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -660,11 +660,11 @@
         "texto": "El error es que el proyecto no tiene nombre."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La falla es haber creado frames sueltos en lugar de definir la propiedad de variantes dentro del componente; los estados deben configurarse como variantes en el panel de propiedades."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El componente está correcto; el problema es del navegador."
       }
     ],

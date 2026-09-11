@@ -258,11 +258,11 @@
     "contexto": "Servidor MySQL local con la base de datos tienda",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "DROP DATABASE tienda;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "mysqldump -u root -p tienda > respaldo_tienda.sql;"
       },
       {
@@ -309,11 +309,11 @@
         "resultado": "tienda_ventas mezcla mayúsculas y debe corregirse."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "tienda es inválido porque es demasiado corto."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "bdTienda usa mayúsculas internas (camelCase); la convención pide minúsculas y guion bajo, por ejemplo bd_tienda."
       },
       {
@@ -360,15 +360,15 @@
     "contexto": "Usuarios existentes en el servidor MySQL",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "sql": "GRANT SELECT ON tienda.* TO 'app_tienda'@'localhost';"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "GRANT ALL PRIVILEGES ON *.* TO 'app_tienda'@'localhost';"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "CREATE USER 'app_tienda'@'localhost' IDENTIFIED BY 'clave';"
       },
       {
@@ -428,11 +428,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "El proceso 14 es el problema porque ejecuta SHOW PROCESSLIST."
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "La consulta del proceso 12 lleva 1200 segundos en estado Sending data; es el cuello de botella y debe optimizarse o terminarse."
       },
       {
@@ -478,11 +478,11 @@
         "texto": "La aplicación debe tener todos los privilegios para funcionar correctamente."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El usuario debe llamarse admin para poder recibir permisos."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Se otorgaron todos los privilegios sobre todas las bases y desde cualquier host; debe limitarse: GRANT SELECT, INSERT, UPDATE ON tienda.* TO 'app_tienda'@'localhost';"
       },
       {
@@ -585,11 +585,11 @@
         "resultado": "El respaldo se realiza una vez al mes."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "El respaldo completo se realiza cada 7 días (semanal); el próximo respaldo corresponde al 2026-09-04."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "Los respaldos se realizan a diario."
       },
       {
@@ -631,11 +631,11 @@
         "texto": "DELETE no se puede usar con la cláusula WHERE."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El filtro está correcto y no se necesita ningún respaldo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Antes de una operación masiva de borrado debe ejecutarse una copia de seguridad; sin respaldo previo no hay forma de recuperar los datos si el filtro falla."
       },
       {

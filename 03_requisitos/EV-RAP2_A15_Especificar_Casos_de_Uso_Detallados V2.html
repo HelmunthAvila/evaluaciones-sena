@@ -261,11 +261,11 @@
         "texto": "Flujo alternativo: las variantes del proceso."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Precondición: el estado que debe cumplirse antes de ejecutar el caso de uso."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Postcondición: el estado final del sistema."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "Flujo principal: los pasos normales del proceso."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Precondición: el estado previo del sistema."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Postcondición: el estado del sistema después de ejecutar el caso de uso con éxito."
       },
       {
@@ -311,19 +311,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
         "id": "b2",
         "texto": "El vendedor digita los datos del cliente y los productos",
         "tipo": "entrada"
-      },
-      {
-        "id": "b3",
-        "texto": "El sistema valida los datos y el stock disponible",
-        "tipo": "proceso"
       },
       {
         "id": "b4",
@@ -331,8 +321,18 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b5",
         "texto": "El sistema guarda el pedido y genera el número de orden",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b3",
+        "texto": "El sistema valida los datos y el stock disponible",
         "tipo": "proceso"
       },
       {
@@ -359,19 +359,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Identificar el caso de uso y los actores que participan",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Escribir las precondiciones del caso de uso",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -384,9 +384,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Identificar el caso de uso y los actores que participan",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -412,9 +412,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Revisar el flujo principal del caso de uso",
+        "id": "b5",
+        "texto": "Registrar la postcondición de cada alternativa",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -427,14 +432,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Registrar la postcondición de cada alternativa",
+        "id": "b2",
+        "texto": "Revisar el flujo principal del caso de uso",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -478,11 +478,11 @@
         "texto": "Falta el flujo alternativo de la consulta."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Sin precondiciones no se sabe qué estado debe cumplirse antes de ejecutar el caso de uso; la especificación está incompleta."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La postcondición debe escribirse antes que el flujo principal."
       }
     ],
@@ -516,15 +516,15 @@
         "texto": "El flujo está correcto porque el cliente siempre tiene saldo."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta la precondición del flujo alternativo."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El error es que el retiro debe ser de 500.000."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "El flujo principal debe verificar el saldo antes de registrar el retiro; falta el paso de validación."
       }
     ],
@@ -640,15 +640,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Efectúa el retiro por 500.000."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Efectúa el retiro por 200.000."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Muestra el mensaje 'fondos insuficientes' y cancela el retiro."
       },
       {

@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "A la carpeta de logs del servidor."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "A la carpeta raíz pública del sitio (por ejemplo public_html o www)."
       },
       {
@@ -288,11 +288,11 @@
         "texto": "SMTP, que envía los correos del sitio."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "DNS, que traduce los nombres de dominio."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "FTP o SFTP, que transfieren los archivos al servidor con las credenciales del hosting."
       },
       {
@@ -311,18 +311,13 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b6",
+        "texto": "Configurar las variables de entorno con los datos del hosting",
+        "tipo": "proceso"
       },
       {
         "id": "b2",
         "texto": "Preparar los archivos de la aplicación y el respaldo de la base de datos",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b3",
-        "texto": "Conectar por FTP al servidor con las credenciales del hosting",
         "tipo": "proceso"
       },
       {
@@ -331,24 +326,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b3",
+        "texto": "Conectar por FTP al servidor con las credenciales del hosting",
+        "tipo": "proceso"
+      },
+      {
         "id": "b5",
         "texto": "Crear la base de datos en el panel del hosting e importar el esquema",
         "tipo": "proceso"
       },
       {
-        "id": "b6",
-        "texto": "Configurar las variables de entorno con los datos del hosting",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b7",
         "texto": "Abrir la URL del sitio para verificar la primera carga",
         "tipo": "proceso"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -371,13 +371,18 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Revisar que las páginas internas y los estilos carguen",
+        "tipo": "proceso"
       },
       {
-        "id": "b2",
-        "texto": "Abrir el sitio en el navegador con la URL del dominio",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Corregir los errores encontrados y volver a subir los archivos afectados",
         "tipo": "proceso"
       },
       {
@@ -391,19 +396,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Revisar que las páginas internas y los estilos carguen",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
-        "id": "b6",
-        "texto": "Corregir los errores encontrados y volver a subir los archivos afectados",
+        "id": "b2",
+        "texto": "Abrir el sitio en el navegador con la URL del dominio",
         "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -425,13 +425,23 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
+        "id": "b4",
+        "texto": "Configurar el archivo de despliegue (.htaccess o web.config)",
+        "tipo": "proceso"
+      },
+      {
         "id": "b1",
         "texto": "Inicio",
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Verificar la versión de PHP disponible en el hosting",
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b6",
+        "texto": "Refrescar o reiniciar el servicio del sitio",
         "tipo": "proceso"
       },
       {
@@ -440,24 +450,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Configurar el archivo de despliegue (.htaccess o web.config)",
+        "id": "b2",
+        "texto": "Verificar la versión de PHP disponible en el hosting",
         "tipo": "proceso"
       },
       {
         "id": "b5",
         "texto": "Asignar permisos de escritura a las carpetas de carga",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Refrescar o reiniciar el servicio del sitio",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -498,15 +498,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El dominio no existe."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta la base de datos."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Los archivos se subieron a /logs en lugar de la carpeta pública (public_html o www): el sitio no se muestra al visitante."
       },
       {
@@ -548,15 +548,15 @@
         "texto": "El protocolo FTP es incorrecto."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La carpeta public_html no existe."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "La publicación está correcta."
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "La carpeta raíz debe contener el archivo índice (index.php o index.html): sin él el servidor no sabe qué página mostrar al entrar al dominio."
       }
     ],
@@ -590,15 +590,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "Se conservaron el usuario root y la clave del entorno local: en el hosting deben usarse las credenciales de la base creada en el panel."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La variable DB_HOST debe eliminarse."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La base de datos del hosting se crea sola."
       },
       {
@@ -643,11 +643,11 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El sitio funciona perfectamente."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Faltan 2 archivos: el sitio puede mostrar errores de estilos o páginas incompletas; debe completarse la transferencia."
       },
       {
@@ -704,11 +704,11 @@
         "texto": "La URL sin www es imposible de usar."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Si no hay redirección configurada, el sitio puede no cargar con misitio.com; debe verificarse o crearse la redirección del dominio al subdominio www."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La base de datos corrige la URL."
       }
     ],

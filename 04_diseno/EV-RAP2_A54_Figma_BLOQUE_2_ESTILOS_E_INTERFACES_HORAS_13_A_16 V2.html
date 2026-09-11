@@ -261,11 +261,11 @@
         "texto": "Exporta automáticamente el diseño a varios formatos."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Organiza los elementos en filas o columnas y ajusta su posición cuando el contenido cambia."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Crea una cuadrícula de puntos sobre el lienzo."
       },
       {
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Para cambiar el idioma de la interfaz de Figma."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Para impedir que otros usuarios editen el archivo."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Para fijar cómo se comporta un elemento cuando el frame cambia de tamaño."
       },
       {
@@ -311,19 +311,19 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El panel de Capas."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "La herramienta de comentarios."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El historial de versiones."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "La cuadrícula de columnas, que divide la pantalla en columnas verticales."
       }
     ],
@@ -338,11 +338,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Combinando Auto Layout y Constraints para que los elementos se reposicionen y redimensionen."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Duplicando el frame manualmente en cada tamaño de pantalla."
       },
       {
@@ -399,15 +399,15 @@
         "texto": "Los botones quedaron superpuestos en el contenedor."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Los botones quedaron en fila con 16 píxeles de separación y el contenedor ajustó su tamaño."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Los botones se organizaron en columna vertical."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El espaciado se ignoró por completo."
       }
     ],
@@ -452,11 +452,11 @@
         "texto": "El botón se movió al borde izquierdo del frame."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El botón desapareció del frame."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El botón conservó su distancia al borde derecho cuando el frame se ensanchó."
       },
       {
@@ -475,23 +475,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Seleccionar las tarjetas que se organizarán",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Aplicar Auto Layout al grupo seleccionado",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Elegir la dirección horizontal para la fila",
         "tipo": "proceso"
       },
       {
@@ -500,14 +485,29 @@
         "tipo": "proceso"
       },
       {
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
         "id": "b6",
         "texto": "Verificar que las tarjetas se reordenan automáticamente",
         "tipo": "salida"
       },
       {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Elegir la dirección horizontal para la fila",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Seleccionar las tarjetas que se organizarán",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -529,14 +529,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Seleccionar el frame de la pantalla",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Verificar que la cuadrícula se muestra dentro del frame",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -552,16 +562,6 @@
         "id": "b5",
         "texto": "Definir 12 columnas con un gutter de 16 píxeles",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Verificar que la cuadrícula se muestra dentro del frame",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -606,11 +606,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El error es que los elementos tienen tamaños distintos."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La falla es que la dirección del Auto Layout quedó en vertical; debe cambiarse a horizontal para organizar los elementos en fila."
       },
       {

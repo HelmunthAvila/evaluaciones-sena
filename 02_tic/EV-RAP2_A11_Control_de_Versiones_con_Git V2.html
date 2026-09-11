@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "git status"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "git init"
       },
       {
@@ -288,11 +288,11 @@
         "texto": "git pull"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "git log"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "git commit -m 'mensaje'"
       },
       {
@@ -338,19 +338,19 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Modificar el archivo del proyecto",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
         "texto": "Agregar el archivo al área de preparación con git add",
         "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -363,9 +363,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Modificar el archivo del proyecto",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -391,9 +391,14 @@
         "tipo": "inicio"
       },
       {
-        "id": "b2",
-        "texto": "Crear el repositorio en GitHub",
-        "tipo": "proceso"
+        "id": "b5",
+        "texto": "Subir los cambios con git push",
+        "tipo": "salida"
+      },
+      {
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b3",
@@ -406,14 +411,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b5",
-        "texto": "Subir los cambios con git push",
-        "tipo": "salida"
-      },
-      {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Crear el repositorio en GitHub",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -434,24 +434,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Traer los cambios del repositorio remoto con git pull",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Revisar los archivos actualizados en el equipo",
         "tipo": "proceso"
       },
       {
-        "id": "b4",
-        "texto": "Realizar los nuevos cambios en el código",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -459,9 +449,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "Traer los cambios del repositorio remoto con git pull",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "Realizar los nuevos cambios en el código",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -501,19 +501,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "git commit agrega automáticamente todos los archivos sin necesidad de git add."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que el mensaje del commit es demasiado corto."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El procedimiento es correcto y el cambio quedó guardado."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "El commit no guarda los archivos nuevos o modificados que no se agregaron con git add: primero debe ejecutarse git add y luego git commit."
       }
     ],
@@ -547,15 +547,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "git push no puede subir cambios que no fueron guardados con commit: primero debe ejecutarse git add y git commit."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "git push sube los cambios directamente desde la carpeta de trabajo."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que GitHub no permite repositorios públicos."
       },
       {
@@ -657,15 +657,15 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El comando indica que el repositorio está vacío."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El comando borra los cambios no guardados."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "El comando indica que README.md está modificado y pendiente de agregar."
       },
       {

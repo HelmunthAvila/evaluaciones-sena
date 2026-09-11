@@ -258,11 +258,11 @@
     "codigo": "base = 1500\ndescuento = 0.10\ntotal = base - (base * descuento)\nprint(total)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "salida": "1500.0"
       },
       {
-        "id": 0,
+        "id": 1,
         "salida": "1350.0"
       },
       {
@@ -321,11 +321,11 @@
         "salida": "900 1900"
       },
       {
-        "id": 3,
+        "id": 2,
         "salida": "900.0 100.0"
       },
       {
-        "id": 2,
+        "id": 3,
         "salida": "900.0 1900.0"
       }
     ],
@@ -355,11 +355,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "El 0.10 es un número mágico: debe definirse la constante DESCUENTO = 0.10 para mejorar la legibilidad."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La variable valor debe llamarse x."
       },
       {
@@ -387,15 +387,15 @@
         "salida": "Area: 8"
       },
       {
-        "id": 3,
+        "id": 1,
         "salida": "Area: 40"
       },
       {
-        "id": 1,
+        "id": 2,
         "salida": "Area: 13"
       },
       {
-        "id": 2,
+        "id": 3,
         "salida": "40"
       }
     ],
@@ -500,15 +500,15 @@
     ],
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "texto": "La operación con 0.19 se repite (viola DRY): debe crearse la función calcular_impuesto(valor)."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "La variable imp2 está mal escrita."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Los valores deben imprimirse en una sola línea."
       },
       {
@@ -555,9 +555,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b3",
+        "texto": "ahorro_inicial = 500000",
+        "tipo": "proceso"
       },
       {
         "id": "b2",
@@ -565,14 +565,14 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "ahorro_inicial = 500000",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
-        "id": "b4",
-        "texto": "interes = ahorro_inicial * TASA_INTERES",
-        "tipo": "proceso"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b5",
@@ -580,9 +580,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b4",
+        "texto": "interes = ahorro_inicial * TASA_INTERES",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [

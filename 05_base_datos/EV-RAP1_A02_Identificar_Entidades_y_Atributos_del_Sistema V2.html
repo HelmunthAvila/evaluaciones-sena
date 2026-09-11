@@ -261,11 +261,11 @@
         "texto": "Un dato suelto sin relación con los demás."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Un objeto o concepto del mundo real sobre el cual se almacena información y que se representa como una tabla."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Una consulta almacenada en el sistema."
       },
       {
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Atributo derivado."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Atributo multivaluado."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Clave primaria: identifica de forma única cada registro de la entidad."
       },
       {
@@ -315,15 +315,15 @@
         "texto": "INT"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "VARCHAR(255)"
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "BOOLEAN"
       },
       {
-        "id": 1,
+        "id": 3,
         "texto": "DATE"
       }
     ],
@@ -364,19 +364,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 3,
+        "id": 0,
         "texto": "Libro, Préstamo y Usuario son las entidades del sistema."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Fecha de entrega y estado son las entidades."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "Solo existe una entidad en el sistema."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El préstamo es un atributo, no una entidad."
       }
     ],
@@ -421,15 +421,15 @@
         "texto": "La llave primaria es el teléfono."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "Los atributos son cédula, nombre, teléfono y ciudad; la llave primaria es la cédula."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La ciudad es la llave primaria."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "La entidad no tiene atributos."
       }
     ],
@@ -478,11 +478,11 @@
         "texto": "DATE"
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "DECIMAL(10,2), porque almacena valores numéricos con decimales."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "BOOLEAN"
       }
     ],
@@ -497,23 +497,8 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "Leer los requisitos del sistema",
-        "tipo": "proceso"
-      },
-      {
         "id": "b3",
         "texto": "Identificar los objetos o conceptos principales (entidades)",
-        "tipo": "proceso"
-      },
-      {
-        "id": "b4",
-        "texto": "Determinar los atributos de cada entidad",
         "tipo": "proceso"
       },
       {
@@ -522,19 +507,34 @@
         "tipo": "proceso"
       },
       {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
         "id": "b6",
         "texto": "Definir el tipo de dato de cada atributo",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b2",
+        "texto": "Leer los requisitos del sistema",
+        "tipo": "proceso"
+      },
+      {
+        "id": "b8",
+        "texto": "Fin",
+        "tipo": "fin"
+      },
+      {
+        "id": "b4",
+        "texto": "Determinar los atributos de cada entidad",
         "tipo": "proceso"
       },
       {
         "id": "b7",
         "texto": "Validar las entidades identificadas con el usuario",
         "tipo": "salida"
-      },
-      {
-        "id": "b8",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -557,14 +557,24 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b7",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
         "texto": "Entidad: Producto",
         "tipo": "proceso"
+      },
+      {
+        "id": "b6",
+        "texto": "Resultado: entidad Producto definida y verificada",
+        "tipo": "salida"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b3",
@@ -580,16 +590,6 @@
         "id": "b5",
         "texto": "Atributo precio: tipo DECIMAL",
         "tipo": "proceso"
-      },
-      {
-        "id": "b6",
-        "texto": "Resultado: entidad Producto definida y verificada",
-        "tipo": "salida"
-      },
-      {
-        "id": "b7",
-        "texto": "Fin",
-        "tipo": "fin"
       }
     ],
     "ordenCorrecto": [
@@ -634,15 +634,15 @@
         "texto": "El diseño es correcto porque el teléfono identifica al cliente."
       },
       {
-        "id": 3,
+        "id": 1,
         "texto": "El teléfono puede repetirse o cambiar; la clave primaria debe ser un identificador único y estable, como id_cliente."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El error es que falta el atributo nombre."
       },
       {
-        "id": 2,
+        "id": 3,
         "texto": "El error es que la entidad no debe tener clave primaria."
       }
     ],
@@ -680,11 +680,11 @@
         "texto": "El tipo de dato es correcto porque las fechas son números."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es que falta la clave primaria de la entidad."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "El tipo de dato es incorrecto: fecha_nacimiento debe ser DATE, no INT."
       },
       {

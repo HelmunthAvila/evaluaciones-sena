@@ -258,11 +258,11 @@
     "contexto": "Tabla: clientes (id, nombre, telefono)",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "sql": "SELECT * FROM clientes WHERE id = 5;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "EXPLAIN SELECT nombre FROM clientes WHERE id = 5;"
       },
       {
@@ -314,11 +314,11 @@
         "resultado": "La consulta usa un índice y examina 1 fila."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "El comando EXPLAIN no devuelve información de rendimiento."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "La consulta examina 2400 filas con type ALL: recorre toda la tabla sin usar índice; conviene optimizarla."
       },
       {
@@ -365,15 +365,15 @@
     "contexto": "Sesión de administración en MySQL",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "sql": "SET profiling = 1;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "DROP DATABASE tienda;"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "SELECT COUNT(*) FROM productos;"
       },
       {
@@ -405,11 +405,11 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "El servidor ejecutó 45 consultas lentas durante el día."
       },
       {
-        "id": 0,
+        "id": 1,
         "resultado": "El servidor tiene 45 conexiones activas en este momento; si se acerca al límite de max_connections, hay riesgo de saturación."
       },
       {
@@ -455,11 +455,11 @@
         "texto": "SELECT * está prohibido en MySQL."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El error es usar comillas simples en los nombres de las tablas."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La consulta recorre toda la tabla porque no tiene WHERE; debe filtrarse: SELECT * FROM pedidos WHERE cliente_id = 12; para reducir las filas examinadas."
       },
       {
@@ -562,11 +562,11 @@
         "resultado": "Recorre las 1200 filas de la tabla sin usar ningún índice."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "Usa el índice idx_categoria (type ref) y examina 8 filas; la consulta es eficiente."
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "La consulta no se puede ejecutar porque le falta el WHERE."
       },
       {
@@ -608,11 +608,11 @@
         "texto": "El error es que la tabla ventas no tiene la columna fecha."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Los reportes siempre tardan y no se pueden mejorar."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "La función DATE(fecha) impide usar el índice de la columna fecha; debe compararse el rango: WHERE fecha >= '2026-01-15' AND fecha < '2026-01-16';"
       },
       {

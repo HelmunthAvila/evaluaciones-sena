@@ -305,15 +305,15 @@
     },
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "resultado": "1 sola base de datos: biblioteca."
       },
       {
-        "id": 2,
+        "id": 1,
         "resultado": "3 bases de datos, sin incluir biblioteca."
       },
       {
-        "id": 0,
+        "id": 2,
         "resultado": "4 bases de datos: information_schema, mysql, performance_schema y biblioteca."
       },
       {
@@ -360,19 +360,19 @@
     "contexto": "Motor: MySQL",
     "opciones": [
       {
-        "id": 3,
+        "id": 0,
         "sql": "USE biblioteca;"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE DATABASE biblioteca;"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "SHOW DATABASES;"
       },
       {
-        "id": 2,
+        "id": 3,
         "sql": "SELECT * FROM biblioteca;"
       }
     ],
@@ -436,15 +436,15 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "CREATE DATABASE no acepta CHARACTER SET."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta el punto y coma al final de la primera línea."
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "COLLATE exige un nombre de cotejamiento: debe ser COLLATE utf8mb4_spanish_ci (o similar); COLLATE; solo genera error de sintaxis."
       },
       {
@@ -491,15 +491,15 @@
     "contexto": "Motor: PostgreSQL",
     "opciones": [
       {
-        "id": 2,
+        "id": 0,
         "sql": "CREATE DATABASE biblioteca ENCODING 'UTF8';"
       },
       {
-        "id": 0,
+        "id": 1,
         "sql": "CREATE DATABASE biblioteca CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;"
       },
       {
-        "id": 1,
+        "id": 2,
         "sql": "CREATE SCHEMA biblioteca;"
       },
       {
@@ -533,15 +533,15 @@
         "resultado": "mysql"
       },
       {
-        "id": 3,
+        "id": 1,
         "resultado": "biblioteca, porque USE biblioteca la dejó seleccionada"
       },
       {
-        "id": 1,
+        "id": 2,
         "resultado": "information_schema"
       },
       {
-        "id": 2,
+        "id": 3,
         "resultado": "NULL, porque ninguna base está en uso"
       }
     ],
@@ -571,11 +571,11 @@
         "texto": "CREATE DATABASE no permite CHARACTER SET."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Falta crear primero la base con USE."
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "SHOW DATABASE está en singular: el comando correcto es SHOW DATABASES (en plural); genera error de sintaxis."
       },
       {

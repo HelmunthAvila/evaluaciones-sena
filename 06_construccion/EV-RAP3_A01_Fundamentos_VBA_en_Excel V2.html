@@ -257,11 +257,11 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Ctrl + F11"
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "Alt + F11"
       },
       {
@@ -284,15 +284,15 @@
     "tipoComp": "seleccion_rapida",
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Cells(2, 5).Value = 10"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Cell(5, 2).Value = 10"
       },
       {
-        "id": 0,
+        "id": 2,
         "texto": "Range(\"B5\").Value = 10"
       },
       {
@@ -333,19 +333,19 @@
     ],
     "opcionesRespuesta": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Ana"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "Hola,"
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "Hola, nombre"
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "Hola, Ana"
       }
     ],
@@ -436,24 +436,14 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
-      },
-      {
-        "id": "b2",
-        "texto": "a = Range(\"A1\").Value",
-        "tipo": "entrada"
-      },
-      {
         "id": "b3",
         "texto": "b = Range(\"B1\").Value",
         "tipo": "entrada"
       },
       {
-        "id": "b4",
-        "texto": "suma = a + b",
-        "tipo": "proceso"
+        "id": "b6",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b5",
@@ -461,9 +451,19 @@
         "tipo": "salida"
       },
       {
-        "id": "b6",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b2",
+        "texto": "a = Range(\"A1\").Value",
+        "tipo": "entrada"
+      },
+      {
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
+      },
+      {
+        "id": "b4",
+        "texto": "suma = a + b",
+        "tipo": "proceso"
       }
     ],
     "ordenCorrecto": [
@@ -499,19 +499,19 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "Falta la instrucción End Sub al final del procedimiento."
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "El método Value solo puede usarse con el objeto Cells."
       },
       {
-        "id": 3,
+        "id": 2,
         "texto": "El código está correcto y no genera ningún error."
       },
       {
-        "id": 0,
+        "id": 3,
         "texto": "B5 debe escribirse como texto entre comillas dobles: Range(\"B5\").Value = 10. Sin comillas, VBA interpreta B5 como una variable no declarada y el código no se ejecuta."
       }
     ],
@@ -526,9 +526,9 @@
     "tipoComp": "ordenar_bloques",
     "bloquesIniciales": [
       {
-        "id": "b1",
-        "texto": "Inicio",
-        "tipo": "inicio"
+        "id": "b5",
+        "texto": "Fin",
+        "tipo": "fin"
       },
       {
         "id": "b2",
@@ -536,9 +536,9 @@
         "tipo": "proceso"
       },
       {
-        "id": "b3",
-        "texto": "edad = Val(InputBox(\"Digite su edad\"))",
-        "tipo": "entrada"
+        "id": "b1",
+        "texto": "Inicio",
+        "tipo": "inicio"
       },
       {
         "id": "b4",
@@ -546,9 +546,9 @@
         "tipo": "salida"
       },
       {
-        "id": "b5",
-        "texto": "Fin",
-        "tipo": "fin"
+        "id": "b3",
+        "texto": "edad = Val(InputBox(\"Digite su edad\"))",
+        "tipo": "entrada"
       }
     ],
     "ordenCorrecto": [
@@ -591,11 +591,11 @@
     ],
     "opciones": [
       {
-        "id": 1,
+        "id": 0,
         "texto": "La variable edad debe declararse como String para mostrar el mensaje."
       },
       {
-        "id": 0,
+        "id": 1,
         "texto": "El operador + entre un número y un texto genera un error de tipos (Type mismatch). Se debe concatenar con &: MsgBox \"Edad: \" & edad & \" años\"."
       },
       {
@@ -644,11 +644,11 @@
         "texto": "10000"
       },
       {
-        "id": 2,
+        "id": 1,
         "texto": "19000"
       },
       {
-        "id": 1,
+        "id": 2,
         "texto": "11900"
       },
       {
