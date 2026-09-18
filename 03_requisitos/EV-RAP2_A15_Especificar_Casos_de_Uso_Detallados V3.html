@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¿Quién Quiere Ser Millonario? - Especificar Casos de Uso Detallados</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#ffd700',
+              goldDark: '#b8860b',
+              navy: '#050b18',
+              navyCard: '#0a1428',
+              navyBorder: '#1e293b',
+              blueGlow: '#1d4ed8',
+              sena: '#39a900'
+            }
+          },
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #030712;
+      background-image: 
+        radial-gradient(circle at 50% 20%, rgba(29, 78, 216, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 50% 80%, rgba(184, 134, 11, 0.15) 0%, transparent 50%);
+      color: #f3f4f6;
+      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Hexagonal Option Button Style */
+    .option-btn {
+      position: relative;
+      background: linear-gradient(180deg, #0f172a 0%, #030712 100%);
+      border: 2px solid #334155;
+      transition: all 0.2s ease-in-out;
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: #ffd700;
+      background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      transform: scale(1.01);
+    }
+
+    .option-btn.selected {
+      border-color: #f59e0b;
+      background: linear-gradient(180deg, #b45309 0%, #78350f 100%);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+      animation: pulse-orange 1s infinite alternate;
+    }
+
+    .option-btn.correct {
+      border-color: #10b981;
+      background: linear-gradient(180deg, #047857 0%, #064e3b 100%);
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.8);
+      animation: flash-green 0.5s 3 alternate;
+    }
+
+    .option-btn.wrong {
+      border-color: #ef4444;
+      background: linear-gradient(180deg, #b91c1c 0%, #7f1d1d 100%);
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.7);
+    }
+
+    .option-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.3;
+      filter: grayscale(80%);
+    }
+
+    @keyframes pulse-orange {
+      0% { box-shadow: 0 0 10px rgba(245, 158, 11, 0.4); }
+      100% { box-shadow: 0 0 25px rgba(245, 158, 11, 0.9); }
+    }
+
+    @keyframes flash-green {
+      0% { opacity: 1; }
+      100% { opacity: 0.6; }
+    }
+
+    .gold-glow {
+      text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+    }
+
+    .gold-border {
+      border-color: #ffd700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+
+    .ladder-item {
+      clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
+    }
+
+    /* Print styling for Certificate */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-only {
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body class="flex flex-col justify-between selection:bg-amber-400 selection:text-black">
+
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur-md sticky top-0 z-50 no-print">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-lg bg-[#39a900] flex items-center justify-center text-white font-extrabold text-xl shadow-lg">
+          S
+        </div>
+        <div>
+          <h1 class="font-extrabold text-white text-base sm:text-lg leading-tight tracking-wide flex items-center gap-2">
+            <span>¿QUIÉN QUIERE SER MILLONARIO?</span>
+            <span class="text-xs px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono">ESPECIFICAR</span>
+          </h1>
+          <p class="text-xs text-slate-400">SENA - Evaluación Interactiva: Especificar Casos de Uso Detallados</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <div id="user-pill" class="hidden text-right text-xs">
+          <span id="pill-nombre" class="font-bold text-amber-400 block max-w-[120px] truncate"></span>
+          <span id="pill-ficha" class="text-slate-400 font-mono"></span>
+        </div>
+
+        <button id="btn-audio" onclick="toggleAudio()" title="Silenciar / Activar Sonido" 
+                class="w-10 h-10 rounded-full border border-slate-700 bg-slate-900 hover:border-amber-400 text-amber-400 flex items-center justify-center transition">
+          <i id="audio-icon" class="fa-solid fa-volume-high"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-grow flex items-center justify-center p-3 sm:p-6">
+
+    <section id="vista-inicio" class="w-full max-w-xl bg-slate-900/90 border-2 border-amber-500/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden my-auto">
+      <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="text-center space-y-3 mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold uppercase tracking-widest">
+          <i class="fa-solid fa-trophy"></i> Desafío de Conocimiento SENA
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-black text-white tracking-tight gold-glow">
+          ¿QUIÉN QUIERE SER <br><span class="text-amber-400">MILLONARIO?</span>
+        </h2>
+        <p class="text-sm text-slate-300 max-w-md mx-auto">
+          Demuestra tu dominio técnico sobre <strong>Especificar Casos de Uso Detallados</strong> respondiendo 15 preguntas hasta alcanzar el acumulado de <strong>$1.000.000 de puntos</strong>.
+        </p>
+      </div>
+
+      <!-- Quick Info Boxes -->
+      <div class="grid grid-cols-3 gap-2 text-center text-xs mb-6">
+        <div class="p-2.5 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="block text-slate-400 text-[10px] uppercase">Preguntas</span>
+          <span class="font-bold text-amber-400 text-sm">15 Retos</span>
+        </div>
+        <div class="p-2.5 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="block text-slate-400 text-[10px] uppercase">Comodines</span>
+          <span class="font-bold text-emerald-400 text-sm">3 Disponibles</span>
+        </div>
+        <div class="p-2.5 bg-slate-950/60 rounded-xl border border-slate-800">
+          <span class="block text-slate-400 text-[10px] uppercase">Aprobación</span>
+          <span class="font-bold text-blue-400 text-sm">70% ($100K)</span>
+        </div>
+      </div>
+
+      <form id="form-inicio" onsubmit="iniciarJuego(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Nombre Completo del Aprendiz *</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-user"></i></span>
+            <input id="nombre" type="text" placeholder="Ej. Carlos Alberto Pérez" required
+                   class="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1">Número de Ficha de Formación *</label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-hashtag"></i></span>
+            <input id="ficha" type="text" placeholder="Ej. 2671940" required
+                   class="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition">
+          </div>
+        </div>
+
+        <button type="submit" 
+                class="w-full py-4 bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-lg rounded-xl shadow-lg shadow-amber-500/20 transform hover:-translate-y-0.5 active:translate-y-0 transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-play"></i>
+          <span>INGRESAR AL SHOW</span>
+        </button>
+      </form>
+    </section>
+
+    <section id="vista-juego" class="w-full max-w-6xl hidden grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      
+      <!-- Left / Main: Questions & Lifelines Arena -->
+      <div class="lg:col-span-8 space-y-6">
+
+        <!-- Top Stage Bar: Lifelines & Status -->
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-4">
+          
+          <!-- Lifelines Buttons -->
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold uppercase text-slate-400 mr-1 hidden sm:inline">Comodines:</span>
+            
+            <button id="comodin-5050" onclick="usar5050()" title="Comodín 50:50 (Elimina 2 incorrectas)"
+                    class="w-12 h-12 rounded-xl bg-slate-950 border-2 border-amber-500/50 hover:border-amber-400 text-amber-400 font-extrabold text-sm flex items-center justify-center hover:scale-105 transition shadow-lg disabled:opacity-30 disabled:hover:scale-100 disabled:border-slate-800">
+              50:50
+            </button>
+
+            <button id="comodin-publico" onclick="usarPublico()" title="Opinión del Público"
+                    class="w-12 h-12 rounded-xl bg-slate-950 border-2 border-amber-500/50 hover:border-amber-400 text-amber-400 font-extrabold text-lg flex items-center justify-center hover:scale-105 transition shadow-lg disabled:opacity-30 disabled:hover:scale-100 disabled:border-slate-800">
+              <i class="fa-solid fa-users"></i>
+            </button>
+
+            <button id="comodin-llamada" onclick="usarLlamada()" title="Llamar a un Experto / Instructor SENA"
+                    class="w-12 h-12 rounded-xl bg-slate-950 border-2 border-amber-500/50 hover:border-amber-400 text-amber-400 font-extrabold text-lg flex items-center justify-center hover:scale-105 transition shadow-lg disabled:opacity-30 disabled:hover:scale-100 disabled:border-slate-800">
+              <i class="fa-solid fa-phone"></i>
+            </button>
+          </div>
+
+          <!-- Current Question Score Indicator -->
+          <div class="text-right">
+            <span class="text-[10px] uppercase text-slate-400 block tracking-wider">Premio en Juego</span>
+            <span id="txt-premio-actual" class="text-2xl font-black text-amber-400 gold-glow font-mono">$100</span>
+          </div>
+        </div>
+
+        <!-- Question Box -->
+        <div class="bg-slate-900/90 border-2 border-amber-500/30 rounded-2xl p-6 relative overflow-hidden shadow-2xl">
+          <div class="flex items-center justify-between text-xs text-amber-400/80 mb-3 font-mono font-bold">
+            <span id="lbl-numero-pregunta">PREGUNTA 1 DE 15</span>
+            <span id="lbl-hito-status" class="text-slate-400"><i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> SEGURO: $0</span>
+          </div>
+
+          <h3 id="txt-pregunta" class="text-lg sm:text-xl font-bold text-white leading-relaxed mb-4">
+            Cargando pregunta...
+          </h3>
+
+          <div id="caja-codigo-pregunta" class="hidden mb-4 bg-slate-950 p-4 rounded-xl border border-slate-800">
+            <pre class="font-mono text-sm text-emerald-400 whitespace-pre-wrap leading-relaxed"><code id="code-snippet"></code></pre>
+          </div>
+        </div>
+
+        <!-- Options Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button id="btn-opc-0" onclick="responder(0)" class="option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3">
+            <span class="font-mono font-bold text-amber-400 text-base">A:</span>
+            <span id="txt-opc-0" class="text-slate-200"></span>
+          </button>
+
+          <button id="btn-opc-1" onclick="responder(1)" class="option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3">
+            <span class="font-mono font-bold text-amber-400 text-base">B:</span>
+            <span id="txt-opc-1" class="text-slate-200"></span>
+          </button>
+
+          <button id="btn-opc-2" onclick="responder(2)" class="option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3">
+            <span class="font-mono font-bold text-amber-400 text-base">C:</span>
+            <span id="txt-opc-2" class="text-slate-200"></span>
+          </button>
+
+          <button id="btn-opc-3" onclick="responder(3)" class="option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3">
+            <span class="font-mono font-bold text-amber-400 text-base">D:</span>
+            <span id="txt-opc-3" class="text-slate-200"></span>
+          </button>
+        </div>
+
+        <!-- Control Action Bar -->
+        <div id="caja-confirmacion" class="hidden bg-slate-900 border border-amber-500/40 p-4 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-sm">
+            <span class="text-amber-400 font-bold"><i class="fa-solid fa-circle-question mr-1"></i> ¿Respuesta definitiva?</span>
+            <span class="text-slate-400 text-xs block">Confirma tu elección antes de revelar el resultado.</span>
+          </div>
+          <div class="flex gap-2 w-full sm:w-auto">
+            <button onclick="cancelarSeleccion()" class="flex-1 sm:flex-none px-4 py-2 rounded-lg border border-slate-700 text-slate-300 text-xs font-bold hover:bg-slate-800">
+              Cambiar
+            </button>
+            <button onclick="confirmarRespuesta()" class="flex-1 sm:flex-none px-6 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-black rounded-lg shadow-md">
+              ¡Respuesta Definitiva!
+            </button>
+          </div>
+        </div>
+
+        <div id="caja-siguiente" class="hidden bg-emerald-950/60 border border-emerald-500/50 p-4 rounded-2xl flex items-center justify-between">
+          <div class="text-sm text-emerald-300">
+            <span class="font-bold block text-base"><i class="fa-solid fa-circle-check mr-1"></i> ¡Respuesta Correcta!</span>
+            <span id="txt-feedback-siguiente" class="text-xs text-slate-300">Avanzas al siguiente nivel de la escala.</span>
+          </div>
+          <button onclick="siguientePregunta()" class="px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm rounded-xl shadow-lg flex items-center gap-2">
+            <span>Siguiente Pregunta</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Money Ladder -->
+      <div class="lg:col-span-4 bg-slate-900/90 border border-slate-800 rounded-2xl p-4 space-y-2 shadow-2xl">
+        <h4 class="text-xs font-extrabold uppercase text-slate-400 text-center tracking-widest pb-2 border-b border-slate-800">
+          Escala de Premios
+        </h4>
+
+        <div id="escala-premios" class="space-y-1 text-xs font-mono">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+
+    </section>
+
+    <section id="vista-resultados" class="w-full max-w-2xl hidden bg-slate-900 border-2 border-amber-500/50 rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden text-center my-auto">
+      
+      <!-- Certificate Border Overlay for Print -->
+      <div class="print-only hidden text-black text-left">
+        <h1 class="text-2xl font-bold text-center mb-4">REPORTE DE EVALUACIÓN SENA</h1>
+      </div>
+
+      <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-amber-500/10 border-2 border-amber-500/40 text-amber-400 text-3xl mb-4 gold-glow">
+        <i id="icon-resultado" class="fa-solid fa-trophy"></i>
+      </div>
+
+      <h2 id="res-titulo" class="text-2xl sm:text-3xl font-black text-white mb-1">
+        ¡JUEGO FINALIZADO!
+      </h2>
+      <p id="res-subtitulo" class="text-sm text-slate-400 mb-6">Resultados de la evaluación práctica de Especificar Casos de Uso Detallados</p>
+
+      <!-- Results Grid Cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 text-left">
+        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+          <span class="text-[10px] text-slate-400 uppercase block font-bold">Aprendiz</span>
+          <span id="res-nombre" class="text-sm font-bold text-amber-400 block truncate">---</span>
+          <span id="res-ficha" class="text-xs text-slate-500 font-mono">Ficha: ---</span>
+        </div>
+
+        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+          <span class="text-[10px] text-slate-400 uppercase block font-bold">Premio Acumulado</span>
+          <span id="res-premio" class="text-base font-black text-emerald-400 font-mono block">$0</span>
+          <span id="res-preguntas-count" class="text-[10px] text-slate-400">0 de 15 Acertadas</span>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1 p-3 bg-slate-950 rounded-xl border border-slate-800">
+          <span class="text-[10px] text-slate-400 uppercase block font-bold">Porcentaje Final</span>
+          <span id="res-porcentaje" class="text-base font-black text-blue-400 font-mono block">0%</span>
+          <span id="res-estado-badge" class="inline-block text-[10px] font-bold px-2 py-0.5 rounded uppercase mt-0.5">---</span>
+        </div>
+      </div>
+
+      <!-- Evidence Message -->
+      <div id="res-mensaje" class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 mb-6 leading-relaxed">
+      </div>
+
+      <div class="bg-amber-500/10 border border-amber-500/30 p-3 rounded-xl text-amber-300 text-xs mb-6 font-medium no-print">
+        <i class="fa-solid fa-camera mr-1"></i> Tome una captura de pantalla completa de este reporte como evidencia oficial para el LMS SENA.
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center no-print">
+        <button onclick="window.print()" class="px-6 py-3 border border-slate-700 hover:bg-slate-800 text-white font-bold text-xs rounded-xl transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-print"></i>
+          <span>Imprimir / Guardar PDF</span>
+        </button>
+
+        <button onclick="location.reload()" class="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-rotate-right"></i>
+          <span>Volver a Jugar</span>
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- MODALS FOR LIFELINES -->
+  <!-- 1. Public Modal -->
+  <div id="modal-publico" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border-2 border-amber-500/50 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 class="font-extrabold text-amber-400 text-base flex items-center gap-2">
+          <i class="fa-solid fa-users"></i> Votación del Público
+        </h3>
+        <button onclick="cerrarModal('modal-publico')" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="text-xs text-slate-300">Resultados del sondeo en directo del estudio SENA:</p>
+      
+      <div id="grafico-publico" class="space-y-3 font-mono text-xs">
+        <!-- Dynamic bars -->
+      </div>
+
+      <button onclick="cerrarModal('modal-publico')" class="w-full py-2.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl">Entendido</button>
+    </div>
+  </div>
+
+  <!-- 2. Phone Call Modal -->
+  <div id="modal-llamada" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border-2 border-amber-500/50 rounded-2xl p-6 max-w-md w-full shadow-2xl space-y-4">
+      <div class="flex justify-between items-center border-b border-slate-800 pb-3">
+        <h3 class="font-extrabold text-amber-400 text-base flex items-center gap-2">
+          <i class="fa-solid fa-phone-volume"></i> Llamada a Experto SENA
+        </h3>
+        <button onclick="cerrarModal('modal-llamada')" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="flex items-start gap-4 bg-slate-950 p-4 rounded-xl border border-slate-800">
+        <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center text-xl flex-shrink-0">
+          <i class="fa-solid fa-user-tie"></i>
+        </div>
+        <div class="text-xs space-y-1">
+          <span class="font-bold text-white block">Instructor de Programación SENA:</span>
+          <p id="txt-llamada-dialogo" class="text-slate-300 italic leading-relaxed">
+            "Analizando la pregunta..."
+          </p>
+        </div>
+      </div>
+
+      <button onclick="cerrarModal('modal-llamada')" class="w-full py-2.5 bg-amber-500 text-slate-950 font-bold text-xs rounded-xl">Gracias Instructor</button>
+    </div>
+  </div>
+
+  <footer class="border-t border-slate-900 bg-slate-950 py-3 text-center text-slate-600 text-xs no-print">
+    <p>© SENA - Centro de Procesos de Software | Evaluación Adaptativa en Especificar Casos de Uso Detallados</p>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    // Web Audio API Sound Synthesizer
+    let audioCtx = null;
+    let audioMuted = false;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playTone(freq, type, duration, delay = 0) {
+      if (audioMuted) return;
+      initAudio();
+      setTimeout(() => {
+        try {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = type;
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start();
+          osc.stop(audioCtx.currentTime + duration);
+        } catch(e) {}
+      }, delay);
+    }
+
+    function soundSelect() { playTone(587.33, 'sine', 0.15); }
+    function soundConfirm() { playTone(440, 'triangle', 0.1); playTone(880, 'sine', 0.2, 100); }
+    function soundCorrect() { 
+      playTone(523.25, 'triangle', 0.2, 0);
+      playTone(659.25, 'triangle', 0.2, 120);
+      playTone(783.99, 'triangle', 0.2, 240);
+      playTone(1046.50, 'sine', 0.4, 360);
+    }
+    function soundWrong() {
+      playTone(300, 'sawtooth', 0.25, 0);
+      playTone(220, 'sawtooth', 0.4, 200);
+    }
+    function soundLifeline() { playTone(800, 'sine', 0.1, 0); playTone(1200, 'sine', 0.2, 100); }
+
+    function toggleAudio() {
+      audioMuted = !audioMuted;
+      const icon = document.getElementById('audio-icon');
+      if (audioMuted) {
+        icon.className = "fa-solid fa-volume-xmark text-slate-500";
+      } else {
+        icon.className = "fa-solid fa-volume-high text-amber-400";
+        soundSelect();
+      }
+    }
+
+    // 15 preguntas escaladas por dificultad sobre Especificar Casos de Uso Detallados
+    const PREGUNTAS = [
+      {
+        nivel: 1,
+        premio: "$100",
+        hito: false,
+        pregunta: "La especificación detallada de un caso de uso incluye:",
+        codigo: null,
+        opciones: [
+          "Precio, color y marca",
+          "Nombre, actores, precondiciones, flujo principal y postcondiciones",
+          "Dirección, teléfono y correo",
+          "Mesa, silla y escritorio"
+        ],
+        correcta: 1
+      },
+      {
+        nivel: 2,
+        premio: "$200",
+        hito: false,
+        pregunta: "Las precondiciones de un caso de uso describen:",
+        codigo: null,
+        opciones: [
+          "El estado del sistema antes de ejecutar el caso de uso",
+          "El estado del sistema después de ejecutarlo",
+          "Los errores del código",
+          "Los costos del proyecto"
+        ],
+        correcta: 0
+      },
+      {
+        nivel: 3,
+        premio: "$300",
+        hito: false,
+        pregunta: "El flujo principal de un caso de uso es:",
+        codigo: null,
+        opciones: [
+          "Una ruta de excepción",
+          "El historial de versiones",
+          "El diagrama de clases",
+          "La secuencia normal de pasos de la interacción"
+        ],
+        correcta: 3
+      },
+      {
+        nivel: 4,
+        premio: "$500",
+        hito: false,
+        pregunta: "Los flujos alternativos de un caso de uso describen:",
+        codigo: null,
+        opciones: [
+          "Los pasos obligatorios de la secuencia",
+          "Los colores de la interfaz",
+          "Las rutas de excepción o variación del flujo normal",
+          "Los requisitos económicos"
+        ],
+        correcta: 2
+      },
+      {
+        nivel: 5,
+        premio: "$1,000",
+        hito: true,
+        pregunta: "Las postcondiciones de un caso de uso describen:",
+        codigo: null,
+        opciones: [
+          "El estado previo del sistema",
+          "El estado del sistema al finalizar el caso de uso",
+          "Las contraseñas de acceso",
+          "Los nombres de los actores"
+        ],
+        correcta: 1
+      },
+      {
+        nivel: 6,
+        premio: "$2,000",
+        hito: false,
+        pregunta: "¿Qué campo describe el estado que debe cumplirse ANTES de ejecutar el caso de uso?",
+        codigo: null,
+        opciones: [
+          "Precondición: el estado que debe cumplirse antes de ejecutar el caso de uso.",
+          "Flujo alternativo: las variantes del proceso.",
+          "Postcondición: el estado final del sistema.",
+          "Actor principal: el rol que inicia la interacción."
+        ],
+        correcta: 0
+      },
+      {
+        nivel: 7,
+        premio: "$4,000",
+        hito: false,
+        pregunta: "¿Qué campo describe el estado del sistema DESPUÉS de que el caso de uso termina con éxito?",
+        codigo: null,
+        opciones: [
+          "Flujo principal: los pasos normales del proceso.",
+          "Precondición: el estado previo del sistema.",
+          "Excepción: el error que puede presentarse.",
+          "Postcondición: el estado del sistema después de ejecutar el caso de uso con éxito."
+        ],
+        correcta: 3
+      },
+      {
+        nivel: 8,
+        premio: "$8,000",
+        hito: false,
+        pregunta: "Las ____________ describen el estado del sistema antes del caso de uso.",
+        codigo: null,
+        opciones: [
+          "postcondiciones",
+          "pruebas",
+          "precondiciones",
+          "ventas"
+        ],
+        correcta: 2
+      },
+      {
+        nivel: 9,
+        premio: "$16,000",
+        hito: false,
+        pregunta: "El ____________ principal es la secuencia normal de pasos.",
+        codigo: null,
+        opciones: [
+          "color",
+          "flujo",
+          "precio",
+          "nombre"
+        ],
+        correcta: 1
+      },
+      {
+        nivel: 10,
+        premio: "$32,000",
+        hito: true,
+        pregunta: "Las ____________ describen el estado del sistema al finalizar el caso de uso.",
+        codigo: null,
+        opciones: [
+          "postcondiciones",
+          "precondiciones",
+          "entradas",
+          "salidas"
+        ],
+        correcta: 0
+      },
+      {
+        nivel: 11,
+        premio: "$64,000",
+        hito: false,
+        pregunta: "¿Cuál es la función o definición de «Precondición»?",
+        codigo: null,
+        opciones: [
+          "Secuencia normal de pasos del caso de uso",
+          "Estado del sistema al finalizar el caso de uso",
+          "Ninguna de las anteriores",
+          "Estado previo requerido para ejecutar el caso de uso"
+        ],
+        correcta: 3
+      },
+      {
+        nivel: 12,
+        premio: "$125,000",
+        hito: false,
+        pregunta: "¿Cuál es la función o definición de «Flujo principal»?",
+        codigo: null,
+        opciones: [
+          "Estado previo requerido para ejecutar el caso de uso",
+          "Estado del sistema al finalizar el caso de uso",
+          "Secuencia normal de pasos del caso de uso",
+          "Ninguna de las anteriores"
+        ],
+        correcta: 2
+      },
+      {
+        nivel: 13,
+        premio: "$250,000",
+        hito: false,
+        pregunta: "¿Cuál es la función o definición de «Postcondición»?",
+        codigo: null,
+        opciones: [
+          "Estado previo requerido para ejecutar el caso de uso",
+          "Estado del sistema al finalizar el caso de uso",
+          "Secuencia normal de pasos del caso de uso",
+          "Ninguna de las anteriores"
+        ],
+        correcta: 1
+      },
+      {
+        nivel: 14,
+        premio: "$500,000",
+        hito: false,
+        pregunta: "Encuentra el error: especificación sin precondiciones",
+        codigo: null,
+        opciones: [
+          "Sin precondiciones no se sabe qué estado debe cumplirse antes de ejecutar el caso de uso; la especificación está incompleta.",
+          "El campo vacío no afecta la especificación.",
+          "Falta el flujo alternativo de la consulta.",
+          "La postcondición debe escribirse antes que el flujo principal."
+        ],
+        correcta: 0
+      },
+      {
+        nivel: 15,
+        premio: "$1.000.000",
+        hito: false,
+        pregunta: "Encuentra el error: flujo principal sin validación",
+        codigo: null,
+        opciones: [
+          "El flujo está correcto porque el cliente siempre tiene saldo.",
+          "Falta la precondición del flujo alternativo.",
+          "El error es que el retiro debe ser de 500.000.",
+          "El flujo principal debe verificar el saldo antes de registrar el retiro; falta el paso de validación."
+        ],
+        correcta: 3
+      }
+    ];
+
+    // Game State variables
+    let estadoJuego = {
+      nombre: '',
+      ficha: '',
+      preguntaActual: 0,
+      seleccionada: null,
+      premiosGanados: 0,
+      seguroAlcanzado: 0,
+      comodinesUsados: {
+        '5050': false,
+        'publico': false,
+        'llamada': false
+      }
+    };
+
+    // Initialize App
+    function iniciarJuego(e) {
+      e.preventDefault();
+      initAudio();
+      
+      const nombre = document.getElementById('nombre').value.trim();
+      const ficha = document.getElementById('ficha').value.trim();
+
+      if (!nombre || !ficha) return;
+
+      estadoJuego.nombre = nombre;
+      estadoJuego.ficha = ficha;
+
+      document.getElementById('pill-nombre').textContent = nombre;
+      document.getElementById('pill-ficha').textContent = `Ficha: ${ficha}`;
+      document.getElementById('user-pill').classList.remove('hidden');
+
+      document.getElementById('vista-inicio').classList.add('hidden');
+      document.getElementById('vista-juego').classList.remove('hidden');
+
+      renderEscala();
+      cargarPregunta();
+      soundSelect();
+    }
+
+    function renderEscala() {
+      const cont = document.getElementById('escala-premios');
+      cont.innerHTML = '';
+
+      // Render upside down (15 down to 1)
+      for (let i = PREGUNTAS.length - 1; i >= 0; i--) {
+        const p = PREGUNTAS[i];
+        const esActual = i === estadoJuego.preguntaActual;
+        const esPasada = i < estadoJuego.preguntaActual;
+        
+        let bgClass = "bg-slate-950 border border-slate-800 text-slate-500";
+        if (esActual) {
+          bgClass = "bg-amber-500 border-2 border-amber-300 text-slate-950 font-black gold-glow scale-105 z-10 shadow-lg";
+        } else if (esPasada) {
+          bgClass = "bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 font-bold";
+        } else if (p.hito) {
+          bgClass = "bg-blue-950/60 border border-blue-500/50 text-blue-300 font-bold";
+        }
+
+        const div = document.createElement('div');
+        div.className = `ladder-item px-3 py-1.5 rounded flex items-center justify-between transition-all ${bgClass}`;
+        div.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span>${p.nivel}.</span>
+            ${p.hito ? '<i class="fa-solid fa-shield-halved text-[10px]"></i>' : ''}
+          </div>
+          <span>${p.premio}</span>
+        `;
+        cont.appendChild(div);
+      }
+    }
+
+    function cargarPregunta() {
+      const p = PREGUNTAS[estadoJuego.preguntaActual];
+      estadoJuego.seleccionada = null;
+
+      document.getElementById('lbl-numero-pregunta').textContent = `PREGUNTA ${p.nivel} DE 15`;
+      document.getElementById('txt-premio-actual').textContent = p.premio;
+
+      // Safe Haven Status Update
+      let hitoTxt = "$0";
+      if (estadoJuego.preguntaActual >= 10) hitoTxt = "$32,000";
+      else if (estadoJuego.preguntaActual >= 5) hitoTxt = "$1,000";
+      document.getElementById('lbl-hito-status').innerHTML = `<i class="fa-solid fa-shield-halved text-emerald-400 mr-1"></i> SEGURO: ${hitoTxt}`;
+
+      document.getElementById('txt-pregunta').textContent = p.pregunta;
+
+      const codeBox = document.getElementById('caja-codigo-pregunta');
+      if (p.codigo) {
+        document.getElementById('code-snippet').textContent = p.codigo;
+        codeBox.classList.remove('hidden');
+      } else {
+        codeBox.classList.add('hidden');
+      }
+
+      // Reset buttons
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`btn-opc-${i}`);
+        const txt = document.getElementById(`txt-opc-${i}`);
+        btn.className = "option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+        btn.disabled = false;
+        txt.textContent = p.opciones[i];
+      }
+
+      document.getElementById('caja-confirmacion').classList.add('hidden');
+      document.getElementById('caja-siguiente').classList.add('hidden');
+
+      renderEscala();
+    }
+
+    function responder(indice) {
+      if (document.getElementById('caja-siguiente').classList.contains('hidden') === false) return;
+
+      soundSelect();
+      estadoJuego.seleccionada = indice;
+
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`btn-opc-${i}`);
+        if (i === indice) {
+          btn.className = "option-btn selected px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+        } else if (!btn.disabled) {
+          btn.className = "option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+        }
+      }
+
+      document.getElementById('caja-confirmacion').classList.remove('hidden');
+    }
+
+    function cancelarSeleccion() {
+      soundSelect();
+      estadoJuego.seleccionada = null;
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById(`btn-opc-${i}`);
+        if (!btn.disabled) {
+          btn.className = "option-btn px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+        }
+      }
+      document.getElementById('caja-confirmacion').classList.add('hidden');
+    }
+
+    function confirmarRespuesta() {
+      soundConfirm();
+      document.getElementById('caja-confirmacion').classList.add('hidden');
+
+      const p = PREGUNTAS[estadoJuego.preguntaActual];
+      const esCorrecta = estadoJuego.seleccionada === p.correcta;
+
+      const btnElegido = document.getElementById(`btn-opc-${estadoJuego.seleccionada}`);
+
+      if (esCorrecta) {
+        soundCorrect();
+        btnElegido.className = "option-btn correct px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+        
+        // Update Safe Haven checkpoint
+        if (p.hito) {
+          estadoJuego.seguroAlcanzado = (p.nivel === 5) ? 1000 : 32000;
+        }
+
+        if (estadoJuego.preguntaActual === PREGUNTAS.length - 1) {
+          // WON THE $1,000,000!
+          setTimeout(() => {
+            finalizarJuego(true);
+          }, 1500);
+        } else {
+          document.getElementById('caja-siguiente').classList.remove('hidden');
+        }
+
+      } else {
+        soundWrong();
+        btnElegido.className = "option-btn wrong px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+        
+        // Highlight correct one
+        const btnCorrecto = document.getElementById(`btn-opc-${p.correcta}`);
+        btnCorrecto.className = "option-btn correct px-6 py-4 text-left font-medium text-sm sm:text-base flex items-center gap-3";
+
+        setTimeout(() => {
+          finalizarJuego(false);
+        }, 2000);
+      }
+    }
+
+    function siguientePregunta() {
+      estadoJuego.preguntaActual++;
+      cargarPregunta();
+    }
+
+    // Lifeline 1: 50:50
+    function usar5050() {
+      if (estadoJuego.comodinesUsados['5050']) return;
+      soundLifeline();
+      
+      estadoJuego.comodinesUsados['5050'] = true;
+      document.getElementById('comodin-5050').disabled = true;
+
+      const p = PREGUNTAS[estadoJuego.preguntaActual];
+      let eliminadas = 0;
+
+      while (eliminadas < 2) {
+        let rand = Math.floor(Math.random() * 4);
+        if (rand !== p.correcta) {
+          const btn = document.getElementById(`btn-opc-${rand}`);
+          if (!btn.disabled) {
+            btn.disabled = true;
+            eliminadas++;
+          }
+        }
+      }
+    }
+
+    // Lifeline 2: Public
+    function usarPublico() {
+      if (estadoJuego.comodinesUsados['publico']) return;
+      soundLifeline();
+
+      estadoJuego.comodinesUsados['publico'] = true;
+      document.getElementById('comodin-publico').disabled = true;
+
+      const p = PREGUNTAS[estadoJuego.preguntaActual];
+      const cont = document.getElementById('grafico-publico');
+      cont.innerHTML = '';
+
+      // Generate realistic votes favoring correct answer
+      let pct = [0, 0, 0, 0];
+      let restante = 100;
+
+      const mainPct = Math.floor(Math.random() * 30) + 55; // 55% to 85%
+      pct[p.correcta] = mainPct;
+      restante -= mainPct;
+
+      for (let i = 0; i < 4; i++) {
+        if (i !== p.correcta) {
+          let part = Math.floor(Math.random() * restante);
+          pct[i] = part;
+          restante -= part;
+        }
+      }
+      pct[p.correcta] += restante; // give leftovers
+
+      const letras = ['A', 'B', 'C', 'D'];
+      for (let i = 0; i < 4; i++) {
+        const row = document.createElement('div');
+        row.className = "space-y-1";
+        row.innerHTML = `
+          <div class="flex justify-between text-slate-300">
+            <span>Opción ${letras[i]}</span>
+            <span class="font-bold text-amber-400">${pct[i]}%</span>
+          </div>
+          <div class="w-full bg-slate-950 rounded-full h-3 overflow-hidden border border-slate-800">
+            <div class="bg-amber-500 h-full rounded-full transition-all duration-700" style="width: ${pct[i]}%"></div>
+          </div>
+        `;
+        cont.appendChild(row);
+      }
+
+      document.getElementById('modal-publico').classList.remove('hidden');
+    }
+
+    // Lifeline 3: Call Expert SENA
+    function usarLlamada() {
+      if (estadoJuego.comodinesUsados['llamada']) return;
+      soundLifeline();
+
+      estadoJuego.comodinesUsados['llamada'] = true;
+      document.getElementById('comodin-llamada').disabled = true;
+
+      const p = PREGUNTAS[estadoJuego.preguntaActual];
+      const letras = ['A', 'B', 'C', 'D'];
+      const respuestaLetra = letras[p.correcta];
+
+      const dialogos = [
+        `"Hola Aprendiz. Repasando el código sobre Especificar Casos de Uso Detallados, estoy 100% seguro de que la opción correcta es la ${respuestaLetra}."`,
+        `"¡Qué tal! Según las buenas prácticas de ESPECIFICAR y la documentación oficial, deberías elegir la opción ${respuestaLetra}."`,
+        `"Hola. Analicé el flujo del bucle y la prueba de escritorio. Apuesta con seguridad por la opción ${respuestaLetra}."`
+      ];
+
+      const textoElegido = dialogos[Math.floor(Math.random() * dialogos.length)];
+      document.getElementById('txt-llamada-dialogo').textContent = textoElegido;
+
+      document.getElementById('modal-llamada').classList.remove('hidden');
+    }
+
+    function cerrarModal(id) {
+      soundSelect();
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    function finalizarJuego(ganoMillon) {
+      document.getElementById('vista-juego').classList.add('hidden');
+      document.getElementById('vista-resultados').classList.remove('hidden');
+
+      let premioFinal = 0;
+      let acertadas = estadoJuego.preguntaActual;
+
+      if (ganoMillon) {
+        premioFinal = 1000000;
+        acertadas = 15;
+      } else {
+        // Falling to safe haven
+        premioFinal = estadoJuego.seguroAlcanzado;
+      }
+
+      const porcentaje = Math.round((acertadas / 15) * 100);
+      const aprobado = porcentaje >= 70 || premioFinal >= 100000;
+
+      document.getElementById('res-nombre').textContent = estadoJuego.nombre;
+      document.getElementById('res-ficha').textContent = `Ficha: ${estadoJuego.ficha}`;
+      document.getElementById('res-premio').textContent = `$${premioFinal.toLocaleString()}`;
+      document.getElementById('res-preguntas-count').textContent = `${acertadas} de 15 Acertadas`;
+      document.getElementById('res-porcentaje').textContent = `${porcentaje}%`;
+
+      const badge = document.getElementById('res-estado-badge');
+      const mensaje = document.getElementById('res-mensaje');
+      const icon = document.getElementById('icon-resultado');
+
+      if (ganoMillon) {
+        soundCorrect();
+        icon.className = "fa-solid fa-crown text-[#ffd700]";
+        document.getElementById('res-titulo').textContent = "¡ERES MILLONARIO EN ESPECIFICAR!";
+        badge.className = "inline-block text-[10px] font-bold px-2.5 py-1 rounded bg-amber-500 text-slate-950 uppercase";
+        badge.textContent = "APROBADO CON EXCELENCIA";
+        mensaje.innerHTML = `<span class="text-amber-400 font-bold">¡Desempeño Perfecto!</span> Has contestado correctamente las 15 preguntas sobre Especificar Casos de Uso Detallados, alcanzando el gran premio de <strong>$1.000.000</strong>. Tu nivel técnico es sobresaliente.`;
+      } else if (aprobado) {
+        soundCorrect();
+        icon.className = "fa-solid fa-award text-emerald-400";
+        document.getElementById('res-titulo').textContent = "¡EVALUACIÓN APROBADA!";
+        badge.className = "inline-block text-[10px] font-bold px-2.5 py-1 rounded bg-emerald-500 text-slate-950 uppercase";
+        badge.textContent = "APROBADO";
+        mensaje.innerHTML = `¡Felicitaciones! Has demostrado una sólida competencia técnica en Especificar Casos de Uso Detallados alcanzando el seguro de <strong>$${premioFinal.toLocaleString()}</strong> con un porcentaje del <strong>${porcentaje}%</strong>.`;
+      } else {
+        soundWrong();
+        icon.className = "fa-solid fa-circle-xmark text-red-500";
+        document.getElementById('res-titulo').textContent = "EVALUACIÓN NO APROBADA";
+        badge.className = "inline-block text-[10px] font-bold px-2.5 py-1 rounded bg-red-600 text-white uppercase";
+        badge.textContent = "REPROBADO (Mínimo 70%)";
+        mensaje.innerHTML = `Has acumulado un total de <strong>$${premioFinal.toLocaleString()}</strong> con <strong>${acertadas} preguntas correctas</strong> (${porcentaje}%). Te sugerimos repasar los temas de <code>for</code>, <code>while</code> y sentencias de control para presentar un nuevo intento.`;
+      }
+    }
+  </script>
+</body>
+</html>
