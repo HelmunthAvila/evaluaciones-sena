@@ -121,7 +121,28 @@
         display: block !important;
       }
     }
-  </style>
+  
+/* ==== Modal de datos del caso (contexto para responder) ==== */
+#modal-datos{position:fixed;inset:0;z-index:70;background:rgba(2,6,23,.86);
+  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:16px}
+#modal-datos[hidden]{display:none}
+.modal-datos-box{background:#0a1428;border:2px solid #b8860b;border-radius:16px;width:100%;max-width:780px;
+  max-height:88vh;overflow:auto;padding:18px 20px;box-shadow:0 24px 70px rgba(0,0,0,.65)}
+.modal-datos-head{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  border-bottom:1px solid #1e293b;padding-bottom:10px;margin-bottom:12px}
+.modal-datos-head h3{margin:0;color:#ffd700;font-size:15px;font-weight:800;letter-spacing:.3px}
+.modal-datos-x{color:#94a3b8;font-size:18px;line-height:1;padding:4px 8px;border-radius:8px;border:1px solid #1e293b}
+.modal-datos-x:hover{color:#fff;border-color:#b8860b}
+.modal-datos h4{color:#93c5fd;font-size:12.5px;font-weight:700;margin:14px 0 5px;
+  text-transform:uppercase;letter-spacing:.5px}
+.modal-datos table{width:100%;border-collapse:collapse;font-size:12.5px;margin:0 0 12px}
+.modal-datos th{background:#050b18;color:#ffd700;border:1px solid #1e293b;padding:5px 8px;
+  text-align:left;font-weight:700;font-family:'JetBrains Mono',monospace}
+.modal-datos td{border:1px solid #1e293b;padding:5px 8px;color:#e2e8f0;font-family:'JetBrains Mono',monospace}
+.modal-datos-pie{margin:10px 0 0;font-size:11.5px;color:#94a3b8}
+@media(max-width:640px){.modal-datos table{font-size:11px} .modal-datos th,.modal-datos td{padding:4px 5px}}
+</style>
 </head>
 <body class="flex flex-col justify-between selection:bg-amber-400 selection:text-black">
 
@@ -241,6 +262,12 @@
             <button id="comodin-llamada" onclick="usarLlamada()" title="Llamar a un Experto / Instructor SENA"
                     class="w-12 h-12 rounded-xl bg-slate-950 border-2 border-amber-500/50 hover:border-amber-400 text-amber-400 font-extrabold text-lg flex items-center justify-center hover:scale-105 transition shadow-lg disabled:opacity-30 disabled:hover:scale-100 disabled:border-slate-800">
               <i class="fa-solid fa-phone"></i>
+            </button>
+            <div class="w-px h-8 bg-slate-700 mx-1"></div>
+
+            <button id="btn-datos" onclick="abrirDatos()" title="Ver las tablas de datos de la papelería (sin límite)"
+                    class="w-12 h-12 rounded-xl bg-slate-950 border-2 border-emerald-500/60 hover:border-emerald-400 text-emerald-400 font-extrabold text-lg flex items-center justify-center hover:scale-105 transition shadow-lg">
+              <i class="fa-solid fa-table-list"></i>
             </button>
           </div>
 
@@ -1051,6 +1078,35 @@
         mensaje.innerHTML = `Has acumulado un total de <strong>$${premioFinal.toLocaleString()}</strong> con <strong>${acertadas} preguntas correctas</strong> (${porcentaje}%). Te sugerimos repasar los pasos 3, 7, 9, 10 y 11 de tu guía (crear las tablas, relacionarlas con la llave foránea, filtrar con WHERE, ordenar y sacar cuentas, y cruzar las dos tablas con INNER JOIN) y presentar un nuevo intento.`;
       }
     }
-  </script>
+  
+/* ==== Datos del caso: abrir/cerrar el modal de contexto ==== */
+function abrirDatos() { var m = document.getElementById('modal-datos'); if (m) m.hidden = false; }
+function cerrarDatos() { var m = document.getElementById('modal-datos'); if (m) m.hidden = true; }
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarDatos(); });
+/* El modal se inyecta despues del script: registrar el cierre cuando el DOM este listo */
+window.addEventListener('DOMContentLoaded', function () {
+  var m = document.getElementById('modal-datos');
+  if (m) m.addEventListener('click', function (e) {
+    if (e.target && e.target.id === 'modal-datos') cerrarDatos();
+  });
+});
+</script>
+
+<!-- ============ Modal: datos del caso (contexto para responder) ============ -->
+<div id="modal-datos" class="modal-datos" hidden>
+  <div class="modal-datos-box">
+    <div class="modal-datos-head">
+      <h3>📊 Datos de la papelería El Lápiz</h3>
+      <button onclick="cerrarDatos()" title="Cerrar (Esc)" class="modal-datos-x"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="modal-datos-body">
+<h4>Tabla articulo</h4>
+  <table><thead><tr><th>id_articulo</th><th>nombre</th><th>precio</th><th>existencia</th></tr></thead><tbody><tr><td>1</td><td>Cuaderno 100 hojas</td><td>4500</td><td>40</td></tr><tr><td>2</td><td>Esfero azul</td><td>1800</td><td>60</td></tr><tr><td>3</td><td>Mochila escolar</td><td>65000</td><td>8</td></tr><tr><td>4</td><td>Caja de colores x12</td><td>12500</td><td>15</td></tr><tr><td>5</td><td>Borrador</td><td>900</td><td>50</td></tr><tr><td>6</td><td>Calculadora cientifica</td><td>38000</td><td>6</td></tr></tbody></table>
+  <h4>Tabla pedido</h4>
+  <table><thead><tr><th>id_pedido</th><th>fecha</th><th>cliente</th><th>id_articulo</th><th>cantidad</th></tr></thead><tbody><tr><td>1</td><td>2026-09-21</td><td>Ana</td><td>1</td><td>3</td></tr><tr><td>2</td><td>2026-09-21</td><td>Luis</td><td>5</td><td>2</td></tr><tr><td>3</td><td>2026-09-22</td><td>Ana</td><td>3</td><td>1</td></tr><tr><td>4</td><td>2026-09-22</td><td>Sofia</td><td>4</td><td>2</td></tr><tr><td>5</td><td>2026-09-22</td><td>Luis</td><td>2</td><td>5</td></tr></tbody></table>
+    </div>
+    <p class="modal-datos-pie">Consultar los datos no cuesta comodines: ábralos todas las veces que necesite.</p>
+  </div>
+</div>
 </body>
 </html>
