@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taller evaluativo práctico V2 — SQLite Básico</title>
+<style>
+:root{--verde:#39A900;--verde-osc:#2b8000;--azul:#00324D;--gris:#5a6672;--linea:#dde3e8;
+      --fondo:#f4f6f8;--amarillo:#fff7cc;--rojo:#b3261e;--verde-claro:#eaf7e1}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--fondo);color:#1d2129;line-height:1.5}
+header{background:linear-gradient(135deg,var(--azul),#0b5c86);color:#fff;padding:22px 0 18px}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+header .inst{margin:0 0 6px;font-size:12px;letter-spacing:.4px;opacity:.9;text-transform:uppercase}
+header h1{margin:0;font-size:25px;line-height:1.25}
+header .sub{margin:8px 0 0;font-size:13.5px;opacity:.92}
+main{padding:22px 0 60px}
+.card{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:20px;margin-bottom:16px;
+      box-shadow:0 1px 3px rgba(16,24,40,.05)}
+.card h2{margin:0 0 10px;font-size:18px;color:var(--azul)}
+.card h3{margin:18px 0 6px;font-size:15px;color:var(--azul)}
+p{margin:0 0 10px}
+ul{margin:0 0 10px 20px;padding:0}
+li{margin-bottom:4px}
+.barra{height:8px;background:#e6eaee;border-radius:99px;overflow:hidden;margin:6px 0 14px}
+.barra i{display:block;height:100%;background:var(--verde);width:0;transition:width .25s}
+.meta{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--gris);
+      text-transform:uppercase;letter-spacing:.4px}
+.tipo{background:var(--verde-claro);color:var(--verde-osc);border-radius:99px;padding:2px 10px;font-weight:700}
+.pregunta{font-size:17px;font-weight:600;margin:12px 0 14px;white-space:pre-line}
+.opcion{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--linea);border-radius:10px;
+        padding:11px 13px;margin-bottom:8px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+.opcion:hover{border-color:var(--verde);background:#fbfef7}
+.opcion.marcada{border-color:var(--verde);background:var(--verde-claro)}
+.opcion input{margin-top:3px}
+.opcion pre{margin:0;font-family:Consolas,"Courier New",monospace;font-size:13px;white-space:pre-wrap}
+.opcion .letra{font-weight:700;color:var(--gris)}
+.acciones{display:flex;gap:10px;justify-content:space-between;margin-top:16px;flex-wrap:wrap}
+button{font:inherit;border:0;border-radius:9px;padding:11px 20px;cursor:pointer;font-weight:600}
+button.principal{background:var(--verde);color:#fff}
+button.principal:disabled{background:#c8d2c0;cursor:not-allowed}
+button.secundario{background:#eef1f4;color:var(--azul)}
+code,pre{font-family:Consolas,"Courier New",monospace}
+pre.sql{background:#f7f9fa;border:1px solid var(--linea);border-left:4px solid var(--azul);border-radius:8px;
+        padding:11px 13px;font-size:13px;overflow-x:auto;margin:0 0 12px;white-space:pre-wrap}
+pre.malo{background:#fdf3f2;border-left-color:var(--rojo)}
+pre.hueco{background:#fbfdf7;border-left-color:var(--verde)}
+select{font:inherit;padding:4px 6px;border:1px solid var(--verde);border-radius:6px;background:var(--verde-claro);
+       font-weight:600;color:#22331a}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:0 0 12px}
+th,td{border:1px solid var(--linea);padding:5px 8px;text-align:left}
+th{background:var(--azul);color:#fff;font-weight:600}
+tbody tr:nth-child(even){background:#fafbfc}
+.resumen{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.badge{font-size:15px;font-weight:700;padding:9px 18px;border-radius:99px;color:#fff}
+.badge.ok{background:var(--verde)}
+.badge.no{background:var(--rojo)}
+.puntaje{font-size:40px;font-weight:700;color:var(--azul);line-height:1}
+.bien{color:var(--verde-osc);font-weight:700}
+.mal{color:var(--rojo);font-weight:700}
+.nota{background:var(--amarillo);border:1px solid #e3c85f;border-radius:10px;padding:12px 14px;font-size:13.5px}
+.aviso{background:#fdf3f2;border:1px solid #e8b5b1;border-radius:10px;padding:12px 14px;font-size:13.5px}
+.pie{font-size:12px;color:var(--gris);text-align:center;margin-top:14px}
+@media print{body{background:#fff}header{background:#00324D}.card{box-shadow:none}button{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <p class="inst">Servicio Nacional de Aprendizaje — SENA · Técnico en Programación de Software</p>
+  <h1>Taller evaluativo práctico V2 — SQLite Básico</h1>
+  <p class="sub">CON-R1-A012 · Competencia 220501113 (Bases de Datos) · Nivel básico (grado 10.º)</p>
+</div></header>
+<main class="wrap">
+
+<section id="inicio" class="card">
+  <h2>El caso: papelería El Lápiz</h2>
+  <p>Don Hernán lleva la papelería del barrio en un cuaderno. Estas son las dos tablas de su base de
+     datos: <b>articulo</b> (lo que vende) y <b>pedido</b> (cada pedido que le hacen). Consúltelas
+     cuando lo necesite: todas las preguntas de este taller se responden mirando estos datos.</p>
+  <h3>Tabla articulo</h3>
+  <table><thead><tr><th>id_articulo</th><th>nombre</th><th>precio</th><th>existencia</th></tr></thead><tbody><tr><td>1</td><td>Cuaderno 100 hojas</td><td>4500</td><td>40</td></tr><tr><td>2</td><td>Esfero azul</td><td>1800</td><td>60</td></tr><tr><td>3</td><td>Mochila escolar</td><td>65000</td><td>8</td></tr><tr><td>4</td><td>Caja de colores x12</td><td>12500</td><td>15</td></tr><tr><td>5</td><td>Borrador</td><td>900</td><td>50</td></tr><tr><td>6</td><td>Calculadora cientifica</td><td>38000</td><td>6</td></tr></tbody></table>
+  <h3>Tabla pedido</h3>
+  <table><thead><tr><th>id_pedido</th><th>fecha</th><th>cliente</th><th>id_articulo</th><th>cantidad</th></tr></thead><tbody><tr><td>1</td><td>2026-09-21</td><td>Ana</td><td>1</td><td>3</td></tr><tr><td>2</td><td>2026-09-21</td><td>Luis</td><td>5</td><td>2</td></tr><tr><td>3</td><td>2026-09-22</td><td>Ana</td><td>3</td><td>1</td></tr><tr><td>4</td><td>2026-09-22</td><td>Sofia</td><td>4</td><td>2</td></tr><tr><td>5</td><td>2026-09-22</td><td>Luis</td><td>2</td><td>5</td></tr></tbody></table>
+  <h3>Cómo crear las tablas (por si quiere probar en su propio SQLite)</h3>
+  <pre class="sql">CREATE TABLE articulo (
+  id_articulo INTEGER PRIMARY KEY AUTOINCREMENT,
+  nombre      TEXT    NOT NULL,
+  precio      REAL    NOT NULL,
+  existencia  INTEGER NOT NULL
+);
+
+CREATE TABLE pedido (
+  id_pedido   INTEGER PRIMARY KEY AUTOINCREMENT,
+  fecha       TEXT    NOT NULL,
+  cliente     TEXT    NOT NULL,
+  id_articulo INTEGER NOT NULL,
+  cantidad    INTEGER NOT NULL,
+  FOREIGN KEY (id_articulo) REFERENCES articulo(id_articulo)
+);</pre>
+  <div class="nota">Este taller es <b>práctico</b>: no se trata de recordar definiciones sino de
+  leer datos, elegir la instrucción correcta, predecir qué devuelve una consulta y arreglar lo que
+  está mal. Son <b>10 retos</b> y se aprueba con <b>70 puntos de 100</b>. Si puede, tenga su
+  SQLite abierto y pruebe: comprobar con sus propios ojos también es aprender.</div>
+  <div class="acciones"><span></span><button class="principal" id="btnEmpezar">Empezar el taller</button></div>
+</section>
+
+<section id="quiz" class="card" hidden>
+  <div class="meta"><span id="numero"></span><span class="tipo" id="tipo"></span></div>
+  <div class="barra"><i id="progreso"></i></div>
+  <p class="pregunta" id="texto"></p>
+  <div id="cuerpo"></div>
+  <div class="acciones">
+    <button class="secundario" id="btnAnterior">Anterior</button>
+    <button class="principal" id="btnSiguiente" disabled>Siguiente</button>
+  </div>
+</section>
+
+<section id="resultados" class="card" hidden>
+  <h2>Resultado del taller</h2>
+  <div class="resumen">
+    <div class="puntaje" id="puntaje">0</div>
+    <div><div class="badge" id="badge">—</div>
+         <p id="conteo" style="margin:8px 0 0"></p></div>
+  </div>
+  <div class="barra" style="margin-top:14px"><i id="barraFinal"></i></div>
+  <div id="detalle"></div>
+  <div class="acciones">
+    <span></span>
+    <button class="principal" id="btnReintentar">Volver a intentar</button>
+  </div>
+  <p class="pie">Taller evaluativo práctico V2 — SQLite Básico · CON-R1-A012 · Competencia 220501113 (Bases de Datos) · Nivel básico (grado 10.º)</p>
+</section>
+
+</main>
+<script>
+const RETOS = [
+ {
+  "n": 1,
+  "tipoComp": "sql_consulta",
+  "categoria": "Elegir la consulta",
+  "enunciado": "En la papelería quieren ver únicamente los artículos que cuestan MÁS de 5000. ¿Cuál de estas consultas lo hace?",
+  "opciones": [
+   {
+    "id": 0,
+    "sql": "SELECT * FROM articulo WHERE precio > 5000;"
+   },
+   {
+    "id": 1,
+    "sql": "SELECT * FROM articulo WHERE precio < 5000;"
+   },
+   {
+    "id": 2,
+    "sql": "SELECT * FROM articulo ORDER BY precio > 5000;"
+   },
+   {
+    "id": 3,
+    "sql": "SELECT precio WHERE articulo > 5000;"
+   }
+  ],
+  "correcta": 0,
+  "esperado": {
+   "encabezados": [
+    "id_articulo",
+    "nombre",
+    "precio",
+    "existencia"
+   ],
+   "filas": [
+    [
+     3,
+     "Mochila escolar",
+     65000,
+     8
+    ],
+    [
+     4,
+     "Caja de colores x12",
+     12500,
+     15
+    ],
+    [
+     6,
+     "Calculadora cientifica",
+     38000,
+     6
+    ]
+   ]
+  }
+ },
+ {
+  "n": 2,
+  "tipoComp": "sql_consulta",
+  "categoria": "Elegir la consulta",
+  "enunciado": "El dueño pregunta: ¿cuántos pedidos se registraron en la papelería? ¿Cuál consulta responde esa pregunta?",
+  "opciones": [
+   {
+    "id": 0,
+    "sql": "SELECT SUM(cantidad) FROM pedido;"
+   },
+   {
+    "id": 1,
+    "sql": "SELECT COUNT(*) AS total_pedidos FROM pedido;"
+   },
+   {
+    "id": 2,
+    "sql": "SELECT * FROM pedido;"
+   },
+   {
+    "id": 3,
+    "sql": "SELECT COUNT(*) FROM articulo;"
+   }
+  ],
+  "correcta": 1,
+  "esperado": {
+   "encabezados": [
+    "total_pedidos"
+   ],
+   "filas": [
+    [
+     5
+    ]
+   ]
+  }
+ },
+ {
+  "n": 3,
+  "tipoComp": "sql_consulta",
+  "categoria": "Elegir la consulta",
+  "enunciado": "Se necesita la lista de artículos del más caro al más barato. ¿Cuál consulta devuelve ese orden?",
+  "opciones": [
+   {
+    "id": 0,
+    "sql": "SELECT * FROM articulo ORDER BY precio ASC;"
+   },
+   {
+    "id": 1,
+    "sql": "SELECT * FROM articulo ORDER BY nombre;"
+   },
+   {
+    "id": 2,
+    "sql": "SELECT * FROM articulo WHERE precio DESC;"
+   },
+   {
+    "id": 3,
+    "sql": "SELECT * FROM articulo ORDER BY precio DESC;"
+   }
+  ],
+  "correcta": 3,
+  "esperado": {
+   "encabezados": [
+    "id_articulo",
+    "nombre",
+    "precio",
+    "existencia"
+   ],
+   "filas": [
+    [
+     3,
+     "Mochila escolar",
+     65000,
+     8
+    ],
+    [
+     6,
+     "Calculadora cientifica",
+     38000,
+     6
+    ],
+    [
+     4,
+     "Caja de colores x12",
+     12500,
+     15
+    ],
+    [
+     1,
+     "Cuaderno 100 hojas",
+     4500,
+     40
+    ],
+    [
+     2,
+     "Esfero azul",
+     1800,
+     60
+    ],
+    [
+     5,
+     "Borrador",
+     900,
+     50
+    ]
+   ]
+  }
+ },
+ {
+  "n": 4,
+  "tipoComp": "sql_resultado",
+  "categoria": "Predecir el resultado",
+  "enunciado": "Observe los datos y la consulta. ¿Qué filas devuelve exactamente?",
+  "consulta": "SELECT nombre, precio\nFROM articulo\nWHERE precio > 10000\nORDER BY precio DESC;",
+  "encabezados": [
+   "nombre",
+   "precio"
+  ],
+  "opciones": [
+   {
+    "id": 0,
+    "filas": [
+     [
+      "Mochila escolar",
+      65000
+     ],
+     [
+      "Calculadora cientifica",
+      38000
+     ],
+     [
+      "Caja de colores x12",
+      12500
+     ]
+    ]
+   },
+   {
+    "id": 1,
+    "filas": [
+     [
+      "Caja de colores x12",
+      12500
+     ],
+     [
+      "Calculadora cientifica",
+      38000
+     ],
+     [
+      "Mochila escolar",
+      65000
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "filas": [
+     [
+      "Cuaderno 100 hojas",
+      4500
+     ],
+     [
+      "Esfero azul",
+      1800
+     ],
+     [
+      "Borrador",
+      900
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "filas": []
+   }
+  ],
+  "correcta": 0
+ },
+ {
+  "n": 5,
+  "tipoComp": "sql_resultado",
+  "categoria": "Predecir el resultado",
+  "enunciado": "Observe los datos y la consulta. ¿Qué devuelve?",
+  "consulta": "SELECT COUNT(*) AS pedidos\nFROM pedido\nWHERE fecha = '2026-09-22';",
+  "encabezados": [
+   "pedidos"
+  ],
+  "opciones": [
+   {
+    "id": 0,
+    "filas": [
+     [
+      2
+     ]
+    ]
+   },
+   {
+    "id": 1,
+    "filas": [
+     [
+      3
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "filas": [
+     [
+      5
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "filas": [
+     [
+      0
+     ]
+    ]
+   }
+  ],
+  "correcta": 1
+ },
+ {
+  "n": 6,
+  "tipoComp": "sql_resultado",
+  "categoria": "Predecir el resultado",
+  "enunciado": "Observe la consulta que cruza las dos tablas. ¿Qué filas devuelve?",
+  "consulta": "SELECT p.id_pedido, p.cliente, a.nombre AS articulo, p.cantidad\nFROM pedido AS p\nINNER JOIN articulo AS a ON p.id_articulo = a.id_articulo\nWHERE p.cliente = 'Ana';",
+  "encabezados": [
+   "id_pedido",
+   "cliente",
+   "articulo",
+   "cantidad"
+  ],
+  "opciones": [
+   {
+    "id": 0,
+    "filas": [
+     [
+      1,
+      "Ana",
+      "Cuaderno 100 hojas",
+      3
+     ],
+     [
+      2,
+      "Luis",
+      "Borrador",
+      2
+     ],
+     [
+      3,
+      "Ana",
+      "Mochila escolar",
+      1
+     ]
+    ]
+   },
+   {
+    "id": 1,
+    "filas": [
+     [
+      1,
+      1,
+      3
+     ],
+     [
+      3,
+      3,
+      1
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "filas": [
+     [
+      1,
+      "Ana",
+      "Cuaderno 100 hojas",
+      3
+     ],
+     [
+      3,
+      "Ana",
+      "Mochila escolar",
+      1
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "filas": []
+   }
+  ],
+  "correcta": 2
+ },
+ {
+  "n": 7,
+  "tipoComp": "sql_completar",
+  "categoria": "Completar la consulta",
+  "enunciado": "Complete la consulta que calcula cuánto dinero se facturó en total en la papelería.",
+  "consulta": "SELECT SUM(a.precio * p.___) AS total_facturado\nFROM pedido AS p\nINNER JOIN articulo AS a ON p.___ = a.id_articulo;",
+  "opciones": [
+   [
+    "cantidad",
+    "existencia",
+    "id_pedido"
+   ],
+   [
+    "id_pedido",
+    "id_articulo",
+    "precio"
+   ]
+  ],
+  "correcta": [
+   0,
+   1
+  ],
+  "esperado": {
+   "encabezados": [
+    "total_facturado"
+   ],
+   "filas": [
+    [
+     114300
+    ]
+   ]
+  }
+ },
+ {
+  "n": 8,
+  "tipoComp": "sql_completar",
+  "categoria": "Completar la consulta",
+  "enunciado": "Complete la consulta que muestra cuántas unidades se pidieron de cada artículo, del más pedido al menos pedido.",
+  "consulta": "SELECT a.nombre, SUM(p.___) AS unidades\nFROM pedido AS p\nINNER JOIN articulo AS a ON p.id_articulo = a.___\nGROUP BY a.nombre\nORDER BY unidades ___, a.nombre;",
+  "opciones": [
+   [
+    "cantidad",
+    "existencia",
+    "precio"
+   ],
+   [
+    "id_articulo",
+    "id_pedido",
+    "precio"
+   ],
+   [
+    "ASC",
+    "DESC",
+    "WHERE"
+   ]
+  ],
+  "correcta": [
+   0,
+   0,
+   1
+  ],
+  "esperado": {
+   "encabezados": [
+    "nombre",
+    "unidades"
+   ],
+   "filas": [
+    [
+     "Esfero azul",
+     5
+    ],
+    [
+     "Cuaderno 100 hojas",
+     3
+    ],
+    [
+     "Borrador",
+     2
+    ],
+    [
+     "Caja de colores x12",
+     2
+    ],
+    [
+     "Mochila escolar",
+     1
+    ]
+   ]
+  }
+ },
+ {
+  "n": 9,
+  "tipoComp": "depuracion_sql",
+  "categoria": "Depurar el error",
+  "enunciado": "Un compañero escribió esta consulta y el motor le respondió «no such column: Cuaderno». ¿Cuál es la versión corregida?",
+  "sql_erroneo": "SELECT * FROM articulo WHERE nombre = Cuaderno 100 hojas;",
+  "opciones": [
+   {
+    "id": 0,
+    "sql": "SELECT * FROM articulo WHERE nombre = 'Cuaderno 100 hojas';"
+   },
+   {
+    "id": 1,
+    "sql": "SELECT * FROM articulo WHERE nombre = 'Cuaderno';"
+   },
+   {
+    "id": 2,
+    "sql": "SELECT * FROM articulo WHERE nombre = Cuaderno AND 100 AND hojas;"
+   },
+   {
+    "id": 3,
+    "sql": "SELECT * FROM articulo WHERE nombre LIKE Cuaderno 100 hojas;"
+   }
+  ],
+  "correcta": 0,
+  "esperado": {
+   "encabezados": [
+    "id_articulo",
+    "nombre",
+    "precio",
+    "existencia"
+   ],
+   "filas": [
+    [
+     1,
+     "Cuaderno 100 hojas",
+     4500,
+     40
+    ]
+   ]
+  },
+  "explicacion": "Los textos SIEMPRE van entre comillas sencillas: 'Cuaderno 100 hojas'. Sin comillas, el motor cree que «Cuaderno» es el nombre de una columna y responde «no such column». El espacio tampoco se puede quitar: el valor es el texto completo. Las comillas dobles en SQLite se usan para nombres de columnas, no para textos."
+ },
+ {
+  "n": 10,
+  "tipoComp": "depuracion_sql",
+  "categoria": "Depurar el error",
+  "enunciado": "Al registrar un pedido con este INSERT, la base respondió «FOREIGN KEY constraint failed». ¿Cuál es la corrección?",
+  "sql_erroneo": "INSERT INTO pedido (fecha, cliente, id_articulo, cantidad)\nVALUES ('2026-09-23', 'Pedro', 9, 1);",
+  "opciones": [
+   {
+    "id": 0,
+    "sql": "PRAGMA foreign_keys = OFF;\nINSERT INTO pedido (fecha, cliente, id_articulo, cantidad)\nVALUES ('2026-09-23', 'Pedro', 9, 1);"
+   },
+   {
+    "id": 1,
+    "sql": "INSERT INTO pedido (fecha, cliente, id_articulo, cantidad)\nVALUES ('2026-09-23', 'Pedro', 4, 1);"
+   },
+   {
+    "id": 2,
+    "sql": "INSERT INTO pedido (fecha, cliente, id_articulo, cantidad)\nVALUES (2026-09-23, Pedro, 9, 1);"
+   },
+   {
+    "id": 3,
+    "sql": "INSERT INTO pedido (id_articulo, cantidad)\nVALUES (9, 1);"
+   }
+  ],
+  "correcta": 1,
+  "explicacion": "El error no está en cómo se escribió el INSERT: el artículo 9 no existe en la tabla articulo, así que la llave foránea rechaza el pedido. La corrección es usar el id de un artículo REAL (por ejemplo el 4). Apagar la vigilancia con PRAGMA foreign_keys = OFF no arregla nada: esconde el problema y deja la base con pedidos de artículos que no existen."
+ }
+];
+const APROBACION = 70;
+let actual = 0;
+const respuestas = new Array(RETOS.length).fill(null);
+const $ = id => document.getElementById(id);
+
+function tablaDatos(enc, filas) {
+  let h = "<table><thead><tr>" + enc.map(c => "<th>" + c + "</th>").join("") + "</tr></thead><tbody>";
+  if (!filas.length) h += "<tr><td colspan='" + enc.length + "'>(la consulta no devuelve filas)</td></tr>";
+  filas.forEach(f => {
+    h += "<tr>" + f.map(c => "<td>" + c + "</td>").join("") + "</tr>";
+  });
+  return h + "</tbody></table>";
+}
+function pre(texto, clase) {
+  const d = document.createElement("pre");
+  d.className = clase || "sql";
+  d.textContent = texto;
+  return d;
+}
+function bloqueOpcion(r, i, contenido, marcada, alElegir) {
+  const lab = document.createElement("label");
+  lab.className = "opcion" + (marcada ? " marcada" : "");
+  const inp = document.createElement("input");
+  inp.type = "radio"; inp.name = "r" + r.n; inp.checked = marcada;
+  inp.addEventListener("change", alElegir);
+  const caja = document.createElement("div");
+  caja.style.flex = "1";
+  caja.appendChild(contenido);
+  lab.appendChild(inp); lab.appendChild(caja);
+  return lab;
+}
+
+function pintar() {
+  const r = RETOS[actual];
+  $("numero").textContent = "Reto " + (actual + 1) + " de " + RETOS.length;
+  $("tipo").textContent = r.categoria;
+  $("progreso").style.width = (actual / RETOS.length * 100) + "%";
+  $("texto").textContent = r.enunciado;
+  const cont = $("cuerpo");
+  cont.innerHTML = "";
+
+  if (r.tipoComp === "sql_consulta") {
+    r.opciones.forEach((op, i) => {
+      cont.appendChild(bloqueOpcion(r, i, pre(op.sql), respuestas[actual] === i,
+        () => { respuestas[actual] = i; pintar(); }));
+    });
+  } else if (r.tipoComp === "sql_resultado") {
+    cont.appendChild(pre(r.consulta, "sql"));
+    r.opciones.forEach((op, i) => {
+      const caja = document.createElement("div");
+      caja.innerHTML = tablaDatos(r.encabezados, op.filas);
+      cont.appendChild(bloqueOpcion(r, i, caja, respuestas[actual] === i,
+        () => { respuestas[actual] = i; pintar(); }));
+    });
+  } else if (r.tipoComp === "sql_completar") {
+    const partes = r.consulta.split("___");
+    if (!Array.isArray(respuestas[actual])) respuestas[actual] = r.opciones.map(() => null);
+    const pre_h = document.createElement("pre");
+    pre_h.className = "sql hueco";
+    partes.forEach((parte, i) => {
+      pre_h.appendChild(document.createTextNode(parte));
+      if (i < partes.length - 1) {
+        const sel = document.createElement("select");
+        const vacio = document.createElement("option");
+        vacio.value = ""; vacio.textContent = "— elija —";
+        sel.appendChild(vacio);
+        r.opciones[i].forEach((op, j) => {
+          const o = document.createElement("option");
+          o.value = j; o.textContent = op;
+          sel.appendChild(o);
+        });
+        if (respuestas[actual][i] !== null) sel.value = String(respuestas[actual][i]);
+        sel.addEventListener("change", () => {
+          respuestas[actual][i] = sel.value === "" ? null : parseInt(sel.value, 10);
+          pintar();
+        });
+        pre_h.appendChild(sel);
+      }
+    });
+    cont.appendChild(pre_h);
+    cont.appendChild(pre("Elija en cada espacio de la consulta la opción que la deja correcta.", "sql"));
+  } else if (r.tipoComp === "depuracion_sql") {
+    cont.appendChild(pre(r.sql_erroneo, "sql malo"));
+    r.opciones.forEach((op, i) => {
+      cont.appendChild(bloqueOpcion(r, i, pre(op.sql), respuestas[actual] === i,
+        () => { respuestas[actual] = i; pintar(); }));
+    });
+  }
+  $("btnAnterior").disabled = actual === 0;
+  $("btnSiguiente").textContent = actual === RETOS.length - 1 ? "Ver mi resultado" : "Siguiente";
+  let listo;
+  if (r.tipoComp === "sql_completar") {
+    listo = Array.isArray(respuestas[actual]) && respuestas[actual].every(v => v !== null);
+  } else {
+    listo = respuestas[actual] !== null;
+  }
+  $("btnSiguiente").disabled = !listo;
+}
+
+function esCorrecta(r, resp) {
+  if (resp === null) return false;
+  if (r.tipoComp === "sql_completar") {
+    if (!Array.isArray(resp) || resp.length !== r.correcta.length) return false;
+    return resp.every((v, i) => v === r.correcta[i]);
+  }
+  return resp === r.correcta;
+}
+function textoRespuesta(r, resp) {
+  if (resp === null) return "(sin responder)";
+  if (r.tipoComp === "sql_completar") return resp.map((v, i) => r.opciones[i][v]).join(" | ");
+  if (r.tipoComp === "sql_resultado") {
+    return r.opciones[resp].filas.length ? r.opciones[resp].filas.map(f => f.join(" , ")).join(" / ")
+                                         : "(sin filas)";
+  }
+  return r.opciones[resp].sql.replace(/\n/g, " ");
+}
+function textoCorrecto(r) {
+  if (r.tipoComp === "sql_completar") return r.correcta.map((v, i) => r.opciones[i][v]).join(" | ");
+  if (r.tipoComp === "sql_resultado") {
+    return r.opciones[r.correcta].filas.length
+      ? r.opciones[r.correcta].filas.map(f => f.join(" , ")).join(" / ") : "(sin filas)";
+  }
+  return r.opciones[r.correcta].sql.replace(/\n/g, " ");
+}
+
+$("btnEmpezar").addEventListener("click", () => {
+  $("inicio").hidden = true; $("quiz").hidden = false; pintar();
+});
+$("btnAnterior").addEventListener("click", () => { if (actual > 0) { actual--; pintar(); } });
+$("btnSiguiente").addEventListener("click", () => {
+  if (actual < RETOS.length - 1) { actual++; pintar(); } else { evaluar(); }
+});
+$("btnReintentar").addEventListener("click", () => {
+  actual = 0; respuestas.fill(null);
+  $("resultados").hidden = true; $("quiz").hidden = false; pintar();
+});
+
+function evaluar() {
+  let aciertos = 0;
+  const porCategoria = {};
+  const filas = RETOS.map((r, i) => {
+    const ok = esCorrecta(r, respuestas[i]);
+    if (ok) aciertos++;
+    porCategoria[r.categoria] = porCategoria[r.categoria] || {ok: 0, total: 0};
+    porCategoria[r.categoria].total++;
+    if (ok) porCategoria[r.categoria].ok++;
+    return {r: r, ok: ok, dio: textoRespuesta(r, respuestas[i]), debia: textoCorrecto(r)};
+  });
+  const pct = Math.round(aciertos / RETOS.length * 100);
+  const aprueba = pct >= APROBACION;
+  $("puntaje").textContent = pct + "%";
+  const badge = $("badge");
+  badge.textContent = aprueba ? "APROBADO" : "NO APROBADO";
+  badge.className = "badge " + (aprueba ? "ok" : "no");
+  $("conteo").textContent = "Resolvió bien " + aciertos + " de " + RETOS.length +
+                            " retos. El taller se aprueba con " + APROBACION + "%.";
+  $("barraFinal").style.width = pct + "%";
+  $("barraFinal").style.background = aprueba ? "var(--verde)" : "var(--rojo)";
+
+  let html = "<h3>Desempeño por tipo de reto</h3><table><thead><tr><th>Tipo de reto</th>" +
+             "<th>Bien</th><th>Total</th></tr></thead><tbody>";
+  Object.keys(porCategoria).forEach(c => {
+    html += "<tr><td>" + c + "</td><td>" + porCategoria[c].ok + "</td><td>" + porCategoria[c].total + "</td></tr>";
+  });
+  html += "</tbody></table>";
+  html += "<h3>Revisión reto por reto</h3><table><thead><tr><th>N.º</th><th>Su respuesta</th>" +
+          "<th>Respuesta correcta</th></tr></thead><tbody>";
+  filas.forEach((f, i) => {
+    html += "<tr><td>" + (i + 1) + "</td><td class='" + (f.ok ? "bien" : "mal") + "'>" + escapar(f.dio) +
+            "</td><td>" + (f.ok ? "<span class='bien'>" + escapar(f.debia) + "</span>" : escapar(f.debia)) +
+            "</td></tr>";
+  });
+  html += "</tbody></table>";
+  const explicaciones = RETOS.filter(r => r.explicacion);
+  if (explicaciones.length) {
+    html += "<h3>Por qué esas son las respuestas (retos de depuración)</h3><ul>";
+    explicaciones.forEach(r => { html += "<li><b>Reto " + r.n + ":</b> " + escapar(r.explicacion) + "</li>"; });
+    html += "</ul>";
+  }
+  if (!aprueba) {
+    html += "<div class='nota'><b>¿Cómo recuperar?</b> Repase el paso 9 (filtros), el paso 10 (orden y " +
+            "cuentas) y el paso 11 (INNER JOIN) de su guía, y haga de nuevo el reto final. Después vuelva " +
+            "a intentar este taller: los datos son otros, la lógica es la misma.</div>";
+  }
+  $("detalle").innerHTML = html;
+  $("quiz").hidden = true;
+  $("resultados").hidden = false;
+  $("resultados").scrollIntoView({behavior: "smooth", block: "start"});
+}
+
+function escapar(t) {
+  const d = document.createElement("div");
+  d.textContent = t === undefined || t === null ? "" : String(t);
+  return d.innerHTML;
+}
+</script>
+</body>
+</html>
