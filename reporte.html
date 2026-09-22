@@ -186,7 +186,12 @@ function cargar() {
         '  → revise que CLAVE_REPORTE coincida con la del Apps Script.';
       return;
     }
-    DATOS = d.intentos || [];
+    /* Se descartan filas de encabezado o vacías por si la hoja las trae */
+    DATOS = (d.intentos || []).filter(function (x) {
+      var c0 = String(x.marca || '').toLowerCase();
+      var nom = String(x.nombre || '').toLowerCase();
+      return c0.indexOf('marca temporal') !== 0 && nom !== 'aprendiz';
+    });
     estado.hidden = true;
     ['kpis','panel-filtros','panel-intentos','panel-ranking','panel-ev'].forEach(function(id){
       document.getElementById(id).hidden = false;
@@ -202,7 +207,9 @@ function cargar() {
   s.onerror = function () {
     if (recibido) return;
     estado.className = 'estado error';
-    estado.textContent = 'No hubo conexión con el Apps Script. Revise internet o la URL del Web App.';
+    estado.textContent = 'No hubo conexión con el Apps Script. Causa más frecuente: en «Implementar ▸ ' +
+      'Gestionar implementaciones» el acceso quedó en «Solo yo» — debe estar en «Cualquier persona». ' +
+      'Revise también que la URL /exec sea la misma y que haya internet.';
   };
   document.body.appendChild(s);
 
