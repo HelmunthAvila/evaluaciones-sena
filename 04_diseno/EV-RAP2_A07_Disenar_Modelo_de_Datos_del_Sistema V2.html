@@ -1395,7 +1395,7 @@ function evRegistrar(extra) {
     }
     var d = {}, k;
     for (k in EV_REG) {
-      if (k !== "t0" && EV_REG[k] !== undefined && EV_REG[k] !== null && EV_REG[k] !== "") d[k] = EV_REG[k];
+      if (k !== "t0" && k !== "url" && EV_REG[k] !== undefined && EV_REG[k] !== null && EV_REG[k] !== "") d[k] = EV_REG[k];
     }
     if (extra) { for (k in extra) { if (extra[k] !== undefined && extra[k] !== null && extra[k] !== "") d[k] = extra[k]; } }
     d.fechaHora = new Date().toLocaleString("es-CO");
@@ -1418,6 +1418,35 @@ function evRegistrar(extra) {
   }
 }
 
+</script>
+
+<!-- ==== Identificación en el título de la pestaña (regla anti-copia) ==== -->
+<script>
+/* EV_TITULO_ID: el título de la pestaña muestra quién presenta la evaluación. */
+(function () {
+  var original = document.title;
+  var marcador = " · ";
+  function campos() {
+    var n = document.querySelector('#nombre, #userName, #user-name, input[name="nombre"]');
+    var f = document.querySelector('#ficha, #userFicha, input[name="ficha"]');
+    var nombre = n && n.value ? String(n.value).trim() : "";
+    var ficha = f && f.value ? String(f.value).trim() : "";
+    return { nombre: nombre, ficha: ficha };
+  }
+  function actualizar() {
+    var c = campos();
+    var partes = [];
+    if (c.nombre) partes.push(c.nombre);
+    if (c.ficha) partes.push("Ficha " + c.ficha);
+    document.title = partes.length ? partes.join(marcador) + " \u2014 " + original : original;
+  }
+  document.addEventListener("input", actualizar, true);
+  document.addEventListener("change", actualizar, true);
+  document.addEventListener("keyup", actualizar, true);
+  document.addEventListener("click", actualizar, true);
+  window.addEventListener("load", actualizar);
+  actualizar();
+})();
 </script>
 </body>
 </html>
