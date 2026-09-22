@@ -1017,6 +1017,12 @@
 
       const porcentaje = Math.round((acertadas / 15) * 100);
       const aprobado = porcentaje >= 70 || premioFinal >= 100000;
+  evRegistrar({
+    nombre: (estadoJuego && estadoJuego.nombre) || "",
+    ficha: (estadoJuego && estadoJuego.ficha) || "",
+    pct: porcentaje, aciertos: acertadas, total: 15,
+    resultado: aprobado ? "APROBADO" : "NO APROBADO"
+  });
 
       document.getElementById('res-nombre').textContent = estadoJuego.nombre;
       document.getElementById('res-ficha').textContent = `Ficha: ${estadoJuego.ficha}`;
@@ -1051,6 +1057,58 @@
         mensaje.innerHTML = `Has acumulado un total de <strong>$${premioFinal.toLocaleString()}</strong> con <strong>${acertadas} preguntas correctas</strong> (${porcentaje}%). Te sugerimos repasar los temas de la actividad y presentar un nuevo intento.`;
       }
     }
-  </script>
+  
+/* ============================================================================
+   REGISTRO CENTRAL DE INTENTOS (Google Sheets) — módulo inyectado
+   No editar a mano: lo inserta lotes_ev/inyectar_registro_ev.py
+   Envía: nombre, ficha, puntaje, aciertos, versión, fecha/hora, origen, tiempo.
+   ============================================================================ */
+var EV_REG = {
+  url: "https://script.google.com/macros/s/AKfycbxp7sbB41BKIgwpioRBw0hBP_2kSJXqi2mY-yGbr04ApccyFouOaMp9fOTeN3pKAFs/exec",
+  codigo: "EV-RAP3_A01_Introduccion_a_lenguajes V3",
+  ver: "V3",
+  ev: "¿Quién Quiere Ser Millonario? - Introducción a Lenguajes",
+  competencia: "",
+  actividad: "06_construccion",
+  tema: "06_construccion",
+  t0: Date.now()
+};
+
+function evRegistrar(extra) {
+  try {
+    var u = EV_REG.url || "";
+    /* OJO: el chequeo usa "__URL" (no "https://script.google.com/macros/s/AKfycbxp7sbB41BKIgwpioRBw0hBP_2kSJXqi2mY-yGbr04ApccyFouOaMp9fOTeN3pKAFs/exec") porque el inyector
+       reemplaza TODAS las apariciones de "https://script.google.com/macros/s/AKfycbxp7sbB41BKIgwpioRBw0hBP_2kSJXqi2mY-yGbr04ApccyFouOaMp9fOTeN3pKAFs/exec" por la URL real;
+       si se usara el literal completo, la validación bloqueaba el envío. */
+    if (!u || u.indexOf("__URL") === 0 || u.indexOf("PEGAR") === 0) {
+      console.warn("Registro EV: falta configurar la URL del Web App de Google Sheets.");
+      return;
+    }
+    var d = {}, k;
+    for (k in EV_REG) {
+      if (k !== "t0" && EV_REG[k] !== undefined && EV_REG[k] !== null && EV_REG[k] !== "") d[k] = EV_REG[k];
+    }
+    if (extra) { for (k in extra) { if (extra[k] !== undefined && extra[k] !== null && extra[k] !== "") d[k] = extra[k]; } }
+    d.fechaHora = new Date().toLocaleString("es-CO");
+    d.origen = (location.protocol === "file:") ? "archivo local" : (location.host || "?");
+    d.ua = (navigator.userAgent || "").slice(0, 90);
+    d.segundos = Math.round((Date.now() - EV_REG.t0) / 1000);
+
+    var partes = [];
+    for (k in d) partes.push(encodeURIComponent(k) + "=" + encodeURIComponent(d[k]));
+    var url = u + (u.indexOf("?") < 0 ? "?" : "&") + partes.join("&");
+
+    /* Imagen fantasma: dispara un GET sin restricciones CORS.
+       Probado: funciona abriendo el .html desde el disco (file://) y desde Vercel.
+       (fetch no-cors SÍ queda bloqueado desde file://, por eso no se usa.) */
+    var img = new Image();
+    img.src = url;
+    window.__ultimoRegistroEV = img;   /* referencia viva: evita que lo recoja el GC */
+  } catch (e) {
+    console.warn("Registro EV:", e);
+  }
+}
+
+</script>
 </body>
 </html>
