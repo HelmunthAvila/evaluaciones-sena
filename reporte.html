@@ -173,51 +173,82 @@ function cargar() {
   var estado = document.getElementById('estado');
   estado.hidden = false;
   estado.className = 'estado';
-  estado.textContent = 'Cargando resultados desde la hoja de cálculo…';
+  estado.textContent = 'Consultando la hoja de cálculo…';
   recibido = false;
 
-  var cb = 'reporteCB_' + Date.now();
-  window[cb] = function (d) {
-    recibido = true;
-    delete window[cb];
-    if (!d || !d.ok) {
-      estado.className = 'estado error';
-      estado.textContent = 'No se pudieron leer los datos: ' + ((d && d.error) || 'respuesta inesperada') +
-        '  → revise que CLAVE_REPORTE coincida con la del Apps Script.';
-      return;
-    }
-    /* Se descartan filas de encabezado o vacías por si la hoja las trae */
-    DATOS = (d.intentos || []).filter(function (x) {
-      var c0 = String(x.marca || '').toLowerCase();
-      var nom = String(x.nombre || '').toLowerCase();
-      return c0.indexOf('marca temporal') !== 0 && nom !== 'aprendiz';
-    });
-    estado.hidden = true;
-    ['kpis','panel-filtros','panel-intentos','panel-ranking','panel-ev'].forEach(function(id){
-      document.getElementById(id).hidden = false;
-    });
-    document.getElementById('generado').textContent = 'actualizado ' + new Date().toLocaleString('es-CO');
-    poblarFiltros();
-    aplicar();
-  };
+  var t0 = Date.now();
+  var reloj = setInterval(function () {
+    if (recibido) { clearInterval(reloj); return; }
+    var s = Math.round((Date.now() - t0) / 1000);
+    estado.textContent = 'Consultando la hoja de cálculo… ' + s + ' s' +
+      (s > 8 ? ' (Google puede tardar hasta 30 s en el primer acceso del día)' : '');
+  }, 1000);
 
+  function listo(d, via) {
+    if (recibido) return;
+    recibido = true;
+    clearInterval(reloj);
+    pintar(d, via);
+  }
+
+  /* 1) fetch: hay CORS en la respuesta del Web App, así que se puede leer directo */
+  if (window.fetch) {
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var temporizador = setTimeout(function () { if (ctrl) ctrl.abort(); }, 75000);
+    fetch(URL_WEBAPP + '?action=reporte&clave=' + encodeURIComponent(CLAVE_REPORTE) + '&t=' + Date.now(),
+          ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.text(); })
+      .then(function (txt) {
+        clearTimeout(temporizador);
+        if (recibido) return;
+        try { listo(JSON.parse(txt), 'fetch'); }
+        catch (e) { cargarPorJsonp(listo); }          // respuesta no JSON: se intenta por JSONP
+      })
+      .catch(function () { if (!recibido) cargarPorJsonp(listo); });
+  } else {
+    cargarPorJsonp(listo);
+  }
+}
+
+/* Respaldo por JSONP (útil si se abre el archivo desde el disco y el fetch se bloquea) */
+function cargarPorJsonp(listo) {
+  var cb = 'reporteCB_' + Date.now();
+  window[cb] = function (d) { listo(d, 'jsonp'); };
   var s = document.createElement('script');
   s.src = URL_WEBAPP + '?action=reporte&clave=' + encodeURIComponent(CLAVE_REPORTE) +
         '&callback=' + cb + '&t=' + Date.now();
-  s.onerror = function () {
-    if (recibido) return;
-    estado.className = 'estado error';
-    estado.textContent = 'No hubo conexión con el Apps Script. Causa más frecuente: en «Implementar ▸ ' +
-      'Gestionar implementaciones» el acceso quedó en «Solo yo» — debe estar en «Cualquier persona». ' +
-      'Revise también que la URL /exec sea la misma y que haya internet.';
-  };
+  s.onerror = function () { listo({ ok: false, error: 'no hubo conexión con el Apps Script' }, 'jsonp'); };
   document.body.appendChild(s);
+}
 
-  setTimeout(function () {
-    if (recibido) return;
+/* Pinta los datos recibidos (o el error con la causa más probable) */
+function pintar(d, via) {
+  var estado = document.getElementById('estado');
+  if (!d || !d.ok) {
+    estado.hidden = false;
     estado.className = 'estado error';
-    estado.textContent = 'La hoja tardó demasiado en responder. Pulse «Actualizar» para reintentar.';
-  }, 25000);
+    var causa = (d && d.error) ? d.error : 'respuesta inesperada';
+    estado.textContent = 'No se pudieron leer los datos (' + causa + '). ' +
+      'Revise que la clave coincida con la del Apps Script (' + CLAVE_REPORTE + ') y que la ' +
+      'implementación tenga acceso «Cualquier persona».';
+    return;
+  }
+
+  /* Se descartan filas de encabezado o vacías por si la hoja las trae */
+  DATOS = (d.intentos || []).filter(function (x) {
+    var c0 = String(x.marca || '').toLowerCase();
+    var nom = String(x.nombre || '').toLowerCase();
+    return c0.indexOf('marca temporal') !== 0 && nom !== 'aprendiz';
+  });
+
+  estado.hidden = true;
+  ['kpis', 'panel-filtros', 'panel-intentos', 'panel-ranking', 'panel-ev'].forEach(function (id) {
+    document.getElementById(id).hidden = false;
+  });
+  document.getElementById('generado').textContent =
+    'actualizado ' + new Date().toLocaleString('es-CO') + ' · ' + DATOS.length + ' intentos';
+  poblarFiltros();
+  aplicar();
 }
 
 /* ============================================================================
