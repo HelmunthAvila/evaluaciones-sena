@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tablero de control — Resultados de evaluaciones SENA</title>
+<style>
+  :root{
+    --verde:#39A900; --verde-osc:#2d8600; --azul:#00324D; --azul-claro:#0b4a6f;
+    --gris:#f4f6f8; --linea:#dfe4ea; --texto:#1f2937; --tenue:#6b7280;
+    --rojo:#dc2626; --ambar:#d97706;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;background:var(--gris);color:var(--texto)}
+  header{background:linear-gradient(135deg,var(--azul) 0%,var(--azul-claro) 100%);color:#fff;padding:20px 26px;
+         display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  .logo{width:46px;height:46px;border-radius:10px;background:var(--verde);display:flex;align-items:center;
+        justify-content:center;font-weight:800;font-size:22px;flex:0 0 auto}
+  header h1{margin:0;font-size:19px;font-weight:800;letter-spacing:.3px}
+  header p{margin:3px 0 0;font-size:13px;opacity:.85}
+  .acciones{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+  button{font-family:inherit;font-size:13px;font-weight:700;border:0;border-radius:8px;padding:10px 14px;cursor:pointer;
+         background:var(--verde);color:#fff;transition:.15s}
+  button:hover{background:var(--verde-osc)}
+  button.sec{background:rgba(255,255,255,.16);color:#fff}
+  button.sec:hover{background:rgba(255,255,255,.28)}
+  main{max-width:1280px;margin:0 auto;padding:22px 26px 60px}
+  .estado{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:18px 20px;margin-bottom:18px;
+          font-size:14px;color:var(--tenue)}
+  .estado.error{border-color:#fca5a5;background:#fef2f2;color:#991b1b}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-bottom:20px}
+  .kpi{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:16px 18px}
+  .kpi span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--tenue);font-weight:700}
+  .kpi strong{display:block;font-size:29px;font-weight:800;color:var(--azul);margin-top:6px;line-height:1.1}
+  .kpi small{display:block;font-size:12px;color:var(--tenue);margin-top:4px}
+  .kpi.ok strong{color:var(--verde-osc)}
+  .kpi.alerta strong{color:var(--ambar)}
+  .panel{background:#fff;border:1px solid var(--linea);border-radius:12px;padding:18px 20px;margin-bottom:18px}
+  .panel h2{margin:0 0 14px;font-size:15px;font-weight:800;color:var(--azul);text-transform:uppercase;letter-spacing:.5px}
+  .filtros{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--tenue);margin-bottom:5px}
+  input,select,textarea{width:100%;font-family:inherit;font-size:13px;padding:9px 11px;border:1px solid var(--linea);
+        border-radius:8px;background:#fff;color:var(--texto)}
+  input:focus,select:focus,textarea:focus{outline:2px solid rgba(57,169,0,.35);border-color:var(--verde)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{background:var(--azul);color:#fff;text-align:left;padding:9px 10px;font-size:11px;text-transform:uppercase;
+     letter-spacing:.5px;position:sticky;top:0}
+  td{padding:8px 10px;border-bottom:1px solid var(--linea);vertical-align:middle}
+  tr:hover td{background:#f9fbfc}
+  .tabla-scroll{max-height:460px;overflow:auto;border:1px solid var(--linea);border-radius:10px}
+  .pill{display:inline-block;font-size:11px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap}
+  .pill.v1{background:#e0edff;color:#1d4ed8}
+  .pill.v2{background:#e6f7e0;color:#2d8600}
+  .pill.v3{background:#fdf3d8;color:#a16207}
+  .pill.ok{background:#dcfce7;color:#166534}
+  .pill.no{background:#fee2e2;color:#991b1b}
+  .barra{height:9px;border-radius:6px;background:#eef1f4;overflow:hidden;min-width:70px}
+  .barra i{display:block;height:100%;background:var(--verde);border-radius:6px}
+  .barra i.medio{background:var(--ambar)}
+  .barra i.bajo{background:var(--rojo)}
+  .barras-ev{display:flex;flex-direction:column;gap:9px}
+  .fila-ev{display:grid;grid-template-columns:minmax(120px,1fr) 3fr 60px;gap:10px;align-items:center;font-size:12.5px}
+  .fila-ev .nombre{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .fila-ev .valor{text-align:right;font-weight:800;color:var(--azul)}
+  .falta{color:var(--rojo);font-weight:700}
+  .presente{color:var(--verde-osc);font-weight:700}
+  .ayuda{font-size:12px;color:var(--tenue);margin:8px 0 0;line-height:1.5}
+  .dos-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:900px){.dos-col{grid-template-columns:1fr}main{padding:16px 14px 40px}}
+  footer{text-align:center;font-size:12px;color:var(--tenue);padding:18px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">S</div>
+  <div>
+    <h1>Tablero de control · Resultados de evaluaciones</h1>
+    <p>SENA · Centro de Procesos de Software · Programación de Software</p>
+  </div>
+  <div class="acciones">
+    <button onclick="cargar()">↻ Actualizar</button>
+    <button class="sec" onclick="exportarCSV()">⤓ CSV</button>
+    <button class="sec" onclick="window.print()">⎙ Imprimir</button>
+  </div>
+</header>
+
+<main>
+  <div id="estado" class="estado">Cargando resultados desde la hoja de cálculo…</div>
+
+  <section id="kpis" class="kpis" hidden>
+    <div class="kpi"><span>Intentos registrados</span><strong id="k-intentos">0</strong><small id="k-rango">—</small></div>
+    <div class="kpi"><span>Aprendices</span><strong id="k-aprendices">0</strong><small id="k-fichas">—</small></div>
+    <div class="kpi"><span>Promedio general</span><strong id="k-promedio">0%</strong><small>sobre los intentos cargados</small></div>
+    <div class="kpi ok"><span>Aprobación</span><strong id="k-aprobacion">0%</strong><small id="k-aprobados">—</small></div>
+    <div class="kpi alerta"><span>Faltantes del grupo</span><strong id="k-faltantes">—</strong><small>con la lista pegada abajo</small></div>
+  </section>
+
+  <section id="panel-filtros" class="panel" hidden>
+    <h2>Filtros</h2>
+    <div class="filtros">
+      <div><label for="f-texto">Buscar aprendiz</label><input id="f-texto" placeholder="Nombre o número de ficha" oninput="aplicar()"></div>
+      <div><label for="f-ficha">Ficha</label><select id="f-ficha" onchange="aplicar()"><option value="">Todas</option></select></div>
+      <div><label for="f-comp">Competencia</label><select id="f-comp" onchange="aplicar()"><option value="">Todas</option></select></div>
+      <div><label for="f-ver">Versión</label><select id="f-ver" onchange="aplicar()"><option value="">Todas</option><option>V1</option><option>V2</option><option>V3</option></select></div>
+      <div><label for="f-ev">Evaluación</label><select id="f-ev" onchange="aplicar()"><option value="">Todas</option></select></div>
+      <div><label for="f-res">Resultado</label><select id="f-res" onchange="aplicar()"><option value="">Todos</option><option>APROBADO</option><option>NO APROBADO</option></select></div>
+    </div>
+    <p class="ayuda" id="ayuda-filtros"></p>
+  </section>
+
+  <section id="panel-intentos" class="panel" hidden>
+    <h2>Intentos registrados <span id="cuenta-intentos" style="color:var(--tenue);font-weight:600;text-transform:none"></span></h2>
+    <div class="tabla-scroll">
+      <table>
+        <thead><tr>
+          <th>Fecha y hora</th><th>Aprendiz</th><th>Ficha</th><th>Evaluación</th><th>Ver.</th>
+          <th>Puntaje</th><th>Resultado</th><th>Tiempo</th>
+        </tr></thead>
+        <tbody id="cuerpo-intentos"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <div class="dos-col">
+    <section id="panel-ranking" class="panel" hidden>
+      <h2>Por aprendiz</h2>
+      <div class="tabla-scroll" style="max-height:380px">
+        <table>
+          <thead><tr><th>Aprendiz</th><th>Ficha</th><th>Intentos</th><th>Promedio</th><th>Aprobó</th></tr></thead>
+          <tbody id="cuerpo-ranking"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="panel-ev" class="panel" hidden>
+      <h2>Promedio por evaluación</h2>
+      <div id="barras-ev" class="barras-ev"></div>
+      <p class="ayuda">Solo se muestran las evaluaciones con intentos registrados (máximo 12).</p>
+    </section>
+  </div>
+
+  <section class="panel">
+    <h2>Faltantes por presentar</h2>
+    <p class="ayuda">Pegue la lista del grupo —un aprendiz por línea, con el número de documento/ficha primero
+       (ejemplo: <code>3118291, Ana María Pérez</code>). El tablero le dirá quién no aparece en la hoja.</p>
+    <textarea id="lista-grupo" rows="6" placeholder="3118291, Ana María Pérez&#10;3120456, Carlos Gómez"></textarea>
+    <p style="margin:12px 0 8px"><button onclick="calcularFaltantes()">Comparar con los registros</button></p>
+    <div class="tabla-scroll" style="max-height:330px">
+      <table>
+        <thead><tr><th>Documento / ficha</th><th>Aprendiz</th><th>Estado</th><th>Intentos</th><th>Último puntaje</th></tr></thead>
+        <tbody id="cuerpo-faltantes"><tr><td colspan="5" style="color:var(--tenue)">Pegue la lista y pulse «Comparar».</td></tr></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>Datos leídos en vivo desde la hoja de cálculo · <span id="generado">—</span></footer>
+</main>
+
+<script>
+/* ============================================================================
+   1) CONFIGURACIÓN — cambie aquí si algún día cambia la implementación
+   ============================================================================ */
+var URL_WEBAPP = "https://script.google.com/macros/s/AKfycbxp7sbB41BKIgwpioRBw0hBP_2kSJXqi2mY-yGbr04ApccyFouaMp9fOTeN3pKAFs/exec";
+var CLAVE_REPORTE = "sena-prg-2026";   // igual que CLAVE_REPORTE en el Apps Script
+
+/* ============================================================================
+   2) CARGA DE DATOS (JSONP: funciona abriendo el archivo desde el disco)
+   ============================================================================ */
+var DATOS = [];
+var recibido = false;
+
+function cargar() {
+  var estado = document.getElementById('estado');
+  estado.hidden = false;
+  estado.className = 'estado';
+  estado.textContent = 'Cargando resultados desde la hoja de cálculo…';
+  recibido = false;
+
+  var cb = 'reporteCB_' + Date.now();
+  window[cb] = function (d) {
+    recibido = true;
+    delete window[cb];
+    if (!d || !d.ok) {
+      estado.className = 'estado error';
+      estado.textContent = 'No se pudieron leer los datos: ' + ((d && d.error) || 'respuesta inesperada') +
+        '  → revise que CLAVE_REPORTE coincida con la del Apps Script.';
+      return;
+    }
+    DATOS = d.intentos || [];
+    estado.hidden = true;
+    ['kpis','panel-filtros','panel-intentos','panel-ranking','panel-ev'].forEach(function(id){
+      document.getElementById(id).hidden = false;
+    });
+    document.getElementById('generado').textContent = 'actualizado ' + new Date().toLocaleString('es-CO');
+    poblarFiltros();
+    aplicar();
+  };
+
+  var s = document.createElement('script');
+  s.src = URL_WEBAPP + '?action=reporte&clave=' + encodeURIComponent(CLAVE_REPORTE) +
+        '&callback=' + cb + '&t=' + Date.now();
+  s.onerror = function () {
+    if (recibido) return;
+    estado.className = 'estado error';
+    estado.textContent = 'No hubo conexión con el Apps Script. Revise internet o la URL del Web App.';
+  };
+  document.body.appendChild(s);
+
+  setTimeout(function () {
+    if (recibido) return;
+    estado.className = 'estado error';
+    estado.textContent = 'La hoja tardó demasiado en responder. Pulse «Actualizar» para reintentar.';
+  }, 25000);
+}
+
+/* ============================================================================
+   3) FILTROS Y RENDER
+   ============================================================================ */
+function unicovalores(campo) {
+  var set = {};
+  DATOS.forEach(function (d) { if (d[campo]) set[d[campo]] = 1; });
+  return Object.keys(set).sort(function (a, b) { return a.localeCompare(b, 'es'); });
+}
+
+function poblarFiltros() {
+  [['f-ficha','ficha'],['f-comp','competencia'],['f-ev','ev']].forEach(function (par) {
+    var sel = document.getElementById(par[0]);
+    var actual = sel.value;
+    var opciones = '<option value="">Todas</option>';
+    unicovalores(par[1]).forEach(function (v) {
+      opciones += '<option>' + escapar(v) + '</option>';
+    });
+    sel.innerHTML = opciones;
+    sel.value = actual;
+  });
+}
+
+function escapar(s) {
+  return String(s === null || s === undefined ? '' : s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function filtrados() {
+  var texto = document.getElementById('f-texto').value.trim().toLowerCase();
+  var ficha = document.getElementById('f-ficha').value;
+  var comp = document.getElementById('f-comp').value;
+  var ver = document.getElementById('f-ver').value;
+  var ev = document.getElementById('f-ev').value;
+  var res = document.getElementById('f-res').value;
+  return DATOS.filter(function (d) {
+    if (texto && (d.nombre + ' ' + d.ficha).toLowerCase().indexOf(texto) < 0) return false;
+    if (ficha && d.ficha !== ficha) return false;
+    if (comp && d.competencia !== comp) return false;
+    if (ver && d.ver !== ver) return false;
+    if (ev && d.ev !== ev) return false;
+    if (res && d.resultado !== res) return false;
+    return true;
+  });
+}
+
+function notaBarra(pct) {
+  if (pct === null || pct === undefined) return '';
+  var clase = pct >= 70 ? '' : (pct >= 50 ? 'medio' : 'bajo');
+  return '<div style="display:flex;align-items:center;gap:8px"><div class="barra"><i class="' + clase +
+         '" style="width:' + Math.max(2, Math.min(100, pct)) + '%"></i></div><strong style="min-width:38px">' +
+         pct + '%</strong></div>';
+}
+
+function aplicar() {
+  var lista = filtrados();
+  document.getElementById('cuenta-intentos').textContent = '(' + lista.length + ' de ' + DATOS.length + ')';
+  document.getElementById('ayuda-filtros').textContent =
+    'Mostrando ' + lista.length + ' de ' + DATOS.length + ' intentos registrados.';
+
+  /* KPIs */
+  var aprendices = {}, fichas = {}, suma = 0, conNota = 0, aprob = 0;
+  lista.forEach(function (d) {
+    aprendices[(d.nombre || '').toLowerCase()] = 1;
+    if (d.ficha) fichas[d.ficha] = 1;
+    if (typeof d.pct === 'number') { suma += d.pct; conNota++; if (d.pct >= 70) aprob++; }
+  });
+  document.getElementById('k-intentos').textContent = lista.length;
+  document.getElementById('k-aprendices').textContent = Object.keys(aprendices).length;
+  document.getElementById('k-fichas').textContent = Object.keys(fichas).length + ' ficha(s) distintas';
+  document.getElementById('k-promedio').textContent = conNota ? Math.round(suma / conNota) + '%' : '—';
+  document.getElementById('k-aprobacion').textContent = conNota ? Math.round(aprob / conNota * 100) + '%' : '—';
+  document.getElementById('k-aprobados').textContent = aprob + ' de ' + conNota + ' con nota';
+  if (lista.length) {
+    var fechas = lista.map(function (d) { return d.fechaHora || d.marca; }).filter(Boolean).sort();
+    document.getElementById('k-rango').textContent = fechas.length
+      ? 'entre ' + String(fechas[0]).slice(0, 16) + ' y ' + String(fechas[fechas.length - 1]).slice(0, 16) : '—';
+  } else {
+    document.getElementById('k-rango').textContent = '—';
+  }
+
+  /* Tabla de intentos (más recientes primero) */
+  var orden = lista.slice().sort(function (a, b) {
+    return String(b.marca || b.fechaHora).localeCompare(String(a.marca || a.fechaHora));
+  });
+  var html = '';
+  orden.slice(0, 800).forEach(function (d) {
+    var pillVer = d.ver ? '<span class="pill ' + d.ver.toLowerCase() + '">' + escapar(d.ver) + '</span>' : '—';
+    var pillRes = d.resultado === 'APROBADO' ? '<span class="pill ok">APROBADO</span>'
+                : (d.resultado ? '<span class="pill no">' + escapar(d.resultado) + '</span>' : '—');
+    html += '<tr><td>' + escapar(d.fechaHora || String(d.marca).slice(0, 16)) + '</td>' +
+            '<td><strong>' + escapar(d.nombre) + '</strong></td>' +
+            '<td style="font-family:ui-monospace,Consolas,monospace">' + escapar(d.ficha) + '</td>' +
+            '<td>' + escapar(d.ev) + (d.tema && d.tema !== d.ev ? ' <span style="color:var(--tenue)">· ' + escapar(d.tema) + '</span>' : '') + '</td>' +
+            '<td>' + pillVer + '</td>' +
+            '<td>' + (notaBarra(d.pct) || (d.aciertos !== null ? escapar(d.aciertos) + '/' + escapar(d.total) : '—')) + '</td>' +
+            '<td>' + pillRes + '</td>' +
+            '<td>' + (typeof d.segundos === 'number' && d.segundos ? Math.round(d.segundos / 60) + ' min' : '—') + '</td></tr>';
+  });
+  document.getElementById('cuerpo-intentos').innerHTML = html ||
+    '<tr><td colspan="8" style="color:var(--tenue)">Sin intentos con estos filtros.</td></tr>';
+
+  /* Ranking por aprendiz (mejor intento por evaluación) */
+  var porAp = {};
+  lista.forEach(function (d) {
+    var k = (d.nombre || 'sin nombre').toLowerCase();
+    if (!porAp[k]) porAp[k] = { nombre: d.nombre, ficha: d.ficha, intentos: 0, suma: 0, n: 0, aprob: 0 };
+    var r = porAp[k];
+    r.intentos++; r.ficha = d.ficha || r.ficha;
+    if (typeof d.pct === 'number') { r.suma += d.pct; r.n++; if (d.pct >= 70) r.aprob++; }
+  });
+  var ranking = Object.keys(porAp).map(function (k) { return porAp[k]; }).sort(function (a, b) {
+    var pa = a.n ? a.suma / a.n : -1, pb = b.n ? b.suma / b.n : -1;
+    return pb - pa;
+  });
+  var hRank = '';
+  ranking.slice(0, 300).forEach(function (r) {
+    var prom = r.n ? Math.round(r.suma / r.n) : null;
+    hRank += '<tr><td><strong>' + escapar(r.nombre) + '</strong></td>' +
+             '<td style="font-family:ui-monospace,Consolas,monospace">' + escapar(r.ficha) + '</td>' +
+             '<td>' + r.intentos + '</td>' +
+             '<td>' + (prom === null ? '—' : notaBarra(prom)) + '</td>' +
+             '<td>' + r.aprob + '/' + r.intentos + '</td></tr>';
+  });
+  document.getElementById('cuerpo-ranking').innerHTML = hRank ||
+    '<tr><td colspan="5" style="color:var(--tenue)">Sin datos.</td></tr>';
+
+  /* Promedio por evaluación */
+  var porEv = {};
+  lista.forEach(function (d) {
+    if (typeof d.pct !== 'number') return;
+    var k = d.ev || d.codigo || 'sin nombre';
+    if (!porEv[k]) porEv[k] = { suma: 0, n: 0 };
+    porEv[k].suma += d.pct; porEv[k].n++;
+  });
+  var evs = Object.keys(porEv).map(function (k) {
+    return { ev: k, prom: Math.round(porEv[k].suma / porEv[k].n), n: porEv[k].n };
+  }).sort(function (a, b) { return b.n - a.n; }).slice(0, 12);
+  var hEv = '';
+  evs.forEach(function (e) {
+    var clase = e.prom >= 70 ? '' : (e.prom >= 50 ? 'medio' : 'bajo');
+    hEv += '<div class="fila-ev"><span class="nombre" title="' + escapar(e.ev) + '">' + escapar(e.ev) + '</span>' +
+           '<span class="barra"><i class="' + clase + '" style="width:' + Math.max(2, e.prom) + '%"></i></span>' +
+           '<span class="valor">' + e.prom + '% (' + e.n + ')</span></div>';
+  });
+  document.getElementById('barras-ev').innerHTML = hEv || '<p class="ayuda">Sin puntajes registrados todavía.</p>';
+}
+
+/* ============================================================================
+   4) FALTANTES: compara la lista del grupo contra lo registrado
+   ============================================================================ */
+function calcularFaltantes() {
+  var lineas = document.getElementById('lista-grupo').value.split('\n')
+    .map(function (l) { return l.trim(); }).filter(Boolean);
+  if (!lineas.length) {
+    document.getElementById('cuerpo-faltantes').innerHTML =
+      '<tr><td colspan="5" style="color:var(--tenue)">Pegue la lista del grupo primero.</td></tr>';
+    document.getElementById('k-faltantes').textContent = '—';
+    return;
+  }
+  var filas = '', faltan = 0;
+  lineas.forEach(function (linea) {
+    var partes = linea.split(/[,;\t]/).map(function (x) { return x.trim(); });
+    var doc = partes[0] || '';
+    var nombre = partes.slice(1).join(' ') || '(sin nombre)';
+    var suyos = DATOS.filter(function (d) {
+      return (doc && String(d.ficha) === doc) ||
+             (nombre !== '(sin nombre)' && (d.nombre || '').toLowerCase() === nombre.toLowerCase());
+    });
+    var prom = null;
+    var conNota = suyos.filter(function (d) { return typeof d.pct === 'number'; });
+    if (conNota.length) {
+      prom = Math.round(conNota.reduce(function (a, d) { return a + d.pct; }, 0) / conNota.length);
+    }
+    var estado = suyos.length
+      ? '<span class="presente">Presentó ✓</span>'
+      : '<span class="falta">No ha presentado</span>';
+    if (!suyos.length) faltan++;
+    filas += '<tr><td style="font-family:ui-monospace,Consolas,monospace">' + escapar(doc) + '</td>' +
+             '<td>' + escapar(nombre) + '</td><td>' + estado + '</td>' +
+             '<td>' + suyos.length + '</td><td>' + (prom === null ? '—' : prom + '%') + '</td></tr>';
+  });
+  document.getElementById('cuerpo-faltantes').innerHTML = filas;
+  document.getElementById('k-faltantes').textContent = faltan + ' de ' + lineas.length;
+}
+
+/* ============================================================================
+   5) EXPORTAR
+   ============================================================================ */
+function exportarCSV() {
+  var lista = filtrados();
+  if (!lista.length) { alert('No hay datos para exportar con los filtros actuales.'); return; }
+  var cols = ['fechaHora','nombre','ficha','ev','ver','competencia','actividad','pct','aciertos','total','resultado','segundos','origen','tema'];
+  var csv = cols.join(',') + '\n';
+  lista.forEach(function (d) {
+    csv += cols.map(function (c) {
+      var v = d[c] === null || d[c] === undefined ? '' : String(d[c]);
+      return '"' + v.replace(/"/g, '""') + '"';
+    }).join(',') + '\n';
+  });
+  var blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'resultados_evaluaciones_sena_' + new Date().toISOString().slice(0, 10) + '.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+}
+
+cargar();
+</script>
+</body>
+</html>
