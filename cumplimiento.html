@@ -185,13 +185,24 @@ function evsConIntentos() {
   return Object.keys(set).sort().map(function (c) { return { codigo: c, titulo: set[c] }; });
 }
 
+/* Compara nombres por conjunto de palabras: el orden (apellidos primero o
+   nombre primero) y las tildes no afectan la coincidencia. */
+function coincide(a, b) {
+  var x = normalizar(a).split(" ").filter(Boolean);
+  var y = normalizar(b).split(" ").filter(Boolean);
+  if (!x.length || !y.length) return false;
+  var corto = x.length <= y.length ? x : y;
+  var largo = x.length <= y.length ? y : x;
+  var c = corto.filter(function (p) { return largo.indexOf(p) >= 0; }).length;
+  return c >= Math.min(2, corto.length);
+}
+
 function intentosDe(nombre, ficha, codigo) {
-  var n = normalizar(nombre).split(" ")[0];
   return INTENTOS.filter(function (d) {
     if (String(d.codigo) !== codigo) return false;
     if (String(d.ficha) !== String(ficha)) return false;
-    var dn = normalizar(d.nombre);
-    return !n || dn.indexOf(n) >= 0 || n.indexOf(dn.split(" ")[0]) >= 0;
+    if (!d.nombre) return true;
+    return coincide(d.nombre, nombre);
   });
 }
 

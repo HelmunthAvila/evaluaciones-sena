@@ -143,6 +143,19 @@ function normalizar(s) {
     .replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
 }
 
+/* Compara dos nombres por CONJUNTO de palabras: así funciona sin importar el orden
+   (la lista trae "NEIRA HERNANDEZ MIGUEL ANDRES" y el aprendiz escribe
+   "MIGUEL ANDRES NEIRA HERNANDEZ"). Exige que coincidan al menos 2 palabras. */
+function coincide(escrito, enLista) {
+  var a = normalizar(escrito).split(" ").filter(Boolean);
+  var b = normalizar(enLista).split(" ").filter(Boolean);
+  if (!a.length || !b.length) return false;
+  var corto = a.length <= b.length ? a : b;
+  var largo = a.length <= b.length ? b : a;
+  var coincidencias = corto.filter(function (p) { return largo.indexOf(p) >= 0; }).length;
+  return coincidencias >= Math.min(2, corto.length);
+}
+
 function indexar(ap) {
   INDICE = {};
   INDICE_RETIRADOS = {};
@@ -150,11 +163,8 @@ function indexar(ap) {
     if (!INDICE[a.f]) INDICE[a.f] = [];
     INDICE[a.f].push(a);
     if (!a.e) {
-      var k = a.f + "|" + normalizar(a.n);
-      INDICE_RETIRADOS[k] = 1;
-      // también por las dos primeras palabras del nombre (como suelen escribirlo)
-      var partes = normalizar(a.n).split(" ");
-      if (partes.length >= 2) INDICE_RETIRADOS[a.f + "|" + partes.slice(0, 2).join(" ")] = 1;
+      if (!INDICE_RETIRADOS[a.f]) INDICE_RETIRADOS[a.f] = [];
+      INDICE_RETIRADOS[a.f].push(a.n);
     }
   });
 }
@@ -239,10 +249,9 @@ function validar() {
       '<div class="cron" style="margin-top:8px">Consulta resuelta en ' + ms + ' ms (sin internet)</div>';
     return;
   }
-  // ¿el nombre escrito corresponde a alguien retirado?
-  var n = normalizar(nombre);
-  var esRetirado = nombre && (INDICE_RETIRADOS[ficha + "|" + n] ||
-                   INDICE_RETIRADOS[ficha + "|" + n.split(" ").slice(0, 2).join(" ")]);
+  // ¿el nombre escrito corresponde a alguien retirado de esa ficha?
+  var retiradosFicha = INDICE_RETIRADOS[ficha] || [];
+  var esRetirado = !!nombre && retiradosFicha.some(function (r) { return coincide(nombre, r); });
   if (esRetirado) {
     caja.className = 'resultado malo';
     caja.innerHTML = '<b>⛔ No puede presentar: ' + nombre + ' está en RETIRO VOLUNTARIO</b>' +

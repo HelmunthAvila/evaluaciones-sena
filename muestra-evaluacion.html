@@ -341,16 +341,21 @@ function evRegistrar(extra) {
     return String(s || "").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
       .replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
   }
+  /* Compara nombres por conjunto de palabras (el orden no importa) */
+  function coincide(escrito, enLista) {
+    var a = norm(escrito).split(" ").filter(Boolean);
+    var b = norm(enLista).split(" ").filter(Boolean);
+    if (!a.length || !b.length) return false;
+    var corto = a.length <= b.length ? a : b;
+    var largo = a.length <= b.length ? b : a;
+    var c = corto.filter(function (p) { return largo.indexOf(p) >= 0; }).length;
+    return c >= Math.min(2, corto.length);
+  }
   function indexar(ap) {
     indice = {}; retirados = {};
     ap.forEach(function (a) {
       (indice[a.f] = indice[a.f] || []).push(a);
-      if (!a.e) {
-        var n = norm(a.n);
-        retirados[a.f + "|" + n] = 1;
-        var p = n.split(" ");
-        if (p.length >= 2) retirados[a.f + "|" + p.slice(0, 2).join(" ")] = 1;
-      }
+      if (!a.e) (retirados[a.f] = retirados[a.f] || []).push(a.n);
     });
   }
   function cargar() {
@@ -404,8 +409,8 @@ function evRegistrar(extra) {
               ms());
       return;
     }
-    var n = norm(nombre), p = n.split(" ");
-    if (nombre && (retirados[ficha + "|" + n] || retirados[ficha + "|" + p.slice(0, 2).join(" ")])) {
+    var retiradosFicha = retirados[ficha] || [];
+    if (nombre && retiradosFicha.some(function (r) { return coincide(nombre, r); })) {
       ev.preventDefault(); ev.stopPropagation();
       mostrar('No puede presentar la evaluación',
               'Según la tabla de aprendices, <b>' + nombre + '</b> está en <b>RETIRO VOLUNTARIO</b>. Su estado no permite presentar evaluaciones.',
