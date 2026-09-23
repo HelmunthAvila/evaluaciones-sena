@@ -221,13 +221,48 @@ function evsConIntentos() {
 
 /* Compara nombres por conjunto de palabras: el orden (apellidos primero o
    nombre primero) y las tildes no afectan la coincidencia. */
+var LEV = function (a, b) {
+  if (a === b) return 0;
+  if (!a.length) return b.length;
+  if (!b.length) return a.length;
+  var prev = [], cur = [], i, j;
+  for (j = 0; j <= b.length; j++) prev[j] = j;
+  for (i = 1; i <= a.length; i++) {
+    cur[0] = i;
+    for (j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
+                        prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+    }
+    prev = cur.slice();
+  }
+  return prev[b.length];
+};
+
+/* Una palabra coincide si son iguales, si una es prefijo de la otra (>=4 letras)
+   o si difieren por 1-2 letras (nombres truncados o errores de digitación). */
+function palabraCoincide(a, b) {
+  if (a === b) return true;
+  if (a.length >= 4 && b.length >= 4 && (a.indexOf(b) === 0 || b.indexOf(a) === 0)) return true;
+  var d = LEV(a, b), m = Math.min(a.length, b.length);
+  if (d <= 1 && m >= 4) return true;
+  if (d <= 2 && m >= 6) return true;
+  return false;
+}
+
+/* Compara nombres por conjunto de palabras (el orden no importa). */
 function coincide(a, b) {
   var x = normalizar(a).split(" ").filter(Boolean);
   var y = normalizar(b).split(" ").filter(Boolean);
   if (!x.length || !y.length) return false;
   var corto = x.length <= y.length ? x : y;
   var largo = x.length <= y.length ? y : x;
-  var c = corto.filter(function (p) { return largo.indexOf(p) >= 0; }).length;
+  var usados = {}, c = 0;
+  corto.forEach(function (p) {
+    for (var i = 0; i < largo.length; i++) {
+      if (usados[i]) continue;
+      if (palabraCoincide(p, largo[i])) { usados[i] = 1; c++; return; }
+    }
+  });
   return c >= Math.min(2, corto.length);
 }
 
