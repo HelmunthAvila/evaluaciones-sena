@@ -328,7 +328,7 @@ function evRegistrar(extra) {
 <div id="velo-validacion" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.72);
      backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:18px">
   <div style="background:#fff;border-radius:16px;max-width:520px;width:100%;padding:26px 28px;box-shadow:0 20px 60px rgba(0,0,0,.45)">
-    <div id="vv-icono" style="width:56px;height:56px;border-radius:14px;background:#fdecec;display:flex;align-items:center;
+    <div style="width:56px;height:56px;border-radius:14px;background:#fdecec;display:flex;align-items:center;
          justify-content:center;font-size:28px;margin-bottom:14px">⛔</div>
     <h2 id="vv-titulo" style="margin:0 0 8px;font-size:19px;color:#00324D">No puede presentar la evaluación</h2>
     <p id="vv-texto" style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#374151"></p>
@@ -338,63 +338,167 @@ function evRegistrar(extra) {
   </div>
 </div>
 <script>
-/* ==== MUESTRA: quién puede presentar (solo EN FORMACIÓN) y modo sin conexión ==== */
+/* ==== MUESTRA: quién puede presentar (solo EN FORMACIÓN) + modo sin conexión ==== */
 (function () {
   var ARCHIVO_DATOS = "rec-d726dcde.json";
   var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
   var CLAVE_CACHE = "sena_aprendices_v1";
-  var lista = null, indice = {}, retirados = {}, sinConexion = false;
+  var lista = null, indice = {}, retirados = {};
 
-  function norm(s) {
+  function normalizar(s) {
     return String(s || "").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
       .replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
   }
 
-  var LEV = function (a, b) {
-  if (a === b) return 0;
-  if (!a.length) return b.length;
-  if (!b.length) return a.length;
-  var prev = [], cur = [], i, j;
-  for (j = 0; j <= b.length; j++) prev[j] = j;
-  for (i = 1; i <= a.length; i++) {
-    cur[0] = i;
-    for (j = 1; j <= b.length; j++) {
-      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
-                        prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+  /* Distancia de edición (para tolerar nombres truncados o mal escritos) */
+  function LEV(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    var prev = [], cur = [], i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      cur[0] = i;
+      for (j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
+                          prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+      }
+      prev = cur.slice();
     }
-    prev = cur.slice();
+    return prev[b.length];
   }
-  return prev[b.length];
-};
 
-/* Una palabra coincide si son iguales, si una es prefijo de la otra (>=4 letras)
-   o si difieren por 1-2 letras (errores de digitación / nombres truncados). */
-function palabraCoincide(a, b) {
-  if (a === b) return true;
-  if (a.length >= 4 && b.length >= 4 && (a.indexOf(b) === 0 || b.indexOf(a) === 0)) return true;
-  var d = LEV(a, b), m = Math.min(a.length, b.length);
-  if (d <= 1 && m >= 4) return true;
-  if (d <= 2 && m >= 6) return true;
-  return false;
-}
+  /* Una palabra coincide si son iguales, si una es prefijo de la otra (>=4 letras)
+     o si difieren por 1-2 letras (nombres truncados o errores de digitación). */
+  function palabraCoincide(a, b) {
+    if (a === b) return true;
+    if (a.length >= 4 && b.length >= 4 && (a.indexOf(b) === 0 || b.indexOf(a) === 0)) return true;
+    var d = LEV(a, b), m = Math.min(a.length, b.length);
+    if (d <= 1 && m >= 4) return true;
+    if (d <= 2 && m >= 6) return true;
+    return false;
+  }
 
-/* Compara dos nombres por conjunto de palabras: el orden no importa
-   (la lista trae "NEIRA HERNANDEZ MIGUEL ANDRES" y el aprendiz escribe
-   "MIGUEL ANDRES NEIRA HERNANDEZ"). Exige 2 palabras coincidentes. */
-function coincide(escrito, enLista) {
-  var a = normalizar(escrito).split(" ").filter(Boolean);
-  var b = normalizar(enLista).split(" ").filter(Boolean);
-  if (!a.length || !b.length) return false;
-  var corto = a.length <= b.length ? a : b;
-  var largo = a.length <= b.length ? b : a;
-  var usados = {}, c = 0;
-  corto.forEach(function (p) {
-    for (var i = 0; i < largo.length; i++) {
-      if (usados[i]) continue;
-      if (palabraCoincide(p, largo[i])) { usados[i] = 1; c++; return; }
+  /* Compara nombres por conjunto de palabras: el orden no importa
+     (la lista trae "NEIRA HERNANDEZ MIGUEL ANDRES" y el aprendiz escribe
+     "MIGUEL ANDRES NEIRA HERNANDEZ"). Exige 2 palabras coincidentes. */
+  function coincide(escrito, enLista) {
+    var a = normalizar(escrito).split(" ").filter(Boolean);
+    var b = normalizar(enLista).split(" ").filter(Boolean);
+    if (!a.length || !b.length) return false;
+    var corto = a.length <= b.length ? a : b;
+    var largo = a.length <= b.length ? b : a;
+    var usados = {}, c = 0;
+    corto.forEach(function (p) {
+      for (var i = 0; i < largo.length; i++) {
+        if (usados[i]) continue;
+        if (palabraCoincide(p, largo[i])) { usados[i] = 1; c++; return; }
+      }
+    });
+    return c >= Math.min(2, corto.length);
+  }
+
+  /* --- descifrado ligero (XOR con flujo xorshift32) --- */
+  function fnv1a(txt) {
+    var h = 0x811c9dc5;
+    for (var i = 0; i < txt.length; i++) { h ^= txt.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return h >>> 0;
+  }
+  function descifrar(paquete) {
+    if (!paquete || !paquete.d) return null;
+    var st = (paquete.s ^ fnv1a(CLAVE_DATOS)) >>> 0;
+    var bin = atob(paquete.d);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) {
+      st ^= (st << 13); st >>>= 0;
+      st ^= (st >>> 17); st >>>= 0;
+      st ^= (st << 5);  st >>>= 0;
+      bytes[i] = bin.charCodeAt(i) ^ (st & 0xFF);
     }
-  });
-  return c >= Math.min(2, corto.length);
+    return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+  }
+
+  function indexar(ap) {
+    indice = {}; retirados = {};
+    ap.forEach(function (a) {
+      (indice[a.f] = indice[a.f] || []).push(a);
+      if (!a.e) (retirados[a.f] = retirados[a.f] || []).push(a.n);
+    });
+  }
+
+  function activarModoSinConexion() {
+    document.getElementById('aviso-sin-conexion').style.display = 'block';
+  }
+
+  function cargar() {
+    try {
+      var g = localStorage.getItem(CLAVE_CACHE);
+      if (g) {
+        var o = JSON.parse(g);
+        if (o && o.datos) { lista = o.datos; indexar(lista.ap || []); return; }   // caché: sin red
+      }
+    } catch (e) {}
+    var aviso = setTimeout(function () { if (!lista) activarModoSinConexion(); }, 4000);
+    fetch(ARCHIVO_DATOS + "?t=" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (paquete) {
+        clearTimeout(aviso);
+        var d = descifrar(paquete);
+        if (d) {
+          lista = d; indexar(d.ap || []);
+          try { localStorage.setItem(CLAVE_CACHE, JSON.stringify({ cuando: Date.now(), datos: d })); } catch (e) {}
+        } else {
+          activarModoSinConexion();
+        }
+      })
+      .catch(function () { clearTimeout(aviso); activarModoSinConexion(); });
+  }
+
+  function mostrar(titulo, texto, detalle) {
+    document.getElementById('vv-titulo').textContent = titulo;
+    document.getElementById('vv-texto').innerHTML = texto;
+    document.getElementById('vv-tiempo').textContent = detalle || '';
+    document.getElementById('velo-validacion').style.display = 'flex';
+  }
+
+  /* intercepta el envío del formulario de inicio (fase de captura) */
+  document.addEventListener('submit', function (ev) {
+    var f = document.getElementById('ficha');
+    if (!f) return;
+    var nombre = (document.getElementById('nombre') || {}).value || '';
+    var ficha = (f.value || '').trim();
+    if (!ficha) return;                        // la propia evaluación avisa si falta
+
+    var t0 = performance.now();
+    var ms = function () { return 'Validación resuelta en ' + (performance.now() - t0).toFixed(2) + ' ms (sin consultar a Google)'; };
+
+    /* SIN LISTA = sin conexión y sin caché: se permite presentar, pero se avisa */
+    if (!lista) { activarModoSinConexion(); return; }
+
+    var deLaFicha = indice[ficha] || [];
+    if (!deLaFicha.length) {
+      ev.preventDefault(); ev.stopPropagation();
+      mostrar('No puede presentar la evaluación',
+              'La ficha <b>' + ficha + '</b> no está registrada en la tabla de aprendices. Verifique el número o consulte con el instructor.', ms());
+      return;
+    }
+    if (!deLaFicha.filter(function (a) { return a.e === 1; }).length) {
+      ev.preventDefault(); ev.stopPropagation();
+      mostrar('No puede presentar la evaluación',
+              'La ficha <b>' + ficha + '</b> no tiene aprendices en formación.', ms());
+      return;
+    }
+    var retiradosFicha = retirados[ficha] || [];
+    if (nombre && retiradosFicha.some(function (r) { return coincide(nombre, r); })) {
+      ev.preventDefault(); ev.stopPropagation();
+      mostrar('No puede presentar la evaluación',
+              'Según la tabla de aprendices, <b>' + nombre + '</b> está en <b>RETIRO VOLUNTARIO</b>. Su estado no permite presentar evaluaciones.', ms());
+      return;
+    }
+    console.log('Validación OK en ' + (performance.now() - t0).toFixed(2) + ' ms');
+  }, true);
+
+  cargar();
 })();
 </script>
 </body>
