@@ -266,12 +266,20 @@ function coincide(a, b) {
   return c >= Math.min(2, corto.length);
 }
 
-function intentosDe(nombre, ficha, codigo) {
+/* El registro puede traer el documento entre paréntesis: "ANA PEREZ (1095086116)" */
+function documentoDe(texto) {
+  var m = String(texto || "").match(/\((\d{6,})\)/);
+  return m ? m[1] : "";
+}
+
+function intentosDe(nombre, ficha, codigo, documento) {
   return INTENTOS.filter(function (d) {
     if (String(d.codigo) !== codigo) return false;
     if (String(d.ficha) !== String(ficha)) return false;
     if (!d.nombre) return true;
-    return coincide(d.nombre, nombre);
+    var docReg = documentoDe(d.nombre);
+    if (documento && docReg) return docReg === String(documento);   // cruce exacto
+    return coincide(d.nombre.replace(/\(\d{6,}\)/, ""), nombre);   // respaldo por nombre
   });
 }
 
@@ -326,7 +334,7 @@ function pintar() {
   lista.forEach(function (a) {
     var celdas = '', cumplidas = 0, pendientes = 0;
     evs.forEach(function (e) {
-      var tiros = a.activo ? intentosDe(a.nombre, a.ficha, e.codigo) : [];
+      var tiros = a.activo ? intentosDe(a.nombre, a.ficha, e.codigo, a.doc) : [];
       var est = a.activo ? estadoCelda(tiros) : { marca: '⛔', clase: 'm-nada', detalle: 'Aprendiz en RETIRO VOLUNTARIO' };
       if (a.activo) {
         if (est.marca === '✔') cumplidas++;
@@ -362,7 +370,7 @@ function exportar() {
     var fila = [a.nombre, a.ficha, a.activo ? 'EN FORMACION' : 'RETIRO VOLUNTARIO'];
     evs.forEach(function (e) {
       if (!a.activo) { fila.push('RETIRADO'); return; }
-      var est = estadoCelda(intentosDe(a.nombre, a.ficha, e.codigo));
+      var est = estadoCelda(intentosDe(a.nombre, a.ficha, e.codigo, a.doc));
       fila.push(est.marca === '✔' ? 'CUMPLIO' : (est.marca === '✘' ? 'AGOTO INTENTOS' : (est.marca === '~' ? 'EN PROCESO' : 'SIN PRESENTAR')));
     });
     filas.push(fila);

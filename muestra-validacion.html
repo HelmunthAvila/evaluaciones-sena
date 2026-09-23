@@ -110,7 +110,7 @@
     <p class="ayuda">Este es el contenido del archivo que se publica en la CDN. En producción serían sus <b>2.143 registros</b> (y ~1.000 más el año entrante) — el mecanismo no cambia.</p>
     <div style="max-height:340px;overflow:auto;border:1px solid var(--linea);border-radius:10px">
       <table>
-        <thead><tr><th>Ficha</th><th>Aprendiz</th><th>Estado</th></tr></thead>
+        <thead><tr><th>Ficha</th><th>Aprendiz</th><th>Documento</th><th>Estado</th></tr></thead>
         <tbody id="cuerpo"></tbody>
       </table>
     </div>
@@ -282,7 +282,8 @@ function recargarLista() { localStorage.removeItem(CLAVE_CACHE); cargarLista(tru
 function pintarTabla() {
   var html = "";
   LISTA.ap.forEach(function (a) {
-    html += '<tr><td class="cron">' + a.f + '</td><td>' + a.n + '</td><td>' +
+    html += '<tr><td class="cron">' + a.f + '</td><td>' + a.n + '</td>' +
+      '<td class="cron">' + (a.doc || '—') + '</td><td>' +
       (a.e ? '<span class="pill ok">EN FORMACIÓN</span>' : '<span class="pill no">RETIRO VOLUNTARIO</span>') +
       '</td></tr>';
   });
@@ -328,8 +329,12 @@ function validar() {
       '<div class="cron" style="margin-top:8px">Consulta resuelta en ' + ms + ' ms (sin internet)</div>';
     return;
   }
+  var elegido = null;
+  if (nombre) { elegido = formacion.filter(function (a) { return coincide(nombre, a.n); })[0] || null; }
   caja.className = 'resultado ok';
   caja.innerHTML = '<b>✅ Puede presentar la evaluación</b>' +
+    (elegido ? 'Aprendiz: <b style="display:inline">' + elegido.n + '</b> · documento <b style="display:inline">' +
+               (elegido.doc || 'no registrado') + '</b>.<br>' : '') +
     'Ficha <b style="display:inline">' + ficha + '</b> — ' + formacion.length + ' aprendiz(ces) en formación.' +
     (nombre ? ' Aprendiz: ' + nombre + '.' : '') +
     '<div class="cron" style="margin-top:8px">Consulta resuelta en ' + ms + ' ms (sin internet, ' +

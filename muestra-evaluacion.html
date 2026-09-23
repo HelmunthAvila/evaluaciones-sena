@@ -317,12 +317,48 @@ function evRegistrar(extra) {
 })();
 </script>
 
-<!-- ==== MUESTRA: validación de aprendiz (datos cifrados) + modo sin conexión ==== -->
-<div id="aviso-sin-conexion" style="display:none;position:fixed;left:14px;bottom:14px;z-index:9998;max-width:360px;
-     background:#fff8e6;border:1px solid #f0d692;border-left:5px solid #d97706;border-radius:10px;padding:12px 15px;
-     font-family:'Segoe UI',Roboto,sans-serif;font-size:13px;color:#8a5a00;box-shadow:0 8px 24px rgba(0,0,0,.18);line-height:1.55">
+<!-- ==== MUESTRA: equipo de hasta 3 integrantes + validación contra la lista cifrada ==== -->
+<style>
+  #panel-equipo { max-width: 620px; margin: 0 auto 18px; background:#f8fafc; border:1px solid #dfe4ea;
+                  border-left:5px solid #39A900; border-radius:12px; padding:16px 18px; font-family:'Segoe UI',Roboto,sans-serif }
+  #panel-equipo h3 { margin:0 0 4px; font-size:15px; color:#00324D; font-weight:800 }
+  #panel-equipo p.ay { margin:0 0 14px; font-size:12.5px; color:#6b7280; line-height:1.5 }
+  #panel-equipo label { display:block; font-size:11px; font-weight:700; text-transform:uppercase;
+                        letter-spacing:.5px; color:#6b7280; margin:10px 0 4px }
+  #panel-equipo input, #panel-equipo select { width:100%; font-family:inherit; font-size:14px; padding:9px 11px;
+                        border:1px solid #dfe4ea; border-radius:8px; background:#fff }
+  #panel-equipo button { font-family:inherit; font-size:13px; font-weight:700; border:0; border-radius:8px;
+                        padding:9px 14px; cursor:pointer; background:#39A900; color:#fff }
+  #panel-equipo button.sec { background:#00324D }
+  #panel-equipo button:disabled { background:#cbd5e1; cursor:not-allowed }
+  .chip { display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #dfe4ea; border-radius:8px;
+          padding:8px 10px; margin-top:8px; font-size:13px }
+  .chip b { color:#00324D }
+  .chip .doc { color:#6b7280; font-family:ui-monospace,Consolas,monospace; font-size:12px }
+  .chip button { background:#fee2e2; color:#991b1b; padding:4px 9px; font-size:12px; margin-left:auto }
+  #equipo-msg { font-size:12.5px; margin:10px 0 0; line-height:1.5 }
+  #aviso-sin-conexion { display:none; position:fixed; left:14px; bottom:14px; z-index:9998; max-width:360px;
+     background:#fff8e6; border:1px solid #f0d692; border-left:5px solid #d97706; border-radius:10px; padding:12px 15px;
+     font-family:'Segoe UI',Roboto,sans-serif; font-size:13px; color:#8a5a00; box-shadow:0 8px 24px rgba(0,0,0,.18); line-height:1.55 }
+</style>
+
+<div id="panel-equipo">
+  <h3>Equipo de trabajo (máximo 3 aprendices)</h3>
+  <p class="ay">Escriba la <b>ficha</b> y seleccione los nombres del equipo. Los datos se toman de la lista oficial:
+     así nadie escribe mal su documento y solo aparecen los aprendices <b>en formación</b>.</p>
+
+  <label for="f-ficha">Ficha del grupo</label>
+  <input id="f-ficha" inputmode="numeric" placeholder="Ej. 2940347" autocomplete="off">
+
+  <label for="sel-integrantes">Agregar integrante</label>
+  <select id="sel-integrantes" disabled><option value="">— primero escriba la ficha —</option></select>
+  <div id="chips"></div>
+  <p id="equipo-msg" style="color:#6b7280"></p>
+</div>
+
+<div id="aviso-sin-conexion">
   <b style="display:block;margin-bottom:4px">⚠️ Sin conexión</b>
-  Puede presentar la evaluación normalmente, pero <b>el resultado no se guardará</b> en el registro del instructor.
+  Puede presentar la evaluación escribiendo su nombre y ficha, pero <b>el resultado no se guardará</b> en el registro del instructor.
 </div>
 
 <div id="velo-validacion" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.72);
@@ -337,20 +373,22 @@ function evRegistrar(extra) {
             style="background:#00324D;color:#fff;border:0;border-radius:9px;padding:11px 18px;font-weight:700;cursor:pointer">Entendido</button>
   </div>
 </div>
+
 <script>
-/* ==== MUESTRA: quién puede presentar (solo EN FORMACIÓN) + modo sin conexión ==== */
+/* ==== MUESTRA: equipo de hasta 3 integrantes, validado con la lista cifrada ==== */
 (function () {
   var ARCHIVO_DATOS = "rec-d726dcde.json";
   var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
   var CLAVE_CACHE = "sena_aprendices_v1";
-  var lista = null, indice = {}, retirados = {};
+  var MAX_INTEGRANTES = 3;
+
+  var lista = null, indice = {}, retirados = {}, equipo = [], sinConexion = false;
+  var dejarPasar = false;         // evita que la segunda pasada del submit vuelva a interceptarse
 
   function normalizar(s) {
     return String(s || "").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
       .replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
   }
-
-  /* Distancia de edición (para tolerar nombres truncados o mal escritos) */
   function LEV(a, b) {
     if (a === b) return 0;
     if (!a.length) return b.length;
@@ -367,9 +405,6 @@ function evRegistrar(extra) {
     }
     return prev[b.length];
   }
-
-  /* Una palabra coincide si son iguales, si una es prefijo de la otra (>=4 letras)
-     o si difieren por 1-2 letras (nombres truncados o errores de digitación). */
   function palabraCoincide(a, b) {
     if (a === b) return true;
     if (a.length >= 4 && b.length >= 4 && (a.indexOf(b) === 0 || b.indexOf(a) === 0)) return true;
@@ -378,10 +413,6 @@ function evRegistrar(extra) {
     if (d <= 2 && m >= 6) return true;
     return false;
   }
-
-  /* Compara nombres por conjunto de palabras: el orden no importa
-     (la lista trae "NEIRA HERNANDEZ MIGUEL ANDRES" y el aprendiz escribe
-     "MIGUEL ANDRES NEIRA HERNANDEZ"). Exige 2 palabras coincidentes. */
   function coincide(escrito, enLista) {
     var a = normalizar(escrito).split(" ").filter(Boolean);
     var b = normalizar(enLista).split(" ").filter(Boolean);
@@ -398,7 +429,7 @@ function evRegistrar(extra) {
     return c >= Math.min(2, corto.length);
   }
 
-  /* --- descifrado ligero (XOR con flujo xorshift32) --- */
+  /* --- descifrado ligero --- */
   function fnv1a(txt) {
     var h = 0x811c9dc5;
     for (var i = 0; i < txt.length; i++) { h ^= txt.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
@@ -427,16 +458,20 @@ function evRegistrar(extra) {
   }
 
   function activarModoSinConexion() {
+    sinConexion = true;
     document.getElementById('aviso-sin-conexion').style.display = 'block';
+    document.getElementById('sel-integrantes').disabled = true;
+    document.getElementById('equipo-msg').innerHTML =
+      'Sin conexión con la lista oficial: escriba su <b>nombre completo</b> y su <b>ficha</b> en el formulario de abajo.';
+    var n = document.getElementById('nombre'), f = document.getElementById('ficha');
+    if (n && n.parentNode) n.parentNode.style.display = '';        // vuelven los campos libres
+    if (f && f.parentNode) f.parentNode.style.display = '';
   }
 
   function cargar() {
     try {
       var g = localStorage.getItem(CLAVE_CACHE);
-      if (g) {
-        var o = JSON.parse(g);
-        if (o && o.datos) { lista = o.datos; indexar(lista.ap || []); return; }   // caché: sin red
-      }
+      if (g) { var o = JSON.parse(g); if (o && o.datos) { lista = o.datos; indexar(lista.ap || []); return; } }
     } catch (e) {}
     var aviso = setTimeout(function () { if (!lista) activarModoSinConexion(); }, 4000);
     fetch(ARCHIVO_DATOS + "?t=" + Date.now())
@@ -447,11 +482,78 @@ function evRegistrar(extra) {
         if (d) {
           lista = d; indexar(d.ap || []);
           try { localStorage.setItem(CLAVE_CACHE, JSON.stringify({ cuando: Date.now(), datos: d })); } catch (e) {}
-        } else {
-          activarModoSinConexion();
-        }
+          pintarDisponibles();
+        } else { activarModoSinConexion(); }
       })
       .catch(function () { clearTimeout(aviso); activarModoSinConexion(); });
+  }
+
+  function pintarDisponibles() {
+    var ficha = document.getElementById('f-ficha').value.trim().replace(/\.xls$/i, '');
+    var sel = document.getElementById('sel-integrantes');
+    var msg = document.getElementById('equipo-msg');
+    if (!ficha) { sel.disabled = true; sel.innerHTML = '<option value="">— primero escriba la ficha —</option>'; msg.textContent = ''; return; }
+    if (!lista) { msg.textContent = 'Cargando la lista de aprendices…'; return; }
+
+    var deLaFicha = indice[ficha];
+    if (!deLaFicha) {
+      sel.disabled = true; sel.innerHTML = '<option value="">— ficha no registrada —</option>';
+      msg.innerHTML = '<span style="color:#991b1b">La ficha ' + ficha + ' no está registrada en la tabla de aprendices.</span>';
+      return;
+    }
+    var enFormacion = deLaFicha.filter(function (a) { return a.e === 1; });
+    if (!enFormacion.length) {
+      sel.disabled = true; sel.innerHTML = '<option value="">— sin aprendices en formación —</option>';
+      msg.innerHTML = '<span style="color:#991b1b">La ficha ' + ficha + ' no tiene aprendices en formación.</span>';
+      return;
+    }
+    var opciones = '<option value="">— seleccione el aprendiz —</option>';
+    enFormacion.forEach(function (a, i) {
+      var yaEsta = equipo.some(function (e) { return e.doc ? e.doc === a.doc : e.n === a.n; });
+      opciones += '<option value="' + i + '"' + (yaEsta ? ' disabled' : '') + '>' + a.n +
+                  (yaEsta ? ' (ya agregado)' : '') + '</option>';
+    });
+    sel.innerHTML = opciones;
+    sel.disabled = false;
+    msg.innerHTML = '<span style="color:#166534">' + enFormacion.length + ' aprendiz(ces) en formación en la ficha ' +
+                    ficha + '. Puede agregar hasta ' + MAX_INTEGRANTES + '.</span>';
+  }
+
+  function pintarChips() {
+    var cont = document.getElementById('chips');
+    var html = '';
+    equipo.forEach(function (e, i) {
+      html += '<div class="chip"><b>' + e.n + '</b>' +
+              (e.doc ? '<span class="doc">CC ' + e.doc + '</span>' : '') +
+              '<button data-i="' + i + '" type="button">Quitar</button></div>';
+    });
+    cont.innerHTML = html;
+    Array.prototype.forEach.call(cont.querySelectorAll('button'), function (b) {
+      b.onclick = function () {
+        equipo.splice(parseInt(b.getAttribute('data-i'), 10), 1);
+        pintarChips(); pintarDisponibles();
+      };
+    });
+  }
+
+  function agregarSeleccionado() {
+    var sel = document.getElementById('sel-integrantes');
+    if (!sel.value) return;
+    var ficha = document.getElementById('f-ficha').value.trim().replace(/\.xls$/i, '');
+    var enFormacion = (indice[ficha] || []).filter(function (a) { return a.e === 1; });
+    var a = enFormacion[parseInt(sel.value, 10)];
+    if (!a) return;
+    if (equipo.length >= MAX_INTEGRANTES) return;
+    equipo.push(a);
+    sel.value = '';
+    pintarChips(); pintarDisponibles();
+  }
+
+  /* --- oculta los campos libres mientras la lista esté disponible --- */
+  function camposLibres(ocultar) {
+    var n = document.getElementById('nombre'), f = document.getElementById('ficha');
+    if (n && n.parentNode) n.parentNode.style.display = ocultar ? 'none' : '';
+    if (f && f.parentNode) f.parentNode.style.display = ocultar ? 'none' : '';
   }
 
   function mostrar(titulo, texto, detalle) {
@@ -461,41 +563,62 @@ function evRegistrar(extra) {
     document.getElementById('velo-validacion').style.display = 'flex';
   }
 
-  /* intercepta el envío del formulario de inicio (fase de captura) */
-  document.addEventListener('submit', function (ev) {
-    var f = document.getElementById('ficha');
-    if (!f) return;
-    var nombre = (document.getElementById('nombre') || {}).value || '';
-    var ficha = (f.value || '').trim();
-    if (!ficha) return;                        // la propia evaluación avisa si falta
+  window.addEventListener('load', function () {
+    var f = document.getElementById('f-ficha'), sel = document.getElementById('sel-integrantes');
+    if (f) f.addEventListener('input', pintarDisponibles);
+    if (sel) sel.addEventListener('change', agregarSeleccionado);
+    camposLibres(true);
+    if (lista) pintarDisponibles();
+  });
 
+  /* --- intercepta el arranque de la evaluación --- */
+  document.addEventListener('submit', function (ev) {
+    if (dejarPasar) return;                  // ya validado: deja que la evaluación arranque
+    var ficha = (document.getElementById('f-ficha') || {}).value ? document.getElementById('f-ficha').value.trim() : '';
+    var nombreOriginal = document.getElementById('nombre');
     var t0 = performance.now();
     var ms = function () { return 'Validación resuelta en ' + (performance.now() - t0).toFixed(2) + ' ms (sin consultar a Google)'; };
 
-    /* SIN LISTA = sin conexión y sin caché: se permite presentar, pero se avisa */
-    if (!lista) { activarModoSinConexion(); return; }
+    /* Sin lista (sin conexión y sin caché): se permite presentar escribiendo los datos */
+    if (!lista || sinConexion) { activarModoSinConexion(); return; }
 
-    var deLaFicha = indice[ficha] || [];
-    if (!deLaFicha.length) {
-      ev.preventDefault(); ev.stopPropagation();
+    ev.preventDefault(); ev.stopPropagation();
+
+    if (!ficha) {
+      mostrar('Falta la ficha', 'Escriba el número de ficha del grupo para poder identificar a los integrantes.', ms());
+      return;
+    }
+    if (!indice[ficha]) {
       mostrar('No puede presentar la evaluación',
               'La ficha <b>' + ficha + '</b> no está registrada en la tabla de aprendices. Verifique el número o consulte con el instructor.', ms());
       return;
     }
-    if (!deLaFicha.filter(function (a) { return a.e === 1; }).length) {
-      ev.preventDefault(); ev.stopPropagation();
-      mostrar('No puede presentar la evaluación',
-              'La ficha <b>' + ficha + '</b> no tiene aprendices en formación.', ms());
+    if (!indice[ficha].filter(function (a) { return a.e === 1; }).length) {
+      mostrar('No puede presentar la evaluación', 'La ficha <b>' + ficha + '</b> no tiene aprendices en formación.', ms());
       return;
     }
-    var retiradosFicha = retirados[ficha] || [];
-    if (nombre && retiradosFicha.some(function (r) { return coincide(nombre, r); })) {
-      ev.preventDefault(); ev.stopPropagation();
-      mostrar('No puede presentar la evaluación',
-              'Según la tabla de aprendices, <b>' + nombre + '</b> está en <b>RETIRO VOLUNTARIO</b>. Su estado no permite presentar evaluaciones.', ms());
+    if (!equipo.length) {
+      mostrar('Falta agregar integrantes',
+              'Seleccione al menos <b>un aprendiz</b> del equipo (hasta ' + MAX_INTEGRANTES + '). Así se registra con nombre y documento correctos.', ms());
       return;
     }
-    console.log('Validación OK en ' + (performance.now() - t0).toFixed(2) + ' ms');
+
+    /* los campos del formulario original se llenan solos y se continúa */
+    document.getElementById('ficha').value = ficha;
+    nombreOriginal.value = equipo.map(function (e) {
+      return e.n + (e.doc ? ' (' + e.doc + ')' : '');
+    }).join(' / ');
+
+    console.log('Equipo validado en ' + (performance.now() - t0).toFixed(2) + ' ms: ' + nombreOriginal.value);
+
+    /* reenvía el formulario: la bandera deja que la evaluación arranque de verdad */
+    dejarPasar = true;
+    var form = document.getElementById('form-inicio');
+    if (form) {
+      if (typeof form.requestSubmit === 'function') form.requestSubmit();
+      else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    }
+    setTimeout(function () { dejarPasar = false; }, 1500);
   }, true);
 
   cargar();
