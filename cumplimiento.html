@@ -104,7 +104,43 @@
 </main>
 
 <script>
-var URL_LISTA = "aprendices.json";
+
+/* ==== Datos cifrados: descifrado ligero (XOR con flujo xorshift32) ==== */
+var ARCHIVO_DATOS = "rec-d726dcde.json";
+var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
+
+function fnv1a(txt) {
+  var h = 0x811c9dc5;
+  for (var i = 0; i < txt.length; i++) {
+    h ^= txt.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h >>> 0;
+}
+
+function descifrar(paquete) {
+  if (!paquete || !paquete.d) return null;
+  var st = (paquete.s ^ fnv1a(CLAVE_DATOS)) >>> 0;
+  var bin = atob(paquete.d);
+  var bytes = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) {
+    st ^= (st << 13); st >>>= 0;
+    st ^= (st >>> 17); st >>>= 0;
+    st ^= (st << 5);  st >>>= 0;
+    bytes[i] = bin.charCodeAt(i) ^ (st & 0xFF);
+  }
+  return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+}
+
+/* Descarga el archivo cifrado y devuelve los datos (o null si no hay conexión) */
+function traerAprendices(callback) {
+  fetch(ARCHIVO_DATOS + "?t=" + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (paquete) { callback(descifrar(paquete)); })
+    .catch(function () { callback(null); });
+}
+
+var URL_LISTA = ARCHIVO_DATOS;
 var URL_WEBAPP = "https://script.google.com/macros/s/AKfycbzqb9uRcPxuquMEPOb-HsU3PS1iKRXmRmu6Hg10pGqvD0e-Gis7BpKIJWU0r0iAf2s/exec";
 var CLAVE_REPORTE = "sena-prg-2026";
 var MINIMO = 70;
@@ -133,15 +169,13 @@ function cargar() {
 
   // 1) lista de aprendices (rápida, desde la CDN)
   var tl = performance.now();
-  fetch(URL_LISTA + "?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
+  traerAprendices(function (d) {
+    if (!d) { estado.className = 'estado error'; estado.textContent = 'No se pudo descargar la lista de aprendices.'; return; }
     LISTA = d;
     document.getElementById('estado').textContent =
       'Lista de aprendices cargada en ' + Math.round(performance.now() - tl) + ' ms · esperando los intentos…';
     recibidos++;
     listo();
-  }).catch(function () {
-    estado.className = 'estado error';
-    estado.textContent = 'No se pudo descargar aprendices.json (revise que esté publicado).';
   });
 
   // 2) intentos registrados (Apps Script, lento la primera vez)

@@ -119,7 +119,7 @@
   <section class="panel">
     <h2>Detalle técnico</h2>
     <ul>
-      <li><b>Archivo:</b> <code>aprendices.json</code> en la CDN (Vercel) — se regenera automáticamente cada vez que cambie su tabla de aprendices.</li>
+      <li><b>Archivo:</b> <code>rec-d726dcde.json</code> (con <b>nombre no adivinable</b> y <b>contenido cifrado</b>: quien lo descargue no lee nombres ni fichas) (Vercel) — se regenera automáticamente cada vez que cambie su tabla de aprendices.</li>
       <li><b>Caché:</b> la lista se guarda en el equipo del aprendiz con caducidad. Con actualizaciones cada 3 meses, la caducidad puede ser de <b>semanas</b> y la descarga ocurre una vez por equipo.</li>
       <li><b>Sin consultas a Google:</b> el Apps Script solo interviene al <b>registrar</b> el intento (una vez, al final), no en la validación.</li>
       <li><b>Privacidad:</b> el archivo lleva solo <b>ficha, nombre y estado</b>. Nunca documento, celular ni correo.</li>
@@ -132,7 +132,43 @@
 </main>
 
 <script>
-var URL_LISTA = "aprendices.json";
+
+/* ==== Datos cifrados: descifrado ligero (XOR con flujo xorshift32) ==== */
+var ARCHIVO_DATOS = "rec-d726dcde.json";
+var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
+
+function fnv1a(txt) {
+  var h = 0x811c9dc5;
+  for (var i = 0; i < txt.length; i++) {
+    h ^= txt.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h >>> 0;
+}
+
+function descifrar(paquete) {
+  if (!paquete || !paquete.d) return null;
+  var st = (paquete.s ^ fnv1a(CLAVE_DATOS)) >>> 0;
+  var bin = atob(paquete.d);
+  var bytes = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) {
+    st ^= (st << 13); st >>>= 0;
+    st ^= (st >>> 17); st >>>= 0;
+    st ^= (st << 5);  st >>>= 0;
+    bytes[i] = bin.charCodeAt(i) ^ (st & 0xFF);
+  }
+  return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+}
+
+/* Descarga el archivo cifrado y devuelve los datos (o null si no hay conexión) */
+function traerAprendices(callback) {
+  fetch(ARCHIVO_DATOS + "?t=" + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (paquete) { callback(descifrar(paquete)); })
+    .catch(function () { callback(null); });
+}
+
+var URL_LISTA = ARCHIVO_DATOS;
 var CLAVE_CACHE = "sena_aprendices_v1";
 var VIGENCIA_MS = 1000 * 60 * 60 * 24 * 30;   // 30 días (la lista cambia cada 3 meses)
 var LISTA = null, INDICE = null, INDICE_RETIRADOS = null;
@@ -194,18 +230,17 @@ function cargarLista(ignorarCache) {
       }
     } catch (e) {}
   }
-  fetch(URL_LISTA + "?t=" + Date.now())
-    .then(function (r) { return r.json(); })
-    .then(function (d) {
+  traerAprendices(function (d) {
       var ms = Math.round(performance.now() - t0);
-      usarLista(d, "descarga desde la CDN", ms);
+      if (!d) {
+        document.getElementById('k-desc').textContent = "sin conexión";
+        document.getElementById('k-desc-nota').textContent = "no se pudo descargar la lista";
+        return;
+      }
+      usarLista(d, "descarga + descifrado desde la CDN", ms);
       document.getElementById('k-cache').textContent = "0 ms";
       try { localStorage.setItem(CLAVE_CACHE, JSON.stringify({ cuando: Date.now(), datos: d })); } catch (e) {}
-    })
-    .catch(function () {
-      document.getElementById('k-desc').textContent = "error";
-      document.getElementById('k-desc-nota').textContent = "no se pudo descargar la lista";
-    });
+  });
 }
 
 function recargarLista() { localStorage.removeItem(CLAVE_CACHE); cargarLista(true); }

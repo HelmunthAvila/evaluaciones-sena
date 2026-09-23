@@ -317,7 +317,14 @@ function evRegistrar(extra) {
 })();
 </script>
 
-<!-- ==== MUESTRA: validación de aprendiz contra la lista de la CDN ==== -->
+<!-- ==== MUESTRA: validación de aprendiz (datos cifrados) + modo sin conexión ==== -->
+<div id="aviso-sin-conexion" style="display:none;position:fixed;left:14px;bottom:14px;z-index:9998;max-width:360px;
+     background:#fff8e6;border:1px solid #f0d692;border-left:5px solid #d97706;border-radius:10px;padding:12px 15px;
+     font-family:'Segoe UI',Roboto,sans-serif;font-size:13px;color:#8a5a00;box-shadow:0 8px 24px rgba(0,0,0,.18);line-height:1.55">
+  <b style="display:block;margin-bottom:4px">⚠️ Sin conexión</b>
+  Puede presentar la evaluación normalmente, pero <b>el resultado no se guardará</b> en el registro del instructor.
+</div>
+
 <div id="velo-validacion" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.72);
      backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:18px">
   <div style="background:#fff;border-radius:16px;max-width:520px;width:100%;padding:26px 28px;box-shadow:0 20px 60px rgba(0,0,0,.45)">
@@ -331,17 +338,21 @@ function evRegistrar(extra) {
   </div>
 </div>
 <script>
-/* ==== MUESTRA: quién puede presentar (solo si está EN FORMACIÓN) ==== */
+/* ==== MUESTRA: quién puede presentar (solo EN FORMACIÓN) y modo sin conexión ==== */
 (function () {
-  var URL_LISTA = "aprendices.json";
-  var CLAVE = "sena_aprendices_v1";
-  var lista = null, indice = {}, retirados = {};
+  var ARCHIVO_DATOS = "rec-d726dcde.json";
+  var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
+  var CLAVE_CACHE = "sena_aprendices_v1";
+  var lista = null, indice = {}, retirados = {}, sinConexion = false;
 
   function norm(s) {
     return String(s || "").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
       .replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
   }
-  /* Compara nombres por conjunto de palabras (el orden no importa) */
+
+  /* Compara nombres por CONJUNTO de palabras: el orden no importa
+     (la lista trae "NEIRA HERNANDEZ MIGUEL ANDRES" y el aprendiz escribe
+     "MIGUEL ANDRES NEIRA HERNANDEZ"). Exige 2 palabras coincidentes. */
   function coincide(escrito, enLista) {
     var a = norm(escrito).split(" ").filter(Boolean);
     var b = norm(enLista).split(" ").filter(Boolean);
@@ -351,6 +362,27 @@ function evRegistrar(extra) {
     var c = corto.filter(function (p) { return largo.indexOf(p) >= 0; }).length;
     return c >= Math.min(2, corto.length);
   }
+
+  /* --- descifrado ligero (XOR con flujo xorshift32) --- */
+  function fnv1a(txt) {
+    var h = 0x811c9dc5;
+    for (var i = 0; i < txt.length; i++) { h ^= txt.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return h >>> 0;
+  }
+  function descifrar(paquete) {
+    if (!paquete || !paquete.d) return null;
+    var st = (paquete.s ^ fnv1a(CLAVE_DATOS)) >>> 0;
+    var bin = atob(paquete.d);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) {
+      st ^= (st << 13); st >>>= 0;
+      st ^= (st >>> 17); st >>>= 0;
+      st ^= (st << 5);  st >>>= 0;
+      bytes[i] = bin.charCodeAt(i) ^ (st & 0xFF);
+    }
+    return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+  }
+
   function indexar(ap) {
     indice = {}; retirados = {};
     ap.forEach(function (a) {
@@ -358,15 +390,39 @@ function evRegistrar(extra) {
       if (!a.e) (retirados[a.f] = retirados[a.f] || []).push(a.n);
     });
   }
+
+  function usar(d) {
+    lista = d;
+    indexar(d.ap || []);
+  }
+
+  function activarModoSinConexion() {
+    sinConexion = true;
+    document.getElementById('aviso-sin-conexion').style.display = 'block';
+  }
+
   function cargar() {
     try {
-      var g = localStorage.getItem(CLAVE);
-      if (g) { var o = JSON.parse(g); if (o && o.datos) { lista = o.datos; indexar(lista.ap || []); return; } }
+      var g = localStorage.getItem(CLAVE_CACHE);
+      if (g) {
+        var o = JSON.parse(g);
+        if (o && o.datos) { usar(o.datos); return; }        // lista guardada: no hace falta red
+      }
     } catch (e) {}
-    fetch(URL_LISTA + "?t=" + Date.now()).then(function (r) { return r.json(); }).then(function (d) {
-      lista = d; indexar(d.ap || []);
-      try { localStorage.setItem(CLAVE, JSON.stringify({ cuando: Date.now(), datos: d })); } catch (e) {}
-    }).catch(function () {});
+    var aviso = setTimeout(function () { if (!lista) activarModoSinConexion(); }, 4000);
+    fetch(ARCHIVO_DATOS + "?t=" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (paquete) {
+        clearTimeout(aviso);
+        var d = descifrar(paquete);
+        if (d) {
+          usar(d);
+          try { localStorage.setItem(CLAVE_CACHE, JSON.stringify({ cuando: Date.now(), datos: d })); } catch (e) {}
+        } else {
+          activarModoSinConexion();
+        }
+      })
+      .catch(function () { clearTimeout(aviso); activarModoSinConexion(); });
   }
 
   function mostrar(titulo, texto, detalle) {
@@ -382,18 +438,17 @@ function evRegistrar(extra) {
     if (!f) return;
     var nombre = (document.getElementById('nombre') || {}).value || '';
     var ficha = (f.value || '').trim();
-    if (!ficha) return;                       // deja que la propia evaluación avise
+    if (!ficha) return;                        // la propia evaluación avisa si falta
 
     var t0 = performance.now();
-    var ms = function () { return 'Validación resuelta en ' + (performance.now() - t0).toFixed(2) + ' ms (sin internet)'; };
+    var ms = function () { return 'Validación resuelta en ' + (performance.now() - t0).toFixed(2) + ' ms (sin consultar a Google)'; };
 
-    if (!lista) {                             // todavía no llegó la lista
-      ev.preventDefault(); ev.stopPropagation();
-      mostrar('Esperando la lista de aprendices',
-              'La lista se está descargando por primera vez. Vuelva a pulsar «Comenzar evaluación» en un momento.',
-              'Se descarga una sola vez y queda guardada en este equipo.');
-      return;
+    /* SIN LISTA = sin conexión (y sin caché): se permite presentar, pero se avisa */
+    if (!lista) {
+      activarModoSinConexion();
+      return;                                  // NO se bloquea: puede presentar
     }
+
     var deLaFicha = indice[ficha] || [];
     if (!deLaFicha.length) {
       ev.preventDefault(); ev.stopPropagation();
@@ -417,13 +472,11 @@ function evRegistrar(extra) {
               ms());
       return;
     }
-    /* pasa la validación: se muestra el tiempo en consola para la demostración */
     console.log('Validación OK en ' + (performance.now() - t0).toFixed(2) + ' ms');
   }, true);
 
   cargar();
 })();
 </script>
-
 </body>
 </html>
