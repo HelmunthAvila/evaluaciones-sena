@@ -69,7 +69,7 @@
     <p class="ayuda">La lista de aprendices se publica como un <b>archivo ligero en la CDN</b> (no se consulta Google por cada aprendiz).
        La evaluación lo descarga <b>una sola vez</b>, lo guarda en el equipo y valida en memoria: por eso no hay esperas.</p>
     <div class="caja-flujo">
-      <div class="paso"><b>1) Descarga única</b><span>Al abrir la evaluación se baja <code>aprendices.json</code> (~2 KB con 35 aprendices; ~20 KB con 2.143) y se guarda en el navegador.</span></div>
+      <div class="paso"><b>1) Descarga única</b><span>Al abrir la evaluación se baja <code>rec-d726dcde.json</code> <b>cifrado</b> (~2,5 KB con 35 aprendices; ~25 KB con 2.143) y se guarda en el navegador.</span></div>
       <div class="paso"><b>2) Validación en memoria</b><span>Se busca la ficha en la lista local: respuesta en <b>milisegundos</b>, sin internet por medio.</span></div>
       <div class="paso"><b>3) Bloqueo o paso</b><span>Si la ficha no existe o el aprendiz está retirado, no arranca la evaluación y explica por qué.</span></div>
     </div>
