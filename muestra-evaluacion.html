@@ -345,7 +345,9 @@ function evRegistrar(extra) {
 <div id="panel-equipo">
   <h3>Equipo de trabajo (máximo 3 aprendices)</h3>
   <p class="ay">Escriba la <b>ficha</b> y seleccione los nombres del equipo. Los datos se toman de la lista oficial:
-     así nadie escribe mal su documento y solo aparecen los aprendices <b>en formación</b>.</p>
+     así nadie escribe mal su documento y solo aparecen los aprendices <b>en formación</b>.<br>
+     <b>Cada integrante puede presentar esta evaluación hasta 3 veces</b> y se guarda su <b>mayor nota</b>.</p>
+  <div id="equipo-reglas" style="display:none;background:#eef6ff;border:1px solid #bfdbfe;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12.5px;color:#1e40af"></div>
 
   <label for="f-ficha">Ficha del grupo</label>
   <input id="f-ficha" inputmode="numeric" placeholder="Ej. 2940347" autocomplete="off">
@@ -380,7 +382,9 @@ function evRegistrar(extra) {
   var ARCHIVO_DATOS = "rec-d726dcde.json";
   var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
   var CLAVE_CACHE = "sena_aprendices_v1";
+  var URL_WEBAPP = "https://script.google.com/macros/s/AKfycbzqb9uRcPxuquMEPOb-HsU3PS1iKRXmRmu6Hg10pGqvD0e-Gis7BpKIJWU0r0iAf2s/exec";
   var MAX_INTEGRANTES = 3;
+  var MAX_INTENTOS = 3;
 
   var lista = null, indice = {}, retirados = {}, equipo = [], sinConexion = false;
   var dejarPasar = false;         // evita que la segunda pasada del submit vuelva a interceptarse
@@ -603,22 +607,79 @@ function evRegistrar(extra) {
       return;
     }
 
-    /* los campos del formulario original se llenan solos y se continúa */
+    /* los campos del formulario original se llenan solos */
     document.getElementById('ficha').value = ficha;
     nombreOriginal.value = equipo.map(function (e) {
       return e.n + (e.doc ? ' (' + e.doc + ')' : '');
     }).join(' / ');
 
-    console.log('Equipo validado en ' + (performance.now() - t0).toFixed(2) + ' ms: ' + nombreOriginal.value);
+    /* consulta de intentos: cada integrante puede presentar máximo 3 veces */
+    var reglas = document.getElementById('equipo-reglas');
+    var docs = equipo.map(function (e) { return e.doc; }).filter(Boolean);
+    reglas.style.display = 'block';
+    reglas.innerHTML = '⏳ Verificando los intentos ya usados… (puede tardar unos segundos)';
 
-    /* reenvía el formulario: la bandera deja que la evaluación arranque de verdad */
-    dejarPasar = true;
-    var form = document.getElementById('form-inicio');
-    if (form) {
-      if (typeof form.requestSubmit === 'function') form.requestSubmit();
-      else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    function continuar() {
+      dejarPasar = true;
+      var form = document.getElementById('form-inicio');
+      if (form) {
+        if (typeof form.requestSubmit === 'function') form.requestSubmit();
+        else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+      }
+      setTimeout(function () { dejarPasar = false; }, 1500);
     }
-    setTimeout(function () { dejarPasar = false; }, 1500);
+
+    if (!docs.length) {                       // sin documento no se puede consultar: se deja pasar
+      reglas.style.display = 'none';
+      continuar();
+      return;
+    }
+
+    var codigo = (window.EV_REG && window.EV_REG.codigo) ? window.EV_REG.codigo : '';
+    var url = URL_WEBAPP + '?action=intentos&ficha=' + encodeURIComponent(ficha) +
+              '&codigo=' + encodeURIComponent(codigo) + '&docs=' + encodeURIComponent(docs.join(','));
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var corte = setTimeout(function () { if (ctrl) ctrl.abort(); }, 45000);
+
+    fetch(url, ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.text(); })
+      .then(function (txt) {
+        clearTimeout(corte);
+        var d = null;
+        try { d = JSON.parse(txt); } catch (e) { d = null; }
+        if (!d || !d.ok || !d.aprendices) {
+          // el Apps Script todavía no tiene la consulta de intentos
+          reglas.innerHTML = '⚠️ La verificación de intentos no está activa todavía (hay que actualizar el Apps Script). ' +
+                             'Por ahora cada integrante podrá presentar sin ese control.';
+          setTimeout(function () { reglas.style.display = 'none'; }, 5000);
+          continuar();
+          return;
+        }
+
+        var bloqueados = (d.aprendices || []).filter(function (a) { return a.puedePresentar === false; });
+        var detalle = (d.aprendices || []).map(function (a) {
+          var quien = (equipo.filter(function (e) { return e.doc === a.doc; })[0] || {}).n || a.doc;
+          return quien + ': intento ' + a.intentos + ' de ' + d.maxIntento +
+                 (a.mejor !== null && a.mejor !== undefined ? ' · mejor nota ' + a.mejor + '%' : '') +
+                 (a.puedePresentar ? ' · le quedan ' + a.restantes : ' · SIN intentos');
+        }).join('<br>');
+
+        reglas.innerHTML = detalle;
+
+        if (bloqueados.length) {
+          mostrar('No puede presentar la evaluación',
+                  'Estos integrantes ya usaron sus <b>' + d.maxIntento + ' intentos</b> en esta evaluación:<br><br>' +
+                  bloqueados.map(function (a) {
+                    var quien = (equipo.filter(function (e) { return e.doc === a.doc; })[0] || {}).n || a.doc;
+                    return '• <b>' + quien + '</b> — mejor nota: ' + (a.mejor === null ? 's/n' : a.mejor + '%');
+                  }).join('<br>') +
+                  '<br><br>Solo quien tenga intentos disponibles puede volver a presentarla.',
+                  ms());
+          return;                              // se queda en la pantalla de inicio
+        }
+        continuar();
+      })
+      .catch(function () { clearTimeout(corte); reglas.style.display = 'none'; continuar(); });
   }, true);
 
   cargar();
