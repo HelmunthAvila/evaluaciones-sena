@@ -1577,5 +1577,251 @@ function evRegistrar(extra) {
   actualizar();
 })();
 </script>
+<!-- SENA-VALIDA-APRENDICES:INICIO -->
+<script>
+/* ==== Validación de quién puede presentar — lista oficial cifrada (SENA) ====
+   Se apoya en la lista publicada en la CDN; si no está disponible, NO bloquea. */
+(function () {
+  var ARCHIVO_CDN = "https://evaluaciones-sena.vercel.app/rec-d726dcde.json";
+  var CLAVE_DATOS = "SENA-PRG-2026-aprendices";
+  var CACHE = "sena_aprendices_v2";           /* v2: cambios de esquema fuerzan refresco */
+  var DIAS_CACHE = 7;                        /* se refresca solo cada 7 días (la lista cambia cada 3 meses) */
+  var MAX_INTENTOS = 3;
+  var NOTA_MINIMA = 70;
+  var lista = null, indice = {}, retirados = {}, dejarPasar = false, avisado = false;
+
+  function normalizar(s) {
+    return String(s || "").toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^A-Z0-9 ]/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function LEV(a, b) {
+    if (a === b) return 0;
+    if (!a.length) return b.length;
+    if (!b.length) return a.length;
+    var prev = [], cur = [], i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      cur[0] = i;
+      for (j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1,
+                          prev[j - 1] + (a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1));
+      }
+      prev = cur.slice();
+    }
+    return prev[b.length];
+  }
+  function palabraCoincide(a, b) {
+    if (a === b) return true;
+    if (a.length >= 4 && b.length >= 4 && (a.indexOf(b) === 0 || b.indexOf(a) === 0)) return true;
+    var d = LEV(a, b), m = Math.min(a.length, b.length);
+    if (d <= 1 && m >= 4) return true;
+    if (d <= 2 && m >= 6) return true;
+    return false;
+  }
+  function coincide(escrito, enLista) {
+    var a = normalizar(escrito).split(" ").filter(Boolean);
+    var b = normalizar(enLista).split(" ").filter(Boolean);
+    if (!a.length || !b.length) return false;
+    var corto = a.length <= b.length ? a : b;
+    var largo = a.length <= b.length ? b : a;
+    var usados = {}, c = 0;
+    corto.forEach(function (p) {
+      for (var i = 0; i < largo.length; i++) {
+        if (usados[i]) continue;
+        if (palabraCoincide(p, largo[i])) { usados[i] = 1; c++; return; }
+      }
+    });
+    return c >= Math.min(2, corto.length);
+  }
+  function fnv1a(txt) {
+    var h = 0x811c9dc5;
+    for (var i = 0; i < txt.length; i++) { h ^= txt.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+    return h >>> 0;
+  }
+  function descifrar(paquete) {
+    if (!paquete || !paquete.d) return null;
+    var st = (paquete.s ^ fnv1a(CLAVE_DATOS)) >>> 0;
+    var bin = atob(paquete.d);
+    var bytes = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) {
+      st ^= (st << 13); st >>>= 0;
+      st ^= (st >>> 17); st >>>= 0;
+      st ^= (st << 5);  st >>>= 0;
+      bytes[i] = bin.charCodeAt(i) ^ (st & 0xFF);
+    }
+    return JSON.parse(new TextDecoder("utf-8").decode(bytes));
+  }
+  function indexar(ap) {
+    indice = {}; retirados = {};
+    ap.forEach(function (a) {
+      (indice[a.f] = indice[a.f] || []).push(a);
+      if (!a.e) (retirados[a.f] = retirados[a.f] || []).push(a.n);
+    });
+  }
+
+  /* ---------- interfaz mínima (aviso y bloqueo) ---------- */
+  function pintarAviso(texto, color) {
+    var el = document.getElementById('validacion-aviso');
+    if (!el) return;
+    if (!texto) { el.style.display = 'none'; return; }
+    el.style.display = 'block';
+    el.style.background = color === 'alerta' ? '#fff8e6' : '#eef6ff';
+    el.style.borderColor = color === 'alerta' ? '#f0d692' : '#bfdbfe';
+    el.style.color = color === 'alerta' ? '#8a5a00' : '#1e3a8a';
+    el.innerHTML = texto;
+  }
+  function bloquear(titulo, texto) {
+    var velo = document.getElementById('validacion-velo');
+    if (!velo) { alert(titulo + "\n\n" + texto.replace(/<[^>]+>/g, '')); return; }
+    document.getElementById('validacion-titulo').textContent = titulo;
+    document.getElementById('validacion-texto').innerHTML = texto;
+    velo.style.display = 'flex';
+  }
+  function crearInterfaz() {
+    if (document.getElementById('validacion-velo')) return;
+    var d = document.createElement('div');
+    d.innerHTML =
+      '<div id="validacion-aviso" style="display:none;position:fixed;left:14px;bottom:14px;z-index:9997;max-width:380px;' +
+      'background:#eef6ff;border:1px solid #bfdbfe;border-left:5px solid #1e3a8a;border-radius:10px;padding:11px 14px;' +
+      'font-family:\'Segoe UI\',Roboto,sans-serif;font-size:12.5px;line-height:1.55;box-shadow:0 8px 24px rgba(0,0,0,.16)"></div>' +
+      '<div id="validacion-velo" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(2,6,23,.72);' +
+      'backdrop-filter:blur(3px);align-items:center;justify-content:center;padding:18px">' +
+        '<div style="background:#fff;border-radius:16px;max-width:520px;width:100%;padding:24px 26px;box-shadow:0 20px 60px rgba(0,0,0,.45)">' +
+          '<div style="width:54px;height:54px;border-radius:14px;background:#fdecec;display:flex;align-items:center;' +
+          'justify-content:center;font-size:26px;margin-bottom:12px">&#9940;</div>' +
+          '<h2 id="validacion-titulo" style="margin:0 0 8px;font-size:18px;color:#00324D"></h2>' +
+          '<p id="validacion-texto" style="margin:0 0 16px;font-size:14px;line-height:1.6;color:#374151"></p>' +
+          '<button id="validacion-cerrar" style="background:#00324D;color:#fff;border:0;border-radius:9px;padding:10px 18px;' +
+          'font-weight:700;cursor:pointer;font-size:14px">Entendido</button>' +
+        '</div>' +
+      '</div>';
+    while (d.firstChild) document.body.appendChild(d.firstChild);
+    document.getElementById('validacion-cerrar').onclick = function () {
+      document.getElementById('validacion-velo').style.display = 'none';
+    };
+  }
+
+  /* ---------- carga de la lista ---------- */
+  function cargar() {
+    var caduco = false;
+    try {
+      var g = localStorage.getItem(CACHE);
+      if (g) {
+        var o = JSON.parse(g);
+        if (o && o.datos && o.datos.ap && o.datos.ap.length > 100) {
+          lista = o.datos; indexar(lista.ap);
+          caduco = !o.cuando || (Date.now() - o.cuando) > DIAS_CACHE * 86400000;
+          if (!caduco) return;
+        }
+      }
+    } catch (e) {}
+    fetch(ARCHIVO_CDN + "?t=" + Date.now())
+      .then(function (r) { return r.json(); })
+      .then(function (paquete) {
+        var d = descifrar(paquete);
+        if (d && d.ap && d.ap.length) {
+          lista = d; indexar(d.ap);      /* reemplaza el caché caduco con la lista nueva */
+          try { localStorage.setItem(CACHE, JSON.stringify({ cuando: Date.now(), datos: { gen: d.gen, ap: d.ap } })); } catch (e) {}
+        } else { avisado = true; }
+      })
+      .catch(function () { avisado = true; });
+  }
+
+  function urlWebApp() {
+    if (window.EV_REG && window.EV_REG.url) return window.EV_REG.url;
+    return "";
+  }
+
+  function continuar() {
+    dejarPasar = true;
+    var form = document.getElementById('form-inicio');
+    if (form) {
+      if (typeof form.requestSubmit === 'function') form.requestSubmit();
+      else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+    } else {
+      document.removeEventListener('submit', manejar, true);
+    }
+    setTimeout(function () { dejarPasar = false; }, 1500);
+  }
+
+  function manejar(ev) {
+    if (dejarPasar) return;
+    var f = document.getElementById('ficha'), n = document.getElementById('nombre');
+    if (!f || !n) return;
+    var ficha = (f.value || '').trim().replace(/\.xls$/i, '');
+    var nombre = (n.value || '').trim();
+    if (!ficha || !nombre) return;                      // la propia evaluación valida sus campos
+
+    /* sin lista disponible: se permite presentar, avisando */
+    if (!lista) return;
+
+    ev.preventDefault(); ev.stopPropagation();
+
+    var deLaFicha = indice[ficha];
+    if (!deLaFicha) {
+      bloquear('No puede presentar la evaluación',
+        'La ficha <b>' + ficha + '</b> no está registrada en la tabla de aprendices. ' +
+        'Verifique el número o consulte con el instructor.');
+      return;
+    }
+    var activos = deLaFicha.filter(function (a) { return a.e === 1; });
+    if (!activos.length) {
+      bloquear('No puede presentar la evaluación',
+        'La ficha <b>' + ficha + '</b> no tiene aprendices en formación.');
+      return;
+    }
+    var retiradosFicha = retirados[ficha] || [];
+    if (retiradosFicha.some(function (r) { return coincide(nombre, r); })) {
+      bloquear('No puede presentar la evaluación',
+        'Según la tabla de aprendices, <b>' + nombre + '</b> está en <b>RETIRO VOLUNTARIO</b>. ' +
+        'Su estado no permite presentar evaluaciones.');
+      return;
+    }
+
+    /* se resuelve el aprendiz (y su documento) para consultar los intentos */
+    var quien = activos.filter(function (a) { return coincide(nombre, a.n); })[0] || null;
+    var url = urlWebApp();
+    if (!quien || !quien.doc || !url) { continuar(); return; }
+
+    pintarAviso('⏳ Verificando los intentos ya usados…', 'info');
+    var codigo = (window.EV_REG && window.EV_REG.codigo) ? window.EV_REG.codigo : '';
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var corte = setTimeout(function () { if (ctrl) ctrl.abort(); }, 45000);
+
+    fetch(url + '?action=intentos&ficha=' + encodeURIComponent(ficha) +
+          '&codigo=' + encodeURIComponent(codigo) + '&docs=' + encodeURIComponent(quien.doc),
+          ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.text(); })
+      .then(function (txt) {
+        clearTimeout(corte);
+        var d = null;
+        try { d = JSON.parse(txt); } catch (e) { d = null; }
+        if (!d || !d.ok || !d.aprendices || !d.aprendices.length) { pintarAviso(''); continuar(); return; }
+        var a = d.aprendices[0];
+        if (a.puedePresentar === false) {
+          pintarAviso('');
+          bloquear('Ya usó sus intentos en esta evaluación',
+            'Has presentado esta evaluación <b>' + a.intentos + ' veces</b> (máximo ' + d.maxIntento + ').<br>' +
+            'Tu mejor nota fue <b>' + (a.mejor === null || a.mejor === undefined ? 's/n' : a.mejor + '%') + '</b>.');
+          return;
+        }
+        pintarAviso('ℹ️ <b>' + quien.n + '</b> — vas en el intento <b>' + (a.intentos + 1) + ' de ' + d.maxIntento + '</b>' +
+                    (a.mejor !== null && a.mejor !== undefined ? ' · tu mejor nota: <b>' + a.mejor + '%</b>' : '') +
+                    '<br>Se guarda siempre tu <b>mayor nota</b>.', 'info');
+        continuar();
+      })
+      .catch(function () { clearTimeout(corte); pintarAviso(''); continuar(); });
+  }
+
+  function iniciar() {
+    crearInterfaz();
+    document.addEventListener('submit', manejar, true);
+    cargar();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
+  else iniciar();
+})();
+</script>
+<!-- SENA-VALIDA-APRENDICES:FIN -->
 </body>
 </html>
