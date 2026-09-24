@@ -60,7 +60,7 @@
 <div id="vista-resultados" class="w-full max-w-2xl bg-white rounded-2xl card p-8 hidden text-center">
   <h2 class="text-2xl font-extrabold text-[#1e3a8a] mb-2">Resultado de la Evaluación</h2>
     <style>
-/* Tarjeta "Actividad evaluada" — móvil y escritorio */
+/* Tarjeta "Actividad evaluada" — sirve en MÓVIL y en ESCRITORIO */
 .tarjeta-actividad{margin:0 auto 14px;max-width:540px;width:100%;box-sizing:border-box;
   background:#eef6ff;border:1px solid #bfdbfe;border-left:5px solid #1e3a8a;border-radius:12px;
   padding:12px 16px;text-align:left;font-family:'Segoe UI',Roboto,system-ui,sans-serif}
@@ -69,6 +69,11 @@
 .tarjeta-actividad .ta-me{font-size:11.5px;color:#475569;margin-top:6px;line-height:1.7;
   font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
 .tarjeta-actividad .ta-me span{display:inline-block;margin-right:10px;white-space:nowrap}
+/* En pantallas estrechas el contenido se APILA (evita scroll horizontal y columnas apretadas) */
+@media (max-width:1024px){
+  body.flex{flex-direction:column !important;align-items:stretch !important;justify-content:flex-start !important}
+  body>div{width:100%;max-width:100%;box-sizing:border-box}
+}
 @media (max-width:480px){
   .tarjeta-actividad{padding:10px 12px;border-left-width:4px;border-radius:10px}
   .tarjeta-actividad .ta-nom{font-size:15px}
@@ -84,23 +89,33 @@
     <script>
     /* ==== Nombre de la actividad en la pantalla final (evidencia de la captura) ==== */
     (function () {
-      try {
-        var d = window.EV_REG || {};
-        var nom = document.getElementById('ta-nombre');
-        var met = document.getElementById('ta-meta');
-        if (!nom || !met) return;
-        var limpio = String(d.ev || d.tema || '')
-          .replace(/^\s*(Evaluaci[oó]n(\s+de\s+conocimiento)?|Evaluacion)\s*[-—:•]\s*/i, '')
-          .replace(/\s+/g, ' ').trim();
-        nom.textContent = limpio || d.codigo || document.title || 'Evaluación';
-        var partes = [];
-        if (d.codigo) partes.push('Código: ' + d.codigo);
-        if (d.ver) partes.push('Versión: ' + d.ver);
-        if (d.competencia) partes.push('Competencia: ' + d.competencia);
-        if (d.actividad) partes.push('Actividad: ' + d.actividad);
-        partes.push('Fecha y hora: ' + new Date().toLocaleString('es-CO'));
-        met.innerHTML = partes.map(function (p) { return '<span>' + p + '</span>'; }).join('');
-      } catch (e) {}
+      var intentos = 0;
+      function pintar() {
+        try {
+          var d = window.EV_REG;
+          var nom = document.getElementById('ta-nombre');
+          var met = document.getElementById('ta-meta');
+          if (!nom || !met) return;
+          if (!d && intentos++ < 12) { setTimeout(pintar, 250); return; }   /* EV_REG se carga al final */
+          d = d || {};
+          var limpio = String(d.ev || d.tema || '')
+            .replace(/^\s*(Evaluaci[oó]n(\s+de\s+conocimiento)?|Evaluacion)\s*[-—:•]\s*/i, '')
+            .replace(/^\s*\[[^\]]*\]\s*/, '')
+            .replace(/\s+/g, ' ').trim();
+          nom.textContent = limpio || d.codigo || document.title || 'Evaluación';
+          var partes = [];
+          if (d.codigo) partes.push('Código: ' + d.codigo);
+          if (d.ver) partes.push('Versión: ' + d.ver);
+          if (d.competencia) partes.push('Competencia: ' + d.competencia);
+          if (d.actividad) partes.push('Actividad: ' + d.actividad);
+          partes.push('Fecha y hora: ' + new Date().toLocaleString('es-CO'));
+          met.innerHTML = partes.map(function (p) { return '<span>' + p + '</span>'; }).join('');
+        } catch (e) {}
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pintar);
+      pintar();
+      window.addEventListener('load', pintar);
+      setTimeout(pintar, 1200);
     })();
     </script>
   <p class="text-gray-600 mb-6">Aprendiz: <span id="resultado-nombre" class="font-semibold"></span></p>
