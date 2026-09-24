@@ -51,8 +51,8 @@
 <header>
   <div class="logo">S</div>
   <div>
-    <h1>Muestra · Control de cumplimiento por actividad</h1>
-    <p>SENA · Programación de Software · ¿quién cumplió la nota mínima y quién no?</p>
+    <h1>Control de cumplimiento por actividad</h1>
+    <p>SENA · Programación de Software · quién cumplió la nota mínima, quién puede volver y quién no</p>
   </div>
   <div class="acciones">
     <button onclick="cargar()">↻ Actualizar</button>
@@ -66,8 +66,9 @@
   <div class="kpis" id="kpis" hidden>
     <div class="kpi"><span>Aprendices en formación</span><strong id="k-apre">0</strong><small id="k-retirados">—</small></div>
     <div class="kpi ok"><span>Cumplieron todo</span><strong id="k-cumplio">0</strong><small>con nota ≥ 70% en cada actividad</small></div>
-    <div class="kpi alerta"><span>En riesgo</span><strong id="k-riesgo">0</strong><small>presentaron sin alcanzar 70%</small></div>
-    <div class="kpi malo"><span>Sin presentar</span><strong id="k-sin">0</strong><small>actividades pendientes</small></div>
+    <div class="kpi alerta"><span>Pueden volver</span><strong id="k-riesgo">0</strong><small>aún tienen intentos (máx. 3)</small></div>
+    <div class="kpi malo"><span>Plan de mejoramiento</span><strong id="k-agotaron">0</strong><small>agotaron los 3 intentos sin 70%</small></div>
+    <div class="kpi"><span>Sin presentar</span><strong id="k-sin">0</strong><small>aprendices con actividades pendientes</small></div>
     <div class="kpi"><span>Nota mínima</span><strong id="k-minimo">70%</strong><small id="k-evs">—</small></div>
   </div>
 
@@ -83,11 +84,12 @@
       </select></div>
     </div>
     <div class="leyenda">
-      <span><b class="m-ok">✔</b> Cumplió (≥ 70%)</span>
-      <span><b class="m-medio">~</b> Presentó, aún sin 70%</span>
-      <span><b class="m-malo">✘</b> Agotó intentos sin 70%</span>
+      <span><b class="m-ok">✔</b> Cumplió (mejor nota ≥ 70%)</span>
+      <span><b class="m-medio">~</b> Puede volver (le quedan intentos de 3)</span>
+      <span><b class="m-malo">✘</b> Agotó los 3 intentos sin 70%</span>
       <span><b class="m-nada">–</b> No ha presentado</span>
       <span><b>⛔</b> Retirado (no aplica)</span>
+      <span style="width:100%"><b>Nota:</b> cada aprendiz tiene <b>máximo 3 intentos</b> por evaluación y solo cuenta su <b>mayor nota</b>.</span>
     </div>
   </section>
 
@@ -285,15 +287,27 @@ function intentosDe(nombre, ficha, codigo, documento) {
 
 function estadoCelda(tiros) {
   if (!tiros.length) return { marca: '–', clase: 'm-nada', detalle: 'Sin intentos registrados' };
-  var mejor = null, detalles = [];
+  var mejor = null, usados = 0, notas = '', detalles = [];
   tiros.forEach(function (t) {
     var p = (typeof t.pct === 'number') ? t.pct : null;
     if (p !== null && (mejor === null || p > mejor)) mejor = p;
+    usados = Math.max(usados, Number(t.intentos) || 1);      /* la hoja guarda 1 fila con el contador */
+    if (t.notas) notas = t.notas;
     detalles.push((t.fechaHora || '') + ' → ' + (p === null ? 's/n' : p + '%'));
   });
-  if (mejor !== null && mejor >= MINIMO) return { marca: '✔', clase: 'm-ok', detalle: 'Cumplió con ' + mejor + '%\n' + detalles.join('\n') };
-  if (tiros.length >= MAX_INTENTOS) return { marca: '✘', clase: 'm-malo', detalle: 'Agotó los ' + MAX_INTENTOS + ' intentos sin alcanzar ' + MINIMO + '%\n' + detalles.join('\n') };
-  return { marca: '~', clase: 'm-medio', detalle: 'Mejor puntaje: ' + (mejor === null ? 's/n' : mejor + '%') + ' (intento ' + tiros.length + ' de ' + MAX_INTENTOS + ')\n' + detalles.join('\n') };
+  var hist = (notas ? 'Notas de sus intentos: ' + notas + '\n' : '') + detalles.join('\n');
+  if (mejor !== null && mejor >= MINIMO) {
+    return { marca: '✔', clase: 'm-ok',
+             detalle: 'CUMPLIÓ con ' + mejor + '% (en ' + usados + ' de ' + MAX_INTENTOS + ' intentos)\n' + hist };
+  }
+  if (usados >= MAX_INTENTOS) {
+    return { marca: '✘', clase: 'm-malo',
+             detalle: 'AGOTÓ los ' + MAX_INTENTOS + ' intentos sin alcanzar ' + MINIMO + '%' +
+                      ' (mejor: ' + (mejor === null ? 's/n' : mejor + '%') + ') → requiere plan de mejoramiento\n' + hist };
+  }
+  return { marca: '~', clase: 'm-medio',
+           detalle: 'PUEDE VOLVER: mejor ' + (mejor === null ? 's/n' : mejor + '%') +
+                    ' · le quedan ' + (MAX_INTENTOS - usados) + ' de ' + MAX_INTENTOS + ' intentos\n' + hist };
 }
 
 function poblarFichas() {
@@ -329,22 +343,26 @@ function pintar() {
   document.getElementById('cabecera').innerHTML = th;
 
   /* filas */
-  var html = '', cuenta = { cumplioTodo: 0, riesgo: 0, sinPresentar: 0 };
+  var html = '', cuenta = { cumplioTodo: 0, riesgo: 0, sinPresentar: 0, agotaron: 0, puedenVolver: 0 };
   evs.forEach(function () {});
   lista.forEach(function (a) {
-    var celdas = '', cumplidas = 0, pendientes = 0;
+    var celdas = '', cumplidas = 0, pendientes = 0, agoto = 0, puedeVolver = 0;
     evs.forEach(function (e) {
       var tiros = a.activo ? intentosDe(a.nombre, a.ficha, e.codigo, a.doc) : [];
       var est = a.activo ? estadoCelda(tiros) : { marca: '⛔', clase: 'm-nada', detalle: 'Aprendiz en RETIRO VOLUNTARIO' };
       if (a.activo) {
         if (est.marca === '✔') cumplidas++;
         else pendientes++;
+        if (est.marca === '✘') agoto++;
+        if (est.marca === '~') puedeVolver++;
       }
       celdas += '<td class="' + est.clase + '" title="' + est.detalle.replace(/"/g, '') + '"><span class="marca">' + est.marca + '</span></td>';
     });
     if (a.activo) {
       if (pendientes === 0 && evs.length) cuenta.cumplioTodo++;
       else if (pendientes > 0) cuenta.sinPresentar++;
+      if (agoto) cuenta.agotaron++;
+      if (puedeVolver) cuenta.puedenVolver++;
     }
     html += '<tr><td class="izq">' + a.nombre + (a.activo ? '' : ' <span style="color:#991b1b">(retirado)</span>') + '</td>' +
             '<td class="cron">' + a.ficha + '</td>' + celdas +
@@ -358,16 +376,17 @@ function pintar() {
   document.getElementById('k-apre').textContent = todos.filter(function (a) { return a.activo; }).length;
   document.getElementById('k-retirados').textContent = todos.filter(function (a) { return !a.activo; }).length + ' en retiro voluntario';
   document.getElementById('k-cumplio').textContent = cuenta.cumplioTodo;
-  document.getElementById('k-riesgo').textContent = cuenta.sinPresentar;
-  document.getElementById('k-sin').textContent = evs.length ? (todos.filter(function (a) { return a.activo; }).length * evs.length - cuenta.cumplioTodo * evs.length) : 0;
+  document.getElementById('k-riesgo').textContent = cuenta.puedenVolver;
+  document.getElementById('k-agotaron').textContent = cuenta.agotaron;
+  document.getElementById('k-sin').textContent = cuenta.sinPresentar;
 }
 
 /* --- exportar ------------------------------------------------------------- */
 function exportar() {
   var evs = evsConIntentos();
-  var filas = [['Aprendiz', 'Ficha', 'Estado'].concat(evs.map(function (e) { return e.codigo; }))];
+  var filas = [['Aprendiz', 'Ficha', 'Documento', 'Estado'].concat(evs.map(function (e) { return e.codigo; }))];
   aprendices().forEach(function (a) {
-    var fila = [a.nombre, a.ficha, a.activo ? 'EN FORMACION' : 'RETIRO VOLUNTARIO'];
+    var fila = [a.nombre, a.ficha, a.doc || '', a.activo ? 'EN FORMACION' : 'RETIRO VOLUNTARIO'];
     evs.forEach(function (e) {
       if (!a.activo) { fila.push('RETIRADO'); return; }
       var est = estadoCelda(intentosDe(a.nombre, a.ficha, e.codigo, a.doc));
