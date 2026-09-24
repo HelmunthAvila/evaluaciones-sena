@@ -110,11 +110,23 @@
 
   <section id="panel-intentos" class="panel" hidden>
     <h2>Intentos registrados <span id="cuenta-intentos" style="color:var(--tenue);font-weight:600;text-transform:none"></span></h2>
+    <p class="ayuda" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+      <span>La hoja guarda <b>una fila por aprendiz y evaluación</b>, con su <b>mayor nota</b> (máximo 3 intentos).</span>
+      <label for="orden" style="margin-left:auto">Ordenar por</label>
+      <select id="orden" onchange="aplicar()" style="width:auto">
+        <option value="nota">Mejor nota (mayor primero)</option>
+        <option value="nota-asc">Peor nota (menor primero)</option>
+        <option value="fecha">Más recientes</option>
+        <option value="aprendiz">Aprendiz (A-Z)</option>
+        <option value="evaluacion">Evaluación (A-Z)</option>
+        <option value="intentos">Más intentos usados</option>
+      </select>
+    </p>
     <div class="tabla-scroll">
       <table>
         <thead><tr>
           <th>Fecha y hora</th><th>Aprendiz</th><th>Ficha</th><th>Evaluación</th><th>Ver.</th>
-          <th>Puntaje</th><th>Resultado</th><th>Tiempo</th>
+          <th>Mejor nota</th><th>Intentos</th><th>Resultado</th><th>Tiempo</th>
         </tr></thead>
         <tbody id="cuerpo-intentos"></tbody>
       </table>
@@ -126,7 +138,7 @@
       <h2>Por aprendiz</h2>
       <div class="tabla-scroll" style="max-height:380px">
         <table>
-          <thead><tr><th>Aprendiz</th><th>Ficha</th><th>Intentos</th><th>Promedio</th><th>Aprobó</th></tr></thead>
+          <thead><tr><th>Aprendiz</th><th>Ficha</th><th>Intentos usados</th><th>Promedio de sus mejores notas</th><th>Aprobó</th></tr></thead>
           <tbody id="cuerpo-ranking"></tbody>
         </table>
       </div>
@@ -160,7 +172,7 @@
 /* ============================================================================
    1) CONFIGURACIÓN — cambie aquí si algún día cambia la implementación
    ============================================================================ */
-var URL_WEBAPP = "https://script.google.com/macros/s/AKfycbzqb9uRcPxuquMEPOb-HsU3PS1iKRXmRmu6Hg10pGqvD0e-Gis7BpKIJWU0r0iAf2s/exec";
+var URL_WEBAPP = "https://script.google.com/macros/s/AKfycbyYvQBkq6nzR9XfPvih_54SFbOQ6gt1aXUSgqJwepvBl40tfE54t4aM5gj5zQVycjE/exec";
 var CLAVE_REPORTE = "sena-prg-2026";   // igual que CLAVE_REPORTE en el Apps Script
 
 /* ============================================================================
@@ -331,8 +343,16 @@ function aplicar() {
     document.getElementById('k-rango').textContent = '—';
   }
 
-  /* Tabla de intentos (más recientes primero) */
+  /* Tabla de intentos: el orden lo elige el instructor (por defecto, mayor nota primero) */
+  var criterio = (document.getElementById('orden') || {}).value || 'nota';
   var orden = lista.slice().sort(function (a, b) {
+    var pa = (typeof a.pct === 'number') ? a.pct : -1;
+    var pb = (typeof b.pct === 'number') ? b.pct : -1;
+    if (criterio === 'nota') return pb - pa;
+    if (criterio === 'nota-asc') return pa - pb;
+    if (criterio === 'aprendiz') return String(a.nombre || '').localeCompare(String(b.nombre || ''), 'es');
+    if (criterio === 'evaluacion') return String(a.ev || '').localeCompare(String(b.ev || ''), 'es');
+    if (criterio === 'intentos') return (Number(b.intentos) || 1) - (Number(a.intentos) || 1);
     return String(b.marca || b.fechaHora).localeCompare(String(a.marca || a.fechaHora));
   });
   var html = '';
@@ -340,17 +360,23 @@ function aplicar() {
     var pillVer = d.ver ? '<span class="pill ' + d.ver.toLowerCase() + '">' + escapar(d.ver) + '</span>' : '—';
     var pillRes = d.resultado === 'APROBADO' ? '<span class="pill ok">APROBADO</span>'
                 : (d.resultado ? '<span class="pill no">' + escapar(d.resultado) + '</span>' : '—');
+    var nInt = Number(d.intentos) || 1;
+    var claseInt = nInt >= 3 ? 'no' : (nInt === 2 ? 'medio' : 'ok');
+    var historial = d.notas ? ' title="Notas de sus intentos: ' + escapar(d.notas) + '"' : '';
+    var celdaInt = '<span class="pill ' + claseInt + '"' + historial + '>' + nInt + '/3</span>' +
+                   (nInt >= 3 ? '<div style="font-size:11px;color:var(--tenue)">sin intentos</div>' : '');
     html += '<tr><td>' + escapar(d.fechaHora || String(d.marca).slice(0, 16)) + '</td>' +
             '<td><strong>' + escapar(d.nombre) + '</strong></td>' +
             '<td style="font-family:ui-monospace,Consolas,monospace">' + escapar(d.ficha) + '</td>' +
             '<td>' + escapar(d.ev) + (d.tema && d.tema !== d.ev ? ' <span style="color:var(--tenue)">· ' + escapar(d.tema) + '</span>' : '') + '</td>' +
             '<td>' + pillVer + '</td>' +
-            '<td>' + (notaBarra(d.pct) || (d.aciertos !== null ? escapar(d.aciertos) + '/' + escapar(d.total) : '—')) + '</td>' +
+            '<td>' + (notaBarra(d.pct) || (d.aciertos !== null && d.aciertos !== undefined ? escapar(d.aciertos) + '/' + escapar(d.total) : '—')) + '</td>' +
+            '<td>' + celdaInt + '</td>' +
             '<td>' + pillRes + '</td>' +
             '<td>' + (typeof d.segundos === 'number' && d.segundos ? Math.round(d.segundos / 60) + ' min' : '—') + '</td></tr>';
   });
   document.getElementById('cuerpo-intentos').innerHTML = html ||
-    '<tr><td colspan="8" style="color:var(--tenue)">Sin intentos con estos filtros.</td></tr>';
+    '<tr><td colspan="9" style="color:var(--tenue)">Sin intentos con estos filtros.</td></tr>';
 
   /* Ranking por aprendiz (mejor intento por evaluación) */
   var porAp = {};
@@ -361,9 +387,11 @@ function aplicar() {
     r.intentos++; r.ficha = d.ficha || r.ficha;
     if (typeof d.pct === 'number') { r.suma += d.pct; r.n++; if (d.pct >= 70) r.aprob++; }
   });
+  /* Ranking ordenado por el promedio de sus MEJORES notas (mayor primero) */
   var ranking = Object.keys(porAp).map(function (k) { return porAp[k]; }).sort(function (a, b) {
     var pa = a.n ? a.suma / a.n : -1, pb = b.n ? b.suma / b.n : -1;
-    return pb - pa;
+    if (pb !== pa) return pb - pa;
+    return b.intentos - a.intentos;
   });
   var hRank = '';
   ranking.slice(0, 300).forEach(function (r) {
