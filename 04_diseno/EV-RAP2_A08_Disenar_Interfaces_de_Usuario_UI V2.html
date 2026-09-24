@@ -1751,16 +1751,35 @@ function evRegistrar(extra) {
         }
       }
     } catch (e) {}
+    pintarAviso('⏳ Cargando la lista de aprendices… 0 %', 'info');
     fetch(ARCHIVO_CDN + "?t=" + Date.now())
-      .then(function (r) { return r.json(); })
+      .then(function (r) {
+        var total = Number(r.headers.get('content-length')) || 0;
+        if (!r.body || !r.body.getReader || !total) { return r.json(); }
+        var lector = r.body.getReader(), recibido = 0, trozos = [];
+        return (function leer() {
+          return lector.read().then(function (res) {
+            if (res.done) {
+              var todo = new Uint8Array(recibido), pos = 0;
+              trozos.forEach(function (t) { todo.set(t, pos); pos += t.length; });
+              return JSON.parse(new TextDecoder('utf-8').decode(todo));
+            }
+            trozos.push(res.value); recibido += res.value.length;
+            pintarAviso('⏳ Cargando la lista de aprendices… ' +
+                        Math.min(100, Math.round(recibido / total * 100)) + ' %', 'info');
+            return leer();
+          });
+        })();
+      })
       .then(function (paquete) {
         var d = descifrar(paquete);
+        pintarAviso('');
         if (d && d.ap && d.ap.length) {
           lista = d; indexar(d.ap);      /* reemplaza el caché caduco con la lista nueva */
           try { localStorage.setItem(CACHE, JSON.stringify({ cuando: Date.now(), datos: { gen: d.gen, ap: d.ap } })); } catch (e) {}
         } else { avisado = true; }
       })
-      .catch(function () { avisado = true; });
+      .catch(function () { pintarAviso(''); avisado = true; });
   }
 
   function urlWebApp() {
@@ -1768,61 +1787,60 @@ function evRegistrar(extra) {
     return "";
   }
 
+  function botonArranque() {
+    var b = document.querySelector('#form-inicio button[type="submit"]');
+    if (!b) b = document.querySelector('#form-inicio button');
+    return b;
+  }
+  function botonCargando(on, texto) {
+    var b = botonArranque();
+    if (!b) return;
+    if (on) {
+      if (!b.getAttribute('data-texto')) b.setAttribute('data-texto', b.textContent);
+      b.disabled = true;
+      b.style.opacity = '0.75';
+      b.textContent = texto || 'Verificando…';
+    } else {
+      b.disabled = false;
+      b.style.opacity = '';
+      var previo = b.getAttribute('data-texto');
+      if (previo) b.textContent = previo;
+    }
+  }
+
   function continuar() {
+    botonCargando(false);
     dejarPasar = true;
     var form = document.getElementById('form-inicio');
     if (form) {
       if (typeof form.requestSubmit === 'function') form.requestSubmit();
       else form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
-    } else {
-      document.removeEventListener('submit', manejar, true);
     }
     setTimeout(function () { dejarPasar = false; }, 1500);
   }
 
-  function manejar(ev) {
-    if (dejarPasar) return;
-    var f = document.getElementById('ficha'), n = document.getElementById('nombre');
-    if (!f || !n) return;
-    var ficha = (f.value || '').trim().replace(/\.xls$/i, '');
-    var nombre = (n.value || '').trim();
-    if (!ficha || !nombre) return;                      // la propia evaluación valida sus campos
+  /* ---------------- consulta de intentos (SIN hacer esperar al aprendiz) ----------------
+     Se lanza en segundo plano apenas escribe ficha y nombre, así el tiempo de Google
+     (arranque en frío) se solapa con el tiempo que el aprendiz tarda en llenar el formulario.
+     Al pulsar "Comenzar" la respuesta ya está lista: decisión instantánea.               */
+  var pendiente = null, cacheInt = null, cachePara = "", ESPERA_MAX = 6000;
 
-    /* sin lista disponible: se permite presentar, avisando */
-    if (!lista) return;
+  function aprendizDe(ficha, nombre) {
+    var activos = (indice[ficha] || []).filter(function (a) { return a.e === 1; });
+    return activos.filter(function (a) { return coincide(nombre, a.n); })[0] || null;
+  }
 
-    ev.preventDefault(); ev.stopPropagation();
-
-    var deLaFicha = indice[ficha];
-    if (!deLaFicha) {
-      bloquear('No puede presentar la evaluación',
-        'La ficha <b>' + ficha + '</b> no está registrada en la tabla de aprendices. ' +
-        'Verifique el número o consulte con el instructor.');
-      return;
-    }
-    var activos = deLaFicha.filter(function (a) { return a.e === 1; });
-    if (!activos.length) {
-      bloquear('No puede presentar la evaluación',
-        'La ficha <b>' + ficha + '</b> no tiene aprendices en formación.');
-      return;
-    }
-    var retiradosFicha = retirados[ficha] || [];
-    if (retiradosFicha.some(function (r) { return coincide(nombre, r); })) {
-      bloquear('No puede presentar la evaluación',
-        'Según la tabla de aprendices, <b>' + nombre + '</b> está en <b>RETIRO VOLUNTARIO</b>. ' +
-        'Su estado no permite presentar evaluaciones.');
-      return;
-    }
-
-    /* se resuelve el aprendiz (y su documento) para consultar los intentos */
-    var quien = activos.filter(function (a) { return coincide(nombre, a.n); })[0] || null;
+  function pedirIntentos(quien, ficha, alLlegar) {
     var url = urlWebApp();
-    if (!quien || !quien.doc || !url) { continuar(); return; }
+    if (!quien || !quien.doc || !url) { if (alLlegar) alLlegar(null); return; }
+    var llave = ficha + "|" + quien.doc;
+    if (cacheInt && cachePara === llave && (Date.now() - cacheInt.t) < 180000) { if (alLlegar) alLlegar(cacheInt.datos); return; }
+    if (pendiente && pendiente.llave === llave) { if (alLlegar) pendiente.esperando.push(alLlegar); return; }
 
-    pintarAviso('⏳ Verificando los intentos ya usados…', 'info');
     var codigo = (window.EV_REG && window.EV_REG.codigo) ? window.EV_REG.codigo : '';
     var ctrl = window.AbortController ? new AbortController() : null;
-    var corte = setTimeout(function () { if (ctrl) ctrl.abort(); }, 45000);
+    var corte = setTimeout(function () { if (ctrl) ctrl.abort(); }, 30000);
+    pendiente = { llave: llave, esperando: alLlegar ? [alLlegar] : [] };
 
     fetch(url + '?action=intentos&ficha=' + encodeURIComponent(ficha) +
           '&codigo=' + encodeURIComponent(codigo) + '&docs=' + encodeURIComponent(quien.doc),
@@ -1832,27 +1850,150 @@ function evRegistrar(extra) {
         clearTimeout(corte);
         var d = null;
         try { d = JSON.parse(txt); } catch (e) { d = null; }
-        if (!d || !d.ok || !d.aprendices || !d.aprendices.length) { pintarAviso(''); continuar(); return; }
-        var a = d.aprendices[0];
-        if (a.puedePresentar === false) {
-          pintarAviso('');
-          bloquear('Ya usó sus intentos en esta evaluación',
-            'Has presentado esta evaluación <b>' + a.intentos + ' veces</b> (máximo ' + d.maxIntento + ').<br>' +
-            'Tu mejor nota fue <b>' + (a.mejor === null || a.mejor === undefined ? 's/n' : a.mejor + '%') + '</b>.');
-          return;
-        }
-        pintarAviso('ℹ️ <b>' + quien.n + '</b> — vas en el intento <b>' + (a.intentos + 1) + ' de ' + d.maxIntento + '</b>' +
-                    (a.mejor !== null && a.mejor !== undefined ? ' · tu mejor nota: <b>' + a.mejor + '%</b>' : '') +
-                    '<br>Se guarda siempre tu <b>mayor nota</b>.', 'info');
-        continuar();
+        if (d && d.ok && d.aprendices && d.aprendices.length) { cacheInt = { t: Date.now(), datos: d }; cachePara = llave; }
+        var lista = pendiente ? pendiente.esperando : [];
+        pendiente = null;
+        lista.forEach(function (f) { try { f(cacheInt ? cacheInt.datos : null); } catch (e) {} });
+        if (cacheInt) avisarIntentos(cacheInt.datos, quien);
       })
-      .catch(function () { clearTimeout(corte); pintarAviso(''); continuar(); });
+      .catch(function () {
+        clearTimeout(corte);
+        var lista = pendiente ? pendiente.esperando : [];
+        pendiente = null;
+        lista.forEach(function (f) { try { f(null); } catch (e) {} });
+      });
+  }
+
+  function avisarIntentos(d, quien) {
+    if (!d || !d.aprendices || !d.aprendices.length) return;
+    var a = d.aprendices[0];
+    if (a.puedePresentar === false) {
+      pintarAviso('⚠️ <b>' + quien.n + '</b> ya usó sus <b>' + d.maxIntento + ' intentos</b> en esta evaluación. ' +
+                  'Su mejor nota: <b>' + (a.mejor === null || a.mejor === undefined ? 's/n' : a.mejor + '%') + '</b>.',
+                  'alerta');
+      return;
+    }
+    pintarAviso('ℹ️ <b>' + quien.n + '</b> — vas en el intento <b>' + (a.intentos + 1) + ' de ' + d.maxIntento + '</b>' +
+                (a.mejor !== null && a.mejor !== undefined ? ' · tu mejor nota: <b>' + a.mejor + '%</b>' : '') +
+                '<br>Se guarda siempre tu <b>mayor nota</b>.', 'info');
+  }
+
+  function precargar() {
+    var f = document.getElementById('ficha'), n = document.getElementById('nombre');
+    if (!f || !n || !lista) return;
+    var ficha = (f.value || '').trim().replace(/\.xls$/i, '');
+    var nombre = (n.value || '').trim();
+    if (ficha.length < 4 || nombre.length < 5) return;
+    var quien = aprendizDe(ficha, nombre);
+    if (!quien) return;
+    pedirIntentos(quien, ficha, null);
+  }
+
+  function manejar(ev) {
+    if (dejarPasar) return;
+    var f = document.getElementById('ficha'), n = document.getElementById('nombre');
+    if (!f || !n) return;
+    var ficha = (f.value || '').trim().replace(/\.xls$/i, '');
+    var nombre = (n.value || '').trim();
+    if (!ficha || !nombre) return;                    // la propia evaluación valida sus campos
+
+    if (!lista) return;                               // sin lista: se permite presentar (fail-open)
+
+    var deLaFicha = indice[ficha];
+    if (!deLaFicha) {                                 // --- comprobaciones INSTANTÁNEAS (locales) ---
+      ev.preventDefault(); ev.stopPropagation();
+      bloquear('No puede presentar la evaluación',
+        'La ficha <b>' + ficha + '</b> no está registrada en la tabla de aprendices. ' +
+        'Verifique el número o consulte con el instructor.');
+      return;
+    }
+    var activos = deLaFicha.filter(function (a) { return a.e === 1; });
+    if (!activos.length) {
+      ev.preventDefault(); ev.stopPropagation();
+      bloquear('No puede presentar la evaluación',
+        'La ficha <b>' + ficha + '</b> no tiene aprendices en formación.');
+      return;
+    }
+    var retiradosFicha = retirados[ficha] || [];
+    if (retiradosFicha.some(function (r) { return coincide(nombre, r); })) {
+      ev.preventDefault(); ev.stopPropagation();
+      bloquear('No puede presentar la evaluación',
+        'Según la tabla de aprendices, <b>' + nombre + '</b> está en <b>RETIRO VOLUNTARIO</b>. ' +
+        'Su estado no permite presentar evaluaciones.');
+      return;
+    }
+
+    var quien = aprendizDe(ficha, nombre);
+    if (!quien || !quien.doc || !urlWebApp()) return;  // no se puede consultar: se deja pasar
+
+    var llave = ficha + "|" + quien.doc;
+    /* ¿ya tenemos la respuesta? (precargada o en curso) → decisión inmediata */
+    if (cacheInt && cachePara === llave && (Date.now() - cacheInt.t) < 180000) {
+      if (cacheInt.datos.aprendices[0].puedePresentar === false) {
+        ev.preventDefault(); ev.stopPropagation();
+        var a = cacheInt.datos.aprendices[0];
+        bloquear('Ya usó sus intentos en esta evaluación',
+          'Has presentado esta evaluación <b>' + a.intentos + ' veces</b> (máximo ' + cacheInt.datos.maxIntento + ').<br>' +
+          'Tu mejor nota fue <b>' + (a.mejor === null || a.mejor === undefined ? 's/n' : a.mejor + '%') + '</b>.');
+        return;
+      }
+      return;                                          // puede presentar: arranca al instante
+    }
+
+    /* no hay respuesta aún: se espera como MÁXIMO 6 segundos y luego se deja pasar */
+    ev.preventDefault(); ev.stopPropagation();
+    var decidido = false;
+    function seguir() {
+      if (decidido) return;
+      decidido = true;
+      var d = cacheInt && cachePara === llave ? cacheInt.datos : null;
+      if (d && d.aprendices && d.aprendices[0] && d.aprendices[0].puedePresentar === false) {
+        var a = d.aprendices[0];
+        bloquear('Ya usó sus intentos en esta evaluación',
+          'Has presentado esta evaluación <b>' + a.intentos + ' veces</b> (máximo ' + d.maxIntento + ').<br>' +
+          'Tu mejor nota fue <b>' + (a.mejor === null || a.mejor === undefined ? 's/n' : a.mejor + '%') + '</b>.');
+        return;
+      }
+      pintarAviso('');
+      continuar();
+    }
+    var t0 = Date.now();
+    var reloj = setInterval(function () {
+      var s = Math.round((Date.now() - t0) / 1000);
+      var pct = Math.min(95, Math.round(s / (ESPERA_MAX / 1000) * 100));
+      pintarAviso('⏳ Verificando tus intentos en la hoja del instructor… ' + s + ' s (' + pct + ' %)', 'info');
+      botonCargando(true, 'Verificando… ' + s + ' s');
+    }, 500);
+    pintarAviso('⏳ Verificando tus intentos en la hoja del instructor… 0 s (0 %)', 'info');
+    botonCargando(true, 'Verificando… 0 s');
+    var fin = function () { clearInterval(reloj); botonCargando(false); };
+    pedirIntentos(quien, ficha, function (d) { fin(); seguir(); });
+    setTimeout(function () { fin(); seguir(); }, ESPERA_MAX);
   }
 
   function iniciar() {
     crearInterfaz();
     document.addEventListener('submit', manejar, true);
+    /* precarga: mientras el aprendiz escribe, ya se consultan sus intentos (y se
+       "despierta" el servicio de Google, que tarda en el primer acceso del día) */
+    var tPre = null;
+    function alEscribir() { clearTimeout(tPre); tPre = setTimeout(precargar, 500); }
+    ['ficha', 'nombre'].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) { el.addEventListener('input', alEscribir); el.addEventListener('blur', alEscribir); }
+    });
     cargar();
+    /* calentamiento: el servicio de Google tarda ~20 s en el primer acceso del día.
+       Se pide algo inofensivo mientras el aprendiz lee las instrucciones, así cuando
+       pulse "Comenzar" la respuesta ya está lista. */
+    (function () {
+      var url = urlWebApp();
+      if (!url) return;
+      try {
+        fetch(url + '?action=intentos&ficha=0&codigo=calentamiento', { mode: 'cors' })
+          .then(function () {}).catch(function () {});
+      } catch (e) {}
+    })();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar);
   else iniciar();
