@@ -111,6 +111,65 @@ tbody tr:nth-child(even){background:#fafbfc}
 <main class="wrap">
 
 <section id="inicio" class="card">
+    <style>
+/* Tarjeta con los datos de la actividad — sirve en MÓVIL y en ESCRITORIO */
+.tarjeta-inicio{margin:0 0 18px;width:100%;box-sizing:border-box;
+  background:#eef6ff;border:1px solid #bfdbfe;border-left:5px solid #1e3a8a;border-radius:12px;
+  padding:12px 16px;text-align:left;font-family:'Segoe UI',Roboto,system-ui,sans-serif}
+.tarjeta-inicio .tinicio-et{font-size:10.5px;font-weight:800;letter-spacing:.7px;color:#1e40af;text-transform:uppercase}
+.tarjeta-inicio .tinicio-nom{font-size:17px;font-weight:800;color:#0f2f6b;margin-top:3px;line-height:1.3;overflow-wrap:anywhere}
+.tarjeta-inicio .tinicio-me{font-size:11.5px;color:#475569;margin-top:6px;line-height:1.7;
+  font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
+.tarjeta-inicio .tinicio-me span{display:inline-block;margin-right:10px;white-space:nowrap}
+/* En pantallas estrechas el contenido se APILA (sin scroll horizontal en celular) */
+@media (max-width:1024px){
+  body.flex{flex-direction:column !important;align-items:stretch !important;justify-content:flex-start !important}
+  body>div{width:100%;max-width:100%;box-sizing:border-box}
+}
+@media (max-width:480px){
+  .tarjeta-inicio{padding:10px 12px;border-left-width:4px;border-radius:10px}
+  .tarjeta-inicio .tinicio-nom{font-size:15px}
+  .tarjeta-inicio .tinicio-me{font-size:11px;line-height:1.55;margin-top:7px}
+  .tarjeta-inicio .tinicio-me span{display:block;white-space:normal;margin-right:0}
+}
+</style>
+<div class="tarjeta-inicio" id="tarjeta-inicio">
+      <div class="tinicio-et">Vas a presentar</div>
+      <div class="tinicio-nom" id="tinicio-nombre">&nbsp;</div>
+      <div class="tinicio-me" id="tinicio-meta">&nbsp;</div>
+    </div>
+    <script>
+    /* ==== Datos de la actividad (Vas a presentar) ==== */
+    (function () {
+      var reintentos = 0;
+      function pintar() {
+        try {
+          if (!document.getElementById('tinicio-nombre')) return;
+          var d = window.EV_REG;
+          if (!d && reintentos++ < 12) { setTimeout(pintar, 250); return; }   /* EV_REG se carga al final */
+          d = d || {};
+          var limpio = String(d.ev || d.tema || '')
+            .replace(/^\s*(Evaluaci[oó]n(\s+de\s+conocimiento)?|Evaluacion)\s*[-—:•]\s*/i, '')
+            .replace(/^\s*\[[^\]]*\]\s*/, '')
+            .replace(/\s+/g, ' ').trim();
+          document.getElementById('tinicio-nombre').textContent =
+            limpio || d.codigo || document.title || 'Evaluación';
+          var partes = [];
+          if (d.codigo) partes.push('Código: ' + d.codigo);
+          if (d.ver) partes.push('Versión: ' + d.ver);
+          if (d.competencia) partes.push('Competencia: ' + d.competencia);
+          if (d.actividad) partes.push('Actividad: ' + d.actividad);
+          partes.push('Fecha y hora: ' + new Date().toLocaleString('es-CO'));
+          document.getElementById('tinicio-meta').innerHTML =
+            partes.map(function (p) { return '<span>' + p + '</span>'; }).join('');
+        } catch (e) {}
+      }
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pintar);
+      pintar();
+      window.addEventListener('load', pintar);
+      setTimeout(pintar, 1200);
+    })();
+    </script>
   <h2>El caso: papelería El Lápiz</h2>
   <p>Don Hernán lleva la papelería del barrio en un cuaderno. Estas son las dos tablas de su base de
      datos: <b>articulo</b> (lo que vende) y <b>pedido</b> (cada pedido que le hacen). Consúltelas
@@ -187,56 +246,56 @@ CREATE TABLE pedido (
 <section id="resultados" class="card" hidden>
   <h2>Resultado del taller</h2>
     <style>
-/* Tarjeta "Actividad evaluada" — sirve en MÓVIL y en ESCRITORIO */
-.tarjeta-actividad{margin:0 auto 14px;max-width:540px;width:100%;box-sizing:border-box;
+/* Tarjeta con los datos de la actividad — sirve en MÓVIL y en ESCRITORIO */
+.tarjeta-actividad{margin:0 auto 14px;width:100%;box-sizing:border-box;
   background:#eef6ff;border:1px solid #bfdbfe;border-left:5px solid #1e3a8a;border-radius:12px;
   padding:12px 16px;text-align:left;font-family:'Segoe UI',Roboto,system-ui,sans-serif}
-.tarjeta-actividad .ta-et{font-size:10.5px;font-weight:800;letter-spacing:.7px;color:#1e40af;text-transform:uppercase}
-.tarjeta-actividad .ta-nom{font-size:17px;font-weight:800;color:#0f2f6b;margin-top:3px;line-height:1.3;overflow-wrap:anywhere}
-.tarjeta-actividad .ta-me{font-size:11.5px;color:#475569;margin-top:6px;line-height:1.7;
+.tarjeta-actividad .tactividad-et{font-size:10.5px;font-weight:800;letter-spacing:.7px;color:#1e40af;text-transform:uppercase}
+.tarjeta-actividad .tactividad-nom{font-size:17px;font-weight:800;color:#0f2f6b;margin-top:3px;line-height:1.3;overflow-wrap:anywhere}
+.tarjeta-actividad .tactividad-me{font-size:11.5px;color:#475569;margin-top:6px;line-height:1.7;
   font-family:ui-monospace,Consolas,monospace;overflow-wrap:anywhere}
-.tarjeta-actividad .ta-me span{display:inline-block;margin-right:10px;white-space:nowrap}
-/* En pantallas estrechas el contenido se APILA (evita scroll horizontal y columnas apretadas) */
+.tarjeta-actividad .tactividad-me span{display:inline-block;margin-right:10px;white-space:nowrap}
+/* En pantallas estrechas el contenido se APILA (sin scroll horizontal en celular) */
 @media (max-width:1024px){
   body.flex{flex-direction:column !important;align-items:stretch !important;justify-content:flex-start !important}
   body>div{width:100%;max-width:100%;box-sizing:border-box}
 }
 @media (max-width:480px){
   .tarjeta-actividad{padding:10px 12px;border-left-width:4px;border-radius:10px}
-  .tarjeta-actividad .ta-nom{font-size:15px}
-  .tarjeta-actividad .ta-me{font-size:11px;line-height:1.55;margin-top:7px}
-  .tarjeta-actividad .ta-me span{display:block;white-space:normal;margin-right:0}
+  .tarjeta-actividad .tactividad-nom{font-size:15px}
+  .tarjeta-actividad .tactividad-me{font-size:11px;line-height:1.55;margin-top:7px}
+  .tarjeta-actividad .tactividad-me span{display:block;white-space:normal;margin-right:0}
 }
 </style>
 <div class="tarjeta-actividad" id="tarjeta-actividad">
-      <div class="ta-et">Actividad evaluada</div>
-      <div class="ta-nom" id="ta-nombre">&nbsp;</div>
-      <div class="ta-me" id="ta-meta">&nbsp;</div>
+      <div class="tactividad-et">Actividad evaluada</div>
+      <div class="tactividad-nom" id="tactividad-nombre">&nbsp;</div>
+      <div class="tactividad-me" id="tactividad-meta">&nbsp;</div>
     </div>
     <script>
-    /* ==== Nombre de la actividad en la pantalla final (evidencia de la captura) ==== */
+    /* ==== Datos de la actividad (Actividad evaluada) ==== */
     (function () {
-      var intentos = 0;
+      var reintentos = 0;
       function pintar() {
         try {
+          if (!document.getElementById('tactividad-nombre')) return;
           var d = window.EV_REG;
-          var nom = document.getElementById('ta-nombre');
-          var met = document.getElementById('ta-meta');
-          if (!nom || !met) return;
-          if (!d && intentos++ < 12) { setTimeout(pintar, 250); return; }   /* EV_REG se carga al final */
+          if (!d && reintentos++ < 12) { setTimeout(pintar, 250); return; }   /* EV_REG se carga al final */
           d = d || {};
           var limpio = String(d.ev || d.tema || '')
             .replace(/^\s*(Evaluaci[oó]n(\s+de\s+conocimiento)?|Evaluacion)\s*[-—:•]\s*/i, '')
             .replace(/^\s*\[[^\]]*\]\s*/, '')
             .replace(/\s+/g, ' ').trim();
-          nom.textContent = limpio || d.codigo || document.title || 'Evaluación';
+          document.getElementById('tactividad-nombre').textContent =
+            limpio || d.codigo || document.title || 'Evaluación';
           var partes = [];
           if (d.codigo) partes.push('Código: ' + d.codigo);
           if (d.ver) partes.push('Versión: ' + d.ver);
           if (d.competencia) partes.push('Competencia: ' + d.competencia);
           if (d.actividad) partes.push('Actividad: ' + d.actividad);
           partes.push('Fecha y hora: ' + new Date().toLocaleString('es-CO'));
-          met.innerHTML = partes.map(function (p) { return '<span>' + p + '</span>'; }).join('');
+          document.getElementById('tactividad-meta').innerHTML =
+            partes.map(function (p) { return '<span>' + p + '</span>'; }).join('');
         } catch (e) {}
       }
       if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', pintar);
