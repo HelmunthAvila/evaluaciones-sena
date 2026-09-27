@@ -181,16 +181,59 @@ var CLAVE_REPORTE = "sena-prg-2026";   // igual que CLAVE_REPORTE en el Apps Scr
 var DATOS = [];
 var recibido = false;
 
+/* ==== Acelerador: caché local + calentamiento (2026-09) =====================
+   El tablero se ve al instante con los datos guardados y se actualiza detrás. */
+var ACEL = (function () {
+  var TTL = 10 * 60 * 1000;
+  function clave(k) { return 'sena_acel_' + k; }
+  function guardar(k, datos) {
+    try { localStorage.setItem(clave(k), JSON.stringify({ t: Date.now(), d: datos })); } catch (e) {}
+  }
+  function leer(k) {
+    try {
+      var o = JSON.parse(localStorage.getItem(clave(k)) || 'null');
+      if (o && o.d && (Date.now() - o.t) < TTL) return o.d;
+    } catch (e) {}
+    return null;
+  }
+  function cuando(k) {
+    try {
+      var o = JSON.parse(localStorage.getItem(clave(k)) || 'null');
+      if (!o) return '';
+      var min = Math.round((Date.now() - o.t) / 60000);
+      return min < 1 ? 'hace menos de un minuto' : (min === 1 ? 'hace 1 minuto' : 'hace ' + min + ' minutos');
+    } catch (e) { return ''; }
+  }
+  function calentar(url) {
+    try { fetch(url + '&warm=' + Date.now(), { mode: 'no-cors', cache: 'no-store' }).catch(function () {}); } catch (e) {}
+  }
+  return { guardar: guardar, leer: leer, cuando: cuando, calentar: calentar };
+})();
+
 function cargar() {
   var estado = document.getElementById('estado');
-  estado.hidden = false;
-  estado.className = 'estado';
-  estado.textContent = 'Consultando la hoja de cálculo…';
+  var t0 = Date.now();
   recibido = false;
 
-  var t0 = Date.now();
+  /* 1) Pintar YA con lo guardado en el navegador (0 segundos) */
+  var guardados = ACEL.leer('reporte');
+  var hayCache = guardados && ((guardados.intentos || []).length);
+  if (hayCache) {
+    estado.hidden = false; estado.className = 'estado aviso';
+    estado.textContent = 'Mostrando los resultados guardados ' + ACEL.cuando('reporte') +
+                         ' · actualizando en segundo plano…';
+    pintar(guardados, 'caché');
+  } else {
+    estado.hidden = false; estado.className = 'estado';
+    estado.textContent = 'Consultando la hoja de cálculo… (la primera vez del día Google tarda 20-60 s)';
+  }
+
+  /* 2) Despertar el Apps Script por detrás */
+  ACEL.calentar(URL_WEBAPP + '?action=reporte&clave=' + encodeURIComponent(CLAVE_REPORTE));
+
   var reloj = setInterval(function () {
     if (recibido) { clearInterval(reloj); return; }
+    if (hayCache) return;                       /* ya hay datos en pantalla: no molestar con el contador */
     var s = Math.round((Date.now() - t0) / 1000);
     estado.textContent = 'Consultando la hoja de cálculo… ' + s + ' s' +
       (s > 8 ? ' (Google puede tardar hasta 30 s en el primer acceso del día)' : '');
@@ -200,6 +243,7 @@ function cargar() {
     if (recibido) return;
     recibido = true;
     clearInterval(reloj);
+    ACEL.guardar('reporte', d);
     pintar(d, via);
   }
 
